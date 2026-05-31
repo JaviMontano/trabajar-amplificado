@@ -62,6 +62,9 @@
     .ta-pcard__per{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.6rem;font-weight:700;color:var(--brand-gold-text);border-top:1px solid var(--brand-border);padding-top:.55rem;margin-top:.2rem}
     .ta-pcard__inc{font-size:.84rem;color:var(--brand-text-soft);line-height:1.5;margin-top:.15rem}
     .ta-pcard--feat{outline:2px solid var(--brand-gold-text);outline-offset:-2px}
+    .ta-bundle{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:rgba(255,215,0,.06)}
+    .ta-bundle__r{text-align:right;min-width:200px}
+    @media(max-width:600px){.ta-bundle__r{text-align:left}}
     .ta-grid{display:grid;gap:1rem}
     @media(min-width:680px){.ta-grid--2{grid-template-columns:1fr 1fr}.ta-grid--4{grid-template-columns:repeat(4,1fr)}}
     .ta-note{display:inline-block;margin-top:.6rem;padding:.4rem .8rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:600}
@@ -207,6 +210,16 @@
           <p class="ta-pcard__inc"><span class="l-es">9 módulos + proyecto final.</span><span class="l-en">9 modules + final project.</span><span class="l-pt">9 módulos + projeto final.</span></p>
         </div>
       </div>
+      <div class="x-card ta-bundle">
+        <div>
+          <span class="ta-pcard__name"><span class="l-es">Bundle completo · todo el programa</span><span class="l-en">Full bundle · the whole program</span><span class="l-pt">Bundle completo · todo o programa</span></span>
+          <p class="ta-pcard__inc"><span class="l-es">Los 2 talleres + el bootcamp, juntos. <strong>Ahorras 15%.</strong></span><span class="l-en">Both workshops + the bootcamp, together. <strong>Save 15%.</strong></span><span class="l-pt">Os 2 workshops + o bootcamp, juntos. <strong>Economize 15%.</strong></span></p>
+        </div>
+        <div class="ta-bundle__r">
+          <div class="ta-pcard__price">$1.020.000<span class="ta-pcard__usd">COP · $204 USD</span></div>
+          <span class="ta-pcard__per"><span class="l-es">Ahorras 15% · $180.000 COP</span><span class="l-en">Save 15% · $180.000 COP</span><span class="l-pt">Economize 15% · $180.000 COP</span></span>
+        </div>
+      </div>
       <p style="margin-top:1rem;"><span class="ta-note"><span class="l-es">Combo: los 2 talleres juntos = $350.000 COP ($30 USD) · ahorras $50.000.</span><span class="l-en">Combo: both workshops together = $350.000 COP ($30 USD) · save $50.000.</span><span class="l-pt">Combo: os 2 workshops juntos = $350.000 COP ($30 USD) · economize $50.000.</span></span></p>
       <p><span class="ta-note"><span class="l-es">Requiere cuenta de Claude de pago (desde $20/mes). El intro no la requiere.</span><span class="l-en">Requires a paid Claude account (from $20/month). The intro does not.</span><span class="l-pt">Requer conta Claude paga (a partir de $20/mês). O intro não.</span></span></p>
       <p><span class="ta-note"><span class="l-es">Lo que inviertes en los talleres se descuenta del valor del bootcamp.</span><span class="l-en">What you invest in the workshops is credited toward the bootcamp price.</span><span class="l-pt">O que você investe nos workshops é descontado do valor do bootcamp.</span></span></p>
@@ -214,6 +227,32 @@
   </section>
 
   <!-- INSCRIPCION -->
+  <!-- VALOR AGREGADO -->
+  <section class="section" id="valor">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Valor en cada sesión</span><span class="l-en">Value in every session</span><span class="l-pt">Valor em cada sessão</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Te llevas <span class="gradient-text">herramientas</span>, no solo teoría</span><span class="l-en">You leave with <span class="gradient-text">tools</span>, not just theory</span><span class="l-pt">Você sai com <span class="gradient-text">ferramentas</span>, não só teoria</span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Cada sesión está orientada a valor práctico: sales con algo aplicable, no con apuntes.</span><span class="l-en">Every session is geared to practical value: you leave with something usable, not just notes.</span><span class="l-pt">Cada sessão é orientada a valor prático: você sai com algo aplicável, não só anotações.</span></p>
+      <div class="axes">
+        <div class="axis x-card">
+          <span class="axis__label">Vibe Coding ADK</span>
+          <h3 class="axis__title"><span class="l-es">Development Kit agéntico · Pristino Alfa</span><span class="l-en">Agentic Development Kit · Pristino Alfa</span><span class="l-pt">Development Kit agêntico · Pristino Alfa</span></h3>
+          <p class="axis__body"><span class="l-es">Recibes un Entorno de Desarrollo Agéntico (Vibe Coding) listo para usar.</span><span class="l-en">You receive an Agentic Development Environment (Vibe Coding), ready to use.</span><span class="l-pt">Você recebe um Ambiente de Desenvolvimento Agêntico (Vibe Coding), pronto para usar.</span> <a href="https://github.com/JaviMontano/jm-adk-alfa" target="_blank" rel="noopener" class="tl-item__link">jm-adk-alfa →</a></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Asistentes a medida</span><span class="l-en">Custom assistants</span><span class="l-pt">Assistentes sob medida</span></span>
+          <h3 class="axis__title"><span class="l-es">En cada sesión</span><span class="l-en">In every session</span><span class="l-pt">Em cada sessão</span></h3>
+          <p class="axis__body"><span class="l-es">Asistentes configurados a tu caso, listos para trabajar contigo.</span><span class="l-en">Assistants configured to your case, ready to work with you.</span><span class="l-pt">Assistentes configurados ao seu caso, prontos para trabalhar com você.</span></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></span>
+          <h3 class="axis__title"><span class="l-es">Esquema orientado a valor</span><span class="l-en">Value-oriented by design</span><span class="l-pt">Esquema orientado a valor</span></h3>
+          <p class="axis__body"><span class="l-es">Plantillas, prompts y aceleradores para aplicar lo aprendido de inmediato.</span><span class="l-en">Templates, prompts and accelerators to apply what you learn right away.</span><span class="l-pt">Modelos, prompts e aceleradores para aplicar o aprendido na hora.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="inscripcion">
     <div class="container" style="text-align:center;">
       <span class="eyebrow"><span class="l-es">Inscripción · 06</span><span class="l-en">Enrollment · 06</span><span class="l-pt">Inscrição · 06</span></span>
