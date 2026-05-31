@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Triple Toggle — Fixed bottom-left pill with theme / locale / audience
+   FR-245..FR-249
+
+   Container and layout styles for the triple-toggle now live in
+   neoswiss-system.css. This file retains only toggle-button internals
+   that are unique to this component.
+   ========================================================================== */
+
+/* --- Container pill ----------------------------------------------------- */
+triple-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 45;
+  display: flex;
+  flex-direction: row;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  /* Reserve the pill box before the custom element upgrades → no appearance CLS. */
+  min-width: 144px;
+  min-height: 53px;
+  box-sizing: border-box;
+  background: var(--brand-surface, #1e293b);
+  border: 1px solid var(--brand-border, rgba(255,255,255,.08));
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+}
+
+/* Before JS populates it, keep the reserved box invisible (no empty-pill flash). */
+triple-toggle:empty {
+  background: none;
+  border: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+html[data-theme="light"] triple-toggle {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(10, 18, 42, 0.12);
+  box-shadow: 0 4px 16px rgba(10, 18, 42, 0.1);
+}
+
+/* --- Individual toggle button ----------------------------------------- */
+.toggle-btn {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--brand-border, rgba(255,255,255,.08));
+  border-radius: 50%;
+  background: transparent;
+  color: var(--brand-muted, #94a3b8);
+
+  cursor: pointer;
+  transition: background 200ms var(--ease, cubic-bezier(.4, 0, .2, 1)),
+              color 200ms var(--ease, cubic-bezier(.4, 0, .2, 1)),
+              border-color 200ms var(--ease, cubic-bezier(.4, 0, .2, 1)),
+              transform 220ms cubic-bezier(.34, 1.56, .64, 1),
+              box-shadow 200ms var(--ease, cubic-bezier(.4, 0, .2, 1));
+
+  /* Reset browser defaults */
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  line-height: 1;
+}
+
+/* Inline Lucide icon — animated independently for micro-interactions */
+.toggle-btn svg {
+  display: block;
+  pointer-events: none;
+  transition: transform 240ms cubic-bezier(.34, 1.56, .64, 1);
+  transform-origin: center;
+}
+
+/* --- Hover state ------------------------------------------------------ */
+.toggle-btn:hover {
+  background: var(--brand-border, rgba(255,255,255,.08));
+  color: var(--brand-text, #f8fafc);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(10, 18, 42, 0.18);
+}
+
+/* Per-axis icon micro-interactions on hover (Lucide SVGs) */
+.toggle-btn[data-toggle-type="theme"]:hover svg    { transform: rotate(-22deg) scale(1.14); }
+.toggle-btn[data-toggle-type="locale"]:hover svg   { transform: rotate(24deg) scale(1.12); }
+.toggle-btn[data-toggle-type="audience"]:hover svg { transform: translateY(-1px) scale(1.16); }
+
+/* Tactile press feedback */
+.toggle-btn:active {
+  transform: translateY(0) scale(0.93);
+  box-shadow: 0 2px 6px rgba(10, 18, 42, 0.18);
+}
+.toggle-btn:active svg { transform: scale(0.86); }
+
+/* --- Active / checked state ------------------------------------------- */
+/* Theme-safe active state. Previously color:#fff on var(--brand-surface) — which
+   is #ffffff in light mode — so an active button was white-on-white = invisible
+   after switching light↔dark. Now: a translucent-gold tint pill + a theme-aware
+   icon stroke (dark-navy on the light pill, near-white on the dark pill), driven
+   at the svg level so it always wins the cascade and contrasts in both themes. */
+.toggle-btn[aria-checked="true"] {
+  background: rgba(255, 215, 0, 0.18);
+  color: var(--brand-text, #0a122a);
+  border-color: rgba(255, 215, 0, 0.45);
+}
+.toggle-btn[aria-checked="true"] svg {
+  stroke: #0a122a;
+  color: #0a122a;
+}
+html[data-theme="dark"] .toggle-btn[aria-checked="true"] svg {
+  stroke: #f8fafc;
+  color: #f8fafc;
+}
+
+/* --- Focus-visible (keyboard accessibility) --------------------------- */
+.toggle-btn:focus-visible {
+  outline: 2px solid var(--brand-gold, #ffd700);
+  outline-offset: 2px;
+}
+
+/* --- xs viewport (360px) — ensure no content overlap [T095] ---------- */
+@media (max-width: 479px) {
+  .toggle-btn {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+}
+
+/* --- Respect reduced-motion: disable micro-interaction transforms ----- */
+@media (prefers-reduced-motion: reduce) {
+  .toggle-btn,
+  .toggle-btn svg {
+    transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+  }
+  .toggle-btn:hover,
+  .toggle-btn:active,
+  .toggle-btn:hover svg,
+  .toggle-btn:active svg {
+    transform: none;
+  }
+}

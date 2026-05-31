@@ -1,228 +1,268 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light" data-page-slug="taller-intro">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taller de Intro · gratis · Trabajar Amplificado con Claude Cowork · MetodologIA</title>
-<meta name="description" content="Taller de intro gratis: ve en vivo cómo Claude Cowork amplifica tu trabajo. Sin costo, sin cuenta de pago, sin compromiso. Inscríbete por el formulario.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%23122562'/%3E%3Crect x='10' y='12' width='4' height='12' fill='%23fff'/%3E%3Crect x='16' y='12' width='4' height='8' fill='%23fff'/%3E%3Crect x='16' y='22' width='4' height='2' fill='%23fff'/%3E%3Crect x='22' y='12' width='4' height='6' fill='%23fff'/%3E%3Crect x='22' y='20' width='4' height='4' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
-<style>
-:root{
-  --brand-dark:#0a122a;--brand-darker:#070b1a;--brand-surface:#1e293b;--brand-surface-alt:#172033;
-  --brand-gold:#ffd700;--brand-gold-soft:#ffe875;--brand-gold-deep:#b8860b;
-  --brand-text:#f8fafc;--brand-text-soft:#e2e8f0;--brand-muted:#94a3b8;
-  --brand-border:rgba(255,255,255,.08);--brand-border-hover:rgba(255,215,0,.35);
-  --ease:cubic-bezier(.4,0,.2,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);
-  --fh:'Poppins',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,monospace;--fmeta:'Trebuchet MS','Lucida Grande',system-ui,sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--fb);color:var(--brand-text);background:var(--brand-darker);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100dvh}
-body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.07),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.30),transparent 46%),radial-gradient(circle at 50% 100%,rgba(255,215,0,.05),transparent 55%),linear-gradient(160deg,var(--brand-darker) 0%,var(--brand-dark) 55%,#0c1733 100%)}
-.gtext{background:linear-gradient(135deg,#f8fafc 0%,var(--brand-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1.1rem,5vw,2.6rem)}
-a{color:inherit}
-.l-en,.l-pt{display:none}
-body.lang-en .l-es{display:none}body.lang-en .l-en{display:inline}body.lang-en .l-pt{display:none}
-body.lang-pt .l-es{display:none}body.lang-pt .l-en{display:none}body.lang-pt .l-pt{display:inline}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Taller de Intro — Trabajar Amplificado | MetodologIA</title>
+  <meta name="description" content="Una sesión en vivo, sin costo, para ver cómo Claude Cowork amplifica tu trabajo. Sin riesgo, sin fricción. Método + IA = Soberanía.">
+  <link rel="canonical" href="https://javimontano.github.io/trabajar-amplificado/taller-intro.html">
+  <link rel="alternate" hreflang="es" href="https://javimontano.github.io/trabajar-amplificado/taller-intro.html">
+  <link rel="alternate" hreflang="en" href="https://javimontano.github.io/trabajar-amplificado/taller-intro.html">
+  <link rel="alternate" hreflang="pt" href="https://javimontano.github.io/trabajar-amplificado/taller-intro.html">
+  <link rel="alternate" hreflang="x-default" href="https://javimontano.github.io/trabajar-amplificado/taller-intro.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javimontano.github.io/trabajar-amplificado/taller-intro.html">
+  <meta property="og:site_name" content="MetodologIA">
+  <meta property="og:title" content="Taller de Intro — Trabajar Amplificado">
+  <meta property="og:description" content="Una sesión en vivo, sin costo, para ver cómo Claude Cowork amplifica tu trabajo.">
 
-.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(7,11,26,.72);border-bottom:1px solid var(--brand-border)}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
-.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--fh);font-weight:700;font-size:1rem;text-decoration:none}
-.brand svg{width:28px;height:28px;flex:0 0 auto}
-.brand .g{color:var(--brand-gold)}
-.tnav{display:flex;gap:1rem;align-items:center}
-.tnav a{font-family:var(--fh);font-weight:600;font-size:.82rem;color:var(--brand-text-soft);text-decoration:none;transition:color .2s}
-.tnav a:hover{color:var(--brand-gold)}
-.langbtn{font-family:var(--fmeta);font-weight:700;font-size:.74rem;letter-spacing:.1em;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.42rem .8rem;transition:background .2s,transform .2s var(--ease-spring)}
-.langbtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+  <script>
+    (function () {
+      var theme = localStorage.getItem('mdg_theme');
+      document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
+      var lang = localStorage.getItem('mdg_locale') || localStorage.getItem('lang') || 'es';
+      if (lang !== 'es' && lang !== 'en' && lang !== 'pt') lang = 'es';
+      document.documentElement.lang = lang;
+    })();
+  </script>
 
-.hero{padding:clamp(2.8rem,8vw,5rem) 0 clamp(1.4rem,4vw,2.4rem);text-align:center}
-.chip-hero{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .95rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,215,0,.07));border:1.5px solid var(--brand-gold);color:var(--brand-gold);font-family:var(--fmeta);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 16px rgba(255,215,0,.22);margin-bottom:1.4rem}
-.chip-hero::before{content:'\2605'}
-.hero h1{font-family:var(--fh);font-weight:900;line-height:1.04;letter-spacing:-.02em;font-size:clamp(2.2rem,6vw,4rem);margin-bottom:1rem}
-.hero .sub{font-family:var(--fh);font-weight:600;color:var(--brand-text-soft);font-size:clamp(1.02rem,2.4vw,1.4rem);margin-bottom:1rem}
-.hero .lead{color:var(--brand-text-soft);max-width:660px;margin:0 auto 1.4rem;font-size:clamp(1rem,2vw,1.12rem)}
-.pricepill{display:inline-flex;align-items:baseline;gap:.5rem;font-family:var(--fh);font-weight:900;color:var(--brand-gold);font-size:1.6rem;margin-bottom:1.4rem}
-.pricepill small{font-family:var(--fmeta);font-weight:700;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-muted)}
-.cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fh);font-weight:700;font-size:.92rem;padding:.85rem 1.5rem;border-radius:12px;text-decoration:none;cursor:pointer;transition:transform .35s var(--ease-spring),box-shadow .35s var(--ease-out-expo),background .25s}
-.btn-gold{background:linear-gradient(135deg,var(--brand-gold),var(--brand-gold-deep));color:#1a1206;box-shadow:0 8px 22px rgba(255,215,0,.28)}
-.btn-gold:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 34px rgba(255,215,0,.42)}
-.btn-ghost{background:transparent;color:var(--brand-text-soft);border:1.5px solid var(--brand-border-hover)}
-.btn-ghost:hover{transform:translateY(-3px);border-color:var(--brand-gold);color:var(--brand-gold)}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
 
-.trust{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:1.4rem;font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;font-weight:700;color:var(--brand-muted)}
-.trust span::before{content:'\2713';color:var(--brand-gold);margin-right:.4rem;font-weight:800}
-
-section.block{padding:clamp(2.2rem,5vw,3.6rem) 0}
-.eyebrow{font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:700;color:var(--brand-gold);margin-bottom:.7rem;display:block;text-align:center}
-.block h2{font-family:var(--fh);font-weight:800;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.12;margin-bottom:.7rem;letter-spacing:-.01em;text-align:center}
-.block .intro{color:var(--brand-text-soft);font-size:clamp(1rem,2vw,1.12rem);max-width:700px;margin:0 auto 2rem;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
-.card{background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem 1.35rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
-.card:hover{border-color:var(--brand-border-hover);transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.4),0 0 24px rgba(255,215,0,.08)}
-.card .ic{font-size:1.4rem;margin-bottom:.6rem}
-.card h3{font-family:var(--fh);font-weight:800;font-size:1.06rem;margin-bottom:.35rem}
-.card p{font-size:.88rem;color:var(--brand-muted);line-height:1.5}
-.agenda{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.7rem}
-.step{display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:12px;padding:.9rem 1.1rem}
-.step .t{font-family:var(--fm);font-size:.74rem;font-weight:600;color:var(--brand-gold);flex:0 0 auto;min-width:3.6rem;padding-top:.15rem}
-.step .d{font-size:.92rem;color:var(--brand-text-soft)}
-.step .d b{color:#fff}
-.faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
-.faq details{background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:12px;padding:.4rem .3rem}
-.faq summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-family:var(--fh);font-weight:700;font-size:.95rem;display:flex;justify-content:space-between;gap:1rem}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';color:var(--brand-gold);font-weight:800;font-size:1.2rem;line-height:1}
-.faq details[open] summary::after{content:'\2013'}
-.faq .a{padding:0 .9rem .8rem;font-size:.9rem;color:var(--brand-muted);line-height:1.55}
-.signup{max-width:760px;margin:0 auto;background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(30,58,138,.16));border:1px solid var(--brand-border-hover);border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem);text-align:center}
-.signup p{color:var(--brand-text-soft);max-width:540px;margin:0 auto 1.4rem}
-.signup .alt{margin-top:1.1rem;font-size:.84rem;color:var(--brand-muted)}
-.signup .alt a{color:var(--brand-gold);text-decoration:none;font-weight:600}
-
-footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0 2.4rem;margin-top:1.6rem;background:linear-gradient(180deg,transparent,rgba(7,11,26,.6))}
-.fbrand{display:flex;align-items:center;gap:.7rem;font-family:var(--fh);font-weight:700;font-size:1.05rem;margin-bottom:.7rem}
-.fbrand svg{width:32px;height:32px}
-.fbrand .g{color:var(--brand-gold)}
-.triad{font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:700;color:var(--brand-gold-deep);margin-bottom:1rem}
-.fmeta{display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--brand-muted)}
-.fmeta a{color:var(--brand-gold);text-decoration:none;font-weight:600}
-:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:6px}
-
-.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
-.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
-body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
-body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
-body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
-body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
-body.theme-light .stats{background:rgba(10,18,42,.12)!important}
-body.theme-light .stats .cell{background:#ffffff!important}
-body.theme-light .slide{color:var(--brand-text)}
-body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
-body.theme-light .btn-ghost{color:#26324a}
-
-body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
-body.theme-light .chip-hero{border-color:#b8860b}
-body.theme-light .pcta .out{color:#26324a!important}
-</style>
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    /* Trilingual span visibility (standalone i18n, tied to html[lang]) */
+    .l-en,.l-pt{display:none}
+    html[lang="en"] .l-es{display:none}html[lang="en"] .l-en{display:inline}html[lang="en"] .l-pt{display:none}
+    html[lang="pt"] .l-es{display:none}html[lang="pt"] .l-en{display:none}html[lang="pt"] .l-pt{display:inline}
+    /* Local helpers on top of neoswiss-v5 */
+    .ta-prices{width:100%;border-collapse:collapse;font-size:.92rem}
+    .ta-prices th,.ta-prices td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--brand-border)}
+    .ta-prices thead th{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif);font-weight:700}
+    .ta-prices td .usd{color:var(--brand-muted);font-size:.82em}
+    .ta-grid{display:grid;gap:1rem}
+    @media(min-width:680px){.ta-grid--2{grid-template-columns:1fr 1fr}.ta-grid--4{grid-template-columns:repeat(4,1fr)}}
+    .ta-note{display:inline-block;margin-top:.6rem;padding:.4rem .8rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:600}
+    .ta-mod{display:flex;gap:.7rem;align-items:flex-start;padding:.85rem 1rem}
+    .ta-mod b{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif)}
+    .tl-item__link{display:inline-block;margin-left:.4rem;color:var(--brand-gold-text);font-weight:700;text-decoration:none;white-space:nowrap}
+    .tl-item__link:hover{text-decoration:underline}
+  </style>
 </head>
-<body class="lang-es">
+<body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<g id="iso"><rect width="36" height="36" rx="9" fill="#122562"/>
-<rect x="10" y="12" width="4" height="12" rx="0.5" fill="#fff"/><rect x="16" y="12" width="4" height="8" rx="0.5" fill="#fff"/>
-<rect x="16" y="22" width="4" height="2" rx="0.5" fill="#fff"/><rect x="22" y="12" width="4" height="6" rx="0.5" fill="#fff"/>
-<rect x="22" y="20" width="4" height="4" rx="0.5" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></g>
-</defs></svg>
-
-<header class="topbar"><div class="wrap">
-  <a class="brand" href="index.html" aria-label="Inicio · MetodologIA">
-    <svg viewBox="0 0 36 36" role="img" aria-hidden="true"><use href="#iso"/></svg>
-    <span>&#8592; Metodolog<span class="g">IA</span></span>
+<!-- ===== HEADER (site real, estático) ===== -->
+<header class="site-header">
+  <a href="index.html" class="site-header__brand" aria-label="MetodologIA — Inicio">
+    <span class="site-header__logo-wrap" aria-hidden="true">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
+        <defs><linearGradient id="hdrGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
+        <rect width="36" height="36" rx="10" fill="url(#hdrGrad)"/>
+        <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+        <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+      </svg>
+    </span>
+    <span class="site-header__text">
+      <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
+      <span class="site-header__role">Taller de Intro</span>
+    </span>
   </a>
-  <nav class="tnav">
-    <a href="taller-intro-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
-    <a href="index.html#precios"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></a>
-    <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
+  <nav class="site-header__nav" aria-label="Navegación principal">
+    <a class="site-header__nav-link" href="#que-veras"><span class="l-es">Qué verás</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></a>
+    <a class="site-header__nav-link" href="#agenda"><span class="l-es">Agenda</span><span class="l-en">Agenda</span><span class="l-pt">Agenda</span></a>
+    <a class="site-header__nav-link" href="#faq">FAQ</a>
+    <a class="site-header__nav-link" href="taller-intro-deck.html"><span class="l-es">Diapositivas</span><span class="l-en">Slides</span><span class="l-pt">Slides</span></a>
+    <a class="site-header__nav-link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
   </nav>
-</div></header>
+  <a class="site-header__cta" href="#inscripcion"><span class="l-es">Inscríbete</span><span class="l-en">Enroll</span><span class="l-pt">Inscreva-se</span> →</a>
+</header>
 
-<main>
-<section class="hero"><div class="wrap">
-  <span class="chip-hero"><span class="l-es">Taller de Intro · Gratis</span><span class="l-en">Intro Workshop · Free</span><span class="l-pt">Workshop de Intro · Grátis</span></span>
-  <h1><span class="l-es">Conoce el método, <span class="gtext">sin riesgo</span></span><span class="l-en">Meet the method, <span class="gtext">no risk</span></span><span class="l-pt">Conheça o método, <span class="gtext">sem risco</span></span></h1>
-  <p class="sub"><span class="l-es">Una sesión en vivo · sin costo · sin cuenta de pago</span><span class="l-en">One live session · no cost · no paid account</span><span class="l-pt">Uma sessão ao vivo · sem custo · sem conta paga</span></p>
-  <p class="lead"><span class="l-es">Ves, en vivo, cómo Claude Cowork amplifica el trabajo de un manager. Sin diapositivas vacías: un caso real, de principio a fin. Si te convence, sigues. Si no, no perdiste nada.</span><span class="l-en">See, live, how Claude Cowork amplifies a manager's work. No empty slides: one real case, end to end. If it convinces you, continue. If not, you lost nothing.</span><span class="l-pt">Veja, ao vivo, como o Claude Cowork amplifica o trabalho de um manager. Sem slides vazios: um caso real, de ponta a ponta. Se convencer, siga. Se não, você não perdeu nada.</span></p>
-  <div class="pricepill">Gratis <small><span class="l-es">· sin compromiso</span><span class="l-en">· no commitment</span><span class="l-pt">· sem compromisso</span></small></div>
-  <div class="cta">
-    <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete gratis →</span><span class="l-en">Enroll free →</span><span class="l-pt">Inscreva-se grátis →</span></a>
-    <a class="btn btn-ghost" href="taller-intro-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
-  </div>
-  <div class="trust">
-    <span><span class="l-es">Sin costo</span><span class="l-en">No cost</span><span class="l-pt">Sem custo</span></span>
-    <span><span class="l-es">Sin cuenta de pago</span><span class="l-en">No paid account</span><span class="l-pt">Sem conta paga</span></span>
-    <span><span class="l-es">En vivo</span><span class="l-en">Live</span><span class="l-pt">Ao vivo</span></span>
-  </div>
-</div></section>
+<main id="main" class="main">
 
-<section class="block"><div class="wrap">
-  <span class="eyebrow"><span class="l-es">Qué verás</span><span class="l-en">What you'll see</span><span class="l-pt">O que você verá</span></span>
-  <h2><span class="l-es">90 minutos que cambian cómo trabajas</span><span class="l-en">90 minutes that change how you work</span><span class="l-pt">90 minutos que mudam como você trabalha</span></h2>
-  <div class="grid">
-    <div class="card"><div class="ic">🧭</div><h3><span class="l-es">El método, en una idea</span><span class="l-en">The method, in one idea</span><span class="l-pt">O método, numa ideia</span></h3><p><span class="l-es">Método + IA = Soberanía: por qué el contexto por escrito te da una IA que entiende tu trabajo.</span><span class="l-en">Method + AI = Sovereignty: why context in writing gives you an AI that understands your work.</span><span class="l-pt">Método + IA = Soberania: por que o contexto por escrito te dá uma IA que entende seu trabalho.</span></p></div>
-    <div class="card"><div class="ic">⚡</div><h3><span class="l-es">Un caso real, en vivo</span><span class="l-en">One real case, live</span><span class="l-pt">Um caso real, ao vivo</span></h3><p><span class="l-es">Tomamos una tarea de manager y la resolvemos con Cowork delante de ti, paso a paso.</span><span class="l-en">We take a manager task and solve it with Cowork in front of you, step by step.</span><span class="l-pt">Pegamos uma tarefa de manager e resolvemos com Cowork na sua frente, passo a passo.</span></p></div>
-    <div class="card"><div class="ic">🗺️</div><h3><span class="l-es">Cómo seguir</span><span class="l-en">How to continue</span><span class="l-pt">Como seguir</span></h3><p><span class="l-es">Te mostramos la ruta: los dos talleres y el bootcamp. Decides tú, sin presión.</span><span class="l-en">We show you the path: the two workshops and the bootcamp. You decide, no pressure.</span><span class="l-pt">Mostramos o caminho: os dois workshops e o bootcamp. Você decide, sem pressão.</span></p></div>
-  </div>
-</div></section>
-
-<section class="block"><div class="wrap">
-  <span class="eyebrow"><span class="l-es">Para quién</span><span class="l-en">Who it's for</span><span class="l-pt">Para quem</span></span>
-  <h2><span class="l-es">Para ti si tu día se llena de tareas repetitivas</span><span class="l-en">For you if your day fills with repetitive tasks</span><span class="l-pt">Para você se seu dia se enche de tarefas repetitivas</span></h2>
-  <p class="intro"><span class="l-es">Managers, líderes de equipo y profesionales del conocimiento que quieren recuperar tiempo para lo estratégico. No necesitas saber programar ni nada técnico.</span><span class="l-en">Managers, team leads and knowledge workers who want to reclaim time for the strategic. No coding or technical background needed.</span><span class="l-pt">Managers, líderes de equipe e profissionais do conhecimento que querem recuperar tempo para o estratégico. Não precisa saber programar nem nada técnico.</span></p>
-</div></section>
-
-<section class="block"><div class="wrap">
-  <span class="eyebrow"><span class="l-es">Cómo es la sesión</span><span class="l-en">How the session goes</span><span class="l-pt">Como é a sessão</span></span>
-  <h2><span class="l-es">Agenda</span><span class="l-en">Agenda</span><span class="l-pt">Agenda</span></h2>
-  <div class="agenda">
-    <div class="step"><div class="t">0–15</div><div class="d"><b><span class="l-es">El problema.</span><span class="l-en">The problem.</span><span class="l-pt">O problema.</span></b> <span class="l-es">Por qué trabajar más horas dejó de funcionar.</span><span class="l-en">Why working more hours stopped working.</span><span class="l-pt">Por que trabalhar mais horas deixou de funcionar.</span></div></div>
-    <div class="step"><div class="t">15–60</div><div class="d"><b><span class="l-es">Demo en vivo.</span><span class="l-en">Live demo.</span><span class="l-pt">Demo ao vivo.</span></b> <span class="l-es">Un caso real resuelto con Claude Cowork, de principio a fin.</span><span class="l-en">A real case solved with Claude Cowork, end to end.</span><span class="l-pt">Um caso real resolvido com Claude Cowork, de ponta a ponta.</span></div></div>
-    <div class="step"><div class="t">60–80</div><div class="d"><b>Q&amp;A.</b> <span class="l-es">Tus preguntas, tus casos.</span><span class="l-en">Your questions, your cases.</span><span class="l-pt">Suas perguntas, seus casos.</span></div></div>
-    <div class="step"><div class="t">80–90</div><div class="d"><b><span class="l-es">Siguientes pasos.</span><span class="l-en">Next steps.</span><span class="l-pt">Próximos passos.</span></b> <span class="l-es">La ruta completa, sin presión.</span><span class="l-en">The full path, no pressure.</span><span class="l-pt">O caminho completo, sem pressão.</span></div></div>
-  </div>
-</div></section>
-
-<section class="block"><div class="wrap">
-  <span class="eyebrow">FAQ</span>
-  <h2><span class="l-es">Preguntas frecuentes</span><span class="l-en">Frequently asked</span><span class="l-pt">Perguntas frequentes</span></h2>
-  <div class="faq">
-    <details><summary><span class="l-es">¿Necesito una cuenta de pago de Claude?</span><span class="l-en">Do I need a paid Claude account?</span><span class="l-pt">Preciso de conta paga do Claude?</span></summary><div class="a"><span class="l-es">No para el intro. Lo ves sin cuenta de pago. Solo los talleres y el bootcamp la requieren (desde $20/mes).</span><span class="l-en">Not for the intro. You watch it without a paid account. Only the workshops and bootcamp require it (from $20/month).</span><span class="l-pt">Não para o intro. Você assiste sem conta paga. Só os workshops e o bootcamp exigem (a partir de $20/mês).</span></div></details>
-    <details><summary><span class="l-es">¿Cuánto dura y cuánto cuesta?</span><span class="l-en">How long and how much?</span><span class="l-pt">Quanto dura e quanto custa?</span></summary><div class="a"><span class="l-es">Unos 90 minutos, en vivo. Gratis, sin compromiso.</span><span class="l-en">About 90 minutes, live. Free, no commitment.</span><span class="l-pt">Cerca de 90 minutos, ao vivo. Grátis, sem compromisso.</span></div></details>
-    <details><summary><span class="l-es">¿Necesito saber de tecnología?</span><span class="l-en">Do I need a tech background?</span><span class="l-pt">Preciso saber de tecnologia?</span></summary><div class="a"><span class="l-es">No. Está pensado para managers y profesionales, no para programadores.</span><span class="l-en">No. It's designed for managers and professionals, not programmers.</span><span class="l-pt">Não. É pensado para managers e profissionais, não para programadores.</span></div></details>
-    <details><summary><span class="l-es">¿Qué pasa después?</span><span class="l-en">What happens next?</span><span class="l-pt">O que acontece depois?</span></summary><div class="a"><span class="l-es">Si quieres, sigues con los dos talleres ($200.000 COP ($20 USD) c/u) y luego el bootcamp ($800.000 COP ($200 USD)). Tú decides el ritmo.</span><span class="l-en">If you want, you continue with the two workshops ($200.000 COP ($20 USD) each) and then the bootcamp ($800.000 COP ($200 USD)). You set the pace.</span><span class="l-pt">Se quiser, segue com os dois workshops ($200.000 COP ($20 USD) cada) e depois o bootcamp ($800.000 COP ($200 USD)). Você define o ritmo.</span></div></details>
-  </div>
-</div></section>
-
-<section class="block" id="inscripcion"><div class="wrap">
-  <div class="signup">
-    <span class="eyebrow"><span class="l-es">Inscripciones</span><span class="l-en">Enrollment</span><span class="l-pt">Inscrições</span></span>
-    <h2><span class="l-es">Reserva tu lugar · gratis</span><span class="l-en">Reserve your seat · free</span><span class="l-pt">Reserve seu lugar · grátis</span></h2>
-    <p><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão.</span></p>
-    <div class="cta">
-      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete (gratis) →</span><span class="l-en">Enroll (free) →</span><span class="l-pt">Inscreva-se (grátis) →</span></a>
+  <!-- HERO -->
+  <section class="section" id="hero">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow"><span class="l-es">Taller de Intro · Sin costo</span><span class="l-en">Intro Workshop · No cost</span><span class="l-pt">Workshop de Intro · Sem custo</span></span>
+      <h1 class="h1" style="margin:1rem auto;max-width:46rem;"><span class="l-es">Ve a Claude Cowork <span class="gradient-text">amplificar</span> tu trabajo</span><span class="l-en">Watch Claude Cowork <span class="gradient-text">amplify</span> your work</span><span class="l-pt">Veja o Claude Cowork <span class="gradient-text">amplificar</span> seu trabalho</span></h1>
+      <p class="lead" style="max-width:40rem;margin:0 auto 1rem;"><span class="l-es">Una sesión en vivo para ver cómo Claude Cowork amplifica tu trabajo. Sin costo. Sin riesgo, sin fricción.</span><span class="l-en">A live session to see how Claude Cowork amplifies your work. No cost. No risk, no friction.</span><span class="l-pt">Uma sessão ao vivo para ver como o Claude Cowork amplifica seu trabalho. Sem custo. Sem risco, sem fricção.</span></p>
+      <p class="eyebrow" style="margin-bottom:1.6rem;">Método + IA = Soberanía</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete sin costo →</span><span class="l-en">Enroll at no cost →</span><span class="l-pt">Inscreva-se sem custo →</span></a>
+        <a href="taller-intro-deck.html" class="home-cta home-cta--secondary"><span class="l-es">Ver diapositivas</span><span class="l-en">See slides</span><span class="l-pt">Ver slides</span></a>
+      </div>
+      <div class="stats" style="margin-top:2rem;" aria-label="Resumen del taller">
+        <div class="stats__cell"><span class="stats__num"><span class="l-es">Sin costo</span><span class="l-en">No cost</span><span class="l-pt">Sem custo</span></span><span class="stats__label"><span class="l-es">Taller intro</span><span class="l-en">Intro workshop</span><span class="l-pt">Workshop intro</span></span></div>
+        <div class="stats__cell"><span class="stats__num">90 min</span><span class="stats__label"><span class="l-es">En vivo</span><span class="l-en">Live</span><span class="l-pt">Ao vivo</span></span></div>
+        <div class="stats__cell"><span class="stats__num">ES/EN/PT</span><span class="stats__label"><span class="l-es">Idiomas</span><span class="l-en">Languages</span><span class="l-pt">Idiomas</span></span></div>
+        <div class="stats__cell"><span class="stats__num">→</span><span class="stats__label"><span class="l-es">Siguiente paso</span><span class="l-en">Next step</span><span class="l-pt">Próximo passo</span></span></div>
+      </div>
     </div>
-    <p class="alt"><span class="l-es">¿Prefieres escribirnos? </span><span class="l-en">Prefer to write us? </span><span class="l-pt">Prefere nos escrever? </span><a href="mailto:contacto@metodologia.info?subject=Taller%20de%20Intro%20Trabajar%20Amplificado">contacto@metodologia.info</a></p>
-  </div>
-</div></section>
+  </section>
+
+  <!-- QUE VERAS -->
+  <section class="section" id="que-veras">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Qué verás · 01</span><span class="l-en">What you'll see · 01</span><span class="l-pt">O que verá · 01</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Tres cosas, <span class="gradient-text">en una sesión</span></span><span class="l-en">Three things, <span class="gradient-text">in one session</span></span><span class="l-pt">Três coisas, <span class="gradient-text">em uma sessão</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Lo esencial para entender el método y verlo funcionar en vivo, antes de decidir si quieres más.</span><span class="l-en">The essentials to understand the method and see it work live, before deciding if you want more.</span><span class="l-pt">O essencial para entender o método e vê-lo funcionar ao vivo, antes de decidir se quer mais.</span></p>
+      <div class="axes">
+        <div class="axis x-card"><span class="axis__label"><span class="l-es">El método</span><span class="l-en">The method</span><span class="l-pt">O método</span></span><h3 class="axis__title"><span class="l-es">El método en una idea</span><span class="l-en">The method in one idea</span><span class="l-pt">O método em uma ideia</span></h3><p class="axis__body"><span class="l-es">Qué significa trabajar amplificado y por qué el método va primero, la IA después.</span><span class="l-en">What it means to work amplified and why the method comes first, AI second.</span><span class="l-pt">O que significa trabalhar amplificado e por que o método vem primeiro, a IA depois.</span></p></div>
+        <div class="axis x-card"><span class="axis__label"><span class="l-es">En vivo</span><span class="l-en">Live</span><span class="l-pt">Ao vivo</span></span><h3 class="axis__title"><span class="l-es">Un caso real en vivo</span><span class="l-en">A real case live</span><span class="l-pt">Um caso real ao vivo</span></h3><p class="axis__body"><span class="l-es">Una tarea real de manager resuelta con Claude Cowork, paso a paso, sin trucos.</span><span class="l-en">A real manager task solved with Claude Cowork, step by step, no tricks.</span><span class="l-pt">Uma tarefa real de manager resolvida com Claude Cowork, passo a passo, sem truques.</span></p></div>
+        <div class="axis x-card"><span class="axis__label"><span class="l-es">El camino</span><span class="l-en">The path</span><span class="l-pt">O caminho</span></span><h3 class="axis__title"><span class="l-es">Cómo seguir</span><span class="l-en">How to continue</span><span class="l-pt">Como seguir</span></h3><p class="axis__body"><span class="l-es">Las opciones para profundizar: talleres prácticos y el bootcamp completo, a tu ritmo.</span><span class="l-en">The options to go deeper: hands-on workshops and the full bootcamp, at your pace.</span><span class="l-pt">As opções para aprofundar: workshops práticos e o bootcamp completo, no seu ritmo.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="section" id="para-quien">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Para quién · 02</span><span class="l-en">Who it's for · 02</span><span class="l-pt">Para quem · 02</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Pensado para <span class="gradient-text">profesionales</span>, no para programadores</span><span class="l-en">Made for <span class="gradient-text">professionals</span>, not programmers</span><span class="l-pt">Feito para <span class="gradient-text">profissionais</span>, não para programadores</span></h2>
+      <p class="lead" style="margin-bottom:0;"><span class="l-es">Managers, líderes de equipo y profesionales del conocimiento que quieren amplificar su trabajo con IA. No necesitas saber programar: todo es en lenguaje natural, en vivo y a tu ritmo.</span><span class="l-en">Managers, team leaders and knowledge professionals who want to amplify their work with AI. You don't need to know how to code: everything is in natural language, live and at your pace.</span><span class="l-pt">Managers, líderes de equipe e profissionais do conhecimento que querem amplificar seu trabalho com IA. Você não precisa saber programar: tudo é em linguagem natural, ao vivo e no seu ritmo.</span></p>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="section" id="agenda">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Cómo es la sesión · 03</span><span class="l-en">How the session works · 03</span><span class="l-pt">Como é a sessão · 03</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">90 minutos, <span class="gradient-text">cuatro momentos</span></span><span class="l-en">90 minutes, <span class="gradient-text">four moments</span></span><span class="l-pt">90 minutos, <span class="gradient-text">quatro momentos</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Una agenda simple, en vivo, con espacio para tus preguntas.</span><span class="l-en">A simple agenda, live, with room for your questions.</span><span class="l-pt">Uma agenda simples, ao vivo, com espaço para suas perguntas.</span></p>
+      <div class="timeline">
+        <article class="tl-item x-card">
+          <span class="tl-item__meta">0–15 min</span>
+          <h3 class="tl-item__role"><span class="l-es">El problema</span><span class="l-en">The problem</span><span class="l-pt">O problema</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Por qué tu trabajo de conocimiento se atasca y qué cambia cuando lo amplificas con método e IA.</span><span class="l-en">Why your knowledge work gets stuck and what changes when you amplify it with method and AI.</span><span class="l-pt">Por que seu trabalho de conhecimento trava e o que muda quando você o amplifica com método e IA.</span></p>
+        </article>
+        <article class="tl-item x-card">
+          <span class="tl-item__meta">15–60 min</span>
+          <h3 class="tl-item__role"><span class="l-es">Demo en vivo</span><span class="l-en">Live demo</span><span class="l-pt">Demo ao vivo</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Una tarea real resuelta con Claude Cowork, de principio a fin, mostrando el método en acción.</span><span class="l-en">A real task solved with Claude Cowork, end to end, showing the method in action.</span><span class="l-pt">Uma tarefa real resolvida com Claude Cowork, do início ao fim, mostrando o método em ação.</span></p>
+        </article>
+        <article class="tl-item x-card">
+          <span class="tl-item__meta">60–80 min</span>
+          <h3 class="tl-item__role">Q&amp;A</h3>
+          <p class="tl-item__impact"><span class="l-es">Tus preguntas, tus casos. Espacio abierto para resolver dudas sobre el método y la herramienta.</span><span class="l-en">Your questions, your cases. Open space to resolve doubts about the method and the tool.</span><span class="l-pt">Suas perguntas, seus casos. Espaço aberto para resolver dúvidas sobre o método e a ferramenta.</span></p>
+        </article>
+        <article class="tl-item x-card" style="border-left-color:var(--brand-gold);">
+          <span class="tl-item__meta">80–90 min</span>
+          <h3 class="tl-item__role"><span class="l-es">Siguientes pasos</span><span class="l-en">Next steps</span><span class="l-pt">Próximos passos</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Cómo continuar si quieres más: talleres prácticos y el bootcamp completo, sin presión.</span><span class="l-en">How to continue if you want more: hands-on workshops and the full bootcamp, no pressure.</span><span class="l-pt">Como continuar se quiser mais: workshops práticos e o bootcamp completo, sem pressão.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">FAQ · 04</span><span class="l-en">FAQ · 04</span><span class="l-pt">FAQ · 04</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Preguntas <span class="gradient-text">frecuentes</span></span><span class="l-en">Frequently <span class="gradient-text">asked</span></span><span class="l-pt">Perguntas <span class="gradient-text">frequentes</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Lo que la gente suele preguntar antes de inscribirse.</span><span class="l-en">What people usually ask before enrolling.</span><span class="l-pt">O que as pessoas costumam perguntar antes de se inscrever.</span></p>
+      <div class="ta-grid ta-grid--2">
+        <div class="x-card">
+          <h3 class="axis__title"><span class="l-es">¿Necesito una cuenta de pago?</span><span class="l-en">Do I need a paid account?</span><span class="l-pt">Preciso de conta paga?</span></h3>
+          <p class="axis__body"><span class="l-es">No para el taller de intro. Los talleres y el bootcamp sí requieren una cuenta de Claude de pago, desde $20/mes.</span><span class="l-en">Not for the intro workshop. The workshops and bootcamp do require a paid Claude account, from $20/month.</span><span class="l-pt">Não para o workshop de intro. Os workshops e o bootcamp exigem conta Claude paga, a partir de $20/mês.</span></p>
+        </div>
+        <div class="x-card">
+          <h3 class="axis__title"><span class="l-es">¿Cuánto dura y cuánto cuesta?</span><span class="l-en">How long and how much?</span><span class="l-pt">Quanto dura e quanto custa?</span></h3>
+          <p class="axis__body"><span class="l-es">Unos 90 minutos en vivo, sin costo.</span><span class="l-en">About 90 minutes live, at no cost.</span><span class="l-pt">Cerca de 90 minutos ao vivo, sem custo.</span></p>
+        </div>
+        <div class="x-card">
+          <h3 class="axis__title"><span class="l-es">¿Necesito saber de tecnología?</span><span class="l-en">Do I need to be technical?</span><span class="l-pt">Preciso saber de tecnologia?</span></h3>
+          <p class="axis__body"><span class="l-es">No. Es para profesionales del conocimiento. Todo es en lenguaje natural; no hace falta programar.</span><span class="l-en">No. It's for knowledge professionals. Everything is in natural language; no coding required.</span><span class="l-pt">Não. É para profissionais do conhecimento. Tudo é em linguagem natural; não precisa programar.</span></p>
+        </div>
+        <div class="x-card">
+          <h3 class="axis__title"><span class="l-es">¿Qué sigue después?</span><span class="l-en">What comes next?</span><span class="l-pt">O que vem depois?</span></h3>
+          <p class="axis__body"><span class="l-es">Si quieres más: dos talleres prácticos a $200.000 COP cada uno y el bootcamp completo a $800.000 COP.</span><span class="l-en">If you want more: two hands-on workshops at $200.000 COP each and the full bootcamp at $800.000 COP.</span><span class="l-pt">Se quiser mais: dois workshops práticos a $200.000 COP cada e o bootcamp completo a $800.000 COP.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSCRIPCION -->
+  <section class="section" id="inscripcion">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow"><span class="l-es">Inscripción · 05</span><span class="l-en">Enrollment · 05</span><span class="l-pt">Inscrição · 05</span></span>
+      <h2 class="h2" style="margin:1rem auto .5rem;max-width:40rem;"><span class="l-es">Reserva tu lugar · <span class="gradient-text">sin costo</span></span><span class="l-en">Reserve your seat · <span class="gradient-text">no cost</span></span><span class="l-pt">Reserve seu lugar · <span class="gradient-text">sem custo</span></span></h2>
+      <p class="lead" style="max-width:36rem;margin:0 auto 1.5rem;"><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão.</span></p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete (sin costo) →</span><span class="l-en">Enroll (no cost) →</span><span class="l-pt">Inscreva-se (sem custo) →</span></a>
+        <a href="mailto:contacto@metodologia.info?subject=Taller%20de%20Intro" class="home-cta home-cta--secondary">contacto@metodologia.info</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer><div class="wrap">
-  <div class="fbrand"><svg viewBox="0 0 36 36" role="img" aria-label="MetodologIA"><use href="#iso"/></svg>
-    <span>Metodolog<span class="g">IA</span> · Trabajar Amplificado</span></div>
-  <p class="triad">Emprendedor · Habilitador · Artesano</p>
-  <div class="fmeta">
-    <a href="index.html"><span class="l-es">← Volver al inicio</span><span class="l-en">← Back to home</span><span class="l-pt">← Voltar ao início</span></a>
-    <a href="https://metodologia.info" target="_blank" rel="noopener">metodologia.info</a>
-    <a href="mailto:contacto@metodologia.info">contacto@metodologia.info</a>
-    <span><span class="l-es">Método primero, (Gen)IA después.</span><span class="l-en">Method first, (Gen)AI next.</span><span class="l-pt">Método primeiro, (Gen)IA depois.</span></span>
+<!-- ===== TRIPLE TOGGLE (tema + idioma) ===== -->
+<triple-toggle aria-label="Preferencias de tema e idioma">
+  <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
+  <button class="toggle-btn" id="langbtn" type="button" aria-label="Cambiar idioma ES EN PT" title="ES / EN / PT">ES</button>
+</triple-toggle>
+
+<!-- ===== FOOTER (site real, estático) ===== -->
+<footer class="site-footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div>
+        <p class="site-footer__brand-tagline"><span class="l-es">"La excelencia no se compra, se diseña. Se cocrea y se comparte."</span><span class="l-en">"Excellence is not bought, it is designed. Co-created and shared."</span><span class="l-pt">"A excelência não se compra, se desenha. Se cocria e se compartilha."</span></p>
+      </div>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></div>
+        <a class="site-footer__link" href="taller-intro.html"><span class="l-es">Taller de intro</span><span class="l-en">Intro workshop</span><span class="l-pt">Workshop de intro</span></a>
+        <a class="site-footer__link" href="taller-prompting.html">Prompting</a>
+        <a class="site-footer__link" href="taller-automatizacion.html"><span class="l-es">Automatización</span><span class="l-en">Automation</span><span class="l-pt">Automação</span></a>
+        <a class="site-footer__link" href="bootcamp.html">Bootcamp</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Material</span><span class="l-en">Material</span><span class="l-pt">Material</span></div>
+        <a class="site-footer__link" href="masterclass.html">Masterclass</a>
+        <a class="site-footer__link" href="workbook.html">Workbook</a>
+        <a class="site-footer__link" href="playbook.html">Playbook</a>
+        <a class="site-footer__link" href="runbook.html">Runbook</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Conectar</span><span class="l-en">Connect</span><span class="l-pt">Conectar</span></div>
+        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+        <a class="site-footer__link" href="mailto:contacto@metodologia.info">contacto@metodologia.info</a>
+        <a class="site-footer__link" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscripción</span><span class="l-en">Enroll</span><span class="l-pt">Inscrição</span></a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 MetodologIA. Copyleft. · Success as a Service</span>
+      <span>Método primero, (Gen)IA después.</span>
+    </div>
   </div>
-</div></footer>
+</footer>
 
 <script>
 (function(){
-  var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
-  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];
-    document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
-  btn.onclick=function(){setLang(li+1);};
+  var html=document.documentElement;
+  var tb=document.getElementById('themebtn');
+  function ti(){ if(tb) tb.textContent = html.dataset.theme==='dark' ? '☀' : '☾'; }
+  ti();
+  if(tb) tb.addEventListener('click', function(){
+    html.dataset.theme = (html.dataset.theme==='dark') ? 'light' : 'dark';
+    try{ localStorage.setItem('mdg_theme', html.dataset.theme); }catch(e){}
+    ti();
+  });
+  var langs=['es','en','pt'], lb=document.getElementById('langbtn');
+  function setLang(l){ if(langs.indexOf(l)<0) l='es'; html.lang=l; try{ localStorage.setItem('mdg_locale', l); }catch(e){} if(lb) lb.textContent=l.toUpperCase(); }
+  setLang(html.lang||'es');
+  if(lb) lb.addEventListener('click', function(){ var i=langs.indexOf(html.lang); setLang(langs[(i+1)%langs.length]); });
 })();
 </script>
-<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
 </body>
 </html>

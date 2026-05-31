@@ -1,0 +1,302 @@
+/**
+ * home.css — Minimal page-specific overrides for index.html
+ *
+ * All base patterns come from neoswiss-system.css (canonical design system).
+ * This file only adds:
+ *   1. CTA button hierarchy (primary/secondary/tertiary)
+ *   2. Hero CTA layout
+ *   3. Reduced motion
+ *
+ * @license Copyleft
+ * @copyright MetodologIA
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   CTA BUTTON HIERARCHY
+   .home-cta--primary   → Gold bg, dark text
+   .home-cta--secondary → Outline, gold border
+   .home-cta--tertiary  → Text link
+   ═══════════════════════════════════════════════════════════════ */
+
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  min-height: 44px;
+  /* MDG-027 fix: animar SOLO composite-only (transform, opacity, box-shadow).
+     Antes incluía `background` y `color` que disparan paint en cada hover. */
+  transition: transform .4s var(--ease-spring),
+              box-shadow .4s var(--ease-out-expo);
+  touch-action: manipulation;
+}
+
+.home-cta--primary {
+  padding: .9rem 1.8rem;
+  font-size: clamp(.95rem, 1.2vw, 1.15rem);
+  color: #0a122a; /* navy on gold — AA in both themes (white-on-gold = 3.22 failed) */
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  letter-spacing: .04em;
+}
+
+.home-cta--primary:hover,
+.home-cta--primary:focus-visible {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(255, 215, 0, .4), 0 0 0 1px rgba(255, 215, 0, .2);
+  outline: none;
+}
+
+.home-cta--primary:active {
+  transform: translateY(-1px) scale(.96);
+  box-shadow: 0 4px 10px rgba(255, 215, 0, .2);
+  transition: transform .12s var(--ease-out-expo), box-shadow .12s var(--ease-out-expo);
+}
+
+.home-cta--secondary {
+  padding: .75rem 1.5rem;
+  font-size: clamp(.875rem, 1vw, 1.05rem);
+  color: var(--brand-gold-text);
+  background: transparent;
+  border-color: var(--brand-gold-text);
+}
+
+.home-cta--secondary:hover,
+.home-cta--secondary:focus-visible {
+  background: var(--brand-gold);
+  color: #0a122a;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, .25);
+  outline: none;
+}
+
+.home-cta--secondary:active {
+  transform: translateY(-1px) scale(.97);
+  transition: transform .12s var(--ease-out-expo);
+}
+
+.home-cta--tertiary {
+  padding: .5rem .75rem;
+  font-size: clamp(.875rem, 1vw, 1rem);
+  font-weight: 600;
+  color: var(--brand-gold-text);
+  background: none;
+  border: none;
+}
+
+.home-cta--tertiary:hover,
+.home-cta--tertiary:focus-visible {
+  color: var(--brand-text);
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO CTA GROUP — vertical on mobile, horizontal on sm+
+   ═══════════════════════════════════════════════════════════════ */
+
+.home-hero__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .home-hero__ctas {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   ═══════════════════════════════════════════════════════════════ */
+
+html[data-theme="light"] .home-cta--primary {
+  background: #b88700;
+  border-color: #b88700;
+  color: #0a122a;
+}
+
+html[data-theme="light"] .home-cta--secondary {
+  color: #8a6d00;
+  border-color: #b88700;
+}
+
+html[data-theme="light"] .home-cta--secondary:hover {
+  background: #b88700;
+  color: #0a122a;
+}
+
+html[data-theme="light"] .home-cta--tertiary {
+  color: #8a6d00;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-cta {
+    transition: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HOME PAGE UTILITY CLASSES
+   Replaces all inline styles on index.html to satisfy linting
+   and centralise styling in this external file.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Hero section ── */
+.home-hero__container  { text-align: center; }
+.home-hero__h1         { margin: 1rem auto; max-width: 48rem; }
+.home-hero__lead       { max-width: 36rem; margin: 0 auto 2rem; }
+.home-hero__stats      { margin-top: 2.5rem; }
+
+/* ── servicios: catalog groups + policies (layout helpers) ── */
+.catalog-group        { margin-top: 1.75rem; }
+.catalog-group__head  { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:.5rem; margin-bottom:.75rem; }
+.catalog-group__head .h3 { margin:0; }
+.serv-policies        { display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; margin-top:1.5rem; }
+
+/* ── CLS guard: reserve settled mobile height for long multi-line hero text so
+   the residual webfont-swap reflow (weight-900 headings the size-adjust fallback
+   can't match exactly) + inline-ℹ injects don't shove content below.
+   min-height = settled height @≤412px; size-adjust keeps fallback ~same size so
+   no visible gap. Scoped per page + mobile only. ── */
+@media (max-width: 640px) {
+  html[data-page-slug="personas"] #autodiagnostico h1.h1 { min-height: 131px; }
+  html[data-page-slug="personas"] #autodiagnostico .lead { min-height: 109px; }
+  html[data-page-slug="metodo"]   #filosofia h1.h1       { min-height: 98px; }
+  html[data-page-slug="metodo"]   #filosofia .lead       { min-height: 136px; }
+  html[data-page-slug="nosotros"] #vision h1.h1          { min-height: 33px; }
+  html[data-page-slug="nosotros"] #vision .lead          { min-height: 140px; }
+  html[data-page-slug="servicios"] #consultoria h1.h1    { min-height: 98px; }
+  html[data-page-slug="servicios"] #consultoria .lead    { min-height: 140px; }
+  html[data-page-slug^="servicios-"] #modelo .lead       { min-height: 172px; }
+  html[data-page-slug="home"]     .home-hero__h1         { min-height: 65px; }
+  html[data-page-slug="home"]     .home-hero__lead       { min-height: 82px; }
+  html[data-page-slug="empresas"] #b2b h1.h1             { min-height: 98px; }
+  html[data-page-slug="empresas"] #b2b .lead             { min-height: 109px; }
+  html[data-page-slug="contacto"] #formulario h1.h1      { min-height: 65px; }
+  html[data-page-slug="contacto"] #formulario .lead      { min-height: 82px; }
+  html[data-page-slug="mision"]   #proposito h1.h1       { min-height: 65px; }
+  html[data-page-slug="mision"]   #proposito .lead       { min-height: 82px; }
+}
+
+/* ── Stats: 100✓ cell ──
+   MDG-025 fix: hover/focus en CSS (antes era JS event listener que no respetaba
+   prefers-reduced-motion ni teclado). Ahora :hover y :focus-visible comparten estilo;
+   reducción de movimiento gratis con la regla global @media reduced-motion. */
+.stats__cell--interactive {
+  cursor: pointer;
+  transition: transform .2s var(--ease);
+}
+.stats__cell--interactive:hover,
+.stats__cell--interactive:focus-visible {
+  transform: scale(1.05);
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 4px;
+}
+.stats__num--gold { color: var(--brand-gold-text); }
+
+/* ── Section headings ── */
+.section-h2       { margin: 1rem 0 .5rem; }
+.section-lead     { margin-bottom: 1.5rem; }
+
+/* ── CTA inline-flex helpers ── */
+.home-cta--inline  { margin-top: 1.5rem; display: inline-flex; }
+
+/* ── Diagnóstico section ── */
+.diag-refs         { gap: 1rem; }
+.diag-card--gold   { border-color: rgba(255, 215, 0, .3); }
+.diag-card__title--gold { color: var(--brand-gold-text); }
+
+/* ── Método: fase 4 gold accent ── */
+.tl-item--gold     { border-left-color: var(--brand-gold-text); }
+.tl-item__meta--gold { color: var(--brand-gold-text); }
+
+/* ── Propósito / Ikigai icon colours ── */
+.principle__num--pink  { color: #f472b6; }
+.principle__num--blue  { color: #60a5fa; }
+.principle__num--green { color: #34d399; }
+.principle__num--gold  { color: var(--brand-gold-text); }
+
+/* ── Propósito: quote wrapper & quote ── */
+.proposito__quote-wrap  { text-align: center; margin-top: 1.5rem; }
+.proposito__blockquote {
+  font-style: italic;
+  color: var(--brand-text-soft);
+  max-width: 36rem;
+  margin: 0 auto;
+  font-size: .95rem;
+  line-height: 1.7;
+  border-left: 3px solid var(--brand-gold);
+  padding-left: 1rem;
+  text-align: left;
+}
+.proposito__quote-strong { color: var(--brand-gold-text); }
+
+/* ── Formación: section labels ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.section-label--ws   { margin: 1.5rem 0 .75rem; }
+.section-label--bc   { margin: 2rem 0 .75rem; }
+.section-label--gold {
+  margin: 2rem 0 .75rem;
+  color: var(--brand-gold-text);
+}
+
+/* ── Formación: details / workshops ── */
+.ws-details         { margin-top: 1rem; }
+.ws-details__inner  { margin-top: 1rem; gap: .5rem; }
+.ws-summary         { cursor: pointer; list-style: none; }
+
+/* ── Formación: élite cards ── */
+.elite-card { border-color: rgba(255, 215, 0, .3); }
+.elite-card__title { color: var(--brand-gold-text); }
+
+/* ── Formación: campus block ── */
+.campus-block {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--brand-radius);
+  border: 1px solid rgba(255, 215, 0, .25);
+  background: rgba(255, 215, 0, .04);
+  text-align: center;
+}
+.campus-block__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--brand-gold-text);
+  margin-bottom: .5rem;
+}
+.campus-block__h3 { font-size: 1.3rem; margin: .25rem 0 .5rem; }
+.campus-block__span { color: var(--brand-gold-text); }
+.campus-block__desc {
+  color: var(--brand-text-soft);
+  font-size: .9rem;
+  max-width: 30rem;
+  margin: 0 auto .75rem;
+}
+
+/* ── Contacto section ── */
+.contacto__lead  { max-width: 36rem; margin: 0 auto 2rem; }
+.contacto__muted { font-size: .85rem; margin-top: 1rem; }
+
+/* ── Modal CTA ── */
+.dialog-cta { margin-top: 1.25rem; }
