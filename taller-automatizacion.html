@@ -50,6 +50,18 @@
     .ta-prices th,.ta-prices td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--brand-border)}
     .ta-prices thead th{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif);font-weight:700}
     .ta-prices td .usd{color:var(--brand-muted);font-size:.82em}
+    /* Per-course pricing cards (obvious cost per course) */
+    .ta-pcards{display:grid;gap:1rem;grid-template-columns:1fr}
+    @media(min-width:680px){.ta-pcards{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.ta-pcards--4{grid-template-columns:repeat(4,1fr)}}
+    .ta-pcard{display:flex;flex-direction:column;gap:.45rem;padding:1.4rem 1.3rem}
+    .ta-pcard__name{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.02rem;line-height:1.2}
+    .ta-pcard__price{font-family:'Poppins',sans-serif;font-weight:900;font-size:1.85rem;color:var(--brand-gold-text);line-height:1.05;margin-top:.1rem}
+    .ta-pcard__price .free{font-size:.78em}
+    .ta-pcard__usd{display:block;font-family:'Trebuchet MS',sans-serif;font-size:.72rem;font-weight:700;color:var(--brand-muted)}
+    .ta-pcard__per{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.6rem;font-weight:700;color:var(--brand-gold-text);border-top:1px solid var(--brand-border);padding-top:.55rem;margin-top:.2rem}
+    .ta-pcard__inc{font-size:.84rem;color:var(--brand-text-soft);line-height:1.5;margin-top:.15rem}
+    .ta-pcard--feat{outline:2px solid var(--brand-gold-text);outline-offset:-2px}
     .ta-grid{display:grid;gap:1rem}
     @media(min-width:680px){.ta-grid--2{grid-template-columns:1fr 1fr}.ta-grid--4{grid-template-columns:repeat(4,1fr)}}
     .ta-note{display:inline-block;margin-top:.6rem;padding:.4rem .8rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:600}
@@ -189,20 +201,16 @@
     <div class="container">
       <span class="eyebrow"><span class="l-es">Inversión · 05</span><span class="l-en">Investment · 05</span><span class="l-pt">Investimento · 05</span></span>
       <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Inversión <span class="gradient-text">clara</span></span><span class="l-en">Clear <span class="gradient-text">investment</span></span><span class="l-pt">Investimento <span class="gradient-text">claro</span></span></h2>
-      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Valores en pesos colombianos (COP), con referencia en dólares (USD).</span><span class="l-en">Prices in Colombian pesos (COP), with US dollar (USD) reference.</span><span class="l-pt">Valores em pesos colombianos (COP), com referência em dólares (USD).</span></p>
-      <div class="x-card" style="overflow-x:auto;padding:1rem 1.1rem;">
-        <table class="ta-prices">
-          <thead><tr>
-            <th><span class="l-es">Opción</span><span class="l-en">Option</span><span class="l-pt">Opção</span></th>
-            <th><span class="l-es">Qué incluye</span><span class="l-en">What's included</span><span class="l-pt">O que inclui</span></th>
-            <th>COP <span class="usd">/ USD</span></th>
-          </tr></thead>
-          <tbody>
-            <tr><td><span class="l-es">Este taller (2 h)</span><span class="l-en">This workshop (2 h)</span><span class="l-pt">Este workshop (2 h)</span></td><td><span class="l-es">Sistematización y Automatización con Claude, en vivo</span><span class="l-en">Systematization &amp; Automation with Claude, live</span><span class="l-pt">Sistematização e Automação com Claude, ao vivo</span></td><td><strong>$200.000</strong> <span class="usd">($20 USD)</span></td></tr>
-            <tr><td><span class="l-es">Combo 2 talleres</span><span class="l-en">Combo 2 workshops</span><span class="l-pt">Combo 2 workshops</span></td><td><span class="l-es">Este + Prompting de Alto Rendimiento · ahorras $50.000</span><span class="l-en">This + High-Performance Prompting · save $50.000</span><span class="l-pt">Este + Prompting de Alto Desempenho · economize $50.000</span></td><td><strong>$350.000</strong> <span class="usd">($30 USD)</span></td></tr>
-          </tbody>
-        </table>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es"><strong>Costo por curso</strong>, por persona. Valores en pesos colombianos (COP), con referencia en dólares (USD).</span><span class="l-en"><strong>Cost per course</strong>, per person. Prices in Colombian pesos (COP), with US dollar (USD) reference.</span><span class="l-pt"><strong>Custo por curso</strong>, por pessoa. Valores em pesos colombianos (COP), com referência em dólares (USD).</span></p>
+      <div class="ta-pcards">
+        <div class="x-card ta-pcard">
+          <span class="ta-pcard__name"><span class="l-es">Sistematización y Automatización con Claude</span><span class="l-en">Systematization &amp; Automation with Claude</span><span class="l-pt">Sistematização e Automação com Claude</span></span>
+          <div class="ta-pcard__price">$200.000<span class="ta-pcard__usd">COP · $20 USD</span></div>
+          <span class="ta-pcard__per"><span class="l-es">Por curso · 2 h en vivo</span><span class="l-en">Per course · 2 h live</span><span class="l-pt">Por curso · 2 h ao vivo</span></span>
+          <p class="ta-pcard__inc"><span class="l-es">Asistentes, agentes y un workflow tuyo.</span><span class="l-en">Assistants, agents and a workflow of yours.</span><span class="l-pt">Assistentes, agentes e um workflow seu.</span></p>
+        </div>
       </div>
+      <p style="margin-top:1rem;"><span class="ta-note"><span class="l-es">Combo con el otro taller = $350.000 COP ($30 USD), ahorras $50.000.</span><span class="l-en">Combo with the other workshop = $350.000 COP ($30 USD), save $50.000.</span><span class="l-pt">Combo com o outro workshop = $350.000 COP ($30 USD), economize $50.000.</span></span></p>
       <p><span class="ta-note"><span class="l-es">Requiere cuenta de Claude de pago (desde $20/mes).</span><span class="l-en">Requires a paid Claude account (from $20/month).</span><span class="l-pt">Requer conta Claude paga (a partir de $20/mês).</span></span></p>
     </div>
   </section>

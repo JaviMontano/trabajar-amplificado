@@ -50,6 +50,18 @@
     .ta-prices th,.ta-prices td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--brand-border)}
     .ta-prices thead th{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif);font-weight:700}
     .ta-prices td .usd{color:var(--brand-muted);font-size:.82em}
+    /* Per-course pricing cards (obvious cost per course) */
+    .ta-pcards{display:grid;gap:1rem;grid-template-columns:1fr}
+    @media(min-width:680px){.ta-pcards{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.ta-pcards--4{grid-template-columns:repeat(4,1fr)}}
+    .ta-pcard{display:flex;flex-direction:column;gap:.45rem;padding:1.4rem 1.3rem}
+    .ta-pcard__name{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.02rem;line-height:1.2}
+    .ta-pcard__price{font-family:'Poppins',sans-serif;font-weight:900;font-size:1.85rem;color:var(--brand-gold-text);line-height:1.05;margin-top:.1rem}
+    .ta-pcard__price .free{font-size:.78em}
+    .ta-pcard__usd{display:block;font-family:'Trebuchet MS',sans-serif;font-size:.72rem;font-weight:700;color:var(--brand-muted)}
+    .ta-pcard__per{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.6rem;font-weight:700;color:var(--brand-gold-text);border-top:1px solid var(--brand-border);padding-top:.55rem;margin-top:.2rem}
+    .ta-pcard__inc{font-size:.84rem;color:var(--brand-text-soft);line-height:1.5;margin-top:.15rem}
+    .ta-pcard--feat{outline:2px solid var(--brand-gold-text);outline-offset:-2px}
     .ta-grid{display:grid;gap:1rem}
     @media(min-width:680px){.ta-grid--2{grid-template-columns:1fr 1fr}.ta-grid--4{grid-template-columns:repeat(4,1fr)}}
     .ta-note{display:inline-block;margin-top:.6rem;padding:.4rem .8rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:600}
@@ -187,6 +199,24 @@
           <p class="axis__body"><span class="l-es">Si quieres más: dos talleres prácticos a $200.000 COP cada uno y el bootcamp completo a $800.000 COP.</span><span class="l-en">If you want more: two hands-on workshops at $200.000 COP each and the full bootcamp at $800.000 COP.</span><span class="l-pt">Se quiser mais: dois workshops práticos a $200.000 COP cada e o bootcamp completo a $800.000 COP.</span></p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- INVERSION -->
+  <section class="section" id="inversion">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Inversión <span class="gradient-text">clara</span></span><span class="l-en">Clear <span class="gradient-text">investment</span></span><span class="l-pt">Investimento <span class="gradient-text">claro</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es"><strong>Costo por curso</strong>, por persona. Valores en pesos colombianos (COP), con referencia en dólares (USD).</span><span class="l-en"><strong>Cost per course</strong>, per person. Prices in Colombian pesos (COP), with US dollar (USD) reference.</span><span class="l-pt"><strong>Custo por curso</strong>, por pessoa. Valores em pesos colombianos (COP), com referência em dólares (USD).</span></p>
+      <div class="ta-pcards">
+        <div class="x-card ta-pcard">
+          <span class="ta-pcard__name"><span class="l-es">Taller de Intro</span><span class="l-en">Intro Workshop</span><span class="l-pt">Workshop de Intro</span></span>
+          <div class="ta-pcard__price"><span class="free"><span class="l-es">Sin costo</span><span class="l-en">No cost</span><span class="l-pt">Sem custo</span></span><span class="ta-pcard__usd">&nbsp;</span></div>
+          <span class="ta-pcard__per"><span class="l-es">Por persona · 90 min</span><span class="l-en">Per person · 90 min</span><span class="l-pt">Por pessoa · 90 min</span></span>
+          <p class="ta-pcard__inc"><span class="l-es">1 sesión en vivo. Sin riesgo.</span><span class="l-en">1 live session. No risk.</span><span class="l-pt">1 sessão ao vivo. Sem risco.</span></p>
+        </div>
+      </div>
+      <p style="margin-top:1rem;"><span class="ta-note"><span class="l-es">Los talleres cuestan $200.000 COP c/u y el bootcamp $800.000 COP — ver el dossier.</span><span class="l-en">The workshops cost $200.000 COP each and the bootcamp $800.000 COP — see the dossier.</span><span class="l-pt">Os workshops custam $200.000 COP cada e o bootcamp $800.000 COP — ver o dossiê.</span></span></p>
     </div>
   </section>
 
