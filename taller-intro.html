@@ -94,6 +94,23 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 .fmeta{display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--brand-muted)}
 .fmeta a{color:var(--brand-gold);text-decoration:none;font-weight:600}
 :focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:6px}
+
+.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
+.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
+body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
+body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
+body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
+body.theme-light .stats{background:rgba(10,18,42,.12)!important}
+body.theme-light .stats .cell{background:#ffffff!important}
+body.theme-light .slide{color:var(--brand-text)}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
+body.theme-light .btn-ghost{color:#26324a}
+
+body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
+body.theme-light .chip-hero{border-color:#b8860b}
+body.theme-light .pcta .out{color:#26324a!important}
 </style>
 </head>
 <body class="lang-es">
@@ -113,7 +130,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
   <nav class="tnav">
     <a href="taller-intro-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
     <a href="index.html#precios"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></a>
-    <button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
+    <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
   </nav>
 </div></header>
 
@@ -169,7 +186,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
     <details><summary><span class="l-es">¿Necesito una cuenta de pago de Claude?</span><span class="l-en">Do I need a paid Claude account?</span><span class="l-pt">Preciso de conta paga do Claude?</span></summary><div class="a"><span class="l-es">No para el intro. Lo ves sin cuenta de pago. Solo los talleres y el bootcamp la requieren (desde $20/mes).</span><span class="l-en">Not for the intro. You watch it without a paid account. Only the workshops and bootcamp require it (from $20/month).</span><span class="l-pt">Não para o intro. Você assiste sem conta paga. Só os workshops e o bootcamp exigem (a partir de $20/mês).</span></div></details>
     <details><summary><span class="l-es">¿Cuánto dura y cuánto cuesta?</span><span class="l-en">How long and how much?</span><span class="l-pt">Quanto dura e quanto custa?</span></summary><div class="a"><span class="l-es">Unos 90 minutos, en vivo. Gratis, sin compromiso.</span><span class="l-en">About 90 minutes, live. Free, no commitment.</span><span class="l-pt">Cerca de 90 minutos, ao vivo. Grátis, sem compromisso.</span></div></details>
     <details><summary><span class="l-es">¿Necesito saber de tecnología?</span><span class="l-en">Do I need a tech background?</span><span class="l-pt">Preciso saber de tecnologia?</span></summary><div class="a"><span class="l-es">No. Está pensado para managers y profesionales, no para programadores.</span><span class="l-en">No. It's designed for managers and professionals, not programmers.</span><span class="l-pt">Não. É pensado para managers e profissionais, não para programadores.</span></div></details>
-    <details><summary><span class="l-es">¿Qué pasa después?</span><span class="l-en">What happens next?</span><span class="l-pt">O que acontece depois?</span></summary><div class="a"><span class="l-es">Si quieres, sigues con los dos talleres ($20 c/u) y luego el bootcamp ($200). Tú decides el ritmo.</span><span class="l-en">If you want, you continue with the two workshops ($20 each) and then the bootcamp ($200). You set the pace.</span><span class="l-pt">Se quiser, segue com os dois workshops ($20 cada) e depois o bootcamp ($200). Você define o ritmo.</span></div></details>
+    <details><summary><span class="l-es">¿Qué pasa después?</span><span class="l-en">What happens next?</span><span class="l-pt">O que acontece depois?</span></summary><div class="a"><span class="l-es">Si quieres, sigues con los dos talleres ($200.000 COP ($20 USD) c/u) y luego el bootcamp ($800.000 COP ($200 USD)). Tú decides el ritmo.</span><span class="l-en">If you want, you continue with the two workshops ($200.000 COP ($20 USD) each) and then the bootcamp ($800.000 COP ($200 USD)). You set the pace.</span><span class="l-pt">Se quiser, segue com os dois workshops ($200.000 COP ($20 USD) cada) e depois o bootcamp ($800.000 COP ($200 USD)). Você define o ritmo.</span></div></details>
   </div>
 </div></section>
 
@@ -180,7 +197,6 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
     <p><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão.</span></p>
     <div class="cta">
       <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete (gratis) →</span><span class="l-en">Enroll (free) →</span><span class="l-pt">Inscreva-se (grátis) →</span></a>
-      <a class="btn btn-ghost" href="https://chat.whatsapp.com/JWUMmpnbnec14Pd9pVuZo2" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <p class="alt"><span class="l-es">¿Prefieres escribirnos? </span><span class="l-en">Prefer to write us? </span><span class="l-pt">Prefere nos escrever? </span><a href="mailto:contacto@metodologia.info?subject=Taller%20de%20Intro%20Trabajar%20Amplificado">contacto@metodologia.info</a></p>
   </div>
@@ -203,9 +219,10 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 (function(){
   var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
   function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];
-    document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+    document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
   btn.onclick=function(){setLang(li+1);};
 })();
 </script>
+<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
 </body>
 </html>

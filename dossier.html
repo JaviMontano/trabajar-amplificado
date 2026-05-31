@@ -126,6 +126,23 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 .fmeta a{color:var(--brand-gold);text-decoration:none;font-weight:600}
 :focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:6px}
 @media(max-width:680px){.split{grid-template-columns:1fr}}
+
+.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
+.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
+body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
+body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
+body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
+body.theme-light .stats{background:rgba(10,18,42,.12)!important}
+body.theme-light .stats .cell{background:#ffffff!important}
+body.theme-light .slide{color:var(--brand-text)}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
+body.theme-light .btn-ghost{color:#26324a}
+
+body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
+body.theme-light .chip-hero{border-color:#b8860b}
+body.theme-light .pcta .out{color:#26324a!important}
 </style>
 </head>
 <body class="lang-es">
@@ -146,7 +163,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
     <a href="dossier-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
     <a href="#escalera"><span class="l-es">La escalera</span><span class="l-en">The ladder</span><span class="l-pt">A escada</span></a>
     <a href="#precios"><span class="l-es">Precios</span><span class="l-en">Pricing</span><span class="l-pt">Preços</span></a>
-    <button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
+    <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
   </nav>
 </div></header>
 
@@ -216,9 +233,9 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
       <div class="body">
         <div class="top">
           <h3><span class="l-es">Dos talleres de práctica</span><span class="l-en">Two practice workshops</span><span class="l-pt">Dois workshops de prática</span></h3>
-          <span class="pp">$20 <span class="l-es">c/u</span><span class="l-en">each</span><span class="l-pt">cada</span></span>
+          <span class="pp">$200.000 COP ($20 USD) <span class="l-es">c/u</span><span class="l-en">each</span><span class="l-pt">cada</span></span>
         </div>
-        <p><span class="l-es"><b>Prompting de Alto Rendimiento</b> y <b>Sistematización y Automatización con Claude</b>. Dos horas cada uno, manos a la obra. Los dos juntos: $30 (ahorras $10).</span><span class="l-en"><b>High-Performance Prompting</b> and <b>Systematization and Automation with Claude</b>. Two hours each, hands-on. Both together: $30 (save $10).</span><span class="l-pt"><b>Prompting de Alto Desempenho</b> e <b>Sistematização e Automação com Claude</b>. Duas horas cada, mão na massa. Os dois juntos: $30 (economize $10).</span></p>
+        <p><span class="l-es"><b>Prompting de Alto Rendimiento</b> y <b>Sistematización y Automatización con Claude</b>. Dos horas cada uno, manos a la obra. Los dos juntos: $350.000 COP ($30 USD) (ahorras $50.000 COP).</span><span class="l-en"><b>High-Performance Prompting</b> and <b>Systematization and Automation with Claude</b>. Two hours each, hands-on. Both together: $350.000 COP ($30 USD) (save $50.000 COP).</span><span class="l-pt"><b>Prompting de Alto Desempenho</b> e <b>Sistematização e Automação com Claude</b>. Duas horas cada, mão na massa. Os dois juntos: $350.000 COP ($30 USD) (economize $50.000 COP).</span></p>
         <div class="links"><a href="taller-prompting.html"><span class="l-es">Prompting →</span><span class="l-en">Prompting →</span><span class="l-pt">Prompting →</span></a><a href="taller-automatizacion.html"><span class="l-es">Automatización →</span><span class="l-en">Automation →</span><span class="l-pt">Automação →</span></a></div>
       </div>
     </div>
@@ -227,9 +244,9 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
       <div class="body">
         <div class="top">
           <h3><span class="l-es">Bootcamp</span><span class="l-en">Bootcamp</span><span class="l-pt">Bootcamp</span></h3>
-          <span class="pp">$200</span>
+          <span class="pp">$800.000 COP ($200 USD)</span>
         </div>
-        <p><span class="l-es">El programa completo: 9 módulos más un proyecto propio. Sales con tu sistema (Jarvis OS) montado y funcionando, no solo con teoría.</span><span class="l-en">The full program: 9 modules plus your own project. You leave with your system (Jarvis OS) set up and running, not just theory.</span><span class="l-pt">O programa completo: 9 módulos mais um projeto próprio. Você sai com seu sistema (Jarvis OS) montado e funcionando, não só com teoria.</span></p>
+        <p><span class="l-es">El programa completo: <strong>18 h (+2 opcionales de nivelación)</strong>, 9 módulos más un proyecto propio. Sales con tu sistema (Jarvis OS) montado y funcionando, no solo con teoría. <strong style="color:var(--brand-gold)">Lo invertido en los talleres se descuenta de este valor.</strong></span><span class="l-en">The full program: <strong>18 h (+2 optional leveling)</strong>, 9 modules plus your own project. You leave with your system (Jarvis OS) set up and running, not just theory. <strong style="color:var(--brand-gold)">What you invested in the workshops is credited against this price.</strong></span><span class="l-pt">O programa completo: <strong>18 h (+2 opcionais de nivelamento)</strong>, 9 módulos mais um projeto próprio. Você sai com seu sistema (Jarvis OS) montado e funcionando, não só com teoria. <strong style="color:var(--brand-gold)">O investido nos workshops é descontado deste valor.</strong></span></p>
         <div class="links"><a href="bootcamp.html"><span class="l-es">Ver el bootcamp →</span><span class="l-en">See the bootcamp →</span><span class="l-pt">Ver o bootcamp →</span></a></div>
       </div>
     </div>
@@ -277,13 +294,13 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
         </tr>
         <tr>
           <td><span class="l-es">Taller</span><span class="l-en">Workshop</span><span class="l-pt">Workshop</span></td>
-          <td><span class="l-es">2 h cada uno · combo de los dos = $30</span><span class="l-en">2 h each · both combo = $30</span><span class="l-pt">2 h cada · combo dos dois = $30</span></td>
-          <td class="price"><span class="l-es">$20 c/u</span><span class="l-en">$20 each</span><span class="l-pt">$20 cada</span></td>
+          <td><span class="l-es">2 h cada uno · combo de los dos = $350.000 COP ($30 USD)</span><span class="l-en">2 h each · both combo = $350.000 COP ($30 USD)</span><span class="l-pt">2 h cada · combo dos dois = $350.000 COP ($30 USD)</span></td>
+          <td class="price"><span class="l-es">$200.000 COP ($20 USD) c/u</span><span class="l-en">$200.000 COP ($20 USD) each</span><span class="l-pt">$200.000 COP ($20 USD) cada</span></td>
         </tr>
         <tr>
           <td><span class="l-es">Bootcamp</span><span class="l-en">Bootcamp</span><span class="l-pt">Bootcamp</span></td>
           <td><span class="l-es">9 módulos + proyecto propio</span><span class="l-en">9 modules + own project</span><span class="l-pt">9 módulos + projeto próprio</span></td>
-          <td class="price">$200</td>
+          <td class="price">$800.000 COP ($200 USD)</td>
         </tr>
       </tbody>
     </table>
@@ -306,7 +323,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
     <details><summary><span class="l-es">¿Por dónde empiezo?</span><span class="l-en">Where do I start?</span><span class="l-pt">Por onde começo?</span></summary><div class="a"><span class="l-es">Por el taller de intro, que es gratis y sin cuenta de pago. Ahí ves el método antes de invertir nada.</span><span class="l-en">With the intro workshop, which is free and needs no paid account. There you see the method before investing anything.</span><span class="l-pt">Pelo workshop de intro, que é grátis e sem conta paga. Ali você vê o método antes de investir nada.</span></div></details>
     <details><summary><span class="l-es">¿Tengo que hacer todos los pasos?</span><span class="l-en">Do I have to do every step?</span><span class="l-pt">Tenho que fazer todos os passos?</span></summary><div class="a"><span class="l-es">No. Subes la escalera a tu ritmo y solo si te convence. Cada paso se vale por sí mismo.</span><span class="l-en">No. You climb the ladder at your pace and only if it convinces you. Each step stands on its own.</span><span class="l-pt">Não. Você sobe a escada no seu ritmo e só se te convencer. Cada passo vale por si.</span></div></details>
     <details><summary><span class="l-es">¿Necesito saber de tecnología?</span><span class="l-en">Do I need a tech background?</span><span class="l-pt">Preciso saber de tecnologia?</span></summary><div class="a"><span class="l-es">No. Está pensado para managers, líderes y profesionales del conocimiento, no para programadores.</span><span class="l-en">No. It's designed for managers, leaders and knowledge workers, not programmers.</span><span class="l-pt">Não. É pensado para managers, líderes e profissionais do conhecimento, não para programadores.</span></div></details>
-    <details><summary><span class="l-es">¿Y el combo de los dos talleres?</span><span class="l-en">What about the two-workshop combo?</span><span class="l-pt">E o combo dos dois workshops?</span></summary><div class="a"><span class="l-es">Cada taller cuesta $20. Si tomas los dos juntos, $30 en total: ahorras $10.</span><span class="l-en">Each workshop costs $20. If you take both together, $30 total: you save $10.</span><span class="l-pt">Cada workshop custa $20. Se você fizer os dois juntos, $30 no total: economiza $10.</span></div></details>
+    <details><summary><span class="l-es">¿Y el combo de los dos talleres?</span><span class="l-en">What about the two-workshop combo?</span><span class="l-pt">E o combo dos dois workshops?</span></summary><div class="a"><span class="l-es">Cada taller cuesta $200.000 COP ($20 USD). Si tomas los dos juntos, $350.000 COP ($30 USD) en total: ahorras $50.000 COP.</span><span class="l-en">Each workshop costs $200.000 COP ($20 USD). If you take both together, $350.000 COP ($30 USD) total: you save $50.000 COP.</span><span class="l-pt">Cada workshop custa $200.000 COP ($20 USD). Se você fizer os dois juntos, $350.000 COP ($30 USD) no total: economiza $50.000 COP.</span></div></details>
   </div>
 </div></section>
 
@@ -317,7 +334,6 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
     <p><span class="l-es">Reserva tu lugar en la próxima sesión de intro. Sin costo, sin cuenta de pago, sin compromiso.</span><span class="l-en">Reserve your seat in the next intro session. No cost, no paid account, no commitment.</span><span class="l-pt">Reserve seu lugar na próxima sessão de intro. Sem custo, sem conta paga, sem compromisso.</span></p>
     <div class="cta">
       <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete (gratis) →</span><span class="l-en">Enroll (free) →</span><span class="l-pt">Inscreva-se (grátis) →</span></a>
-      <a class="btn btn-ghost" href="https://chat.whatsapp.com/JWUMmpnbnec14Pd9pVuZo2" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <p class="alt"><span class="l-es">¿Prefieres escribirnos? </span><span class="l-en">Prefer to write us? </span><span class="l-pt">Prefere nos escrever? </span><a href="mailto:contacto@metodologia.info?subject=Dossier%20Trabajar%20Amplificado">contacto@metodologia.info</a></p>
   </div>
@@ -340,9 +356,10 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 (function(){
   var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
   function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];
-    document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+    document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
   btn.onclick=function(){setLang(li+1);};
 })();
 </script>
+<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
 </body>
 </html>

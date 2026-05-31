@@ -93,6 +93,23 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
 .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand-gold),var(--brand-gold-soft));width:0;z-index:40;transition:width .45s var(--ease-out-expo);box-shadow:0 0 12px rgba(255,215,0,.5)}
 :focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:4px}
 @media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.anatomy{flex-direction:column}.arrow{transform:rotate(90deg)}.slide{padding:4.5rem 1.3rem 5.5rem}.brandbar .tag{display:none}}
+
+.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
+.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
+body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
+body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
+body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
+body.theme-light .stats{background:rgba(10,18,42,.12)!important}
+body.theme-light .stats .cell{background:#ffffff!important}
+body.theme-light .slide{color:var(--brand-text)}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
+body.theme-light .btn-ghost{color:#26324a}
+
+body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
+body.theme-light .chip-hero{border-color:#b8860b}
+body.theme-light .pcta .out{color:#26324a!important}
 </style>
 </head>
 <body class="lang-es">
@@ -144,9 +161,9 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
     <div class="anatomy">
       <div class="node"><div class="ico">🎟️</div><b>Intro</b><span class="l-es">gratis · ver el método</span><span class="l-en">free · see the method</span><span class="l-pt">grátis · ver o método</span></div>
       <div class="arrow">→</div>
-      <div class="node"><div class="ico">🛠️</div><b>2 talleres</b><span class="l-es">$20 c/u · practicar</span><span class="l-en">$20 each · practice</span><span class="l-pt">$20 cada · praticar</span></div>
+      <div class="node"><div class="ico">🛠️</div><b>2 talleres</b><span class="l-es">$200.000 COP ($20 USD) c/u · practicar</span><span class="l-en">$200.000 COP ($20 USD) each · practice</span><span class="l-pt">$200.000 COP ($20 USD) cada · praticar</span></div>
       <div class="arrow">→</div>
-      <div class="node"><div class="ico">🎓</div><b>Bootcamp</b><span class="l-es">$200 · sistema completo</span><span class="l-en">$200 · full system</span><span class="l-pt">$200 · sistema completo</span></div>
+      <div class="node"><div class="ico">🎓</div><b>Bootcamp</b><span class="l-es">$800.000 COP ($200 USD) · sistema completo</span><span class="l-en">$800.000 COP ($200 USD) · full system</span><span class="l-pt">$800.000 COP ($200 USD) · sistema completo</span></div>
     </div>
     <p class="lead"><span class="l-es">Empiezas gratis y subes solo si te convence. Cada paso se vale por sí mismo.</span><span class="l-en">You start free and climb only if it convinces you. Each step stands on its own.</span><span class="l-pt">Você começa grátis e sobe só se te convencer. Cada passo vale por si.</span></p>
   </div></section>
@@ -165,12 +182,12 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
   <!-- 7 PASO 2 TALLERES -->
   <section class="slide"><div class="wrap">
     <span class="eyebrow"><span class="l-es">Paso 2 · Escalera</span><span class="l-en">Step 2 · Ladder</span><span class="l-pt">Passo 2 · Escada</span></span>
-    <h2><span class="l-es">Dos talleres de práctica · <span class="gtext">$20 c/u</span></span><span class="l-en">Two practice workshops · <span class="gtext">$20 each</span></span><span class="l-pt">Dois workshops de prática · <span class="gtext">$20 cada</span></span></h2>
+    <h2><span class="l-es">Dos talleres de práctica · <span class="gtext">$200.000 COP ($20 USD) c/u</span></span><span class="l-en">Two practice workshops · <span class="gtext">$200.000 COP ($20 USD) each</span></span><span class="l-pt">Dois workshops de prática · <span class="gtext">$200.000 COP ($20 USD) cada</span></span></h2>
     <div class="grid g2">
       <div class="card"><h3><span class="dot">A</span><span class="l-es">Prompting de Alto Rendimiento</span><span class="l-en">High-Performance Prompting</span><span class="l-pt">Prompting de Alto Desempenho</span></h3><p><span class="l-es">2 horas, manos a la obra: dirigir a Claude con contexto y obtener resultados útiles.</span><span class="l-en">2 hours, hands-on: directing Claude with context and getting useful results.</span><span class="l-pt">2 horas, mão na massa: dirigir o Claude com contexto e obter resultados úteis.</span></p></div>
       <div class="card"><h3><span class="dot">B</span><span class="l-es">Sistematización y Automatización con Claude</span><span class="l-en">Systematization and Automation with Claude</span><span class="l-pt">Sistematização e Automação com Claude</span></h3><p><span class="l-es">2 horas, manos a la obra: convertir tareas repetitivas en flujos sistematizados.</span><span class="l-en">2 hours, hands-on: turning repetitive tasks into systematized flows.</span><span class="l-pt">2 horas, mão na massa: transformar tarefas repetitivas em fluxos sistematizados.</span></p></div>
     </div>
-    <div class="callout"><span class="l-es"><strong>Combo:</strong> los dos juntos por <em>$30</em> — ahorras $10.</span><span class="l-en"><strong>Combo:</strong> both together for <em>$30</em> — save $10.</span><span class="l-pt"><strong>Combo:</strong> os dois juntos por <em>$30</em> — economize $10.</span></div>
+    <div class="callout"><span class="l-es"><strong>Combo:</strong> los dos juntos por <em>$350.000 COP ($30 USD)</em> — ahorras $50.000 COP.</span><span class="l-en"><strong>Combo:</strong> both together for <em>$350.000 COP ($30 USD)</em> — save $50.000 COP.</span><span class="l-pt"><strong>Combo:</strong> os dois juntos por <em>$350.000 COP ($30 USD)</em> — economize $50.000 COP.</span></div>
   </div></section>
 
   <!-- 8 PASO 3 BOOTCAMP -->
@@ -178,7 +195,7 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
     <span class="eyebrow"><span class="l-es">Paso 3 · Escalera</span><span class="l-en">Step 3 · Ladder</span><span class="l-pt">Passo 3 · Escada</span></span>
     <h2><span class="l-es">Bootcamp · <span class="gtext">el programa completo</span></span><span class="l-en">Bootcamp · <span class="gtext">the full program</span></span><span class="l-pt">Bootcamp · <span class="gtext">o programa completo</span></span></h2>
     <div class="grid g3">
-      <div class="card hot"><h3><span class="l-es">9 módulos</span><span class="l-en">9 modules</span><span class="l-pt">9 módulos</span></h3><p><span class="l-es">El recorrido completo del método, de la base a la operación.</span><span class="l-en">The full path of the method, from foundation to operation.</span><span class="l-pt">O percurso completo do método, da base à operação.</span></p><span class="price">$200</span></div>
+      <div class="card hot"><h3><span class="l-es">9 módulos</span><span class="l-en">9 modules</span><span class="l-pt">9 módulos</span></h3><p><span class="l-es">El recorrido completo del método, de la base a la operación.</span><span class="l-en">The full path of the method, from foundation to operation.</span><span class="l-pt">O percurso completo do método, da base à operação.</span></p><span class="price">$800.000 COP ($200 USD)</span></div>
       <div class="card"><h3><span class="l-es">Proyecto propio</span><span class="l-en">Own project</span><span class="l-pt">Projeto próprio</span></h3><p><span class="l-es">No solo teoría: trabajas sobre tu caso real durante el programa.</span><span class="l-en">Not just theory: you work on your real case during the program.</span><span class="l-pt">Não só teoria: você trabalha no seu caso real durante o programa.</span></p></div>
       <div class="card"><h3><span class="l-es">Tu Jarvis OS</span><span class="l-en">Your Jarvis OS</span><span class="l-pt">Seu Jarvis OS</span></h3><p><span class="l-es">Sales con tu sistema montado y funcionando, no con apuntes.</span><span class="l-en">You leave with your system set up and running, not with notes.</span><span class="l-pt">Você sai com seu sistema montado e funcionando, não com anotações.</span></p></div>
     </div>
@@ -220,8 +237,8 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
         </tr></thead>
         <tbody>
           <tr class="hl"><td><span class="l-es">Intro</span><span class="l-en">Intro</span><span class="l-pt">Intro</span></td><td><span class="l-es">Sesión en vivo · sin cuenta de pago</span><span class="l-en">Live session · no paid account</span><span class="l-pt">Sessão ao vivo · sem conta paga</span></td><td class="price">$0</td></tr>
-          <tr><td><span class="l-es">Taller</span><span class="l-en">Workshop</span><span class="l-pt">Workshop</span></td><td><span class="l-es">2 h c/u · combo de los dos = $30</span><span class="l-en">2 h each · both combo = $30</span><span class="l-pt">2 h cada · combo dos dois = $30</span></td><td class="price"><span class="l-es">$20 c/u</span><span class="l-en">$20 each</span><span class="l-pt">$20 cada</span></td></tr>
-          <tr><td><span class="l-es">Bootcamp</span><span class="l-en">Bootcamp</span><span class="l-pt">Bootcamp</span></td><td><span class="l-es">9 módulos + proyecto propio</span><span class="l-en">9 modules + own project</span><span class="l-pt">9 módulos + projeto próprio</span></td><td class="price">$200</td></tr>
+          <tr><td><span class="l-es">Taller</span><span class="l-en">Workshop</span><span class="l-pt">Workshop</span></td><td><span class="l-es">2 h c/u · combo de los dos = $350.000 COP ($30 USD)</span><span class="l-en">2 h each · both combo = $350.000 COP ($30 USD)</span><span class="l-pt">2 h cada · combo dos dois = $350.000 COP ($30 USD)</span></td><td class="price"><span class="l-es">$200.000 COP ($20 USD) c/u</span><span class="l-en">$200.000 COP ($20 USD) each</span><span class="l-pt">$200.000 COP ($20 USD) cada</span></td></tr>
+          <tr><td><span class="l-es">Bootcamp</span><span class="l-en">Bootcamp</span><span class="l-pt">Bootcamp</span></td><td><span class="l-es">9 módulos + proyecto propio</span><span class="l-en">9 modules + own project</span><span class="l-pt">9 módulos + projeto próprio</span></td><td class="price">$800.000 COP ($200 USD)</td></tr>
         </tbody>
       </table>
     </div>
@@ -243,7 +260,7 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
 
 <div class="brandbar"><svg class="logo" viewBox="0 0 36 36"><rect width="36" height="36" rx="9" fill="#122562"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg><b>Metodolog<span class="g">IA</span></b> · <span class="l-es">Dossier</span><span class="l-en">Dossier</span><span class="l-pt">Dossier</span> · <span class="l-es">Trabajar Amplificado</span><span class="l-en">Work Amplified</span><span class="l-pt">Trabalhar Amplificado</span><span class="tag">Método + IA = Soberanía</span></div>
 <div class="hud">
-  <button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
+  <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
   <button class="navbtn" id="prev" aria-label="Anterior">‹</button>
   <span class="counter" id="counter">1 / 12</span>
   <button class="navbtn" id="next" aria-label="Siguiente">›</button>
@@ -259,10 +276,11 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
   document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
   var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;},{passive:true});
   var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
-  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
   btn.onclick=function(){setLang(li+1);};
   show(0); setLang(0);
 })();
 </script>
+<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
 </body>
 </html>

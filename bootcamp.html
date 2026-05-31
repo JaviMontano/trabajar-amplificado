@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bootcamp Trabajar Amplificado · 9 módulos + proyecto final · MetodologIA</title>
-<meta name="description" content="Bootcamp Trabajar Amplificado: 9 módulos + proyecto final para (R)Evolucionar tu flujo de trabajo en un sistema de alto rendimiento. Sales con tu propio Jarvis OS funcionando, no con una demo. $200 USD.">
+<meta name="description" content="Bootcamp Trabajar Amplificado: 9 módulos + proyecto final para (R)Evolucionar tu flujo de trabajo en un sistema de alto rendimiento. Sales con tu propio Jarvis OS funcionando, no con una demo. $800.000 COP ($200 USD).">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%23122562'/%3E%3Crect x='10' y='12' width='4' height='12' fill='%23fff'/%3E%3Crect x='16' y='12' width='4' height='8' fill='%23fff'/%3E%3Crect x='16' y='22' width='4' height='2' fill='%23fff'/%3E%3Crect x='22' y='12' width='4' height='6' fill='%23fff'/%3E%3Crect x='22' y='20' width='4' height='4' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,6 +115,23 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 .fmeta{display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--brand-muted)}
 .fmeta a{color:var(--brand-gold);text-decoration:none;font-weight:600}
 :focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:6px}
+
+.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
+.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
+body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
+body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
+body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
+body.theme-light .stats{background:rgba(10,18,42,.12)!important}
+body.theme-light .stats .cell{background:#ffffff!important}
+body.theme-light .slide{color:var(--brand-text)}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
+body.theme-light .btn-ghost{color:#26324a}
+
+body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
+body.theme-light .chip-hero{border-color:#b8860b}
+body.theme-light .pcta .out{color:#26324a!important}
 </style>
 </head>
 <body class="lang-es">
@@ -135,7 +152,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
     <a href="bootcamp-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
     <a href="#modulos"><span class="l-es">Módulos</span><span class="l-en">Modules</span><span class="l-pt">Módulos</span></a>
     <a href="#inscripcion"><span class="l-es">Inscríbete</span><span class="l-en">Enroll</span><span class="l-pt">Inscreva-se</span></a>
-    <button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
+    <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
   </nav>
 </div></header>
 
@@ -145,7 +162,8 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
   <h1>Bootcamp <span class="gtext">Trabajar Amplificado</span></h1>
   <p class="sub"><span class="l-es">(R)Evoluciona tu flujo de trabajo en un sistema de alto rendimiento</span><span class="l-en">(R)Evolve your workflow into a high-performance system</span><span class="l-pt">(R)Evolua seu fluxo de trabalho em um sistema de alto desempenho</span></p>
   <p class="lead"><span class="l-es">El programa completo, no técnicas sueltas. Cada módulo es masterclass + taller práctico + entregable. Sales con tu propio sistema (Jarvis OS) funcionando, no con una demo. Recuperas horas de trabajo mecánico para lo estratégico.</span><span class="l-en">The full program, not loose techniques. Each module is masterclass + hands-on workshop + deliverable. You leave with your own system (Jarvis OS) running, not with a demo. You reclaim hours of mechanical work for the strategic.</span><span class="l-pt">O programa completo, não técnicas soltas. Cada módulo é masterclass + workshop prático + entregável. Você sai com seu próprio sistema (Jarvis OS) funcionando, não com uma demo. Recupera horas de trabalho mecânico para o estratégico.</span></p>
-  <div class="pricepill">$200 USD <small><span class="l-es">· programa completo</span><span class="l-en">· full program</span><span class="l-pt">· programa completo</span></small></div>
+  <div class="pricepill">$800.000 COP ($200 USD) <small><span class="l-es">· 18 h (+2 opcionales de nivelación)</span><span class="l-en">· 18 h (+2 optional leveling)</span><span class="l-pt">· 18 h (+2 opcionais de nivelamento)</span></small></div>
+  <p class="lead" style="margin-top:-.6rem"><strong style="color:var(--brand-gold)"><span class="l-es">Lo que inviertes en los talleres se descuenta de este valor.</span><span class="l-en">What you invest in the workshops is credited against this price.</span><span class="l-pt">O que você investe nos workshops é descontado deste valor.</span></strong></p>
   <div class="cta">
     <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete al bootcamp →</span><span class="l-en">Enroll in the bootcamp →</span><span class="l-pt">Inscreva-se no bootcamp →</span></a>
     <a class="btn btn-ghost" href="bootcamp-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
@@ -227,10 +245,10 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
   <span class="eyebrow">FAQ</span>
   <h2><span class="l-es">Preguntas frecuentes</span><span class="l-en">Frequently asked</span><span class="l-pt">Perguntas frequentes</span></h2>
   <div class="faq">
-    <details><summary><span class="l-es">¿Cuánto cuesta el bootcamp?</span><span class="l-en">How much is the bootcamp?</span><span class="l-pt">Quanto custa o bootcamp?</span></summary><div class="a"><span class="l-es">$200 USD por el programa completo: 9 módulos + proyecto final.</span><span class="l-en">$200 USD for the full program: 9 modules + final project.</span><span class="l-pt">$200 USD pelo programa completo: 9 módulos + projeto final.</span></div></details>
+    <details><summary><span class="l-es">¿Cuánto cuesta el bootcamp?</span><span class="l-en">How much is the bootcamp?</span><span class="l-pt">Quanto custa o bootcamp?</span></summary><div class="a"><span class="l-es">$800.000 COP ($200 USD) por el programa completo: 9 módulos + proyecto final.</span><span class="l-en">$800.000 COP ($200 USD) for the full program: 9 modules + final project.</span><span class="l-pt">$800.000 COP ($200 USD) pelo programa completo: 9 módulos + projeto final.</span></div></details>
     <details><summary><span class="l-es">¿Necesito una cuenta de pago de Claude?</span><span class="l-en">Do I need a paid Claude account?</span><span class="l-pt">Preciso de conta paga do Claude?</span></summary><div class="a"><span class="l-es">Sí. El bootcamp requiere una cuenta de Claude de pago (desde $20/mes) para los talleres prácticos.</span><span class="l-en">Yes. The bootcamp requires a paid Claude account (from $20/month) for the hands-on workshops.</span><span class="l-pt">Sim. O bootcamp requer uma conta paga do Claude (a partir de $20/mês) para os workshops práticos.</span></div></details>
     <details><summary><span class="l-es">¿Necesito saber programar?</span><span class="l-en">Do I need to know how to code?</span><span class="l-pt">Preciso saber programar?</span></summary><div class="a"><span class="l-es">No. Está pensado para managers y profesionales, no para programadores.</span><span class="l-en">No. It's designed for managers and professionals, not programmers.</span><span class="l-pt">Não. É pensado para managers e profissionais, não para programadores.</span></div></details>
-    <details><summary><span class="l-es">¿Hay descuento si ya hice los talleres?</span><span class="l-en">Is there a discount if I already did the workshops?</span><span class="l-pt">Tem desconto se já fiz os workshops?</span></summary><div class="a"><span class="l-es">Los dos talleres cuestan $30 juntos (ahorras $10 frente a comprarlos sueltos). El bootcamp es el programa completo, con los 9 módulos y el proyecto final.</span><span class="l-en">The two workshops cost $30 together (you save $10 vs buying them separately). The bootcamp is the full program, with all 9 modules and the final project.</span><span class="l-pt">Os dois workshops custam $30 juntos (você economiza $10 vs comprá-los avulsos). O bootcamp é o programa completo, com os 9 módulos e o projeto final.</span></div></details>
+    <details><summary><span class="l-es">¿Hay descuento si ya hice los talleres?</span><span class="l-en">Is there a discount if I already did the workshops?</span><span class="l-pt">Tem desconto se já fiz os workshops?</span></summary><div class="a"><span class="l-es">Los dos talleres cuestan $350.000 COP ($30 USD) juntos (ahorras $50.000 COP frente a comprarlos sueltos). El bootcamp es el programa completo, con los 9 módulos y el proyecto final.</span><span class="l-en">The two workshops cost $350.000 COP ($30 USD) together (you save $50.000 COP vs buying them separately). The bootcamp is the full program, with all 9 modules and the final project.</span><span class="l-pt">Os dois workshops custam $350.000 COP ($30 USD) juntos (você economiza $50.000 COP vs comprá-los avulsos). O bootcamp é o programa completo, com os 9 módulos e o projeto final.</span></div></details>
     <details><summary><span class="l-es">¿Entregan algo al terminar?</span><span class="l-en">Do you deliver anything at the end?</span><span class="l-pt">Entregam algo ao terminar?</span></summary><div class="a"><span class="l-es">Sí: certificado y todo el material (memorias, prompts, plantillas, playbooks y tu sistema funcionando).</span><span class="l-en">Yes: a certificate and all the material (notes, prompts, templates, playbooks and your system running).</span><span class="l-pt">Sim: certificado e todo o material (memórias, prompts, templates, playbooks e seu sistema funcionando).</span></div></details>
   </div>
 </div></section>
@@ -241,8 +259,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
     <h2><span class="l-es">Reserva tu lugar en el bootcamp</span><span class="l-en">Reserve your seat in the bootcamp</span><span class="l-pt">Reserve seu lugar no bootcamp</span></h2>
     <p><span class="l-es">Déjanos tus datos y te avisamos la próxima cohorte. Cupos limitados para garantizar acompañamiento.</span><span class="l-en">Leave your details and we'll tell you the next cohort. Limited seats to guarantee guidance.</span><span class="l-pt">Deixe seus dados e avisamos a próxima turma. Vagas limitadas para garantir acompanhamento.</span></p>
     <div class="cta">
-      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete · $200 →</span><span class="l-en">Enroll · $200 →</span><span class="l-pt">Inscreva-se · $200 →</span></a>
-      <a class="btn btn-ghost" href="https://chat.whatsapp.com/JWUMmpnbnec14Pd9pVuZo2" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete · $800.000 COP ($200 USD) →</span><span class="l-en">Enroll · $800.000 COP ($200 USD) →</span><span class="l-pt">Inscreva-se · $800.000 COP ($200 USD) →</span></a>
     </div>
     <p class="alt"><span class="l-es">¿Prefieres escribirnos? </span><span class="l-en">Prefer to write us? </span><span class="l-pt">Prefere nos escrever? </span><a href="mailto:contacto@metodologia.info?subject=Bootcamp%20Trabajar%20Amplificado">contacto@metodologia.info</a></p>
   </div>
@@ -265,9 +282,10 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 (function(){
   var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
   function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];
-    document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+    document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
   btn.onclick=function(){setLang(li+1);};
 })();
 </script>
+<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
 </body>
 </html>

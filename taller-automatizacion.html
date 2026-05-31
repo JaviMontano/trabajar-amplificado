@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taller · Sistematización y Automatización con Claude · MetodologIA</title>
-<meta name="description" content="Taller en vivo (2h): convierte tus tareas repetidas en un sistema. Crea asistentes y skills, encadena workflows y automatiza con criterio. Sales con un workflow propio funcionando. $20 USD.">
+<meta name="description" content="Taller en vivo (2h): convierte tus tareas repetidas en un sistema. Crea asistentes y skills, encadena workflows y automatiza con criterio. Sales con un workflow propio funcionando. $200.000 COP ($20 USD).">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%23122562'/%3E%3Crect x='10' y='12' width='4' height='12' fill='%23fff'/%3E%3Crect x='16' y='12' width='4' height='8' fill='%23fff'/%3E%3Crect x='16' y='22' width='4' height='2' fill='%23fff'/%3E%3Crect x='22' y='12' width='4' height='6' fill='%23fff'/%3E%3Crect x='22' y='20' width='4' height='4' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,6 +94,23 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 .fmeta{display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--brand-muted)}
 .fmeta a{color:var(--brand-gold);text-decoration:none;font-weight:600}
 :focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:6px}
+
+.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
+.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
+body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
+body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
+body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
+body.theme-light .stats{background:rgba(10,18,42,.12)!important}
+body.theme-light .stats .cell{background:#ffffff!important}
+body.theme-light .slide{color:var(--brand-text)}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
+body.theme-light .btn-ghost{color:#26324a}
+
+body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
+body.theme-light .chip-hero{border-color:#b8860b}
+body.theme-light .pcta .out{color:#26324a!important}
 </style>
 </head>
 <body class="lang-es">
@@ -113,7 +130,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
   <nav class="tnav">
     <a href="taller-automatizacion-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
     <a href="index.html#precios"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></a>
-    <button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
+    <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
   </nav>
 </div></header>
 
@@ -123,7 +140,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
   <h1><span class="l-es">Deja de repetir. <span class="gtext">Automatiza con Claude</span></span><span class="l-en">Stop repeating. <span class="gtext">Automate with Claude</span></span><span class="l-pt">Pare de repetir. <span class="gtext">Automatize com Claude</span></span></h1>
   <p class="sub"><span class="l-es">Sistematización y Automatización con Claude · una sesión en vivo</span><span class="l-en">Systematization &amp; Automation with Claude · one live session</span><span class="l-pt">Sistematização e Automação com Claude · uma sessão ao vivo</span></p>
   <p class="lead"><span class="l-es">Conviertes las tareas que repites cada semana en un sistema que Claude ejecuta. Construyes un asistente reutilizable, encadenas un workflow y aprendes cuándo automatizar y cuándo no. Sales con un workflow propio funcionando.</span><span class="l-en">You turn the tasks you repeat every week into a system Claude runs. You build a reusable assistant, chain a workflow and learn when to automate and when not to. You leave with your own workflow working.</span><span class="l-pt">Você converte as tarefas que repete toda semana num sistema que o Claude executa. Constrói um assistente reutilizável, encadeia um workflow e aprende quando automatizar e quando não. Você sai com um workflow próprio funcionando.</span></p>
-  <div class="pricepill">$20 USD <small><span class="l-es">· los 2 talleres = $30</span><span class="l-en">· both workshops = $30</span><span class="l-pt">· os 2 workshops = $30</span></small></div>
+  <div class="pricepill">$200.000 COP ($20 USD) <small><span class="l-es">· los 2 talleres = $350.000 COP ($30 USD)</span><span class="l-en">· both workshops = $350.000 COP ($30 USD)</span><span class="l-pt">· os 2 workshops = $350.000 COP ($30 USD)</span></small></div>
   <div class="cta">
     <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
     <a class="btn btn-ghost" href="taller-automatizacion-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
@@ -169,7 +186,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
   <div class="faq">
     <details><summary><span class="l-es">¿Necesito una cuenta de pago de Claude?</span><span class="l-en">Do I need a paid Claude account?</span><span class="l-pt">Preciso de conta paga do Claude?</span></summary><div class="a"><span class="l-es">Sí. Para construir asistentes y automatizar workflows necesitas una cuenta de Claude de pago (desde $20/mes).</span><span class="l-en">Yes. To build assistants and automate workflows you need a paid Claude account (from $20/month).</span><span class="l-pt">Sim. Para construir assistentes e automatizar workflows você precisa de uma conta paga do Claude (a partir de $20/mês).</span></div></details>
     <details><summary><span class="l-es">¿Es técnico? ¿Tengo que programar?</span><span class="l-en">Is it technical? Do I have to code?</span><span class="l-pt">É técnico? Tenho que programar?</span></summary><div class="a"><span class="l-es">No. No se programa. Está pensado para managers y profesionales, no para programadores. Todo es en lenguaje natural.</span><span class="l-en">No. No coding. It's designed for managers and professionals, not programmers. Everything is in natural language.</span><span class="l-pt">Não. Sem programação. É pensado para managers e profissionais, não para programadores. Tudo em linguagem natural.</span></div></details>
-    <details><summary><span class="l-es">¿Hay descuento?</span><span class="l-en">Is there a discount?</span><span class="l-pt">Tem desconto?</span></summary><div class="a"><span class="l-es">Sí. Cada taller cuesta $20, pero los 2 talleres juntos son $30 (ahorras $10).</span><span class="l-en">Yes. Each workshop is $20, but both workshops together are $30 (you save $10).</span><span class="l-pt">Sim. Cada workshop custa $20, mas os 2 workshops juntos saem por $30 (você economiza $10).</span></div></details>
+    <details><summary><span class="l-es">¿Hay descuento?</span><span class="l-en">Is there a discount?</span><span class="l-pt">Tem desconto?</span></summary><div class="a"><span class="l-es">Sí. Cada taller cuesta $200.000 COP ($20 USD), pero los 2 talleres juntos son $350.000 COP ($30 USD) (ahorras $50.000 COP).</span><span class="l-en">Yes. Each workshop is $200.000 COP ($20 USD), but both workshops together are $350.000 COP ($30 USD) (you save $50.000 COP).</span><span class="l-pt">Sim. Cada workshop custa $200.000 COP ($20 USD), mas os 2 workshops juntos saem por $350.000 COP ($30 USD) (você economiza $50.000 COP).</span></div></details>
     <details><summary><span class="l-es">¿Necesito algún requisito previo?</span><span class="l-en">Any prerequisite?</span><span class="l-pt">Algum requisito prévio?</span></summary><div class="a"><span class="l-es">Ayuda haber visto el taller de Prompting, pero no es obligatorio. Si trabajas con Claude con soltura, puedes entrar directo.</span><span class="l-en">Having seen the Prompting workshop helps, but it's not required. If you work comfortably with Claude, you can jump straight in.</span><span class="l-pt">Ajuda ter visto o workshop de Prompting, mas não é obrigatório. Se você trabalha com Claude com desenvoltura, pode entrar direto.</span></div></details>
   </div>
 </div></section>
@@ -177,11 +194,10 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 <section class="block" id="inscripcion"><div class="wrap">
   <div class="signup">
     <span class="eyebrow"><span class="l-es">Inscripciones</span><span class="l-en">Enrollment</span><span class="l-pt">Inscrições</span></span>
-    <h2><span class="l-es">Reserva tu lugar · $20 USD</span><span class="l-en">Reserve your seat · $20 USD</span><span class="l-pt">Reserve seu lugar · $20 USD</span></h2>
-    <p><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión. Recuerda: los 2 talleres juntos son $30.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session. Remember: both workshops together are $30.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão. Lembre: os 2 workshops juntos saem por $30.</span></p>
+    <h2><span class="l-es">Reserva tu lugar · $200.000 COP ($20 USD)</span><span class="l-en">Reserve your seat · $200.000 COP ($20 USD)</span><span class="l-pt">Reserve seu lugar · $200.000 COP ($20 USD)</span></h2>
+    <p><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión. Recuerda: los 2 talleres juntos son $350.000 COP ($30 USD).</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session. Remember: both workshops together are $350.000 COP ($30 USD).</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão. Lembre: os 2 workshops juntos saem por $350.000 COP ($30 USD).</span></p>
     <div class="cta">
-      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete ($20) →</span><span class="l-en">Enroll ($20) →</span><span class="l-pt">Inscreva-se ($20) →</span></a>
-      <a class="btn btn-ghost" href="https://chat.whatsapp.com/JWUMmpnbnec14Pd9pVuZo2" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete ($200.000 COP ($20 USD)) →</span><span class="l-en">Enroll ($200.000 COP ($20 USD)) →</span><span class="l-pt">Inscreva-se ($200.000 COP ($20 USD)) →</span></a>
     </div>
     <p class="alt"><span class="l-es">¿Prefieres escribirnos? </span><span class="l-en">Prefer to write us? </span><span class="l-pt">Prefere nos escrever? </span><a href="mailto:contacto@metodologia.info?subject=Taller%20Sistematizacion%20y%20Automatizacion%20con%20Claude">contacto@metodologia.info</a></p>
   </div>
@@ -204,9 +220,10 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0
 (function(){
   var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
   function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];
-    document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+    document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
   btn.onclick=function(){setLang(li+1);};
 })();
 </script>
+<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
 </body>
 </html>

@@ -99,6 +99,23 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
 .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand-gold),var(--brand-gold-soft));width:0;z-index:40;transition:width .45s var(--ease-out-expo);box-shadow:0 0 12px rgba(255,215,0,.5)}
 :focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:4px}
 @media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.anatomy{flex-direction:column}.arrow{transform:rotate(90deg)}.slide{padding:4.5rem 1.3rem 5.5rem}.brandbar .tag{display:none}}
+
+.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
+.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
+body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
+body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
+body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
+body.theme-light .stats{background:rgba(10,18,42,.12)!important}
+body.theme-light .stats .cell{background:#ffffff!important}
+body.theme-light .slide{color:var(--brand-text)}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
+body.theme-light .btn-ghost{color:#26324a}
+
+body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
+body.theme-light .chip-hero{border-color:#b8860b}
+body.theme-light .pcta .out{color:#26324a!important}
 </style>
 </head>
 <body class="lang-es">
@@ -168,8 +185,8 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
     <h2><span class="l-es">De gratis a <span class="gtext">sistema completo</span></span><span class="l-en">From free to <span class="gtext">a full system</span></span><span class="l-pt">De grátis a <span class="gtext">sistema completo</span></span></h2>
     <div class="ladder">
       <div class="step hot"><div class="lvl"><span class="l-es">Paso 1 · estás aquí</span><span class="l-en">Step 1 · you are here</span><span class="l-pt">Passo 1 · você está aqui</span></div><h3><span class="l-es">Intro</span><span class="l-en">Intro</span><span class="l-pt">Intro</span></h3><div class="price"><span class="l-es">Gratis</span><span class="l-en">Free</span><span class="l-pt">Grátis</span></div><p><span class="l-es">1 sesión en vivo. Conoce el método sin riesgo ni cuenta de pago.</span><span class="l-en">1 live session. Meet the method with no risk and no paid account.</span><span class="l-pt">1 sessão ao vivo. Conheça o método sem risco nem conta paga.</span></p></div>
-      <div class="step"><div class="lvl"><span class="l-es">Paso 2</span><span class="l-en">Step 2</span><span class="l-pt">Passo 2</span></div><h3><span class="l-es">2 talleres</span><span class="l-en">2 workshops</span><span class="l-pt">2 oficinas</span></h3><div class="price">$20 <span style="font-size:.7rem;color:var(--brand-muted)"><span class="l-es">c/u · 2h</span><span class="l-en">each · 2h</span><span class="l-pt">cada · 2h</span></span></div><p><span class="l-es">Práctica guiada. Montas tu propio sistema, paso a paso.</span><span class="l-en">Guided practice. You build your own system, step by step.</span><span class="l-pt">Prática guiada. Você monta seu próprio sistema, passo a passo.</span></p></div>
-      <div class="step"><div class="lvl"><span class="l-es">Paso 3</span><span class="l-en">Step 3</span><span class="l-pt">Passo 3</span></div><h3><span class="l-es">Bootcamp</span><span class="l-en">Bootcamp</span><span class="l-pt">Bootcamp</span></h3><div class="price">$200</div><p><span class="l-es">Inmersión completa. Tu Jarvis OS funcionando de punta a punta.</span><span class="l-en">Full immersion. Your Jarvis OS running end to end.</span><span class="l-pt">Imersão completa. Seu Jarvis OS funcionando de ponta a ponta.</span></p></div>
+      <div class="step"><div class="lvl"><span class="l-es">Paso 2</span><span class="l-en">Step 2</span><span class="l-pt">Passo 2</span></div><h3><span class="l-es">2 talleres</span><span class="l-en">2 workshops</span><span class="l-pt">2 oficinas</span></h3><div class="price">$200.000 COP ($20 USD) <span style="font-size:.7rem;color:var(--brand-muted)"><span class="l-es">c/u · 2h</span><span class="l-en">each · 2h</span><span class="l-pt">cada · 2h</span></span></div><p><span class="l-es">Práctica guiada. Montas tu propio sistema, paso a paso.</span><span class="l-en">Guided practice. You build your own system, step by step.</span><span class="l-pt">Prática guiada. Você monta seu próprio sistema, passo a passo.</span></p></div>
+      <div class="step"><div class="lvl"><span class="l-es">Paso 3</span><span class="l-en">Step 3</span><span class="l-pt">Passo 3</span></div><h3><span class="l-es">Bootcamp</span><span class="l-en">Bootcamp</span><span class="l-pt">Bootcamp</span></h3><div class="price">$800.000 COP ($200 USD)</div><p><span class="l-es">Inmersión completa. Tu Jarvis OS funcionando de punta a punta.</span><span class="l-en">Full immersion. Your Jarvis OS running end to end.</span><span class="l-pt">Imersão completa. Seu Jarvis OS funcionando de ponta a ponta.</span></p></div>
     </div>
   </div></section>
 
@@ -210,7 +227,7 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
 
 <div class="brandbar"><svg class="logo" viewBox="0 0 36 36"><rect width="36" height="36" rx="9" fill="#122562"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg><b>Metodolog<span class="g">IA</span></b> · Jarvis OS · <span class="l-es">Taller de Intro</span><span class="l-en">Intro Workshop</span><span class="l-pt">Oficina de Intro</span><span class="tag">Método + IA = Soberanía</span></div>
 <div class="hud">
-  <button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
+  <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
   <button class="navbtn" id="prev" aria-label="Anterior">‹</button>
   <span class="counter" id="counter">1 / 10</span>
   <button class="navbtn" id="next" aria-label="Siguiente">›</button>
@@ -226,11 +243,12 @@ h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
   document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
   var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;},{passive:true});
   var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
-  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
   btn.onclick=function(){setLang(li+1);};
   document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var pre=b.closest('.prompt').querySelector('pre');var act=pre.querySelector('.l-'+langs[li]);var txt=act?act.textContent:pre.textContent;navigator.clipboard.writeText(txt.trim()).then(function(){var o=b.textContent;b.textContent='✓';b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok');},1300);});};});
   show(0); setLang(0);
 })();
 </script>
+<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
 </body>
 </html>
