@@ -20,6 +20,18 @@ Usa el botón de idioma (arriba a la derecha) para cambiar ES · EN · PT.
 
 **Requisito** (talleres y bootcamp): cuenta de **Claude de pago** (desde $20/mes). El taller de intro no la requiere.
 
+## 🎤 Presentaciones por tema (landing + deck)
+
+Cada oferta tiene su página landing y su deck de diapositivas (trilingüe):
+
+| Tema | Landing | Deck |
+|---|---|---|
+| Taller de Intro (gratis) | [`taller-intro.html`](taller-intro.html) | [`taller-intro-deck.html`](taller-intro-deck.html) |
+| Prompting de Alto Rendimiento ($20) | [`taller-prompting.html`](taller-prompting.html) | [`taller-prompting-deck.html`](taller-prompting-deck.html) |
+| Sistematización y Automatización ($20) | [`taller-automatizacion.html`](taller-automatizacion.html) | [`taller-automatizacion-deck.html`](taller-automatizacion-deck.html) |
+| Bootcamp ($200) | [`bootcamp.html`](bootcamp.html) | [`bootcamp-deck.html`](bootcamp-deck.html) |
+| Dossier (programa completo) | [`dossier.html`](dossier.html) | [`dossier-deck.html`](dossier-deck.html) |
+
 ## 📚 Material abierto
 
 | Pieza | Qué es |
