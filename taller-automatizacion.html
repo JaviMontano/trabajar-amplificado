@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller · Sistematización y Automatización con Claude · MetodologIA</title>
+<meta name="description" content="Taller en vivo (2h): convierte tus tareas repetidas en un sistema. Crea asistentes y skills, encadena workflows y automatiza con criterio. Sales con un workflow propio funcionando. $20 USD.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%23122562'/%3E%3Crect x='10' y='12' width='4' height='12' fill='%23fff'/%3E%3Crect x='16' y='12' width='4' height='8' fill='%23fff'/%3E%3Crect x='16' y='22' width='4' height='2' fill='%23fff'/%3E%3Crect x='22' y='12' width='4' height='6' fill='%23fff'/%3E%3Crect x='22' y='20' width='4' height='4' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --brand-dark:#0a122a;--brand-darker:#070b1a;--brand-surface:#1e293b;--brand-surface-alt:#172033;
+  --brand-gold:#ffd700;--brand-gold-soft:#ffe875;--brand-gold-deep:#b8860b;
+  --brand-text:#f8fafc;--brand-text-soft:#e2e8f0;--brand-muted:#94a3b8;
+  --brand-border:rgba(255,255,255,.08);--brand-border-hover:rgba(255,215,0,.35);
+  --ease:cubic-bezier(.4,0,.2,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --fh:'Poppins',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,monospace;--fmeta:'Trebuchet MS','Lucida Grande',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--brand-text);background:var(--brand-darker);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100dvh}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.07),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.30),transparent 46%),radial-gradient(circle at 50% 100%,rgba(255,215,0,.05),transparent 55%),linear-gradient(160deg,var(--brand-darker) 0%,var(--brand-dark) 55%,#0c1733 100%)}
+.gtext{background:linear-gradient(135deg,#f8fafc 0%,var(--brand-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1.1rem,5vw,2.6rem)}
+a{color:inherit}
+.l-en,.l-pt{display:none}
+body.lang-en .l-es{display:none}body.lang-en .l-en{display:inline}body.lang-en .l-pt{display:none}
+body.lang-pt .l-es{display:none}body.lang-pt .l-en{display:none}body.lang-pt .l-pt{display:inline}
+
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(7,11,26,.72);border-bottom:1px solid var(--brand-border)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--fh);font-weight:700;font-size:1rem;text-decoration:none}
+.brand svg{width:28px;height:28px;flex:0 0 auto}
+.brand .g{color:var(--brand-gold)}
+.tnav{display:flex;gap:1rem;align-items:center}
+.tnav a{font-family:var(--fh);font-weight:600;font-size:.82rem;color:var(--brand-text-soft);text-decoration:none;transition:color .2s}
+.tnav a:hover{color:var(--brand-gold)}
+.langbtn{font-family:var(--fmeta);font-weight:700;font-size:.74rem;letter-spacing:.1em;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.42rem .8rem;transition:background .2s,transform .2s var(--ease-spring)}
+.langbtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+
+.hero{padding:clamp(2.8rem,8vw,5rem) 0 clamp(1.4rem,4vw,2.4rem);text-align:center}
+.chip-hero{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .95rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,215,0,.07));border:1.5px solid var(--brand-gold);color:var(--brand-gold);font-family:var(--fmeta);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 16px rgba(255,215,0,.22);margin-bottom:1.4rem}
+.chip-hero::before{content:'\2605'}
+.hero h1{font-family:var(--fh);font-weight:900;line-height:1.04;letter-spacing:-.02em;font-size:clamp(2.2rem,6vw,4rem);margin-bottom:1rem}
+.hero .sub{font-family:var(--fh);font-weight:600;color:var(--brand-text-soft);font-size:clamp(1.02rem,2.4vw,1.4rem);margin-bottom:1rem}
+.hero .lead{color:var(--brand-text-soft);max-width:660px;margin:0 auto 1.4rem;font-size:clamp(1rem,2vw,1.12rem)}
+.pricepill{display:inline-flex;align-items:baseline;gap:.5rem;font-family:var(--fh);font-weight:900;color:var(--brand-gold);font-size:1.6rem;margin-bottom:1.4rem}
+.pricepill small{font-family:var(--fmeta);font-weight:700;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-muted)}
+.cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fh);font-weight:700;font-size:.92rem;padding:.85rem 1.5rem;border-radius:12px;text-decoration:none;cursor:pointer;transition:transform .35s var(--ease-spring),box-shadow .35s var(--ease-out-expo),background .25s}
+.btn-gold{background:linear-gradient(135deg,var(--brand-gold),var(--brand-gold-deep));color:#1a1206;box-shadow:0 8px 22px rgba(255,215,0,.28)}
+.btn-gold:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 34px rgba(255,215,0,.42)}
+.btn-ghost{background:transparent;color:var(--brand-text-soft);border:1.5px solid var(--brand-border-hover)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--brand-gold);color:var(--brand-gold)}
+
+.trust{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:1.4rem;font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;font-weight:700;color:var(--brand-muted)}
+.trust span::before{content:'\2713';color:var(--brand-gold);margin-right:.4rem;font-weight:800}
+
+section.block{padding:clamp(2.2rem,5vw,3.6rem) 0}
+.eyebrow{font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:700;color:var(--brand-gold);margin-bottom:.7rem;display:block;text-align:center}
+.block h2{font-family:var(--fh);font-weight:800;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.12;margin-bottom:.7rem;letter-spacing:-.01em;text-align:center}
+.block .intro{color:var(--brand-text-soft);font-size:clamp(1rem,2vw,1.12rem);max-width:700px;margin:0 auto 2rem;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.card{background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem 1.35rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
+.card:hover{border-color:var(--brand-border-hover);transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.4),0 0 24px rgba(255,215,0,.08)}
+.card .ic{font-size:1.4rem;margin-bottom:.6rem}
+.card h3{font-family:var(--fh);font-weight:800;font-size:1.06rem;margin-bottom:.35rem}
+.card p{font-size:.88rem;color:var(--brand-muted);line-height:1.5}
+.agenda{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.7rem}
+.step{display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:12px;padding:.9rem 1.1rem}
+.step .t{font-family:var(--fm);font-size:.74rem;font-weight:600;color:var(--brand-gold);flex:0 0 auto;min-width:3.6rem;padding-top:.15rem}
+.step .d{font-size:.92rem;color:var(--brand-text-soft)}
+.step .d b{color:#fff}
+.faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
+.faq details{background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:12px;padding:.4rem .3rem}
+.faq summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-family:var(--fh);font-weight:700;font-size:.95rem;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--brand-gold);font-weight:800;font-size:1.2rem;line-height:1}
+.faq details[open] summary::after{content:'\2013'}
+.faq .a{padding:0 .9rem .8rem;font-size:.9rem;color:var(--brand-muted);line-height:1.55}
+.signup{max-width:760px;margin:0 auto;background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(30,58,138,.16));border:1px solid var(--brand-border-hover);border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem);text-align:center}
+.signup p{color:var(--brand-text-soft);max-width:540px;margin:0 auto 1.4rem}
+.signup .alt{margin-top:1.1rem;font-size:.84rem;color:var(--brand-muted)}
+.signup .alt a{color:var(--brand-gold);text-decoration:none;font-weight:600}
+
+footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0 2.4rem;margin-top:1.6rem;background:linear-gradient(180deg,transparent,rgba(7,11,26,.6))}
+.fbrand{display:flex;align-items:center;gap:.7rem;font-family:var(--fh);font-weight:700;font-size:1.05rem;margin-bottom:.7rem}
+.fbrand svg{width:32px;height:32px}
+.fbrand .g{color:var(--brand-gold)}
+.triad{font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:700;color:var(--brand-gold-deep);margin-bottom:1rem}
+.fmeta{display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--brand-muted)}
+.fmeta a{color:var(--brand-gold);text-decoration:none;font-weight:600}
+:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body class="lang-es">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="iso"><rect width="36" height="36" rx="9" fill="#122562"/>
+<rect x="10" y="12" width="4" height="12" rx="0.5" fill="#fff"/><rect x="16" y="12" width="4" height="8" rx="0.5" fill="#fff"/>
+<rect x="16" y="22" width="4" height="2" rx="0.5" fill="#fff"/><rect x="22" y="12" width="4" height="6" rx="0.5" fill="#fff"/>
+<rect x="22" y="20" width="4" height="4" rx="0.5" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></g>
+</defs></svg>
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Inicio · MetodologIA">
+    <svg viewBox="0 0 36 36" role="img" aria-hidden="true"><use href="#iso"/></svg>
+    <span>&#8592; Metodolog<span class="g">IA</span></span>
+  </a>
+  <nav class="tnav">
+    <a href="taller-automatizacion-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
+    <a href="index.html#precios"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></a>
+    <button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="chip-hero"><span class="l-es">Taller en vivo · 2 horas</span><span class="l-en">Live workshop · 2 hours</span><span class="l-pt">Workshop ao vivo · 2 horas</span></span>
+  <h1><span class="l-es">Deja de repetir. <span class="gtext">Automatiza con Claude</span></span><span class="l-en">Stop repeating. <span class="gtext">Automate with Claude</span></span><span class="l-pt">Pare de repetir. <span class="gtext">Automatize com Claude</span></span></h1>
+  <p class="sub"><span class="l-es">Sistematización y Automatización con Claude · una sesión en vivo</span><span class="l-en">Systematization &amp; Automation with Claude · one live session</span><span class="l-pt">Sistematização e Automação com Claude · uma sessão ao vivo</span></p>
+  <p class="lead"><span class="l-es">Conviertes las tareas que repites cada semana en un sistema que Claude ejecuta. Construyes un asistente reutilizable, encadenas un workflow y aprendes cuándo automatizar y cuándo no. Sales con un workflow propio funcionando.</span><span class="l-en">You turn the tasks you repeat every week into a system Claude runs. You build a reusable assistant, chain a workflow and learn when to automate and when not to. You leave with your own workflow working.</span><span class="l-pt">Você converte as tarefas que repete toda semana num sistema que o Claude executa. Constrói um assistente reutilizável, encadeia um workflow e aprende quando automatizar e quando não. Você sai com um workflow próprio funcionando.</span></p>
+  <div class="pricepill">$20 USD <small><span class="l-es">· los 2 talleres = $30</span><span class="l-en">· both workshops = $30</span><span class="l-pt">· os 2 workshops = $30</span></small></div>
+  <div class="cta">
+    <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+    <a class="btn btn-ghost" href="taller-automatizacion-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
+  </div>
+  <div class="trust">
+    <span><span class="l-es">2 horas en vivo</span><span class="l-en">2 hours live</span><span class="l-pt">2 horas ao vivo</span></span>
+    <span><span class="l-es">Sin programar</span><span class="l-en">No coding</span><span class="l-pt">Sem programar</span></span>
+    <span><span class="l-es">Sales con un workflow funcionando</span><span class="l-en">Leave with a working workflow</span><span class="l-pt">Saia com um workflow funcionando</span></span>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">Qué construyes</span><span class="l-en">What you build</span><span class="l-pt">O que você constrói</span></span>
+  <h2><span class="l-es">De tarea repetida a sistema que se ejecuta solo</span><span class="l-en">From repeated task to a system that runs itself</span><span class="l-pt">De tarefa repetida a sistema que se executa sozinho</span></h2>
+  <div class="grid">
+    <div class="card"><div class="ic">🧩</div><h3><span class="l-es">Asistentes y skills reutilizables</span><span class="l-en">Reusable assistants &amp; skills</span><span class="l-pt">Assistentes e skills reutilizáveis</span></h3><p><span class="l-es">Encapsulas una tarea que repites en un asistente o skill que invocas una y otra vez, sin reescribir el prompt cada vez.</span><span class="l-en">You wrap a task you repeat into an assistant or skill you invoke again and again, without rewriting the prompt each time.</span><span class="l-pt">Você encapsula uma tarefa que repete num assistente ou skill que invoca várias vezes, sem reescrever o prompt toda vez.</span></p></div>
+    <div class="card"><div class="ic">🔗</div><h3><span class="l-es">Workflows encadenados</span><span class="l-en">Chained workflows</span><span class="l-pt">Workflows encadeados</span></h3><p><span class="l-es">Inteligencia agéntica: agentes que ejecutan un flujo de varios pasos de principio a fin, no solo responden una pregunta.</span><span class="l-en">Agentic intelligence: agents that run a multi-step flow end to end, not just answer a single question.</span><span class="l-pt">Inteligência agêntica: agentes que executam um fluxo de vários passos de ponta a ponta, não só respondem uma pergunta.</span></p></div>
+    <div class="card"><div class="ic">⏰</div><h3><span class="l-es">Cadencias y tareas programadas</span><span class="l-en">Cadences &amp; scheduled tasks</span><span class="l-pt">Cadências e tarefas programadas</span></h3><p><span class="l-es">Rutinas que corren en cadencia (diaria, semanal) sin que tengas que iniciarlas a mano cada vez.</span><span class="l-en">Routines that run on a cadence (daily, weekly) without you starting them by hand each time.</span><span class="l-pt">Rotinas que rodam em cadência (diária, semanal) sem você iniciá-las à mão toda vez.</span></p></div>
+    <div class="card"><div class="ic">🧭</div><h3><span class="l-es">Criterio: cuándo automatizar</span><span class="l-en">Judgment: when to automate</span><span class="l-pt">Critério: quando automatizar</span></h3><p><span class="l-es">Evitas el desorden de adoptar mucho para usar poco. Automatizas lo que vale la pena, no todo por moda.</span><span class="l-en">You avoid the clutter of adopting a lot to use little. You automate what's worth it, not everything by trend.</span><span class="l-pt">Você evita a bagunça de adotar muito para usar pouco. Automatiza o que vale a pena, não tudo por moda.</span></p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">Para quién</span><span class="l-en">Who it's for</span><span class="l-pt">Para quem</span></span>
+  <h2><span class="l-es">Para ti si repites las mismas tareas cada semana</span><span class="l-en">For you if you repeat the same tasks every week</span><span class="l-pt">Para você se repete as mesmas tarefas toda semana</span></h2>
+  <p class="intro"><span class="l-es">Managers y profesionales que hacen lo mismo una y otra vez —reportes, seguimientos, resúmenes— y quieren que Claude lo ejecute por ellos. No necesitas saber programar ni nada técnico.</span><span class="l-en">Managers and professionals who do the same thing over and over —reports, follow-ups, summaries— and want Claude to run it for them. No coding or technical background needed.</span><span class="l-pt">Managers e profissionais que fazem o mesmo repetidamente —relatórios, acompanhamentos, resumos— e querem que o Claude execute por eles. Não precisa saber programar nem nada técnico.</span></p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">Cómo es la sesión</span><span class="l-en">How the session goes</span><span class="l-pt">Como é a sessão</span></span>
+  <h2><span class="l-es">Agenda · 2 horas</span><span class="l-en">Agenda · 2 hours</span><span class="l-pt">Agenda · 2 horas</span></h2>
+  <div class="agenda">
+    <div class="step"><div class="t">0–20</div><div class="d"><b><span class="l-es">Qué vale la pena sistematizar.</span><span class="l-en">What's worth systematizing.</span><span class="l-pt">O que vale a pena sistematizar.</span></b> <span class="l-es">Identificas las tareas repetidas que sí conviene automatizar.</span><span class="l-en">You spot the repeated tasks actually worth automating.</span><span class="l-pt">Você identifica as tarefas repetidas que realmente vale automatizar.</span></div></div>
+    <div class="step"><div class="t">20–70</div><div class="d"><b><span class="l-es">Construye un asistente en vivo.</span><span class="l-en">Build an assistant live.</span><span class="l-pt">Construa um assistente ao vivo.</span></b> <span class="l-es">Creas un asistente o skill reutilizable, paso a paso.</span><span class="l-en">You create a reusable assistant or skill, step by step.</span><span class="l-pt">Você cria um assistente ou skill reutilizável, passo a passo.</span></div></div>
+    <div class="step"><div class="t">70–100</div><div class="d"><b><span class="l-es">Encadena un workflow.</span><span class="l-en">Chain a workflow.</span><span class="l-pt">Encadeie um workflow.</span></b> <span class="l-es">Conviertes ese asistente en un flujo automatizado de varios pasos.</span><span class="l-en">You turn that assistant into a multi-step automated flow.</span><span class="l-pt">Você transforma esse assistente num fluxo automatizado de vários passos.</span></div></div>
+    <div class="step"><div class="t">100–120</div><div class="d"><b>Q&amp;A.</b> <span class="l-es">Tus preguntas y tu plan de automatización.</span><span class="l-en">Your questions and your automation plan.</span><span class="l-pt">Suas perguntas e seu plano de automação.</span></div></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow">FAQ</span>
+  <h2><span class="l-es">Preguntas frecuentes</span><span class="l-en">Frequently asked</span><span class="l-pt">Perguntas frequentes</span></h2>
+  <div class="faq">
+    <details><summary><span class="l-es">¿Necesito una cuenta de pago de Claude?</span><span class="l-en">Do I need a paid Claude account?</span><span class="l-pt">Preciso de conta paga do Claude?</span></summary><div class="a"><span class="l-es">Sí. Para construir asistentes y automatizar workflows necesitas una cuenta de Claude de pago (desde $20/mes).</span><span class="l-en">Yes. To build assistants and automate workflows you need a paid Claude account (from $20/month).</span><span class="l-pt">Sim. Para construir assistentes e automatizar workflows você precisa de uma conta paga do Claude (a partir de $20/mês).</span></div></details>
+    <details><summary><span class="l-es">¿Es técnico? ¿Tengo que programar?</span><span class="l-en">Is it technical? Do I have to code?</span><span class="l-pt">É técnico? Tenho que programar?</span></summary><div class="a"><span class="l-es">No. No se programa. Está pensado para managers y profesionales, no para programadores. Todo es en lenguaje natural.</span><span class="l-en">No. No coding. It's designed for managers and professionals, not programmers. Everything is in natural language.</span><span class="l-pt">Não. Sem programação. É pensado para managers e profissionais, não para programadores. Tudo em linguagem natural.</span></div></details>
+    <details><summary><span class="l-es">¿Hay descuento?</span><span class="l-en">Is there a discount?</span><span class="l-pt">Tem desconto?</span></summary><div class="a"><span class="l-es">Sí. Cada taller cuesta $20, pero los 2 talleres juntos son $30 (ahorras $10).</span><span class="l-en">Yes. Each workshop is $20, but both workshops together are $30 (you save $10).</span><span class="l-pt">Sim. Cada workshop custa $20, mas os 2 workshops juntos saem por $30 (você economiza $10).</span></div></details>
+    <details><summary><span class="l-es">¿Necesito algún requisito previo?</span><span class="l-en">Any prerequisite?</span><span class="l-pt">Algum requisito prévio?</span></summary><div class="a"><span class="l-es">Ayuda haber visto el taller de Prompting, pero no es obligatorio. Si trabajas con Claude con soltura, puedes entrar directo.</span><span class="l-en">Having seen the Prompting workshop helps, but it's not required. If you work comfortably with Claude, you can jump straight in.</span><span class="l-pt">Ajuda ter visto o workshop de Prompting, mas não é obrigatório. Se você trabalha com Claude com desenvoltura, pode entrar direto.</span></div></details>
+  </div>
+</div></section>
+
+<section class="block" id="inscripcion"><div class="wrap">
+  <div class="signup">
+    <span class="eyebrow"><span class="l-es">Inscripciones</span><span class="l-en">Enrollment</span><span class="l-pt">Inscrições</span></span>
+    <h2><span class="l-es">Reserva tu lugar · $20 USD</span><span class="l-en">Reserve your seat · $20 USD</span><span class="l-pt">Reserve seu lugar · $20 USD</span></h2>
+    <p><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión. Recuerda: los 2 talleres juntos son $30.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session. Remember: both workshops together are $30.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão. Lembre: os 2 workshops juntos saem por $30.</span></p>
+    <div class="cta">
+      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete ($20) →</span><span class="l-en">Enroll ($20) →</span><span class="l-pt">Inscreva-se ($20) →</span></a>
+      <a class="btn btn-ghost" href="https://chat.whatsapp.com/JWUMmpnbnec14Pd9pVuZo2" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="alt"><span class="l-es">¿Prefieres escribirnos? </span><span class="l-en">Prefer to write us? </span><span class="l-pt">Prefere nos escrever? </span><a href="mailto:contacto@metodologia.info?subject=Taller%20Sistematizacion%20y%20Automatizacion%20con%20Claude">contacto@metodologia.info</a></p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fbrand"><svg viewBox="0 0 36 36" role="img" aria-label="MetodologIA"><use href="#iso"/></svg>
+    <span>Metodolog<span class="g">IA</span> · Sistematización y Automatización</span></div>
+  <p class="triad">Emprendedor · Habilitador · Artesano</p>
+  <div class="fmeta">
+    <a href="index.html"><span class="l-es">← Volver al inicio</span><span class="l-en">← Back to home</span><span class="l-pt">← Voltar ao início</span></a>
+    <a href="https://metodologia.info" target="_blank" rel="noopener">metodologia.info</a>
+    <a href="mailto:contacto@metodologia.info">contacto@metodologia.info</a>
+    <span><span class="l-es">Método primero, (Gen)IA después.</span><span class="l-en">Method first, (Gen)AI next.</span><span class="l-pt">Método primeiro, (Gen)IA depois.</span></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
+  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];
+    document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+  btn.onclick=function(){setLang(li+1);};
+})();
+</script>
+</body>
+</html>

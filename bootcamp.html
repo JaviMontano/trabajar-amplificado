@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootcamp Trabajar Amplificado · 9 módulos + proyecto final · MetodologIA</title>
+<meta name="description" content="Bootcamp Trabajar Amplificado: 9 módulos + proyecto final para (R)Evolucionar tu flujo de trabajo en un sistema de alto rendimiento. Sales con tu propio Jarvis OS funcionando, no con una demo. $200 USD.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%23122562'/%3E%3Crect x='10' y='12' width='4' height='12' fill='%23fff'/%3E%3Crect x='16' y='12' width='4' height='8' fill='%23fff'/%3E%3Crect x='16' y='22' width='4' height='2' fill='%23fff'/%3E%3Crect x='22' y='12' width='4' height='6' fill='%23fff'/%3E%3Crect x='22' y='20' width='4' height='4' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --brand-dark:#0a122a;--brand-darker:#070b1a;--brand-surface:#1e293b;--brand-surface-alt:#172033;
+  --brand-gold:#ffd700;--brand-gold-soft:#ffe875;--brand-gold-deep:#b8860b;
+  --brand-text:#f8fafc;--brand-text-soft:#e2e8f0;--brand-muted:#94a3b8;
+  --brand-border:rgba(255,255,255,.08);--brand-border-hover:rgba(255,215,0,.35);
+  --ease:cubic-bezier(.4,0,.2,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --fh:'Poppins',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,monospace;--fmeta:'Trebuchet MS','Lucida Grande',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--brand-text);background:var(--brand-darker);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100dvh}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.07),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.30),transparent 46%),radial-gradient(circle at 50% 100%,rgba(255,215,0,.05),transparent 55%),linear-gradient(160deg,var(--brand-darker) 0%,var(--brand-dark) 55%,#0c1733 100%)}
+.gtext{background:linear-gradient(135deg,#f8fafc 0%,var(--brand-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1.1rem,5vw,2.6rem)}
+a{color:inherit}
+.l-en,.l-pt{display:none}
+body.lang-en .l-es{display:none}body.lang-en .l-en{display:inline}body.lang-en .l-pt{display:none}
+body.lang-pt .l-es{display:none}body.lang-pt .l-en{display:none}body.lang-pt .l-pt{display:inline}
+
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(7,11,26,.72);border-bottom:1px solid var(--brand-border)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--fh);font-weight:700;font-size:1rem;text-decoration:none}
+.brand svg{width:28px;height:28px;flex:0 0 auto}
+.brand .g{color:var(--brand-gold)}
+.tnav{display:flex;gap:1rem;align-items:center}
+.tnav a{font-family:var(--fh);font-weight:600;font-size:.82rem;color:var(--brand-text-soft);text-decoration:none;transition:color .2s}
+.tnav a:hover{color:var(--brand-gold)}
+.langbtn{font-family:var(--fmeta);font-weight:700;font-size:.74rem;letter-spacing:.1em;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.42rem .8rem;transition:background .2s,transform .2s var(--ease-spring)}
+.langbtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+
+.hero{padding:clamp(2.8rem,8vw,5rem) 0 clamp(1.4rem,4vw,2.4rem);text-align:center}
+.chip-hero{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .95rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,215,0,.07));border:1.5px solid var(--brand-gold);color:var(--brand-gold);font-family:var(--fmeta);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 16px rgba(255,215,0,.22);margin-bottom:1.4rem}
+.chip-hero::before{content:'\2605'}
+.hero h1{font-family:var(--fh);font-weight:900;line-height:1.04;letter-spacing:-.02em;font-size:clamp(2.2rem,6vw,4rem);margin-bottom:1rem}
+.hero .sub{font-family:var(--fh);font-weight:600;color:var(--brand-text-soft);font-size:clamp(1.02rem,2.4vw,1.4rem);margin-bottom:1rem}
+.hero .lead{color:var(--brand-text-soft);max-width:680px;margin:0 auto 1.4rem;font-size:clamp(1rem,2vw,1.12rem)}
+.pricepill{display:inline-flex;align-items:baseline;gap:.5rem;font-family:var(--fh);font-weight:900;color:var(--brand-gold);font-size:1.6rem;margin-bottom:1.4rem}
+.pricepill small{font-family:var(--fmeta);font-weight:700;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-muted)}
+.cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fh);font-weight:700;font-size:.92rem;padding:.85rem 1.5rem;border-radius:12px;text-decoration:none;cursor:pointer;transition:transform .35s var(--ease-spring),box-shadow .35s var(--ease-out-expo),background .25s}
+.btn-gold{background:linear-gradient(135deg,var(--brand-gold),var(--brand-gold-deep));color:#1a1206;box-shadow:0 8px 22px rgba(255,215,0,.28)}
+.btn-gold:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 34px rgba(255,215,0,.42)}
+.btn-ghost{background:transparent;color:var(--brand-text-soft);border:1.5px solid var(--brand-border-hover)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--brand-gold);color:var(--brand-gold)}
+
+.trust{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:1.4rem;font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;font-weight:700;color:var(--brand-muted)}
+.trust span::before{content:'\2713';color:var(--brand-gold);margin-right:.4rem;font-weight:800}
+
+section.block{padding:clamp(2.2rem,5vw,3.6rem) 0}
+.eyebrow{font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:700;color:var(--brand-gold);margin-bottom:.7rem;display:block;text-align:center}
+.block h2{font-family:var(--fh);font-weight:800;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.12;margin-bottom:.7rem;letter-spacing:-.01em;text-align:center}
+.block .intro{color:var(--brand-text-soft);font-size:clamp(1rem,2vw,1.12rem);max-width:700px;margin:0 auto 2rem;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.card{background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem 1.35rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
+.card:hover{border-color:var(--brand-border-hover);transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.4),0 0 24px rgba(255,215,0,.08)}
+.card .ic{font-size:1.4rem;margin-bottom:.6rem}
+.card h3{font-family:var(--fh);font-weight:800;font-size:1.06rem;margin-bottom:.35rem}
+.card p{font-size:.88rem;color:var(--brand-muted);line-height:1.5}
+
+.modgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.mod{position:relative;background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem 1.35rem 1.35rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
+.mod:hover{border-color:var(--brand-border-hover);transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.4),0 0 24px rgba(255,215,0,.08)}
+.mod .num{font-family:var(--fm);font-weight:600;font-size:.78rem;color:var(--brand-dark);background:var(--brand-gold);width:2.1rem;height:2.1rem;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:.7rem;box-shadow:0 4px 14px rgba(255,215,0,.3)}
+.mod.final .num{background:linear-gradient(135deg,var(--brand-gold),var(--brand-gold-deep))}
+.mod h3{font-family:var(--fh);font-weight:800;font-size:1.04rem;margin-bottom:.35rem;line-height:1.2}
+.mod p{font-size:.86rem;color:var(--brand-muted);line-height:1.5}
+.mod .tag{display:inline-block;margin-top:.6rem;font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.1em;font-size:.58rem;font-weight:700;color:var(--brand-gold-deep)}
+
+.incgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:.85rem}
+.inc{display:flex;gap:.8rem;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:14px;padding:1.05rem 1.15rem;transition:border-color .25s,transform .4s var(--ease-spring)}
+.inc:hover{border-color:var(--brand-border-hover);transform:translateY(-3px)}
+.inc .ic{font-size:1.3rem;flex:0 0 auto;line-height:1.2}
+.inc h3{font-family:var(--fh);font-weight:700;font-size:.96rem;margin-bottom:.2rem}
+.inc p{font-size:.82rem;color:var(--brand-muted);line-height:1.45}
+
+.result{max-width:760px;margin:0 auto;background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(30,58,138,.16));border:1px solid var(--brand-border-hover);border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem);text-align:center}
+.result h2{margin-bottom:.8rem}
+.result p{color:var(--brand-text-soft);max-width:600px;margin:0 auto 1rem}
+
+.agenda{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.7rem}
+.step{display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:12px;padding:.9rem 1.1rem}
+.step .t{font-family:var(--fm);font-size:.74rem;font-weight:600;color:var(--brand-gold);flex:0 0 auto;min-width:3.6rem;padding-top:.15rem}
+.step .d{font-size:.92rem;color:var(--brand-text-soft)}
+.step .d b{color:#fff}
+.faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
+.faq details{background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:12px;padding:.4rem .3rem}
+.faq summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-family:var(--fh);font-weight:700;font-size:.95rem;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--brand-gold);font-weight:800;font-size:1.2rem;line-height:1}
+.faq details[open] summary::after{content:'\2013'}
+.faq .a{padding:0 .9rem .8rem;font-size:.9rem;color:var(--brand-muted);line-height:1.55}
+.signup{max-width:760px;margin:0 auto;background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(30,58,138,.16));border:1px solid var(--brand-border-hover);border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem);text-align:center}
+.signup p{color:var(--brand-text-soft);max-width:540px;margin:0 auto 1.4rem}
+.signup .alt{margin-top:1.1rem;font-size:.84rem;color:var(--brand-muted)}
+.signup .alt a{color:var(--brand-gold);text-decoration:none;font-weight:600}
+
+footer{border-top:1px solid var(--brand-border);padding:clamp(2.2rem,5vw,3rem) 0 2.4rem;margin-top:1.6rem;background:linear-gradient(180deg,transparent,rgba(7,11,26,.6))}
+.fbrand{display:flex;align-items:center;gap:.7rem;font-family:var(--fh);font-weight:700;font-size:1.05rem;margin-bottom:.7rem}
+.fbrand svg{width:32px;height:32px}
+.fbrand .g{color:var(--brand-gold)}
+.triad{font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:700;color:var(--brand-gold-deep);margin-bottom:1rem}
+.fmeta{display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--brand-muted)}
+.fmeta a{color:var(--brand-gold);text-decoration:none;font-weight:600}
+:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body class="lang-es">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="iso"><rect width="36" height="36" rx="9" fill="#122562"/>
+<rect x="10" y="12" width="4" height="12" rx="0.5" fill="#fff"/><rect x="16" y="12" width="4" height="8" rx="0.5" fill="#fff"/>
+<rect x="16" y="22" width="4" height="2" rx="0.5" fill="#fff"/><rect x="22" y="12" width="4" height="6" rx="0.5" fill="#fff"/>
+<rect x="22" y="20" width="4" height="4" rx="0.5" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></g>
+</defs></svg>
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Inicio · MetodologIA">
+    <svg viewBox="0 0 36 36" role="img" aria-hidden="true"><use href="#iso"/></svg>
+    <span>&#8592; Metodolog<span class="g">IA</span></span>
+  </a>
+  <nav class="tnav">
+    <a href="bootcamp-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
+    <a href="#modulos"><span class="l-es">Módulos</span><span class="l-en">Modules</span><span class="l-pt">Módulos</span></a>
+    <a href="#inscripcion"><span class="l-es">Inscríbete</span><span class="l-en">Enroll</span><span class="l-pt">Inscreva-se</span></a>
+    <button class="langbtn" id="langbtn" aria-label="Cambiar idioma / change language">ES</button>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="chip-hero"><span class="l-es">Programa completo · 9 módulos + proyecto final</span><span class="l-en">Full program · 9 modules + final project</span><span class="l-pt">Programa completo · 9 módulos + projeto final</span></span>
+  <h1>Bootcamp <span class="gtext">Trabajar Amplificado</span></h1>
+  <p class="sub"><span class="l-es">(R)Evoluciona tu flujo de trabajo en un sistema de alto rendimiento</span><span class="l-en">(R)Evolve your workflow into a high-performance system</span><span class="l-pt">(R)Evolua seu fluxo de trabalho em um sistema de alto desempenho</span></p>
+  <p class="lead"><span class="l-es">El programa completo, no técnicas sueltas. Cada módulo es masterclass + taller práctico + entregable. Sales con tu propio sistema (Jarvis OS) funcionando, no con una demo. Recuperas horas de trabajo mecánico para lo estratégico.</span><span class="l-en">The full program, not loose techniques. Each module is masterclass + hands-on workshop + deliverable. You leave with your own system (Jarvis OS) running, not with a demo. You reclaim hours of mechanical work for the strategic.</span><span class="l-pt">O programa completo, não técnicas soltas. Cada módulo é masterclass + workshop prático + entregável. Você sai com seu próprio sistema (Jarvis OS) funcionando, não com uma demo. Recupera horas de trabalho mecânico para o estratégico.</span></p>
+  <div class="pricepill">$200 USD <small><span class="l-es">· programa completo</span><span class="l-en">· full program</span><span class="l-pt">· programa completo</span></small></div>
+  <div class="cta">
+    <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete al bootcamp →</span><span class="l-en">Enroll in the bootcamp →</span><span class="l-pt">Inscreva-se no bootcamp →</span></a>
+    <a class="btn btn-ghost" href="bootcamp-deck.html"><span class="l-es">Ver diapositivas</span><span class="l-en">View slides</span><span class="l-pt">Ver slides</span></a>
+  </div>
+  <div class="trust">
+    <span><span class="l-es">9 módulos + proyecto final</span><span class="l-en">9 modules + final project</span><span class="l-pt">9 módulos + projeto final</span></span>
+    <span><span class="l-es">Tu sistema funcionando al cierre</span><span class="l-en">Your system running by the end</span><span class="l-pt">Seu sistema funcionando no fim</span></span>
+    <span><span class="l-es">Certificado y material</span><span class="l-en">Certificate and material</span><span class="l-pt">Certificado e material</span></span>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">De qué se trata</span><span class="l-en">What it is</span><span class="l-pt">Do que se trata</span></span>
+  <h2><span class="l-es">No es un curso. Es construir tu sistema.</span><span class="l-en">Not a course. It's building your system.</span><span class="l-pt">Não é um curso. É construir seu sistema.</span></h2>
+  <div class="grid">
+    <div class="card"><div class="ic">🏗️</div><h3><span class="l-es">Construyes, no miras</span><span class="l-en">You build, you don't watch</span><span class="l-pt">Você constrói, não observa</span></h3><p><span class="l-es">Cada módulo termina en un entregable real sobre tu trabajo, no en un ejercicio de juguete.</span><span class="l-en">Each module ends in a real deliverable about your work, not a toy exercise.</span><span class="l-pt">Cada módulo termina num entregável real sobre seu trabalho, não num exercício de brinquedo.</span></p></div>
+    <div class="card"><div class="ic">🧩</div><h3><span class="l-es">Masterclass + taller</span><span class="l-en">Masterclass + workshop</span><span class="l-pt">Masterclass + workshop</span></h3><p><span class="l-es">Primero entiendes el porqué, luego lo aplicas en vivo con acompañamiento.</span><span class="l-en">First you understand the why, then you apply it live with guidance.</span><span class="l-pt">Primeiro você entende o porquê, depois aplica ao vivo com acompanhamento.</span></p></div>
+    <div class="card"><div class="ic">⚙️</div><h3><span class="l-es">Sistema, no demo</span><span class="l-en">System, not demo</span><span class="l-pt">Sistema, não demo</span></h3><p><span class="l-es">Al cierre, tu Jarvis OS queda funcionando y reutilizable. El método queda; la herramienta es prestada.</span><span class="l-en">By the end, your Jarvis OS is running and reusable. The method stays; the tool is borrowed.</span><span class="l-pt">No fim, seu Jarvis OS fica funcionando e reutilizável. O método fica; a ferramenta é emprestada.</span></p></div>
+  </div>
+</div></section>
+
+<section class="block" id="modulos"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">El programa</span><span class="l-en">The program</span><span class="l-pt">O programa</span></span>
+  <h2><span class="l-es">9 módulos + proyecto final</span><span class="l-en">9 modules + final project</span><span class="l-pt">9 módulos + projeto final</span></h2>
+  <p class="intro"><span class="l-es">Cada módulo combina masterclass, taller práctico y un entregable concreto. Avanzas de los fundamentos a un sistema agéntico completo.</span><span class="l-en">Each module combines masterclass, hands-on workshop and a concrete deliverable. You go from fundamentals to a complete agentic system.</span><span class="l-pt">Cada módulo combina masterclass, workshop prático e um entregável concreto. Você avança dos fundamentos a um sistema agêntico completo.</span></p>
+  <div class="modgrid">
+    <div class="mod"><div class="num">1</div><h3><span class="l-es">Fundamentos de prompting</span><span class="l-en">Prompting fundamentals</span><span class="l-pt">Fundamentos de prompting</span></h3><p><span class="l-es">Cómo hablarle a la IA para obtener resultados útiles desde la primera vez.</span><span class="l-en">How to talk to AI to get useful results from the first try.</span><span class="l-pt">Como falar com a IA para obter resultados úteis de primeira.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod"><div class="num">2</div><h3><span class="l-es">Ingeniería de prompts avanzada</span><span class="l-en">Advanced prompt engineering</span><span class="l-pt">Engenharia de prompts avançada</span></h3><p><span class="l-es">Plantillas, roles, cadenas de razonamiento y control de calidad de las respuestas.</span><span class="l-en">Templates, roles, reasoning chains and quality control of responses.</span><span class="l-pt">Templates, papéis, cadeias de raciocínio e controle de qualidade das respostas.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod"><div class="num">3</div><h3><span class="l-es">Crear asistentes</span><span class="l-en">Create assistants</span><span class="l-pt">Criar assistentes</span></h3><p><span class="l-es">Diseñas asistentes con tu contexto, tus reglas y tu memoria persistente.</span><span class="l-en">You design assistants with your context, your rules and persistent memory.</span><span class="l-pt">Você cria assistentes com seu contexto, suas regras e memória persistente.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod"><div class="num">4</div><h3><span class="l-es">Multimedia con IA</span><span class="l-en">Multimedia with AI</span><span class="l-pt">Multimídia com IA</span></h3><p><span class="l-es">Imagen, audio, documentos y formatos visuales generados a la medida de tu trabajo.</span><span class="l-en">Image, audio, documents and visual formats generated to fit your work.</span><span class="l-pt">Imagem, áudio, documentos e formatos visuais gerados sob medida.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod"><div class="num">5</div><h3><span class="l-es">Inteligencia agéntica</span><span class="l-en">Agentic intelligence</span><span class="l-pt">Inteligência agêntica</span></h3><p><span class="l-es">Pasas de pedir respuestas a delegar tareas con criterio y verificación humana.</span><span class="l-en">You go from asking for answers to delegating tasks with judgment and human verification.</span><span class="l-pt">Você passa de pedir respostas a delegar tarefas com critério e verificação humana.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod"><div class="num">6</div><h3><span class="l-es">Automatización agéntica</span><span class="l-en">Agentic automation</span><span class="l-pt">Automação agêntica</span></h3><p><span class="l-es">Encadenas tareas y conectores para que tu sistema trabaje mientras tú decides.</span><span class="l-en">You chain tasks and connectors so your system works while you decide.</span><span class="l-pt">Você encadeia tarefas e conectores para o sistema trabalhar enquanto você decide.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod"><div class="num">7</div><h3><span class="l-es">Prototipado y mini-apps</span><span class="l-en">Prototyping and mini-apps</span><span class="l-pt">Prototipagem e mini-apps</span></h3><p><span class="l-es">Construyes herramientas a la medida sin saber programar, para resolver tus casos.</span><span class="l-en">You build custom tools without coding, to solve your own cases.</span><span class="l-pt">Você constrói ferramentas sob medida sem programar, para resolver seus casos.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod"><div class="num">8</div><h3><span class="l-es">Adopción de IA</span><span class="l-en">AI adoption</span><span class="l-pt">Adoção de IA</span></h3><p><span class="l-es">Llevas el sistema a tu día a día y, si quieres, a tu equipo, con disciplina sostenible.</span><span class="l-en">You bring the system into your daily work and, if you want, to your team, with sustainable discipline.</span><span class="l-pt">Você leva o sistema ao seu dia a dia e, se quiser, à sua equipe, com disciplina sustentável.</span></p><span class="tag"><span class="l-es">Masterclass · taller · entregable</span><span class="l-en">Masterclass · workshop · deliverable</span><span class="l-pt">Masterclass · workshop · entregável</span></span></div>
+    <div class="mod final"><div class="num">9</div><h3><span class="l-es">Proyecto final</span><span class="l-en">Final project</span><span class="l-pt">Projeto final</span></h3><p><span class="l-es">Implementas tu sistema completo sobre un caso real tuyo y lo dejas funcionando.</span><span class="l-en">You implement your full system on a real case of yours and leave it running.</span><span class="l-pt">Você implementa seu sistema completo sobre um caso real seu e o deixa funcionando.</span></p><span class="tag"><span class="l-es">Implementación real</span><span class="l-en">Real implementation</span><span class="l-pt">Implementação real</span></span></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">Qué incluye</span><span class="l-en">What's included</span><span class="l-pt">O que inclui</span></span>
+  <h2><span class="l-es">Te llevas todo el material</span><span class="l-en">You take all the material</span><span class="l-pt">Você leva todo o material</span></h2>
+  <p class="intro"><span class="l-es">No solo aprendes: sales con archivos, plantillas y un sistema que sigue siendo tuyo.</span><span class="l-en">You don't just learn: you leave with files, templates and a system that stays yours.</span><span class="l-pt">Você não só aprende: sai com arquivos, templates e um sistema que continua sendo seu.</span></p>
+  <div class="incgrid">
+    <div class="inc"><div class="ic">📚</div><div><h3><span class="l-es">Memorias de los 9 módulos</span><span class="l-en">Notes of all 9 modules</span><span class="l-pt">Memórias dos 9 módulos</span></h3><p><span class="l-es">Memorias completas de cada módulo, listas para consultar.</span><span class="l-en">Complete notes of each module, ready to consult.</span><span class="l-pt">Memórias completas de cada módulo, prontas para consulta.</span></p></div></div>
+    <div class="inc"><div class="ic">🎯</div><div><h3><span class="l-es">Batería de prompts y plantillas</span><span class="l-en">Prompt and template battery</span><span class="l-pt">Bateria de prompts e templates</span></h3><p><span class="l-es">Una colección lista para usar y adaptar a tus casos.</span><span class="l-en">A collection ready to use and adapt to your cases.</span><span class="l-pt">Uma coleção pronta para usar e adaptar aos seus casos.</span></p></div></div>
+    <div class="inc"><div class="ic">📘</div><div><h3><span class="l-es">Playbooks por módulo</span><span class="l-en">Playbooks per module</span><span class="l-pt">Playbooks por módulo</span></h3><p><span class="l-es">El paso a paso de cada módulo para que lo repitas solo.</span><span class="l-en">The step-by-step of each module so you can repeat it alone.</span><span class="l-pt">O passo a passo de cada módulo para você repetir sozinho.</span></p></div></div>
+    <div class="inc"><div class="ic">🗂️</div><div><h3><span class="l-es">Plantillas multiformato</span><span class="l-en">Multi-format templates</span><span class="l-pt">Templates multiformato</span></h3><p><span class="l-es">Documentos, decks y formatos listos para tu trabajo real.</span><span class="l-en">Documents, decks and formats ready for your real work.</span><span class="l-pt">Documentos, decks e formatos prontos para seu trabalho real.</span></p></div></div>
+    <div class="inc"><div class="ic">⚙️</div><div><h3><span class="l-es">Tu sistema (Jarvis OS) funcionando</span><span class="l-en">Your system (Jarvis OS) running</span><span class="l-pt">Seu sistema (Jarvis OS) funcionando</span></h3><p><span class="l-es">Tu escritorio de IA montado y operativo al cierre del bootcamp.</span><span class="l-en">Your AI desk set up and operational by the end of the bootcamp.</span><span class="l-pt">Sua mesa de IA montada e operacional ao fim do bootcamp.</span></p></div></div>
+    <div class="inc"><div class="ic">🚀</div><div><h3><span class="l-es">Proyecto final implementado</span><span class="l-en">Final project implemented</span><span class="l-pt">Projeto final implementado</span></h3><p><span class="l-es">Tu caso real resuelto y en marcha, no un prototipo de demo.</span><span class="l-en">Your real case solved and running, not a demo prototype.</span><span class="l-pt">Seu caso real resolvido e em marcha, não um protótipo de demo.</span></p></div></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="result">
+    <span class="eyebrow"><span class="l-es">El resultado</span><span class="l-en">The result</span><span class="l-pt">O resultado</span></span>
+    <h2><span class="l-es">Sales con tu sistema, no con una demo</span><span class="l-en">You leave with your system, not a demo</span><span class="l-pt">Você sai com seu sistema, não com uma demo</span></h2>
+    <p><span class="l-es">Terminas el bootcamp con tu propio sistema de trabajo amplificado funcionando sobre casos reales tuyos. Recuperas las horas que hoy gastas en trabajo mecánico y las inviertes en lo estratégico.</span><span class="l-en">You finish the bootcamp with your own amplified work system running on your real cases. You reclaim the hours you spend today on mechanical work and invest them in the strategic.</span><span class="l-pt">Você termina o bootcamp com seu próprio sistema de trabalho amplificado funcionando sobre casos reais seus. Recupera as horas que hoje gasta em trabalho mecânico e as investe no estratégico.</span></p>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">Para quién</span><span class="l-en">Who it's for</span><span class="l-pt">Para quem</span></span>
+  <h2><span class="l-es">Para quien quiere el sistema completo</span><span class="l-en">For those who want the full system</span><span class="l-pt">Para quem quer o sistema completo</span></h2>
+  <p class="intro"><span class="l-es">Managers y profesionales que quieren el sistema completo, no solo técnicas sueltas. No necesitas saber programar. Requiere una cuenta de Claude de pago (desde $20/mes) para los talleres prácticos.</span><span class="l-en">Managers and professionals who want the full system, not just loose techniques. No coding needed. Requires a paid Claude account (from $20/month) for the hands-on workshops.</span><span class="l-pt">Managers e profissionais que querem o sistema completo, não só técnicas soltas. Não precisa saber programar. Requer uma conta paga do Claude (a partir de $20/mês) para os workshops práticos.</span></p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow"><span class="l-es">Cómo avanza</span><span class="l-en">How it flows</span><span class="l-pt">Como avança</span></span>
+  <h2><span class="l-es">Estructura de cada módulo</span><span class="l-en">Structure of each module</span><span class="l-pt">Estrutura de cada módulo</span></h2>
+  <div class="agenda">
+    <div class="step"><div class="t">1</div><div class="d"><b><span class="l-es">Masterclass.</span><span class="l-en">Masterclass.</span><span class="l-pt">Masterclass.</span></b> <span class="l-es">Entiendes el concepto y el porqué antes de tocar nada.</span><span class="l-en">You understand the concept and the why before touching anything.</span><span class="l-pt">Você entende o conceito e o porquê antes de mexer em nada.</span></div></div>
+    <div class="step"><div class="t">2</div><div class="d"><b><span class="l-es">Taller práctico.</span><span class="l-en">Hands-on workshop.</span><span class="l-pt">Workshop prático.</span></b> <span class="l-es">Lo aplicas en vivo sobre tu trabajo, con acompañamiento.</span><span class="l-en">You apply it live on your work, with guidance.</span><span class="l-pt">Você aplica ao vivo sobre seu trabalho, com acompanhamento.</span></div></div>
+    <div class="step"><div class="t">3</div><div class="d"><b><span class="l-es">Entregable.</span><span class="l-en">Deliverable.</span><span class="l-pt">Entregável.</span></b> <span class="l-es">Cierras con un artefacto real que se queda en tu sistema.</span><span class="l-en">You close with a real artifact that stays in your system.</span><span class="l-pt">Você fecha com um artefato real que fica no seu sistema.</span></div></div>
+    <div class="step"><div class="t">★</div><div class="d"><b><span class="l-es">Proyecto final.</span><span class="l-en">Final project.</span><span class="l-pt">Projeto final.</span></b> <span class="l-es">Integras todo en un sistema completo, implementado sobre tu caso real.</span><span class="l-en">You integrate everything into a complete system, implemented on your real case.</span><span class="l-pt">Você integra tudo num sistema completo, implementado sobre seu caso real.</span></div></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <span class="eyebrow">FAQ</span>
+  <h2><span class="l-es">Preguntas frecuentes</span><span class="l-en">Frequently asked</span><span class="l-pt">Perguntas frequentes</span></h2>
+  <div class="faq">
+    <details><summary><span class="l-es">¿Cuánto cuesta el bootcamp?</span><span class="l-en">How much is the bootcamp?</span><span class="l-pt">Quanto custa o bootcamp?</span></summary><div class="a"><span class="l-es">$200 USD por el programa completo: 9 módulos + proyecto final.</span><span class="l-en">$200 USD for the full program: 9 modules + final project.</span><span class="l-pt">$200 USD pelo programa completo: 9 módulos + projeto final.</span></div></details>
+    <details><summary><span class="l-es">¿Necesito una cuenta de pago de Claude?</span><span class="l-en">Do I need a paid Claude account?</span><span class="l-pt">Preciso de conta paga do Claude?</span></summary><div class="a"><span class="l-es">Sí. El bootcamp requiere una cuenta de Claude de pago (desde $20/mes) para los talleres prácticos.</span><span class="l-en">Yes. The bootcamp requires a paid Claude account (from $20/month) for the hands-on workshops.</span><span class="l-pt">Sim. O bootcamp requer uma conta paga do Claude (a partir de $20/mês) para os workshops práticos.</span></div></details>
+    <details><summary><span class="l-es">¿Necesito saber programar?</span><span class="l-en">Do I need to know how to code?</span><span class="l-pt">Preciso saber programar?</span></summary><div class="a"><span class="l-es">No. Está pensado para managers y profesionales, no para programadores.</span><span class="l-en">No. It's designed for managers and professionals, not programmers.</span><span class="l-pt">Não. É pensado para managers e profissionais, não para programadores.</span></div></details>
+    <details><summary><span class="l-es">¿Hay descuento si ya hice los talleres?</span><span class="l-en">Is there a discount if I already did the workshops?</span><span class="l-pt">Tem desconto se já fiz os workshops?</span></summary><div class="a"><span class="l-es">Los dos talleres cuestan $30 juntos (ahorras $10 frente a comprarlos sueltos). El bootcamp es el programa completo, con los 9 módulos y el proyecto final.</span><span class="l-en">The two workshops cost $30 together (you save $10 vs buying them separately). The bootcamp is the full program, with all 9 modules and the final project.</span><span class="l-pt">Os dois workshops custam $30 juntos (você economiza $10 vs comprá-los avulsos). O bootcamp é o programa completo, com os 9 módulos e o projeto final.</span></div></details>
+    <details><summary><span class="l-es">¿Entregan algo al terminar?</span><span class="l-en">Do you deliver anything at the end?</span><span class="l-pt">Entregam algo ao terminar?</span></summary><div class="a"><span class="l-es">Sí: certificado y todo el material (memorias, prompts, plantillas, playbooks y tu sistema funcionando).</span><span class="l-en">Yes: a certificate and all the material (notes, prompts, templates, playbooks and your system running).</span><span class="l-pt">Sim: certificado e todo o material (memórias, prompts, templates, playbooks e seu sistema funcionando).</span></div></details>
+  </div>
+</div></section>
+
+<section class="block" id="inscripcion"><div class="wrap">
+  <div class="signup">
+    <span class="eyebrow"><span class="l-es">Inscripciones</span><span class="l-en">Enrollment</span><span class="l-pt">Inscrições</span></span>
+    <h2><span class="l-es">Reserva tu lugar en el bootcamp</span><span class="l-en">Reserve your seat in the bootcamp</span><span class="l-pt">Reserve seu lugar no bootcamp</span></h2>
+    <p><span class="l-es">Déjanos tus datos y te avisamos la próxima cohorte. Cupos limitados para garantizar acompañamiento.</span><span class="l-en">Leave your details and we'll tell you the next cohort. Limited seats to guarantee guidance.</span><span class="l-pt">Deixe seus dados e avisamos a próxima turma. Vagas limitadas para garantir acompanhamento.</span></p>
+    <div class="cta">
+      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete · $200 →</span><span class="l-en">Enroll · $200 →</span><span class="l-pt">Inscreva-se · $200 →</span></a>
+      <a class="btn btn-ghost" href="https://chat.whatsapp.com/JWUMmpnbnec14Pd9pVuZo2" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="alt"><span class="l-es">¿Prefieres escribirnos? </span><span class="l-en">Prefer to write us? </span><span class="l-pt">Prefere nos escrever? </span><a href="mailto:contacto@metodologia.info?subject=Bootcamp%20Trabajar%20Amplificado">contacto@metodologia.info</a></p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fbrand"><svg viewBox="0 0 36 36" role="img" aria-label="MetodologIA"><use href="#iso"/></svg>
+    <span>Metodolog<span class="g">IA</span> · Trabajar Amplificado</span></div>
+  <p class="triad">Emprendedor · Habilitador · Artesano</p>
+  <div class="fmeta">
+    <a href="index.html"><span class="l-es">← Volver al inicio</span><span class="l-en">← Back to home</span><span class="l-pt">← Voltar ao início</span></a>
+    <a href="https://metodologia.info" target="_blank" rel="noopener">metodologia.info</a>
+    <a href="mailto:contacto@metodologia.info">contacto@metodologia.info</a>
+    <span><span class="l-es">Método primero, (Gen)IA después.</span><span class="l-en">Method first, (Gen)AI next.</span><span class="l-pt">Método primeiro, (Gen)IA depois.</span></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
+  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];
+    document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+  btn.onclick=function(){setLang(li+1);};
+})();
+</script>
+</body>
+</html>

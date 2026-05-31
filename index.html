@@ -76,6 +76,10 @@ section.block{padding:clamp(2.4rem,6vw,4rem) 0}
 .rung h3{font-family:var(--fh);font-weight:800;font-size:1.18rem;margin-bottom:.3rem}
 .rung .when{font-family:var(--fmeta);text-transform:uppercase;letter-spacing:.12em;font-size:.62rem;font-weight:700;color:var(--brand-gold-deep);margin-bottom:.6rem}
 .rung p{font-size:.9rem;color:var(--brand-muted);line-height:1.55}
+.rung .rmore{display:inline-block;margin-top:.8rem;font-family:var(--fh);font-weight:700;font-size:.82rem;color:var(--brand-gold);text-decoration:none}
+.rung .rmore:hover{text-decoration:underline}
+.price .detail{display:block;text-align:center;margin-top:.5rem;font-family:var(--fh);font-weight:600;font-size:.78rem;color:var(--brand-muted);text-decoration:none}
+.price .detail:hover{color:var(--brand-gold)}
 
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;align-items:stretch}
 @media(max-width:820px){.price-grid{grid-template-columns:1fr}}
@@ -154,6 +158,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.4rem,5vw,3.4rem)
   </a>
   <nav class="navlinks">
     <a href="#programa"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></a>
+    <a href="dossier.html"><span class="l-es">Dossier</span><span class="l-en">Dossier</span><span class="l-pt">Dossiê</span></a>
     <a href="#precios"><span class="l-es">Precios</span><span class="l-en">Pricing</span><span class="l-pt">Preços</span></a>
     <a href="#material"><span class="l-es">Material</span><span class="l-en">Material</span><span class="l-pt">Material</span></a>
     <a href="#inscripcion"><span class="l-es">Inscríbete</span><span class="l-en">Enroll</span><span class="l-pt">Inscreva-se</span></a>
@@ -196,20 +201,25 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.4rem,5vw,3.4rem)
       <div class="when"><span class="l-es">Empieza aquí · gratis</span><span class="l-en">Start here · free</span><span class="l-pt">Comece aqui · grátis</span></div>
       <h3><span class="l-es">Taller de Intro</span><span class="l-en">Intro Workshop</span><span class="l-pt">Workshop de Intro</span></h3>
       <p><span class="l-es">Una sesión para ver, en vivo, cómo Claude Cowork amplifica tu trabajo. Sin costo, sin compromiso. Te inscribes por el formulario.</span><span class="l-en">One live session to see how Claude Cowork amplifies your work. No cost, no commitment. Sign up via the form.</span><span class="l-pt">Uma sessão ao vivo para ver como o Claude Cowork amplifica seu trabalho. Sem custo, sem compromisso. Inscreva-se pelo formulário.</span></p>
+      <a class="rmore" href="taller-intro.html"><span class="l-es">Ver detalle →</span><span class="l-en">See details →</span><span class="l-pt">Ver detalhe →</span></a>
     </div>
     <div class="rung">
       <div class="n"></div>
       <div class="when"><span class="l-es">2 talleres · 2 h c/u · $20</span><span class="l-en">2 workshops · 2 h each · $20</span><span class="l-pt">2 workshops · 2 h cada · $20</span></div>
       <h3><span class="l-es">Talleres especializados</span><span class="l-en">Specialized workshops</span><span class="l-pt">Workshops especializados</span></h3>
       <p><span class="l-es"><strong>Prompting de Alto Rendimiento</strong> y <strong>Sistematización y Automatización con Claude</strong>. Prácticos, en vivo. Toma uno o los dos (hay descuento por el combo).</span><span class="l-en"><strong>High-Performance Prompting</strong> and <strong>Systematization &amp; Automation with Claude</strong>. Hands-on, live. Take one or both (combo discount).</span><span class="l-pt"><strong>Prompting de Alto Desempenho</strong> e <strong>Sistematização &amp; Automação com Claude</strong>. Práticos, ao vivo. Faça um ou os dois (desconto no combo).</span></p>
+      <a class="rmore" href="taller-prompting.html"><span class="l-es">Prompting →</span><span class="l-en">Prompting →</span><span class="l-pt">Prompting →</span></a> &nbsp;
+      <a class="rmore" href="taller-automatizacion.html"><span class="l-es">Automatización →</span><span class="l-en">Automation →</span><span class="l-pt">Automação →</span></a>
     </div>
     <div class="rung">
       <div class="n"></div>
       <div class="when"><span class="l-es">Programa completo · $200</span><span class="l-en">Full program · $200</span><span class="l-pt">Programa completo · $200</span></div>
       <h3><span class="l-es">Bootcamp Trabajar Amplificado</span><span class="l-en">Trabajar Amplificado Bootcamp</span><span class="l-pt">Bootcamp Trabajar Amplificado</span></h3>
       <p><span class="l-es">9 módulos + proyecto final. Sales con tu propio sistema de trabajo amplificado funcionando, no con una demo.</span><span class="l-en">9 modules + final project. You leave with your own amplified work system running, not a demo.</span><span class="l-pt">9 módulos + projeto final. Você sai com seu próprio sistema de trabalho amplificado funcionando, não com uma demo.</span></p>
+      <a class="rmore" href="bootcamp.html"><span class="l-es">Ver detalle →</span><span class="l-en">See details →</span><span class="l-pt">Ver detalhe →</span></a>
     </div>
   </div>
+  <p style="text-align:center;margin-top:1.8rem"><a class="btn btn-ghost" href="dossier.html"><span class="l-es">Ver el dossier completo del programa</span><span class="l-en">See the full program dossier</span><span class="l-pt">Ver o dossiê completo do programa</span></a></p>
 </div></section>
 
 <!-- PRECIOS -->
@@ -228,7 +238,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.4rem,5vw,3.4rem)
         <li><span class="l-es">Ves el método en acción</span><span class="l-en">See the method in action</span><span class="l-pt">Veja o método em ação</span></li>
         <li><span class="l-es">Cupos por formulario</span><span class="l-en">Seats via the form</span><span class="l-pt">Vagas pelo formulário</span></li>
       </ul>
-      <div class="pcta"><a class="solid" href="#inscripcion"><span class="l-es">Inscríbete gratis</span><span class="l-en">Enroll free</span><span class="l-pt">Inscreva-se grátis</span></a></div>
+      <div class="pcta"><a class="solid" href="#inscripcion"><span class="l-es">Inscríbete gratis</span><span class="l-en">Enroll free</span><span class="l-pt">Inscreva-se grátis</span></a><a class="detail" href="taller-intro.html"><span class="l-es">Ver detalle →</span><span class="l-en">See details →</span><span class="l-pt">Ver detalhe →</span></a></div>
     </div>
     <div class="price feat">
       <span class="ptag"><span class="l-es">Paso 2 · profundiza</span><span class="l-en">Step 2 · go deeper</span><span class="l-pt">Passo 2 · aprofunde</span></span>
@@ -241,7 +251,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.4rem,5vw,3.4rem)
         <li><span class="l-es">Sistematización y Automatización con Claude</span><span class="l-en">Systematization &amp; Automation with Claude</span><span class="l-pt">Sistematização &amp; Automação com Claude</span></li>
         <li><span class="l-es">Prácticos, te llevas plantillas</span><span class="l-en">Hands-on, you take templates</span><span class="l-pt">Práticos, você leva modelos</span></li>
       </ul>
-      <div class="pcta"><a class="solid" href="#inscripcion"><span class="l-es">Reservar un taller</span><span class="l-en">Reserve a workshop</span><span class="l-pt">Reservar um workshop</span></a></div>
+      <div class="pcta"><a class="solid" href="#inscripcion"><span class="l-es">Reservar un taller</span><span class="l-en">Reserve a workshop</span><span class="l-pt">Reservar um workshop</span></a><a class="detail" href="taller-prompting.html"><span class="l-es">Prompting →</span><span class="l-en">Prompting →</span><span class="l-pt">Prompting →</span></a><a class="detail" href="taller-automatizacion.html"><span class="l-es">Automatización →</span><span class="l-en">Automation →</span><span class="l-pt">Automação →</span></a></div>
     </div>
     <div class="price">
       <span class="ptag"><span class="l-es">Paso 3 · el sistema</span><span class="l-en">Step 3 · the system</span><span class="l-pt">Passo 3 · o sistema</span></span>
@@ -253,7 +263,7 @@ footer{border-top:1px solid var(--brand-border);padding:clamp(2.4rem,5vw,3.4rem)
         <li><span class="l-es">Tu sistema funcionando al cierre</span><span class="l-en">Your system running by the end</span><span class="l-pt">Seu sistema funcionando no fim</span></li>
         <li><span class="l-es">Material y plantillas incluidos</span><span class="l-en">Material and templates included</span><span class="l-pt">Material e modelos incluídos</span></li>
       </ul>
-      <div class="pcta"><a class="out" href="#inscripcion"><span class="l-es">Quiero el bootcamp</span><span class="l-en">I want the bootcamp</span><span class="l-pt">Quero o bootcamp</span></a></div>
+      <div class="pcta"><a class="out" href="#inscripcion"><span class="l-es">Quiero el bootcamp</span><span class="l-en">I want the bootcamp</span><span class="l-pt">Quero o bootcamp</span></a><a class="detail" href="bootcamp.html"><span class="l-es">Ver detalle →</span><span class="l-en">See details →</span><span class="l-pt">Ver detalhe →</span></a></div>
     </div>
   </div>
   <div class="prereq">

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Taller MetodologIA · deck del taller Sistematización y Automatización con Claude: de tarea repetida a sistema, asistentes y skills reutilizables, inteligencia agéntica, cadencias y cuándo automatizar con criterio. Método + IA = Soberanía.">
+<meta name="author" content="Javier Montaño · MetodologIA">
+<title>Taller · Sistematización y Automatización con Claude · MetodologIA</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23122562'/%3E%3Cstop offset='100%25' stop-color='%231F2833'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='10' fill='url(%23g)'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --brand-dark:#0a122a; --brand-darker:#070b1a; --brand-surface:#1e293b; --brand-surface-alt:#172033;
+  --brand-gold:#ffd700; --brand-gold-soft:#ffe875; --brand-gold-deep:#b8860b;
+  --brand-text:#f8fafc; --brand-text-soft:#e2e8f0; --brand-muted:#94a3b8;
+  --brand-border:rgba(255,255,255,.08); --brand-border-hover:rgba(255,215,0,.35);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-spring:cubic-bezier(.34,1.56,.64,1); --ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --fh:'Poppins',system-ui,sans-serif; --fb:'Montserrat',system-ui,sans-serif; --fm:'JetBrains Mono',ui-monospace,monospace;
+  --fmeta:'Trebuchet MS','Lucida Grande',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--brand-dark);color:var(--brand-text);font-family:var(--fb);overflow:hidden}
+body{background-image:radial-gradient(ellipse 60% 45% at 16% 10%,rgba(255,215,0,.07),transparent 55%),radial-gradient(ellipse 55% 50% at 85% 88%,rgba(255,215,0,.05),transparent 55%),radial-gradient(ellipse 50% 60% at 92% 8%,rgba(19,125,197,.08),transparent 50%)}
+h1,h2,h3{font-family:var(--fh);margin:0;line-height:1.06;color:#fff}
+strong{color:#fff}em{color:var(--brand-gold-soft);font-style:normal}
+code{font-family:var(--fm);background:rgba(255,215,0,.1);color:var(--brand-gold-soft);padding:.08em .35em;border-radius:5px;font-size:.92em;border:1px solid rgba(255,215,0,.16)}
+.gtext{background:linear-gradient(135deg,#f8fafc 0%,var(--brand-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.l-en,.l-pt{display:none}
+body.lang-en .l-es{display:none}body.lang-en .l-en{display:inline}body.lang-en .l-pt{display:none}
+body.lang-pt .l-es{display:none}body.lang-pt .l-en{display:none}body.lang-pt .l-pt{display:inline}
+.deck{position:fixed;inset:0;overflow:hidden}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,5.5rem) clamp(1.5rem,7vw,8rem) clamp(5rem,9vh,6.5rem);opacity:0;transform:translateX(48px) scale(.985);pointer-events:none;transition:opacity .55s var(--ease),transform .55s var(--ease-out-expo);overflow:auto}
+.slide.on{opacity:1;transform:none;pointer-events:auto}
+.slide.prev{transform:translateX(-48px) scale(.985)}
+.wrap{max-width:1180px;width:100%;margin:auto 0}
+.eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--fmeta);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.28em;color:var(--brand-gold);margin-bottom:1.4rem}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--brand-gold);border-radius:2px}
+.chip-hero{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .95rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,215,0,.07));border:1.5px solid var(--brand-gold);color:var(--brand-gold);font-family:var(--fmeta);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 16px rgba(255,215,0,.22);margin-bottom:1.4rem}
+.chip-hero::before{content:'\2605'}
+h1{font-size:clamp(2.5rem,7vw,5.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.0}
+h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
+.lead{font-size:clamp(1.05rem,1.6vw,1.45rem);color:var(--brand-text-soft);max-width:62ch;line-height:1.65;margin-top:1.5rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brand-border);border:1px solid var(--brand-border);border-radius:18px;overflow:hidden;margin-top:2.2rem;max-width:880px}
+.stats .cell{background:rgba(23,32,51,.72);padding:1.35rem .8rem;text-align:center}
+.stats .num{font-family:var(--fh);font-weight:900;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--brand-gold);line-height:1}
+.stats .lab{margin-top:.45rem;font-family:var(--fmeta);font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted)}
+.grid{display:grid;gap:1.1rem;margin-top:2rem}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{position:relative;background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:18px;padding:1.5rem 1.6rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
+.card:hover{border-color:var(--brand-border-hover);transform:translateY(-4px) scale(1.015);box-shadow:0 15px 35px rgba(0,0,0,.45),0 0 0 1px rgba(255,215,0,.18),0 0 28px rgba(255,215,0,.1)}
+.card.hot{background:radial-gradient(circle at 18% 18%,rgba(255,215,0,.16),transparent 60%),linear-gradient(135deg,rgba(30,41,59,.8),rgba(10,18,42,.8));border-color:rgba(255,215,0,.5)}
+.card h3{font-size:1.2rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.55rem}
+.card p,.card li{color:var(--brand-text-soft);font-size:1rem;line-height:1.55}
+.dot{width:34px;height:34px;border-radius:9px;background:rgba(255,215,0,.12);color:var(--brand-gold);display:inline-flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;flex:0 0 auto;border:1px solid rgba(255,215,0,.3)}
+.bigq{font-family:var(--fh);font-weight:800;font-size:clamp(1.5rem,3.2vw,2.6rem);line-height:1.18;color:#fff}
+.bigq em{color:var(--brand-gold)}
+.anatomy{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+.node{flex:1 1 180px;min-width:168px;background:rgba(255,255,255,.05);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem;text-align:center;transition:transform .4s var(--ease-spring),border-color .25s}
+.node:hover{transform:translateY(-3px);border-color:var(--brand-border-hover)}
+.node .ico{font-size:1.9rem}.node b{display:block;font-family:var(--fm);margin-top:.4rem;color:var(--brand-gold-soft)}.node span{display:block;font-size:.85rem;color:var(--brand-muted);margin-top:.25rem}
+.arrow{color:var(--brand-gold);font-size:1.7rem;flex:0 0 auto}
+.agenda{display:grid;gap:.5rem;margin-top:1.8rem}
+.agenda .row{display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:baseline;padding:.75rem 0;border-bottom:1px solid var(--brand-border)}
+.agenda .t{font-family:var(--fm);color:var(--brand-gold);font-weight:700}
+.agenda h3{font-size:1.12rem}
+.prompt{background:#060c1f;border:1px solid var(--brand-border);border-radius:16px;overflow:hidden;margin-top:1.7rem;max-width:920px;box-shadow:0 18px 44px rgba(0,0,0,.4)}
+.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,215,0,.05));padding:.65rem .95rem;border-bottom:1px solid var(--brand-border)}
+.prompt-head span{font-family:var(--fm);font-size:.78rem;color:var(--brand-gold)}
+.copy{border:1px solid rgba(255,215,0,.4);background:transparent;color:var(--brand-gold);border-radius:8px;padding:.34rem .75rem;cursor:pointer;font-weight:700;font-size:.78rem;transition:background .2s,color .2s,transform .2s}
+.copy:hover,.copy.ok{background:var(--brand-gold);color:var(--brand-dark);transform:translateY(-1px)}
+.prompt pre{margin:0;padding:1.15rem;white-space:pre-wrap;font-family:var(--fm);font-size:.92rem;line-height:1.6;color:#dbe6ff}
+.callout{background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,215,0,.04));border-left:4px solid var(--brand-gold);border-radius:0 14px 14px 0;padding:1.2rem 1.5rem;margin-top:1.9rem;color:#fff;max-width:64ch;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.6rem;border-radius:11px;font-family:var(--fh);font-weight:700;text-decoration:none;font-size:1rem;transition:transform .4s var(--ease-spring),box-shadow .4s var(--ease-out-expo)}
+.btn-gold{background:var(--brand-gold);color:var(--brand-dark);box-shadow:0 8px 24px rgba(255,215,0,.3)}
+.btn-gold:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 34px rgba(255,215,0,.4)}
+.btn-ghost{background:transparent;color:var(--brand-gold);border:2px solid rgba(255,215,0,.5)}
+.btn-ghost:hover{background:var(--brand-gold);color:var(--brand-dark)}
+.brandbar{position:absolute;left:clamp(1.5rem,7vw,8rem);bottom:1.45rem;display:flex;align-items:center;gap:.65rem;font-size:.74rem;color:var(--brand-muted);font-family:var(--fh);font-weight:600}
+.brandbar .logo{width:24px;height:24px}.brandbar b{color:#fff}.brandbar .g{color:var(--brand-gold)}
+.brandbar .tag{font-family:var(--fmeta);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-gold-deep);padding-left:.55rem;margin-left:.15rem;border-left:1px solid var(--brand-border)}
+.hud{position:fixed;right:clamp(1rem,4vw,2.4rem);bottom:1.25rem;display:flex;align-items:center;gap:.5rem;z-index:30}
+.navbtn{width:44px;height:44px;border-radius:12px;border:1px solid var(--brand-border);background:rgba(30,41,59,.7);color:var(--brand-gold);cursor:pointer;font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);transition:background .2s,transform .25s var(--ease-spring),box-shadow .2s}
+.navbtn:hover{background:var(--brand-gold);color:var(--brand-dark);transform:translateY(-2px);box-shadow:0 0 18px rgba(255,215,0,.4)}
+.counter{font-family:var(--fm);font-size:.85rem;color:var(--brand-muted);min-width:54px;text-align:center}
+.langbtn{min-width:48px;height:44px;border-radius:12px;border:1px solid rgba(255,215,0,.4);background:rgba(255,215,0,.1);color:var(--brand-gold);cursor:pointer;font-family:var(--fh);font-weight:800;font-size:.82rem;letter-spacing:.05em;padding:0 .7rem;backdrop-filter:blur(10px);transition:background .2s,color .2s}
+.langbtn:hover{background:var(--brand-gold);color:var(--brand-dark)}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand-gold),var(--brand-gold-soft));width:0;z-index:40;transition:width .45s var(--ease-out-expo);box-shadow:0 0 12px rgba(255,215,0,.5)}
+:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:4px}
+@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.anatomy{flex-direction:column}.arrow{transform:rotate(90deg)}.slide{padding:4.5rem 1.3rem 5.5rem}.brandbar .tag{display:none}}
+</style>
+</head>
+<body class="lang-es">
+<a href="index.html" id="ta-home" style="position:fixed;top:12px;right:12px;z-index:99999;display:inline-flex;gap:.45rem;align-items:center;padding:.42rem .8rem;border-radius:999px;background:#0a122a;color:#ffd700;border:1.5px solid #ffd700;font:700 12px/1 'Poppins',system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45)">&#8617; Inicio<span style="opacity:.6;font-weight:600"> · Home</span></a>
+<div class="progress" id="progress"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide on"><div class="wrap">
+    <span class="chip-hero"><span class="l-es">Taller en vivo · 2 horas · $20 USD</span><span class="l-en">Live workshop · 2 hours · $20 USD</span><span class="l-pt">Workshop ao vivo · 2 horas · $20 USD</span></span>
+    <h1><span class="l-es">Sistematización y <span class="gtext">Automatización</span></span><span class="l-en">Systematization &amp; <span class="gtext">Automation</span></span><span class="l-pt">Sistematização e <span class="gtext">Automação</span></span></h1>
+    <p class="lead"><span class="l-es">Con Claude. Conviertes las tareas que repites cada semana en un sistema que se ejecuta solo: asistentes reutilizables, workflows encadenados y cadencias. Sales de la sesión con un workflow propio funcionando, no con teoría.</span><span class="l-en">With Claude. You turn the tasks you repeat every week into a system that runs itself: reusable assistants, chained workflows and cadences. You leave the session with your own workflow working, not with theory.</span><span class="l-pt">Com Claude. Você converte as tarefas que repete toda semana num sistema que se executa sozinho: assistentes reutilizáveis, workflows encadeados e cadências. Você sai da sessão com um workflow próprio funcionando, não com teoria.</span></p>
+    <div class="stats">
+      <div class="cell"><div class="num">2h</div><div class="lab"><span class="l-es">en vivo</span><span class="l-en">live</span><span class="l-pt">ao vivo</span></div></div>
+      <div class="cell"><div class="num">1</div><div class="lab"><span class="l-es">workflow propio</span><span class="l-en">your workflow</span><span class="l-pt">workflow seu</span></div></div>
+      <div class="cell"><div class="num">$20</div><div class="lab"><span class="l-es">USD · 2 = $30</span><span class="l-en">USD · 2 = $30</span><span class="l-pt">USD · 2 = $30</span></div></div>
+      <div class="cell"><div class="num">0</div><div class="lab"><span class="l-es">líneas de código</span><span class="l-en">lines of code</span><span class="l-pt">linhas de código</span></div></div>
+    </div>
+  </div></section>
+
+  <!-- 2 EL DOLOR -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">El dolor real</span><span class="l-en">The real pain</span><span class="l-pt">A dor real</span></span>
+    <div class="grid g3">
+      <div class="card"><p class="bigq"><span class="l-es">¿Cuántas tareas <em>idénticas</em> repites cada semana, a mano, una y otra vez?</span><span class="l-en">How many <em>identical</em> tasks do you repeat every week, by hand, again and again?</span><span class="l-pt">Quantas tarefas <em>idênticas</em> você repete toda semana, à mão, várias vezes?</span></p></div>
+      <div class="card"><p class="bigq"><span class="l-es">El reporte de cada lunes, <em>¿lo vuelves a armar desde cero?</em></span><span class="l-en">Every Monday's report, <em>do you rebuild it from scratch?</em></span><span class="l-pt">O relatório de toda segunda, <em>você refaz do zero?</em></span></p></div>
+      <div class="card"><p class="bigq"><span class="l-es">¿Cuánto de tu semana se va en lo que <em>una máquina haría igual?</em></span><span class="l-en">How much of your week goes to what <em>a machine would do just as well?</em></span><span class="l-pt">Quanto da sua semana vai no que <em>uma máquina faria igual?</em></span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 3 TESIS -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Tesis del taller</span><span class="l-en">Workshop thesis</span><span class="l-pt">Tese do workshop</span></span>
+    <h2><span class="l-es">Una tarea que repites no es trabajo: es un <span class="gtext">sistema esperando a existir</span>.</span><span class="l-en">A task you repeat is not work: it is a <span class="gtext">system waiting to exist</span>.</span><span class="l-pt">Uma tarefa que você repete não é trabalho: é um <span class="gtext">sistema esperando para existir</span>.</span></h2>
+    <p class="lead"><span class="l-es">Cada vez que repites algo a mano, pagas el mismo costo otra vez. Sistematizar es capturar ese proceso una sola vez —en un asistente, un skill, un workflow— para que Claude lo ejecute las siguientes mil. Tú decides qué; la máquina hace el cómo.</span><span class="l-en">Every time you repeat something by hand, you pay the same cost again. Systematizing means capturing that process once —in an assistant, a skill, a workflow— so Claude runs it the next thousand times. You decide the what; the machine does the how.</span><span class="l-pt">Cada vez que você repete algo à mão, paga o mesmo custo de novo. Sistematizar é capturar esse processo uma única vez —num assistente, num skill, num workflow— para que o Claude execute as próximas mil. Você decide o quê; a máquina faz o como.</span></p>
+  </div></section>
+
+  <!-- 4 QUÉ VALE LA PENA -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Antes de automatizar</span><span class="l-en">Before automating</span><span class="l-pt">Antes de automatizar</span></span>
+    <h2><span class="l-es">¿Qué vale la pena <span class="gtext">sistematizar?</span></span><span class="l-en">What is worth <span class="gtext">systematizing?</span></span><span class="l-pt">O que vale a pena <span class="gtext">sistematizar?</span></span></h2>
+    <div class="grid g3">
+      <div class="card hot"><h3>✓ <span class="l-es">Sí</span><span class="l-en">Yes</span><span class="l-pt">Sim</span></h3><p><span class="l-es">Lo que repites seguido, con pasos claros y un resultado predecible: reportes, resúmenes, seguimientos, clasificación.</span><span class="l-en">What you repeat often, with clear steps and a predictable result: reports, summaries, follow-ups, triage.</span><span class="l-pt">O que você repete com frequência, com passos claros e resultado previsível: relatórios, resumos, acompanhamentos, triagem.</span></p></div>
+      <div class="card"><h3>✗ <span class="l-es">No</span><span class="l-en">No</span><span class="l-pt">Não</span></h3><p><span class="l-es">Lo que cambia cada vez, exige juicio fino o decisiones de alto riesgo. Eso lo decides tú, no un automatismo.</span><span class="l-en">What changes every time, needs fine judgment or high-stakes decisions. That's yours to decide, not an automation.</span><span class="l-pt">O que muda toda vez, exige juízo fino ou decisões de alto risco. Isso você decide, não uma automação.</span></p></div>
+      <div class="card"><h3>⚖ <span class="l-es">La regla</span><span class="l-en">The rule</span><span class="l-pt">A regra</span></h3><p><span class="l-es">No automatices todo por moda. Adoptar mucho para usar poco solo genera desorden. Automatiza lo que de verdad te quita tiempo.</span><span class="l-en">Don't automate everything by trend. Adopting a lot to use little only creates clutter. Automate what truly costs you time.</span><span class="l-pt">Não automatize tudo por moda. Adotar muito para usar pouco só gera bagunça. Automatize o que realmente te toma tempo.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 5 ASISTENTES Y SKILLS -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Bloque 1 · 20–70 min</span><span class="l-en">Block 1 · 20–70 min</span><span class="l-pt">Bloco 1 · 20–70 min</span></span>
+    <h2><span class="l-es">Asistentes y skills <span class="gtext">reutilizables</span></span><span class="l-en">Reusable <span class="gtext">assistants &amp; skills</span></span><span class="l-pt">Assistentes e skills <span class="gtext">reutilizáveis</span></span></h2>
+    <p class="lead"><span class="l-es">En vez de reescribir el mismo prompt cada lunes, lo encapsulas una vez en un asistente o skill con sus instrucciones, su tono y sus pasos. Después solo lo invocas: lo construimos juntos, en vivo, con una tarea tuya real.</span><span class="l-en">Instead of rewriting the same prompt every Monday, you wrap it once into an assistant or skill with its instructions, its tone and its steps. Then you just invoke it: we build it together, live, using a real task of yours.</span><span class="l-pt">Em vez de reescrever o mesmo prompt toda segunda, você o encapsula uma vez num assistente ou skill com suas instruções, seu tom e seus passos. Depois é só invocar: construímos juntos, ao vivo, com uma tarefa sua real.</span></p>
+    <div class="grid g3">
+      <div class="card"><h3><span class="dot">1</span><span class="l-es">Capturas</span><span class="l-en">Capture</span><span class="l-pt">Capture</span></h3><p><span class="l-es">Describes la tarea una sola vez: qué entra, qué sale, qué reglas.</span><span class="l-en">Describe the task once: what goes in, what comes out, what rules.</span><span class="l-pt">Descreve a tarefa uma vez: o que entra, o que sai, quais regras.</span></p></div>
+      <div class="card"><h3><span class="dot">2</span><span class="l-es">Encapsulas</span><span class="l-en">Wrap</span><span class="l-pt">Encapsule</span></h3><p><span class="l-es">Queda como asistente o skill, guardado y listo para usar.</span><span class="l-en">It becomes an assistant or skill, saved and ready to use.</span><span class="l-pt">Vira um assistente ou skill, salvo e pronto para usar.</span></p></div>
+      <div class="card"><h3><span class="dot">3</span><span class="l-es">Reutilizas</span><span class="l-en">Reuse</span><span class="l-pt">Reutilize</span></h3><p><span class="l-es">Lo invocas en segundos, sin volver a explicar nada.</span><span class="l-en">You invoke it in seconds, without explaining anything again.</span><span class="l-pt">Você invoca em segundos, sem reexplicar nada.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 6 INTELIGENCIA AGÉNTICA -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Bloque 2 · 70–100 min</span><span class="l-en">Block 2 · 70–100 min</span><span class="l-pt">Bloco 2 · 70–100 min</span></span>
+    <h2><span class="l-es">Inteligencia agéntica: de responder a <span class="gtext">ejecutar</span></span><span class="l-en">Agentic intelligence: from answering to <span class="gtext">executing</span></span><span class="l-pt">Inteligência agêntica: de responder a <span class="gtext">executar</span></span></h2>
+    <p class="lead"><span class="l-es">Un agente no solo contesta una pregunta: encadena varios pasos y lleva un flujo de principio a fin. Tomamos tu asistente y lo convertimos en un workflow que recoge, procesa y entrega, con confirmación humana donde importa.</span><span class="l-en">An agent doesn't just answer a question: it chains several steps and carries a flow end to end. We take your assistant and turn it into a workflow that gathers, processes and delivers, with human confirmation where it matters.</span><span class="l-pt">Um agente não só responde uma pergunta: encadeia vários passos e leva um fluxo de ponta a ponta. Pegamos seu assistente e o transformamos num workflow que coleta, processa e entrega, com confirmação humana onde importa.</span></p>
+    <div class="anatomy">
+      <div class="node"><div class="ico">📥</div><b><span class="l-es">Recoge</span><span class="l-en">Gather</span><span class="l-pt">Coleta</span></b><span class="l-es">datos, correos, notas</span><span class="l-en">data, emails, notes</span><span class="l-pt">dados, e-mails, notas</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="ico">⚙️</div><b><span class="l-es">Procesa</span><span class="l-en">Process</span><span class="l-pt">Processa</span></b><span class="l-es">aplica tus reglas</span><span class="l-en">applies your rules</span><span class="l-pt">aplica suas regras</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="ico">📤</div><b><span class="l-es">Entrega</span><span class="l-en">Deliver</span><span class="l-pt">Entrega</span></b><span class="l-es">el resultado listo</span><span class="l-en">the finished result</span><span class="l-pt">o resultado pronto</span></div>
+    </div>
+  </div></section>
+
+  <!-- 7 CADENCIAS -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Que corra solo</span><span class="l-en">Let it run itself</span><span class="l-pt">Que rode sozinho</span></span>
+    <h2><span class="l-es">Cadencias y tareas <span class="gtext">programadas</span></span><span class="l-en">Cadences &amp; <span class="gtext">scheduled tasks</span></span><span class="l-pt">Cadências e tarefas <span class="gtext">programadas</span></span></h2>
+    <p class="lead"><span class="l-es">El último paso de la automatización es no tener que pulsar el botón. Defines cuándo corre el workflow —cada mañana, cada lunes, fin de mes— y se ejecuta solo en cadencia. Tú revisas el resultado, no haces el trabajo.</span><span class="l-en">The last step of automation is not having to press the button. You define when the workflow runs —every morning, every Monday, month-end— and it executes itself on a cadence. You review the result, you don't do the work.</span><span class="l-pt">O último passo da automação é não ter que apertar o botão. Você define quando o workflow roda —toda manhã, toda segunda, fim de mês— e ele se executa sozinho em cadência. Você revisa o resultado, não faz o trabalho.</span></p>
+    <div class="grid g3">
+      <div class="card"><h3>📅 <span class="l-es">Diaria</span><span class="l-en">Daily</span><span class="l-pt">Diária</span></h3><p><span class="l-es">Resumen de la mañana, agenda priorizada, pendientes.</span><span class="l-en">Morning brief, prioritized agenda, open items.</span><span class="l-pt">Resumo da manhã, agenda priorizada, pendências.</span></p></div>
+      <div class="card"><h3>🔁 <span class="l-es">Semanal</span><span class="l-en">Weekly</span><span class="l-pt">Semanal</span></h3><p><span class="l-es">Reporte del lunes, seguimiento de equipo, métricas.</span><span class="l-en">Monday report, team follow-up, metrics.</span><span class="l-pt">Relatório de segunda, acompanhamento de equipe, métricas.</span></p></div>
+      <div class="card"><h3>🗓️ <span class="l-es">Mensual</span><span class="l-en">Monthly</span><span class="l-pt">Mensal</span></h3><p><span class="l-es">Cierre, consolidado, retrospectiva automática.</span><span class="l-en">Close, roll-up, automatic retrospective.</span><span class="l-pt">Fechamento, consolidado, retrospectiva automática.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 8 CUÁNDO NO -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Criterio · no todo</span><span class="l-en">Judgment · not everything</span><span class="l-pt">Critério · não tudo</span></span>
+    <h2><span class="l-es">Automatizar <span class="gtext">con criterio</span>, no por moda</span><span class="l-en">Automate <span class="gtext">with judgment</span>, not by trend</span><span class="l-pt">Automatizar <span class="gtext">com critério</span>, não por moda</span></h2>
+    <div class="callout"><strong><span class="l-es">El riesgo no es automatizar poco. Es automatizar todo.</span><span class="l-en">The risk is not automating too little. It's automating everything.</span><span class="l-pt">O risco não é automatizar pouco. É automatizar tudo.</span></strong> <span class="l-es">Adoptar muchas herramientas para usar pocas solo genera desorden y mantenimiento. Una buena automatización resuelve un dolor concreto, se usa de verdad y la entiendes. Si no cumple las tres, no la montes todavía.</span><span class="l-en">Adopting many tools to use few only creates clutter and maintenance. A good automation solves a concrete pain, is actually used and you understand it. If it fails the three, don't build it yet.</span><span class="l-pt">Adotar muitas ferramentas para usar poucas só gera bagunça e manutenção. Uma boa automação resolve uma dor concreta, é de fato usada e você a entende. Se falha nos três, não monte ainda.</span></div>
+  </div></section>
+
+  <!-- 9 PROMPT -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Prompt de arranque</span><span class="l-en">Starter prompt</span><span class="l-pt">Prompt de arranque</span></span>
+    <h2><span class="l-es">Captura tu primer <span class="gtext">asistente reutilizable</span></span><span class="l-en">Capture your first <span class="gtext">reusable assistant</span></span><span class="l-pt">Capture seu primeiro <span class="gtext">assistente reutilizável</span></span></h2>
+    <div class="prompt">
+      <div class="prompt-head"><span><span class="l-es">Diseño de asistente · Claude</span><span class="l-en">Assistant design · Claude</span><span class="l-pt">Design de assistente · Claude</span></span><button class="copy" data-copy>Copy</button></div>
+      <pre><span class="l-es">Quiero convertir una tarea que repito cada semana en un asistente reutilizable. Primero hazme máximo cinco preguntas para entender la tarea: qué información entra, qué resultado espero, qué reglas o tono debe seguir y cada cuánto la hago. Luego propón el asistente como instrucciones claras y los pasos del workflow, y dime qué partes conviene automatizar y cuáles debo seguir decidiendo yo. No ejecutes nada irreversible sin confirmación.</span><span class="l-en">I want to turn a task I repeat every week into a reusable assistant. First ask me up to five questions to understand the task: what information goes in, what result I expect, what rules or tone it should follow and how often I do it. Then propose the assistant as clear instructions plus the workflow steps, and tell me which parts are worth automating and which I should keep deciding myself. Do not run anything irreversible without confirmation.</span><span class="l-pt">Quero transformar uma tarefa que repito toda semana num assistente reutilizável. Primeiro faça no máximo cinco perguntas para entender a tarefa: que informação entra, que resultado espero, quais regras ou tom deve seguir e com que frequência a faço. Depois proponha o assistente como instruções claras e os passos do workflow, e diga quais partes vale automatizar e quais devo continuar decidindo eu. Não execute nada irreversível sem confirmação.</span></pre>
+    </div>
+  </div></section>
+
+  <!-- 10 CIERRE -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Qué te llevas</span><span class="l-en">What you take</span><span class="l-pt">O que você leva</span></span>
+    <h1><span class="l-es">Un workflow <span class="gtext">propio, funcionando</span></span><span class="l-en">Your own workflow, <span class="gtext">working</span></span><span class="l-pt">Um workflow <span class="gtext">próprio, funcionando</span></span></h1>
+    <p class="lead"><span class="l-es">No sales con teoría: sales con un asistente y un workflow automatizado que ya corren sobre una tarea real tuya. La máquina hace lo repetitivo; tú recuperas el tiempo para lo que sí importa. Método primero, automatización después.</span><span class="l-en">You don't leave with theory: you leave with an assistant and an automated workflow already running on a real task of yours. The machine handles the repetitive; you reclaim time for what matters. Method first, automation next.</span><span class="l-pt">Você não sai com teoria: sai com um assistente e um workflow automatizado já rodando sobre uma tarefa real sua. A máquina faz o repetitivo; você recupera o tempo para o que importa. Método primeiro, automação depois.</span></p>
+    <div class="cta">
+      <a class="btn btn-gold" href="taller-automatizacion.html"><span class="l-es">Ir al taller →</span><span class="l-en">Go to the workshop →</span><span class="l-pt">Ir ao workshop →</span></a>
+      <a class="btn btn-ghost" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete ($20)</span><span class="l-en">Enroll ($20)</span><span class="l-pt">Inscreva-se ($20)</span></a>
+    </div>
+  </div></section>
+
+</div>
+
+<div class="brandbar"><svg class="logo" viewBox="0 0 36 36"><rect width="36" height="36" rx="9" fill="#122562"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg><b>Metodolog<span class="g">IA</span></b> · <span class="l-es">Automatización</span><span class="l-en">Automation</span><span class="l-pt">Automação</span> · <span class="l-es">Taller</span><span class="l-en">Workshop</span><span class="l-pt">Workshop</span><span class="tag">Método + IA = Soberanía</span></div>
+<div class="hud">
+  <button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
+  <button class="navbtn" id="prev" aria-label="Anterior">‹</button>
+  <span class="counter" id="counter">1 / 10</span>
+  <button class="navbtn" id="next" aria-label="Siguiente">›</button>
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0, n=slides.length;
+  var counter=document.getElementById('counter'), prog=document.getElementById('progress');
+  function show(k){k=Math.max(0,Math.min(n-1,k));slides.forEach(function(s,idx){s.classList.remove('on','prev');if(idx<k)s.classList.add('prev');});slides[k].classList.add('on');i=k;counter.textContent=(k+1)+' / '+n;prog.style.width=((k+1)/n*100)+'%';slides[k].scrollTop=0;}
+  function next(){show(i+1);} function prev(){show(i-1);}
+  document.getElementById('next').onclick=next; document.getElementById('prev').onclick=prev;
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
+  var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;},{passive:true});
+  var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
+  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+  btn.onclick=function(){setLang(li+1);};
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var pre=b.closest('.prompt').querySelector('pre');var act=pre.querySelector('.l-'+langs[li]);var txt=act?act.textContent:pre.textContent;navigator.clipboard.writeText(txt.trim()).then(function(){var o=b.textContent;b.textContent='✓';b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok');},1300);});};});
+  show(0); setLang(0);
+})();
+</script>
+</body>
+</html>
