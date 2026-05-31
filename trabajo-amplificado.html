@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Taller MetodologIA · deck horizontal de 20 pasos para montar tu primer Jarvis OS en Claude Cowork: carpeta, reglas, CV, perfil de cargo, 1:1, validación y memoria. Tú diriges, Cowork ejecuta.">
+<meta name="author" content="Javier Montaño · MetodologIA">
+<title>Taller · Jarvis OS en Claude · MetodologIA</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23122562'/%3E%3Cstop offset='100%25' stop-color='%231F2833'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='10' fill='url(%23g)'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--brand-dark:#0a122a;--brand-darker:#070b1a;--brand-surface:#1e293b;--brand-surface-alt:#172033;--brand-gold:#ffd700;--brand-gold-soft:#ffe875;--brand-gold-deep:#b8860b;--brand-text:#f8fafc;--brand-text-soft:#e2e8f0;--brand-muted:#94a3b8;--brand-border:rgba(255,255,255,.08);--brand-border-hover:rgba(255,215,0,.35);--ease:cubic-bezier(.4,0,.2,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);--fh:'Poppins',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,monospace;--fmeta:'Trebuchet MS','Lucida Grande',system-ui,sans-serif;}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--brand-dark);color:var(--brand-text);font-family:var(--fb);overflow:hidden}
+body{background-image:radial-gradient(ellipse 60% 45% at 16% 10%,rgba(255,215,0,.07),transparent 55%),radial-gradient(ellipse 55% 50% at 85% 88%,rgba(255,215,0,.05),transparent 55%),radial-gradient(ellipse 50% 60% at 92% 8%,rgba(19,125,197,.08),transparent 50%)}
+h1,h2,h3{font-family:var(--fh);margin:0;line-height:1.06;color:#fff}
+strong{color:#fff}em{color:var(--brand-gold-soft);font-style:normal}
+code{font-family:var(--fm);background:rgba(255,215,0,.1);color:var(--brand-gold-soft);padding:.08em .35em;border-radius:5px;font-size:.92em;border:1px solid rgba(255,215,0,.16)}
+.gtext{background:linear-gradient(135deg,#f8fafc 0%,var(--brand-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.l-en,.l-pt{display:none}
+body.lang-en .l-es{display:none}body.lang-en .l-en{display:inline}body.lang-en .l-pt{display:none}
+body.lang-pt .l-es{display:none}body.lang-pt .l-en{display:none}body.lang-pt .l-pt{display:inline}
+.deck{position:fixed;inset:0;overflow:hidden}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,5rem) clamp(1.5rem,7vw,8rem) clamp(5rem,9vh,6.5rem);opacity:0;transform:translateX(48px) scale(.985);pointer-events:none;transition:opacity .55s var(--ease),transform .55s var(--ease-out-expo);overflow:auto}
+.slide.on{opacity:1;transform:none;pointer-events:auto}
+.slide.prev{transform:translateX(-48px) scale(.985)}
+.wrap{max-width:1180px;width:100%;margin:auto 0}
+.eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--fmeta);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.26em;color:var(--brand-gold);margin-bottom:1.2rem}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--brand-gold);border-radius:2px}
+.chip-hero{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .95rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,215,0,.07));border:1.5px solid var(--brand-gold);color:var(--brand-gold);font-family:var(--fmeta);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 16px rgba(255,215,0,.22);margin-bottom:1.4rem}
+.chip-hero::before{content:'\2605'}
+h1{font-size:clamp(2.4rem,7vw,5.4rem);font-weight:900;letter-spacing:-.03em;line-height:1.0}
+h1 .hl,h1 .gtext{color:var(--brand-gold)}
+h2{font-size:clamp(1.6rem,3.8vw,3rem);font-weight:900;letter-spacing:-.02em}
+.lead{font-size:clamp(1.02rem,1.5vw,1.4rem);color:var(--brand-text-soft);max-width:64ch;line-height:1.62;margin-top:1.3rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--brand-border);border:1px solid var(--brand-border);border-radius:18px;overflow:hidden;margin-top:2rem;max-width:760px}
+.stats .cell{background:rgba(23,32,51,.72);padding:1.3rem .8rem;text-align:center}
+.stats .num{font-family:var(--fh);font-weight:900;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--brand-gold);line-height:1}
+.stats .lab{margin-top:.45rem;font-family:var(--fmeta);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted)}
+.grid{display:grid;gap:1rem;margin-top:1.7rem}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{position:relative;background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem 1.4rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
+.card:hover{border-color:var(--brand-border-hover);transform:translateY(-4px) scale(1.015);box-shadow:0 15px 35px rgba(0,0,0,.45),0 0 0 1px rgba(255,215,0,.18),0 0 28px rgba(255,215,0,.1)}
+.card.hot{background:radial-gradient(circle at 18% 18%,rgba(255,215,0,.16),transparent 60%),linear-gradient(135deg,rgba(30,41,59,.8),rgba(10,18,42,.8));border-color:rgba(255,215,0,.5)}
+.card h3{font-size:1.12rem;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.card p,.card li{color:var(--brand-text-soft);font-size:.98rem;line-height:1.5}
+.step-no{font-family:var(--fh);font-weight:900;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1;background:linear-gradient(135deg,var(--brand-gold) 0%,var(--brand-gold-deep) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.steplay{display:grid;grid-template-columns:auto 1fr;gap:1.7rem;align-items:start}
+.flow{display:grid;gap:.55rem;margin-top:1.6rem;max-width:820px}
+.flow .it{display:grid;grid-template-columns:34px 1fr;gap:1rem;align-items:center;background:rgba(255,255,255,.04);border:1px solid var(--brand-border);border-radius:12px;padding:.65rem 1rem}
+.flow .it b{width:30px;height:30px;border-radius:8px;background:rgba(255,215,0,.12);color:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;border:1px solid rgba(255,215,0,.3)}
+.flow .it span{color:var(--brand-text-soft);font-size:.98rem}
+.check{display:grid;gap:.5rem;margin-top:1.3rem}
+.check li{list-style:none;display:flex;gap:.65rem;align-items:flex-start;color:var(--brand-text-soft);font-size:1rem}
+.check li::before{content:'\2610';color:var(--brand-gold);font-size:1.1rem}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
+.tag-pill{font-family:var(--fm);font-size:.78rem;padding:.35rem .7rem;border-radius:7px;border:1px solid var(--brand-border);background:rgba(255,255,255,.04);color:var(--brand-gold-soft)}
+.prompt{background:#060c1f;border:1px solid var(--brand-border);border-radius:16px;overflow:hidden;margin-top:1.4rem;max-width:1000px;box-shadow:0 18px 44px rgba(0,0,0,.4)}
+.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,215,0,.05));padding:.6rem .95rem;border-bottom:1px solid var(--brand-border)}
+.prompt-head span{font-family:var(--fm);font-size:.78rem;color:var(--brand-gold)}
+.copy{border:1px solid rgba(255,215,0,.4);background:transparent;color:var(--brand-gold);border-radius:8px;padding:.32rem .72rem;cursor:pointer;font-weight:700;font-size:.78rem;transition:background .2s}
+.copy:hover,.copy.ok{background:var(--brand-gold);color:var(--brand-dark)}
+.prompt pre{margin:0;padding:1.1rem;white-space:pre-wrap;font-family:var(--fm);font-size:.88rem;line-height:1.58;color:#dbe6ff}
+.callout{background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,215,0,.04));border-left:4px solid var(--brand-gold);border-radius:0 14px 14px 0;padding:1.05rem 1.4rem;margin-top:1.4rem;color:#fff;max-width:68ch;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.callout.warn{background:linear-gradient(135deg,rgba(220,38,38,.16),rgba(220,38,38,.05));border-left-color:#ff6b6b}
+.cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.6rem;border-radius:11px;font-family:var(--fh);font-weight:700;text-decoration:none;font-size:1rem;transition:transform .4s var(--ease-spring),box-shadow .4s var(--ease-out-expo)}
+.btn-gold{background:var(--brand-gold);color:var(--brand-dark);box-shadow:0 8px 24px rgba(255,215,0,.3)}
+.btn-gold:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 34px rgba(255,215,0,.4)}
+.btn-ghost{background:transparent;color:var(--brand-gold);border:2px solid rgba(255,215,0,.5)}
+.btn-ghost:hover{background:var(--brand-gold);color:var(--brand-dark)}
+.brandbar{position:absolute;left:clamp(1.5rem,7vw,8rem);bottom:1.45rem;display:flex;align-items:center;gap:.65rem;font-size:.74rem;color:var(--brand-muted);font-family:var(--fh);font-weight:600}
+.brandbar .logo{width:24px;height:24px}.brandbar b{color:#fff}.brandbar .g{color:var(--brand-gold)}
+.brandbar .tag{font-family:var(--fmeta);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-gold-deep);padding-left:.55rem;margin-left:.15rem;border-left:1px solid var(--brand-border)}
+.hud{position:fixed;right:clamp(1rem,4vw,2.4rem);bottom:1.25rem;display:flex;align-items:center;gap:.5rem;z-index:30}
+.navbtn{width:44px;height:44px;border-radius:12px;border:1px solid var(--brand-border);background:rgba(30,41,59,.7);color:var(--brand-gold);cursor:pointer;font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);transition:background .2s,transform .25s var(--ease-spring),box-shadow .2s}
+.navbtn:hover{background:var(--brand-gold);color:var(--brand-dark);transform:translateY(-2px);box-shadow:0 0 18px rgba(255,215,0,.4)}
+.counter{font-family:var(--fm);font-size:.85rem;color:var(--brand-muted);min-width:58px;text-align:center}
+.langbtn{min-width:48px;height:44px;border-radius:12px;border:1px solid rgba(255,215,0,.4);background:rgba(255,215,0,.1);color:var(--brand-gold);cursor:pointer;font-family:var(--fh);font-weight:800;font-size:.82rem;letter-spacing:.05em;padding:0 .7rem;backdrop-filter:blur(10px)}
+.langbtn:hover{background:var(--brand-gold);color:var(--brand-dark)}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand-gold),var(--brand-gold-soft));width:0;z-index:40;transition:width .45s var(--ease-out-expo);box-shadow:0 0 12px rgba(255,215,0,.5)}
+:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:4px}
+@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.steplay{grid-template-columns:1fr}.slide{padding:4.5rem 1.3rem 5.5rem}.brandbar .tag{display:none}}
+</style>
+</head>
+<body class="lang-es">
+<a href="index.html" id="ta-home" style="position:fixed;top:12px;right:12px;z-index:99999;display:inline-flex;gap:.45rem;align-items:center;padding:.42rem .8rem;border-radius:999px;background:#0a122a;color:#ffd700;border:1.5px solid #ffd700;font:700 12px/1 'Poppins',system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45)">&#8617; Inicio<span style="opacity:.6;font-weight:600"> · Home</span></a>
+<div class="progress" id="progress"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide on"><div class="wrap">
+    <span class="chip-hero"><span class="l-es">Taller · 60 min · práctica guiada</span><span class="l-en">Workshop · 60 min · guided practice</span><span class="l-pt">Workshop · 60 min · prática guiada</span></span>
+    <h1><span class="l-es">Tú diriges. <span class="gtext">Cowork ejecuta.</span></span><span class="l-en">You lead. <span class="gtext">Cowork executes.</span></span><span class="l-pt">Você dirige. <span class="gtext">Cowork executa.</span></span></h1>
+    <p class="lead"><span class="l-es">Montas tu primer Jarvis OS paso a paso: carpeta, reglas, CV, perfil de cargo, preparación de un 1:1, validación y memoria. Sales con artefactos, no con teoría.</span><span class="l-en">You build your first Jarvis OS step by step: folder, rules, CV, role profile, 1:1 prep, validation and memory. You leave with artifacts, not theory.</span><span class="l-pt">Você monta seu primeiro Jarvis OS passo a passo: pasta, regras, CV, perfil de cargo, preparação de um 1:1, validação e memória. Você sai com artefatos, não com teoria.</span></p>
+    <div class="stats">
+      <div class="cell"><div class="num">7</div><div class="lab"><span class="l-es">pasos guiados</span><span class="l-en">guided steps</span><span class="l-pt">passos guiados</span></div></div>
+      <div class="cell"><div class="num">5</div><div class="lab"><span class="l-es">archivos al cierre</span><span class="l-en">files at the end</span><span class="l-pt">arquivos no final</span></div></div>
+      <div class="cell"><div class="num">0</div><div class="lab"><span class="l-es">datos sensibles</span><span class="l-en">sensitive data</span><span class="l-pt">dados sensíveis</span></div></div>
+    </div>
+  </div></section>
+
+  <!-- 2 CÓMO FUNCIONA -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Cómo funciona el taller</span><span class="l-en">How the workshop works</span><span class="l-pt">Como o workshop funciona</span></span>
+    <h2><span class="l-es">Cada paso es el <span class="gtext">mismo gesto</span></span><span class="l-en">Every step is the <span class="gtext">same gesture</span></span><span class="l-pt">Cada passo é o <span class="gtext">mesmo gesto</span></span></h2>
+    <p class="lead"><span class="l-es">Tú no programas: tú diriges. En cada paso pides, Cowork propone, tú revisas y confirmas. Nada crítico se guarda sin tu visto bueno.</span><span class="l-en">You don't code: you lead. In each step you ask, Cowork proposes, you review and confirm. Nothing critical is saved without your approval.</span><span class="l-pt">Você não programa: você dirige. Em cada passo você pede, o Cowork propõe, você revisa e confirma. Nada crítico é salvo sem seu aval.</span></p>
+    <div class="flow">
+      <div class="it"><b>1</b><span class="l-es"><strong>Pides</strong> · pegas el prompt de la diapositiva.</span><span class="l-en"><strong>You ask</strong> · paste the slide's prompt.</span><span class="l-pt"><strong>Você pede</strong> · cola o prompt do slide.</span></span></div>
+      <div class="it"><b>2</b><span class="l-es"><strong>Cowork propone</strong> · te muestra el archivo antes de guardarlo.</span><span class="l-en"><strong>Cowork proposes</strong> · shows you the file before saving.</span><span class="l-pt"><strong>Cowork propõe</strong> · mostra o arquivo antes de salvar.</span></span></div>
+      <div class="it"><b>3</b><span class="l-es"><strong>Revisas</strong> · corriges lo que no es tuyo o no es verdad.</span><span class="l-en"><strong>You review</strong> · fix what is not yours or not true.</span><span class="l-pt"><strong>Você revisa</strong> · corrige o que não é seu ou não é verdade.</span></span></div>
+      <div class="it"><b>4</b><span class="l-es"><strong>Confirmas</strong> · y recién entonces se guarda.</span><span class="l-en"><strong>You confirm</strong> · only then it is saved.</span><span class="l-pt"><strong>Você confirma</strong> · só então é salvo.</span></span></div>
+    </div>
+  </div></section>
+
+  <!-- 3 PRE-FLIGHT -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Antes de empezar</span><span class="l-en">Before you start</span><span class="l-pt">Antes de começar</span></span>
+    <h2><span class="l-es">Cinco confirmaciones</span><span class="l-en">Five confirmations</span><span class="l-pt">Cinco confirmações</span></h2>
+    <ul class="check">
+      <li><span class="l-es">Tengo <strong>Claude Desktop</strong> instalado y la sesión iniciada.</span><span class="l-en">I have <strong>Claude Desktop</strong> installed and signed in.</span><span class="l-pt">Tenho o <strong>Claude Desktop</strong> instalado e a sessão iniciada.</span></li>
+      <li><span class="l-es">Tengo <strong>60 minutos</strong> sin interrupciones.</span><span class="l-en">I have <strong>60 minutes</strong> without interruptions.</span><span class="l-pt">Tenho <strong>60 minutos</strong> sem interrupções.</span></li>
+      <li><span class="l-es">Tengo claro mi <strong>rol actual</strong> en una frase.</span><span class="l-en">I am clear about my <strong>current role</strong> in one sentence.</span><span class="l-pt">Tenho claro meu <strong>papel atual</strong> em uma frase.</span></li>
+      <li><span class="l-es">Tengo <strong>2–3 objetivos</strong> vigentes a la mano.</span><span class="l-en">I have <strong>2–3 current goals</strong> at hand.</span><span class="l-pt">Tenho <strong>2–3 objetivos</strong> atuais à mão.</span></li>
+      <li><span class="l-es">Reemplacé <strong>datos sensibles</strong> por placeholders.</span><span class="l-en">I replaced <strong>sensitive data</strong> with placeholders.</span><span class="l-pt">Substituí <strong>dados sensíveis</strong> por placeholders.</span></li>
+    </ul>
+  </div></section>
+
+  <!-- 4 SI ALGO FALLA -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Si algo falla</span><span class="l-en">If something fails</span><span class="l-pt">Se algo falhar</span></span>
+    <h2><span class="l-es">Tres bloqueos típicos · y cómo seguir</span><span class="l-en">Three common blocks · and how to move on</span><span class="l-pt">Três bloqueios típicos · e como seguir</span></h2>
+    <div class="grid g3">
+      <div class="card"><h3><span class="l-es">No ve mi carpeta</span><span class="l-en">It can't see my folder</span><span class="l-pt">Não vê minha pasta</span></h3><p><span class="l-es">Autoriza el acceso en los permisos del sistema (Archivos/Documentos) y vuelve a conectar la carpeta en Cowork.</span><span class="l-en">Grant access in system permissions (Files/Documents) and reconnect the folder in Cowork.</span><span class="l-pt">Autorize o acesso nas permissões do sistema (Arquivos/Documentos) e reconecte a pasta no Cowork.</span></p></div>
+      <div class="card"><h3><span class="l-es">No tengo plan</span><span class="l-en">I don't have a plan</span><span class="l-pt">Não tenho plano</span></h3><p><span class="l-es">El escritorio local necesita un plan que lo habilite. Sin él, sigue el taller en modo lectura y créalo después.</span><span class="l-en">The local desk needs an enabling plan. Without it, follow the workshop in read mode and set it up later.</span><span class="l-pt">A mesa local precisa de um plano que a habilite. Sem ele, siga o workshop em modo leitura e configure depois.</span></p></div>
+      <div class="card"><h3><span class="l-es">Se me acabó el tiempo</span><span class="l-en">I ran out of time</span><span class="l-pt">Acabou meu tempo</span></h3><p><span class="l-es">No pasa nada: cierra donde quedaste. Tu carpeta persiste. Retoma con el prompt de diagnóstico (paso final).</span><span class="l-en">No problem: stop where you are. Your folder persists. Resume with the diagnosis prompt (final step).</span><span class="l-pt">Tudo bem: pare onde está. Sua pasta persiste. Retome com o prompt de diagnóstico (passo final).</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 5 CONCEPTO -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Concepto crítico</span><span class="l-en">Critical concept</span><span class="l-pt">Conceito crítico</span></span>
+    <h2><span class="l-es">Al vuelo <span class="gtext">vs</span> en la carpeta</span><span class="l-en">On the fly <span class="gtext">vs</span> in the folder</span><span class="l-pt">No improviso <span class="gtext">vs</span> na pasta</span></h2>
+    <div class="grid g2">
+      <div class="card"><h3><span class="l-es">Al vuelo</span><span class="l-en">On the fly</span><span class="l-pt">No improviso</span></h3><p><span class="l-es">Adjuntas un archivo a una conversación. Sirve para esa sesión y se evapora al cerrar.</span><span class="l-en">You attach a file to a conversation. It works for that session and evaporates on close.</span><span class="l-pt">Você anexa um arquivo a uma conversa. Serve para aquela sessão e evapora ao fechar.</span></p></div>
+      <div class="card hot"><h3><span class="l-es">En la carpeta</span><span class="l-en">In the folder</span><span class="l-pt">Na pasta</span></h3><p><span class="l-es">Guardas el archivo en tu carpeta de trabajo. Persiste, se revisa y viaja entre sesiones. Eso es Jarvis.</span><span class="l-en">You save the file in your working folder. It persists, gets reviewed and travels across sessions. That is Jarvis.</span><span class="l-pt">Você salva o arquivo na sua pasta de trabalho. Persiste, é revisado e viaja entre sessões. Isso é Jarvis.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 6 MAPA DE PASOS -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">El recorrido</span><span class="l-en">The journey</span><span class="l-pt">O percurso</span></span>
+    <h2><span class="l-es">Siete pasos, de un vistazo</span><span class="l-en">Seven steps, at a glance</span><span class="l-pt">Sete passos, num relance</span></h2>
+    <div class="flow">
+      <div class="it"><b>1</b><span class="l-es">Crear carpeta y autorizar Cowork.</span><span class="l-en">Create folder and authorize Cowork.</span><span class="l-pt">Criar pasta e autorizar o Cowork.</span></span></div>
+      <div class="it"><b>2</b><span class="l-es">Reglas de seguridad · <code>CLAUDE.md</code>.</span><span class="l-en">Safety rules · <code>CLAUDE.md</code>.</span><span class="l-pt">Regras de segurança · <code>CLAUDE.md</code>.</span></span></div>
+      <div class="it"><b>3</b><span class="l-es">CV fuente · entrevista, auto-crítica y refinado.</span><span class="l-en">Source CV · interview, self-critique and refine.</span><span class="l-pt">CV fonte · entrevista, autocrítica e refinamento.</span></span></div>
+      <div class="it"><b>4</b><span class="l-es">Perfil de cargo · formal vs real.</span><span class="l-en">Role profile · formal vs real.</span><span class="l-pt">Perfil de cargo · formal vs real.</span></span></div>
+      <div class="it"><b>5</b><span class="l-es">Preparar tu 1:1 con el jefe.</span><span class="l-en">Prepare your 1:1 with the manager.</span><span class="l-pt">Preparar seu 1:1 com o gestor.</span></span></div>
+      <div class="it"><b>6</b><span class="l-es">Validar el contexto en una conversación nueva.</span><span class="l-en">Validate the context in a new conversation.</span><span class="l-pt">Validar o contexto numa conversa nova.</span></span></div>
+      <div class="it"><b>7</b><span class="l-es">Sembrar la primera memoria · <code>MEMORY.md</code>.</span><span class="l-en">Seed the first memory · <code>MEMORY.md</code>.</span><span class="l-pt">Semear a primeira memória · <code>MEMORY.md</code>.</span></span></div>
+    </div>
+  </div></section>
+
+  <!-- 7 PASO 1 -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">1</div><div>
+    <span class="eyebrow"><span class="l-es">Cimientos · acción manual</span><span class="l-en">Foundation · manual action</span><span class="l-pt">Alicerce · ação manual</span></span>
+    <h2><span class="l-es">Crea la carpeta y autoriza Cowork</span><span class="l-en">Create the folder and authorize Cowork</span><span class="l-pt">Crie a pasta e autorize o Cowork</span></h2>
+    <p class="lead"><span class="l-es">Crea una carpeta local <code>jarvis-os-clase</code>. Abre Cowork y autorízala como espacio de trabajo. Es el único paso 100% manual: el resto lo diriges con prompts.</span><span class="l-en">Create a local folder <code>jarvis-os-clase</code>. Open Cowork and authorize it as a workspace. It is the only 100% manual step: the rest you lead with prompts.</span><span class="l-pt">Crie uma pasta local <code>jarvis-os-clase</code>. Abra o Cowork e autorize-a como espaço de trabalho. É o único passo 100% manual: o resto você dirige com prompts.</span></p>
+    <div class="callout"><span class="l-es">Tu carpeta es el primer gesto de soberanía: tu contexto en archivos simples, revisables y movibles.</span><span class="l-en">Your folder is the first gesture of sovereignty: your context in simple, reviewable, movable files.</span><span class="l-pt">Sua pasta é o primeiro gesto de soberania: seu contexto em arquivos simples, revisáveis e móveis.</span></div>
+  </div></div></div></section>
+
+  <!-- 8 PASO 2 · CLAUDE.md -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">2</div><div>
+    <span class="eyebrow"><span class="l-es">Reglas del juego</span><span class="l-en">Rules of the game</span><span class="l-pt">Regras do jogo</span></span>
+    <h2><span class="l-es">Reglas de seguridad en <code>CLAUDE.md</code></span><span class="l-en">Safety rules in <code>CLAUDE.md</code></span><span class="l-pt">Regras de segurança em <code>CLAUDE.md</code></span></h2>
+    <div class="prompt"><div class="prompt-head"><span>CLAUDE.md · prompt</span><button class="copy" data-copy>Copy</button></div>
+    <pre><span class="l-es">Crea un archivo CLAUDE.md en mi carpeta con reglas de seguridad: (1) nunca inventes logros, cifras ni feedback; marca lo que no sepas como [SUPUESTO]. (2) No escribas, borres ni envíes nada crítico sin mi confirmación explícita. (3) Pregunta los parámetros que falten antes de proponer. Imprime el archivo y espera mi visto bueno antes de guardarlo.</span><span class="l-en">Create a CLAUDE.md file in my folder with safety rules: (1) never invent achievements, figures or feedback; mark anything unknown as [ASSUMPTION]. (2) Do not write, delete or send anything critical without my explicit confirmation. (3) Ask for missing parameters before proposing. Print the file and wait for my approval before saving it.</span><span class="l-pt">Crie um arquivo CLAUDE.md na minha pasta com regras de segurança: (1) nunca invente conquistas, números ou feedback; marque o que não souber como [SUPOSIÇÃO]. (2) Não escreva, apague nem envie nada crítico sem minha confirmação explícita. (3) Pergunte os parâmetros que faltam antes de propor. Imprima o arquivo e espere meu aval antes de salvar.</span></pre></div>
+  </div></div></div></section>
+
+  <!-- 9 PASO 3 · CV entrevista -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">3</div><div>
+    <span class="eyebrow"><span class="l-es">Contexto · quién soy · 3a entrevista</span><span class="l-en">Context · who I am · 3a interview</span><span class="l-pt">Contexto · quem sou · 3a entrevista</span></span>
+    <h2><span class="l-es">CV fuente · <code>cv-personal.md</code></span><span class="l-en">Source CV · <code>cv-personal.md</code></span><span class="l-pt">CV fonte · <code>cv-personal.md</code></span></h2>
+    <div class="prompt"><div class="prompt-head"><span>cv-personal.md · <span class="l-es">entrevista</span><span class="l-en">interview</span><span class="l-pt">entrevista</span></span><button class="copy" data-copy>Copy</button></div>
+    <pre><span class="l-es">Entrevístame para construir mi CV fuente. Hazme preguntas, una a la vez, sobre rol, responsabilidades reales, logros con evidencia, fortalezas y huecos. No inventes nada: si falta un dato, márcalo como [POR_CONFIRMAR]. Al final, guarda cv-personal.md con perfil, logros, evidencias y huecos, y pídeme confirmación.</span><span class="l-en">Interview me to build my source CV. Ask questions, one at a time, about role, real responsibilities, achievements with evidence, strengths and gaps. Invent nothing: if data is missing, mark it [TO_CONFIRM]. At the end, save cv-personal.md with profile, achievements, evidence and gaps, and ask for confirmation.</span><span class="l-pt">Entreviste-me para construir meu CV fonte. Faça perguntas, uma de cada vez, sobre papel, responsabilidades reais, conquistas com evidência, forças e lacunas. Não invente nada: se faltar um dado, marque como [A_CONFIRMAR]. No final, salve cv-personal.md com perfil, conquistas, evidências e lacunas, e peça confirmação.</span></pre></div>
+  </div></div></div></section>
+
+  <!-- 10 PASO 3 · auto-crítica -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">3</div><div>
+    <span class="eyebrow"><span class="l-es">Contexto · 3b auto-crítica</span><span class="l-en">Context · 3b self-critique</span><span class="l-pt">Contexto · 3b autocrítica</span></span>
+    <h2><span class="l-es">Que Cowork <span class="gtext">critique su propio borrador</span></span><span class="l-en">Have Cowork <span class="gtext">critique its own draft</span></span><span class="l-pt">Faça o Cowork <span class="gtext">criticar o próprio rascunho</span></span></h2>
+    <div class="prompt"><div class="prompt-head"><span><span class="l-es">auto-crítica</span><span class="l-en">self-critique</span><span class="l-pt">autocrítica</span></span><button class="copy" data-copy>Copy</button></div>
+    <pre><span class="l-es">Relee el cv-personal.md que acabas de proponer y critícalo línea por línea. Marca con [SUPUESTO] lo que asumiste sin que yo lo dijera, con [FALTA] lo que debería estar y no está, y con [JERGA] lo que no se entiende sin contexto. No corrijas todavía: solo señala.</span><span class="l-en">Re-read the cv-personal.md you just proposed and critique it line by line. Mark with [ASSUMPTION] what you assumed without me saying it, with [MISSING] what should be there and isn't, and with [JARGON] what is unclear without context. Don't fix yet: just flag.</span><span class="l-pt">Releia o cv-personal.md que acabou de propor e critique-o linha por linha. Marque com [SUPOSIÇÃO] o que você assumiu sem eu dizer, com [FALTA] o que deveria estar e não está, e com [JARGÃO] o que não se entende sem contexto. Não corrija ainda: apenas aponte.</span></pre></div>
+    <div class="tags"><span class="tag-pill">[SUPUESTO]</span><span class="tag-pill">[FALTA]</span><span class="tag-pill">[JERGA]</span></div>
+  </div></div></div></section>
+
+  <!-- 11 PASO 3 · refina -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">3</div><div>
+    <span class="eyebrow"><span class="l-es">Contexto · 3c refinar</span><span class="l-en">Context · 3c refine</span><span class="l-pt">Contexto · 3c refinar</span></span>
+    <h2><span class="l-es">Corriges tú · <span class="gtext">Cowork no inventa</span></span><span class="l-en">You correct · <span class="gtext">Cowork does not invent</span></span><span class="l-pt">Você corrige · <span class="gtext">Cowork não inventa</span></span></h2>
+    <p class="lead"><span class="l-es">Responde cada marca: confirma, corrige o elimina. Cowork reescribe solo con lo que tú validaste. Lo que sigue marcado [POR_CONFIRMAR] se queda así hasta que tengas el dato real.</span><span class="l-en">Answer each flag: confirm, correct or delete. Cowork rewrites only with what you validated. Whatever stays flagged [TO_CONFIRM] remains so until you have the real data.</span><span class="l-pt">Responda cada marca: confirme, corrija ou exclua. O Cowork reescreve só com o que você validou. O que continuar marcado [A_CONFIRMAR] fica assim até você ter o dado real.</span></p>
+    <div class="callout"><span class="l-es">Este ciclo —proponer, criticar, corregir— es lo que convierte un borrador genérico en tu CV real. La IA acelera; tú decides la verdad.</span><span class="l-en">This cycle —propose, critique, correct— is what turns a generic draft into your real CV. AI accelerates; you decide the truth.</span><span class="l-pt">Este ciclo —propor, criticar, corrigir— é o que transforma um rascunho genérico no seu CV real. A IA acelera; você decide a verdade.</span></div>
+  </div></div></div></section>
+
+  <!-- 12 PASO 4 -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">4</div><div>
+    <span class="eyebrow"><span class="l-es">Contexto · mi rol</span><span class="l-en">Context · my role</span><span class="l-pt">Contexto · meu papel</span></span>
+    <h2><span class="l-es">Perfil de cargo · <code>perfil-de-cargo.md</code></span><span class="l-en">Role profile · <code>perfil-de-cargo.md</code></span><span class="l-pt">Perfil de cargo · <code>perfil-de-cargo.md</code></span></h2>
+    <p class="lead"><span class="l-es">Distingue tu <strong>cargo formal</strong> de tu <strong>trabajo real</strong>. Pídele a Cowork que mapee responsabilidades, stakeholders, fricciones y expectativas poco claras. Ese mapa es lo que casi nadie tiene escrito.</span><span class="l-en">Tell apart your <strong>formal title</strong> from your <strong>real work</strong>. Ask Cowork to map responsibilities, stakeholders, frictions and unclear expectations. That map is what almost no one has written down.</span><span class="l-pt">Distinga seu <strong>cargo formal</strong> do seu <strong>trabalho real</strong>. Peça ao Cowork que mapeie responsabilidades, stakeholders, atritos e expectativas pouco claras. Esse mapa é o que quase ninguém tem escrito.</span></p>
+    <div class="prompt"><div class="prompt-head"><span>perfil-de-cargo.md · prompt</span><button class="copy" data-copy>Copy</button></div>
+    <pre><span class="l-es">A partir de mi cv-personal.md, entrevístame para separar mi cargo formal de mi trabajo real. Mapea responsabilidades, stakeholders, fricciones y expectativas poco claras. Marca lo que asumas como [SUPUESTO]. Guarda perfil-de-cargo.md y pídeme confirmación.</span><span class="l-en">From my cv-personal.md, interview me to separate my formal title from my real work. Map responsibilities, stakeholders, frictions and unclear expectations. Mark anything you assume as [ASSUMPTION]. Save perfil-de-cargo.md and ask for confirmation.</span><span class="l-pt">A partir do meu cv-personal.md, entreviste-me para separar meu cargo formal do meu trabalho real. Mapeie responsabilidades, stakeholders, atritos e expectativas pouco claras. Marque o que assumir como [SUPOSIÇÃO]. Salve perfil-de-cargo.md e peça confirmação.</span></pre></div>
+  </div></div></div></section>
+
+  <!-- 13 PASO 5 -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">5</div><div>
+    <span class="eyebrow"><span class="l-es">Trabajo real</span><span class="l-en">Real work</span><span class="l-pt">Trabalho real</span></span>
+    <h2><span class="l-es">Prepara tu 1:1 · <code>preparacion-1a1-jefe.md</code></span><span class="l-en">Prepare your 1:1 · <code>preparacion-1a1-jefe.md</code></span><span class="l-pt">Prepare seu 1:1 · <code>preparacion-1a1-jefe.md</code></span></h2>
+    <div class="prompt"><div class="prompt-head"><span>1:1 · prompt</span><button class="copy" data-copy>Copy</button></div>
+    <pre><span class="l-es">Usa mi CV y mi perfil de cargo para preparar un 1:1 con mi jefe. Genera: objetivo de la conversación, 3 hechos con evidencia, 5 preguntas de alto impacto y bajo riesgo, y los acuerdos que quiero proponer. Guarda preparacion-1a1-jefe.md. No asumas datos que no estén en mis archivos.</span><span class="l-en">Use my CV and role profile to prepare a 1:1 with my manager. Generate: conversation goal, 3 facts with evidence, 5 high-impact low-risk questions, and the agreements I want to propose. Save preparacion-1a1-jefe.md. Do not assume data that is not in my files.</span><span class="l-pt">Use meu CV e meu perfil de cargo para preparar um 1:1 com meu gestor. Gere: objetivo da conversa, 3 fatos com evidência, 5 perguntas de alto impacto e baixo risco, e os acordos que quero propor. Salve preparacion-1a1-jefe.md. Não assuma dados que não estejam nos meus arquivos.</span></pre></div>
+  </div></div></div></section>
+
+  <!-- 14 PASO 6 · validar -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">6</div><div>
+    <span class="eyebrow"><span class="l-es">La prueba de fuego</span><span class="l-en">The acid test</span><span class="l-pt">A prova de fogo</span></span>
+    <h2><span class="l-es">Valida el contexto en una <span class="gtext">conversación nueva</span></span><span class="l-en">Validate the context in a <span class="gtext">new conversation</span></span><span class="l-pt">Valide o contexto numa <span class="gtext">conversa nova</span></span></h2>
+    <div class="prompt"><div class="prompt-head"><span><span class="l-es">validación</span><span class="l-en">validation</span><span class="l-pt">validação</span></span><button class="copy" data-copy>Copy</button></div>
+    <pre><span class="l-es">Sin que te dé más datos, lee mi carpeta jarvis-os-clase y resúmeme en 6 líneas quién soy, qué rol tengo, qué quiero lograr y qué 1:1 estoy preparando. Si algo no está en los archivos, dilo en vez de inventarlo.</span><span class="l-en">Without me giving more data, read my jarvis-os-clase folder and summarize in 6 lines who I am, my role, what I want to achieve and which 1:1 I am preparing. If something is not in the files, say so instead of inventing it.</span><span class="l-pt">Sem eu dar mais dados, leia minha pasta jarvis-os-clase e resuma em 6 linhas quem sou, qual meu papel, o que quero alcançar e qual 1:1 estou preparando. Se algo não estiver nos arquivos, diga em vez de inventar.</span></pre></div>
+    <div class="callout"><span class="l-es">Si Cowork te resume bien desde cero, tu contexto ya vive en los archivos, no en la conversación. Eso es un Jarvis funcionando.</span><span class="l-en">If Cowork summarizes you well from scratch, your context already lives in the files, not in the conversation. That is a working Jarvis.</span><span class="l-pt">Se o Cowork te resume bem do zero, seu contexto já vive nos arquivos, não na conversa. Isso é um Jarvis funcionando.</span></div>
+  </div></div></div></section>
+
+  <!-- 15 PASO 7 · siembra memoria -->
+  <section class="slide"><div class="wrap"><div class="steplay"><div class="step-no">7</div><div>
+    <span class="eyebrow"><span class="l-es">La libreta que crece sola</span><span class="l-en">The notebook that grows itself</span><span class="l-pt">O caderno que cresce sozinho</span></span>
+    <h2><span class="l-es">Siembra tu primera memoria · <code>MEMORY.md</code></span><span class="l-en">Seed your first memory · <code>MEMORY.md</code></span><span class="l-pt">Semeie sua primeira memória · <code>MEMORY.md</code></span></h2>
+    <div class="prompt"><div class="prompt-head"><span>MEMORY.md · prompt</span><button class="copy" data-copy>Copy</button></div>
+    <pre><span class="l-es">Crea un MEMORY.md en mi carpeta con dos secciones: (1) Hechos vigentes —mi rol, mi objetivo de 30-90 días, mi 1:1 pendiente—; (2) Preferencias permanentes —cómo quiero que me escribas (tono, formato, idioma)—. Lee este archivo al inicio de cada sesión. Imprímelo y espera mi confirmación.</span><span class="l-en">Create a MEMORY.md in my folder with two sections: (1) Current facts —my role, my 30-90 day goal, my pending 1:1—; (2) Permanent preferences —how I want you to write to me (tone, format, language)—. Read this file at the start of each session. Print it and wait for my confirmation.</span><span class="l-pt">Crie um MEMORY.md na minha pasta com duas seções: (1) Fatos vigentes —meu papel, meu objetivo de 30-90 dias, meu 1:1 pendente—; (2) Preferências permanentes —como quero que você me escreva (tom, formato, idioma)—. Leia este arquivo no início de cada sessão. Imprima e espere minha confirmação.</span></pre></div>
+  </div></div></div></section>
+
+  <!-- 16 PRIVACIDAD -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Seguridad · sin riesgo</span><span class="l-en">Safety · no risk</span><span class="l-pt">Segurança · sem risco</span></span>
+    <h2><span class="l-es">Tus datos, <span class="gtext">bajo tu control</span></span><span class="l-en">Your data, <span class="gtext">under your control</span></span><span class="l-pt">Seus dados, <span class="gtext">sob seu controle</span></span></h2>
+    <div class="grid g2">
+      <div class="card"><h3><span class="l-es">Usa placeholders</span><span class="l-en">Use placeholders</span><span class="l-pt">Use placeholders</span></h3><p><span class="l-es">Reemplaza teléfono, documento, salario y salud por <code>{placeholder}</code> antes de pegar o adjuntar nada en un ejercicio grupal.</span><span class="l-en">Replace phone, ID, salary and health with <code>{placeholder}</code> before pasting or attaching anything in a group exercise.</span><span class="l-pt">Substitua telefone, documento, salário e saúde por <code>{placeholder}</code> antes de colar ou anexar algo num exercício em grupo.</span></p></div>
+      <div class="card hot"><h3><span class="l-es">Confirmación humana</span><span class="l-en">Human confirmation</span><span class="l-pt">Confirmação humana</span></h3><p><span class="l-es">La IA pregunta, resume y propone. No envía, no borra y no modifica archivos críticos sin tu visto bueno explícito.</span><span class="l-en">The AI asks, summarizes and proposes. It does not send, delete or modify critical files without your explicit approval.</span><span class="l-pt">A IA pergunta, resume e propõe. Não envia, não apaga e não modifica arquivos críticos sem seu aval explícito.</span></p></div>
+    </div>
+    <div class="callout warn"><span class="l-es"><strong>Regla de oro:</strong> tú validas qué es verdadero y qué se registra. La herramienta es prestada; los datos son tuyos. Sin riesgo, sin fricción.</span><span class="l-en"><strong>Golden rule:</strong> you validate what is true and what gets recorded. The tool is borrowed; the data is yours. No risk, no friction.</span><span class="l-pt"><strong>Regra de ouro:</strong> você valida o que é verdadeiro e o que se registra. A ferramenta é emprestada; os dados são seus. Sem risco, sem fricção.</span></div>
+  </div></section>
+
+  <!-- 17 ARTEFACTOS -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Qué queda al cierre</span><span class="l-en">What remains</span><span class="l-pt">O que fica no final</span></span>
+    <h2><span class="l-es">Tus cinco artefactos</span><span class="l-en">Your five artifacts</span><span class="l-pt">Seus cinco artefatos</span></h2>
+    <ul class="check">
+      <li><code>CLAUDE.md</code> · <span class="l-es">reglas de seguridad y confirmación.</span><span class="l-en">safety and confirmation rules.</span><span class="l-pt">regras de segurança e confirmação.</span></li>
+      <li><code>cv-personal.md</code> · <span class="l-es">perfil fuente con logros, evidencias y huecos.</span><span class="l-en">source profile with achievements, evidence and gaps.</span><span class="l-pt">perfil fonte com conquistas, evidências e lacunas.</span></li>
+      <li><code>perfil-de-cargo.md</code> · <span class="l-es">cargo formal vs trabajo real.</span><span class="l-en">formal title vs real work.</span><span class="l-pt">cargo formal vs trabalho real.</span></li>
+      <li><code>preparacion-1a1-jefe.md</code> · <span class="l-es">agenda y evidencia para tu 1:1.</span><span class="l-en">agenda and evidence for your 1:1.</span><span class="l-pt">agenda e evidência para seu 1:1.</span></li>
+      <li><code>MEMORY.md</code> · <span class="l-es">hechos vigentes y preferencias permanentes.</span><span class="l-en">current facts and permanent preferences.</span><span class="l-pt">fatos vigentes e preferências permanentes.</span></li>
+    </ul>
+  </div></section>
+
+  <!-- 18 CIERRE POR ROL -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Pruébalo con tu caso real</span><span class="l-en">Try it with your real case</span><span class="l-pt">Teste com seu caso real</span></span>
+    <h2><span class="l-es">Tu Jarvis, según tu rol</span><span class="l-en">Your Jarvis, by your role</span><span class="l-pt">Seu Jarvis, conforme seu papel</span></h2>
+    <div class="grid g3">
+      <div class="card"><h3><span class="l-es">Analista de datos</span><span class="l-en">Data analyst</span><span class="l-pt">Analista de dados</span></h3><p><span class="l-es">"Resume mis KPIs de la semana y marca lo que cambió frente a la anterior."</span><span class="l-en">"Summarize my weekly KPIs and flag what changed vs last week."</span><span class="l-pt">"Resuma meus KPIs da semana e marque o que mudou em relação à anterior."</span></p></div>
+      <div class="card"><h3><span class="l-es">Líder de equipo</span><span class="l-en">Team lead</span><span class="l-pt">Líder de equipe</span></h3><p><span class="l-es">"Prepara mis 1:1 de la semana usando mi perfil de cargo y mis notas."</span><span class="l-en">"Prepare my weekly 1:1s using my role profile and notes."</span><span class="l-pt">"Prepare meus 1:1 da semana usando meu perfil de cargo e minhas notas."</span></p></div>
+      <div class="card"><h3><span class="l-es">Gestor de proyecto</span><span class="l-en">Project manager</span><span class="l-pt">Gestor de projeto</span></h3><p><span class="l-es">"Redacta el status semanal a partir de mis avances y bloqueos."</span><span class="l-en">"Draft the weekly status from my progress and blockers."</span><span class="l-pt">"Redija o status semanal a partir dos meus avanços e bloqueios."</span></p></div>
+      <div class="card"><h3><span class="l-es">Especialista</span><span class="l-en">Specialist</span><span class="l-pt">Especialista</span></h3><p><span class="l-es">"Convierte mi CV fuente en un resumen para una postulación concreta."</span><span class="l-en">"Turn my source CV into a summary for a specific application."</span><span class="l-pt">"Transforme meu CV fonte num resumo para uma candidatura específica."</span></p></div>
+      <div class="card"><h3><span class="l-es">Cualquiera</span><span class="l-en">Anyone</span><span class="l-pt">Qualquer um</span></h3><p><span class="l-es">"Escribe este correo con mi tono, usando lo que ya sabes de mí."</span><span class="l-en">"Write this email in my tone, using what you already know about me."</span><span class="l-pt">"Escreva este e-mail no meu tom, usando o que você já sabe de mim."</span></p></div>
+      <div class="card hot"><h3><span class="l-es">Tu caso real</span><span class="l-en">Your real case</span><span class="l-pt">Seu caso real</span></h3><p><span class="l-es">El mejor test: la tarea que tenías pendiente al entrar a este taller.</span><span class="l-en">The best test: the task you had pending when you joined this workshop.</span><span class="l-pt">O melhor teste: a tarefa que você tinha pendente ao entrar neste workshop.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 19 CUANDO TE ATASCAS + CADENCIA -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Qué sigue · cadencia y auto-gestión</span><span class="l-en">What's next · cadence and self-service</span><span class="l-pt">O que vem · cadência e autogestão</span></span>
+    <h2><span class="l-es">No es una clase. Es un <span class="gtext">hábito</span>.</span><span class="l-en">It's not a class. It's a <span class="gtext">habit</span>.</span><span class="l-pt">Não é uma aula. É um <span class="gtext">hábito</span>.</span></h2>
+    <div class="grid g2">
+      <div class="card"><h3><span class="l-es">Cuando te atascas solo</span><span class="l-en">When you get stuck alone</span><span class="l-pt">Quando travar sozinho</span></h3><p><span class="l-es">"Lee mi carpeta y dime qué archivos existen, qué falta y cuál es el siguiente paso útil. Marca huecos como [POR_CONFIRMAR]."</span><span class="l-en">"Read my folder and tell me which files exist, what's missing and the next useful step. Mark gaps as [TO_CONFIRM]."</span><span class="l-pt">"Leia minha pasta e diga quais arquivos existem, o que falta e o próximo passo útil. Marque lacunas como [A_CONFIRMAR]."</span></p></div>
+      <div class="card"><h3><span class="l-es">La cadencia que lo mantiene vivo</span><span class="l-en">The cadence that keeps it alive</span><span class="l-pt">A cadência que o mantém vivo</span></h3><p><span class="l-es">Diario 10 min: abrir y re-priorizar. Semanal: pulir un archivo. Tras 5 usos estables: automatízalo.</span><span class="l-en">Daily 10 min: open and re-prioritize. Weekly: polish one file. After 5 stable uses: automate it.</span><span class="l-pt">Diário 10 min: abrir e repriorizar. Semanal: refinar um arquivo. Após 5 usos estáveis: automatize.</span></p></div>
+    </div>
+    <div class="callout"><span class="l-es">El sistema crece con uso real, no en un fin de semana intenso. Quien sale con el sistema vivo, vuelve.</span><span class="l-en">The system grows with real use, not in an intense weekend. Whoever leaves with a living system comes back.</span><span class="l-pt">O sistema cresce com uso real, não num fim de semana intenso. Quem sai com o sistema vivo, volta.</span></div>
+  </div></section>
+
+  <!-- 20 CIERRE -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Cierre del taller</span><span class="l-en">Workshop close</span><span class="l-pt">Encerramento do workshop</span></span>
+    <h1><span class="l-es">Tu contexto, <span class="gtext">por escrito</span></span><span class="l-en">Your context, <span class="gtext">in writing</span></span><span class="l-pt">Seu contexto, <span class="gtext">por escrito</span></span></h1>
+    <p class="lead"><span class="l-es">Saliste con cinco archivos tuyos, no con una demo. Eso es un Jarvis OS vivo. Para profundizar en capacidades, prácticas y prompts, sigue al dominio. Sin riesgo, sin fricción.</span><span class="l-en">You left with five of your own files, not a demo. That is a living Jarvis OS. To go deeper into capabilities, practices and prompts, continue to the mastery deck. No risk, no friction.</span><span class="l-pt">Você saiu com cinco arquivos seus, não com uma demo. Isso é um Jarvis OS vivo. Para aprofundar em capacidades, práticas e prompts, siga para o domínio. Sem risco, sem fricção.</span></p>
+    <div class="cta">
+      <a class="btn btn-gold" href="key-points.html"><span class="l-es">Ir al dominio →</span><span class="l-en">Go to mastery →</span><span class="l-pt">Ir ao domínio →</span></a>
+      <a class="btn btn-ghost" href="https://metodologia.info" target="_blank" rel="noopener">metodologia.info</a>
+    </div>
+  </div></section>
+
+</div>
+
+<div class="brandbar"><svg class="logo" viewBox="0 0 36 36"><rect width="36" height="36" rx="9" fill="#122562"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg><b>Metodolog<span class="g">IA</span></b> · Jarvis OS · <span class="l-es">Taller</span><span class="l-en">Workshop</span><span class="l-pt">Workshop</span><span class="tag">Sin riesgo, sin fricción</span></div>
+<div class="hud">
+  <button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
+  <button class="navbtn" id="prev" aria-label="Anterior">‹</button>
+  <span class="counter" id="counter">1 / 20</span>
+  <button class="navbtn" id="next" aria-label="Siguiente">›</button>
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0, n=slides.length;
+  var counter=document.getElementById('counter'), prog=document.getElementById('progress');
+  function show(k){k=Math.max(0,Math.min(n-1,k));slides.forEach(function(s,idx){s.classList.remove('on','prev');if(idx<k)s.classList.add('prev');});slides[k].classList.add('on');i=k;counter.textContent=(k+1)+' / '+n;prog.style.width=((k+1)/n*100)+'%';slides[k].scrollTop=0;}
+  function next(){show(i+1);} function prev(){show(i-1);}
+  document.getElementById('next').onclick=next; document.getElementById('prev').onclick=prev;
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
+  var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;},{passive:true});
+  var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
+  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.className='lang-'+l;document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+  btn.onclick=function(){setLang(li+1);};
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var pre=b.closest('.prompt').querySelector('pre');var act=pre.querySelector('.l-'+langs[li]);var txt=act?act.textContent:pre.textContent;navigator.clipboard.writeText(txt.trim()).then(function(){var o=b.textContent;b.textContent='✓';b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok');},1300);});};});
+  show(0); setLang(0);
+})();
+</script>
+</body>
+</html>
