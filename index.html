@@ -90,6 +90,11 @@
     .ta-modal p{font-size:.9rem;color:var(--brand-text-soft);line-height:1.55;margin:0}
     .ta-modal .ta-modal__cta{margin-top:1.2rem;display:inline-flex}
     .x-card::after{content:none!important;display:none!important}
+    .ta-modal--c{max-width:440px}
+    .ta-modal--c .ta-modal__in{padding:1.4rem 1.4rem 1.6rem}
+    .ta-modal--c h3{font-size:1.08rem}
+    .ta-modal--c h4{margin:.7rem 0 .15rem}
+    .ta-modal--c p{font-size:.86rem}
   </style>
 </head>
 <body>
@@ -239,15 +244,15 @@
       <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">9 módulos, <span class="gradient-text">capa por capa</span></span><span class="l-en">9 modules, <span class="gradient-text">layer by layer</span></span><span class="l-pt">9 módulos, <span class="gradient-text">camada por camada</span></span></h2>
       <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Cada módulo es masterclass + taller práctico, con su entregable. Los dos talleres sueltos salen de aquí.</span><span class="l-en">Each module is masterclass + hands-on workshop, with its deliverable. The two standalone workshops come from here.</span><span class="l-pt">Cada módulo é masterclass + workshop prático, com seu entregável. Os dois workshops avulsos saem daqui.</span></p>
       <div class="ta-grid ta-grid--2">
-        <div class="x-card ta-mod"><b>1</b><span><span class="l-es">Crear asistentes</span><span class="l-en">Build assistants</span><span class="l-pt">Criar assistentes</span></span></div>
-        <div class="x-card ta-mod"><b>2</b><span><span class="l-es">Crear skills</span><span class="l-en">Build skills</span><span class="l-pt">Criar skills</span></span></div>
-        <div class="x-card ta-mod"><b>3</b><span><span class="l-es">Crear agentes</span><span class="l-en">Build agents</span><span class="l-pt">Criar agentes</span></span></div>
-        <div class="x-card ta-mod"><b>4</b><span><span class="l-es">Multimedia con IA</span><span class="l-en">Multimedia with AI</span><span class="l-pt">Multimídia com IA</span></span></div>
-        <div class="x-card ta-mod"><b>5</b><span><span class="l-es">Diseño de ecosistemas agénticos de trabajo</span><span class="l-en">Agentic work ecosystem design</span><span class="l-pt">Design de ecossistemas agênticos de trabalho</span></span></div>
-        <div class="x-card ta-mod"><b>6</b><span><span class="l-es">Diseño de arneses para IA</span><span class="l-en">AI harness design</span><span class="l-pt">Design de arneses para IA</span></span></div>
-        <div class="x-card ta-mod"><b>7</b><span><span class="l-es">Prototipado y mini-apps</span><span class="l-en">Prototyping &amp; mini-apps</span><span class="l-pt">Prototipagem &amp; mini-apps</span></span></div>
-        <div class="x-card ta-mod"><b>8</b><span><span class="l-es">Adopción de IA</span><span class="l-en">AI adoption</span><span class="l-pt">Adoção de IA</span></span></div>
-        <div class="x-card ta-mod" style="border-left:3px solid var(--brand-gold);"><b>9</b><span><span class="l-es">Proyecto final</span><span class="l-en">Final project</span><span class="l-pt">Projeto final</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm1" role="button" tabindex="0" aria-haspopup="dialog"><b>1</b><span><span class="l-es">Crear asistentes</span><span class="l-en">Build assistants</span><span class="l-pt">Criar assistentes</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm2" role="button" tabindex="0" aria-haspopup="dialog"><b>2</b><span><span class="l-es">Crear skills</span><span class="l-en">Build skills</span><span class="l-pt">Criar skills</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm3" role="button" tabindex="0" aria-haspopup="dialog"><b>3</b><span><span class="l-es">Crear agentes</span><span class="l-en">Build agents</span><span class="l-pt">Criar agentes</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm4" role="button" tabindex="0" aria-haspopup="dialog"><b>4</b><span><span class="l-es">Multimedia con IA</span><span class="l-en">Multimedia with AI</span><span class="l-pt">Multimídia com IA</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm5" role="button" tabindex="0" aria-haspopup="dialog"><b>5</b><span><span class="l-es">Diseño de ecosistemas agénticos de trabajo</span><span class="l-en">Agentic work ecosystem design</span><span class="l-pt">Design de ecossistemas agênticos de trabalho</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm6" role="button" tabindex="0" aria-haspopup="dialog"><b>6</b><span><span class="l-es">Diseño de arneses para IA</span><span class="l-en">AI harness design</span><span class="l-pt">Design de arneses para IA</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm7" role="button" tabindex="0" aria-haspopup="dialog"><b>7</b><span><span class="l-es">Prototipado y mini-apps</span><span class="l-en">Prototyping &amp; mini-apps</span><span class="l-pt">Prototipagem &amp; mini-apps</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm8" role="button" tabindex="0" aria-haspopup="dialog"><b>8</b><span><span class="l-es">Adopción de IA</span><span class="l-en">AI adoption</span><span class="l-pt">Adoção de IA</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="cm9" role="button" tabindex="0" aria-haspopup="dialog" style="border-left:3px solid var(--brand-gold);"><b>9</b><span><span class="l-es">Proyecto final</span><span class="l-en">Final project</span><span class="l-pt">Projeto final</span></span></div>
       </div>
     </div>
   </section>
@@ -377,7 +382,7 @@
     <h3><span class="l-es">Prompting de Alto Rendimiento</span><span class="l-en">High-Performance Prompting</span><span class="l-pt">Prompting de Alto Desempenho</span></h3>
     <div class="ta-modal__sub"><span class="l-es">Taller · 2 h en vivo · $200.000 COP ($20 USD)</span><span class="l-en">Workshop · 2 h live · $200.000 COP ($20 USD)</span><span class="l-pt">Workshop · 2 h ao vivo · $200.000 COP ($20 USD)</span></div>
     <h4><span class="l-es">Alcance</span><span class="l-en">Scope</span><span class="l-pt">Escopo</span></h4>
-    <p><span class="l-es">2 horas en vivo. Diseño y estandarización de prompts de alto rendimiento: rol, contexto, técnicas (chain-of-thought, few-shot, meta-prompting) y antialucinación.</span><span class="l-en">2 live hours. Designing and standardizing high-performance prompts: role, context, techniques (chain-of-thought, few-shot, meta-prompting) and anti-hallucination.</span><span class="l-pt">2 horas ao vivo. Design e padronização de prompts de alto desempenho: papel, contexto, técnicas (chain-of-thought, few-shot, meta-prompting) e anti-alucinação.</span></p>
+    <p><span class="l-es">2 horas en vivo. Diseño y estandarización de prompts de alto rendimiento: rol, contexto, contrato de salida, meta-prompting y prompting agéntico (orientado a output y a outcome), con antialucinación.</span><span class="l-en">2 live hours. Designing and standardizing high-performance prompts: role, context, output contract, meta-prompting and agentic prompting (driven by output and outcome), with anti-hallucination.</span><span class="l-pt">2 horas ao vivo. Design e padronização de prompts de alto desempenho: papel, contexto, contrato de saída, meta-prompting e prompting agêntico (orientado a output e a outcome), com anti-alucinação.</span></p>
     <h4><span class="l-es">Beneficios</span><span class="l-en">Benefits</span><span class="l-pt">Benefícios</span></h4>
     <p><span class="l-es">Resultados consistentes, no prompts al azar: el mismo prompt produce el mismo nivel cada vez.</span><span class="l-en">Consistent results, not random prompts: the same prompt produces the same level every time.</span><span class="l-pt">Resultados consistentes, não prompts ao acaso: o mesmo prompt produz o mesmo nível sempre.</span></p>
     <h4><span class="l-es">Valor que recibes</span><span class="l-en">Value you get</span><span class="l-pt">Valor que você recebe</span></h4>
@@ -393,7 +398,7 @@
     <h3><span class="l-es">Sistematización y Automatización con Claude</span><span class="l-en">Systematization &amp; Automation with Claude</span><span class="l-pt">Sistematização e Automação com Claude</span></h3>
     <div class="ta-modal__sub"><span class="l-es">Taller · 2 h en vivo · $200.000 COP ($20 USD)</span><span class="l-en">Workshop · 2 h live · $200.000 COP ($20 USD)</span><span class="l-pt">Workshop · 2 h ao vivo · $200.000 COP ($20 USD)</span></div>
     <h4><span class="l-es">Alcance</span><span class="l-en">Scope</span><span class="l-pt">Escopo</span></h4>
-    <p><span class="l-es">2 horas en vivo. Crear asistentes y skills, encadenar un workflow y dejar cadencias que corren solas; cuándo automatizar y cuándo no.</span><span class="l-en">2 live hours. Building assistants and skills, chaining a workflow and leaving cadences that run on their own; when to automate and when not to.</span><span class="l-pt">2 horas ao vivo. Criar assistentes e skills, encadear um workflow e deixar cadências que rodam sozinhas; quando automatizar e quando não.</span></p>
+    <p><span class="l-es">2 horas en vivo. APA — Agentic Process Automation: en vez de bots rígidos por reglas, agentes que entienden el contexto y ejecutan tus procesos de principio a fin. Creas asistentes y skills, encadenas un workflow agéntico y dejas cadencias que corren solas.</span><span class="l-en">2 live hours. APA — Agentic Process Automation: instead of brittle rule-based bots, agents that understand context and run your processes end to end. You build assistants and skills, chain an agentic workflow and leave cadences that run on their own.</span><span class="l-pt">2 horas ao vivo. APA — Agentic Process Automation: em vez de bots rígidos por regras, agentes que entendem o contexto e executam seus processos de ponta a ponta. Você cria assistentes e skills, encadeia um workflow agêntico e deixa cadências que rodam sozinhas.</span></p>
     <h4><span class="l-es">Beneficios</span><span class="l-en">Benefits</span><span class="l-pt">Benefícios</span></h4>
     <p><span class="l-es">Recuperas de 4 a 12 horas por semana automatizando lo repetitivo.</span><span class="l-en">You reclaim 4 to 12 hours a week by automating the repetitive.</span><span class="l-pt">Você recupera de 4 a 12 horas por semana automatizando o repetitivo.</span></p>
     <h4><span class="l-es">Valor que recibes</span><span class="l-en">Value you get</span><span class="l-pt">Valor que você recebe</span></h4>
@@ -433,6 +438,123 @@
     <h4><span class="l-es">Transformación</span><span class="l-en">Transformation</span><span class="l-pt">Transformação</span></h4>
     <p><span class="l-es">La transformación completa: de usuario de IA a manager amplificado con un sistema propio operando.</span><span class="l-en">The full transformation: from AI user to amplified manager with a system of your own operating.</span><span class="l-pt">A transformação completa: de usuário de IA a manager amplificado com um sistema próprio operando.</span></p>
     <a class="home-cta home-cta--primary ta-modal__cta" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm1">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Crear asistentes</span><span class="l-en">Build assistants</span><span class="l-pt">Criar assistentes</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 1</span><span class="l-en">Module 1</span><span class="l-pt">Módulo 1</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A configurar tu propio asistente: instrucciones, contexto y formato.</span><span class="l-en">How to set up your own assistant: instructions, context and format.</span><span class="l-pt">A configurar seu próprio assistente: instruções, contexto e formato.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Generator Asistente de Creación de Asistentes.</span><span class="l-en">The Assistant-Creation Generator assistant.</span><span class="l-pt">O Generator Assistente de Criação de Assistentes.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Dejas de repetir indicaciones: el asistente ya sabe cómo trabajas.</span><span class="l-en">You stop repeating instructions: the assistant already knows how you work.</span><span class="l-pt">Você para de repetir indicações: o assistente já sabe como você trabalha.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm2">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Crear skills</span><span class="l-en">Build skills</span><span class="l-pt">Criar skills</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 2</span><span class="l-en">Module 2</span><span class="l-pt">Módulo 2</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A empaquetar un proceso repetido como una skill invocable.</span><span class="l-en">How to package a repeated process as an invocable skill.</span><span class="l-pt">A empacotar um processo repetido como uma skill invocável.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Generator Asistente de Creación de Skills y la librería de skills del ADK.</span><span class="l-en">The Skill-Creation Generator assistant and the ADK skill library.</span><span class="l-pt">O Generator Assistente de Criação de Skills e a biblioteca de skills do ADK.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Tu método se ejecuta con un comando, igual cada vez.</span><span class="l-en">Your method runs with one command, the same every time.</span><span class="l-pt">Seu método é executado com um comando, igual todas as vezes.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm3">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Crear agentes</span><span class="l-en">Build agents</span><span class="l-pt">Criar agentes</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 3</span><span class="l-en">Module 3</span><span class="l-pt">Módulo 3</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A definir agentes que ejecutan y delegan, con sus límites.</span><span class="l-en">How to define agents that execute and delegate, with their boundaries.</span><span class="l-pt">A definir agentes que executam e delegam, com seus limites.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Generator Asistente de Creación de Agentes y los agentes del ADK.</span><span class="l-en">The Agent-Creation Generator assistant and the ADK agents.</span><span class="l-pt">O Generator Assistente de Criação de Agentes e os agentes do ADK.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">El trabajo lo lleva un agente de principio a fin.</span><span class="l-en">An agent carries the work end to end.</span><span class="l-pt">O trabalho é levado por um agente do início ao fim.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm4">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Multimedia con IA</span><span class="l-en">Multimedia with AI</span><span class="l-pt">Multimídia com IA</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 4</span><span class="l-en">Module 4</span><span class="l-pt">Módulo 4</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A convertir datos y frameworks en piezas visuales y multimedia.</span><span class="l-en">How to turn data and frameworks into visual and multimedia pieces.</span><span class="l-pt">A converter dados e frameworks em peças visuais e multimídia.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Expert Multimodal Multimedia Expert.</span><span class="l-en">The Multimodal Multimedia Expert.</span><span class="l-pt">O Expert Multimodal Multimedia Expert.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Comunicas resultados con impacto, sin depender de diseño.</span><span class="l-en">You communicate results with impact, without relying on design.</span><span class="l-pt">Você comunica resultados com impacto, sem depender de design.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm5">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Diseño de ecosistemas agénticos de trabajo</span><span class="l-en">Agentic work ecosystem design</span><span class="l-pt">Design de ecossistemas agênticos de trabalho</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 5</span><span class="l-en">Module 5</span><span class="l-pt">Módulo 5</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A orquestar asistentes, agentes y cadencias como un sistema.</span><span class="l-en">How to orchestrate assistants, agents and cadences as one system.</span><span class="l-pt">A orquestrar assistentes, agentes e cadências como um sistema.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Vibe Coding ADK, entorno de orquestación multi-agéntica.</span><span class="l-en">The Vibe Coding ADK, a multi-agent orchestration environment.</span><span class="l-pt">O Vibe Coding ADK, ambiente de orquestração multiagêntica.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Tu operación se sostiene como sistema, no como tareas sueltas.</span><span class="l-en">Your operation holds up as a system, not as scattered tasks.</span><span class="l-pt">Sua operação se sustenta como sistema, não como tarefas soltas.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm6">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Diseño de arneses para IA</span><span class="l-en">AI harness design</span><span class="l-pt">Design de arneses para IA</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 6</span><span class="l-en">Module 6</span><span class="l-pt">Módulo 6</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A diseñar el arnés que da contexto, herramientas, salida estructurada y evaluación a la IA.</span><span class="l-en">How to design the harness that gives the AI context, tools, structured output and evaluation.</span><span class="l-pt">A desenhar o arnês que dá contexto, ferramentas, saída estruturada e avaliação à IA.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Expert Asistente de Harness Engineering.</span><span class="l-en">The Harness Engineering Expert assistant.</span><span class="l-pt">O Expert Assistente de Harness Engineering.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Tus agentes entregan resultados confiables, no improvisados.</span><span class="l-en">Your agents deliver reliable results, not improvised ones.</span><span class="l-pt">Seus agentes entregam resultados confiáveis, não improvisados.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm7">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Prototipado y mini-apps</span><span class="l-en">Prototyping &amp; mini-apps</span><span class="l-pt">Prototipagem &amp; mini-apps</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 7</span><span class="l-en">Module 7</span><span class="l-pt">Módulo 7</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A prototipar una mini-app sin ser programador.</span><span class="l-en">How to prototype a mini-app without being a programmer.</span><span class="l-pt">A prototipar um mini-app sem ser programador.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Vibe Coding ADK.</span><span class="l-en">The Vibe Coding ADK.</span><span class="l-pt">O Vibe Coding ADK.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Pruebas tus ideas en una sesión, sin esperar desarrollo.</span><span class="l-en">You test your ideas in one session, without waiting for development.</span><span class="l-pt">Você testa suas ideias em uma sessão, sem esperar desenvolvimento.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm8">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Adopción de IA</span><span class="l-en">AI adoption</span><span class="l-pt">Adoção de IA</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 8</span><span class="l-en">Module 8</span><span class="l-pt">Módulo 8</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A llevar la IA a tu equipo sin fricción y a medir.</span><span class="l-en">How to bring AI to your team without friction, and how to measure it.</span><span class="l-pt">A levar a IA ao seu time sem fricção e a medir.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El Expert Pristino.</span><span class="l-en">The Pristino Expert.</span><span class="l-pt">O Expert Pristino.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Adopción con quick wins medibles, no un experimento.</span><span class="l-en">Adoption with measurable quick wins, not an experiment.</span><span class="l-pt">Adoção com quick wins mensuráveis, não um experimento.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-modal--c" id="cm9">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Proyecto final</span><span class="l-en">Final project</span><span class="l-pt">Projeto final</span></h3>
+    <div class="ta-modal__sub"><span class="l-es">Módulo 9</span><span class="l-en">Module 9</span><span class="l-pt">Módulo 9</span></div>
+    <h4><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></h4>
+    <p><span class="l-es">A integrar todo en tu propio sistema de trabajo amplificado y presentarlo.</span><span class="l-en">How to integrate everything into your own amplified-work system and present it.</span><span class="l-pt">A integrar tudo no seu próprio sistema de trabalho amplificado e apresentá-lo.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">El espacio comunitario y todo el kit.</span><span class="l-en">The community space and the full kit.</span><span class="l-pt">O espaço comunitário e todo o kit.</span></p>
+    <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
+    <p><span class="l-es">Sales con tu sistema funcionando, validado con pares.</span><span class="l-en">You leave with your system working, validated with peers.</span><span class="l-pt">Você sai com seu sistema funcionando, validado com pares.</span></p>
   </div>
 </dialog>
 <script>(function(){
