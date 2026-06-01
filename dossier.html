@@ -65,6 +65,11 @@
     .ta-bundle{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:rgba(255,215,0,.06)}
     .ta-bundle__r{text-align:right;min-width:200px}
     @media(max-width:600px){.ta-bundle__r{text-align:left}}
+    .ta-conds{display:grid;gap:.8rem;margin-top:1.5rem;grid-template-columns:1fr}
+    @media(min-width:680px){.ta-conds{grid-template-columns:1fr 1fr}}
+    .ta-cond{display:flex;flex-direction:column;gap:.25rem;padding:1rem 1.1rem}
+    .ta-cond__h{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.62rem;font-weight:700;color:var(--brand-gold-text)}
+    .ta-cond p{font-size:.86rem;color:var(--brand-text-soft);line-height:1.5;margin:0}
     .ta-grid{display:grid;gap:1rem}
     @media(min-width:680px){.ta-grid--2{grid-template-columns:1fr 1fr}.ta-grid--4{grid-template-columns:repeat(4,1fr)}}
     .ta-note{display:inline-block;margin-top:.6rem;padding:.4rem .8rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:600}
@@ -223,6 +228,14 @@
       <p style="margin-top:1rem;"><span class="ta-note"><span class="l-es">Combo: los 2 talleres juntos = $350.000 COP ($30 USD) · ahorras $50.000.</span><span class="l-en">Combo: both workshops together = $350.000 COP ($30 USD) · save $50.000.</span><span class="l-pt">Combo: os 2 workshops juntos = $350.000 COP ($30 USD) · economize $50.000.</span></span></p>
       <p><span class="ta-note"><span class="l-es">Requiere cuenta de Claude de pago (desde $20/mes). El intro no la requiere.</span><span class="l-en">Requires a paid Claude account (from $20/month). The intro does not.</span><span class="l-pt">Requer conta Claude paga (a partir de $20/mês). O intro não.</span></span></p>
       <p><span class="ta-note"><span class="l-es">Lo que inviertes en los talleres se descuenta del valor del bootcamp.</span><span class="l-en">What you invest in the workshops is credited toward the bootcamp price.</span><span class="l-pt">O que você investe nos workshops é descontado do valor do bootcamp.</span></span></p>
+
+      <div class="ta-conds">
+        <div class="x-card ta-cond"><span class="ta-cond__h"><span class="l-es">Idiomas</span><span class="l-en">Languages</span><span class="l-pt">Idiomas</span></span><p><span class="l-es">Formaciones en español o inglés. Portugués a demanda, según disponibilidad de embajadores (es el idioma más escaso).</span><span class="l-en">Trainings in Spanish or English. Portuguese on demand, subject to ambassador availability (the scarcest language).</span><span class="l-pt">Formações em espanhol ou inglês. Português sob demanda, conforme disponibilidade de embaixadores (o idioma mais escasso).</span></p></div>
+        <div class="x-card ta-cond"><span class="ta-cond__h"><span class="l-es">Grupos de amigos</span><span class="l-en">Friend groups</span><span class="l-pt">Grupos de amigos</span></span><p><span class="l-es">10% de descuento para grupos de 5 · 20% para grupos de hasta 10. Máximo 10 plazas por grupo particular.</span><span class="l-en">10% off for groups of 5 · 20% for groups of up to 10. Maximum 10 seats per private group.</span><span class="l-pt">10% de desconto para grupos de 5 · 20% para grupos de até 10. Máximo 10 vagas por grupo particular.</span></p></div>
+        <div class="x-card ta-cond"><span class="ta-cond__h"><span class="l-es">Empresas</span><span class="l-en">Companies</span><span class="l-pt">Empresas</span></span><p><span class="l-es">Precios distintos · Workshop $3.000.000 COP · Bootcamp $12.000.000 COP · aforo hasta 20 personas.</span><span class="l-en">Different pricing · Workshop $3,000,000 COP · Bootcamp $12,000,000 COP · up to 20 participants.</span><span class="l-pt">Preços distintos · Workshop $3.000.000 COP · Bootcamp $12.000.000 COP · até 20 participantes.</span></p></div>
+        <div class="x-card ta-cond"><span class="ta-cond__h"><span class="l-es">Activación (SLA)</span><span class="l-en">Activation (SLA)</span><span class="l-pt">Ativação (SLA)</span></span><p><span class="l-es">1 semana para activar grupos particulares y empresariales.</span><span class="l-en">1 week to activate private and corporate groups.</span><span class="l-pt">1 semana para ativar grupos particulares e empresariais.</span></p></div>
+        <div class="x-card ta-cond"><span class="ta-cond__h"><span class="l-es">Calendario</span><span class="l-en">Calendar</span><span class="l-pt">Calendário</span></span><p><span class="l-es">Las fechas dependen de que tengamos inscripciones abiertas. Déjanos tus datos y te avisamos la próxima.</span><span class="l-en">Dates depend on open enrollment windows. Leave your details and we'll tell you the next one.</span><span class="l-pt">As datas dependem de termos inscrições abertas. Deixe seus dados e avisamos a próxima.</span></p></div>
+      </div>
     </div>
   </section>
 
