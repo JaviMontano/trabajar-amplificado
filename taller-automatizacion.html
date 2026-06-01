@@ -72,6 +72,15 @@
     .ta-mod b{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif)}
     .tl-item__link{display:inline-block;margin-left:.4rem;color:var(--brand-gold-text);font-weight:700;text-decoration:none;white-space:nowrap}
     .tl-item__link:hover{text-decoration:underline}
+    .ta-modal{border:none;border-radius:16px;max-width:560px;width:92vw;padding:0;background:var(--brand-surface);color:var(--brand-text);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .ta-modal::backdrop{background:rgba(7,11,26,.55);backdrop-filter:blur(4px)}
+    .ta-modal__in{padding:1.7rem 1.6rem 1.9rem;position:relative}
+    .ta-modal__close{position:absolute;top:.7rem;right:.9rem;background:none;border:none;color:var(--brand-muted);font-size:1.5rem;cursor:pointer;line-height:1}
+    .ta-modal h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.2rem;margin:0 0 .15rem}
+    .ta-modal__sub{color:var(--brand-muted);font-size:.82rem;margin-bottom:.9rem}
+    .ta-modal h4{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.64rem;font-weight:700;color:var(--brand-gold-text);margin:1rem 0 .25rem}
+    .ta-modal p{font-size:.9rem;color:var(--brand-text-soft);line-height:1.55;margin:0}
+    .ta-asst{display:inline-block;margin:.1rem 0 .3rem;padding:.28rem .7rem;border-radius:99px;background:rgba(255,215,0,.12);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-weight:700;font-size:.82rem}
   </style>
 </head>
 <body>
@@ -114,6 +123,7 @@
       <div class="home-hero__ctas" style="justify-content:center;">
         <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
         <a href="taller-automatizacion-deck.html" class="home-cta home-cta--secondary"><span class="l-es">Ver diapositivas</span><span class="l-en">See slides</span><span class="l-pt">Ver slides</span></a>
+        <button class="home-cta home-cta--secondary" data-modal="clase" type="button"><span class="l-es">Qué incluye esta clase</span><span class="l-en">What this class includes</span><span class="l-pt">O que esta aula inclui</span></button>
       </div>
       <div class="stats" style="margin-top:2rem;" aria-label="Resumen del taller">
         <div class="stats__cell"><span class="stats__num">4–12 h</span><span class="stats__label"><span class="l-es">recuperas / semana automatizando lo repetitivo</span><span class="l-en">reclaimed / week automating the repetitive</span><span class="l-pt">recupera / semana automatizando o repetitivo</span></span></div>
@@ -319,5 +329,38 @@
   if(lb) lb.addEventListener('click', function(){ var i=langs.indexOf(html.lang); setLang(langs[(i+1)%langs.length]); });
 })();
 </script>
+
+<!-- ===== MODAL · Qué incluye esta clase ===== -->
+<dialog class="ta-modal" id="clase">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Sistematización y Automatización con Claude</span><span class="l-en">Systematization &amp; Automation with Claude</span><span class="l-pt">Sistematização e Automação com Claude</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Taller · 2 h</span><span class="l-en">Workshop · 2 h</span><span class="l-pt">Workshop · 2 h</span></p>
+
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll cover</span><span class="l-pt">O que será visto</span></h4>
+    <p><span class="l-es">Crear asistentes y skills reutilizables, encadenar un workflow y dejar cadencias y tareas que corren solas; además, cuándo automatizar y cuándo no.</span><span class="l-en">Build reusable assistants and skills, chain a workflow and leave cadences and tasks that run on their own; plus, when to automate and when not to.</span><span class="l-pt">Criar assistentes e skills reutilizáveis, encadear um workflow e deixar cadências e tarefas que rodam sozinhas; além disso, quando automatizar e quando não.</span></p>
+
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Asistente <strong>WorkflowGenerator</strong> + las reviews <strong>WBR/DBR</strong> + las skills del ADK.</span><span class="l-en"><strong>WorkflowGenerator</strong> assistant + the <strong>WBR/DBR</strong> reviews + the ADK skills.</span><span class="l-pt">Assistente <strong>WorkflowGenerator</strong> + as reviews <strong>WBR/DBR</strong> + as skills do ADK.</span></p>
+
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">WorkflowGenerator</span>
+    <p><span class="l-es">Genera flujos de trabajo: automatiza procesos repetitivos con una lógica clara y reutilizable.</span><span class="l-en">It generates workflows: it automates repetitive processes with clear, reusable logic.</span><span class="l-pt">Gera fluxos de trabalho: automatiza processos repetitivos com uma lógica clara e reutilizável.</span></p>
+
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o gestor</span></h4>
+    <p><span class="l-es">Automatizar tu <strong>status semanal (WBR)</strong>: un workflow recoge tus avances, los encuadra en tus prioridades y entrega un reporte de 5 líneas, listo para tu jefe. El manager de la era de la IA reporta sin volver a redactarlo a mano.</span><span class="l-en">Automate your <strong>weekly status (WBR)</strong>: a workflow gathers your progress, frames it against your priorities and delivers a 5-line report, ready for your boss. The manager of the AI era reports without writing it by hand again.</span><span class="l-pt">Automatizar seu <strong>status semanal (WBR)</strong>: um workflow reúne seus avanços, os enquadra nas suas prioridades e entrega um relatório de 5 linhas, pronto para seu chefe. O gestor da era da IA reporta sem redigir de novo à mão.</span></p>
+  </div>
+</dialog>
+
+<script>(function(){
+  document.querySelectorAll('[data-modal]').forEach(function(el){
+    function open(){var d=document.getElementById(el.getAttribute('data-modal'));if(d&&d.showModal)d.showModal();}
+    el.addEventListener('click',open);
+  });
+  document.querySelectorAll('dialog.ta-modal').forEach(function(d){
+    d.addEventListener('click',function(e){if(e.target===d)d.close();});
+    d.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){d.close();});});
+  });
+})();</script>
 </body>
 </html>

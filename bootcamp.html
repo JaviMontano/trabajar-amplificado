@@ -72,6 +72,18 @@
     .ta-mod b{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif)}
     .tl-item__link{display:inline-block;margin-left:.4rem;color:var(--brand-gold-text);font-weight:700;text-decoration:none;white-space:nowrap}
     .tl-item__link:hover{text-decoration:underline}
+    .ta-clickable{position:relative;cursor:pointer}
+    .ta-clickable:hover{border-color:var(--brand-gold-text)}
+    .ta-clickable::after{content:'+';position:absolute;top:.5rem;right:.7rem;color:var(--brand-gold-text);font-weight:800;opacity:.55}
+    .ta-modal{border:none;border-radius:16px;max-width:560px;width:92vw;padding:0;background:var(--brand-surface);color:var(--brand-text);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .ta-modal::backdrop{background:rgba(7,11,26,.55);backdrop-filter:blur(4px)}
+    .ta-modal__in{padding:1.7rem 1.6rem 1.9rem;position:relative}
+    .ta-modal__close{position:absolute;top:.7rem;right:.9rem;background:none;border:none;color:var(--brand-muted);font-size:1.5rem;cursor:pointer;line-height:1}
+    .ta-modal h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.2rem;margin:0 0 .15rem}
+    .ta-modal__sub{color:var(--brand-muted);font-size:.82rem;margin-bottom:.9rem}
+    .ta-modal h4{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.64rem;font-weight:700;color:var(--brand-gold-text);margin:1rem 0 .25rem}
+    .ta-modal p{font-size:.9rem;color:var(--brand-text-soft);line-height:1.55;margin:0}
+    .ta-asst{display:inline-block;margin:.1rem 0 .3rem;padding:.28rem .7rem;border-radius:99px;background:rgba(255,215,0,.12);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-weight:700;font-size:.82rem}
   </style>
 </head>
 <body>
@@ -136,15 +148,15 @@
       <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">9 módulos, <span class="gradient-text">capa por capa</span></span><span class="l-en">9 modules, <span class="gradient-text">layer by layer</span></span><span class="l-pt">9 módulos, <span class="gradient-text">camada por camada</span></span></h2>
       <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Cada módulo es masterclass + taller práctico, con su propio entregable. El último consolida todo en tu proyecto final.</span><span class="l-en">Each module is masterclass + hands-on workshop, with its own deliverable. The last one consolidates everything into your final project.</span><span class="l-pt">Cada módulo é masterclass + workshop prático, com seu próprio entregável. O último consolida tudo no seu projeto final.</span></p>
       <div class="ta-grid ta-grid--2">
-        <div class="x-card ta-mod"><b>1</b><span><span class="l-es">Crear asistentes</span><span class="l-en">Build assistants</span><span class="l-pt">Criar assistentes</span></span></div>
-        <div class="x-card ta-mod"><b>2</b><span><span class="l-es">Crear skills</span><span class="l-en">Build skills</span><span class="l-pt">Criar skills</span></span></div>
-        <div class="x-card ta-mod"><b>3</b><span><span class="l-es">Crear agentes</span><span class="l-en">Build agents</span><span class="l-pt">Criar agentes</span></span></div>
-        <div class="x-card ta-mod"><b>4</b><span><span class="l-es">Multimedia con IA</span><span class="l-en">Multimedia with AI</span><span class="l-pt">Multimídia com IA</span></span></div>
-        <div class="x-card ta-mod"><b>5</b><span><span class="l-es">Inteligencia agéntica</span><span class="l-en">Agentic intelligence</span><span class="l-pt">Inteligência agêntica</span></span></div>
-        <div class="x-card ta-mod"><b>6</b><span><span class="l-es">Automatización agéntica</span><span class="l-en">Agentic automation</span><span class="l-pt">Automação agêntica</span></span></div>
-        <div class="x-card ta-mod"><b>7</b><span><span class="l-es">Prototipado y mini-apps</span><span class="l-en">Prototyping &amp; mini-apps</span><span class="l-pt">Prototipagem &amp; mini-apps</span></span></div>
-        <div class="x-card ta-mod"><b>8</b><span><span class="l-es">Adopción de IA</span><span class="l-en">AI adoption</span><span class="l-pt">Adoção de IA</span></span></div>
-        <div class="x-card ta-mod" style="border-left:3px solid var(--brand-gold);"><b>9</b><span><span class="l-es">Proyecto final</span><span class="l-en">Final project</span><span class="l-pt">Projeto final</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm1" role="button" tabindex="0" aria-haspopup="dialog"><b>1</b><span><span class="l-es">Crear asistentes</span><span class="l-en">Build assistants</span><span class="l-pt">Criar assistentes</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm2" role="button" tabindex="0" aria-haspopup="dialog"><b>2</b><span><span class="l-es">Crear skills</span><span class="l-en">Build skills</span><span class="l-pt">Criar skills</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm3" role="button" tabindex="0" aria-haspopup="dialog"><b>3</b><span><span class="l-es">Crear agentes</span><span class="l-en">Build agents</span><span class="l-pt">Criar agentes</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm4" role="button" tabindex="0" aria-haspopup="dialog"><b>4</b><span><span class="l-es">Multimedia con IA</span><span class="l-en">Multimedia with AI</span><span class="l-pt">Multimídia com IA</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm5" role="button" tabindex="0" aria-haspopup="dialog"><b>5</b><span><span class="l-es">Diseño de ecosistemas agénticos de trabajo</span><span class="l-en">Agentic work ecosystem design</span><span class="l-pt">Design de ecossistemas agênticos de trabalho</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm6" role="button" tabindex="0" aria-haspopup="dialog"><b>6</b><span><span class="l-es">Diseño de arneses para IA</span><span class="l-en">AI harness design</span><span class="l-pt">Design de arneses para IA</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm7" role="button" tabindex="0" aria-haspopup="dialog"><b>7</b><span><span class="l-es">Prototipado y mini-apps</span><span class="l-en">Prototyping &amp; mini-apps</span><span class="l-pt">Prototipagem &amp; mini-apps</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm8" role="button" tabindex="0" aria-haspopup="dialog"><b>8</b><span><span class="l-es">Adopción de IA</span><span class="l-en">AI adoption</span><span class="l-pt">Adoção de IA</span></span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="bm9" role="button" tabindex="0" aria-haspopup="dialog" style="border-left:3px solid var(--brand-gold);"><b>9</b><span><span class="l-es">Proyecto final</span><span class="l-en">Final project</span><span class="l-pt">Projeto final</span></span></div>
       </div>
     </div>
   </section>
@@ -295,5 +307,170 @@
   if(lb) lb.addEventListener('click', function(){ var i=langs.indexOf(html.lang); setLang(langs[(i+1)%langs.length]); });
 })();
 </script>
+
+<dialog class="ta-modal" id="bm1">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Crear asistentes</span><span class="l-en">Build assistants</span><span class="l-pt">Criar assistentes</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 1</span><span class="l-en">Module 1</span><span class="l-pt">Módulo 1</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Cómo configurar un asistente propio: instrucciones, contexto y formato de salida.</span><span class="l-en">How to set up your own assistant: instructions, context and output format.</span><span class="l-pt">Como configurar um assistente próprio: instruções, contexto e formato de saída.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Plantilla de asistente del ADK + NoteTaker.</span><span class="l-en">ADK assistant template + NoteTaker.</span><span class="l-pt">Modelo de assistente do ADK + NoteTaker.</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">NoteTaker</span>
+    <p><span class="l-es">Convierte tus notas de reunión en acuerdos y action items, listos para enviar.</span><span class="l-en">Turns your meeting notes into agreements and action items, ready to send.</span><span class="l-pt">Transforma suas notas de reunião em acordos e action items, prontos para enviar.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">Un asistente que el manager de la era de la IA usa para que cada reunión cierre con acuerdos y tareas asignadas sin esfuerzo manual.</span><span class="l-en">An assistant the AI-era manager uses so every meeting ends with agreements and assigned tasks, with no manual effort.</span><span class="l-pt">Um assistente que o manager da era da IA usa para que cada reunião termine com acordos e tarefas atribuídas, sem esforço manual.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm2">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Crear skills</span><span class="l-en">Build skills</span><span class="l-pt">Criar skills</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 2</span><span class="l-en">Module 2</span><span class="l-pt">Módulo 2</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Cómo empaquetar un proceso repetido como una skill invocable.</span><span class="l-en">How to package a repeated process as an invocable skill.</span><span class="l-pt">Como empacotar um processo repetido como uma skill invocável.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Librería de skills del ADK (Vibe Coding) + /skill-creator.</span><span class="l-en">ADK skills library (Vibe Coding) + /skill-creator.</span><span class="l-pt">Biblioteca de skills do ADK (Vibe Coding) + /skill-creator.</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">CommandCenter</span>
+    <p><span class="l-es">Genera tu informe ejecutivo semanal con un solo comando.</span><span class="l-en">Generates your weekly executive report with a single command.</span><span class="l-pt">Gera seu relatório executivo semanal com um único comando.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA convierte su reporte semanal en una skill: un comando y el informe ejecutivo queda listo, repetible y consistente.</span><span class="l-en">The AI-era manager turns the weekly report into a skill: one command and the executive report is ready, repeatable and consistent.</span><span class="l-pt">O manager da era da IA transforma seu relatório semanal em uma skill: um comando e o relatório executivo fica pronto, repetível e consistente.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm3">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Crear agentes</span><span class="l-en">Build agents</span><span class="l-pt">Criar agentes</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 3</span><span class="l-en">Module 3</span><span class="l-pt">Módulo 3</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Agentes que delegan a especialistas y devuelven una decisión trazable.</span><span class="l-en">Agents that delegate to specialists and return a traceable decision.</span><span class="l-pt">Agentes que delegam a especialistas e devolvem uma decisão rastreável.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Agentes del ADK + Pristino.</span><span class="l-en">ADK agents + Pristino.</span><span class="l-pt">Agentes do ADK + Pristino.</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">Pristino</span>
+    <p><span class="l-es">Un comité de expertos en un solo chat: estrategia, riesgo y delivery en una sola conversación.</span><span class="l-en">A committee of experts in a single chat: strategy, risk and delivery in one conversation.</span><span class="l-pt">Um comitê de especialistas em um único chat: estratégia, risco e delivery em uma só conversa.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA reúne las perspectivas de estrategia, riesgo y delivery en un agente que le entrega una recomendación accionable.</span><span class="l-en">The AI-era manager gathers strategy, risk and delivery perspectives into one agent that delivers an actionable recommendation.</span><span class="l-pt">O manager da era da IA reúne as perspectivas de estratégia, risco e delivery em um agente que entrega uma recomendação acionável.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm4">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Multimedia con IA</span><span class="l-en">Multimedia with AI</span><span class="l-pt">Multimídia com IA</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 4</span><span class="l-en">Module 4</span><span class="l-pt">Módulo 4</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Cómo convertir datos y frameworks en piezas visuales.</span><span class="l-en">How to turn data and frameworks into visual pieces.</span><span class="l-pt">Como converter dados e frameworks em peças visuais.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">InfographicStrategyPlanner + InfographicMultimodalGenerator.</span><span class="l-en">InfographicStrategyPlanner + InfographicMultimodalGenerator.</span><span class="l-pt">InfographicStrategyPlanner + InfographicMultimodalGenerator.</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">InfographicMultimodalGenerator</span>
+    <p><span class="l-es">Transforma resultados y métricas en infografías ejecutivas claras.</span><span class="l-en">Transforms results and metrics into clear executive infographics.</span><span class="l-pt">Transforma resultados e métricas em infográficos executivos claros.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA presenta los resultados del trimestre a su comité con una infografía ejecutiva generada en minutos, no en días.</span><span class="l-en">The AI-era manager presents the quarter's results to the committee with an executive infographic generated in minutes, not days.</span><span class="l-pt">O manager da era da IA apresenta os resultados do trimestre ao seu comitê com um infográfico executivo gerado em minutos, não em dias.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm5">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Diseño de ecosistemas agénticos de trabajo</span><span class="l-en">Agentic work ecosystem design</span><span class="l-pt">Design de ecossistemas agênticos de trabalho</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 5</span><span class="l-en">Module 5</span><span class="l-pt">Módulo 5</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Cómo orquestar varios asistentes y cadencias como un solo sistema.</span><span class="l-en">How to orchestrate several assistants and cadences as a single system.</span><span class="l-pt">Como orquestrar vários assistentes e cadências como um único sistema.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">CommandCenter + las reviews (DBR/WBR/MBR).</span><span class="l-en">CommandCenter + the reviews (DBR/WBR/MBR).</span><span class="l-pt">CommandCenter + as reviews (DBR/WBR/MBR).</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">CommandCenter</span>
+    <p><span class="l-es">Coordina tus asistentes y cadencias como un único sistema de trabajo.</span><span class="l-en">Coordinates your assistants and cadences as a single work system.</span><span class="l-pt">Coordena seus assistentes e cadências como um único sistema de trabalho.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA orquesta su operación semanal con agentes que preparan sus reuniones y reportes antes de que llegue a la oficina.</span><span class="l-en">The AI-era manager orchestrates the weekly operation with agents that prepare meetings and reports before reaching the desk.</span><span class="l-pt">O manager da era da IA orquestra sua operação semanal com agentes que preparam suas reuniões e relatórios antes de chegar à mesa.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm6">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Diseño de arneses para IA</span><span class="l-en">AI harness design</span><span class="l-pt">Design de arneses para IA</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 6</span><span class="l-en">Module 6</span><span class="l-pt">Módulo 6</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Arneses que evalúan la salida de la IA contra una rúbrica de outcomes, para resultados confiables.</span><span class="l-en">Harnesses that evaluate AI output against an outcomes rubric, for reliable results.</span><span class="l-pt">Arneses que avaliam a saída da IA contra uma rubrica de outcomes, para resultados confiáveis.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">QAAnalyst + checklists de calidad del ADK.</span><span class="l-en">QAAnalyst + ADK quality checklists.</span><span class="l-pt">QAAnalyst + checklists de qualidade do ADK.</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">QAAnalyst</span>
+    <p><span class="l-es">Valida cada salida contra una rúbrica antes de darla por buena.</span><span class="l-en">Validates each output against a rubric before signing off.</span><span class="l-pt">Valida cada saída contra uma rubrica antes de dá-la por boa.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA monta un arnés que valida cada entregable del agente antes de que llegue a su jefe, blindando la calidad.</span><span class="l-en">The AI-era manager builds a harness that validates every agent deliverable before it reaches the boss, safeguarding quality.</span><span class="l-pt">O manager da era da IA monta um arnês que valida cada entregável do agente antes de chegar ao seu chefe, blindando a qualidade.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm7">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Prototipado y mini-apps</span><span class="l-en">Prototyping &amp; mini-apps</span><span class="l-pt">Prototipagem &amp; mini-apps</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 7</span><span class="l-en">Module 7</span><span class="l-pt">Módulo 7</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Cómo prototipar una mini-app sin ser programador.</span><span class="l-en">How to prototype a mini-app without being a programmer.</span><span class="l-pt">Como prototipar um mini-app sem ser programador.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Vibe Coding ADK (github.com/JaviMontano/jm-adk-alfa).</span><span class="l-en">Vibe Coding ADK (github.com/JaviMontano/jm-adk-alfa).</span><span class="l-pt">Vibe Coding ADK (github.com/JaviMontano/jm-adk-alfa).</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">Vibe Coding Lab</span>
+    <p><span class="l-es">A medida, basado en el jm-adk-alfa (Entorno de Desarrollo Agéntico).</span><span class="l-en">Custom, built on jm-adk-alfa (Agentic Development Environment).</span><span class="l-pt">Sob medida, baseado no jm-adk-alfa (Ambiente de Desenvolvimento Agêntico).</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA prototipa una mini-app de dashboard con sus KPIs, lista en una sola sesión y sin depender de TI.</span><span class="l-en">The AI-era manager prototypes a dashboard mini-app with their KPIs, ready in a single session and without depending on IT.</span><span class="l-pt">O manager da era da IA prototipa um mini-app de dashboard com seus KPIs, pronto em uma única sessão e sem depender de TI.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm8">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Adopción de IA</span><span class="l-en">AI adoption</span><span class="l-pt">Adoção de IA</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 8</span><span class="l-en">Module 8</span><span class="l-pt">Módulo 8</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Cómo llevar la IA a tu equipo sin fricción.</span><span class="l-en">How to bring AI to your team without friction.</span><span class="l-pt">Como levar a IA ao seu time sem fricção.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">ManagementAnalyst + ScaleUpReview.</span><span class="l-en">ManagementAnalyst + ScaleUpReview.</span><span class="l-pt">ManagementAnalyst + ScaleUpReview.</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">ManagementAnalyst</span>
+    <p><span class="l-es">Junto con ScaleUpReview, traza el plan de adopción y sus quick wins.</span><span class="l-en">Together with ScaleUpReview, it maps the adoption plan and its quick wins.</span><span class="l-pt">Junto com ScaleUpReview, traça o plano de adoção e seus quick wins.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA define un plan de adopción de IA para su equipo, con quick wins medibles desde la primera semana.</span><span class="l-en">The AI-era manager defines an AI adoption plan for the team, with measurable quick wins from week one.</span><span class="l-pt">O manager da era da IA define um plano de adoção de IA para seu time, com quick wins mensuráveis desde a primeira semana.</span></p>
+  </div>
+</dialog>
+
+<dialog class="ta-modal" id="bm9">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Proyecto final</span><span class="l-en">Final project</span><span class="l-pt">Projeto final</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Módulo 9</span><span class="l-en">Module 9</span><span class="l-pt">Módulo 9</span></p>
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll see</span><span class="l-pt">O que verá</span></h4>
+    <p><span class="l-es">Cómo integrar todo en tu sistema de trabajo amplificado.</span><span class="l-en">How to integrate everything into your amplified work system.</span><span class="l-pt">Como integrar tudo no seu sistema de trabalho amplificado.</span></p>
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Todo el kit: asistentes + ADK + cadencias.</span><span class="l-en">The whole kit: assistants + ADK + cadences.</span><span class="l-pt">Todo o kit: assistentes + ADK + cadências.</span></p>
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">CommandCenter</span>
+    <p><span class="l-es">El centro que integra todos tus asistentes en un solo sistema funcionando.</span><span class="l-en">The hub that integrates all your assistants into a single working system.</span><span class="l-pt">O centro que integra todos os seus assistentes em um único sistema funcionando.</span></p>
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o manager</span></h4>
+    <p><span class="l-es">El manager de la era de la IA sale con su sistema completo funcionando: un manager amplificado, no una demo.</span><span class="l-en">The AI-era manager leaves with the complete system running: an amplified manager, not a demo.</span><span class="l-pt">O manager da era da IA sai com seu sistema completo funcionando: um manager amplificado, não uma demo.</span></p>
+  </div>
+</dialog>
+
+<script>(function(){
+  document.querySelectorAll('[data-modal]').forEach(function(el){
+    function open(){var d=document.getElementById(el.getAttribute('data-modal'));if(d&&d.showModal)d.showModal();}
+    el.addEventListener('click',open);
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  });
+  document.querySelectorAll('dialog.ta-modal').forEach(function(d){
+    d.addEventListener('click',function(e){if(e.target===d)d.close();});
+    d.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){d.close();});});
+  });
+})();</script>
 </body>
 </html>
