@@ -6473,6 +6473,7 @@ tbody tr[data-detail]:hover{box-shadow:inset 3px 0 0 #B8860B}
   <div class="sidebar-links">
     <a href="#s1" data-label="Inicio" aria-label="Inicio"><i data-lucide="home"></i></a>
     <a href="#s3" data-label="12 pisos" aria-label="12 pisos"><i data-lucide="mountain"></i></a>
+    <a href="#s3-repos" data-label="Repos" aria-label="Repos"><i data-lucide="git-branch"></i></a>
     <a href="#s6" data-label="Capacidades" aria-label="Capacidades"><i data-lucide="brain"></i></a>
     <a href="#s7" data-label="Sectores" aria-label="Sectores"><i data-lucide="book-check"></i></a>
     <a href="#s8" data-label="Sistema" aria-label="Sistema"><i data-lucide="workflow"></i></a>
@@ -6488,8 +6489,9 @@ tbody tr[data-detail]:hover{box-shadow:inset 3px 0 0 #B8860B}
 
 <script>
 window.__bilingualNav={
-  es:[["#s1","Inicio"],["#s3","12 pisos"],["#s6","Capacidades"],["#s7","Sectores"],["#s8","Sistema"],["#s15","Adopción"],["#s-cal","Cadencias"]],
-  en:[["#en-s1","Start"],["#en-s3","12 floors"],["#en-s6","Capabilities"],["#en-s7","Sectors"],["#en-s8","System"],["#en-s15","Adoption"],["#en-s-cal","Cadences"]]
+  es:[["#s1","Inicio"],["#s3","12 pisos"],["#s3-repos","Repos"],["#s6","Capacidades"],["#s7","Sectores"],["#s8","Sistema"],["#s15","Adopción"],["#s-cal","Cadencias"]],
+  en:[["#en-s1","Start"],["#en-s3","12 floors"],["#en-s3-repos","Repos"],["#en-s6","Capabilities"],["#en-s7","Sectors"],["#en-s8","System"],["#en-s15","Adoption"],["#en-s-cal","Cadences"]],
+  pt:[["#s1","Início"],["#s3","12 andares"],["#s3-repos","Repos"],["#s6","Capacidades"],["#s7","Setores"],["#s8","Sistema"],["#s15","Adoção"],["#s-cal","Cadências"]]
 };
 window.__bilingualCta={
   es:["#s-cal","Tu paso","Tu siguiente paso"],
@@ -7735,6 +7737,11 @@ The diagrams and layouts appearing in this playbook are <em>illustrative wirefra
 </g>
 </svg>
 </div>
+
+<h3 id="en-s3-repos">3.7 · The repo layer · from the file cabinet to the vault</h3>
+<p>Levels 6 to 12 share a substrate the map never named: the <strong>git repository</strong>. Until now your Jarvis lives as plain-text Cowork folders — perfect for light knowledge work. But some commission needs <em>dated history</em>, <em>parallel drafts</em>, <em>off-site backup</em> or <em>code</em>. That commission graduates: it stops being a folder and becomes an <strong>armored dossier</strong> with its own vault. That is the repo layer. The ladder has four rungs: <strong>(1) Margin note</strong> → a line in <code>TAREAS.md</code>; <strong>(2) Commission folder</strong> → <code>_tasks/T-NNN-slug/</code> in Cowork; <strong>(3) Armored dossier · task repo</strong> → a git repo at <code>~/Documents/workspace/&lt;slug&gt;</code> with a private vault, which has an <em>end</em> and gets archived; <strong>(4) Headquarters · project repo</strong> → a long-lived git repo with multiple deliverables and collaborators.</p>
+<p><strong>Task repo vs. project repo.</strong> A task repo (T-NNN) is a commission with a start and an <em>end</em> — you build it, work it, deliver it, and archive it. A project repo (P-NNN) is a headquarters — long-lived, multi-deliverable, with its own house rules and review cadence. The difference is the <em>lifecycle</em>, not the technology. <strong>The vault doorman:</strong> before graduating a folder to a repo, run six triggers — code? branches/parallel drafts? dated history? external sharing? parallel work (worktrees)? portability beyond Cowork? Zero triggers → keep it a Cowork folder; one or more → make it a standalone repo. Once it is a repo you gain <strong>parallel desks (worktrees)</strong>: a second workbench on the same dossier so a risky draft never smudges the good version. Each repo is born with a <strong>private vault</strong> (private GitHub) and auto-generated translated copies (<code>AGENTS.md</code>, <code>GEMINI.md</code>) you never edit by hand — digital sovereignty in its strongest form. The Runbook executes this in four steps: <a href="runbook.html#step-27">Step 27</a> (does it deserve a repo?), <a href="runbook.html#step-28">Step 28</a> (turnkey scaffold), <a href="runbook.html#step-29">Step 29</a> (parallel desks), <a href="runbook.html#step-30">Step 30</a> (vault, mirrors, archiving).</p>
+
 <!-- =================================================
      §4 · MODELO MENTAL FUNDAMENTAL
      ================================================= -->
@@ -7752,6 +7759,10 @@ The diagrams and layouts appearing in this playbook are <em>illustrative wirefra
 <p>Three distinct mechanisms that shouldn't be mixed. <strong>Conversation context</strong>: tokens from the current chat, which evaporate upon closing. <strong>Cowork persistent memory</strong>: summaries that are injected into future sessions <a class="cite" href="#en-ref-14">[14]</a>. <strong>Projects</strong>: containers with instructions and reference files that apply to all their conversations without using up the window. Three mechanisms, three optimal uses · they materialize in the five sectors of §7.</p>
 <h3>4.4 · Attention and silent degradation</h3>
 <p>Filling the window to its maximum <strong>worsens</strong> the responses. Near the limit, three degradations occur: the <em>lost in the middle</em> effect is accentuated <a class="cite" href="#en-ref-1">[1]</a>, the response is shortened because output competes for the same budget, and latency grows non-linearly. The human side: a focused conversation conserves mental load <a class="cite" href="#en-ref-7">[7]</a> instead of spending it tracking context. <strong>Conversation hygiene is not optional.</strong></p>
+
+<h3 id="en-s4-icm">4.5 · The layer protocol · how much paper you put on the desk per stage</h3>
+<p>If the desk is finite (§4.2), the practical question is <em>which papers you put up and in what order</em>. Interpretable Context Methodology (ICM, arXiv:2603.16021) answers with a strong idea: <strong>the folder structure IS the assistant's architecture</strong>. You don't need a framework orchestrating context in code; you need each stage to read only the files it requires. Context organizes into <strong>five layers</strong>, most-stable to most-volatile: <strong>Layer 0</strong> <code>CLAUDE.md</code> (~800 tok, "Where am I?") · <strong>Layer 1</strong> <code>CONTEXT.md</code> (~300, "Where do I go?") · <strong>Layer 2</strong> stage context (200-500, "What do I do here?") · <strong>Layer 3</strong> reference material (500-2k, "What rules apply?") · <strong>Layer 4</strong> working artifacts (varies, "What am I working with?"). Layer 3 is <strong>the recipe</strong> (brand, voice, conventions — internalized as constraints); Layer 4 is <strong>the ingredients</strong> (today's draft — processed as input). The payoff is control without programming: to reorder a stage you <em>rename a folder</em> instead of editing orchestration code; to change a prompt you <em>edit a markdown file</em>; anyone with a text editor can do it. It is the antidote to the §4.4 <em>lost in the middle</em>: load by layers, the critical at the edge, no filler in the middle. The Runbook pushes this when a <code>CLAUDE.md</code> grows: it splits it into a lean <strong>control panel</strong> plus on-demand <code>canon-*.md</code> (<a href="runbook.html#step-24">Step 24</a>).</p>
+
 <!-- =================================================
      §5 · MAPA CONCEPTUAL INTEGRADO
      ================================================= -->
@@ -11270,6 +11281,77 @@ Los esquemas y layouts que aparecen en este playbook son <em>wireframes ilustrat
 </div>
 
 <!-- =================================================
+     §3.7 · LA CAPA DE REPOS (capa de repos · capa nueva 2026-06)
+     ================================================= -->
+<div class="tri" id="s3-repos">
+<h3>3.7 · <span class="es">La capa de repos · del archivador a la bóveda</span><span class="pt">A camada de repositórios · do arquivo ao cofre</span></h3>
+
+<p><span class="es">Los niveles 6 a 12 del mapa (Skills, Plugins, mini-apps, portabilidad) tienen un sustrato común que el mapa no nombraba: el <strong>repositorio git</strong>. Hasta aquí tu Jarvis vive como carpetas Cowork en texto plano — perfecto para trabajo de conocimiento liviano. Pero llega un encargo que necesita <em>historial con fecha</em>, <em>borradores en paralelo</em>, <em>respaldo fuera de sede</em> o <em>código</em>. Ese encargo gradúa: deja de ser una carpeta y se convierte en un <strong>expediente blindado</strong> con su propia bóveda. Esa es la capa de repos.</span><span class="pt">Os níveis 6 a 12 do mapa (Skills, Plugins, mini-apps, portabilidade) têm um substrato comum que o mapa não nomeava: o <strong>repositório git</strong>. Até aqui o seu Jarvis vive como pastas Cowork em texto puro — perfeito para trabalho de conhecimento leve. Mas chega um encargo que precisa de <em>histórico com data</em>, <em>rascunhos em paralelo</em>, <em>backup fora da sede</em> ou <em>código</em>. Esse encargo gradua: deixa de ser uma pasta e vira um <strong>dossiê blindado</strong> com o seu próprio cofre. Essa é a camada de repositórios.</span></p>
+
+<figure class="wireframe" aria-label="Escalera de cuatro peldaños: de nota al margen a sede de proyecto">
+  <svg viewBox="0 0 720 300" role="img" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="rg-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE9A0"/><stop offset="1" stop-color="#F2C744"/></linearGradient>
+    </defs>
+    <!-- peldaños -->
+    <g font-family="'Poppins',sans-serif">
+      <rect x="20" y="220" width="150" height="58" rx="8" fill="#FBF4DD" stroke="#E6CF86"/>
+      <text x="95" y="244" text-anchor="middle" font-size="13" font-weight="700" fill="#0A122A">1 · Nota</text>
+      <text x="95" y="263" text-anchor="middle" font-size="10.5" fill="#5B6677">línea en TAREAS.md</text>
+
+      <rect x="190" y="168" width="150" height="58" rx="8" fill="#FBF4DD" stroke="#E6CF86"/>
+      <text x="265" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#0A122A">2 · Carpeta</text>
+      <text x="265" y="211" text-anchor="middle" font-size="10.5" fill="#5B6677">_tasks/T-NNN/</text>
+
+      <rect x="360" y="116" width="160" height="58" rx="8" fill="url(#rg-gold)" stroke="#D9AE2E"/>
+      <text x="440" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#0A122A">3 · Repo de tarea</text>
+      <text x="440" y="159" text-anchor="middle" font-size="10.5" fill="#3A2E05">expediente blindado · T-NNN</text>
+
+      <rect x="540" y="64" width="160" height="58" rx="8" fill="url(#rg-gold)" stroke="#D9AE2E"/>
+      <text x="620" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#0A122A">4 · Repo de proyecto</text>
+      <text x="620" y="107" text-anchor="middle" font-size="10.5" fill="#3A2E05">sede · P-NNN</text>
+    </g>
+    <text x="20" y="40" font-family="'Poppins',sans-serif" font-size="12" fill="#8a7a3a">git · GitHub privado · worktrees ───────────▶ soberanía</text>
+    <line x1="30" y1="50" x2="690" y2="50" stroke="#E6CF86" stroke-dasharray="3 4"/>
+  </svg>
+  <figcaption><span class="es">Wireframe · La escalera de graduación. Los peldaños 1-2 viven en Cowork (texto plano); los peldaños 3-4 son repos git con bóveda y mesas paralelas.</span><span class="pt">Wireframe · A escada de graduação. Os degraus 1-2 vivem no Cowork (texto puro); os degraus 3-4 são repositórios git com cofre e mesas paralelas.</span></figcaption>
+</figure>
+
+<p><span class="es"><strong>La escalera tiene cuatro peldaños.</strong> Los dos primeros ya los conoces; los dos de arriba son la capa nueva:</span><span class="pt"><strong>A escada tem quatro degraus.</strong> Os dois primeiros você já conhece; os dois de cima são a camada nova:</span></p>
+
+<div class="table-wrap"><div class="table-wrap-scroll"><table>
+<thead><tr><th>#</th><th><span class="es">Peldaño</span><span class="pt">Degrau</span></th><th><span class="es">Dónde vive</span><span class="pt">Onde vive</span></th><th><span class="es">Cuándo subirte</span><span class="pt">Quando subir</span></th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong><span class="es">Nota al margen</span><span class="pt">Nota à margem</span></strong></td><td><code>TAREAS.md</code> (Cowork)</td><td><span class="es">Trivial: &lt;1h, una sesión, sin artefactos</span><span class="pt">Trivial: &lt;1h, uma sessão, sem artefatos</span></td></tr>
+<tr><td>2</td><td><strong><span class="es">Carpeta de encargo</span><span class="pt">Pasta de encargo</span></strong></td><td><code>_tasks/T-NNN-slug/</code> (Cowork)</td><td><span class="es">Multi-sesión, artefactos, sin ramas ni historial</span><span class="pt">Multi-sessão, artefatos, sem ramos nem histórico</span></td></tr>
+<tr><td>3</td><td><strong><span class="es">Expediente blindado · repo de tarea</span><span class="pt">Dossiê blindado · repo de tarefa</span></strong></td><td><code>~/Documents/workspace/&lt;slug&gt;</code> · git · GitHub privado</td><td><span class="es">Necesita historial, ramas, compartir o código · tiene fin → se archiva</span><span class="pt">Precisa de histórico, ramos, compartilhar ou código · tem fim → arquiva-se</span></td></tr>
+<tr><td>4</td><td><strong><span class="es">Sede · repo de proyecto</span><span class="pt">Sede · repo de projeto</span></strong></td><td><code>~/Documents/workspace/&lt;slug&gt;</code> · git · GitHub privado</td><td><span class="es">Larga vida, multi-entregable, colaboradores, cadencia propia</span><span class="pt">Vida longa, multi-entregável, colaboradores, cadência própria</span></td></tr>
+</tbody>
+</table></div></div>
+
+<p><span class="es"><strong>Repo de tarea vs. repo de proyecto.</strong> Un <strong>repo de tarea</strong> (T-NNN) es un encargo con inicio y <em>fin</em>: lo montas, lo trabajas, lo entregas y lo <em>archivas</em> — como un expediente que se cierra y va al archivo muerto con todas sus actas fechadas intactas. Un <strong>repo de proyecto</strong> (P-NNN) es una <em>sede</em>: larga vida, varios entregables, recepción para colaboradores, reglas de la casa que evolucionan y su propia cadencia de revisión. La diferencia no está en la tecnología — ambos son repos git con bóveda privada — sino en el <em>ciclo de vida</em>: la tarea muere; la sede permanece.</span><span class="pt"><strong>Repo de tarefa vs. repo de projeto.</strong> Um <strong>repo de tarefa</strong> (T-NNN) é um encargo com início e <em>fim</em>: você monta, trabalha, entrega e <em>arquiva</em> — como um dossiê que se fecha e vai ao arquivo morto com todas as atas datadas intactas. Um <strong>repo de projeto</strong> (P-NNN) é uma <em>sede</em>: vida longa, vários entregáveis, recepção para colaboradores, regras da casa que evoluem e a sua própria cadência de revisão. A diferença não está na tecnologia — ambos são repositórios git com cofre privado — mas no <em>ciclo de vida</em>: a tarefa morre; a sede permanece.</span></p>
+
+<div class="callout">
+<p><strong><span class="es">El portero de la bóveda · ¿este encargo merece repo propio?</span><span class="pt">O porteiro do cofre · este encargo merece repo próprio?</span></strong> <span class="es">Antes de graduar una carpeta a repo, pásala por seis disparadores. Si marca <strong>cero</strong>, déjala como carpeta Cowork. Si marca <strong>uno o más</strong>, móntala como repo standalone:</span><span class="pt">Antes de graduar uma pasta a repo, passe-a por seis gatilhos. Se marcar <strong>zero</strong>, deixe-a como pasta Cowork. Se marcar <strong>um ou mais</strong>, monte-a como repo standalone:</span></p>
+<p style="margin-top:.5rem"><span class="es">¿Hay <strong>código</strong>? · ¿Necesito <strong>ramas / borradores en paralelo</strong>? · ¿Necesito <strong>historial con fecha</strong> (auditoría)? · ¿Voy a <strong>compartir o entregar</strong> a alguien externo? · ¿Quiero <strong>trabajo en paralelo</strong> (worktrees)? · ¿Necesito <strong>portabilidad</strong> fuera de Cowork?</span><span class="pt">Há <strong>código</strong>? · Preciso de <strong>ramos / rascunhos em paralelo</strong>? · Preciso de <strong>histórico com data</strong> (auditoria)? · Vou <strong>compartilhar ou entregar</strong> a alguém externo? · Quero <strong>trabalho em paralelo</strong> (worktrees)? · Preciso de <strong>portabilidade</strong> fora do Cowork?</span></p>
+</div>
+
+<p><span class="es"><strong>Mesas de trabajo paralelas · los worktrees.</strong> Una vez que el encargo es un repo, ganas algo que la carpeta Cowork no te daba: <strong>mesas paralelas</strong>. Un <em>worktree</em> es una segunda mesa de trabajo sobre el mismo expediente — pruebas un borrador arriesgado en una mesa mientras la versión buena descansa intacta en la otra, sin emborronarse. Cada mesa parte de una copia limpia del maestro, lleva <em>un solo asunto</em> (un scope) y se <em>recoge</em> al terminar. Es la diferencia entre tener un escritorio donde todo se mezcla y tener una sala con varias mesas rotuladas.</span><span class="pt"><strong>Mesas de trabalho paralelas · os worktrees.</strong> Quando o encargo já é um repo, você ganha algo que a pasta Cowork não dava: <strong>mesas paralelas</strong>. Um <em>worktree</em> é uma segunda mesa de trabalho sobre o mesmo dossiê — você testa um rascunho arriscado numa mesa enquanto a versão boa descansa intacta na outra, sem borrar. Cada mesa parte de uma cópia limpa do mestre, leva <em>um único assunto</em> (um scope) e se <em>recolhe</em> ao terminar. É a diferença entre ter uma escrivaninha onde tudo se mistura e ter uma sala com várias mesas rotuladas.</span></p>
+
+<div class="callout" style="background:rgba(255,215,0,.08);border-left-color:var(--gold-3)">
+<p><strong><span class="es">La bóveda fuera de sede · GitHub privado y las copias traducidas.</span><span class="pt">O cofre fora da sede · GitHub privado e as cópias traduzidas.</span></strong> <span class="es">Cada repo nace con una <strong>bóveda privada</strong> (GitHub privado): respaldo fuera de tu máquina, con auditoría completa de quién cambió qué y cuándo. Las reglas de la casa viven en un solo <code>CLAUDE.md</code>; sus <em>copias traducidas para personal externo</em> (<code>AGENTS.md</code>, <code>GEMINI.md</code>) se generan solas y <strong>nunca se editan a mano</strong>. Esto es soberanía digital en su forma más fuerte: tus archivos siguen siendo tuyos, portables y con rastro — el destino del piso 12.</span><span class="pt">Cada repo nasce com um <strong>cofre privado</strong> (GitHub privado): backup fora da sua máquina, com auditoria completa de quem mudou o quê e quando. As regras da casa vivem num único <code>CLAUDE.md</code>; as suas <em>cópias traduzidas para pessoal externo</em> (<code>AGENTS.md</code>, <code>GEMINI.md</code>) geram-se sozinhas e <strong>nunca se editam à mão</strong>. Isto é soberania digital na sua forma mais forte: os seus arquivos continuam sendo seus, portáveis e com rastro — o destino do andar 12.</span></p>
+</div>
+
+<div class="callout ok">
+<p><strong><span class="es">Una historia de punta a punta.</span><span class="pt">Uma história de ponta a ponta.</span></strong> <span class="es">Llega un encargo: "arma el dossier de licitación del cliente Norte". Empieza como línea en <code>TAREAS.md</code>. A los dos días tiene anexos, versiones y un script de consolidación → marca tres disparadores (código, historial, compartir), así que <strong>gradúa a repo de tarea</strong> <code>T-118-licitacion-norte</code> con bóveda privada. Para comparar dos estructuras de propuesta sin romper la buena, abres <strong>dos mesas paralelas</strong> (worktrees): <code>variante-conservadora</code> y <code>variante-agresiva</code>. Eliges la ganadora, la fusionas, recoges las mesas. Entregas. Cierras: el repo se <strong>archiva</strong> con todo su historial fechado intacto, listo para auditoría. La carpeta nunca habría dado eso.</span><span class="pt">Chega um encargo: "monte o dossiê de licitação do cliente Norte". Começa como linha no <code>TAREAS.md</code>. Em dois dias tem anexos, versões e um script de consolidação → marca três gatilhos (código, histórico, compartilhar), então <strong>gradua a repo de tarefa</strong> <code>T-118-licitacao-norte</code> com cofre privado. Para comparar duas estruturas de proposta sem quebrar a boa, você abre <strong>duas mesas paralelas</strong> (worktrees): <code>variante-conservadora</code> e <code>variante-agressiva</code>. Escolhe a vencedora, funde, recolhe as mesas. Entrega. Fecha: o repo se <strong>arquiva</strong> com todo o seu histórico datado intacto, pronto para auditoria. A pasta nunca daria isso.</span></p>
+</div>
+
+<div class="callout">
+<p><strong><span class="es">Del concepto a la acción.</span><span class="pt">Do conceito à ação.</span></strong> <span class="es">El Runbook ejecuta esta capa en cuatro pasos: <a href="runbook.html#step-27">Step 27</a> (el portero: ¿merece repo?), <a href="runbook.html#step-28">Step 28</a> (montar la sede llave en mano), <a href="runbook.html#step-29">Step 29</a> (abrir mesas paralelas) y <a href="runbook.html#step-30">Step 30</a> (bóveda, copias traducidas y archivado).</span><span class="pt">O Runbook executa esta camada em quatro passos: <a href="runbook.html#step-27">Step 27</a> (o porteiro: merece repo?), <a href="runbook.html#step-28">Step 28</a> (montar a sede chave na mão), <a href="runbook.html#step-29">Step 29</a> (abrir mesas paralelas) e <a href="runbook.html#step-30">Step 30</a> (cofre, cópias traduzidas e arquivamento).</span></p>
+</div>
+</div>
+
+<!-- =================================================
      §4 · MODELO MENTAL FUNDAMENTAL
      ================================================= -->
 <header class="section-opener">
@@ -11291,6 +11373,40 @@ Los esquemas y layouts que aparecen en este playbook son <em>wireframes ilustrat
 
 <h3>4.4 · Atención y degradación silenciosa</h3>
 <p>Llenar la ventana al máximo <strong>empeora</strong> las respuestas. Cerca del límite ocurren tres degradaciones: el <em>lost in the middle</em> se acentúa <a class="cite" href="#ref-1">[1]</a>, la respuesta se acorta porque output compite por el mismo presupuesto, y la latencia crece no-lineal. El costado humano: conversación enfocada conserva carga mental <a class="cite" href="#ref-7">[7]</a> en lugar de gastarla rastreando contexto. <strong>La higiene de conversación no es opcional.</strong></p>
+
+<div class="tri" id="s4-icm">
+<h3>4.5 · <span class="es">El protocolo de capas · cuánto papel pones en el escritorio por etapa</span><span class="pt">O protocolo de camadas · quanto papel você põe na mesa por etapa</span></h3>
+<p><span class="es">Si el escritorio es finito (§4.2), la pregunta práctica es <em>qué papeles subes y en qué orden</em>. La <strong>Metodología de Contexto Interpretable</strong> (ICM) <a class="cite" href="#ref-icm">[ICM]</a> responde con una idea fuerte: <strong>la estructura de carpetas ES la arquitectura del asistente</strong>. No necesitas un framework que orqueste el contexto por código; necesitas que cada etapa lea solo los archivos que esa etapa requiere. El contexto se organiza en <strong>cinco capas</strong>, de la más estable a la más volátil:</span><span class="pt">Se a mesa é finita (§4.2), a pergunta prática é <em>quais papéis você sobe e em que ordem</em>. A <strong>Metodologia de Contexto Interpretável</strong> (ICM) <a class="cite" href="#ref-icm">[ICM]</a> responde com uma ideia forte: <strong>a estrutura de pastas É a arquitetura do assistente</strong>. Você não precisa de um framework que orquestre o contexto por código; precisa que cada etapa leia apenas os arquivos que essa etapa requer. O contexto organiza-se em <strong>cinco camadas</strong>, da mais estável à mais volátil:</span></p>
+
+<div class="table-wrap"><div class="table-wrap-scroll"><table>
+<thead><tr><th><span class="es">Capa</span><span class="pt">Camada</span></th><th><span class="es">Archivo</span><span class="pt">Arquivo</span></th><th><span class="es">Pregunta que responde</span><span class="pt">Pergunta que responde</span></th><th>Tokens</th></tr></thead>
+<tbody>
+<tr><td><strong>0</strong></td><td><code>CLAUDE.md</code></td><td><span class="es">¿Dónde estoy?</span><span class="pt">Onde estou?</span></td><td>~800</td></tr>
+<tr><td><strong>1</strong></td><td><code>CONTEXT.md</code></td><td><span class="es">¿A dónde voy?</span><span class="pt">Para onde vou?</span></td><td>~300</td></tr>
+<tr><td><strong>2</strong></td><td><span class="es">CONTEXT.md de etapa</span><span class="pt">CONTEXT.md de etapa</span></td><td><span class="es">¿Qué hago aquí?</span><span class="pt">O que faço aqui?</span></td><td>200-500</td></tr>
+<tr><td><strong>3</strong></td><td><span class="es">Material de referencia</span><span class="pt">Material de referência</span></td><td><span class="es">¿Qué reglas aplican?</span><span class="pt">Que regras se aplicam?</span></td><td>500-2k</td></tr>
+<tr><td><strong>4</strong></td><td><span class="es">Artefactos de trabajo</span><span class="pt">Artefatos de trabalho</span></td><td><span class="es">¿Con qué estoy trabajando?</span><span class="pt">Com o que estou trabalhando?</span></td><td><span class="es">varía</span><span class="pt">varia</span></td></tr>
+</tbody>
+</table></div></div>
+
+<p><span class="es"><strong>La receta y los ingredientes.</strong> Las capas 0-2 son <em>ruteo</em> (dónde estoy, a dónde voy, qué hago). Las capas 3-4 son <em>contenido</em>, y conviene no confundirlas: la capa 3 es <strong>la receta</strong> — reglas de marca, voz, convenciones, estilo; estable entre corridas, el modelo la <em>internaliza como restricción</em>. La capa 4 son <strong>los ingredientes</strong> — el borrador de hoy, la fuente que pegaste; cambia en cada corrida, el modelo la <em>procesa como insumo</em>. Mezclar receta e ingredientes en un escritorio sin orden obliga al modelo a separarlos solo; separarlos en la estructura le entrega contexto ya ordenado.</span><span class="pt"><strong>A receita e os ingredientes.</strong> As camadas 0-2 são <em>roteamento</em> (onde estou, para onde vou, o que faço). As camadas 3-4 são <em>conteúdo</em>, e convém não confundi-las: a camada 3 é <strong>a receita</strong> — regras de marca, voz, convenções, estilo; estável entre corridas, o modelo a <em>internaliza como restrição</em>. A camada 4 são <strong>os ingredientes</strong> — o rascunho de hoje, a fonte que você colou; muda a cada corrida, o modelo a <em>processa como insumo</em>. Misturar receita e ingredientes numa mesa sem ordem obriga o modelo a separá-los sozinho; separá-los na estrutura entrega-lhe contexto já ordenado.</span></p>
+
+<div class="callout">
+<p><strong><span class="es">Por qué esto importa para tu Jarvis · renombrar una carpeta vs. editar código.</span><span class="pt">Por que isto importa para o seu Jarvis · renomear uma pasta vs. editar código.</span></strong> <span class="es">La gran ventaja de tratar las carpetas como arquitectura es el <em>control sin programar</em>. Compara la superficie de control:</span><span class="pt">A grande vantagem de tratar as pastas como arquitetura é o <em>controle sem programar</em>. Compare a superfície de controle:</span></p>
+</div>
+
+<div class="table-wrap"><div class="table-wrap-scroll"><table>
+<thead><tr><th><span class="es">Para…</span><span class="pt">Para…</span></th><th><span class="es">Con un framework por código</span><span class="pt">Com um framework por código</span></th><th><span class="es">Con carpetas (ICM)</span><span class="pt">Com pastas (ICM)</span></th></tr></thead>
+<tbody>
+<tr><td><span class="es">Cambiar el orden de una etapa</span><span class="pt">Mudar a ordem de uma etapa</span></td><td><span class="es">Editar el orquestador, redeployar</span><span class="pt">Editar o orquestrador, redeployar</span></td><td><span class="es">Renombrar o reordenar carpetas</span><span class="pt">Renomear ou reordenar pastas</span></td></tr>
+<tr><td><span class="es">Modificar un prompt</span><span class="pt">Modificar um prompt</span></td><td><span class="es">Editar configuración en código</span><span class="pt">Editar configuração em código</span></td><td><span class="es">Editar un archivo markdown</span><span class="pt">Editar um arquivo markdown</span></td></tr>
+<tr><td><span class="es">Inspeccionar el estado intermedio</span><span class="pt">Inspecionar o estado intermediário</span></td><td><span class="es">Agregar logging, armar dashboard</span><span class="pt">Adicionar logging, montar dashboard</span></td><td><span class="es">Abrir la carpeta, leer los archivos</span><span class="pt">Abrir a pasta, ler os arquivos</span></td></tr>
+<tr><td><span class="es">Quién puede cambiarlo</span><span class="pt">Quem pode mudá-lo</span></td><td><span class="es">Un desarrollador</span><span class="pt">Um desenvolvedor</span></td><td><span class="es">Cualquiera con un editor de texto</span><span class="pt">Qualquer um com um editor de texto</span></td></tr>
+</tbody>
+</table></div></div>
+
+<p><span class="es">Es exactamente el principio que ya usas sin nombrarlo: tu <code>CLAUDE.md</code> raíz (capa 0) dice quién eres, el <code>CLAUDE.md</code> de estación (capa 1-2) dice qué se hace ahí, y tus <code>00_Recursos/</code> (capa 3) guardan la receta. El Runbook lo lleva al extremo cuando un <code>CLAUDE.md</code> crece: lo parte en un <strong>panel de control</strong> liviano (anclas + punteros) más <code>canon-*.md</code> que se cargan solo cuando hacen falta (<a href="runbook.html#step-24">Step 24</a>). Cargar por capas, lo crítico al borde, sin relleno al medio — el antídoto técnico contra el <em>lost in the middle</em> del §4.4.</span><span class="pt">É exatamente o princípio que você já usa sem nomeá-lo: o seu <code>CLAUDE.md</code> raiz (camada 0) diz quem você é, o <code>CLAUDE.md</code> de estação (camada 1-2) diz o que se faz ali, e os seus <code>00_Recursos/</code> (camada 3) guardam a receita. O Runbook leva isso ao extremo quando um <code>CLAUDE.md</code> cresce: parte-o num <strong>painel de controle</strong> leve (âncoras + ponteiros) mais <code>canon-*.md</code> que se carregam só quando necessário (<a href="runbook.html#step-24">Step 24</a>). Carregar por camadas, o crítico na borda, sem enchimento no meio — o antídoto técnico contra o <em>lost in the middle</em> do §4.4.</span></p>
+</div>
 
 <!-- =================================================
      §5 · MAPA CONCEPTUAL INTEGRADO
@@ -11856,6 +11972,10 @@ Los esquemas y layouts que aparecen en este playbook son <em>wireframes ilustrat
 
 <p>El primer ritual es el <strong>DBR</strong>, que ocurre cada mañana durante diez minutos. Su función es clasificar el día con máximo tres prioridades, preparar reuniones y detectar riesgos. El segundo ritual es el <strong>Daily Close</strong>, que ocurre al cierre de la jornada: captura aprendizaje, actualiza memoria y deja sembrado el plan de mañana. El tercer ritual es el <strong>WBR</strong>, que reúne los planes diarios y produce lectura semanal de cumplimiento, patrones y ajustes. La <strong>Weekly Retro</strong> complementa el WBR con tres preguntas reflexivas. El <strong>QBR</strong> audita el sistema completo y decide qué archivar, abrir o refactorizar para el próximo trimestre.</p>
 
+<div class="tri">
+<p><span class="es"><strong>El Sector V también custodia la capa de repos (§3.7).</strong> La portabilidad que promete la Soberanía Digital tiene un vehículo técnico concreto: el <strong>repositorio git con bóveda privada</strong>. Un repo lleva tu contexto fuera de Cowork con historial fechado y respaldo fuera de sede — es lo que hace que el piso 12 (portar TU contexto) sea real y no aspiracional. Y el ciclo de vida de los repos de tarea se cierra precisamente en la cadencia: cada <strong>QBR</strong> revisa qué expedientes blindados ya cumplieron su fin y los <strong>archiva</strong>, dejando la sede despejada y el archivo muerto auditable.</span><span class="pt"><strong>O Setor V também custodia a camada de repositórios (§3.7).</strong> A portabilidade que a Soberania Digital promete tem um veículo técnico concreto: o <strong>repositório git com cofre privado</strong>. Um repo leva o seu contexto para fora do Cowork com histórico datado e backup fora da sede — é o que torna o andar 12 (portar o SEU contexto) real e não aspiracional. E o ciclo de vida dos repos de tarefa fecha-se justamente na cadência: cada <strong>QBR</strong> revisa quais dossiês blindados já cumpriram o seu fim e os <strong>arquiva</strong>, deixando a sede limpa e o arquivo morto auditável.</span></p>
+</div>
+
 
 <div class="callout" style="background:rgba(255,215,0,.08);border-left-color:var(--gold-3)">
 <p><strong>Equivalencia Sector ↔ Step.</strong> El Playbook agrupa el método en <strong>5 sectores</strong> con numerales romanos. El Runbook ejecuta el método en <strong>steps</strong> con numerales arábigos. Esta tabla traduce de un mapa al otro.</p>
@@ -11873,6 +11993,7 @@ Los esquemas y layouts que aparecen en este playbook son <em>wireframes ilustrat
 <tr data-title="V · Cadencias" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>V · Cadencias</strong></li><li><b>Steps en Runbook:</b> Step 15 &middot; 6 ritmos (DBR · WBR · MBR · QBR · ABR · Auditoría) · Step 16 · Scheduled task</li><li><b>Outcome operativo:</b> Ritmo automático y portabilidad de tu contexto</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-15&quot;>Steps 15-16</a> · cadencias + scheduled task.</div>"><td><strong>V · Cadencias</strong></td><td>Step 15 &middot; 6 ritmos (DBR · WBR · MBR · QBR · ABR · Auditoría) · Step 16 · Scheduled task</td><td>Ritmo automático y portabilidad de tu contexto</td></tr>
 <tr data-title="Optimización" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>Optimización</strong></li><li><b>Steps en Runbook:</b> Steps 17-21 · Skills · Conectores · Capacidades · Configuración · Auditoría</li><li><b>Outcome operativo:</b> Crecimiento disciplinado del Jarvis</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-17&quot;>Steps 17-21</a> · optimización.</div>"><td><strong>Optimización</strong></td><td>Steps 17-21 · Skills · Conectores · Capacidades · Configuración · Auditoría</td><td>Crecimiento disciplinado del Jarvis</td></tr>
 <tr data-title="Avanzado · canon TAREAS" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>Avanzado · canon TAREAS</strong></li><li><b>Steps en Runbook:</b> Steps 22-26 · TAREAS.md · sub-task T-NNN · descomposición CLAUDE.md · plugin externo · Bucle de Excelencia</li><li><b>Outcome operativo:</b> Control de tareas autónomo cuando hay 3+ proyectos vivos</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-22&quot;>Steps 22-26</a> · canon TAREAS.</div>"><td><strong>Avanzado · canon TAREAS</strong></td><td>Steps 22-26 · TAREAS.md · sub-task T-NNN · descomposición CLAUDE.md · plugin externo · Bucle de Excelencia</td><td>Control de tareas autónomo cuando hay 3+ proyectos vivos</td></tr>
+<tr data-title="Avanzado · capa de repos" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>Avanzado · capa de repos (§3.7)</strong></li><li><b>Steps en Runbook:</b> Steps 27-30 · ¿merece repo? · scaffold llave en mano · worktrees · bóveda + mirrors + archivado</li><li><b>Outcome operativo:</b> Encargo graduado a repo git con bóveda privada, mesas paralelas y portabilidad</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-27&quot;>Steps 27-30</a> · capa de repos.</div>"><td><strong>Avanzado · capa de repos</strong></td><td>Steps 27-30 · ¿merece repo? · scaffold llave en mano · worktrees · bóveda + mirrors + archivado</td><td>Encargo graduado a repo git con bóveda privada, mesas paralelas y portabilidad</td></tr>
 </tbody>
 </table></div></div>
 <!-- =================================================
@@ -13136,6 +13257,7 @@ REGLA DE CONTROL: Recomienda limpieza. No ejecutes acciones destructivas sin apr
 
 <ol class="references">
   <li id="ref-1">Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., &amp; Liang, P. (2023). <em>Lost in the middle: How language models use long contexts</em> (arXiv:2307.03172). arXiv. <a href="https://arxiv.org/abs/2307.03172">https://arxiv.org/abs/2307.03172</a></li>
+  <li id="ref-icm">Van Clief, J., &amp; McDermott, D. (2026). <em>Interpretable Context Methodology: Folder Structure as Agent Architecture</em> (arXiv:2603.16021v2). arXiv. <a href="https://arxiv.org/abs/2603.16021">https://arxiv.org/abs/2603.16021</a></li>
   <li id="ref-2">Bjork, E. L., &amp; Bjork, R. A. (2011). Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning. En M. A. Gernsbacher, R. W. Pew, L. M. Hough, &amp; J. R. Pomerantz (Eds.), <em>Psychology and the real world: Essays illustrating fundamental contributions to society</em> (pp. 56–64). Worth Publishers.</li>
   <li id="ref-3">Project Management Institute. (2021). <em>A guide to the project management body of knowledge (PMBOK guide)</em> (7ª ed.). Project Management Institute. <em>[verificar edición vigente]</em></li>
   <li id="ref-4">Ericsson, K. A., Krampe, R. T., &amp; Tesch-Römer, C. (1993). The role of deliberate practice in the acquisition of expert performance. <em>Psychological Review, 100</em>(3), 363–406. <a href="https://doi.org/10.1037/0033-295X.100.3.363">https://doi.org/10.1037/0033-295X.100.3.363</a></li>
@@ -14252,6 +14374,12 @@ body.lang-en .es,html[lang="en"] .es{display:none!important}
 body.lang-en .en,html[lang="en"] .en{display:inline!important}
 body.lang-es .en,html:not([lang="en"]) .en{display:none!important}
 body.lang-es .es,html:not([lang="en"]) .es{display:inline!important}
+/* PT · tercer idioma · contenido nuevo marcado .tri (el cuerpo viejo sin .pt cae a ES automáticamente) */
+.pt{display:none}
+body.lang-pt .tri .es,html[lang="pt"] .tri .es{display:none!important}
+body.lang-pt .tri .en,html[lang="pt"] .tri .en{display:none!important}
+body.lang-pt .tri .pt,html[lang="pt"] .tri .pt{display:inline!important}
+body.lang-pt .tri .pt-block,html[lang="pt"] .tri .pt-block{display:block!important}
 :root{
   --shell-glass-bg:var(--glass-bg,rgba(255,251,240,.92));
   --shell-border:var(--border,rgba(18,37,98,.12));
@@ -14532,15 +14660,16 @@ html[data-theme="dark"] .allies-grid .ally-card em{
     if(persist)writeStored(THEME_KEYS,isDark?'dark':'light');
     syncShellButtons();
   }
+  var LANG_ORDER=['es','en','pt'];
   function applyLang(lang, persist){
     var html=document.documentElement;
     var canToggle=hasBilingualContent();
-    var next=(canToggle && lang==='en')?'en':'es';
+    var next=(canToggle && LANG_ORDER.indexOf(lang)>-1)?lang:'es';
     html.setAttribute('lang',next);
     html.lang=next;
     if(body()){
-      body().classList.remove('lang-es','lang-en');
-      body().classList.add(next==='en'?'lang-en':'lang-es');
+      body().classList.remove('lang-es','lang-en','lang-pt');
+      body().classList.add('lang-'+next);
     }
     updateLocalizedNav(next);
     if(persist)writeStored(LANG_KEYS,next);
@@ -14557,12 +14686,13 @@ html[data-theme="dark"] .allies-grid .ally-card em{
     }
     if(langBtn){
       var canToggle=hasBilingualContent();
-      var lang=(html.lang||'es').toLowerCase()==='en'?'EN':'ES';
-      langBtn.textContent=lang;
+      var lc=(html.lang||'es').toLowerCase();
+      var label=lc==='en'?'EN':(lc==='pt'?'PT':'ES');
+      langBtn.textContent=label;
       langBtn.disabled=!canToggle;
       langBtn.setAttribute('aria-disabled',canToggle?'false':'true');
-      langBtn.setAttribute('aria-pressed',lang==='EN'?'true':'false');
-      langBtn.title=canToggle?'Cambiar idioma':'Cambiar idioma';
+      langBtn.setAttribute('aria-pressed',label!=='ES'?'true':'false');
+      langBtn.title='Cambiar idioma (ES · EN · PT)';
     }
     if(window.lucide){window.lucide.createIcons();}
   }
@@ -14572,8 +14702,9 @@ html[data-theme="dark"] .allies-grid .ally-card em{
   };
   window.toggleLang=function(){
     if(!hasBilingualContent()){applyLang('es',true);return;}
-    var cur=(document.documentElement.lang||'es').toLowerCase()==='en'?'en':'es';
-    applyLang(cur==='en'?'es':'en',true);
+    var cur=(document.documentElement.lang||'es').toLowerCase();
+    var idx=LANG_ORDER.indexOf(cur); if(idx<0)idx=0;
+    applyLang(LANG_ORDER[(idx+1)%LANG_ORDER.length],true);
   };
   function setActive(){
     var links=[].slice.call(document.querySelectorAll('.sidebar-links a[href^="#"]'));
@@ -14585,9 +14716,9 @@ html[data-theme="dark"] .allies-grid .ally-card em{
   }
   function boot(){
     var storedTheme=readStored(THEME_KEYS,['dark','light'])||document.documentElement.getAttribute('data-theme')||'light';
-    var storedLang=readStored(LANG_KEYS,['es','en'])||(document.documentElement.lang||'es').toLowerCase();
+    var storedLang=readStored(LANG_KEYS,['es','en','pt'])||(document.documentElement.lang||'es').toLowerCase();
     applyTheme(storedTheme==='dark'?'dark':'light',false);
-    applyLang(storedLang==='en'?'en':'es',false);
+    applyLang(LANG_ORDER.indexOf(storedLang)>-1?storedLang:'es',false);
     setActive();
     window.addEventListener('scroll',setActive,{passive:true});
   }

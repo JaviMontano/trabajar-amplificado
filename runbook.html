@@ -3425,6 +3425,7 @@ html.dark .en-document,html[data-theme="dark"] .en-document{background:#071A33;c
     <a href="#fundamentos" data-label="Fundamentos" aria-label="Fundamentos"><i data-lucide="book-open"></i></a>
     <a href="#roadmap" data-label="Roadmap" aria-label="Roadmap"><i data-lucide="map"></i></a>
     <a href="#steps" data-label="Steps" aria-label="Steps"><i data-lucide="list-ordered"></i></a>
+    <a href="#repos" data-label="Repos" aria-label="Repos"><i data-lucide="git-branch"></i></a>
     <a href="#prompts" data-label="Prompts" aria-label="Prompts"><i data-lucide="terminal"></i></a>
     <a href="#templates" data-label="Templates" aria-label="Templates"><i data-lucide="file-text"></i></a>
     <a href="#audit" data-label="Auditoría" aria-label="Auditoría"><i data-lucide="clipboard-check"></i></a>
@@ -3438,8 +3439,9 @@ html.dark .en-document,html[data-theme="dark"] .en-document{background:#071A33;c
 
 <script>
 window.__bilingualNav={
-  es:[['#cover','Inicio'],['#fundamentos','Fundamentos'],['#roadmap','Roadmap'],['#steps','Steps'],['#prompts','Prompts'],['#templates','Templates'],['#audit','Auditoría']],
-  en:[['#en-cover','Start'],['#en-foundations','Foundations'],['#en-roadmap','Roadmap'],['#en-steps','Steps'],['#en-prompts','Prompts'],['#en-templates','Templates'],['#en-audit','Audit']]
+  es:[['#cover','Inicio'],['#fundamentos','Fundamentos'],['#roadmap','Roadmap'],['#steps','Steps'],['#repos','Repos'],['#prompts','Prompts'],['#templates','Templates'],['#audit','Auditoría']],
+  en:[['#en-cover','Start'],['#en-foundations','Foundations'],['#en-roadmap','Roadmap'],['#en-steps','Steps'],['#en-repos','Repos'],['#en-prompts','Prompts'],['#en-templates','Templates'],['#en-audit','Audit']],
+  pt:[['#cover','Início'],['#fundamentos','Fundamentos'],['#roadmap','Roadmap'],['#steps','Passos'],['#repos','Repos'],['#prompts','Prompts'],['#templates','Modelos'],['#audit','Auditoria']]
 };
 </script>
 <main class="localized-en en-document" id="en-cover">
@@ -3486,6 +3488,10 @@ window.__bilingualNav={
       <article class="en-card"><h3>Fill parameters</h3><p>When a prompt shows inputs, replace them or ask Cowork to interview you until the parameters are clear.</p></article>
       <article class="en-card"><h3>Attach evidence</h3><p>For CV, role, project, cadence and audit prompts, attach or paste relevant annexes: notes, job descriptions, goals, feedback, metrics or prior records.</p></article>
       <article class="en-card"><h3>Confirm before writing</h3><p>The safe default is propose → review → confirm → write. No critical file should be overwritten silently.</p></article>
+    </div>
+    <div id="en-repos" style="margin-top:1.5rem">
+      <h3>The repo layer · Steps 27-30</h3>
+      <p>When a commission needs dated history, parallel drafts, off-site backup or code, it graduates from a Cowork folder to a <strong>git repo</strong>. Four steps run it: <strong>Step 27</strong> — the vault doorman: run six triggers (code? branches? dated history? sharing? parallel work? portability?); zero → keep it a Cowork folder, one or more → make it a standalone repo. <strong>Step 28</strong> — <code>scaffold-repo</code> builds it turnkey: stable kebab slug, private GitHub vault, worktree-ready, opening commit; you edit only <code>CLAUDE.md</code>, the <code>AGENTS.md</code>/<code>GEMINI.md</code> mirrors auto-generate. <strong>Step 29</strong> — open <em>worktrees</em>, parallel desks on the same dossier (one scope per desk, fresh from <code>origin/main</code>, cleared when done). <strong>Step 30</strong> — confirm the private vault, never hand-edit mirrors, and close the loop: a task repo (T-NNN) has an end → archive it with its dated history intact, reviewed each QBR. A project repo (P-NNN) lives on. See Playbook <a href="playbook.html#en-s3-repos">§3.7</a>. Prompts P46-P49 and templates live in the Spanish catalog below.</p>
     </div>
   </section>
 
@@ -4714,6 +4720,99 @@ Antes de escribir, hazme las preguntas que falten. No inventes feedback de mi je
   </div>
 </section>
 
+<!-- ========== CAPA DE REPOS · Steps 27-30 (capa nueva 2026-06) ========== -->
+<section class="band tri" id="repos">
+  <div class="wrap">
+    <div class="section-title"><span class="num">R</span><h2><span class="es">Capa de repos · del archivador a la bóveda</span><span class="pt">Camada de repositórios · do arquivo ao cofre</span></h2></div>
+    <p class="lead"><span class="es">Cuando un encargo necesita historial con fecha, borradores en paralelo, respaldo fuera de sede o código, deja de ser una carpeta Cowork y <strong>gradúa a repo git</strong>. Cuatro steps montan, paralelizan, blindan y archivan ese expediente. Coherente con el Playbook <a href="playbook.html#s3-repos">§3.7</a> (la escalera de graduación) y <a href="playbook.html#s4-icm">§4.5</a> (carpetas como arquitectura, ICM).</span><span class="pt">Quando um encargo precisa de histórico com data, rascunhos em paralelo, backup fora da sede ou código, deixa de ser uma pasta Cowork e <strong>gradua a repo git</strong>. Quatro passos montam, paralelizam, blindam e arquivam esse dossiê. Coerente com o Playbook <a href="playbook.html#s3-repos">§3.7</a> (a escada de graduação) e <a href="playbook.html#s4-icm">§4.5</a> (pastas como arquitetura, ICM).</span></p>
+
+    <div class="callout"><p><strong><span class="es">Cómo se conecta con el Playbook.</span><span class="pt">Como se conecta com o Playbook.</span></strong> <span class="es">El Playbook explica el <em>qué/por qué</em> de la capa de repos; estos cuatro steps son el <em>cómo</em>. Carpeta Cowork para knowledge-work liviano; repo standalone (<code>~/Documents/workspace/&lt;slug&gt;</code>, GitHub privado, Code mode) cuando hay código, ramas, historial, colaboración o portabilidad.</span><span class="pt">O Playbook explica o <em>quê/porquê</em> da camada de repositórios; estes quatro passos são o <em>como</em>. Pasta Cowork para trabalho de conhecimento leve; repo standalone (<code>~/Documents/workspace/&lt;slug&gt;</code>, GitHub privado, Code mode) quando há código, ramos, histórico, colaboração ou portabilidade.</span></p></div>
+
+    <div class="steps-grid">
+
+      <article class="step-card" id="step-27">
+        <div class="step-head">
+          <div class="step-num">27</div>
+          <div class="step-title-wrap">
+            <div class="step-eyebrow"><span class="es">Capa de repos · el portero de la bóveda</span><span class="pt">Camada de repositórios · o porteiro do cofre</span></div>
+            <div class="step-title"><span class="es">¿Este encargo merece repo propio?</span><span class="pt">Este encargo merece repo próprio?</span></div>
+            <div class="step-meta"><span>5 min</span><span><span class="es">Antes de montar nada</span><span class="pt">Antes de montar nada</span></span></div>
+          </div>
+        </div>
+        <div class="step-body"><span class="es">Pasa el encargo por <strong>seis disparadores</strong>: ¿hay <strong>código</strong>? · ¿necesitas <strong>ramas / borradores en paralelo</strong>? · ¿necesitas <strong>historial con fecha</strong> (auditoría)? · ¿vas a <strong>compartir o entregar</strong> externo? · ¿quieres <strong>trabajo en paralelo</strong> (worktrees)? · ¿necesitas <strong>portabilidad</strong> fuera de Cowork? <strong>Cero disparadores</strong> → déjalo como carpeta Cowork (<code>_tasks/T-NNN/</code>, Step 23). <strong>Uno o más</strong> → gradúa a repo standalone: <em>repo de tarea</em> (T-NNN, tiene fin → se archiva) o <em>repo de proyecto</em> (P-NNN, larga vida).</span><span class="pt">Passe o encargo por <strong>seis gatilhos</strong>: há <strong>código</strong>? · precisa de <strong>ramos / rascunhos em paralelo</strong>? · precisa de <strong>histórico com data</strong> (auditoria)? · vai <strong>compartilhar ou entregar</strong> externo? · quer <strong>trabalho em paralelo</strong> (worktrees)? · precisa de <strong>portabilidade</strong> fora do Cowork? <strong>Zero gatilhos</strong> → deixe como pasta Cowork (<code>_tasks/T-NNN/</code>, Step 23). <strong>Um ou mais</strong> → gradua a repo standalone: <em>repo de tarefa</em> (T-NNN, tem fim → arquiva-se) ou <em>repo de projeto</em> (P-NNN, vida longa).</span></div>
+        <div class="step-actions">
+          <button class="step-btn" data-modal="m-repo-gate"><span class="tag">CHECK</span><span class="es">Checklist · 6 disparadores → carpeta o repo</span><span class="pt">Checklist · 6 gatilhos → pasta ou repo</span></button>
+          <button class="step-btn" data-modal="m-repo-classify"><span class="tag">PROMPT · 3i</span><span class="es">Clasificar: nota · carpeta · repo-tarea · repo-proyecto</span><span class="pt">Classificar: nota · pasta · repo-tarefa · repo-projeto</span></button>
+        </div>
+      </article>
+
+      <article class="step-card" id="step-28">
+        <div class="step-head">
+          <div class="step-num">28</div>
+          <div class="step-title-wrap">
+            <div class="step-eyebrow"><span class="es">Capa de repos · montar la sede llave en mano</span><span class="pt">Camada de repositórios · montar a sede chave na mão</span></div>
+            <div class="step-title"><span class="es">Montar el repo con <code>scaffold-repo</code></span><span class="pt">Montar o repo com <code>scaffold-repo</code></span></div>
+            <div class="step-meta"><span>10 min</span><span><span class="es">Una vez por encargo graduado</span><span class="pt">Uma vez por encargo graduado</span></span></div>
+          </div>
+        </div>
+        <div class="step-body"><span class="es">Un solo comando deja la sede lista: <strong>dirección</strong> (slug kebab-ascii, ≤5 palabras, estable), <strong>archivo</strong> (git init + main), <strong>bóveda privada</strong> (GitHub privado por defecto), <strong>mesas-paralelas-ready</strong> (worktree-ready, <code>baseRef: fresh</code>) y <strong>acta de apertura</strong> (initial commit). Editas solo <code>CLAUDE.md</code>; las copias traducidas <code>AGENTS.md</code>/<code>GEMINI.md</code> se generan solas. Idempotente: si ya hay <code>.git/</code>, no hace nada.</span><span class="pt">Um único comando deixa a sede pronta: <strong>endereço</strong> (slug kebab-ascii, ≤5 palavras, estável), <strong>arquivo</strong> (git init + main), <strong>cofre privado</strong> (GitHub privado por padrão), <strong>mesas-paralelas-ready</strong> (worktree-ready, <code>baseRef: fresh</code>) e <strong>ata de abertura</strong> (initial commit). Você edita só o <code>CLAUDE.md</code>; as cópias traduzidas <code>AGENTS.md</code>/<code>GEMINI.md</code> geram-se sozinhas. Idempotente: se já há <code>.git/</code>, não faz nada.</span></div>
+        <div class="step-actions">
+          <button class="step-btn" data-modal="m-repo-claude-tpl"><span class="tag">TEMPLATE</span><span class="es">repo · CLAUDE.md (reglas heredadas)</span><span class="pt">repo · CLAUDE.md (regras herdadas)</span></button>
+          <button class="step-btn" data-modal="m-repo-worktrees-tpl"><span class="tag">TEMPLATE</span>WORKTREES.md</button>
+          <button class="step-btn" data-modal="m-repo-scaffold"><span class="tag">PROMPT · 4i</span><span class="es">Montar repo llave en mano (tarea o proyecto)</span><span class="pt">Montar repo chave na mão (tarefa ou projeto)</span></button>
+          <button class="step-btn" data-modal="m-repo-scaffold-check"><span class="tag">CHECK</span><span class="es">Preflight · slug · privado · worktree-ready</span><span class="pt">Preflight · slug · privado · worktree-ready</span></button>
+        </div>
+      </article>
+
+      <article class="step-card" id="step-29">
+        <div class="step-head">
+          <div class="step-num">29</div>
+          <div class="step-title-wrap">
+            <div class="step-eyebrow"><span class="es">Capa de repos · mesas de trabajo paralelas</span><span class="pt">Camada de repositórios · mesas de trabalho paralelas</span></div>
+            <div class="step-title"><span class="es">Abrir worktrees · una mesa por scope</span><span class="pt">Abrir worktrees · uma mesa por scope</span></div>
+            <div class="step-meta"><span>5 min</span><span><span class="es">Solo si trabajas borradores en paralelo</span><span class="pt">Só se trabalha rascunhos em paralelo</span></span></div>
+          </div>
+        </div>
+        <div class="step-body"><span class="es">Un <em>worktree</em> es una segunda mesa sobre el mismo expediente: pruebas un borrador arriesgado en una mesa mientras la versión buena descansa intacta en la otra. Reglas: <strong>una scope por mesa</strong>, cada mesa parte de copia limpia del maestro (<code>baseRef: fresh</code> = desde <code>origin/main</code>), corre <code>setup-git.sh</code> una vez por mesa, y <strong>recoge la mesa al terminar</strong> (se auto-elimina si quedó limpia). Los archivos locales gitignorados (<code>.env</code>) se copian vía <code>.worktreeinclude</code>.</span><span class="pt">Um <em>worktree</em> é uma segunda mesa sobre o mesmo dossiê: você testa um rascunho arriscado numa mesa enquanto a versão boa descansa intacta na outra. Regras: <strong>um scope por mesa</strong>, cada mesa parte de cópia limpa do mestre (<code>baseRef: fresh</code> = a partir de <code>origin/main</code>), rode <code>setup-git.sh</code> uma vez por mesa, e <strong>recolha a mesa ao terminar</strong> (auto-elimina-se se ficou limpa). Os arquivos locais gitignorados (<code>.env</code>) copiam-se via <code>.worktreeinclude</code>.</span></div>
+        <div class="step-actions">
+          <button class="step-btn" data-modal="m-repo-wtinclude-tpl"><span class="tag">TEMPLATE</span>.worktreeinclude</button>
+          <button class="step-btn" data-modal="m-repo-worktree"><span class="tag">PROMPT · 3i</span><span class="es">Abrir mesa paralela (worktree) para un scope</span><span class="pt">Abrir mesa paralela (worktree) para um scope</span></button>
+          <button class="step-btn" data-modal="m-repo-worktree-check"><span class="tag">CHECK</span><span class="es">Una scope · setup-git · recoger al cerrar</span><span class="pt">Um scope · setup-git · recolher ao fechar</span></button>
+        </div>
+      </article>
+
+      <article class="step-card" id="step-30">
+        <div class="step-head">
+          <div class="step-num">30</div>
+          <div class="step-title-wrap">
+            <div class="step-eyebrow"><span class="es">Capa de repos · bóveda, copias y archivado</span><span class="pt">Camada de repositórios · cofre, cópias e arquivamento</span></div>
+            <div class="step-title"><span class="es">Bóveda privada + mirrors + cierre del ciclo</span><span class="pt">Cofre privado + mirrors + fecho do ciclo</span></div>
+            <div class="step-meta"><span>10 min</span><span><span class="es">Al cerrar un repo de tarea · revisado en QBR</span><span class="pt">Ao fechar um repo de tarefa · revisado no QBR</span></span></div>
+          </div>
+        </div>
+        <div class="step-body"><span class="es">Confirma la <strong>bóveda fuera de sede</strong> (GitHub privado, respaldo + auditoría de quién cambió qué). Las <strong>copias traducidas</strong> <code>AGENTS.md</code>/<code>GEMINI.md</code> son mirrors auto-generados con <code>merge=ours</code> — <strong>nunca se editan a mano</strong>; se regeneran tras cada merge. Cierre del ciclo: el <em>repo de tarea</em> tiene fin → cuando entregas, lo <strong>archivas</strong> con su historial fechado intacto. Cada <strong>QBR</strong> (Step 15) revisa qué expedientes blindados ya cumplieron su fin y los retira.</span><span class="pt">Confirme o <strong>cofre fora da sede</strong> (GitHub privado, backup + auditoria de quem mudou o quê). As <strong>cópias traduzidas</strong> <code>AGENTS.md</code>/<code>GEMINI.md</code> são mirrors auto-gerados com <code>merge=ours</code> — <strong>nunca se editam à mão</strong>; regeneram-se após cada merge. Fecho do ciclo: o <em>repo de tarefa</em> tem fim → quando você entrega, <strong>arquiva-o</strong> com o seu histórico datado intacto. Cada <strong>QBR</strong> (Step 15) revisa quais dossiês blindados já cumpriram o seu fim e os retira.</span></div>
+        <div class="step-actions">
+          <button class="step-btn" data-modal="m-repo-archive-tpl"><span class="tag">TEMPLATE</span><span class="es">Nota de archivado (ARCHIVED.md)</span><span class="pt">Nota de arquivamento (ARCHIVED.md)</span></button>
+          <button class="step-btn" data-modal="m-repo-archive"><span class="tag">PROMPT · 3i</span><span class="es">Cerrar y archivar repo de tarea al terminar</span><span class="pt">Fechar e arquivar repo de tarefa ao terminar</span></button>
+        </div>
+      </article>
+
+      <div class="checkpoint-card" style="background:linear-gradient(135deg,#fffbf0 0%,#faf6e8 100%);border-left:4px solid #B8860B;padding:1.25rem 1.5rem;margin:1.5rem 0;border-radius:8px">
+        <div style="font-size:.9rem;color:#B8860B;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Checkpoint 5 · <span class="es">capa de repos</span><span class="pt">camada de repositórios</span></div>
+        <h3 style="margin:.5rem 0 .75rem;color:#0A122A;font-size:1.15rem"><span class="es">¿Sabes graduar un encargo de carpeta a bóveda?</span><span class="pt">Você sabe graduar um encargo de pasta a cofre?</span></h3>
+        <p style="margin:0 0 .5rem"><strong><span class="es">Validación binaria:</span><span class="pt">Validação binária:</span></strong></p>
+        <ul style="margin:0 0 .5rem 1.25rem;line-height:1.6">
+          <li>✅ <span class="es">Aplicaste los 6 disparadores a ≥ 1 encargo y decidiste correctamente carpeta vs. repo.</span><span class="pt">Aplicou os 6 gatilhos a ≥ 1 encargo e decidiu corretamente pasta vs. repo.</span></li>
+          <li>✅ <span class="es">Montaste ≥ 1 repo con <code>scaffold-repo</code> (slug estable + GitHub privado + worktree-ready) sin crear archivos a mano.</span><span class="pt">Montou ≥ 1 repo com <code>scaffold-repo</code> (slug estável + GitHub privado + worktree-ready) sem criar arquivos à mão.</span></li>
+          <li>✅ <span class="es">Distingues repo de tarea (se archiva) de repo de proyecto (permanece) y nunca editaste un mirror a mano.</span><span class="pt">Distingue repo de tarefa (arquiva-se) de repo de projeto (permanece) e nunca editou um mirror à mão.</span></li>
+        </ul>
+        <p style="margin:.5rem 0 0;font-size:.9rem;color:#666"><strong><span class="es">Si los 3 son ✅:</span><span class="pt">Se os 3 são ✅:</span></strong> <span class="es">tu contexto ya viaja con historial, bóveda y portabilidad — el piso 12 (soberanía) del playbook deja de ser aspiracional.</span><span class="pt">o seu contexto já viaja com histórico, cofre e portabilidade — o andar 12 (soberania) do playbook deixa de ser aspiracional.</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ========== PROMPTS CATALOG ========== -->
 <section class="band" id="prompts" style="background:var(--cream-2)">
   <div class="wrap">
@@ -4759,6 +4858,10 @@ Antes de escribir, hazme las preguntas que falten. No inventes feedback de mi je
 <tr data-modal="m-s4f-prompt"><td><strong>P43</strong></td><td>Crear estación Publicaciones y Redes Sociales</td><td>4</td><td><a href="#step-10">Step 10</a></td><td>Una vez · estación dedicada · calendario editorial + drafts <button class="row-see" data-modal="m-s4f-prompt">Ver</button></td></tr>
 <tr data-modal="m-s6b-prompt"><td><strong>P44</strong></td><td>Vibe-codear mini-app hiperespecífica</td><td>5</td><td><a href="#step-14">Step 14</a></td><td>Por cada cuello de botella propio · una intención por app <button class="row-see" data-modal="m-s6b-prompt">Ver</button></td></tr>
 <tr data-modal="m-s7b-prompt"><td><strong>P45</strong></td><td>Crear primera scheduled task supervisada</td><td>4</td><td><a href="#step-16">Step 16</a></td><td>Una a la vez · semana de prueba antes de automatizar <button class="row-see" data-modal="m-s7b-prompt">Ver</button></td></tr>
+<tr data-modal="m-repo-classify"><td><strong>P46</strong></td><td>Clasificar encargo · nota / carpeta / repo-tarea / repo-proyecto</td><td>3</td><td><a href="#step-27">Step 27</a></td><td>Antes de montar nada · capa de repos · 6 disparadores <button class="row-see" data-modal="m-repo-classify">Ver</button></td></tr>
+<tr data-modal="m-repo-scaffold"><td><strong>P47</strong></td><td>Montar repo llave en mano (tarea o proyecto) · scaffold-repo</td><td>4</td><td><a href="#step-28">Step 28</a></td><td>Encargo graduado · slug + GitHub privado + worktree-ready <button class="row-see" data-modal="m-repo-scaffold">Ver</button></td></tr>
+<tr data-modal="m-repo-worktree"><td><strong>P48</strong></td><td>Abrir mesa paralela (worktree) para un scope</td><td>3</td><td><a href="#step-29">Step 29</a></td><td>Borradores en paralelo · una scope por mesa <button class="row-see" data-modal="m-repo-worktree">Ver</button></td></tr>
+<tr data-modal="m-repo-archive"><td><strong>P49</strong></td><td>Cerrar y archivar repo de tarea al terminar</td><td>3</td><td><a href="#step-30">Step 30</a></td><td>Repo de tarea cumplido · historial intacto · revisado en QBR <button class="row-see" data-modal="m-repo-archive">Ver</button></td></tr>
 
       </tbody>
     </table></div>
@@ -7990,6 +8093,224 @@ Regla: un caso real por capacidad, no pruebas sintéticas.</pre></div>
 <p style="margin:.7rem 0 0;font-size:.88rem;color:#666"><strong>Si algún punto falla:</strong> repite el step antes de seguir. El sistema se construye en capas · saltar un escalón lo debilita.</p>
 </div></div></dialog>
 
+<!-- ========== MODALS · CAPA DE REPOS (Steps 27-30) ========== -->
+<dialog class="smodal" id="m-repo-gate"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">CHECK · Step 27</span><h3>¿Carpeta Cowork o repo standalone? · 6 disparadores</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<p>Marca cada disparador. <strong>Cero marcados</strong> → quédate en carpeta Cowork (<code>_tasks/T-NNN/</code>, Step 23). <strong>Uno o más</strong> → gradúa a repo standalone (Step 28).</p>
+<ul class="checklist">
+<li><strong>Código.</strong> ¿El encargo incluye scripts, configs o algo que se ejecute?</li>
+<li><strong>Ramas / borradores en paralelo.</strong> ¿Necesitas probar dos versiones sin que una pise la otra?</li>
+<li><strong>Historial con fecha.</strong> ¿Necesitas auditoría de quién cambió qué y cuándo?</li>
+<li><strong>Compartir / handoff.</strong> ¿Lo entregas o lo trabajas con alguien externo?</li>
+<li><strong>Trabajo en paralelo.</strong> ¿Te servirían varias mesas de trabajo (worktrees) simultáneas?</li>
+<li><strong>Portabilidad.</strong> ¿Necesitas que viva fuera de Cowork (Code mode, otra herramienta agéntica)?</li>
+</ul>
+<div class="callout"><p><strong>Y si es repo:</strong> ¿tiene <em>fin</em> (entregas y archivas) → <strong>repo de tarea T-NNN</strong>? ¿o es de <em>larga vida</em>, multi-entregable → <strong>repo de proyecto P-NNN</strong>?</p></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-classify"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">PROMPT · 3i · Step 27</span><h3>Clasificar el encargo · nota / carpeta / repo-tarea / repo-proyecto</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox prompt"><div class="codebox-head"><span class="codebox-name">Prompt P46 · clasificador de encargo</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre>TÍTULO: Clasificar encargo en la escalera de cuatro peldaños
+
+INPUTS:
+- {[encargo]}        → texto · requerido · qué hay que hacer, en 1-3 frases
+- {[duracion_est]}   → texto · default: desconocida · ¿una sesión, varios días, semanas?
+- {[artefactos]}     → texto · default: ninguno · ¿código, anexos, versiones, datos sensibles?
+
+ROL: Eres mi arquitecto de información personal. Hablas español, marca personal sobria.
+SITUACIÓN: Gestiono mi Jarvis OS sobre Cowork. Antes de montar nada, clasifico el encargo.
+PEDIDO: Clasifica {[encargo]} en exactamente uno de los cuatro peldaños y justifícalo.
+
+EJECUCIÓN:
+  1. Evalúa los 6 disparadores: código · ramas · historial · compartir · paralelo · portabilidad.
+  2. Cuenta disparadores marcados a partir de {[artefactos]} y {[duracion_est]}.
+  3. Asigna peldaño:
+     - 0 disparadores + trivial      → 1 · Nota al margen (línea en TAREAS.md)
+     - 0 disparadores + multi-sesión → 2 · Carpeta de encargo (_tasks/T-NNN/)
+     - ≥1 disparador + tiene fin      → 3 · Repo de tarea (T-NNN, se archiva)
+     - ≥1 disparador + larga vida     → 4 · Repo de proyecto (P-NNN)
+  4. Si es peldaño 3 o 4, propón slug kebab-ascii ≤5 palabras y el prefijo (T-NNN/P-NNN).
+
+CRITERIOS:
+  Aceptación: salida = peldaño elegido + disparadores marcados + (si aplica) slug propuesto.
+  Casos borde: si {[duracion_est]} es desconocida, pregunta una sola cosa antes de decidir.
+  Comprobaciones: no inventes disparadores; si dudas entre 3 y 4, pregunta si el encargo tiene fecha de cierre.
+
+CIERRE: Declara confianza ≥ 0.9. Si falta data crítica, marca {VACIO_CRITICO} y pregunta.</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-claude-tpl"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">TEMPLATE · Step 28</span><h3>repo · CLAUDE.md (gobernanza del repo + reglas heredadas)</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<p>El único archivo de reglas que editas a mano en el repo. Sus copias <code>AGENTS.md</code>/<code>GEMINI.md</code> se generan solas (mirrors). Reemplaza <code>{{SLUG}}</code> y el alcance.</p>
+<div class="codebox"><div class="codebox-head"><span class="codebox-name">CLAUDE.md · raíz del repo</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre># {{SLUG}}
+
+## Qué es
+- Tipo: [ repo de tarea T-NNN · se archiva al terminar | repo de proyecto P-NNN · larga vida ]
+- Alcance: [una frase · qué entra y qué NO entra en este repo]
+- Estado: [ activo | en pausa | archivado ]
+
+## Cómo trabajar aquí
+- Edita SOLO este CLAUDE.md. AGENTS.md y GEMINI.md son mirrors auto-generados — nunca a mano.
+- Una scope por worktree. No edites el mismo archivo desde dos mesas (ver WORKTREES.md).
+- Verifica antes de cerrar: corre/lee el output, no marques hecho sin evidencia.
+
+## Reglas heredadas (resumen)
+- Skill-first: descargables/HTML/office docs → skill apropiado, no improvisar.
+- Sin precios (FTE-meses + magnitudes) · una sola marca por output (brand isolation).
+- Mirrors generados (AGENTS/GEMINI) — NO editar a mano · regenerar tras cada merge.
+- Convenciones: slug kebab-ascii estable · ADR si se renombra algo publicado.
+
+## Punteros (cargar solo cuando haga falta · capas ICM)
+- ./WORKTREES.md            → cómo abrir/recoger mesas paralelas
+- ./_tasks/ o ./docs/       → artefactos de trabajo (capa 4)
+- ./referencias/            → material de referencia estable (capa 3)
+</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-worktrees-tpl"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">TEMPLATE · Step 28</span><h3>WORKTREES.md · cómo usar las mesas paralelas</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox"><div class="codebox-head"><span class="codebox-name">WORKTREES.md</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre># Worktrees · mesas de trabajo paralelas
+
+Una mesa (worktree) = una scope. Mismo expediente, varias mesas, sin emborronarse.
+
+## Abrir una mesa
+    git worktree add .claude/worktrees/&lt;scope&gt; -b worktree-&lt;scope&gt;
+    cd .claude/worktrees/&lt;scope&gt;
+    ../../scripts/setup-git.sh          # 1× por mesa: instala merge driver + hooks
+
+## Reglas
+- baseRef: fresh  → cada mesa parte de origin/main, no de cambios locales.
+- Una scope por mesa. No edites el mismo archivo desde dos mesas.
+- Archivos locales (.env, settings.local) se copian vía .worktreeinclude.
+- AGENTS.md/GEMINI.md: merge=ours · nunca conflictan · regenerar tras merge.
+
+## Recoger la mesa al terminar
+    git worktree remove .claude/worktrees/&lt;scope&gt;   # auto si está limpia
+    # con cambios → te pregunta conservar o descartar
+</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-scaffold"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">PROMPT · 4i · Step 28</span><h3>Montar repo llave en mano (tarea o proyecto)</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox prompt"><div class="codebox-head"><span class="codebox-name">Prompt P47 · scaffold repo</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre>TÍTULO: Montar repo standalone worktree-ready (llave en mano)
+
+INPUTS:
+- {[slug]}        → texto · requerido · kebab-ascii, ≤5 palabras, estable (ej. licitacion-norte)
+- {[tipo]}        → tarea | proyecto · requerido · define ciclo de vida (T-NNN se archiva · P-NNN permanece)
+- {[descripcion]} → texto · requerido · una frase de alcance
+- {[visibilidad]} → privado | publico · default: privado
+
+ROL: Eres mi ingeniero de plataforma. Español, marca sobria, sin precios.
+SITUACIÓN: El encargo {[descripcion]} marcó ≥1 disparador (Step 27). Gradúa a repo.
+PEDIDO: Monta el repo {[slug]} llave en mano y deja la sede lista para trabajar.
+
+EJECUCIÓN:
+  1. Crea ~/Documents/workspace/{[slug]}/ con git init + rama main.
+  2. Siembra: CLAUDE.md (gobernanza, tipo {[tipo]}), WORKTREES.md, .gitignore,
+     .gitattributes (merge=ours para AGENTS.md/GEMINI.md), .worktreeinclude,
+     .claude/settings.json (baseRef: "fresh"), scripts/setup-git.sh + sync-mirrors.sh.
+  3. Genera mirrors AGENTS.md/GEMINI.md desde CLAUDE.md (auto · nunca a mano).
+  4. Crea GitHub {[visibilidad]} (privado por defecto) y push si hay gh auth.
+  5. Initial commit: "chore: scaffold worktree-ready repo ({[slug]})".
+
+CRITERIOS:
+  Aceptación: .git/ + remoto privado + CLAUDE.md + WORKTREES.md + mirrors generados.
+  Casos borde: si ya existe .git/ → no-op (idempotente), reporta y detente.
+  Comprobaciones: slug válido (^[a-z0-9][a-z0-9-]*$) · sin secretos commiteados.
+
+CIERRE: Confianza ≥ 0.9. Confirma slug y ubicación ANTES de crear el repo GitHub.</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-scaffold-check"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">CHECK · Step 28</span><h3>Preflight · ¿la sede quedó bien montada?</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<ul class="checklist">
+<li>Slug kebab-ascii válido y estable · prefijo correcto (T-NNN tarea · P-NNN proyecto).</li>
+<li>Repo en <code>~/Documents/workspace/&lt;slug&gt;</code> con <code>.git/</code> + rama main.</li>
+<li>GitHub <strong>privado</strong> creado y push hecho (bóveda fuera de sede).</li>
+<li><code>CLAUDE.md</code> con alcance + reglas heredadas · <code>WORKTREES.md</code> presente.</li>
+<li><code>AGENTS.md</code>/<code>GEMINI.md</code> generados (mirrors) · NO editados a mano.</li>
+<li>Initial commit hecho · sin secretos (<code>.env</code>, claves) en el árbol.</li>
+</ul>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-wtinclude-tpl"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">TEMPLATE · Step 29</span><h3>.worktreeinclude · archivos locales que viajan a cada mesa</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<p>Lista de archivos gitignorados que se copian a cada worktree nuevo (no van al repo, pero la mesa los necesita).</p>
+<div class="codebox"><div class="codebox-head"><span class="codebox-name">.worktreeinclude</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre>.env
+.env.*
+.claude/settings.local.json
+</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-worktree"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">PROMPT · 3i · Step 29</span><h3>Abrir mesa paralela (worktree) para un scope</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox prompt"><div class="codebox-head"><span class="codebox-name">Prompt P48 · abrir worktree</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre>TÍTULO: Abrir una mesa de trabajo paralela (worktree)
+
+INPUTS:
+- {[repo]}   → ruta · requerido · ~/Documents/workspace/&lt;slug&gt;
+- {[scope]}  → texto · requerido · un solo asunto, kebab-ascii (ej. variante-agresiva)
+- {[motivo]} → texto · default: borrador en paralelo · por qué necesitas otra mesa
+
+ROL: Eres mi ingeniero de plataforma. Español, conciso.
+SITUACIÓN: Trabajo en {[repo]} y necesito probar {[scope]} sin tocar la versión buena.
+PEDIDO: Abre una mesa paralela limpia para {[scope]} y déjala lista.
+
+EJECUCIÓN:
+  1. git worktree add .claude/worktrees/{[scope]} -b worktree-{[scope]}  (parte de origin/main).
+  2. Corre scripts/setup-git.sh una vez en la mesa (merge driver + hooks).
+  3. Copia los archivos de .worktreeinclude (.env, settings.local).
+  4. Confirma: una scope por mesa · no editar el mismo archivo desde dos mesas.
+
+CRITERIOS:
+  Aceptación: mesa creada en .claude/worktrees/{[scope]} con su rama, lista para editar.
+  Casos borde: si el scope ya tiene mesa abierta → reutilízala, no dupliques.
+  Comprobaciones: recuérdame recoger la mesa al terminar (git worktree remove).
+
+CIERRE: Confianza ≥ 0.9. Una scope, una mesa. Recoger al cerrar.</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-worktree-check"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">CHECK · Step 29</span><h3>¿Las mesas paralelas están en orden?</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<ul class="checklist">
+<li>Una <strong>scope por mesa</strong> · ningún archivo editado desde dos mesas a la vez.</li>
+<li>Cada mesa partió de <code>origin/main</code> (baseRef: fresh), no de cambios locales.</li>
+<li><code>setup-git.sh</code> corrido una vez por mesa.</li>
+<li>Mesas terminadas <strong>recogidas</strong> (<code>git worktree remove</code>); ninguna huérfana.</li>
+</ul>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-archive-tpl"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">TEMPLATE · Step 30</span><h3>ARCHIVED.md · acta de cierre del repo de tarea</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox"><div class="codebox-head"><span class="codebox-name">ARCHIVED.md</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre># ARCHIVED · {{SLUG}}
+
+- Cerrado: {{YYYY-MM-DD}}
+- Entregable final: [ruta o enlace al artefacto entregado]
+- Resultado: [qué se logró · 1-2 frases]
+- Decisiones clave: [ADRs o enlaces, si los hay]
+- Reactivar si: [condición concreta que justificaría reabrirlo]
+
+> El historial git fechado queda intacto para auditoría.
+> Marcar el repo GitHub como archived. Revisado en el QBR.
+</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-repo-archive"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">PROMPT · 3i · Step 30</span><h3>Cerrar y archivar repo de tarea al terminar</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox prompt"><div class="codebox-head"><span class="codebox-name">Prompt P49 · archivar repo de tarea</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre>TÍTULO: Cerrar y archivar un repo de tarea cumplido
+
+INPUTS:
+- {[repo]}        → ruta · requerido · ~/Documents/workspace/&lt;slug&gt;
+- {[entregable]}  → texto · requerido · qué se entregó y dónde
+- {[reactivar]}   → texto · default: ninguno · condición para reabrirlo
+
+ROL: Eres mi controlador de cierre. Español, sobrio, irreversibles con confirmación.
+SITUACIÓN: El repo de tarea {[repo]} cumplió su fin. Toca archivarlo en la cadencia (QBR).
+PEDIDO: Deja el repo cerrado, auditable y archivado, sin perder historial.
+
+EJECUCIÓN:
+  1. Verifica árbol limpio (sin cambios sin commitear) y push al día (bóveda sincronizada).
+  2. Recoge todas las mesas (worktrees) abiertas.
+  3. Escribe ARCHIVED.md (fecha, entregable {[entregable]}, resultado, reactivar {[reactivar]}).
+  4. Commit "chore: archive {[slug]}" + push. Marca el repo GitHub como archived.
+  5. Anótalo en el registro del QBR como expediente cerrado.
+
+CRITERIOS:
+  Aceptación: repo con ARCHIVED.md + remoto archived + historial intacto.
+  Casos borde: si hay cambios sin commitear o mesas abiertas → detente y avísame (no archives a medias).
+  Comprobaciones: confirma conmigo antes de marcar archived (acción semi-irreversible).
+
+CIERRE: Confianza ≥ 0.9. No archives con árbol sucio ni mesas abiertas.</pre></div>
+</div></div></dialog>
+
 <!-- ========== ROW DETAIL MODAL (shared) ========== -->
 <dialog class="smodal" id="row-modal"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">DETALLE &middot; fila</span><h3 id="row-modal-title">Detalle</h3></div><button class="modal-close" data-close>&times;</button></div><div class="modal-body" id="row-modal-body"></div></div></dialog>
 
@@ -8523,6 +8844,12 @@ body.lang-en .es,html[lang="en"] .es{display:none!important}
 body.lang-en .en,html[lang="en"] .en{display:inline!important}
 body.lang-es .en,html:not([lang="en"]) .en{display:none!important}
 body.lang-es .es,html:not([lang="en"]) .es{display:inline!important}
+/* PT · tercer idioma · contenido nuevo marcado .tri (el cuerpo viejo sin .pt cae a ES automáticamente) */
+.pt{display:none}
+body.lang-pt .tri .es,html[lang="pt"] .tri .es{display:none!important}
+body.lang-pt .tri .en,html[lang="pt"] .tri .en{display:none!important}
+body.lang-pt .tri .pt,html[lang="pt"] .tri .pt{display:inline!important}
+body.lang-pt .tri .pt-block,html[lang="pt"] .tri .pt-block{display:block!important}
 :root{
   --shell-glass-bg:var(--glass-bg,rgba(255,251,240,.92));
   --shell-border:var(--border,rgba(18,37,98,.12));
@@ -8761,15 +9088,16 @@ html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color:#
     if(persist)writeStored(THEME_KEYS,isDark?'dark':'light');
     syncShellButtons();
   }
+  var LANG_ORDER=['es','en','pt'];
   function applyLang(lang, persist){
     var html=document.documentElement;
     var canToggle=hasBilingualContent();
-    var next=(canToggle && lang==='en')?'en':'es';
+    var next=(canToggle && LANG_ORDER.indexOf(lang)>-1)?lang:'es';
     html.setAttribute('lang',next);
     html.lang=next;
     if(body()){
-      body().classList.remove('lang-es','lang-en');
-      body().classList.add(next==='en'?'lang-en':'lang-es');
+      body().classList.remove('lang-es','lang-en','lang-pt');
+      body().classList.add('lang-'+next);
     }
     updateLocalizedNav(next);
     if(persist)writeStored(LANG_KEYS,next);
@@ -8786,12 +9114,13 @@ html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color:#
     }
     if(langBtn){
       var canToggle=hasBilingualContent();
-      var lang=(html.lang||'es').toLowerCase()==='en'?'EN':'ES';
-      langBtn.textContent=lang;
+      var lc=(html.lang||'es').toLowerCase();
+      var label=lc==='en'?'EN':(lc==='pt'?'PT':'ES');
+      langBtn.textContent=label;
       langBtn.disabled=!canToggle;
       langBtn.setAttribute('aria-disabled',canToggle?'false':'true');
-      langBtn.setAttribute('aria-pressed',lang==='EN'?'true':'false');
-      langBtn.title=canToggle?'Cambiar idioma':'Cambiar idioma';
+      langBtn.setAttribute('aria-pressed',label!=='ES'?'true':'false');
+      langBtn.title='Cambiar idioma (ES · EN · PT)';
     }
     if(window.lucide){window.lucide.createIcons();}
   }
@@ -8889,8 +9218,9 @@ html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color:#
   };
   window.toggleLang=function(){
     if(!hasBilingualContent()){applyLang('es',true);return;}
-    var cur=(document.documentElement.lang||'es').toLowerCase()==='en'?'en':'es';
-    applyLang(cur==='en'?'es':'en',true);
+    var cur=(document.documentElement.lang||'es').toLowerCase();
+    var idx=LANG_ORDER.indexOf(cur); if(idx<0)idx=0;
+    applyLang(LANG_ORDER[(idx+1)%LANG_ORDER.length],true);
   };
   function setActive(){
     var links=[].slice.call(document.querySelectorAll('.sidebar-links a[href^="#"]'));
@@ -8902,9 +9232,9 @@ html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color:#
   }
   function boot(){
     var storedTheme=readStored(THEME_KEYS,['dark','light'])||document.documentElement.getAttribute('data-theme')||'light';
-    var storedLang=readStored(LANG_KEYS,['es','en'])||(document.documentElement.lang||'es').toLowerCase();
+    var storedLang=readStored(LANG_KEYS,['es','en','pt'])||(document.documentElement.lang||'es').toLowerCase();
     applyTheme(storedTheme==='dark'?'dark':'light',false);
-    applyLang(storedLang==='en'?'en':'es',false);
+    applyLang(LANG_ORDER.indexOf(storedLang)>-1?storedLang:'es',false);
     setActive();
     window.addEventListener('scroll',setActive,{passive:true});
   }
