@@ -8262,8 +8262,18 @@ The diagrams and layouts appearing in this playbook are <em>illustrative wirefra
 <tr data-title="V · Cadences" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>V · Cadences</strong></li><li><b>Steps in Runbook:</b> Step 15 · 6 rhythms (DBR · WBR · MBR · QBR · ABR · Audit) · Step 16 · Scheduled task</li><li><b>Operational Outcome:</b> Automatic rhythm and portability of your context</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-15&quot;>Steps 15-16</a> · cadences + scheduled task.</div>"><td><strong>V · Cadences</strong></td><td>Step 15 · 6 rhythms (DBR · WBR · MBR · QBR · ABR · Audit) · Step 16 · Scheduled task</td><td>Automatic rhythm and portability of your context</td></tr>
 <tr data-title="Optimization" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>Optimization</strong></li><li><b>Steps in Runbook:</b> Steps 17-21 · Skills · Connectors · Capabilities · Configuration · Audit</li><li><b>Operational Outcome:</b> Disciplined growth of the Jarvis</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-17&quot;>Steps 17-21</a> · optimization.</div>"><td><strong>Optimization</strong></td><td>Steps 17-21 · Skills · Connectors · Capabilities · Configuration · Audit</td><td>Disciplined growth of the Jarvis</td></tr>
 <tr data-title="Advanced · TAREAS canon" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>Advanced · TAREAS canon</strong></li><li><b>Steps in Runbook:</b> Steps 22-26 · TAREAS.md · sub-task T-NNN · CLAUDE.md decomposition · external plugin · Excellence Loop</li><li><b>Operational Outcome:</b> Autonomous task control when 3+ live projects</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-22&quot;>Steps 22-26</a> · TAREAS canon.</div>"><td><strong>Advanced · TAREAS canon</strong></td><td>Steps 22-26 · TAREAS.md · sub-task T-NNN · CLAUDE.md decomposition · external plugin · Excellence Loop</td><td>Autonomous task control when 3+ live projects</td></tr>
+<tr data-title="Advanced · repo layer" data-detail="<ul class=&quot;rm-cols&quot;><li><b>Sector (Playbook):</b> <strong>Advanced · repo layer (§3.7)</strong></li><li><b>Steps in Runbook:</b> Steps 27-30 · deserve a repo? · turnkey scaffold · worktrees · vault + mirrors + archiving</li><li><b>Operational Outcome:</b> Commission graduated to a git repo with private vault, parallel desks and portability</li></ul><div class=&quot;rm-note&quot;>Runbook <a href=&quot;runbook.html#step-27&quot;>Steps 27-30</a> · repo layer.</div>"><td><strong>Advanced · repo layer</strong></td><td>Steps 27-30 · deserve a repo? · turnkey scaffold · worktrees · vault + mirrors + archiving</td><td>Commission graduated to a git repo with private vault, parallel desks and portability</td></tr>
 </tbody>
 </table></div></div>
+<h3 id="en-s7-archetypes">7.8 · Your Jarvis by trade · three office templates</h3>
+<p>The five sectors are the skeleton; your trade gives it a face. The §4.5 (ICM) lesson is vivid here: <strong>the layers don't change, the labels do</strong>. The routing <code>CLAUDE.md</code>, each station's <code>CONTEXT.md</code> (voice + process), the skills that plug in where needed — that architecture stays the same. What changes is what each station is called, what its context says, and which skills are wired in. Three real offices:</p>
+<ul>
+<li><strong>Content creator</strong> — stations <code>/script-lab</code> (idea→script), <code>/production</code> (script→piece), <code>/distribution</code> (piece→channels). Each with its own <code>CONTEXT.md</code> (voice, process, per-channel rules).</li>
+<li><strong>Freelancer / consultant</strong> — one station per client (<code>/client-alpha</code>, <code>/client-beta</code>) with isolated context (<strong>no bleed</strong>), plus <code>/templates</code> and <code>/business-dev</code>. Onboarding a new client = copy the structure, write a <code>CONTEXT.md</code>, add one routing line.</li>
+<li><strong>Developer</strong> — <code>/planning</code>, <code>/src</code>, <code>/docs</code>, <code>/ops</code>. The routing table adds a <strong>Skills</strong> column (Layer 3 of §4.5): wire testing/doc skills only into the station that needs them.</li>
+</ul>
+<p><strong>The station-boundary heuristic:</strong> if you ever wish Claude would <em>forget</em> what it just did and focus on something else, that's a station boundary. <strong>Build yours in four steps:</strong> (1) list your 2-4 stations; (2) write a one-page <code>CONTEXT.md</code> each; (3) write the root <code>CLAUDE.md</code> with a routing table + naming conventions; (4) start and adjust — context files are living working notes, not finished documents.</p>
+
 <!-- =================================================
      §8 · IMPLEMENTACIÓN OPERATIVA
      ================================================= -->
@@ -8641,6 +8651,15 @@ CONTROL RULE: Recommend cleanup. Do not execute destructive actions without expl
 </header>
 <p style="font-size:.9rem;color:var(--ink-2,#475569);margin:0 0 1rem"><span class="es">Para el glosario operativo de ejecución (términos del día a día con su uso concreto), ver el <a href="runbook.html#glosario">Runbook · Glosario</a>.</span><span class="en">For the execution-level operational glossary (day-to-day terms with concrete usage), see the <a href="runbook.html#glosario">Runbook · Glossary</a>.</span></p>
 <dl class="glossary">
+<dt>Repository (repo)</dt><dd>A git version-controlled folder. In the Jarvis, the rung a commission <em>graduates</em> to when it needs dated history, branches, off-site backup or code (§3.7).</dd>
+<dt>Task repo (T-NNN)</dt><dd>Repo for a commission with a start and an <strong>end</strong>: built, worked, delivered and <em>archived</em> with its history intact.</dd>
+<dt>Project repo (P-NNN)</dt><dd>Long-lived repo (the <em>headquarters</em>): multi-deliverable, with collaborators and its own cadence; it persists.</dd>
+<dt>Armored dossier</dt><dd>Office metaphor for the task repo: a dossier with dated minutes (git history) and a private vault.</dd>
+<dt>Vault</dt><dd>The private remote repository (private GitHub): off-machine backup with an audit trail of who changed what and when.</dd>
+<dt>Worktree (parallel desk)</dt><dd>A second workbench on the same repo: test a draft on one desk without touching the good version on another. One scope per desk; cleared when done (§3.7 · Runbook Step 29).</dd>
+<dt>Mirrors</dt><dd><code>AGENTS.md</code>/<code>GEMINI.md</code> files auto-generated from <code>CLAUDE.md</code> · <strong>never hand-edited</strong>.</dd>
+<dt>ICM</dt><dd>Interpretable Context Methodology (arXiv:2603.16021): the folder structure <em>is</em> the assistant's architecture. Grounds the §4.5 layer protocol.</dd>
+<dt>Context layers (Layer 0-4)</dt><dd>ICM layered-loading model: 0 <code>CLAUDE.md</code> (where am I?) · 1 routing · 2 stage · 3 reference (the recipe) · 4 artifacts (the ingredients). The critical at the edge, no filler in the middle.</dd>
 <dt>Digital Sovereignty</dt><dd>Ability to carry <strong>YOUR context</strong> (CLAUDE.md, MEMORY.md, voice-principles, projects, history, preferences, way of working) to any available agentic tool. <em>You don't migrate the product · you migrate your own stuff.</em> If Anthropic raises prices, deprecates capabilities, or disappears, your Jarvis survives because your context is flat files on your disk.</dd>
 <dt>Context Portability</dt><dd>Technical sub-dimension of Digital Sovereignty. Your setup is plain text (Markdown) on your filesystem · any AI IDE with file access can read it and operate on it without retraining or reconfiguring you.</dd>
 <dt>Token</dt><dd>Sub-word unit that the model's tokenizer processes. In Spanish, approximately three characters equal one token.</dd>
@@ -11997,6 +12016,117 @@ Los esquemas y layouts que aparecen en este playbook son <em>wireframes ilustrat
 </tbody>
 </table></div></div>
 <!-- =================================================
+     §7.8 · TRES ARQUETIPOS SEGÚN TU OFICIO (capa nueva 2026-06)
+     ================================================= -->
+<div class="tri" id="s7-archetypes">
+<h3>7.8 · <span class="es">Tu Jarvis según tu oficio · tres plantillas de oficina</span><span class="pt">O seu Jarvis conforme o seu ofício · três modelos de escritório</span></h3>
+
+<p><span class="es">Los cinco sectores son el esqueleto; el oficio le pone la cara. La lección de §4.5 (ICM) se ve clarísima aquí: <strong>las capas no cambian, las etiquetas sí</strong>. El <code>CLAUDE.md</code> raíz que rutea, el <code>CONTEXT.md</code> de cada estación que aporta voz y proceso, las skills que se enchufan donde hacen falta — esa arquitectura es la misma. Lo que cambia es cómo se llama cada estación, qué dice su contexto y qué skills se cablean. Aquí van tres oficinas reales. Encuentra la más cercana a la tuya, estúdiala y arma la tuya.</span><span class="pt">Os cinco setores são o esqueleto; o ofício põe o rosto. A lição de §4.5 (ICM) fica clara aqui: <strong>as camadas não mudam, os rótulos sim</strong>. O <code>CLAUDE.md</code> raiz que roteia, o <code>CONTEXT.md</code> de cada estação que aporta voz e processo, as skills que se encaixam onde fazem falta — essa arquitetura é a mesma. O que muda é como se chama cada estação, o que diz o seu contexto e quais skills se ligam. Aqui vão três escritórios reais. Encontre o mais próximo do seu, estude-o e monte o seu.</span></p>
+
+<h4><span class="es">Oficio 1 · Creador de contenido</span><span class="pt">Ofício 1 · Criador de conteúdo</span></h4>
+<p><span class="es">Haces videos, escribes posts, gestionas una presencia social, casi siempre en solitario o en equipo mínimo. Tu trabajo va en ciclo: idear, escribir, producir, publicar.</span><span class="pt">Você faz vídeos, escreve posts, gerencia uma presença social, quase sempre sozinho ou em equipe mínima. Seu trabalho vai em ciclo: idear, escrever, produzir, publicar.</span></p>
+<pre style="background:#0A122A;color:#E5E7EB;padding:1rem 1.25rem;border-radius:10px;overflow:auto;font-size:.8rem;line-height:1.5;font-family:'JetBrains Mono',monospace">mi-proyecto-de-contenido/
+├── CLAUDE.md                 rutea entre las tres estaciones
+├── guion-lab/                🟠 pensar · idea → guion
+│   ├── CONTEXT.md            voz · audiencia · proceso idea→guion
+│   ├── ideas/  borradores/  final/
+├── produccion/               🟡 construir · guion → pieza
+│   ├── CONTEXT.md            proceso · herramientas · estándar visual
+│   ├── briefs/  specs/  builds/  output/
+└── distribucion/             🟢 publicar · pieza → canales
+    ├── CONTEXT.md            plataformas · cadencia · reglas por canal
+    └── plataformas/  agenda/  analitica/</pre>
+<pre style="background:#0A122A;color:#E5E7EB;padding:1rem 1.25rem;border-radius:10px;overflow:auto;font-size:.8rem;line-height:1.5;font-family:'JetBrains Mono',monospace"># Mi Proyecto de Contenido
+Creo [TIPO] para [AUDIENCIA].
+
+## Estaciones
+- /guion-lab     — idear, escribir, borradores
+- /produccion    — construir y producir
+- /distribucion  — publicar, agendar, repurposing
+
+## Ruteo
+| Tarea                  | Ir a          | Leer       |
+|------------------------|---------------|------------|
+| Escribir o idear       | /guion-lab    | CONTEXT.md |
+| Construir o producir   | /produccion   | CONTEXT.md |
+| Publicar o repurposar  | /distribucion | CONTEXT.md |
+
+## Convenciones
+- Borradores: tema_borrador.md · Final: tema_final.md
+- Publicado: AAAA-MM-plataforma-tema.md</pre>
+
+<h4><span class="es">Oficio 2 · Consultor / Freelancer</span><span class="pt">Ofício 2 · Consultor / Freelancer</span></h4>
+<p><span class="es">Trabajas con varios clientes. Cada encargo tiene ciclo: intake, alcance, entrega, seguimiento. Necesitas que Claude cambie de cliente <strong>sin sangrar contexto</strong>, más una estación interna para desarrollo de negocio y plantillas.</span><span class="pt">Você trabalha com vários clientes. Cada encargo tem ciclo: intake, escopo, entrega, acompanhamento. Precisa que o Claude troque de cliente <strong>sem sangrar contexto</strong>, mais uma estação interna para desenvolvimento de negócio e modelos.</span></p>
+<pre style="background:#0A122A;color:#E5E7EB;padding:1rem 1.25rem;border-radius:10px;overflow:auto;font-size:.8rem;line-height:1.5;font-family:'JetBrains Mono',monospace">mi-consultoria/
+├── CLAUDE.md                 rutea · regla de no-sangrado entre clientes
+├── cliente-alfa/             🟠 un expediente por cliente
+│   ├── CONTEXT.md            quién es · fase · entregables · tono propio
+│   ├── intake/  entregables/  comunicaciones/
+├── cliente-beta/             🟠 (misma estructura, contexto aislado)
+│   └── CONTEXT.md
+├── plantillas/               🟡 propuestas · informes · frameworks
+│   └── CONTEXT.md
+└── desarrollo-negocio/       🟢 pipeline · outreach · casos de éxito
+    └── CONTEXT.md            cliente ideal · servicios · posicionamiento</pre>
+<pre style="background:#0A122A;color:#E5E7EB;padding:1rem 1.25rem;border-radius:10px;overflow:auto;font-size:.8rem;line-height:1.5;font-family:'JetBrains Mono',monospace"># Mi Consultoría
+Soy consultor [TIPO] para [CLIENTES].
+
+## Clientes activos
+- /cliente-alfa — [una línea del encargo]
+- /cliente-beta — [una línea del encargo]
+
+## Ruteo
+| Tarea                | Ir a             | Leer                        |
+|----------------------|------------------|-----------------------------|
+| Trabajo de Alfa      | /cliente-alfa    | CONTEXT.md                  |
+| Nueva propuesta      | /plantillas      | CONTEXT.md → carpeta cliente|
+| Outreach o pipeline  | /desarrollo-negocio | CONTEXT.md               |
+
+## Reglas
+- Nunca referenciar info de un cliente en la estación de otro.
+- Propuestas salen de /plantillas y se personalizan en la carpeta del cliente.</pre>
+<p><span class="es"><strong>La clave del freelancer:</strong> las carpetas de cliente se multiplican. Onboarding nuevo = copias la estructura, escribes un <code>CONTEXT.md</code> y Claude está listo. El <code>CLAUDE.md</code> raíz gana una línea en la tabla de ruteo. Eso es todo.</span><span class="pt"><strong>A chave do freelancer:</strong> as pastas de cliente se multiplicam. Onboarding novo = você copia a estrutura, escreve um <code>CONTEXT.md</code> e o Claude está pronto. O <code>CLAUDE.md</code> raiz ganha uma linha na tabela de roteamento. É só isso.</span></p>
+
+<h4><span class="es">Oficio 3 · Desarrollador</span><span class="pt">Ofício 3 · Desenvolvedor</span></h4>
+<p><span class="es">Construyes software. Tu trabajo: planear, escribir código, probar, desplegar, documentar. Ya tienes opiniones sobre estructura de carpetas; la diferencia es que ahora <strong>Claude la lee</strong>. Aquí el ruteo añade una columna <strong>Skills</strong> (la capa 3 de §4.5): cableas skills solo en la estación que las necesita.</span><span class="pt">Você constrói software. Seu trabalho: planejar, escrever código, testar, implantar, documentar. Já tem opiniões sobre estrutura de pastas; a diferença é que agora <strong>o Claude a lê</strong>. Aqui o roteamento adiciona uma coluna <strong>Skills</strong> (a camada 3 de §4.5): você liga skills só na estação que as precisa.</span></p>
+<pre style="background:#0A122A;color:#E5E7EB;padding:1rem 1.25rem;border-radius:10px;overflow:auto;font-size:.8rem;line-height:1.5;font-family:'JetBrains Mono',monospace">mi-app/
+├── CLAUDE.md                 stack · ruteo con columna Skills
+├── planificacion/  🟠 specs · arquitectura · decisiones (ADR)
+│   └── CONTEXT.md
+├── src/            🟡 código · convenciones · patrones · tests
+│   └── CONTEXT.md
+├── docs/           🟢 API · guías · changelog
+│   └── CONTEXT.md
+└── ops/            🔵 deploy · monitoreo · runbooks
+    └── CONTEXT.md</pre>
+<pre style="background:#0A122A;color:#E5E7EB;padding:1rem 1.25rem;border-radius:10px;overflow:auto;font-size:.8rem;line-height:1.5;font-family:'JetBrains Mono',monospace"># Mi App
+[NOMBRE] — [una frase].
+
+## Stack
+Frontend: [..] · Backend: [..] · DB: [..] · Deploy: [..]
+
+## Ruteo
+| Tarea            | Ir a           | Leer       | Skills            |
+|------------------|----------------|------------|-------------------|
+| Specificar       | /planificacion | CONTEXT.md | —                 |
+| Escribir código  | /src           | CONTEXT.md | testing-skill     |
+| Documentar       | /docs          | CONTEXT.md | doc-authoring     |
+| Desplegar/debug  | /ops           | CONTEXT.md | —                 |
+
+## Convenciones
+- Specs: feature_spec.md · Tests: feature.test.ts
+- ADR: AAAA-MM-DD-titulo-decision.md</pre>
+
+<div class="callout">
+<p><strong><span class="es">La frontera de estación · una heurística.</span><span class="pt">A fronteira de estação · uma heurística.</span></strong> <span class="es">¿No sabes cuántas estaciones necesitas? Usa esta señal: <em>si alguna vez deseas que Claude "olvide" lo que acaba de hacer y se enfoque en otra cosa, ahí hay una frontera de estación</em>. Escribir y construir son estaciones distintas. Cliente A y Cliente B son estaciones distintas. Planear y ejecutar pueden serlo. Empieza con 2-4 áreas mayores, no más.</span><span class="pt">Não sabe quantas estações precisa? Use este sinal: <em>se alguma vez você deseja que o Claude "esqueça" o que acabou de fazer e foque em outra coisa, ali há uma fronteira de estação</em>. Escrever e construir são estações distintas. Cliente A e Cliente B são estações distintas. Planejar e executar podem ser. Comece com 2-4 áreas maiores, não mais.</span></p>
+</div>
+
+<div class="callout ok">
+<p><strong><span class="es">Arma el tuyo · cuatro pasos.</span><span class="pt">Monte o seu · quatro passos.</span></strong> <span class="es"><strong>1. Lista tus estaciones</strong> (los 2-4 modos entre los que cambias). <strong>2. Escribe un <code>CONTEXT.md</code> por cada una</strong> (qué pasa ahí, el proceso, cómo se ve un buen trabajo; menos de una página). <strong>3. Escribe tu <code>CLAUDE.md</code> raíz</strong> (lista las estaciones, arma la tabla de ruteo, añade convenciones de nombres). <strong>4. Empieza y ajusta</strong>: apunta a Claude, dale una tarea, corrige los contextos según lo que acierte y lo que falle. La primera versión no será perfecta; será mejor que sin estructura y mejorará en cada edición. Los contextos son documentos vivos — trátalos como notas de trabajo, no como obra terminada.</span><span class="pt"><strong>1. Liste suas estações</strong> (os 2-4 modos entre os quais você alterna). <strong>2. Escreva um <code>CONTEXT.md</code> para cada uma</strong> (o que acontece ali, o processo, como se vê um bom trabalho; menos de uma página). <strong>3. Escreva o seu <code>CLAUDE.md</code> raiz</strong> (liste as estações, monte a tabela de roteamento, adicione convenções de nomes). <strong>4. Comece e ajuste</strong>: aponte o Claude, dê uma tarefa, corrija os contextos conforme o que acerta e o que falha. A primeira versão não será perfeita; será melhor que sem estrutura e melhorará a cada edição. Os contextos são documentos vivos — trate-os como notas de trabalho, não como obra acabada.</span></p>
+</div>
+</div>
+
+<!-- =================================================
      §8 · IMPLEMENTACIÓN OPERATIVA
      ================================================= -->
 <header class="section-opener">
@@ -12438,6 +12568,15 @@ REGLA DE CONTROL: Recomienda limpieza. No ejecutes acciones destructivas sin apr
 <h2 id="s9"><span class="num">§9</span>Glosario operativo</h2>
 </header>
 <dl class="glossary">
+<dt>Repositorio (repo)</dt><dd>Carpeta bajo control de versiones git. En el Jarvis, el peldaño al que <em>gradúa</em> un encargo cuando necesita historial con fecha, ramas, respaldo fuera de sede o código (§3.7).</dd>
+<dt>Repo de tarea (T-NNN)</dt><dd>Repo de un encargo con inicio y <strong>fin</strong>: se monta, se trabaja, se entrega y se <em>archiva</em> con su historial intacto.</dd>
+<dt>Repo de proyecto (P-NNN)</dt><dd>Repo de larga vida (la <em>sede</em>): multi-entregable, con colaboradores y cadencia propia; permanece.</dd>
+<dt>Expediente blindado</dt><dd>Metáfora de oficina para el repo de tarea: un dossier con actas fechadas (historial git) y bóveda privada.</dd>
+<dt>Bóveda</dt><dd>El repositorio remoto privado (GitHub privado): respaldo fuera de tu máquina con auditoría de quién cambió qué y cuándo.</dd>
+<dt>Worktree (mesa paralela)</dt><dd>Segunda mesa de trabajo sobre el mismo repo: pruebas un borrador en una mesa sin tocar la versión buena en otra. Una scope por mesa; se recoge al terminar (§3.7 · Runbook Step 29).</dd>
+<dt>Mirrors (copias traducidas)</dt><dd>Archivos <code>AGENTS.md</code>/<code>GEMINI.md</code> generados automáticamente desde <code>CLAUDE.md</code> · <strong>nunca se editan a mano</strong>.</dd>
+<dt>ICM</dt><dd>Interpretable Context Methodology <a class="cite" href="#ref-icm">[ICM]</a>: la estructura de carpetas <em>es</em> la arquitectura del asistente. Funda el protocolo de capas de §4.5.</dd>
+<dt>Capas de contexto (Layer 0-4)</dt><dd>Modelo ICM de carga por capas: 0 <code>CLAUDE.md</code> (¿dónde estoy?) · 1 ruteo · 2 etapa · 3 referencia (la receta) · 4 artefactos (los ingredientes). Lo crítico al borde, sin relleno al medio.</dd>
 <dt>Soberanía Digital</dt><dd>Capacidad de portar <strong>TU contexto</strong> (CLAUDE.md, MEMORY.md, voice-principles, projects, history, preferencias, forma de trabajar) a cualquier herramienta agéntica disponible. <em>No migras el producto · migras lo tuyo.</em> Si Anthropic sube precios, deprecia capacidades o desaparece, tu Jarvis sobrevive porque tu contexto es archivos planos en tu disco.</dd>
 <dt>Portabilidad del contexto</dt><dd>Subdimensión técnica de la Soberanía Digital. Tu setup es texto plano (Markdown) en tu filesystem · cualquier IDE de IA con acceso a archivos puede leerlo y operar sobre él sin reentrenarte ni reconfigurarte.</dd>
 <dt>Token</dt><dd>Unidad subpalabra que el tokenizador del modelo procesa. En español aproximadamente tres caracteres equivalen a un token.</dd>

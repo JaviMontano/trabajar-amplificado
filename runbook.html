@@ -3550,8 +3550,8 @@ window.__bilingualNav={
     <h1><span class="es">Configura tu <span style="color:#FFD700">Jarvis OS</span> paso a paso</span><span class="en">Configure your <span style="color:#FFD700">Jarvis OS</span> step by step</span></h1>
     <p class="hero-sub"><span class="es">Usa este runbook como guía de instalación y operación de lo que el <a href="playbook.html" style="color:#FFD700;font-weight:700">Playbook</a> fundamenta.</span><span class="en">Use this runbook as the installation and operation guide for what the <a href="playbook.html" style="color:#FFD700;font-weight:700">Playbook</a> grounds.</span> <span class="es">En cada step sabes qué preparar, qué prompt ejecutar, qué archivo revisar y qué condición debe cumplirse antes de avanzar. Si falta un dato, la IA debe preguntarlo; si un archivo es crítico, debe pedir confirmación antes de escribir.</span><span class="en">In every step you know what to prepare, which prompt to run, which file to review and what condition must be met before moving forward. If data is missing, AI must ask; if a file is critical, it must request confirmation before writing.</span></p>
     <div class="hero-meta">
-      <span class="es">21 steps · todos con prompt</span><span class="en">21 steps · all prompted</span><span class="sep">·</span>
-      <span class="es">34 prompts · 0-5 inputs c/u</span><span class="en">34 prompts · 0-5 inputs each</span><span class="sep">·</span>
+      <span class="es">30 steps · todos con prompt</span><span class="en">30 steps · all prompted</span><span class="sep">·</span>
+      <span class="es">51 prompts · 0-5 inputs c/u</span><span class="en">51 prompts · 0-5 inputs each</span><span class="sep">·</span>
       <span class="es">~4 h reales · build + curaduría</span><span class="en">~4 h real · build + curation</span><span class="sep">·</span>
       <span class="es">8 estaciones del sistema</span><span class="en">8 system stations</span>
     </div>
@@ -3610,7 +3610,7 @@ window.__bilingualNav={
     </div>
 
     <h3 style="font-family:var(--font-display);color:var(--navy);margin-top:1.25rem">Por qué prompts de alto rendimiento</h3>
-    <p>Un prompt de alto rendimiento tiene cuatro propiedades verificables: declara explícitamente sus inputs (no asume contexto), entrega instrucciones de ejecución secuenciales (no abre debates), tiene criterio de éxito explícito (Claude sabe cuándo terminó) y maneja el fallo graceful (si falta data, la marca <code>[PENDIENTE]</code>). Los 34 prompts de esta guía cumplen los cuatro. Si alguno falla en tu setup, dímelo y lo afinamos.</p>
+    <p>Un prompt de alto rendimiento tiene cuatro propiedades verificables: declara explícitamente sus inputs (no asume contexto), entrega instrucciones de ejecución secuenciales (no abre debates), tiene criterio de éxito explícito (Claude sabe cuándo terminó) y maneja el fallo graceful (si falta data, la marca <code>[PENDIENTE]</code>). Los 51 prompts de esta guía cumplen los cuatro. Si alguno falla en tu setup, dímelo y lo afinamos.</p>
   </div>
 </section>
 
@@ -3695,7 +3695,7 @@ CIERRE:
       <div class="kpi"><div class="kpi-v">0</div><div class="kpi-l"><strong>0 fricción</strong> · cero preguntas innecesarias · capitaliza contexto</div></div>
       <div class="kpi"><div class="kpi-v">✓</div><div class="kpi-l"><strong>quality entrusted</strong> · calidad por construcción no por inspección</div></div>
     </div>
-    <div class="callout"><p><strong>Norma operativa.</strong> Si un prompt te lleva más de un round-trip a producir el output deseado · el SPEC está roto. Repórtalo y lo afinamos. Cada uno de los 34 prompts de esta guía debe entregar artefacto defendible al primer turno.</p></div>
+    <div class="callout"><p><strong>Norma operativa.</strong> Si un prompt te lleva más de un round-trip a producir el output deseado · el SPEC está roto. Repórtalo y lo afinamos. Cada uno de los 51 prompts de esta guía debe entregar artefacto defendible al primer turno.</p></div>
   </div>
 </section>
 
@@ -4427,6 +4427,29 @@ Antes de escribir, hazme las preguntas que falten. No inventes feedback de mi je
         </div>
       </article>
 
+      <!-- STEP 14b · PRODUCCIÓN COMO CÓDIGO (deep dive · capa nueva 2026-06) -->
+      <article class="step-card tri" id="step-14b" data-state="advanced">
+        <div class="step-head">
+          <div class="step-num">14b</div>
+          <div class="step-title-wrap">
+            <div class="step-eyebrow"><span class="es">Sector IV · Nivel 8 · spec primero (deep dive)</span><span class="pt">Setor IV · Nível 8 · spec primeiro (deep dive)</span></div>
+            <div class="step-title"><span class="es">Producción como código · el spec es la palanca</span><span class="pt">Produção como código · o spec é a alavanca</span></div>
+            <div class="step-meta"><span>45 min</span><span><span class="es">Cuando una pieza se repite y vale industrializarla</span><span class="pt">Quando uma peça se repete e vale industrializá-la</span></span></div>
+          </div>
+        </div>
+        <div class="step-body"><span class="es">La mini-app del Step 14 escala a una <strong>línea de producción</strong> cuando separas el <em>qué</em> del <em>cómo</em>. El patrón (probado en video-as-code con la skill <code>remotion</code>, pero igual para reportes, decks o entregables de cliente): <strong>(1) escribes el spec</strong> — un markdown que describe la pieza con precisión (tesis, arco, escenas, timing, qué se enfatiza); <strong>(2) Claude lee el spec + la guía de estilo + el registro de componentes</strong> y ensambla, no inventa; <strong>(3) previsualizas y refinas</strong> en lenguaje natural hasta que cuadra. El trabajo creativo no desaparece: se mueve al spec. Ahí vive tu pensamiento; el resto es ejecución.</span><span class="pt">A mini-app do Step 14 escala a uma <strong>linha de produção</strong> quando você separa o <em>quê</em> do <em>como</em>. O padrão (provado em video-as-code com a skill <code>remotion</code>, mas igual para relatórios, decks ou entregáveis de cliente): <strong>(1) você escreve o spec</strong> — um markdown que descreve a peça com precisão (tese, arco, cenas, timing, o que se enfatiza); <strong>(2) o Claude lê o spec + o guia de estilo + o registro de componentes</strong> e monta, não inventa; <strong>(3) você pré-visualiza e refina</strong> em linguagem natural até encaixar. O trabalho criativo não desaparece: move-se para o spec. Ali vive o seu pensamento; o resto é execução.</span></div>
+        <div class="callout" style="background:rgba(255,215,0,.06);border-left:4px solid var(--gold);padding:1rem 1.25rem;border-radius:8px;margin:1rem 0">
+          <p><strong><span class="es">«Dame la libertad de un brief ajustado.»</span><span class="pt">«Dê-me a liberdade de um brief apertado.»</span></strong> <span class="es">La frase de Ogilvy no es contradicción: cuando el brief define el problema con precisión, quien lo ejecuta (humano o IA) sabe a dónde va y se concentra en resolver, no en adivinar. Hay investigación detrás: la relación entre restricciones y creatividad tiene forma de U invertida — muy pocas restricciones paralizan (lienzo en blanco), demasiadas asfixian, pero en el medio la creatividad sube. Dr. Seuss escribió <em>Green Eggs and Ham</em> con solo 50 palabras por una apuesta; vendió 200 millones. <strong>Cada restricción que pones en el spec, la guía de estilo o el registro es un error que Claude no cometerá.</strong></span><span class="pt">A frase de Ogilvy não é contradição: quando o brief define o problema com precisão, quem o executa (humano ou IA) sabe para onde vai e foca em resolver, não em adivinhar. Há pesquisa por trás: a relação entre restrições e criatividade tem forma de U invertido — poucas restrições paralisam (tela em branco), muitas sufocam, mas no meio a criatividade sobe. Dr. Seuss escreveu <em>Green Eggs and Ham</em> com só 50 palavras por uma aposta; vendeu 200 milhões. <strong>Cada restrição que você põe no spec, no guia de estilo ou no registro é um erro que o Claude não cometerá.</strong></span></p>
+        </div>
+        <div class="step-actions">
+          <button class="step-btn" data-modal="m-spec-tpl"><span class="tag">TEMPLATE</span>spec.md</button>
+          <button class="step-btn" data-modal="m-styleguide-tpl"><span class="tag">TEMPLATE</span>style-guide.md</button>
+          <button class="step-btn" data-modal="m-registry-tpl"><span class="tag">TEMPLATE</span>component-registry.md</button>
+          <button class="step-btn" data-modal="m-write-spec"><span class="tag">PROMPT · 4i</span><span class="es">Escribir el spec antes de construir</span><span class="pt">Escrever o spec antes de construir</span></button>
+          <button class="step-btn" data-modal="m-build-from-spec"><span class="tag">PROMPT · 3i</span><span class="es">Construir desde spec + registro</span><span class="pt">Construir a partir do spec + registro</span></button>
+        </div>
+      </article>
+
       <!-- STEP 7 -->
       <article class="step-card" id="step-15">
         <div class="step-head">
@@ -4862,6 +4885,8 @@ Antes de escribir, hazme las preguntas que falten. No inventes feedback de mi je
 <tr data-modal="m-repo-scaffold"><td><strong>P47</strong></td><td>Montar repo llave en mano (tarea o proyecto) · scaffold-repo</td><td>4</td><td><a href="#step-28">Step 28</a></td><td>Encargo graduado · slug + GitHub privado + worktree-ready <button class="row-see" data-modal="m-repo-scaffold">Ver</button></td></tr>
 <tr data-modal="m-repo-worktree"><td><strong>P48</strong></td><td>Abrir mesa paralela (worktree) para un scope</td><td>3</td><td><a href="#step-29">Step 29</a></td><td>Borradores en paralelo · una scope por mesa <button class="row-see" data-modal="m-repo-worktree">Ver</button></td></tr>
 <tr data-modal="m-repo-archive"><td><strong>P49</strong></td><td>Cerrar y archivar repo de tarea al terminar</td><td>3</td><td><a href="#step-30">Step 30</a></td><td>Repo de tarea cumplido · historial intacto · revisado en QBR <button class="row-see" data-modal="m-repo-archive">Ver</button></td></tr>
+<tr data-modal="m-write-spec"><td><strong>P50</strong></td><td>Escribir el spec antes de construir · brief ajustado</td><td>4</td><td><a href="#step-14b">Step 14b</a></td><td>Producción como código · el spec es la palanca <button class="row-see" data-modal="m-write-spec">Ver</button></td></tr>
+<tr data-modal="m-build-from-spec"><td><strong>P51</strong></td><td>Construir desde spec + guía de estilo + registro</td><td>3</td><td><a href="#step-14b">Step 14b</a></td><td>Ensamblar, no inventar · reutiliza componentes <button class="row-see" data-modal="m-build-from-spec">Ver</button></td></tr>
 
       </tbody>
     </table></div>
@@ -4888,6 +4913,9 @@ Antes de escribir, hazme las preguntas que falten. No inventes feedback de mi je
 <tr data-modal="m-s6-notes"><td><strong>N3 · Lab session</strong></td><td><code>03_Lab/YYYY-MM-tema/</code></td><td><code>notas.md</code> · <code>hipotesis.md</code> · <code>referencias.md</code> · <code>decision.md</code></td><td><a href="#step-13">13</a> <button class="row-see" data-modal="m-s6-notes">Ver</button></td></tr>
         <tr data-modal="m-s7-tpl"><td><strong>N4 · Cadencias</strong></td><td><code>04_Cadencias/</code></td><td>5 prompts guiados + P39 para scheduled tasks supervisadas</td><td><a href="#step-15">15</a> <button class="row-see" data-modal="m-s7-tpl">Ver</button></td></tr>
         <tr data-modal="m-s8-tpl"><td><strong>Skills</strong></td><td><code>00_Recursos/skills/&lt;name&gt;/</code></td><td><code>SKILL.md</code></td><td><a href="#step-17">17</a> <button class="row-see" data-modal="m-s8-tpl">Ver</button></td></tr>
+        <tr data-modal="m-spec-tpl"><td><strong>N3 · Producción</strong></td><td><code>03_Lab/AAAA-MM-pieza/</code></td><td><code>spec.md</code></td><td><a href="#step-14b">14b</a> <button class="row-see" data-modal="m-spec-tpl">Ver</button></td></tr>
+        <tr data-modal="m-styleguide-tpl"><td><strong>N0 · Recursos</strong></td><td><code>00_Recursos/produccion/</code></td><td><code>style-guide.md</code></td><td><a href="#step-14b">14b</a> <button class="row-see" data-modal="m-styleguide-tpl">Ver</button></td></tr>
+        <tr data-modal="m-registry-tpl"><td><strong>N0 · Recursos</strong></td><td><code>00_Recursos/produccion/</code></td><td><code>component-registry.md</code></td><td><a href="#step-14b">14b</a> <button class="row-see" data-modal="m-registry-tpl">Ver</button></td></tr>
       </tbody>
     </table></div>
   </div>
@@ -5535,7 +5563,7 @@ NO confundir con D-05 NotebookLM gate (verificación externa). Bucle es interno 
       </div>
       <div class="status-card">
         <h4>Confianza</h4>
-        <p><strong>0.97</strong> · timing honesto · curaduría documentada · 34 prompts · feedback loop cerrado</p>
+        <p><strong>0.97</strong> · timing honesto · curaduría documentada · 51 prompts · feedback loop cerrado</p>
       </div>
       <div class="status-card">
         <h4>Documento rector</h4>
@@ -8311,6 +8339,125 @@ CRITERIOS:
 CIERRE: Confianza ≥ 0.9. No archives con árbol sucio ni mesas abiertas.</pre></div>
 </div></div></dialog>
 
+<!-- ========== MODALS · PRODUCCIÓN COMO CÓDIGO (Step 14b) ========== -->
+<dialog class="smodal" id="m-spec-tpl"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">TEMPLATE · Step 14b</span><h3>spec.md · el brief que dirige cada beat</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<p>El documento donde vive tu pensamiento creativo. Cuanto más ajustado, más cerca queda el output de lo que tenías en mente.</p>
+<div class="codebox"><div class="codebox-head"><span class="codebox-name">03_Lab/AAAA-MM-pieza-slug/spec.md</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre># Spec · &lt;título de la pieza&gt;
+
+## Tesis
+[Una frase: qué afirma o entrega esta pieza.]
+
+## Audiencia y formato
+- Para: [quién] · Canal: [dónde] · Duración/extensión: [cuánto]
+
+## Arco
+[El recorrido en 2-3 frases: dónde empieza, qué gira, dónde aterriza.]
+
+## Escenas / secciones
+1. [nombre] — qué pasa · timing/peso · qué se enfatiza · qué queda de fondo
+2. [nombre] — ...
+3. [nombre] — ...
+
+## Restricciones (lo que NO se hace)
+- [regla] · [regla] · [regla]
+
+## Referencias
+- style-guide.md  (la receta visual · capa 3)
+- component-registry.md  (las piezas reutilizables)
+</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-styleguide-tpl"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">TEMPLATE · Step 14b</span><h3>style-guide.md · la receta (decisiones que no cambian)</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<p>Capa 3 del ICM (§4.5 del Playbook): material de referencia estable. Claude lo internaliza como restricción, no como insumo.</p>
+<div class="codebox"><div class="codebox-head"><span class="codebox-name">00_Recursos/produccion/style-guide.md</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre># Guía de estilo · &lt;tu marca&gt;
+
+## Lenguaje visual
+- Tipografía: [..] · Reglas de texto en pantalla: [mínimo · jerarquía]
+- Paleta: [primario] [secundario] [acento] [fondo]
+
+## Movimiento / ritmo
+- Timing de entrada/salida: [ms] · Easing: [..]
+- Qué se anima · qué permanece quieto
+
+## Voz
+- Tono: [..] · Qué evitamos: [muletillas · clichés]
+
+## Reglas duras (no negociables)
+- [regla] · [regla] · [regla]
+</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-registry-tpl"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">TEMPLATE · Step 14b</span><h3>component-registry.md · las piezas reutilizables</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<p>El inventario de bloques ya construidos. Claude compone con estos en vez de inventar desde cero. Crece con cada pieza nueva.</p>
+<div class="codebox"><div class="codebox-head"><span class="codebox-name">00_Recursos/produccion/component-registry.md</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre># Registro de componentes · &lt;proyecto&gt;
+
+| Componente        | Qué hace                         | Inputs           | Notas |
+|-------------------|----------------------------------|------------------|-------|
+| titulo-entrada    | Texto con animación de entrada   | texto, duración  | —     |
+| contenedor-escena | Márgenes seguros + fondo         | hijos            | —     |
+| contador          | Número que cuenta hasta un valor | desde, hasta     | —     |
+| transicion-corte  | Corte entre escenas              | tipo             | —     |
+
+## Cómo añadir
+- Construye la pieza una vez · valídala · regístrala aquí con sus inputs.
+- Regla: si una pieza se usa 2+ veces, va al registro.
+</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-write-spec"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">PROMPT · 4i · Step 14b</span><h3>Escribir el spec antes de construir</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox prompt"><div class="codebox-head"><span class="codebox-name">Prompt P50 · escribir el spec</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre>TÍTULO: Convertir una idea en un spec ajustado (tight brief)
+
+INPUTS:
+- {[idea]}       → texto · requerido · la pieza que quieres, en bruto
+- {[audiencia]}  → texto · requerido · para quién y en qué canal
+- {[formato]}    → texto · requerido · video / deck / reporte / post · duración o extensión
+- {[no_va]}      → texto · default: ninguno · qué NO debe hacer
+
+ROL: Eres mi director creativo. Español, marca sobria. Diriges, no decoras.
+SITUACIÓN: Voy a producir una pieza. Antes de construir, fijamos el brief.
+PEDIDO: Escribe un spec.md ajustado para {[idea]} siguiendo el template del Step 14b.
+
+EJECUCIÓN:
+  1. Destila la tesis en una frase. Si {[idea]} tiene dos tesis, sepáralas o elige.
+  2. Define el arco (inicio · giro · aterrizaje) en 2-3 frases.
+  3. Desglosa 3-6 escenas/secciones con timing/peso y qué se enfatiza.
+  4. Lista restricciones explícitas (incluye {[no_va]}): cada una es un error que evitamos.
+  5. Referencia style-guide.md y component-registry.md.
+
+CRITERIOS:
+  Aceptación: un spec que otra persona (o Claude en otra sesión) podría ejecutar sin preguntarte.
+  Casos borde: si {[idea]} es vaga, hazme 2-3 preguntas de encuadre antes de escribir.
+  Comprobaciones: ¿cada escena dice qué se enfatiza? ¿las restricciones son verificables?
+
+CIERRE: Confianza ≥ 0.9. Un brief ajustado da libertad; uno flojo obliga a Claude a adivinar.</pre></div>
+</div></div></dialog>
+
+<dialog class="smodal" id="m-build-from-spec"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">PROMPT · 3i · Step 14b</span><h3>Construir desde spec + registro</h3></div><button class="modal-close" data-close>×</button></div><div class="modal-body">
+<div class="codebox prompt"><div class="codebox-head"><span class="codebox-name">Prompt P51 · construir desde el spec</span><button class="codebox-copy" data-copy>Copiar</button><button class="codebox-copy" data-download>Descargar</button></div><pre>TÍTULO: Ensamblar la pieza desde el spec, la guía de estilo y el registro
+
+INPUTS:
+- {[spec]}      → ruta · requerido · el spec.md aprobado
+- {[escena]}    → texto · default: todas · qué sección construir primero
+- {[skill]}     → texto · default: remotion · la skill de producción (remotion para video, etc.)
+
+ROL: Eres mi ingeniero de producción. Compones con piezas existentes, no inventas.
+SITUACIÓN: El spec está aprobado. Toca convertirlo en la pieza.
+PEDIDO: Construye {[escena]} a partir de {[spec]}, respetando style-guide.md y component-registry.md.
+
+EJECUCIÓN:
+  1. Lee {[spec]} + style-guide.md (la receta) + component-registry.md (las piezas).
+  2. Para cada escena, ensambla componentes del registro según timing y énfasis del spec.
+  3. Usa la skill {[skill]} para renderizar/previsualizar.
+  4. Si falta un componente, constrúyelo, y proponme registrarlo en component-registry.md.
+
+CRITERIOS:
+  Aceptación: la pieza (o escena) coincide con el spec y respeta la guía de estilo.
+  Casos borde: si el spec y la guía chocan, detente y señálame el conflicto (no improvises).
+  Comprobaciones: ¿respetaste las restricciones del spec? ¿reutilizaste antes de inventar?
+
+CIERRE: Confianza ≥ 0.9. El output es punto de partida, no final: previsualiza y refina en lenguaje natural.</pre></div>
+</div></div></dialog>
+
 <!-- ========== ROW DETAIL MODAL (shared) ========== -->
 <dialog class="smodal" id="row-modal"><div class="modal-card"><div class="modal-head"><div><span class="modal-tag">DETALLE &middot; fila</span><h3 id="row-modal-title">Detalle</h3></div><button class="modal-close" data-close>&times;</button></div><div class="modal-body" id="row-modal-body"></div></div></dialog>
 
@@ -8560,8 +8707,8 @@ CIERRE: Confianza ≥ 0.9. No archives con árbol sucio ni mesas abiertas.</pre>
     <span class="es">"Atrévete a soñar en grande."</span><span class="en">"Dare to dream big."</span>
   </p>
   <p style="max-width:700px;margin:0 auto;font-size:1rem;color:rgba(255,255,255,.78);line-height:1.9;font-family:'Montserrat',sans-serif">
-    <span class="es">Ahora tienes los 21 steps, los 34 prompts SPEC y los 35+ templates. Tu primer prompt está a 1 click de distancia. Y si esos prompts se vuelven cadencia, el Jarvis maduro ya está construyéndose solo.<br><br> <strong style="color:#FFD700">La IA empodera a quien, con método, es capaz de materializar su visión.</strong></span>
-    <span class="en">Now you have the 21 steps, the 34 SPEC prompts and the 35+ templates. Your first prompt is 1 click away. And if those prompts become cadence, the mature Jarvis is already building itself.<br><br> <strong style="color:#FFD700">AI empowers those who, with method, are capable of materializing their vision.</strong></span>
+    <span class="es">Ahora tienes los 30 steps, los 51 prompts SPEC y los 40+ templates. Tu primer prompt está a 1 click de distancia. Y si esos prompts se vuelven cadencia, el Jarvis maduro ya está construyéndose solo.<br><br> <strong style="color:#FFD700">La IA empodera a quien, con método, es capaz de materializar su visión.</strong></span>
+    <span class="en">Now you have the 30 steps, the 51 SPEC prompts and the 40+ templates. Your first prompt is 1 click away. And if those prompts become cadence, the mature Jarvis is already building itself.<br><br> <strong style="color:#FFD700">AI empowers those who, with method, are capable of materializing their vision.</strong></span>
   </p>
   <p style="font-family:'Poppins',sans-serif;font-size:.88rem;color:#FFD700;margin:1.5rem auto 0;font-weight:700">Javier Montaño · CEO, MetodologIA</p>
 </div>
