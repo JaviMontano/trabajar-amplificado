@@ -3,252 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Taller de Intro · sin costo · MetodologIA. Conoce el método sin riesgo en una sesión en vivo: de trabajar más horas a trabajar con un sistema. Método + IA = Soberanía.">
+<meta name="description" content="Deck de clase demo gratuita Introducción al Trabajo Amplificado de MetodologIA.">
 <meta name="author" content="Javier Montaño · MetodologIA">
-<title>Taller de Intro · Sin costo · MetodologIA</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23122562'/%3E%3Cstop offset='100%25' stop-color='%231F2833'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='10' fill='url(%23g)'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
+<title>Introducción al Trabajo Amplificado · Deck</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='10' fill='%23122562'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-:root{
-  --brand-dark:#0a122a; --brand-darker:#070b1a; --brand-surface:#1e293b; --brand-surface-alt:#172033;
-  --brand-gold:#ffd700; --brand-gold-soft:#ffe875; --brand-gold-deep:#b8860b;
-  --brand-text:#f8fafc; --brand-text-soft:#e2e8f0; --brand-muted:#94a3b8;
-  --brand-border:rgba(255,255,255,.08); --brand-border-hover:rgba(255,215,0,.35);
-  --ease:cubic-bezier(.4,0,.2,1); --ease-spring:cubic-bezier(.34,1.56,.64,1); --ease-out-expo:cubic-bezier(.16,1,.3,1);
-  --fh:'Poppins',system-ui,sans-serif; --fb:'Montserrat',system-ui,sans-serif; --fm:'JetBrains Mono',ui-monospace,monospace;
-  --fmeta:'Trebuchet MS','Lucida Grande',system-ui,sans-serif;
-}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;background:var(--brand-dark);color:var(--brand-text);font-family:var(--fb);overflow:hidden}
-body{background-image:radial-gradient(ellipse 60% 45% at 16% 10%,rgba(255,215,0,.07),transparent 55%),radial-gradient(ellipse 55% 50% at 85% 88%,rgba(255,215,0,.05),transparent 55%),radial-gradient(ellipse 50% 60% at 92% 8%,rgba(19,125,197,.08),transparent 50%)}
-h1,h2,h3{font-family:var(--fh);margin:0;line-height:1.06;color:#fff}
-strong{color:#fff}em{color:var(--brand-gold-soft);font-style:normal}
-code{font-family:var(--fm);background:rgba(255,215,0,.1);color:var(--brand-gold-soft);padding:.08em .35em;border-radius:5px;font-size:.92em;border:1px solid rgba(255,215,0,.16)}
-.gtext{background:linear-gradient(135deg,#f8fafc 0%,var(--brand-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.l-en,.l-pt{display:none}
-body.lang-en .l-es{display:none}body.lang-en .l-en{display:inline}body.lang-en .l-pt{display:none}
-body.lang-pt .l-es{display:none}body.lang-pt .l-en{display:none}body.lang-pt .l-pt{display:inline}
-.deck{position:fixed;inset:0;overflow:hidden}
-.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,5.5rem) clamp(1.5rem,7vw,8rem) clamp(5rem,9vh,6.5rem);opacity:0;transform:translateX(48px) scale(.985);pointer-events:none;transition:opacity .55s var(--ease),transform .55s var(--ease-out-expo);overflow:auto}
-.slide.on{opacity:1;transform:none;pointer-events:auto}
-.slide.prev{transform:translateX(-48px) scale(.985)}
-.wrap{max-width:1180px;width:100%;margin:auto 0}
-.eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--fmeta);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.28em;color:var(--brand-gold);margin-bottom:1.4rem}
-.eyebrow::before{content:'';width:22px;height:2px;background:var(--brand-gold);border-radius:2px}
-.chip-hero{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .95rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,215,0,.07));border:1.5px solid var(--brand-gold);color:var(--brand-gold);font-family:var(--fmeta);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 16px rgba(255,215,0,.22);margin-bottom:1.4rem}
-.chip-hero::before{content:'\2605'}
-h1{font-size:clamp(2.5rem,7vw,5.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.0}
-h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
-.lead{font-size:clamp(1.05rem,1.6vw,1.45rem);color:var(--brand-text-soft);max-width:62ch;line-height:1.65;margin-top:1.5rem}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brand-border);border:1px solid var(--brand-border);border-radius:18px;overflow:hidden;margin-top:2.2rem;max-width:880px}
-.stats .cell{background:rgba(23,32,51,.72);padding:1.35rem .8rem;text-align:center}
-.stats .num{font-family:var(--fh);font-weight:900;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--brand-gold);line-height:1}
-.stats .lab{margin-top:.45rem;font-family:var(--fmeta);font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted)}
-.grid{display:grid;gap:1.1rem;margin-top:2rem}
-.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.card{position:relative;background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:18px;padding:1.5rem 1.6rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
-.card:hover{border-color:var(--brand-border-hover);transform:translateY(-4px) scale(1.015);box-shadow:0 15px 35px rgba(0,0,0,.45),0 0 0 1px rgba(255,215,0,.18),0 0 28px rgba(255,215,0,.1)}
-.card.hot{background:radial-gradient(circle at 18% 18%,rgba(255,215,0,.16),transparent 60%),linear-gradient(135deg,rgba(30,41,59,.8),rgba(10,18,42,.8));border-color:rgba(255,215,0,.5)}
-.card h3{font-size:1.2rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.55rem}
-.card p,.card li{color:var(--brand-text-soft);font-size:1rem;line-height:1.55}
-.dot{width:34px;height:34px;border-radius:9px;background:rgba(255,215,0,.12);color:var(--brand-gold);display:inline-flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;flex:0 0 auto;border:1px solid rgba(255,215,0,.3)}
-.bigq{font-family:var(--fh);font-weight:800;font-size:clamp(1.5rem,3.2vw,2.6rem);line-height:1.18;color:#fff}
-.bigq em{color:var(--brand-gold)}
-.anatomy{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
-.node{flex:1 1 180px;min-width:168px;background:rgba(255,255,255,.05);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem;text-align:center;transition:transform .4s var(--ease-spring),border-color .25s}
-.node:hover{transform:translateY(-3px);border-color:var(--brand-border-hover)}
-.node .ico{font-size:1.9rem}.node b{display:block;font-family:var(--fm);margin-top:.4rem;color:var(--brand-gold-soft)}.node span{display:block;font-size:.85rem;color:var(--brand-muted);margin-top:.25rem}
-.arrow{color:var(--brand-gold);font-size:1.7rem;flex:0 0 auto}
-.agenda{display:grid;gap:.5rem;margin-top:1.8rem}
-.agenda .row{display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:baseline;padding:.75rem 0;border-bottom:1px solid var(--brand-border)}
-.agenda .t{font-family:var(--fm);color:var(--brand-gold);font-weight:700}
-.agenda h3{font-size:1.12rem}
-.prompt{background:#060c1f;border:1px solid var(--brand-border);border-radius:16px;overflow:hidden;margin-top:1.7rem;max-width:920px;box-shadow:0 18px 44px rgba(0,0,0,.4)}
-.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,215,0,.05));padding:.65rem .95rem;border-bottom:1px solid var(--brand-border)}
-.prompt-head span{font-family:var(--fm);font-size:.78rem;color:var(--brand-gold)}
-.copy{border:1px solid rgba(255,215,0,.4);background:transparent;color:var(--brand-gold);border-radius:8px;padding:.34rem .75rem;cursor:pointer;font-weight:700;font-size:.78rem;transition:background .2s,color .2s,transform .2s}
-.copy:hover,.copy.ok{background:var(--brand-gold);color:var(--brand-dark);transform:translateY(-1px)}
-.prompt pre{margin:0;padding:1.15rem;white-space:pre-wrap;font-family:var(--fm);font-size:.92rem;line-height:1.6;color:#dbe6ff}
-.callout{background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,215,0,.04));border-left:4px solid var(--brand-gold);border-radius:0 14px 14px 0;padding:1.2rem 1.5rem;margin-top:1.9rem;color:#fff;max-width:64ch;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-.cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.6rem;border-radius:11px;font-family:var(--fh);font-weight:700;text-decoration:none;font-size:1rem;transition:transform .4s var(--ease-spring),box-shadow .4s var(--ease-out-expo)}
-.btn-gold{background:var(--brand-gold);color:var(--brand-dark);box-shadow:0 8px 24px rgba(255,215,0,.3)}
-.btn-gold:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 34px rgba(255,215,0,.4)}
-.btn-ghost{background:transparent;color:var(--brand-gold);border:2px solid rgba(255,215,0,.5)}
-.btn-ghost:hover{background:var(--brand-gold);color:var(--brand-dark)}
-.ladder{display:grid;gap:1rem;margin-top:2rem;grid-template-columns:repeat(3,minmax(0,1fr))}
-.step{position:relative;background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:18px;padding:1.5rem 1.6rem;transition:border-color .25s,transform .5s var(--ease-spring)}
-.step:hover{border-color:var(--brand-border-hover);transform:translateY(-4px)}
-.step.hot{background:radial-gradient(circle at 18% 18%,rgba(255,215,0,.16),transparent 60%),linear-gradient(135deg,rgba(30,41,59,.8),rgba(10,18,42,.8));border-color:rgba(255,215,0,.5)}
-.step .lvl{font-family:var(--fmeta);font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-muted)}
-.step h3{font-size:1.32rem;margin:.4rem 0 .35rem}
-.step .price{font-family:var(--fh);font-weight:900;font-size:1.55rem;color:var(--brand-gold);margin-bottom:.5rem}
-.step p{color:var(--brand-text-soft);font-size:.96rem;line-height:1.5}
-@media(max-width:760px){.ladder{grid-template-columns:1fr}}
-.brandbar{position:absolute;left:clamp(1.5rem,7vw,8rem);bottom:1.45rem;display:flex;align-items:center;gap:.65rem;font-size:.74rem;color:var(--brand-muted);font-family:var(--fh);font-weight:600}
-.brandbar .logo{width:24px;height:24px}.brandbar b{color:#fff}.brandbar .g{color:var(--brand-gold)}
-.brandbar .tag{font-family:var(--fmeta);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-gold-deep);padding-left:.55rem;margin-left:.15rem;border-left:1px solid var(--brand-border)}
-.hud{position:fixed;right:clamp(1rem,4vw,2.4rem);bottom:1.25rem;display:flex;align-items:center;gap:.5rem;z-index:30}
-.navbtn{width:44px;height:44px;border-radius:12px;border:1px solid var(--brand-border);background:rgba(30,41,59,.7);color:var(--brand-gold);cursor:pointer;font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);transition:background .2s,transform .25s var(--ease-spring),box-shadow .2s}
-.navbtn:hover{background:var(--brand-gold);color:var(--brand-dark);transform:translateY(-2px);box-shadow:0 0 18px rgba(255,215,0,.4)}
-.counter{font-family:var(--fm);font-size:.85rem;color:var(--brand-muted);min-width:54px;text-align:center}
-.langbtn{min-width:48px;height:44px;border-radius:12px;border:1px solid rgba(255,215,0,.4);background:rgba(255,215,0,.1);color:var(--brand-gold);cursor:pointer;font-family:var(--fh);font-weight:800;font-size:.82rem;letter-spacing:.05em;padding:0 .7rem;backdrop-filter:blur(10px);transition:background .2s,color .2s}
-.langbtn:hover{background:var(--brand-gold);color:var(--brand-dark)}
-.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand-gold),var(--brand-gold-soft));width:0;z-index:40;transition:width .45s var(--ease-out-expo);box-shadow:0 0 12px rgba(255,215,0,.5)}
-:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:4px}
-@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.anatomy{flex-direction:column}.arrow{transform:rotate(90deg)}.slide{padding:4.5rem 1.3rem 5.5rem}.brandbar .tag{display:none}}
-
-.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
-.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
-body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
-body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
-body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
-body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
-body.theme-light .stats{background:rgba(10,18,42,.12)!important}
-body.theme-light .stats .cell{background:#ffffff!important}
-body.theme-light .slide{color:var(--brand-text)}
-body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
-body.theme-light .btn-ghost{color:#26324a}
-
-body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
-body.theme-light .chip-hero{border-color:#b8860b}
-body.theme-light .pcta .out{color:#26324a!important}
+:root{--navy:#122562;--night:#071426;--deep:#0a122a;--surface:#10264a;--surface-2:#f9fafb;--paper:#fffdf3;--gold:#ffd700;--gold-2:#b8860b;--blue:#137dc5;--ink:#101827;--muted:#5b6677;--soft:#fff8d6;--line:rgba(18,37,98,.14);--dark-line:rgba(255,215,0,.22);--shadow:0 22px 60px rgba(7,20,38,.18);--fh:'Poppins',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--fb);line-height:1.65;background:#f6f8fc;color:var(--ink)}body.theme-dark{background:var(--deep);color:#eaf1ff}a{color:var(--navy);font-weight:800}body.theme-dark a{color:#ffe875}h1,h2,h3{font-family:var(--fh);line-height:1.08;margin:0;color:var(--navy);letter-spacing:0}body.theme-dark h1,body.theme-dark h2,body.theme-dark h3{color:#fff8d6}h1{font-size:clamp(2.25rem,6vw,5.2rem);font-weight:900}h2{font-size:clamp(1.55rem,3.2vw,2.7rem);font-weight:850}h3{font-size:1.08rem}p{margin:.65rem 0 0}.top{position:sticky;top:0;z-index:50;background:rgba(255,253,243,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}body.theme-dark .top{background:rgba(10,18,42,.92);border-color:var(--dark-line)}.top-in{max-width:1180px;margin:auto;padding:.72rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--navy)}body.theme-dark .brand{color:#fff}.logo{width:32px;height:32px;border-radius:9px;background:var(--navy);position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}.logo:before{content:'';position:absolute;left:9px;top:10px;width:4px;height:13px;background:#fff;box-shadow:7px 0 0 #fff,14px 0 0 #fff}.logo:after{content:'';position:absolute;left:16px;top:6px;width:4px;height:4px;border-radius:50%;background:var(--gold)}.brand b{font-family:var(--fh);font-weight:900}.brand b span{color:var(--gold-2)}.nav{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}.nav a,.mini-btn{border:1px solid rgba(18,37,98,.16);background:#fff;color:var(--navy);border-radius:999px;padding:.42rem .75rem;font-size:.78rem;text-decoration:none;font-weight:800;cursor:pointer}body.theme-dark .nav a,body.theme-dark .mini-btn{background:#13294a;color:#ffe875;border-color:rgba(255,215,0,.28)}.hero{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.2),transparent 32%),linear-gradient(135deg,#fff 0%,#f5f7fb 55%,#fff8d6 100%);border-bottom:1px solid var(--line)}body.theme-dark .hero{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 34%),linear-gradient(135deg,#071426 0%,#0a122a 54%,#13294a 100%);border-color:var(--dark-line)}.hero-in{max-width:1180px;margin:auto;padding:4.8rem 1rem 4rem;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:2rem;align-items:center}.kicker{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(255,215,0,.55);background:rgba(255,215,0,.18);color:#7a5d00;border-radius:999px;padding:.4rem .78rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;margin-bottom:1rem}body.theme-dark .kicker{color:#ffd700;background:rgba(255,215,0,.12)}.lead{font-size:1.08rem;color:var(--muted);max-width:70ch}body.theme-dark .lead,body.theme-dark .muted{color:#d7e0ef}.panel,.card,.wide,.note,.prompt,.table-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 28px rgba(18,37,98,.07)}body.theme-dark .panel,body.theme-dark .card,body.theme-dark .wide,body.theme-dark .note,body.theme-dark .table-wrap{background:var(--surface);border-color:var(--dark-line);box-shadow:none}.panel{padding:1.2rem}.wrap{max-width:1180px;margin:auto;padding:3rem 1rem}.section-head{max-width:820px;margin-bottom:1.4rem}.grid{display:grid;gap:1rem}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.card{padding:1.15rem}.card p,.card li,.table-wrap td{font-size:.94rem;color:var(--muted)}body.theme-dark .card p,body.theme-dark .card li,body.theme-dark .table-wrap td{color:#d7e0ef}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}.stat{padding:.9rem;border-radius:12px;background:#f6f8fc;border:1px solid var(--line)}body.theme-dark .stat{background:#071426;border-color:var(--dark-line)}.stat strong{display:block;font-family:var(--fh);font-size:1.8rem;color:var(--navy)}body.theme-dark .stat strong{color:#ffd700}.stat span{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.wide{padding:1.2rem}.timeline{display:grid;gap:.75rem}.time-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:1rem;align-items:start;padding:1rem;border-radius:12px;background:#fff;border:1px solid var(--line)}body.theme-dark .time-row{background:#10264a;border-color:var(--dark-line)}.time{font-family:var(--fm);font-weight:800;color:#8a6500}body.theme-dark .time{color:#ffd700}.note{padding:1rem 1.15rem;border-left:5px solid var(--gold);background:#fffdf3}body.theme-dark .note{background:#13294a}.prompt{background:#071426;color:#eaf1ff;overflow:hidden}.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#13294a;border-bottom:1px solid rgba(255,215,0,.2);padding:.62rem .82rem}.prompt-head span{font-family:var(--fm);font-size:.76rem;color:#ffd700}.copy{border:1px solid rgba(255,215,0,.4);border-radius:8px;background:transparent;color:#ffd700;font-weight:800;padding:.32rem .65rem;cursor:pointer}.copy.ok,.copy:hover{background:#ffd700;color:#071426}pre{margin:0;padding:1rem;white-space:pre-wrap;overflow:auto;font-family:var(--fm);font-size:.84rem;line-height:1.55}.table-wrap{overflow:auto}.table-wrap table{width:100%;border-collapse:collapse;min-width:720px}.table-wrap th{background:var(--navy);color:#ffd700;text-align:left}.table-wrap th,.table-wrap td{padding:.78rem;border-bottom:1px solid var(--line);vertical-align:top}body.theme-dark .table-wrap th,body.theme-dark .table-wrap td{border-color:var(--dark-line)}.field{display:grid;gap:.35rem}.field label{font-weight:900;color:var(--navy)}body.theme-dark .field label{color:#fff8d6}textarea,input,select{width:100%;font:inherit;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:.78rem}body.theme-dark textarea,body.theme-dark input,body.theme-dark select{background:#071426;color:#eaf1ff;border-color:var(--dark-line)}textarea{min-height:96px;resize:vertical}.toolbar{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border:none;border-radius:10px;background:var(--gold);color:#071426;padding:.82rem 1rem;font-family:var(--fh);font-weight:850;text-decoration:none;cursor:pointer}.btn.secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}body.theme-dark .btn.secondary{background:#13294a;color:#ffe875;border-color:var(--dark-line)}.footer{background:#071426;color:#d7e0ef;padding:2rem 1rem}.footer-in{max-width:1180px;margin:auto}.footer strong{color:#ffd700}.l-en,.l-pt{display:none}body.lang-en .l-es,body.lang-en .l-pt{display:none!important}body.lang-en .l-en{display:inline!important}body.lang-pt .l-es,body.lang-pt .l-en{display:none!important}body.lang-pt .l-pt{display:inline!important}body.lang-en .block-en,body.lang-pt .block-pt,body.lang-es .block-es{display:block!important}.block-en,.block-pt{display:none!important}@media(max-width:880px){.hero-in,.g2,.g3,.g4{grid-template-columns:1fr}.nav a:nth-child(n+4){display:none}.time-row{grid-template-columns:1fr}.hero-in{padding-top:3.4rem}.stat-grid{grid-template-columns:1fr}}@media print{.top,.toolbar,.copy{display:none!important}.hero,.footer{background:#fff!important;color:#000!important}.card,.panel,.wide,.note,.table-wrap{box-shadow:none!important}}
+.deck-page{overflow:hidden;background:#071426;color:#eaf1ff}.deck-page .top{display:none}.home-link{position:fixed;top:14px;right:14px;z-index:80;text-decoration:none;border:1px solid rgba(255,215,0,.45);background:#0a122a;color:#ffd700;border-radius:999px;padding:.5rem .85rem;font-family:var(--fh);font-size:.8rem}.deck{position:fixed;inset:0;overflow:hidden}.slide{position:absolute;inset:0;display:flex;align-items:center;padding:clamp(2rem,6vw,5rem) clamp(1.4rem,8vw,8rem) 6rem;opacity:0;visibility:hidden;transform:translateX(40px);transition:opacity .45s ease,transform .45s ease;pointer-events:none;background:radial-gradient(circle at 14% 18%,rgba(255,215,0,.14),transparent 32%),linear-gradient(135deg,#071426,#0a122a 55%,#13294a)}.slide.on{opacity:1;visibility:visible;transform:none;pointer-events:auto}.slide.prev{transform:translateX(-40px)}.slide-wrap{max-width:1060px}.slide-kicker{display:inline-flex;margin-bottom:1.1rem;color:#ffd700;font-weight:900;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem}.slide h1{font-size:clamp(2.4rem,7vw,5.8rem);color:#fff8d6}.slide-lead{font-size:clamp(1.1rem,2vw,1.55rem);max-width:760px;color:#d7e0ef;line-height:1.6;margin-top:1.3rem}.slide-note{margin-top:2rem;display:inline-flex;border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.12);color:#ffd700;border-radius:999px;padding:.7rem 1rem;font-weight:900}.brandbar{position:fixed;left:clamp(1rem,4vw,3rem);bottom:1.1rem;z-index:70;display:flex;gap:.55rem;align-items:center;color:#d7e0ef;font-weight:800}.brandbar .logo{width:26px;height:26px}.brandbar b span{color:#ffd700}.hud{position:fixed;right:clamp(1rem,4vw,3rem);bottom:1rem;z-index:70;display:flex;align-items:center;gap:.5rem}.navbtn{width:46px;height:46px;border:1px solid rgba(255,215,0,.32);border-radius:12px;background:#13294a;color:#ffd700;font-size:1.4rem;cursor:pointer}.navbtn:hover{background:#ffd700;color:#071426}.counter{font-family:var(--fm);color:#d7e0ef;min-width:72px;text-align:center}.deck-progress{position:fixed;top:0;left:0;height:4px;background:#ffd700;width:0;z-index:90;transition:width .3s}.deck-page.theme-light .slide{background:radial-gradient(circle at 14% 18%,rgba(255,215,0,.2),transparent 32%),linear-gradient(135deg,#fff,#f3f6fb 60%,#fff8d6)}.deck-page.theme-light .slide h1{color:#122562}.deck-page.theme-light .slide-lead{color:#26324a}.deck-page.theme-light .brandbar,.deck-page.theme-light .counter{color:#122562}@media(max-width:760px){.slide{padding:4rem 1.25rem 6.2rem}.brandbar span:last-child{display:none}}
 </style>
 </head>
-<body class="lang-es">
-<a href="index.html" id="ta-home" style="position:fixed;top:12px;right:12px;z-index:99999;display:inline-flex;gap:.45rem;align-items:center;padding:.42rem .8rem;border-radius:999px;background:#0a122a;color:#ffd700;border:1.5px solid #ffd700;font:700 12px/1 'Poppins',system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45)">&#8617; Inicio<span style="opacity:.6;font-weight:600"> · Home</span></a>
-<div class="progress" id="progress"></div>
-<div class="deck" id="deck">
-
-  <!-- 1 COVER -->
-  <section class="slide on"><div class="wrap">
-    <span class="chip-hero"><span class="l-es">Taller de Intro · Sin costo</span><span class="l-en">Intro Workshop · No cost</span><span class="l-pt">Oficina de Intro · Sem custo</span></span>
-    <h1><span class="l-es">Conoce el método, <span class="gtext">sin riesgo</span></span><span class="l-en">Meet the method, <span class="gtext">no risk</span></span><span class="l-pt">Conheça o método, <span class="gtext">sem risco</span></span></h1>
-    <p class="lead"><span class="l-es">1 sesión en vivo · sin costo · sin cuenta de pago. Ven a ver de qué se trata antes de comprometer nada.</span><span class="l-en">1 live session · no cost · no paid account. Come see what it is about before committing to anything.</span><span class="l-pt">1 sessão ao vivo · sem custo · sem conta paga. Venha ver do que se trata antes de comprometer nada.</span></p>
-    <div class="stats">
-      <div class="cell"><div class="num">1</div><div class="lab"><span class="l-es">sesión en vivo</span><span class="l-en">live session</span><span class="l-pt">sessão ao vivo</span></div></div>
-      <div class="cell"><div class="num">$0</div><div class="lab"><span class="l-es">costo de entrada</span><span class="l-en">entry cost</span><span class="l-pt">custo de entrada</span></div></div>
-      <div class="cell"><div class="num">0</div><div class="lab"><span class="l-es">cuenta de pago</span><span class="l-en">paid account</span><span class="l-pt">conta paga</span></div></div>
-      <div class="cell"><div class="num">1</div><div class="lab"><span class="l-es">caso real en vivo</span><span class="l-en">real live case</span><span class="l-pt">caso real ao vivo</span></div></div>
-    </div>
-  </div></section>
-
-  <!-- 2 EL PROBLEMA -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">El problema</span><span class="l-en">The problem</span><span class="l-pt">O problema</span></span>
-    <h2><span class="l-es">Trabajar más horas <span class="gtext">dejó de escalar</span></span><span class="l-en">Working more hours <span class="gtext">stopped scaling</span></span><span class="l-pt">Trabalhar mais horas <span class="gtext">deixou de escalar</span></span></h2>
-    <p class="lead"><span class="l-es">El día se llena de tareas repetitivas: re-explicar tu contexto, rehacer el mismo informe, perseguir lo de siempre. Sumas horas y avanzas menos. El problema no es tu esfuerzo: es que cada vez que abres una herramienta empiezas desde cero.</span><span class="l-en">The day fills up with repetitive tasks: re-explaining your context, redoing the same report, chasing the usual things. You add hours and move less. The problem is not your effort: it is that every time you open a tool you start from zero.</span><span class="l-pt">O dia se enche de tarefas repetitivas: reexplicar seu contexto, refazer o mesmo relatório, perseguir o de sempre. Você soma horas e avança menos. O problema não é seu esforço: é que cada vez que abre uma ferramenta começa do zero.</span></p>
-  </div></section>
-
-  <!-- 3 LA IDEA -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">La idea</span><span class="l-en">The idea</span><span class="l-pt">A ideia</span></span>
-    <h2 style="font-size:clamp(2rem,5vw,3.8rem)"><span class="gtext">Método + IA = Soberanía</span></h2>
-    <p class="lead"><span class="l-es">La diferencia no es tener una IA más potente. Es poner tu <strong>contexto por escrito</strong>: quién eres, qué haces, tus reglas. Cuando tu contexto vive en archivos tuyos, la IA empieza a entender tu trabajo de verdad, sesión tras sesión. El método va primero; la IA después.</span><span class="l-en">The difference is not having a more powerful AI. It is putting your <strong>context in writing</strong>: who you are, what you do, your rules. When your context lives in your own files, the AI starts to truly understand your work, session after session. Method comes first; AI next.</span><span class="l-pt">A diferença não é ter uma IA mais potente. É colocar seu <strong>contexto por escrito</strong>: quem você é, o que faz, suas regras. Quando seu contexto vive em arquivos seus, a IA começa a entender seu trabalho de verdade, sessão após sessão. O método vem primeiro; a IA depois.</span></p>
-  </div></section>
-
-  <!-- 4 QUÉ ES COWORK -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">En una frase</span><span class="l-en">In one sentence</span><span class="l-pt">Em uma frase</span></span>
-    <h2><span class="l-es">¿Qué es <span class="gtext">Claude Cowork</span>?</span><span class="l-en">What is <span class="gtext">Claude Cowork</span>?</span><span class="l-pt">O que é o <span class="gtext">Claude Cowork</span>?</span></h2>
-    <p class="lead"><span class="l-es">Es un asistente de IA que, además de conversar, lee y escribe en una carpeta tuya y recuerda tu contexto entre sesiones. En vez de un chat con amnesia, tienes un escritorio que ya sabe quién eres. Sin programar.</span><span class="l-en">It is an AI assistant that, besides chatting, reads and writes in your own folder and remembers your context across sessions. Instead of a chat with amnesia, you get a desk that already knows who you are. No coding.</span><span class="l-pt">É um assistente de IA que, além de conversar, lê e escreve em uma pasta sua e lembra seu contexto entre sessões. Em vez de um chat com amnésia, você tem uma mesa que já sabe quem você é. Sem programar.</span></p>
-  </div></section>
-
-  <!-- 5 DEMO EN VIVO -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">Demo en vivo</span><span class="l-en">Live demo</span><span class="l-pt">Demo ao vivo</span></span>
-    <h2><span class="l-es">Un caso real, <span class="gtext">paso a paso</span></span><span class="l-en">A real case, <span class="gtext">step by step</span></span><span class="l-pt">Um caso real, <span class="gtext">passo a passo</span></span></h2>
-    <p class="lead"><span class="l-es">No vas a ver diapositivas teóricas. Vas a ver un caso real de un manager resuelto en vivo: cómo se monta el contexto y cómo la IA prepara una reunión 1:1 con tu información, frente a tus ojos.</span><span class="l-en">You will not see theory slides. You will see a real manager case solved live: how the context is set up and how the AI prepares a 1:1 meeting with your information, before your eyes.</span><span class="l-pt">Você não vai ver slides teóricos. Vai ver um caso real de um manager resolvido ao vivo: como se monta o contexto e como a IA prepara uma reunião 1:1 com sua informação, diante dos seus olhos.</span></p>
-    <div class="grid g3">
-      <div class="card"><h3><span class="dot">1</span><span class="l-es">El contexto</span><span class="l-en">The context</span><span class="l-pt">O contexto</span></h3><p><span class="l-es">Quién es, qué lidera, qué reglas aplica.</span><span class="l-en">Who they are, what they lead, which rules apply.</span><span class="l-pt">Quem é, o que lidera, quais regras aplica.</span></p></div>
-      <div class="card hot"><h3><span class="dot">2</span><span class="l-es">El trabajo</span><span class="l-en">The work</span><span class="l-pt">O trabalho</span></h3><p><span class="l-es">La IA prepara la reunión 1:1 con ese contexto.</span><span class="l-en">The AI prepares the 1:1 meeting with that context.</span><span class="l-pt">A IA prepara a reunião 1:1 com esse contexto.</span></p></div>
-      <div class="card"><h3><span class="dot">3</span><span class="l-es">El criterio</span><span class="l-en">The judgment</span><span class="l-pt">O critério</span></h3><p><span class="l-es">La persona decide; la IA no reemplaza el criterio.</span><span class="l-en">The person decides; the AI does not replace judgment.</span><span class="l-pt">A pessoa decide; a IA não substitui o critério.</span></p></div>
-    </div>
-  </div></section>
-
-  <!-- 6 QUÉ TE LLEVAS -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">Qué te llevas</span><span class="l-en">What you take home</span><span class="l-pt">O que você leva</span></span>
-    <h2><span class="l-es">Sales con <span class="gtext">claridad y una ruta</span></span><span class="l-en">You leave with <span class="gtext">clarity and a path</span></span><span class="l-pt">Você sai com <span class="gtext">clareza e uma rota</span></span></h2>
-    <div class="grid g2">
-      <div class="card"><h3><span class="l-es">Claridad del método</span><span class="l-en">Clarity on the method</span><span class="l-pt">Clareza do método</span></h3><p><span class="l-es">Entiendes por qué el contexto por escrito cambia todo, y cómo se ve aplicado a un caso real. Dejas de adivinar qué es esto de la IA con sistema.</span><span class="l-en">You understand why context in writing changes everything, and how it looks applied to a real case. You stop guessing what this AI-with-a-system thing is.</span><span class="l-pt">Você entende por que o contexto por escrito muda tudo, e como fica aplicado a um caso real. Para de adivinhar o que é essa IA com sistema.</span></p></div>
-      <div class="card"><h3><span class="l-es">Una ruta para seguir</span><span class="l-en">A path to continue</span><span class="l-pt">Uma rota para seguir</span></h3><p><span class="l-es">Sabes exactamente cuál es el siguiente paso si quieres montar tu propio sistema: qué talleres existen y qué te dan. Sin presión, con todo claro.</span><span class="l-en">You know exactly what the next step is if you want to build your own system: which workshops exist and what they give you. No pressure, all clear.</span><span class="l-pt">Você sabe exatamente qual é o próximo passo se quiser montar seu próprio sistema: quais oficinas existem e o que dão. Sem pressão, tudo claro.</span></p></div>
-    </div>
-  </div></section>
-
-  <!-- 7 LA RUTA (ladder) -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">La ruta</span><span class="l-en">The path</span><span class="l-pt">A rota</span></span>
-    <h2><span class="l-es">De sin costo a <span class="gtext">sistema completo</span></span><span class="l-en">From no cost to <span class="gtext">a full system</span></span><span class="l-pt">De sem custo a <span class="gtext">sistema completo</span></span></h2>
-    <div class="ladder">
-      <div class="step hot"><div class="lvl"><span class="l-es">Paso 1 · estás aquí</span><span class="l-en">Step 1 · you are here</span><span class="l-pt">Passo 1 · você está aqui</span></div><h3><span class="l-es">Intro</span><span class="l-en">Intro</span><span class="l-pt">Intro</span></h3><div class="price"><span class="l-es">Sin costo</span><span class="l-en">No cost</span><span class="l-pt">Sem custo</span></div><p><span class="l-es">1 sesión en vivo. Conoce el método sin riesgo ni cuenta de pago.</span><span class="l-en">1 live session. Meet the method with no risk and no paid account.</span><span class="l-pt">1 sessão ao vivo. Conheça o método sem risco nem conta paga.</span></p></div>
-      <div class="step"><div class="lvl"><span class="l-es">Paso 2</span><span class="l-en">Step 2</span><span class="l-pt">Passo 2</span></div><h3><span class="l-es">2 talleres</span><span class="l-en">2 workshops</span><span class="l-pt">2 oficinas</span></h3><div class="price">$160.000 COP ($40 USD) <span style="font-size:.7rem;color:var(--brand-muted)"><span class="l-es">c/u · 2h</span><span class="l-en">each · 2h</span><span class="l-pt">cada · 2h</span></span></div><p><span class="l-es">Práctica guiada. Montas tu propio sistema, paso a paso.</span><span class="l-en">Guided practice. You build your own system, step by step.</span><span class="l-pt">Prática guiada. Você monta seu próprio sistema, passo a passo.</span></p></div>
-      <div class="step"><div class="lvl"><span class="l-es">Paso 3</span><span class="l-en">Step 3</span><span class="l-pt">Passo 3</span></div><h3><span class="l-es">Bootcamp</span><span class="l-en">Bootcamp</span><span class="l-pt">Bootcamp</span></h3><div class="price">$960.000 COP ($240 USD)</div><p><span class="l-es">Inmersión completa. Tu Jarvis OS funcionando de punta a punta.</span><span class="l-en">Full immersion. Your Jarvis OS running end to end.</span><span class="l-pt">Imersão completa. Seu Jarvis OS funcionando de ponta a ponta.</span></p></div>
-    </div>
-  </div></section>
-
-  <!-- 8 PARA QUIÉN -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">Para quién</span><span class="l-en">Who it is for</span><span class="l-pt">Para quem</span></span>
-    <h2><span class="l-es">Para quien <span class="gtext">decide y coordina</span></span><span class="l-en">For those who <span class="gtext">decide and coordinate</span></span><span class="l-pt">Para quem <span class="gtext">decide e coordena</span></span></h2>
-    <div class="grid g3">
-      <div class="card"><h3><span class="l-es">Managers</span><span class="l-en">Managers</span><span class="l-pt">Gestores</span></h3><p><span class="l-es">Líderes de equipo que viven en reuniones, informes y seguimientos.</span><span class="l-en">Team leaders living in meetings, reports and follow-ups.</span><span class="l-pt">Líderes de equipe que vivem em reuniões, relatórios e acompanhamentos.</span></p></div>
-      <div class="card"><h3><span class="l-es">Líderes</span><span class="l-en">Leaders</span><span class="l-pt">Líderes</span></h3><p><span class="l-es">Quien coordina personas y decisiones, no solo tareas.</span><span class="l-en">Those who coordinate people and decisions, not just tasks.</span><span class="l-pt">Quem coordena pessoas e decisões, não só tarefas.</span></p></div>
-      <div class="card"><h3><span class="l-es">Profesionales del conocimiento</span><span class="l-en">Knowledge workers</span><span class="l-pt">Profissionais do conhecimento</span></h3><p><span class="l-es">Quien trabaja con información y criterio cada día.</span><span class="l-en">Anyone working with information and judgment every day.</span><span class="l-pt">Quem trabalha com informação e critério todos os dias.</span></p></div>
-    </div>
-    <p class="lead"><span class="l-es">Sin saber programar. Si usas correo y documentos, ya tienes todo lo que necesitas para empezar.</span><span class="l-en">No coding required. If you use email and documents, you already have everything you need to start.</span><span class="l-pt">Sem saber programar. Se você usa e-mail e documentos, já tem tudo o que precisa para começar.</span></p>
-  </div></section>
-
-  <!-- 9 REQUISITOS -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">Requisitos</span><span class="l-en">Requirements</span><span class="l-pt">Requisitos</span></span>
-    <h2><span class="l-es">Para el intro: <span class="gtext">ninguno de pago</span></span><span class="l-en">For the intro: <span class="gtext">nothing paid</span></span><span class="l-pt">Para o intro: <span class="gtext">nada pago</span></span></h2>
-    <div class="grid g2">
-      <div class="card hot"><h3><span class="l-es">Taller de intro</span><span class="l-en">Intro workshop</span><span class="l-pt">Oficina de intro</span></h3><p><span class="l-es">Ningún requisito de pago. Solo tu atención y ganas de ver el método en acción. Llegas, miras, decides.</span><span class="l-en">No paid requirement. Just your attention and curiosity to see the method in action. You show up, watch, decide.</span><span class="l-pt">Nenhum requisito pago. Só sua atenção e vontade de ver o método em ação. Você chega, assiste, decide.</span></p></div>
-      <div class="card"><h3><span class="l-es">Talleres y bootcamp</span><span class="l-en">Workshops and bootcamp</span><span class="l-pt">Oficinas e bootcamp</span></h3><p><span class="l-es">Para practicar de verdad necesitas una cuenta Claude de pago (desde $20/mes). Eso lo decides después del intro, con todo claro.</span><span class="l-en">To really practice you need a paid Claude account (from $20/month). You decide that after the intro, with everything clear.</span><span class="l-pt">Para praticar de verdade você precisa de uma conta Claude paga (a partir de $20/mês). Isso você decide após o intro, com tudo claro.</span></p></div>
-    </div>
-  </div></section>
-
-  <!-- 10 CIERRE + CTA -->
-  <section class="slide"><div class="wrap">
-    <span class="eyebrow"><span class="l-es">Cierre</span><span class="l-en">Close</span><span class="l-pt">Encerramento</span></span>
-    <h1><span class="l-es">Inscríbete <span class="gtext">sin costo</span></span><span class="l-en">Sign up <span class="gtext">no cost</span></span><span class="l-pt">Inscreva-se <span class="gtext">sem custo</span></span></h1>
-    <p class="lead"><span class="l-es">Una sesión, sin costo, sin cuenta de pago. Ven a ver el método antes de decidir nada. Si te sirve, la ruta está lista para ti.</span><span class="l-en">One session, no cost, no paid account. Come see the method before deciding anything. If it works for you, the path is ready.</span><span class="l-pt">Uma sessão, sem custo, sem conta paga. Venha ver o método antes de decidir nada. Se servir para você, a rota está pronta.</span></p>
-    <div class="cta">
-      <a class="btn btn-gold" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete sin costo →</span><span class="l-en">Sign up no cost →</span><span class="l-pt">Inscreva-se sem custo →</span></a>
-      <a class="btn btn-ghost" href="https://metodologia.info" target="_blank" rel="noopener">metodologia.info</a>
-    </div>
-  </div></section>
-
-</div>
-
-<div class="brandbar"><svg class="logo" viewBox="0 0 36 36"><rect width="36" height="36" rx="9" fill="#122562"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg><b>Metodolog<span class="g">IA</span></b> · Jarvis OS · <span class="l-es">Taller de Intro</span><span class="l-en">Intro Workshop</span><span class="l-pt">Oficina de Intro</span><span class="tag">Método + IA = Soberanía</span></div>
+<body class="lang-es theme-dark deck-page">
+<a class="home-link" href="index.html">↩ Inicio</a>
+<div class="deck-progress" id="progress"></div>
+<main class="deck" id="deck">
+<section class="slide on" aria-hidden="false">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Taller gratuito · clase demo</span><span class="l-en">Free workshop · demo class</span><span class="l-pt">Workshop gratuito · aula demo</span></span>
+    <h1><span class="l-es">Introducción al Trabajo Amplificado</span><span class="l-en">Introduction to Amplified Work</span><span class="l-pt">Introdução ao Trabalho Amplificado</span></h1>
+    <p class="slide-lead"><span class="l-es">En esta demo no montas un Jarvis completo. Aprendes a convertir una fricción laboral real en una herramienta candidata verificable.</span><span class="l-en">In this demo you do not build a full Jarvis. You learn to turn real work friction into a verifiable candidate tool.</span><span class="l-pt">Nesta demo você não monta um Jarvis completo. Aprende a transformar uma fricção laboral real em uma ferramenta candidata verificável.</span></p>
+    <div class="slide-note"><span class="l-es">1 fricción · 1 ruta · 1 herramienta · 1 prueba mínima</span><span class="l-en">1 friction · 1 route · 1 tool · 1 minimum test</span><span class="l-pt">1 fricção · 1 rota · 1 ferramenta · 1 teste mínimo</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">El mito</span><span class="l-en">The myth</span><span class="l-pt">O mito</span></span>
+    <h1><span class="l-es">La IA no te vuelve mejor por responder más rápido</span><span class="l-en">AI does not make you better by answering faster</span><span class="l-pt">A IA não te torna melhor por responder mais rápido</span></h1>
+    <p class="slide-lead"><span class="l-es">La productividad visible puede esconder rendición cognitiva. Si la IA piensa por ti, pierdes criterio justo cuando más lo necesitas.</span><span class="l-en">Visible productivity can hide cognitive surrender. If AI thinks for you, you lose judgment exactly when you need it most.</span><span class="l-pt">A produtividade visível pode esconder rendição cognitiva. Se a IA pensa por você, você perde julgamento quando mais precisa dele.</span></p>
+    <div class="slide-note"><span class="l-es">Velocidad sin juicio = deuda de método</span><span class="l-en">Speed without judgment = method debt</span><span class="l-pt">Velocidade sem julgamento = dívida de método</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">La tesis</span><span class="l-en">The thesis</span><span class="l-pt">A tese</span></span>
+    <h1><span class="l-es">Trabajo amplificado = agencia observable</span><span class="l-en">Amplified work = observable agency</span><span class="l-pt">Trabalho amplificado = agência observável</span></h1>
+    <p class="slide-lead"><span class="l-es">La persona conserva objetivo, juicio, autoría y responsabilidad. La IA reduce fricción, estructura pensamiento y acelera práctica.</span><span class="l-en">The person keeps goal, judgment, authorship and responsibility. AI reduces friction, structures thinking and accelerates practice.</span><span class="l-pt">A pessoa conserva objetivo, julgamento, autoria e responsabilidade. A IA reduz fricção, estrutura pensamento e acelera prática.</span></p>
+    <div class="slide-note"><span class="l-es">La decisión final vuelve a ti</span><span class="l-en">The final decision returns to you</span><span class="l-pt">A decisão final volta para você</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Contrato</span><span class="l-en">Contract</span><span class="l-pt">Contrato</span></span>
+    <h1><span class="l-es">Antes de producir, declara el límite</span><span class="l-en">Before producing, state the limit</span><span class="l-pt">Antes de produzir, declare o limite</span></h1>
+    <p class="slide-lead"><span class="l-es">Todo output debe tener objetivo, contexto, criterio de calidad, límite y evidencia disponible. Si falta evidencia, se nombra la brecha.</span><span class="l-en">Every output needs goal, context, quality criteria, limits and available evidence. If evidence is missing, name the gap.</span><span class="l-pt">Todo output precisa de objetivo, contexto, critério de qualidade, limite e evidência disponível. Se falta evidência, nomeie a lacuna.</span></p>
+    <div class="slide-note"><span class="l-es">No convertir hipótesis en certeza</span><span class="l-en">Do not turn hypotheses into certainty</span><span class="l-pt">Não transforme hipótese em certeza</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Diagnóstico</span><span class="l-en">Diagnosis</span><span class="l-pt">Diagnóstico</span></span>
+    <h1><span class="l-es">Nombra la fricción real</span><span class="l-en">Name the real friction</span><span class="l-pt">Nomeie a fricção real</span></h1>
+    <p class="slide-lead"><span class="l-es">¿Falta claridad, sobran opciones, falta evidencia, hay deuda de método, baja energía o miedo al error?</span><span class="l-en">Is it missing clarity, too many options, missing evidence, method debt, low energy or fear of error?</span><span class="l-pt">Falta clareza, sobram opções, falta evidência, há dívida de método, baixa energia ou medo do erro?</span></p>
+    <div class="slide-note"><span class="l-es">Problema bien nombrado > prompt elegante</span><span class="l-en">Well-named problem > elegant prompt</span><span class="l-pt">Problema bem nomeado > prompt elegante</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Router</span><span class="l-en">Router</span><span class="l-pt">Router</span></span>
+    <h1><span class="l-es">Elige una ruta primaria</span><span class="l-en">Choose a primary route</span><span class="l-pt">Escolha uma rota primária</span></h1>
+    <p class="slide-lead"><span class="l-es">Decidir, aprender, practicar, construir, evaluar o reparar. En la intro no se aplican todas: se elige una por riesgo y resultado esperado.</span><span class="l-en">Decide, learn, practice, build, evaluate or repair. In the intro you do not apply all of them: choose one by risk and expected result.</span><span class="l-pt">Decidir, aprender, praticar, construir, avaliar ou reparar. Na introdução não se aplicam todas: escolha uma por risco e resultado esperado.</span></p>
+    <div class="slide-note"><span class="l-es">Una ruta primaria</span><span class="l-en">One primary route</span><span class="l-pt">Uma rota primária</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker">Demo</span>
+    <h1><span class="l-es">Antipatrón: decide por mí</span><span class="l-en">Anti-pattern: decide for me</span><span class="l-pt">Antipadrão: decida por mim</span></h1>
+    <p class="slide-lead"><span class="l-es">Pedir una decisión delega responsabilidad. La IA puede sonar segura sin tener evidencia ni conocer tus valores.</span><span class="l-en">Asking for a decision delegates responsibility. AI may sound confident without evidence or your values.</span><span class="l-pt">Pedir uma decisão delega responsabilidade. A IA pode soar segura sem evidência nem conhecer seus valores.</span></p>
+    <div class="slide-note"><span class="l-es">No delegar decisiones de riesgo</span><span class="l-en">Do not delegate risky decisions</span><span class="l-pt">Não delegue decisões de risco</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker">Demo</span>
+    <h1><span class="l-es">Forma amplificada: decisión no vinculante</span><span class="l-en">Amplified form: non-binding decision</span><span class="l-pt">Forma amplificada: decisão não vinculante</span></h1>
+    <p class="slide-lead"><span class="l-es">La IA separa criterios, opciones, tradeoffs, riesgos y abort criteria. Luego devuelve una recomendación no vinculante y la decisión humana pendiente.</span><span class="l-en">AI separates criteria, options, tradeoffs, risks and abort criteria. Then it returns a non-binding recommendation and the pending human decision.</span><span class="l-pt">A IA separa critérios, opções, tradeoffs, riscos e abort criteria. Depois devolve uma recomendação não vinculante e a decisão humana pendente.</span></p>
+    <div class="slide-note"><span class="l-es">Criterio visible</span><span class="l-en">Visible criteria</span><span class="l-pt">Critério visível</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker">Workbook</span>
+    <h1><span class="l-es">De output a herramienta candidata</span><span class="l-en">From output to candidate tool</span><span class="l-pt">De output a ferramenta candidata</span></h1>
+    <p class="slide-lead"><span class="l-es">El resultado de clase debe ser pequeño y reusable: checklist, SOP, plantilla, rúbrica, bitácora o prompt. No una respuesta final.</span><span class="l-en">Class output should be small and reusable: checklist, SOP, template, rubric, logbook or prompt. Not a final answer.</span><span class="l-pt">O resultado da aula deve ser pequeno e reutilizável: checklist, SOP, modelo, rubrica, diário ou prompt. Não uma resposta final.</span></p>
+    <div class="slide-note"><span class="l-es">Método antes que output</span><span class="l-en">Method before output</span><span class="l-pt">Método antes do output</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker">P/A/T/J/E</span>
+    <h1><span class="l-es">La rúbrica mínima</span><span class="l-en">The minimum rubric</span><span class="l-pt">A rubrica mínima</span></h1>
+    <p class="slide-lead"><span class="l-es">Propósito: qué busco. Agencia: qué decido. Transferencia: cómo lo reutilizo. Juicio: qué riesgos veo. Evidencia: qué probé.</span><span class="l-en">Purpose: what I seek. Agency: what I decide. Transfer: how I reuse it. Judgment: which risks I see. Evidence: what I tested.</span><span class="l-pt">Propósito: o que busco. Agência: o que decido. Transferência: como reutilizo. Julgamento: quais riscos vejo. Evidência: o que testei.</span></p>
+    <div class="slide-note"><span class="l-es">Cinco preguntas de control</span><span class="l-en">Five control questions</span><span class="l-pt">Cinco perguntas de controle</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Prueba mínima</span><span class="l-en">Minimum test</span><span class="l-pt">Teste mínimo</span></span>
+    <h1><span class="l-es">Candidate no es validated</span><span class="l-en">Candidate is not validated</span><span class="l-pt">Candidate não é validated</span></h1>
+    <p class="slide-lead"><span class="l-es">Si solo tienes una buena explicación, no hay validación. Una versión candidate declara cómo se probó, qué falta y qué sigue incierto.</span><span class="l-en">If you only have a good explanation, there is no validation. A candidate version states how it was tested, what is missing and what remains uncertain.</span><span class="l-pt">Se você só tem uma boa explicação, não há validação. Uma versão candidate declara como foi testada, o que falta e o que segue incerto.</span></p>
+    <div class="slide-note"><span class="l-es">Evidencia proporcional</span><span class="l-en">Proportional evidence</span><span class="l-pt">Evidência proporcional</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Ejercicio en vivo</span><span class="l-en">Live exercise</span><span class="l-pt">Exercício ao vivo</span></span>
+    <h1><span class="l-es">Tu fricción en 8 minutos</span><span class="l-en">Your friction in 8 minutes</span><span class="l-pt">Sua fricção em 8 minutos</span></h1>
+    <p class="slide-lead"><span class="l-es">Escribe una fricción laboral actual, elige una ruta primaria y define qué herramienta candidata sería útil esta semana.</span><span class="l-en">Write a current work friction, choose one primary route and define which candidate tool would be useful this week.</span><span class="l-pt">Escreva uma fricção laboral atual, escolha uma rota primária e defina qual ferramenta candidata seria útil esta semana.</span></p>
+    <div class="slide-note"><span class="l-es">Bajo riesgo, caso real</span><span class="l-en">Low risk, real case</span><span class="l-pt">Baixo risco, caso real</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Puente</span><span class="l-en">Bridge</span><span class="l-pt">Ponte</span></span>
+    <h1><span class="l-es">Qué sigue después de la intro</span><span class="l-en">What comes after the intro</span><span class="l-pt">O que vem depois da intro</span></h1>
+    <p class="slide-lead"><span class="l-es">Talleres: prompting y automatización. Bootcamp: práctica, repetición, evaluación y transferencia hasta tener sistema propio.</span><span class="l-en">Workshops: prompting and automation. Bootcamp: practice, repetition, evaluation and transfer until you have your own system.</span><span class="l-pt">Workshops: prompting e automação. Bootcamp: prática, repetição, avaliação e transferência até ter seu próprio sistema.</span></p>
+    <div class="slide-note"><span class="l-es">La intro abre la puerta</span><span class="l-en">The intro opens the door</span><span class="l-pt">A intro abre a porta</span></div>
+  </div>
+</section>
+<section class="slide" aria-hidden="true">
+  <div class="slide-wrap">
+    <span class="slide-kicker"><span class="l-es">Cierre</span><span class="l-en">Close</span><span class="l-pt">Fechamento</span></span>
+    <h1><span class="l-es">No saliste con magia. Saliste con método.</span><span class="l-en">You did not leave with magic. You left with method.</span><span class="l-pt">Você não saiu com magia. Saiu com método.</span></h1>
+    <p class="slide-lead"><span class="l-es">Si puedes explicar tu criterio, reutilizar tu herramienta y nombrar la brecha de evidencia, ya empezaste a trabajar amplificado.</span><span class="l-en">If you can explain your criteria, reuse your tool and name the evidence gap, you have started amplified work.</span><span class="l-pt">Se consegue explicar seu critério, reutilizar sua ferramenta e nomear a lacuna de evidência, você começou a trabalhar amplificado.</span></p>
+    <div class="slide-note"><span class="l-es">Método primero, (Gen)IA después</span><span class="l-en">Method first, (Gen)AI after</span><span class="l-pt">Método primeiro, (Gen)IA depois</span></div>
+  </div>
+</section>
+</main>
+<div class="brandbar"><span class="logo" aria-hidden="true"></span><b>Metodolog<span>IA</span></b><span>Introducción al Trabajo Amplificado</span></div>
 <div class="hud">
-  <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
+  <button class="mini-btn" type="button" id="themeDeck">☾</button>
+  <button class="mini-btn" type="button" data-lang-toggle><span data-lang-current>ES</span></button>
   <button class="navbtn" id="prev" aria-label="Anterior">‹</button>
-  <span class="counter" id="counter">1 / 10</span>
+  <span class="counter" id="counter">1 / 14</span>
   <button class="navbtn" id="next" aria-label="Siguiente">›</button>
 </div>
 <script>
 (function(){
-  var slides=[].slice.call(document.querySelectorAll('.slide'));
-  var i=0, n=slides.length;
-  var counter=document.getElementById('counter'), prog=document.getElementById('progress');
-  function show(k){k=Math.max(0,Math.min(n-1,k));slides.forEach(function(s,idx){s.classList.remove('on','prev');if(idx<k)s.classList.add('prev');});slides[k].classList.add('on');i=k;counter.textContent=(k+1)+' / '+n;prog.style.width=((k+1)/n*100)+'%';slides[k].scrollTop=0;}
-  function next(){show(i+1);} function prev(){show(i-1);}
-  document.getElementById('next').onclick=next; document.getElementById('prev').onclick=prev;
-  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
-  var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;},{passive:true});
-  var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
-  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
-  btn.onclick=function(){setLang(li+1);};
-  document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var pre=b.closest('.prompt').querySelector('pre');var act=pre.querySelector('.l-'+langs[li]);var txt=act?act.textContent:pre.textContent;navigator.clipboard.writeText(txt.trim()).then(function(){var o=b.textContent;b.textContent='✓';b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok');},1300);});};});
-  show(0); setLang(0);
+  var lang='es';
+  var theme='dark';
+  function applyLang(next){
+    lang=next;
+    document.body.classList.remove('lang-es','lang-en','lang-pt');
+    document.body.classList.add('lang-'+lang);
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-lang-current]').forEach(function(el){el.textContent=lang.toUpperCase();});
+  }
+  function applyTheme(next){
+    theme=next;
+    document.body.classList.toggle('theme-dark',theme==='dark');
+    document.body.classList.toggle('theme-light',theme==='light');
+    document.documentElement.setAttribute('data-theme',theme);
+    document.querySelectorAll('[data-theme-current]').forEach(function(el){el.textContent=theme==='dark'?'☾':'☀';});
+  }
+  document.addEventListener('click',function(e){
+    var langBtn=e.target.closest('[data-lang-toggle]');
+    if(langBtn){applyLang(lang==='es'?'en':lang==='en'?'pt':'es');}
+    var themeBtn=e.target.closest('[data-theme-toggle]');
+    if(themeBtn){applyTheme(theme==='dark'?'light':'dark');}
+    var copy=e.target.closest('[data-copy]');
+    if(copy){
+      var target=copy.closest('.prompt')?.querySelector('pre');
+      if(target){
+        var text=target.innerText.trim();
+        navigator.clipboard.writeText(text).then(function(){
+          var old=copy.textContent; copy.textContent='✓'; copy.classList.add('ok');
+          setTimeout(function(){copy.textContent=old;copy.classList.remove('ok');},1200);
+        });
+      }
+    }
+  });
+  applyLang('es'); applyTheme('dark');
 })();
 </script>
-<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0,n=slides.length,c=document.getElementById('counter'),p=document.getElementById('progress');
+  function show(k){k=Math.max(0,Math.min(n-1,k));slides.forEach(function(s,idx){s.classList.remove('on','prev');s.setAttribute('aria-hidden','true');if(idx<k)s.classList.add('prev');});slides[k].classList.add('on');slides[k].setAttribute('aria-hidden','false');i=k;c.textContent=(k+1)+' / '+n;p.style.width=((k+1)/n*100)+'%';}
+  document.getElementById('next').onclick=function(){show(i+1);};
+  document.getElementById('prev').onclick=function(){show(i-1);};
+  document.addEventListener('keydown',function(e){if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1);}if(e.key==='Home')show(0);if(e.key==='End')show(n-1);});
+  document.getElementById('themeDeck').onclick=function(){document.body.classList.toggle('theme-light');document.body.classList.toggle('theme-dark');};
+  show(0);
+})();
+</script>
 </body>
 </html>

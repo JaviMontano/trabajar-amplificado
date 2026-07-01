@@ -1,124 +1,51 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Masterclass MetodologIA para entender y empezar a montar Jarvis OS en Claude y Claude Code con foco en soberania, configuracion personal y trabajo real.">
+<meta name="description" content="Masterclass gratuita de MetodologIA para entender Trabajo Amplificado: agencia, criterio, fricción, rutas y evidencia proporcional.">
 <meta name="author" content="Javier Montaño · MetodologIA">
-<title>Jarvis OS en Claude · Masterclass</title>
-<meta name="metodologia:brand-resources" content="00_Recursos/referencias/catalogo-recursos-marca.md">
-<meta name="metodologia:brand-lessons" content="00_Recursos/referencias/lecciones-aprendidas-marca-y-entregables.md">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23122562'/%3E%3Cstop offset='100%25' stop-color='%231F2833'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='10' fill='url(%23g)'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
+<title>Introducción al Trabajo Amplificado · Masterclass</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='10' fill='%23122562'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
-<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-:root{--navy:#122562;--navy-2:#1F2833;--gold:#FFD700;--gold-dark:#8a6500;--blue:#137DC5;--paper:#F9FAFB;--cream:#FFF8D6;--ink:#1F2833;--muted:#5B6677;--line:rgba(18,37,98,.14);--ok:#15803d;--warn:#b45309;--shadow:0 18px 44px rgba(18,37,98,.12);--font-head:'Poppins',system-ui,sans-serif;--font-body:'Montserrat',system-ui,sans-serif;--font-mono:'JetBrains Mono',ui-monospace,monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);line-height:1.72}a{color:var(--navy);font-weight:700}h1,h2,h3{font-family:var(--font-head);line-height:1.12;color:var(--navy);margin:0}h1{font-size:clamp(2.2rem,6vw,5rem);letter-spacing:0}h2{font-size:clamp(1.55rem,3vw,2.45rem)}h3{font-size:1.15rem}p{margin:.7rem 0 0}.topbar{position:sticky;top:0;z-index:10;background:rgba(249,250,251,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topbar-inner{max-width:1120px;margin:auto;padding:.8rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-family:var(--font-head);font-weight:800;color:var(--navy)}.brand span{color:var(--gold-dark)}.nav{display:flex;gap:.8rem;flex-wrap:wrap}.nav a{text-decoration:none;font-size:.82rem;color:var(--muted);border-bottom:2px solid transparent}.nav a:hover{border-color:var(--gold)}.hero{background:linear-gradient(135deg,#fff 0%,#f5f7fb 45%,#fff8d6 100%);border-bottom:1px solid var(--line)}.hero-inner{max-width:1120px;margin:auto;padding:5rem 1rem 4rem;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:2.5rem;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .7rem;border-radius:999px;background:rgba(255,215,0,.18);border:1px solid rgba(255,215,0,.45);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--gold-dark);margin-bottom:1rem}.hero-sub{font-size:1.08rem;color:var(--muted);max-width:66ch}.hero-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.2rem;box-shadow:var(--shadow)}.hero-card h3{margin-bottom:.75rem}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}.metric{background:#f7f8fb;border:1px solid var(--line);border-radius:10px;padding:.85rem}.metric strong{display:block;font-family:var(--font-head);font-size:1.35rem;color:var(--navy)}.metric span{display:block;font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.wrap{max-width:1120px;margin:auto;padding:3rem 1rem}.section-head{margin-bottom:1.25rem;max-width:780px}.lead{font-size:1.02rem;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.2rem;box-shadow:0 8px 24px rgba(18,37,98,.06)}.card h3{display:flex;gap:.55rem;align-items:center}.card p,.card li{color:var(--muted);font-size:.94rem}.icon{display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;border-radius:8px;background:var(--navy);color:var(--gold);flex:0 0 auto}.band{background:#fff;border-block:1px solid var(--line)}.agenda{counter-reset:item}.agenda article{display:grid;grid-template-columns:80px minmax(0,1fr);gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}.agenda article:last-child{border-bottom:none}.time{font-family:var(--font-mono);font-size:.8rem;color:var(--gold-dark);font-weight:700}.callout{background:var(--cream);border-left:5px solid var(--gold);border-radius:10px;padding:1rem 1.15rem;color:var(--navy-2)}.source-list{display:grid;gap:.6rem}.source-list a{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;text-decoration:none}.prompt{background:#0A122A;color:#E8EEF8;border-radius:12px;overflow:hidden;border:1px solid #24324f}.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:#142044;padding:.65rem .8rem}.prompt-head span{font-family:var(--font-mono);font-size:.76rem;color:var(--gold)}button.copy{border:1px solid #53617c;background:transparent;color:#dbe5f6;border-radius:7px;padding:.35rem .6rem;cursor:pointer;font-weight:700}button.copy:hover,button.copy.ok{background:var(--gold);color:#122562;border-color:var(--gold)}pre{margin:0;padding:1rem;white-space:pre-wrap;overflow:auto;font-family:var(--font-mono);font-size:.82rem;line-height:1.55}.footer{background:#0A122A;color:#fff;padding:2rem 1rem}.footer-inner{max-width:1120px;margin:auto;color:rgba(255,255,255,.72);font-size:.9rem}.footer strong{color:var(--gold)}@media(max-width:860px){.hero-inner,.grid,.grid-2{grid-template-columns:1fr}.nav{display:none}.agenda article{grid-template-columns:1fr}.hero-inner{padding-top:3rem}}@media print{.topbar,button.copy{display:none}.hero,.band,.footer{background:#fff;color:#000}.card,.hero-card{box-shadow:none}}
+:root{--navy:#122562;--night:#071426;--deep:#0a122a;--surface:#10264a;--surface-2:#f9fafb;--paper:#fffdf3;--gold:#ffd700;--gold-2:#b8860b;--blue:#137dc5;--ink:#101827;--muted:#5b6677;--soft:#fff8d6;--line:rgba(18,37,98,.14);--dark-line:rgba(255,215,0,.22);--shadow:0 22px 60px rgba(7,20,38,.18);--fh:'Poppins',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--fb);line-height:1.65;background:#f6f8fc;color:var(--ink)}body.theme-dark{background:var(--deep);color:#eaf1ff}a{color:var(--navy);font-weight:800}body.theme-dark a{color:#ffe875}h1,h2,h3{font-family:var(--fh);line-height:1.08;margin:0;color:var(--navy);letter-spacing:0}body.theme-dark h1,body.theme-dark h2,body.theme-dark h3{color:#fff8d6}h1{font-size:clamp(2.25rem,6vw,5.2rem);font-weight:900}h2{font-size:clamp(1.55rem,3.2vw,2.7rem);font-weight:850}h3{font-size:1.08rem}p{margin:.65rem 0 0}.top{position:sticky;top:0;z-index:50;background:rgba(255,253,243,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}body.theme-dark .top{background:rgba(10,18,42,.92);border-color:var(--dark-line)}.top-in{max-width:1180px;margin:auto;padding:.72rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--navy)}body.theme-dark .brand{color:#fff}.logo{width:32px;height:32px;border-radius:9px;background:var(--navy);position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}.logo:before{content:'';position:absolute;left:9px;top:10px;width:4px;height:13px;background:#fff;box-shadow:7px 0 0 #fff,14px 0 0 #fff}.logo:after{content:'';position:absolute;left:16px;top:6px;width:4px;height:4px;border-radius:50%;background:var(--gold)}.brand b{font-family:var(--fh);font-weight:900}.brand b span{color:var(--gold-2)}.nav{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}.nav a,.mini-btn{border:1px solid rgba(18,37,98,.16);background:#fff;color:var(--navy);border-radius:999px;padding:.42rem .75rem;font-size:.78rem;text-decoration:none;font-weight:800;cursor:pointer}body.theme-dark .nav a,body.theme-dark .mini-btn{background:#13294a;color:#ffe875;border-color:rgba(255,215,0,.28)}.hero{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.2),transparent 32%),linear-gradient(135deg,#fff 0%,#f5f7fb 55%,#fff8d6 100%);border-bottom:1px solid var(--line)}body.theme-dark .hero{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 34%),linear-gradient(135deg,#071426 0%,#0a122a 54%,#13294a 100%);border-color:var(--dark-line)}.hero-in{max-width:1180px;margin:auto;padding:4.8rem 1rem 4rem;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:2rem;align-items:center}.kicker{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(255,215,0,.55);background:rgba(255,215,0,.18);color:#7a5d00;border-radius:999px;padding:.4rem .78rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;margin-bottom:1rem}body.theme-dark .kicker{color:#ffd700;background:rgba(255,215,0,.12)}.lead{font-size:1.08rem;color:var(--muted);max-width:70ch}body.theme-dark .lead,body.theme-dark .muted{color:#d7e0ef}.panel,.card,.wide,.note,.prompt,.table-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 28px rgba(18,37,98,.07)}body.theme-dark .panel,body.theme-dark .card,body.theme-dark .wide,body.theme-dark .note,body.theme-dark .table-wrap{background:var(--surface);border-color:var(--dark-line);box-shadow:none}.panel{padding:1.2rem}.wrap{max-width:1180px;margin:auto;padding:3rem 1rem}.section-head{max-width:820px;margin-bottom:1.4rem}.grid{display:grid;gap:1rem}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.card{padding:1.15rem}.card p,.card li,.table-wrap td{font-size:.94rem;color:var(--muted)}body.theme-dark .card p,body.theme-dark .card li,body.theme-dark .table-wrap td{color:#d7e0ef}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}.stat{padding:.9rem;border-radius:12px;background:#f6f8fc;border:1px solid var(--line)}body.theme-dark .stat{background:#071426;border-color:var(--dark-line)}.stat strong{display:block;font-family:var(--fh);font-size:1.8rem;color:var(--navy)}body.theme-dark .stat strong{color:#ffd700}.stat span{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.wide{padding:1.2rem}.timeline{display:grid;gap:.75rem}.time-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:1rem;align-items:start;padding:1rem;border-radius:12px;background:#fff;border:1px solid var(--line)}body.theme-dark .time-row{background:#10264a;border-color:var(--dark-line)}.time{font-family:var(--fm);font-weight:800;color:#8a6500}body.theme-dark .time{color:#ffd700}.note{padding:1rem 1.15rem;border-left:5px solid var(--gold);background:#fffdf3}body.theme-dark .note{background:#13294a}.prompt{background:#071426;color:#eaf1ff;overflow:hidden}.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#13294a;border-bottom:1px solid rgba(255,215,0,.2);padding:.62rem .82rem}.prompt-head span{font-family:var(--fm);font-size:.76rem;color:#ffd700}.copy{border:1px solid rgba(255,215,0,.4);border-radius:8px;background:transparent;color:#ffd700;font-weight:800;padding:.32rem .65rem;cursor:pointer}.copy.ok,.copy:hover{background:#ffd700;color:#071426}pre{margin:0;padding:1rem;white-space:pre-wrap;overflow:auto;font-family:var(--fm);font-size:.84rem;line-height:1.55}.table-wrap{overflow:auto}.table-wrap table{width:100%;border-collapse:collapse;min-width:720px}.table-wrap th{background:var(--navy);color:#ffd700;text-align:left}.table-wrap th,.table-wrap td{padding:.78rem;border-bottom:1px solid var(--line);vertical-align:top}body.theme-dark .table-wrap th,body.theme-dark .table-wrap td{border-color:var(--dark-line)}.field{display:grid;gap:.35rem}.field label{font-weight:900;color:var(--navy)}body.theme-dark .field label{color:#fff8d6}textarea,input,select{width:100%;font:inherit;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:.78rem}body.theme-dark textarea,body.theme-dark input,body.theme-dark select{background:#071426;color:#eaf1ff;border-color:var(--dark-line)}textarea{min-height:96px;resize:vertical}.toolbar{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border:none;border-radius:10px;background:var(--gold);color:#071426;padding:.82rem 1rem;font-family:var(--fh);font-weight:850;text-decoration:none;cursor:pointer}.btn.secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}body.theme-dark .btn.secondary{background:#13294a;color:#ffe875;border-color:var(--dark-line)}.footer{background:#071426;color:#d7e0ef;padding:2rem 1rem}.footer-in{max-width:1180px;margin:auto}.footer strong{color:#ffd700}.l-en,.l-pt{display:none}body.lang-en .l-es,body.lang-en .l-pt{display:none!important}body.lang-en .l-en{display:inline!important}body.lang-pt .l-es,body.lang-pt .l-en{display:none!important}body.lang-pt .l-pt{display:inline!important}body.lang-en .block-en,body.lang-pt .block-pt,body.lang-es .block-es{display:block!important}.block-en,.block-pt{display:none!important}@media(max-width:880px){.hero-in,.g2,.g3,.g4{grid-template-columns:1fr}.nav a:nth-child(n+4){display:none}.time-row{grid-template-columns:1fr}.hero-in{padding-top:3.4rem}.stat-grid{grid-template-columns:1fr}}@media print{.top,.toolbar,.copy{display:none!important}.hero,.footer{background:#fff!important;color:#000!important}.card,.panel,.wide,.note,.table-wrap{box-shadow:none!important}}
 
-/* MetodologIA official shell · sidebar + standard header */
-.brand-has-shell{padding-left:56px;transition:background .25s,color .25s}
-.hdr{position:fixed;top:0;left:56px;right:0;height:52px;z-index:920;background:rgba(249,250,251,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.hdr-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:0 1rem;max-width:1200px;margin:0 auto}
-.hdr-left,.hdr-right{display:flex;align-items:center;gap:.55rem}.hdr-title{font-family:var(--font-head);font-weight:800;color:var(--navy);font-size:.9rem;letter-spacing:0}.hdr-title span{color:var(--gold-dark)}
-.hdr-btn{width:36px;height:36px;border-radius:9px;border:1px solid rgba(18,37,98,.16);background:#fff;color:var(--navy);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}.hdr-btn:hover{background:var(--gold);color:#0A122A;border-color:var(--gold);transform:translateY(-1px)}.hdr-btn svg{width:18px;height:18px}
-.sidebar-nav{position:fixed;top:0;left:0;bottom:0;width:56px;z-index:1000;display:flex;flex-direction:column;align-items:center;padding:1.1rem 0 .85rem;gap:2px;background:rgba(255,251,240,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-right:1px solid rgba(18,37,98,.10);overflow:visible}
-.sidebar-logo{width:36px;height:36px;margin-bottom:.45rem;flex:0 0 auto}.sidebar-logo svg{width:100%;height:100%;display:block}.sidebar-links{display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;justify-content:center}.sidebar-nav a{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;color:#6B5300;text-decoration:none;border:none!important;transition:color .25s,background .25s,transform .2s}.sidebar-nav a:hover{color:#0A122A;background:rgba(255,215,0,.18);transform:scale(1.08)}.sidebar-nav a.active{color:#0A122A;background:rgba(255,215,0,.12)}.sidebar-nav a.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:20px;border-radius:0 2px 2px 0;background:#FFD700}.sidebar-nav a svg{width:20px;height:20px;color:inherit;flex-shrink:0;stroke-width:2}.sidebar-nav a::after{content:attr(data-label);position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%) translateX(-4px);background:#0A122A;color:#fff;font-family:var(--font-head);font-size:.7rem;font-weight:600;padding:.32rem .65rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 4px 12px rgba(0,0,0,.18)}.sidebar-nav a:hover::after,.sidebar-nav a:focus-visible::after{opacity:1;transform:translateY(-50%) translateX(0)}
-.sidebar-bottom{display:flex;align-items:center;justify-content:center;gap:.35rem;flex:0 0 auto}.sidebar-pristino{background:#fff!important;border:1px solid rgba(18,37,98,.14)!important}.sidebar-pristino img{width:24px;height:24px;object-fit:contain;display:block}.brand-has-shell .hero,.brand-has-shell .cover{scroll-margin-top:72px}
-html[data-theme="dark"]{--paper:#0A122A;--ink:#E8EEF8;--muted:#CBD5E1;--line:rgba(255,215,0,.22)}html[data-theme="dark"] .hdr{background:rgba(10,18,42,.92);border-bottom-color:rgba(255,215,0,.18)}html[data-theme="dark"] .hdr-title{color:#fff}html[data-theme="dark"] .hdr-title span{color:var(--gold)}html[data-theme="dark"] .hdr-btn{background:#101b3d;color:#FFD700;border-color:rgba(255,215,0,.22)}html[data-theme="dark"] .sidebar-nav{background:rgba(31,40,51,.94);border-right-color:rgba(255,215,0,.14)}html[data-theme="dark"] .sidebar-nav a{color:#FFD700}html[data-theme="dark"] .sidebar-nav a:hover,html[data-theme="dark"] .sidebar-nav a.active{color:#FFD700;background:rgba(255,215,0,.14)}html[data-theme="dark"] .card,html[data-theme="dark"] .hero-card,html[data-theme="dark"] .metric,html[data-theme="dark"] .source-list a,html[data-theme="dark"] .step,html[data-theme="dark"] .table,html[data-theme="dark"] .check,html[data-theme="dark"] textarea,html[data-theme="dark"] input{background:#fff;color:#1F2833}html[data-theme="dark"] .card h3,html[data-theme="dark"] .hero-card h3,html[data-theme="dark"] .metric strong,html[data-theme="dark"] label,html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] h3{color:#122562}html[data-theme="dark"] .card p,html[data-theme="dark"] .card li,html[data-theme="dark"] .table td,html[data-theme="dark"] .hint,html[data-theme="dark"] .lead{color:#5B6677}
-@media(max-width:860px){.brand-has-shell{padding-left:0;padding-bottom:60px}.hdr{left:0}.hdr-title{max-width:56vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sidebar-nav{top:auto!important;bottom:0;left:0;right:0;width:100%;height:56px;flex-direction:row;padding:0 .35rem;border-right:none;border-top:1px solid rgba(18,37,98,.10);padding-bottom:env(safe-area-inset-bottom,0px)}.sidebar-logo,.sidebar-bottom{display:none}.sidebar-links{flex-direction:row;gap:0;justify-content:space-around;width:100%}.sidebar-nav a{width:38px;height:38px;min-width:44px;min-height:44px}.sidebar-nav a svg{width:18px;height:18px}.sidebar-nav a::after{display:none}.sidebar-nav a.active::before{left:50%;top:auto;bottom:0;transform:translateX(-50%);width:20px;height:3px;border-radius:3px 3px 0 0}}
-@media print{.hdr,.sidebar-nav{display:none!important}.brand-has-shell{padding-left:0!important;padding-bottom:0!important}}
-
-
-/* Aceleradores official shell override · MetodologIA base playbook */
-:root{
-  --shell-glass-bg: var(--glass-bg, rgba(255,251,240,.92));
-  --shell-border: var(--border, rgba(18,37,98,.12));
-  --shell-text-muted: var(--text-muted, var(--muted, #5B6677));
-  --shell-navy: var(--navy, #122562);
-  --shell-gold: var(--gold, #FFD700);
-  --shell-gold-dark: var(--gold-dark, #8a6500);
-  --shell-radius-sm: var(--radius-sm, 8px);
-  --shell-font-head: var(--font-head, 'Poppins', system-ui, sans-serif);
-}
-.hdr{display:none!important}
-.en{display:none!important}html[lang="en"] .es{display:none!important}html[lang="en"] .en{display:inline!important}html:not([lang="en"]) .en{display:none!important}
-body,body.brand-has-shell{padding-left:0!important;padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important}
-.sidebar-nav{position:fixed!important;top:auto!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;max-width:none!important;min-width:0!important;height:56px!important;z-index:1000!important;display:flex!important;flex-direction:row!important;align-items:center!important;padding:0 .5rem!important;gap:2px!important;background:var(--shell-glass-bg)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;border-right:none!important;border-top:1px solid var(--shell-border)!important;border-bottom:none!important;overflow:visible!important}
-.sidebar-logo{display:none!important}.sidebar-logo svg{width:32px!important;height:32px!important;border-radius:6px!important}.sidebar-links{display:flex!important;flex-direction:row!important;align-items:center!important;gap:0!important;flex:1 1 auto!important;justify-content:space-around!important;width:100%!important;min-width:0!important}.sidebar-nav a{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;min-width:44px!important;min-height:44px!important;border-radius:10px!important;color:var(--shell-text-muted)!important;text-decoration:none!important;border:none!important;background:transparent!important;transition:color .25s,background .25s,transform .2s!important}.sidebar-nav a:hover{color:var(--shell-gold-dark)!important;background:rgba(184,134,11,.08)!important;transform:scale(1.1)!important;text-decoration:none!important}html.dark .sidebar-nav a:hover{color:var(--shell-gold)!important;background:rgba(255,215,0,.1)!important}.sidebar-nav a.active{color:var(--shell-gold-dark)!important}html.dark .sidebar-nav a.active{color:var(--shell-gold)!important}.sidebar-nav a.active::before{content:''!important;position:absolute!important;left:50%!important;top:auto!important;bottom:0!important;transform:translateX(-50%)!important;width:20px!important;height:3px!important;border-radius:3px 3px 0 0!important;background:var(--shell-gold)!important}.sidebar-nav a svg{width:18px!important;height:18px!important;color:var(--shell-gold-dark)!important;flex-shrink:0!important;stroke-width:2!important}html.dark .sidebar-nav a svg{color:var(--shell-gold)!important}.sidebar-nav a::after{display:none!important}
-.sidebar-bottom{position:fixed!important;right:.55rem!important;bottom:calc(62px + env(safe-area-inset-bottom,0px))!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:5px!important;margin-top:0!important;padding:.28rem!important;border:1px solid var(--shell-border)!important;border-radius:12px!important;background:var(--shell-glass-bg)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;box-shadow:0 8px 24px rgba(18,37,98,.12)!important}.sidebar-bottom a{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;border-radius:8px!important;margin:0!important}.sidebar-bottom a img{width:24px!important;height:24px!important;border-radius:6px!important;object-fit:contain!important}.sidebar-bottom button{width:34px!important;height:34px!important;border-radius:8px!important;border:1px solid var(--shell-border)!important;background:transparent!important;color:var(--shell-text-muted)!important;cursor:pointer!important;font-family:var(--shell-font-head)!important;font-size:.65rem!important;font-weight:700!important;display:flex!important;align-items:center!important;justify-content:center!important;transition:all .2s!important}.sidebar-bottom button:hover:not(:disabled){background:var(--shell-gold)!important;color:var(--shell-navy)!important;border-color:var(--shell-gold)!important}.sidebar-bottom button:disabled{opacity:.55!important;cursor:default!important}.sidebar-bottom button svg{width:16px!important;height:16px!important}
-html.dark .sidebar-nav,html.dark .sidebar-bottom{background:rgba(31,40,51,.92)!important;border-color:rgba(255,215,0,.15)!important}html.dark .sidebar-bottom button{color:var(--shell-gold)!important;border-color:rgba(255,215,0,.18)!important}
-@media(min-width:769px){body,body.brand-has-shell{padding-left:56px!important;padding-bottom:0!important}.sidebar-nav{top:0!important;bottom:0!important;left:0!important;right:auto!important;width:56px!important;height:auto!important;flex-direction:column!important;padding:1.25rem 0 1rem!important;border-right:1px solid var(--shell-border)!important;border-top:none!important}.sidebar-logo{display:flex!important;align-items:center!important;justify-content:center!important;margin-bottom:1rem!important;padding-bottom:.75rem!important;border-bottom:1px solid var(--shell-border)!important}.sidebar-links{flex-direction:column!important;gap:2px!important;width:auto!important;justify-content:center!important}.sidebar-nav a{width:40px!important;height:40px!important;min-width:auto!important;min-height:auto!important}.sidebar-nav a svg{width:20px!important;height:20px!important}.sidebar-nav a::after{content:attr(data-label)!important;display:block!important;position:absolute!important;left:calc(100% + 10px)!important;top:50%!important;transform:translateY(-50%) translateX(-4px)!important;background:var(--shell-navy)!important;color:#fff!important;font-family:var(--shell-font-head)!important;font-size:.7rem!important;font-weight:600!important;padding:.35rem .7rem!important;border-radius:var(--shell-radius-sm)!important;white-space:nowrap!important;opacity:0!important;pointer-events:none!important;transition:opacity .2s,transform .2s!important;box-shadow:0 2px 8px rgba(0,0,0,.15)!important}.sidebar-nav a:hover::after,.sidebar-nav a:focus-visible::after{opacity:1!important;transform:translateY(-50%) translateX(0)!important}html.dark .sidebar-nav a::after{background:#1F2833!important;border:1px solid rgba(255,215,0,.15)!important}.sidebar-nav a.active::before{left:0!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:3px!important;height:20px!important;border-radius:0 2px 2px 0!important}.sidebar-bottom{position:static!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:6px!important;margin-top:auto!important;padding:.75rem 0 0!important;border-top:1px solid var(--shell-border)!important;border-left:none!important;border-right:none!important;border-bottom:none!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.sidebar-bottom a{width:38px!important;height:38px!important;min-width:auto!important;min-height:auto!important;margin-bottom:.5rem!important}}
-@media(print){.sidebar-nav{display:none!important}body,body.brand-has-shell{padding-left:0!important;padding-bottom:0!important}}
-
-</style>
-<style id="bilingual-self-contained-style">
-.localized-en{display:none!important}
-body.lang-en > :not(nav):not(script):not(style):not(.localized-en){display:none!important}
-body.lang-en > .localized-en{display:block!important}
-.en-document{background:var(--paper,#F9FAFB);color:var(--ink,#1F2833);min-height:100vh}.en-section{max-width:1120px;margin:auto;padding:3rem 1rem}.en-hero{background:linear-gradient(135deg,#fff 0%,#f5f7fb 45%,#fff8d6 100%);border-bottom:1px solid var(--line,rgba(18,37,98,.14));padding:4.5rem 1rem 3.5rem}.en-kicker{display:inline-flex;padding:.35rem .7rem;border-radius:999px;background:rgba(255,215,0,.18);border:1px solid rgba(255,215,0,.45);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--gold-dark,#8a6500);margin-bottom:1rem}.en-document h1,.en-document h2,.en-document h3{font-family:var(--font-head,'Poppins',system-ui,sans-serif);color:var(--navy,#122562)}.en-document h1{font-size:clamp(2.2rem,6vw,4.6rem);line-height:1.06;margin:0}.en-document h2{font-size:clamp(1.55rem,3vw,2.35rem);margin:0 0 1rem}.en-lead{font-size:1.06rem;color:var(--muted,#5B6677);max-width:74ch;line-height:1.75}.en-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.en-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.en-card{background:#fff;border:1px solid var(--line,rgba(18,37,98,.14));border-radius:12px;padding:1.2rem;box-shadow:0 8px 24px rgba(18,37,98,.06)}.en-card p,.en-card li{color:var(--muted,#5B6677);font-size:.94rem}.en-card ul{padding-left:1.1rem}.en-band{background:#fff;border-block:1px solid var(--line,rgba(18,37,98,.14))}.en-prompt{background:#0A122A;color:#E8EEF8;border-radius:12px;border:1px solid #24324f;padding:1rem;font-family:var(--font-mono,'JetBrains Mono',monospace);white-space:pre-wrap;overflow:auto;font-size:.84rem;line-height:1.55}
-html.dark .en-document,html[data-theme="dark"] .en-document{background:#071A33;color:#EAF1FF}html.dark .en-hero,html[data-theme="dark"] .en-hero,html.dark .en-band,html[data-theme="dark"] .en-band{background:#071A33;border-color:rgba(255,215,0,.18)}html.dark .en-document h1,html.dark .en-document h2,html.dark .en-document h3,html[data-theme="dark"] .en-document h1,html[data-theme="dark"] .en-document h2,html[data-theme="dark"] .en-document h3{color:#FFF8D6}html.dark .en-lead,html.dark .en-card p,html.dark .en-card li,html[data-theme="dark"] .en-lead,html[data-theme="dark"] .en-card p,html[data-theme="dark"] .en-card li{color:#D7E0EF}html.dark .en-card,html[data-theme="dark"] .en-card{background:#10264A;border-color:rgba(255,215,0,.24);box-shadow:none}
-@media(max-width:860px){.en-grid,.en-grid-2{grid-template-columns:1fr}.en-hero{padding-top:3rem}}
 </style>
 </head>
-<body class="brand-has-shell">
-<div class="docset-bar" style="background:#0A122A;color:#f4f1e8;font-family:system-ui,'Poppins',sans-serif;font-size:.8rem;padding:.5rem .9rem;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .55rem;justify-content:center;border-bottom:2px solid #FFD700"><span style="color:#FFD700;font-weight:700;letter-spacing:.03em">Jarvis OS en Claude:</span><span aria-current="page" style="color:#FFD700;font-weight:700">Masterclass</span> <span style="opacity:.4">›</span> <a href="workbook.html" style="color:#f4f1e8;text-decoration:none">Workbook</a> <span style="opacity:.4">›</span> <a href="runbook.html" style="color:#f4f1e8;text-decoration:none">Runbook</a> <span style="opacity:.4">›</span> <a href="playbook.html" style="color:#f4f1e8;text-decoration:none">Playbook</a> <span style="opacity:.4">·</span> <a href="index.html" style="color:#cbd5e1;text-decoration:none">↑ Hub</a></div>
-<nav class="sidebar-nav" aria-label="Navegación de la masterclass">
-  <div class="sidebar-logo">
-    <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#122562"/><stop offset="100%" stop-color="#1F2833"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#sg)"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg>
+<body class="lang-es theme-dark ">
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html" aria-label="Volver al hub"><span class="logo" aria-hidden="true"></span><b>Metodolog<span>IA</span></b></a>
+    <nav class="nav" aria-label="Navegación">
+      <a href="masterclass.html" aria-current="page">Masterclass</a>
+      <a href="workbook.html">Workbook</a>
+      <a href="taller-intro.html">Taller gratis</a>
+      <a href="trabajar-amplificado.html">Deck</a>
+      <a href="index.html">Hub</a>
+      <button class="mini-btn" type="button" data-lang-toggle><span data-lang-current>ES</span></button>
+      <button class="mini-btn" type="button" data-theme-toggle><span data-theme-current>☾</span></button>
+    </nav>
   </div>
-  <div class="sidebar-links">
-    <a href="#cover" data-label="Inicio" aria-label="Inicio"><i data-lucide="home"></i></a>
-    <a href="#tesis" data-label="Tesis" aria-label="Tesis"><i data-lucide="brain"></i></a>
-    <a href="#clase" data-label="Clase" aria-label="Clase"><i data-lucide="presentation"></i></a>
-    <a href="#claude-code" data-label="Claude Code" aria-label="Claude Code"><i data-lucide="terminal"></i></a>
-    <a href="#practica" data-label="Práctica" aria-label="Práctica"><i data-lucide="book-check"></i></a>
-    <a href="#prompts" data-label="Prompts" aria-label="Prompts"><i data-lucide="zap"></i></a>
-    <a href="#fuentes" data-label="Fuentes" aria-label="Fuentes"><i data-lucide="book-open"></i></a>
-  </div>
-  <div class="sidebar-bottom">
-    <a href="#practica" data-label="Tu paso" title="Tu siguiente paso"><img src="https://raw.githubusercontent.com/ejemplo-deo-repo/mao-brand-assets/main/pristino_logo_primary.png" alt="Siguiente paso"></a>
-    <button type="button" onclick="toggleDark()" aria-label="Cambiar modo oscuro/claro" id="darkBtn"><i data-lucide="moon" style="width:16px;height:16px"></i></button>
-    <button type="button" onclick="toggleLang()" aria-label="Cambiar idioma" id="langBtn" title="Cambiar idioma">ES</button>
-  </div>
-</nav>
-<script>
-window.__bilingualNav={
-  es:[['#cover','Inicio'],['#tesis','Tesis'],['#clase','Clase'],['#claude-code','Claude Code'],['#practica','Práctica'],['#prompts','Prompts'],['#fuentes','Fuentes']],
-  en:[['#en-cover','Start'],['#en-thesis','Thesis'],['#en-class','Class'],['#en-claude-code','Claude Code'],['#en-practice','Practice'],['#en-prompts','Prompts'],['#en-sources','Sources']]
-};
-</script>
-<main class="localized-en en-document" id="en-cover">
-  <section class="en-hero">
-    <div class="en-section" style="padding-top:0;padding-bottom:0">
-      <span class="en-kicker">MetodologIA masterclass</span>
-      <h1>Jarvis OS in Claude</h1>
-      <p class="en-lead">A practical class to move from inspiration into operation: understand the system, create the first files and prepare a real conversation with better context. The value is not knowing more features; it is leaving with something useful and verifiable.</p>
-    </div>
-  </section>
-  <section class="en-section" id="en-thesis"><span class="en-kicker">Thesis</span><h2>Claude is not the system. Your context is the system.</h2><div class="en-grid"><article class="en-card"><h3>Sovereignty</h3><p>Your rules and files must remain portable. Tools change; your operating context should travel with you.</p></article><article class="en-card"><h3>Method First, (Gen)AI Next.</h3><p>Prompts matter only when they help you decide, record, ask, review and improve with your own context.</p></article><article class="en-card"><h3>Human control</h3><p>The AI can ask, summarize and propose. The person confirms what is true and what gets recorded.</p></article></div></section>
-  <section class="en-section en-band" id="en-class"><span class="en-kicker">Class flow</span><h2>From understanding to artifact in one session</h2><div class="en-grid"><article class="en-card"><h3>00:00 · From chat to system</h3><p>What Jarvis OS is and why loose prompts are not enough.</p></article><article class="en-card"><h3>00:15 · Claude surfaces</h3><p>Chat for exploration, Cowork for persistent workspace, Claude Code for file execution and verification.</p></article><article class="en-card"><h3>00:35 · Minimal setting</h3><p>Open the folder, run prompts, analyze parameters, attach annexes and confirm every file before writing.</p></article><article class="en-card"><h3>00:55 · Live workbook</h3><p>Build a personal CV source, a role profile and a 1:1 preparation artifact.</p></article><article class="en-card"><h3>01:30 · Close</h3><p>Review generated files, privacy gaps and the next recommended cadence.</p></article></div></section>
-  <section class="en-section" id="en-claude-code"><span class="en-kicker">Claude Code</span><h2>Where Claude Code fits</h2><p class="en-lead">Claude Code is useful when the exercise needs folders, files, commands or verification. Cowork remains the place where the user lives the setting through guided prompts and confirmation. Code is execution power; Cowork is the persistent work desk.</p></section>
-  <section class="en-section en-band" id="en-practice"><span class="en-kicker">Practice</span><h2>What participants do</h2><div class="en-grid"><article class="en-card"><h3>Bring annexes</h3><p>CV, LinkedIn, role description, goals, feedback or notes from a real 1:1.</p></article><article class="en-card"><h3>Protect data</h3><p>Replace sensitive information with placeholders before sharing it in a class setting.</p></article><article class="en-card"><h3>Validate output</h3><p>Do not accept invented achievements, false role details or unconfirmed feedback.</p></article></div></section>
-  <section class="en-section" id="en-prompts"><span class="en-kicker">Facilitation prompts</span><h2>The AI guides; the person decides</h2><pre class="en-prompt">Act as a Jarvis OS configuration facilitator inside Claude Cowork. First explain what you will review, which parameters you need and which annexes would help. Then ask me up to five questions about my role, professional goal and the 1:1 conversation I want to prepare. Do not write or modify critical files without explicit confirmation.</pre></section>
-  <section class="en-section en-band" id="en-sources"><span class="en-kicker">Sources and limits</span><h2>What is verified and what is methodology</h2><p class="en-lead">Claude and Claude Code capabilities change frequently. This class uses official documentation as the technical base and translates it into a MetodologIA learning experience. The sovereignty framing, class sequence and workbook are methodological design.</p></section>
-</main>
+</header>
 <main>
-  <section class="hero" id="cover">
-    <div class="hero-inner">
+  <section class="hero" id="inicio">
+    <div class="hero-in">
       <div>
-        <span class="eyebrow">Masterclass · 90 a 120 minutos</span>
-        <h1>Jarvis OS en Claude</h1>
-        <p class="hero-sub">Una clase práctica para salir de la inspiración y entrar en operación: entender el sistema, crear los primeros archivos y preparar una conversación real con mejor contexto. El valor no está en conocer más botones; está en salir con algo útil, verificable y propio. Metodo primero, (Gen)AI Después.</p>
+        <span class="kicker"><span class="l-es">Clase demo gratuita · 90-120 min</span><span class="l-en">Free demo class · 90-120 min</span><span class="l-pt">Aula demo gratuita · 90-120 min</span></span>
+        <h1><span class="l-es">Introducción al Trabajo Amplificado</span><span class="l-en">Introduction to Amplified Work</span><span class="l-pt">Introdução ao Trabalho Amplificado</span></h1>
+        <p class="lead"><span class="l-es">Una masterclass para dejar de pedir respuestas bonitas y empezar a trabajar con IA como socio de pensamiento: una fricción real, una ruta primaria, una herramienta candidata y una forma honesta de verificarla.</span><span class="l-en">A masterclass to stop asking for polished answers and start using AI as a thinking partner: one real friction, one primary route, one candidate tool and an honest way to verify it.</span><span class="l-pt">Uma masterclass para parar de pedir respostas bonitas e começar a trabalhar com IA como parceiro de pensamento: uma fricção real, uma rota primária, uma ferramenta candidata e uma forma honesta de verificá-la.</span></p>
       </div>
-      <aside class="hero-card" aria-label="Resultado de la clase">
-        <h3>Al terminar, cada participante debe salir con:</h3>
-        <div class="metric-grid">
-          <div class="metric"><strong>1</strong><span>carpeta Jarvis</span></div>
-          <div class="metric"><strong>3</strong><span>archivos personales</span></div>
-          <div class="metric"><strong>1</strong><span>caso de 1:1</span></div>
-          <div class="metric"><strong>0</strong><span>automatismo ciego</span></div>
+      <aside class="panel">
+        <h3><span class="l-es">La promesa correcta</span><span class="l-en">The right promise</span><span class="l-pt">A promessa certa</span></h3>
+        <div class="stat-grid" style="margin-top:1rem">
+          <div class="stat"><strong>1</strong><span><span class="l-es">fricción real</span><span class="l-en">real friction</span><span class="l-pt">fricção real</span></span></div>
+          <div class="stat"><strong>1</strong><span><span class="l-es">ruta primaria</span><span class="l-en">primary route</span><span class="l-pt">rota primária</span></span></div>
+          <div class="stat"><strong>1</strong><span><span class="l-es">herramienta candidata</span><span class="l-en">candidate tool</span><span class="l-pt">ferramenta candidata</span></span></div>
+          <div class="stat"><strong>0</strong><span><span class="l-es">decisiones delegadas</span><span class="l-en">delegated decisions</span><span class="l-pt">decisões delegadas</span></span></div>
         </div>
       </aside>
     </div>
@@ -126,315 +53,116 @@ window.__bilingualNav={
 
   <section class="wrap" id="tesis">
     <div class="section-head">
-      <span class="eyebrow">Tesis de la clase</span>
-      <h2>Claude no te vuelve soberano por responder bien. Tu soberanía empieza cuando tu contexto queda ordenado en archivos tuyos.</h2>
-      <p class="lead">La diferencia entre un chat útil y un Jarvis OS es la persistencia: CV, perfil de cargo, memoria profesional, criterios del rol, próximos 1:1, compromisos y aprendizajes deben poder viajar entre sesiones, herramientas y versiones del producto. Si el contexto viaja, tú decides con más claridad.</p>
+      <span class="kicker"><span class="l-es">Tesis</span><span class="l-en">Thesis</span><span class="l-pt">Tese</span></span>
+      <h2><span class="l-es">La tesis no es hacer más rápido. Es pensar mejor, con evidencia, sin rendición cognitiva.</span><span class="l-en">The thesis is not moving faster. It is thinking better, with evidence, without cognitive surrender.</span><span class="l-pt">A tese não é fazer mais rápido. É pensar melhor, com evidência, sem rendição cognitiva.</span></h2>
+      <p class="lead"><span class="l-es">El trabajo amplificado conserva objetivo, juicio, autoría y responsabilidad en la persona. La IA reduce fricción, estructura pensamiento y acelera práctica, pero no reemplaza deliberación ni decisión.</span><span class="l-en">Amplified work keeps goal, judgment, authorship and accountability with the person. AI reduces friction, structures thinking and accelerates practice, but it does not replace deliberation or decision.</span><span class="l-pt">O trabalho amplificado mantém objetivo, julgamento, autoria e responsabilidade na pessoa. A IA reduz fricção, estrutura pensamento e acelera prática, mas não substitui deliberação nem decisão.</span></p>
     </div>
-    <div class="grid">
-      <article class="card"><h3><span class="icon"><i data-lucide="folder-check"></i></span>Contexto propietario</h3><p>Lo importante vive en una carpeta clara, no escondido en una conversación eterna. Esa carpeta es legible para ti, para Claude y para cualquier otra herramienta agéntica futura.</p></article>
-      <article class="card"><h3><span class="icon"><i data-lucide="shield-check"></i></span>Soberanía con límites</h3><p>La IA pregunta, resume, propone y registra. No envía correos, no borra archivos y no modifica documentos críticos sin confirmación humana explícita.</p></article>
-      <article class="card"><h3><span class="icon"><i data-lucide="target"></i></span>Trabajo real</h3><p>La clase no termina con teoría. Termina con un CV fuente, un perfil de cargo ordenado y una preparación concreta para una conversación 1:1 con el jefe.</p></article>
-    </div>
-  </section>
-
-  <section class="band" id="clase">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Arquitectura pedagógica</span>
-        <h2>Cómo aprenderás sin quedarte en teoría</h2>
-        <p class="lead">La clase usa una secuencia simple: entender el problema, ver la herramienta correcta, montar una carpeta mínima, ejecutar prompts con anexos, revisar supuestos y cerrar con un caso de utilidad inmediata. El lector no necesita volverse técnico; necesita saber qué queda listo y qué debe validar.</p>
-      </div>
-      <div class="grid-2">
-        <article class="card"><h3>Verás</h3><p>La diferencia entre Chat, Cowork y Code, y por qué una carpeta de archivos simples puede sostener mejor tu trabajo que una conversación larga.</p></article>
-        <article class="card"><h3>Harás</h3><p>Crearás tu primer caso operativo: CV fuente, perfil de cargo, responsabilidades reales y preparación de una conversación 1:1.</p></article>
-      </div>
+    <div class="grid g3">
+      <article class="card"><h3><span class="l-es">Agencia primero</span><span class="l-en">Agency first</span><span class="l-pt">Agência primeiro</span></h3><p><span class="l-es">La IA debe devolverte una decisión más clara, no una obediencia más rápida.</span><span class="l-en">AI should return a clearer decision, not faster obedience.</span><span class="l-pt">A IA deve devolver uma decisão mais clara, não uma obediência mais rápida.</span></p></article>
+      <article class="card"><h3><span class="l-es">Método antes que output</span><span class="l-en">Method before output</span><span class="l-pt">Método antes do output</span></h3><p><span class="l-es">El resultado no es solo un texto: es un ritual, checklist, SOP, rúbrica, bitácora o plantilla reutilizable.</span><span class="l-en">The result is not just text: it is a reusable ritual, checklist, SOP, rubric, logbook or template.</span><span class="l-pt">O resultado não é só texto: é um ritual, checklist, SOP, rubrica, diário ou modelo reutilizável.</span></p></article>
+      <article class="card"><h3><span class="l-es">Evidencia proporcional</span><span class="l-en">Proportional evidence</span><span class="l-pt">Evidência proporcional</span></h3><p><span class="l-es">Una herramienta bonita no está validada. Declara cómo se probó, qué falta y qué riesgo tiene usarla.</span><span class="l-en">A polished tool is not validated. State how it was tested, what is missing and what risk it carries.</span><span class="l-pt">Uma ferramenta bonita não está validada. Declare como foi testada, o que falta e qual risco traz.</span></p></article>
     </div>
   </section>
 
-  <section class="wrap" id="claude-code">
+  <section class="wrap" id="agenda">
     <div class="section-head">
-      <span class="eyebrow">Claude Code sin mistificar</span>
-      <h2>Claude Code no es solo para programar: es una forma de trabajar con carpetas, archivos y verificación.</h2>
-      <p class="lead">Según la documentación oficial, Claude Code puede leer el proyecto, editar archivos, ejecutar comandos e integrarse con herramientas de desarrollo. También puede trabajar en carpetas de notas y documentación. Para esta masterclass, lo usamos como una mesa de trabajo estructurada: abrir una carpeta, crear archivos, pedir verificación y dejar trazabilidad.</p>
+      <span class="kicker"><span class="l-es">Arquitectura de clase</span><span class="l-en">Class architecture</span><span class="l-pt">Arquitetura da aula</span></span>
+      <h2><span class="l-es">De una fricción laboral a una herramienta candidata</span><span class="l-en">From work friction to a candidate tool</span><span class="l-pt">De uma fricção laboral a uma ferramenta candidata</span></h2>
     </div>
-    <div class="grid">
-      <article class="card"><h3><span class="icon"><i data-lucide="terminal"></i></span>CLI como taller</h3><p>Entrar a una carpeta y pedir un resultado concreto: “crea esta estructura”, “lee estos archivos”, “prepara este 1:1”. La terminal no es el objetivo; es el canal.</p></article>
-      <article class="card"><h3><span class="icon"><i data-lucide="book-open"></i></span>Docs y notas también cuentan</h3><p>Una carpeta de markdown se puede tratar como proyecto. El material personal deja de ser texto suelto y se vuelve un sistema de trabajo con memoria local.</p></article>
-      <article class="card"><h3><span class="icon"><i data-lucide="git-branch"></i></span>Verificación antes de cierre</h3><p>El hábito no es “pedirle algo a la IA”. El hábito es pedir, revisar diff mental, confirmar supuestos, guardar artefacto y dejar próximo paso.</p></article>
-    </div>
-    <div class="callout" style="margin-top:1rem"><strong>Regla MetodologIA:</strong> el participante no necesita volverse desarrollador para usar lógica de desarrollo: carpeta, archivo, versión, criterio, validación y cierre.</div>
-  </section>
-
-  <section class="band" id="practica">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Agenda sugerida</span>
-        <h2>De comprensión a artefacto en una sesión</h2>
-      </div>
-      <div class="agenda">
-        <article><div class="time">00:00</div><div><h3>Apertura · de chat a sistema</h3><p>Qué es Jarvis OS, por qué no basta con prompts sueltos y qué significa soberanía profesional en una herramienta que cambia rápido.</p></div></article>
-        <article><div class="time">00:15</div><div><h3>Mapa Claude · Chat, Cowork y Code</h3><p>Cuándo usar cada superficie. Chat para exploración, Cowork para escritorio persistente, Claude Code para carpetas, archivos, ejecución y verificación.</p></div></article>
-        <article><div class="time">00:35</div><div><h3>Configuración mínima</h3><p>El setting se vive en Claude Cowork: abrir carpeta, ejecutar prompts, analizar parámetros, adjuntar anexos útiles y confirmar cada archivo antes de escribir.</p></div></article>
-        <article><div class="time">00:55</div><div><h3>Workbook en vivo</h3><p>Montar CV personal, perfil de cargo y preparación de 1:1 con jefe usando prompts guiados que preguntan, parametrizan y registran.</p></div></article>
-        <article><div class="time">01:30</div><div><h3>Cierre · qué queda vivo</h3><p>Revisar archivos generados, huecos pendientes, riesgos de privacidad y próxima cadencia recomendada.</p></div></article>
-      </div>
+    <div class="timeline">
+      <article class="time-row"><div class="time">00:00</div><div><h3><span class="l-es">El mito de la velocidad</span><span class="l-en">The speed myth</span><span class="l-pt">O mito da velocidade</span></h3><p><span class="l-es">Por qué pedirle a la IA que lo haga todo puede degradar criterio.</span><span class="l-en">Why asking AI to do everything can degrade judgment.</span><span class="l-pt">Por que pedir para a IA fazer tudo pode degradar o julgamento.</span></p></div></article>
+      <article class="time-row"><div class="time">00:15</div><div><h3><span class="l-es">Contrato epistémico</span><span class="l-en">Epistemic contract</span><span class="l-pt">Contrato epistêmico</span></h3><p><span class="l-es">Objetivo, contexto, criterio, límite y evidencia disponible antes de producir.</span><span class="l-en">Goal, context, criteria, limits and available evidence before producing.</span><span class="l-pt">Objetivo, contexto, critério, limite e evidência disponível antes de produzir.</span></p></div></article>
+      <article class="time-row"><div class="time">00:30</div><div><h3><span class="l-es">Diagnóstico de fricción</span><span class="l-en">Friction diagnosis</span><span class="l-pt">Diagnóstico de fricção</span></h3><p><span class="l-es">Claridad, exceso de opciones, deuda de método, falta de evidencia o miedo al error.</span><span class="l-en">Clarity, too many options, method debt, missing evidence or fear of error.</span><span class="l-pt">Clareza, excesso de opções, dívida de método, falta de evidência ou medo do erro.</span></p></div></article>
+      <article class="time-row"><div class="time">00:45</div><div><h3><span class="l-es">Router de rutas</span><span class="l-en">Route router</span><span class="l-pt">Roteador de rotas</span></h3><p><span class="l-es">Se muestran seis rutas, pero se aplica solo una ruta primaria por riesgo y resultado esperado.</span><span class="l-en">Six routes are shown, but only one primary route is applied by risk and expected result.</span><span class="l-pt">Seis rotas são mostradas, mas apenas uma rota primária é aplicada por risco e resultado esperado.</span></p></div></article>
+      <article class="time-row"><div class="time">01:05</div><div><h3><span class="l-es">Demo: decisión no vinculante</span><span class="l-en">Demo: non-binding decision</span><span class="l-pt">Demo: decisão não vinculante</span></h3><p><span class="l-es">La IA organiza criterios y tradeoffs; la decisión final vuelve a la persona.</span><span class="l-en">AI organizes criteria and tradeoffs; final decision returns to the person.</span><span class="l-pt">A IA organiza critérios e tradeoffs; a decisão final volta para a pessoa.</span></p></div></article>
+      <article class="time-row"><div class="time">01:35</div><div><h3><span class="l-es">Workbook P/A/T/J/E</span><span class="l-en">P/A/T/J/E workbook</span><span class="l-pt">Workbook P/A/T/J/E</span></h3><p><span class="l-es">Propósito, agencia, transferencia, juicio y evidencia para cerrar sin sobreprometer.</span><span class="l-en">Purpose, agency, transfer, judgment and evidence to close without overpromising.</span><span class="l-pt">Propósito, agência, transferência, julgamento e evidência para fechar sem prometer demais.</span></p></div></article>
     </div>
   </section>
 
-  <section class="wrap" id="prompts">
+  <section class="wrap" id="demo">
     <div class="section-head">
-      <span class="eyebrow">Prompts de facilitación</span>
-      <h2>La IA guía; la persona decide</h2>
+      <span class="kicker"><span class="l-es">Demo central</span><span class="l-en">Central demo</span><span class="l-pt">Demo central</span></span>
+      <h2><span class="l-es">No le pidas a la IA que decida. Pídele que haga visible el criterio.</span><span class="l-en">Do not ask AI to decide. Ask it to make criteria visible.</span><span class="l-pt">Não peça para a IA decidir. Peça para tornar o critério visível.</span></h2>
     </div>
-    <div class="grid-2">
-      <div class="prompt">
-        <div class="prompt-head"><span>Prompt · apertura de entorno</span><button class="copy" data-copy>Copiar</button></div>
-        <pre>Actúa como facilitador de configuración Jarvis OS dentro de Claude Cowork. Primero explícame qué vas a revisar, qué parámetros necesitas y qué anexos conviene adjuntar. Después hazme máximo cinco preguntas para entender mi rol, mi objetivo profesional y la reunión 1:1 que quiero preparar. No escribas ni modifiques archivos críticos sin pedirme confirmación explícita.</pre>
-      </div>
-      <div class="prompt">
-        <div class="prompt-head"><span>Prompt · cierre trazable</span><button class="copy" data-copy>Copiar</button></div>
-        <pre>Cierra esta sesión como facilitador. Lista los archivos creados, decisiones tomadas, supuestos pendientes, riesgos de privacidad y próximo paso recomendado. Si falta información crítica para mi 1:1 con el jefe, pregúntamela antes de dar el cierre por terminado.</pre>
-      </div>
+    <div class="grid g2">
+      <div class="prompt"><div class="prompt-head"><span><span class="l-es">Antipatrón</span><span class="l-en">Anti-pattern</span><span class="l-pt">Antipadrão</span></span><button class="copy" data-copy>Copy</button></div><pre>Decide por mí si debo aceptar esta propuesta de trabajo.</pre></div>
+      <div class="prompt"><div class="prompt-head"><span><span class="l-es">Forma amplificada</span><span class="l-en">Amplified form</span><span class="l-pt">Forma amplificada</span></span><button class="copy" data-copy>Copy</button></div><pre>Ayúdame a preparar una decisión no vinculante. Primero identifica la decisión real, separa criterios duros, criterios deseables, restricciones y riesgos. Luego compara opciones, declara supuestos, propone abort criteria y cierra con una recomendación no vinculante. No decidas por mí: devuelve la decisión final a mi responsabilidad.</pre></div>
+    </div>
+    <div class="note" style="margin-top:1rem"><strong><span class="l-es">Regla de cierre:</span><span class="l-en">Closing rule:</span><span class="l-pt">Regra de fechamento:</span></strong> <span class="l-es">si solo hay una buena explicación, el estado es candidate, no validated.</span><span class="l-en">if there is only a good explanation, the status is candidate, not validated.</span><span class="l-pt">se há apenas uma boa explicação, o estado é candidate, não validated.</span></div>
+  </section>
+
+  <section class="wrap" id="rutas">
+    <div class="section-head"><span class="kicker"><span class="l-es">Router</span><span class="l-en">Router</span><span class="l-pt">Router</span></span><h2><span class="l-es">Seis rutas posibles. Una ruta primaria por ejercicio.</span><span class="l-en">Six possible routes. One primary route per exercise.</span><span class="l-pt">Seis rotas possíveis. Uma rota primária por exercício.</span></h2></div>
+    <div class="grid g3">
+      <article class="card"><h3>Decidir</h3><p><span class="l-es">Criterios, opciones, tradeoffs, riesgos y recomendación no vinculante.</span><span class="l-en">Criteria, options, tradeoffs, risks and non-binding recommendation.</span><span class="l-pt">Critérios, opções, tradeoffs, riscos e recomendação não vinculante.</span></p></article>
+      <article class="card"><h3>Aprender</h3><p><span class="l-es">Intento mínimo, pista, reformulación propia y transferencia.</span><span class="l-en">Minimum attempt, hint, own reformulation and transfer.</span><span class="l-pt">Tentativa mínima, pista, reformulação própria e transferência.</span></p></article>
+      <article class="card"><h3>Practicar</h3><p><span class="l-es">Repetición breve, feedback y métrica P/A/T/J/E.</span><span class="l-en">Short repetition, feedback and P/A/T/J/E metric.</span><span class="l-pt">Repetição curta, feedback e métrica P/A/T/J/E.</span></p></article>
+      <article class="card"><h3>Construir</h3><p><span class="l-es">Checklist, SOP, plantilla o ritual en versión mínima útil.</span><span class="l-en">Checklist, SOP, template or ritual as a minimum useful version.</span><span class="l-pt">Checklist, SOP, modelo ou ritual em versão mínima útil.</span></p></article>
+      <article class="card"><h3>Evaluar</h3><p><span class="l-es">Rúbrica, hallazgos, evidencia, límites y correcciones priorizadas.</span><span class="l-en">Rubric, findings, evidence, limits and prioritized corrections.</span><span class="l-pt">Rubrica, achados, evidência, limites e correções priorizadas.</span></p></article>
+      <article class="card"><h3>Reparar</h3><p><span class="l-es">Síntoma, causa probable, parche y prueba antes/después.</span><span class="l-en">Symptom, probable cause, patch and before/after test.</span><span class="l-pt">Sintoma, causa provável, correção e teste antes/depois.</span></p></article>
     </div>
   </section>
 
-  <section class="wrap" id="fuentes">
-    <div class="section-head">
-      <span class="eyebrow">Fuentes y límites</span>
-      <h2>Qué está verificado y qué es inferencia metodológica</h2>
-      <p class="lead">Las capacidades de Claude Code cambian con frecuencia. Esta clase usa documentación oficial como base y convierte esa base en pedagogía MetodologIA. La soberanía, la secuencia de clase y el workbook son diseño metodológico propio.</p>
-    </div>
-    <div class="source-list">
-      <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code overview · leer codebase, editar archivos, ejecutar comandos e integrarse con herramientas</a>
-      <a href="https://code.claude.com/docs/en/common-workflows" target="_blank" rel="noopener">Common workflows · incluye trabajo en carpetas de notas y documentación</a>
-      <a href="https://code.claude.com/docs/en/features-overview" target="_blank" rel="noopener">Extend Claude Code · CLAUDE.md, skills, subagents, hooks, MCP y plugins</a>
-      <a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">Hooks reference · eventos y controles de flujo</a>
-      <a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Subagents · delegación especializada en contexto aislado</a>
+  <section class="wrap" id="salida">
+    <div class="section-head"><span class="kicker"><span class="l-es">Salida</span><span class="l-en">Output</span><span class="l-pt">Saída</span></span><h2><span class="l-es">El éxito de la clase no es un output bonito</span><span class="l-en">Class success is not a polished output</span><span class="l-pt">O sucesso da aula não é um output bonito</span></h2></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>P/A/T/J/E</th><th><span class="l-es">Pregunta de control</span><span class="l-en">Control question</span><span class="l-pt">Pergunta de controle</span></th><th><span class="l-es">Evidencia mínima</span><span class="l-en">Minimum evidence</span><span class="l-pt">Evidência mínima</span></th></tr></thead>
+        <tbody>
+          <tr><td>Propósito</td><td><span class="l-es">¿Qué quiere lograr la persona y por qué importa?</span><span class="l-en">What does the person want to achieve and why does it matter?</span><span class="l-pt">O que a pessoa quer alcançar e por que importa?</span></td><td><span class="l-es">Objetivo en una frase.</span><span class="l-en">One-sentence goal.</span><span class="l-pt">Objetivo em uma frase.</span></td></tr>
+          <tr><td>Agencia</td><td><span class="l-es">¿Qué decide, entiende o ejecuta la persona?</span><span class="l-en">What does the person decide, understand or execute?</span><span class="l-pt">O que a pessoa decide, entende ou executa?</span></td><td><span class="l-es">Decisión humana visible.</span><span class="l-en">Visible human decision.</span><span class="l-pt">Decisão humana visível.</span></td></tr>
+          <tr><td>Transferencia</td><td><span class="l-es">¿Puede repetir el método en otro caso?</span><span class="l-en">Can the method be reused in another case?</span><span class="l-pt">Pode repetir o método em outro caso?</span></td><td><span class="l-es">Plantilla o checklist reutilizable.</span><span class="l-en">Reusable template or checklist.</span><span class="l-pt">Modelo ou checklist reutilizável.</span></td></tr>
+          <tr><td>Juicio</td><td><span class="l-es">¿Qué criterios, riesgos y tradeoffs reconoce?</span><span class="l-en">Which criteria, risks and tradeoffs are recognized?</span><span class="l-pt">Quais critérios, riscos e tradeoffs reconhece?</span></td><td><span class="l-es">Lista de criterios y abort criteria.</span><span class="l-en">Criteria and abort criteria list.</span><span class="l-pt">Lista de critérios e abort criteria.</span></td></tr>
+          <tr><td>Evidencia</td><td><span class="l-es">¿Qué prueba permite revisar el avance?</span><span class="l-en">What proof allows progress review?</span><span class="l-pt">Que prova permite revisar o avanço?</span></td><td><span class="l-es">Prueba mínima y brecha abierta.</span><span class="l-en">Minimum test and open gap.</span><span class="l-pt">Teste mínimo e lacuna aberta.</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
-
-<div class="official-research-note" data-official-research="brand-boundary-20260523" style="margin:2rem auto;max-width:980px;padding:1rem 1.25rem;border:1px solid rgba(184,134,11,.35);border-radius:10px;background:#fffdf3;color:#0A122A;line-height:1.65;font-size:.92rem"><p style="margin:0"><strong>Frontera de fuentes.</strong> Esta línea conserva su propio marco Claude/Jarvis. La investigación oficial OpenAI/Codex se aplicó solo a los homólogos Codex para evitar mezclar capacidades entre plataformas.</p></div>
 </main>
-
 <footer class="footer">
-  <div class="footer-inner"><strong>MetodologIA · Jarvis OS en Claude</strong><br>Masterclass autocontenida. Metodo primero, (Gen)AI Después. Autoría: Javier Montaño. Uso sugerido: clase guiada con workbook y revisión humana de cada artefacto.</div>
+  <div class="footer-in">
+    <strong>MetodologIA · Introducción al Trabajo Amplificado</strong><br>
+    Masterclass · v1.2 · actualizado 2026-07-01. Método primero, (Gen)IA después. Clase introductoria gratuita: herramienta candidata, evidencia proporcional y decisión humana visible.
+  </div>
 </footer>
-
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-  if(window.lucide){window.lucide.createIcons();}
-  document.querySelectorAll('[data-copy]').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var pre=btn.closest('.prompt').querySelector('pre');
-      navigator.clipboard.writeText(pre.innerText).then(function(){
-        var old=btn.textContent; btn.textContent='Copiado'; btn.classList.add('ok');
-        setTimeout(function(){btn.textContent=old;btn.classList.remove('ok');},1400);
-      });
-    });
-  });
-});
-</script>
-
-
-
-
-<style id="aceleradores-shell-final">
-/* Final cascade lock · MetodologIA/Aceleradores official sidebar + readable toggles */
-.hdr{display:none!important}
-body.lang-en .es,html[lang="en"] .es{display:none!important}
-body.lang-en .en,html[lang="en"] .en{display:inline!important}
-body.lang-es .en,html:not([lang="en"]) .en{display:none!important}
-body.lang-es .es,html:not([lang="en"]) .es{display:inline!important}
-:root{
-  --shell-glass-bg:var(--glass-bg,rgba(255,251,240,.92));
-  --shell-border:var(--border,rgba(18,37,98,.12));
-  --shell-text-muted:var(--text-muted,var(--muted,#5B6677));
-  --shell-navy:var(--navy,#122562);
-  --shell-gold:var(--gold,#FFD700);
-  --shell-gold-dark:var(--gold-dark,#8a6500);
-  --shell-radius-sm:var(--radius-sm,8px);
-  --shell-font-head:var(--font-head,var(--font-display,'Poppins',system-ui,sans-serif));
-}
-body,body.brand-has-shell{padding-left:0!important;padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important}
-nav.sidebar-nav,.sidebar-nav{position:fixed!important;top:auto!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;max-width:none!important;min-width:0!important;height:56px!important;z-index:100!important;display:flex!important;flex-direction:row!important;align-items:center!important;padding:0 .5rem!important;gap:2px!important;background:var(--shell-glass-bg)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;border-right:none!important;border-left:none!important;border-bottom:none!important;border-top:1px solid var(--shell-border)!important;overflow:visible!important;margin:0!important;border-radius:0!important;box-shadow:none!important}
-nav.sidebar-nav .sidebar-logo,.sidebar-nav .sidebar-logo{display:none!important}
-nav.sidebar-nav .sidebar-logo svg,.sidebar-nav .sidebar-logo svg{width:32px!important;height:32px!important;border-radius:6px!important;display:block!important}
-nav.sidebar-nav .sidebar-links,.sidebar-nav .sidebar-links{display:flex!important;flex-direction:row!important;align-items:center!important;gap:0!important;flex:1 1 auto!important;justify-content:space-around!important;width:100%!important;min-width:0!important;overflow:visible!important}
-nav.sidebar-nav a,.sidebar-nav a{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;min-width:44px!important;min-height:44px!important;border-radius:10px!important;color:var(--shell-text-muted)!important;text-decoration:none!important;border:none!important;background:transparent!important;transition:color .25s,background .25s,transform .2s!important;margin:0!important;padding:0!important;max-width:none!important;box-shadow:none!important}
-nav.sidebar-nav a:hover,.sidebar-nav a:hover{color:var(--shell-gold-dark)!important;background:rgba(184,134,11,.08)!important;transform:scale(1.1)!important;text-decoration:none!important;border-bottom-color:transparent!important}
-nav.sidebar-nav a.active,.sidebar-nav a.active{color:var(--shell-gold-dark)!important;background:transparent!important}
-nav.sidebar-nav a.active::before,.sidebar-nav a.active::before{content:''!important;position:absolute!important;left:50%!important;top:auto!important;bottom:0!important;transform:translateX(-50%)!important;width:20px!important;height:3px!important;border-radius:3px 3px 0 0!important;background:var(--shell-gold)!important}
-nav.sidebar-nav a svg,.sidebar-nav a svg,nav.sidebar-nav a i,.sidebar-nav a i{width:18px!important;height:18px!important;color:var(--shell-gold-dark)!important;stroke-width:2!important;flex-shrink:0!important}
-nav.sidebar-nav a::after,.sidebar-nav a::after{display:none!important}
-.sidebar-bottom{position:fixed!important;right:.55rem!important;bottom:calc(62px + env(safe-area-inset-bottom,0px))!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:5px!important;margin:0!important;padding:.28rem!important;border:1px solid var(--shell-border)!important;border-radius:12px!important;background:var(--shell-glass-bg)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;box-shadow:0 8px 24px rgba(18,37,98,.12)!important}
-.sidebar-bottom a{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;border-radius:8px!important;margin:0!important;background:transparent!important;border:none!important;display:flex!important;align-items:center!important;justify-content:center!important}
-.sidebar-bottom a img{width:24px!important;height:24px!important;border-radius:6px!important;object-fit:contain!important;display:block!important}
-.sidebar-bottom button{width:34px!important;height:34px!important;border-radius:8px!important;border:1px solid var(--shell-border)!important;background:transparent!important;color:var(--shell-text-muted)!important;cursor:pointer!important;font-family:var(--shell-font-head)!important;font-size:.65rem!important;font-weight:700!important;display:flex!important;align-items:center!important;justify-content:center!important;transition:background .2s,color .2s,border-color .2s,transform .2s!important;line-height:1!important}
-.sidebar-bottom button:hover:not(:disabled){background:var(--shell-gold)!important;color:var(--shell-navy)!important;border-color:var(--shell-gold)!important;transform:translateY(-1px)!important}
-.sidebar-bottom button:disabled{opacity:.55!important;cursor:default!important;transform:none!important}
-.sidebar-bottom button svg{width:16px!important;height:16px!important}
-@media(min-width:769px){
-  body,body.brand-has-shell{padding-left:56px!important;padding-bottom:0!important}
-  nav.sidebar-nav,.sidebar-nav{top:0!important;bottom:0!important;left:0!important;right:auto!important;width:56px!important;height:auto!important;max-width:56px!important;min-width:56px!important;flex-direction:column!important;padding:1.25rem 0 1rem!important;border-right:1px solid var(--shell-border)!important;border-top:none!important}
-  nav.sidebar-nav .sidebar-logo,.sidebar-nav .sidebar-logo{display:flex!important;align-items:center!important;justify-content:center!important;margin-bottom:1rem!important;padding-bottom:.75rem!important;border-bottom:1px solid var(--shell-border)!important;width:auto!important;height:auto!important}
-  nav.sidebar-nav .sidebar-links,.sidebar-nav .sidebar-links{flex-direction:column!important;gap:2px!important;width:auto!important;justify-content:center!important}
-  nav.sidebar-nav a,.sidebar-nav a{width:40px!important;height:40px!important;min-width:auto!important;min-height:auto!important}
-  nav.sidebar-nav a svg,.sidebar-nav a svg,nav.sidebar-nav a i,.sidebar-nav a i{width:20px!important;height:20px!important}
-  nav.sidebar-nav a::after,.sidebar-nav a::after{content:attr(data-label)!important;display:block!important;position:absolute!important;left:calc(100% + 10px)!important;top:50%!important;transform:translateY(-50%) translateX(-4px)!important;background:var(--shell-navy)!important;color:#fff!important;font-family:var(--shell-font-head)!important;font-size:.7rem!important;font-weight:600!important;padding:.35rem .7rem!important;border-radius:var(--shell-radius-sm)!important;white-space:nowrap!important;opacity:0!important;pointer-events:none!important;transition:opacity .2s,transform .2s!important;box-shadow:0 2px 8px rgba(0,0,0,.15)!important;z-index:200!important}
-  nav.sidebar-nav a:hover::after,.sidebar-nav a:hover::after,nav.sidebar-nav a:focus-visible::after,.sidebar-nav a:focus-visible::after{opacity:1!important;transform:translateY(-50%) translateX(0)!important}
-  nav.sidebar-nav a.active::before,.sidebar-nav a.active::before{left:0!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:3px!important;height:20px!important;border-radius:0 2px 2px 0!important}
-  .sidebar-bottom{position:static!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:6px!important;margin-top:auto!important;padding:.75rem 0 0!important;border-top:1px solid var(--shell-border)!important;border-left:none!important;border-right:none!important;border-bottom:none!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-  .sidebar-bottom a{width:38px!important;height:38px!important;min-width:auto!important;min-height:auto!important;margin-bottom:.5rem!important}
-}
-html.dark,html[data-theme="dark"]{color-scheme:dark;--cream:#071A33;--cream-2:#0D1F3C;--paper:#071A33;--soft:#13294A;--ink:#EAF1FF;--ink-2:#D7E0EF;--ink-3:#B8C6D9;--muted:#CBD5E1;--text-muted:#B8C6D9;--line:rgba(255,215,0,.24);--border:rgba(255,215,0,.18);--glass-bg:rgba(31,40,51,.94);--shell-glass-bg:rgba(31,40,51,.94);--shell-border:rgba(255,215,0,.16);--shell-text-muted:#D7E0EF;--shell-gold-dark:#FFD700}
-html.dark body,html[data-theme="dark"] body{background:#071A33!important;color:#EAF1FF!important}
-html.dark main,html[data-theme="dark"] main{background:transparent!important;color:#EAF1FF!important}
-html.dark .sidebar-nav,html[data-theme="dark"] .sidebar-nav,html.dark .sidebar-bottom,html[data-theme="dark"] .sidebar-bottom{background:rgba(31,40,51,.94)!important;border-color:rgba(255,215,0,.16)!important}
-html.dark .sidebar-nav a,html[data-theme="dark"] .sidebar-nav a,html.dark .sidebar-nav a svg,html[data-theme="dark"] .sidebar-nav a svg,html.dark .sidebar-bottom button,html[data-theme="dark"] .sidebar-bottom button{color:#FFD700!important}
-html.dark .sidebar-nav a:hover,html[data-theme="dark"] .sidebar-nav a:hover,html.dark .sidebar-nav a.active,html[data-theme="dark"] .sidebar-nav a.active{color:#FFD700!important;background:rgba(255,215,0,.1)!important}
-html.dark .sidebar-nav a::after,html[data-theme="dark"] .sidebar-nav a::after{background:#1F2833!important;color:#fff!important;border:1px solid rgba(255,215,0,.15)!important}
-html.dark h1,html[data-theme="dark"] h1,html.dark h2,html[data-theme="dark"] h2,html.dark h3,html[data-theme="dark"] h3,html.dark h4,html[data-theme="dark"] h4,html.dark h5,html[data-theme="dark"] h5,html.dark .section-title,html[data-theme="dark"] .section-title,html.dark .section-title h2,html[data-theme="dark"] .section-title h2{color:#FFF8D6!important}
-html.dark p,html[data-theme="dark"] p,html.dark li,html[data-theme="dark"] li,html.dark dd,html[data-theme="dark"] dd,html.dark td,html[data-theme="dark"] td,html.dark label,html[data-theme="dark"] label,html.dark .lead,html[data-theme="dark"] .lead,html.dark .hint,html[data-theme="dark"] .hint,html.dark .section-eyebrow,html[data-theme="dark"] .section-eyebrow,html.dark .muted,html[data-theme="dark"] .muted{color:#D7E0EF!important}
-html.dark strong,html[data-theme="dark"] strong{color:#FFF8D6!important}
-html.dark a,html[data-theme="dark"] a{color:#FFE55C!important}
-html.dark :is(.card,.hero-card,.metric,.source-list a,.step,.step-card,.howto-card,.callout,.option,.reader-letter,.table,.check,.ally-card,.cap-card,.capability-card,.settings-card,.setting-card,.layer-card,.timeline-content,.prompt-card,.artifact-card,.exercise-card,.work-card,.principle-card,.matrix-card,.team-card,.partner-card,.modal,.modal-content,textarea,input,select,table,tbody,tr,td),
-html[data-theme="dark"] :is(.card,.hero-card,.metric,.source-list a,.step,.step-card,.howto-card,.callout,.option,.reader-letter,.table,.check,.ally-card,.cap-card,.capability-card,.settings-card,.setting-card,.layer-card,.timeline-content,.prompt-card,.artifact-card,.exercise-card,.work-card,.principle-card,.matrix-card,.team-card,.partner-card,.modal,.modal-content,textarea,input,select,table,tbody,tr,td){background:#10264A!important;color:#EAF1FF!important;border-color:rgba(255,215,0,.24)!important;box-shadow:none!important}
-html.dark :is(.card,.hero-card,.metric,.source-list a,.step,.step-card,.howto-card,.callout,.option,.reader-letter,.table,.check,.ally-card,.cap-card,.capability-card,.settings-card,.setting-card,.layer-card,.timeline-content,.prompt-card,.artifact-card,.exercise-card,.work-card,.principle-card,.matrix-card,.team-card,.partner-card,.modal,.modal-content) :is(h1,h2,h3,h4,h5,strong,label),
-html[data-theme="dark"] :is(.card,.hero-card,.metric,.source-list a,.step,.step-card,.howto-card,.callout,.option,.reader-letter,.table,.check,.ally-card,.cap-card,.capability-card,.settings-card,.setting-card,.layer-card,.timeline-content,.prompt-card,.artifact-card,.exercise-card,.work-card,.principle-card,.matrix-card,.team-card,.partner-card,.modal,.modal-content) :is(h1,h2,h3,h4,h5,strong,label){color:#FFF8D6!important}
-html.dark :is(.card,.hero-card,.metric,.source-list a,.step,.step-card,.howto-card,.callout,.option,.reader-letter,.table,.check,.ally-card,.cap-card,.capability-card,.settings-card,.setting-card,.layer-card,.timeline-content,.prompt-card,.artifact-card,.exercise-card,.work-card,.principle-card,.matrix-card,.team-card,.partner-card,.modal,.modal-content) :is(p,li,span,td,small),
-html[data-theme="dark"] :is(.card,.hero-card,.metric,.source-list a,.step,.step-card,.howto-card,.callout,.option,.reader-letter,.table,.check,.ally-card,.cap-card,.capability-card,.settings-card,.setting-card,.layer-card,.timeline-content,.prompt-card,.artifact-card,.exercise-card,.work-card,.principle-card,.matrix-card,.team-card,.partner-card,.modal,.modal-content) :is(p,li,span,td,small){color:#D7E0EF!important}
-html.dark th,html[data-theme="dark"] th,html.dark thead th,html[data-theme="dark"] thead th{background:#122562!important;color:#FFD700!important;border-color:rgba(255,215,0,.24)!important}
-html.dark .callout.warn,html[data-theme="dark"] .callout.warn,html.dark .warn,html[data-theme="dark"] .warn{background:#3A2A0A!important;color:#FFF3C4!important;border-color:#FFD700!important}
-html.dark .callout.warn *,html[data-theme="dark"] .callout.warn *,html.dark .warn *,html[data-theme="dark"] .warn *{color:#FFF3C4!important}
-html.dark .badge,html[data-theme="dark"] .badge,html.dark .pill,html[data-theme="dark"] .pill,html.dark .tag,html[data-theme="dark"] .tag{background:rgba(255,215,0,.16)!important;color:#FFE55C!important;border-color:rgba(255,215,0,.38)!important}
-html.dark code,html[data-theme="dark"] code{background:rgba(255,255,255,.08)!important;color:#FFE55C!important;border-color:rgba(255,215,0,.24)!important}
-html.dark pre,html[data-theme="dark"] pre,html.dark .prompt,html[data-theme="dark"] .prompt,html.dark .prompt-block,html[data-theme="dark"] .prompt-block{background:#071426!important;color:#EAF1FF!important;border-color:rgba(255,215,0,.2)!important}
-
-
-/* Dark mode also owns legacy inline color/background fragments */
-html.dark :is([style*="background:#fff"],[style*="background: #fff"],[style*="background:#fff8db"],[style*="background: #fff8db"],[style*="background:linear-gradient(180deg,#fffbf0"],[style*="background: linear-gradient(180deg,#fffbf0"]),
-html[data-theme="dark"] :is([style*="background:#fff"],[style*="background: #fff"],[style*="background:#fff8db"],[style*="background: #fff8db"],[style*="background:linear-gradient(180deg,#fffbf0"],[style*="background: linear-gradient(180deg,#fffbf0"]){background:#10264A!important;color:#EAF1FF!important;border-color:rgba(255,215,0,.24)!important;box-shadow:none!important}
-html.dark :is([style*="color:#0A122A"],[style*="color: #0A122A"],[style*="color:#1a1f2e"],[style*="color: #1a1f2e"],[style*="color:#666"],[style*="color: #666"],[style*="color:#6B5300"],[style*="color: #6B5300"]),
-html[data-theme="dark"] :is([style*="color:#0A122A"],[style*="color: #0A122A"],[style*="color:#1a1f2e"],[style*="color: #1a1f2e"],[style*="color:#666"],[style*="color: #666"],[style*="color:#6B5300"],[style*="color: #6B5300"]){color:#D7E0EF!important}
-html.dark :is(h1,h2,h3,h4,h5,strong,label)[style*="color:#0A122A"],html.dark :is(h1,h2,h3,h4,h5,strong,label)[style*="color: #0A122A"],
-html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,label)[style*="color:#0A122A"],html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,label)[style*="color: #0A122A"]{color:#FFF8D6!important}
-/* Dark contrast closure for real document surfaces */
-html.dark :is(.band,section.band,.kpi,.checkpoint-card,.status-card,.modal-card,.callout-mini,.table-wrap,.table-wrap-scroll,.agenda article,.agenda-card,.codebox,.codebox-head,.section-head),
-html[data-theme="dark"] :is(.band,section.band,.kpi,.checkpoint-card,.status-card,.modal-card,.callout-mini,.table-wrap,.table-wrap-scroll,.agenda article,.agenda-card,.codebox,.codebox-head,.section-head){background:#10264A!important;color:#EAF1FF!important;border-color:rgba(255,215,0,.24)!important;box-shadow:none!important}
-html.dark :is(.band,section.band,.kpi,.checkpoint-card,.status-card,.modal-card,.callout-mini,.table-wrap,.table-wrap-scroll,.agenda article,.agenda-card,.codebox,.codebox-head,.section-head) :is(h1,h2,h3,h4,h5,strong,label,.kpi-v),
-html[data-theme="dark"] :is(.band,section.band,.kpi,.checkpoint-card,.status-card,.modal-card,.callout-mini,.table-wrap,.table-wrap-scroll,.agenda article,.agenda-card,.codebox,.codebox-head,.section-head) :is(h1,h2,h3,h4,h5,strong,label,.kpi-v){color:#FFF8D6!important}
-html.dark :is(.band,section.band,.kpi,.checkpoint-card,.status-card,.modal-card,.callout-mini,.table-wrap,.table-wrap-scroll,.agenda article,.agenda-card,.codebox,.codebox-head,.section-head) :is(p,li,span,td,small,.kpi-l),
-html[data-theme="dark"] :is(.band,section.band,.kpi,.checkpoint-card,.status-card,.modal-card,.callout-mini,.table-wrap,.table-wrap-scroll,.agenda article,.agenda-card,.codebox,.codebox-head,.section-head) :is(p,li,span,td,small,.kpi-l){color:#D7E0EF!important}
-html.dark .icon,html[data-theme="dark"] .icon,html.dark .ico,html[data-theme="dark"] .ico{background:#122562!important;color:#FFD700!important;border-color:rgba(255,215,0,.24)!important}
-/* Dark contrast closure for annexes, FAQ and modal-like legacy light bands */
-html.dark :is([style*="#FAF6E8"],[style*="#faf6e8"],[style*="#F9FAFB"],[style*="#f9fafb"],[style*="#FFF8D6"],[style*="#fff8d6"],[style*="#F3F6FB"],[style*="#f3f6fb"],[style*="#FFFBF0"],[style*="#fffbf0"]),
-html[data-theme="dark"] :is([style*="#FAF6E8"],[style*="#faf6e8"],[style*="#F9FAFB"],[style*="#f9fafb"],[style*="#FFF8D6"],[style*="#fff8d6"],[style*="#F3F6FB"],[style*="#f3f6fb"],[style*="#FFFBF0"],[style*="#fffbf0"]){background:#10264A!important;color:#EAF1FF!important;border-color:rgba(255,215,0,.24)!important;box-shadow:none!important}
-html.dark :is([style*="color:#475569"],[style*="color: #475569"],[style*="color:#5C4400"],[style*="color: #5C4400"],[style*="color:#122562"],[style*="color: #122562"],[style*="color:#1F2833"],[style*="color: #1F2833"]),
-html[data-theme="dark"] :is([style*="color:#475569"],[style*="color: #475569"],[style*="color:#5C4400"],[style*="color: #5C4400"],[style*="color:#122562"],[style*="color: #122562"],[style*="color:#1F2833"],[style*="color: #1F2833"]){color:#D7E0EF!important}
-html.dark :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color:#122562"],html.dark :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color: #122562"],
-html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color:#122562"],html[data-theme="dark"] :is(h1,h2,h3,h4,h5,strong,summary,label)[style*="color: #122562"]{color:#FFF8D6!important}
-@media(print){.sidebar-nav{display:none!important}body,body.brand-has-shell{padding-left:0!important;padding-bottom:0!important}}
-</style>
-
-<script>
-/* MetodologIA official shell controls · language + theme */
 (function(){
-  var THEME_KEY='jarvis-aceleradores-shell-theme';
-  var LANG_KEY='jarvis-aceleradores-shell-lang';
-  var THEME_KEYS=[THEME_KEY,'cartilla-theme','mt-theme','jarvis-shell-theme'];
-  var LANG_KEYS=[LANG_KEY,'cartilla-lang','mt-lang','jarvis-shell-lang'];
-  function body(){return document.body;}
-  function hasBilingualContent(){return !!(document.querySelector('.localized-en') || (document.querySelector('.es') && document.querySelector('.en')));}
-  function readStored(keys, allowed){
-    try{for(var i=0;i<keys.length;i++){var v=localStorage.getItem(keys[i]);if(allowed.indexOf(v)>-1)return v;}}catch(e){}
-    return null;
+  var lang='es';
+  var theme='dark';
+  function applyLang(next){
+    lang=next;
+    document.body.classList.remove('lang-es','lang-en','lang-pt');
+    document.body.classList.add('lang-'+lang);
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-lang-current]').forEach(function(el){el.textContent=lang.toUpperCase();});
   }
-  function writeStored(keys, value){
-    try{keys.forEach(function(k){localStorage.setItem(k,value);});}catch(e){}
+  function applyTheme(next){
+    theme=next;
+    document.body.classList.toggle('theme-dark',theme==='dark');
+    document.body.classList.toggle('theme-light',theme==='light');
+    document.documentElement.setAttribute('data-theme',theme);
+    document.querySelectorAll('[data-theme-current]').forEach(function(el){el.textContent=theme==='dark'?'☾':'☀';});
   }
-  function updateLocalizedNav(lang){
-    var map=window.__bilingualNav&&window.__bilingualNav[lang];
-    if(!map)return;
-    var links=[].slice.call(document.querySelectorAll('.sidebar-links a[href^="#"]'));
-    links.forEach(function(a,i){
-      if(!map[i])return;
-      a.setAttribute('href',map[i][0]);
-      a.setAttribute('data-label',map[i][1]);
-      a.setAttribute('aria-label',map[i][1]);
-    });
-  }
-  function applyTheme(theme, persist){
-    var html=document.documentElement;
-    var isDark=theme==='dark';
-    html.classList.toggle('dark',isDark);
-    html.setAttribute('data-theme',isDark?'dark':'light');
-    if(body())body().classList.toggle('dark',isDark);
-    if(persist)writeStored(THEME_KEYS,isDark?'dark':'light');
-    syncShellButtons();
-  }
-  function applyLang(lang, persist){
-    var html=document.documentElement;
-    var canToggle=hasBilingualContent();
-    var next=(canToggle && lang==='en')?'en':'es';
-    html.setAttribute('lang',next);
-    html.lang=next;
-    if(body()){
-      body().classList.remove('lang-es','lang-en');
-      body().classList.add(next==='en'?'lang-en':'lang-es');
+  document.addEventListener('click',function(e){
+    var langBtn=e.target.closest('[data-lang-toggle]');
+    if(langBtn){applyLang(lang==='es'?'en':lang==='en'?'pt':'es');}
+    var themeBtn=e.target.closest('[data-theme-toggle]');
+    if(themeBtn){applyTheme(theme==='dark'?'light':'dark');}
+    var copy=e.target.closest('[data-copy]');
+    if(copy){
+      var target=copy.closest('.prompt')?.querySelector('pre');
+      if(target){
+        var text=target.innerText.trim();
+        navigator.clipboard.writeText(text).then(function(){
+          var old=copy.textContent; copy.textContent='✓'; copy.classList.add('ok');
+          setTimeout(function(){copy.textContent=old;copy.classList.remove('ok');},1200);
+        });
+      }
     }
-    updateLocalizedNav(next);
-    if(persist)writeStored(LANG_KEYS,next);
-    syncShellButtons();
-  }
-  function syncShellButtons(){
-    var darkBtn=document.getElementById('darkBtn');
-    var langBtn=document.getElementById('langBtn');
-    var html=document.documentElement;
-    if(darkBtn){
-      var icon=html.classList.contains('dark')?'sun':'moon';
-      darkBtn.innerHTML='<i data-lucide="'+icon+'" style="width:16px;height:16px"></i>';
-      darkBtn.setAttribute('aria-pressed',html.classList.contains('dark')?'true':'false');
-    }
-    if(langBtn){
-      var canToggle=hasBilingualContent();
-      var lang=(html.lang||'es').toLowerCase()==='en'?'EN':'ES';
-      langBtn.textContent=lang;
-      langBtn.disabled=!canToggle;
-      langBtn.setAttribute('aria-disabled',canToggle?'false':'true');
-      langBtn.setAttribute('aria-pressed',lang==='EN'?'true':'false');
-      langBtn.title=canToggle?'Cambiar idioma':'Cambiar idioma';
-    }
-    if(window.lucide){window.lucide.createIcons();}
-  }
-  window.toggleDark=function(){
-    var html=document.documentElement;
-    applyTheme(html.classList.contains('dark')?'light':'dark',true);
-  };
-  window.toggleLang=function(){
-    if(!hasBilingualContent()){applyLang('es',true);return;}
-    var cur=(document.documentElement.lang||'es').toLowerCase()==='en'?'en':'es';
-    applyLang(cur==='en'?'es':'en',true);
-  };
-  function setActive(){
-    var links=[].slice.call(document.querySelectorAll('.sidebar-links a[href^="#"]'));
-    var sections=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-    if(!links.length||!sections.length)return;
-    var current=sections[0];
-    sections.forEach(function(sec){if(sec.getBoundingClientRect().top<140)current=sec;});
-    links.forEach(function(a){a.classList.toggle('active',current&&a.getAttribute('href')==='#'+current.id);});
-  }
-  function boot(){
-    var storedTheme=readStored(THEME_KEYS,['dark','light'])||document.documentElement.getAttribute('data-theme')||'light';
-    var storedLang=readStored(LANG_KEYS,['es','en'])||(document.documentElement.lang||'es').toLowerCase();
-    applyTheme(storedTheme==='dark'?'dark':'light',false);
-    applyLang(storedLang==='en'?'en':'es',false);
-    setActive();
-    window.addEventListener('scroll',setActive,{passive:true});
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+  });
+  applyLang('es'); applyTheme('dark');
 })();
 </script>
 
-<div class="docset-version" style="text-align:center;font-family:system-ui,sans-serif;font-size:.75rem;color:#8a8676;padding:1.1rem;border-top:1px solid rgba(0,0,0,.08)">Jarvis OS en Claude · Masterclass · v1.1 · actualizado 2026-06-02 · MetodologIA · <a href="index.html" style="color:#B8860B;text-decoration:none">Trabajar Amplificado ↑</a></div>
 </body>
 </html>
