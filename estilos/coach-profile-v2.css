@@ -1,0 +1,432 @@
+/*
+ * coach-profile-v2.css
+ * Shared profile treatment for self-contained Javier Montano coach pages.
+ */
+
+html[data-page-slug$="coach-javier-montano"] {
+  --coach-page: #f3f6fa;
+  --coach-panel: #ffffff;
+  --coach-panel-soft: #f7fafc;
+  --coach-ink: #071126;
+  --coach-muted: #435166;
+  --coach-line: rgba(7, 17, 38, .12);
+  --coach-line-strong: rgba(184, 135, 0, .38);
+  --coach-gold: #c59600;
+  --coach-teal: #0f766e;
+  --coach-shadow: 0 22px 60px rgba(7, 17, 38, .10);
+  --coach-shadow-soft: 0 14px 34px rgba(7, 17, 38, .08);
+  scroll-padding-top: 92px;
+}
+
+html[data-theme="dark"][data-page-slug$="coach-javier-montano"] {
+  --coach-page: #081020;
+  --coach-panel: #111b2c;
+  --coach-panel-soft: #0d1627;
+  --coach-ink: #f8fafc;
+  --coach-muted: #c8d3e1;
+  --coach-line: rgba(248, 250, 252, .12);
+  --coach-line-strong: rgba(255, 215, 0, .34);
+  --coach-gold: #ffd700;
+  --coach-teal: #2dd4bf;
+  --coach-shadow: 0 22px 60px rgba(0, 0, 0, .34);
+  --coach-shadow-soft: 0 14px 34px rgba(0, 0, 0, .22);
+}
+
+html[data-page-slug$="coach-javier-montano"] body,
+html[data-page-slug$="coach-javier-montano"] .main {
+  background: var(--coach-page) !important;
+  color: var(--coach-ink) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .main :is(.h1, .h2, .h3, h1, h2, h3, h4) {
+  color: var(--coach-ink);
+  letter-spacing: 0 !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .main .lead,
+html[data-page-slug$="coach-javier-montano"] .main p,
+html[data-page-slug$="coach-javier-montano"] .main li {
+  color: var(--coach-muted);
+}
+
+html[data-page-slug$="coach-javier-montano"] .main .section {
+  position: relative;
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+  background: transparent !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .main .section + .section {
+  border-top: 1px solid var(--coach-line);
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero {
+  overflow: hidden;
+  min-height: min(780px, calc(100vh - var(--header-h, 72px)));
+  display: flex;
+  align-items: center;
+  padding-block: clamp(4rem, 7vw, 6.5rem) clamp(3rem, 5vw, 5rem);
+  color: #f8fafc !important;
+  background:
+    linear-gradient(90deg, rgba(255, 215, 0, .22) 0 6px, transparent 6px),
+    linear-gradient(135deg, #071126 0%, #0a1730 48%, #102846 100%) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  background: linear-gradient(90deg, var(--coach-gold), #f8fafc 45%, var(--coach-teal));
+  opacity: .92;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .container {
+  width: min(100%, 1180px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 24rem);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  text-align: left !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .coach-photo {
+  grid-column: 2;
+  grid-row: 1 / span 7;
+  justify-self: center;
+  width: min(21rem, 32vw) !important;
+  margin: 0 !important;
+  border-radius: 8px !important;
+  border: 8px solid rgba(255, 255, 255, .92) !important;
+  outline: 1px solid rgba(255, 215, 0, .42);
+  outline-offset: 12px;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, .42) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .eyebrow {
+  color: #f4c542 !important;
+  max-width: 46rem;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .h1 {
+  max-width: 48rem !important;
+  margin: .75rem 0 1rem !important;
+  font-size: clamp(3.75rem, 8vw, 7rem);
+  line-height: .92;
+  color: #ffffff !important;
+  text-wrap: balance;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .lead {
+  max-width: 46rem !important;
+  margin: 0 0 1rem !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.55;
+  color: #dbe6f3 !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .home-hero__ctas {
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  margin-top: 1.2rem;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .home-cta {
+  border-radius: 8px !important;
+  min-height: 48px;
+  white-space: normal;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .home-cta--secondary {
+  background: rgba(255, 255, 255, .08) !important;
+  border-color: rgba(255, 255, 255, .35) !important;
+  color: #ffffff !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero .coach-pillrow,
+html[data-page-slug$="coach-javier-montano"] #hero .ta-tagrow {
+  justify-content: flex-start !important;
+  margin: 1.35rem 0 0 !important;
+  max-width: 48rem;
+}
+
+html[data-page-slug$="coach-javier-montano"] #hero :is(.coach-pill, .ta-tag) {
+  border-radius: 8px !important;
+  border-color: rgba(255, 255, 255, .16) !important;
+  background: rgba(255, 255, 255, .08) !important;
+  color: #edf4ff !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #perfil :is(.coach-card, .x-card) {
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #perfil .container {
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+html[data-page-slug$="coach-javier-montano"] #perfil .h2,
+html[data-page-slug$="coach-javier-montano"] #perfil .h3 {
+  max-width: 42rem;
+}
+
+html[data-page-slug$="coach-javier-montano"] #perfil .lead {
+  max-width: 48rem;
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-proof {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: .9rem !important;
+  margin-top: 1.4rem !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-proof__item {
+  min-height: 100%;
+  padding: 1.05rem 1.1rem 1.1rem !important;
+  border: 1px solid var(--coach-line) !important;
+  border-left: 4px solid var(--coach-gold) !important;
+  border-radius: 8px !important;
+  background: var(--coach-panel) !important;
+  box-shadow: var(--coach-shadow-soft);
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-proof__k {
+  color: var(--coach-gold) !important;
+  letter-spacing: .12em;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-proof__v {
+  color: var(--coach-muted) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-quote {
+  margin: 0 0 1rem;
+  border-left-color: var(--coach-gold) !important;
+  color: var(--coach-muted) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-list {
+  list-style: none !important;
+  padding: 0 !important;
+  display: grid !important;
+  gap: .75rem !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-list li {
+  position: relative;
+  padding: .95rem 1rem .95rem 1.35rem !important;
+  border: 1px solid var(--coach-line) !important;
+  border-radius: 8px !important;
+  background: var(--coach-panel) !important;
+  box-shadow: var(--coach-shadow-soft);
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-list li::before {
+  content: "";
+  position: absolute;
+  left: .65rem;
+  top: 1.1rem;
+  width: .36rem;
+  height: .36rem;
+  border-radius: 999px;
+  background: var(--coach-teal);
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-list strong {
+  color: var(--coach-ink) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] :is(.coach-card, .axis.x-card) {
+  border: 1px solid var(--coach-line) !important;
+  border-radius: 8px !important;
+  background: var(--coach-panel) !important;
+  box-shadow: var(--coach-shadow-soft);
+}
+
+html[data-page-slug$="coach-javier-montano"] :is(.coach-card, .axis.x-card):hover {
+  border-color: var(--coach-line-strong) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] :is(.coach-card h3, .axis__title) {
+  color: var(--coach-ink) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] :is(.coach-card p, .coach-card li, .axis__body) {
+  color: var(--coach-muted) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-link-grid,
+html[data-page-slug$="coach-javier-montano"] .coach-grid {
+  gap: 1rem !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-link-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--coach-line) !important;
+  border-top: 4px solid var(--coach-gold) !important;
+  border-radius: 8px !important;
+  background: var(--coach-panel) !important;
+  box-shadow: var(--coach-shadow-soft);
+  color: var(--coach-ink) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-link-card:hover,
+html[data-page-slug$="coach-javier-montano"] .coach-link-card:focus-visible {
+  transform: translateY(-3px) !important;
+  border-color: var(--coach-line-strong) !important;
+  box-shadow: var(--coach-shadow) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-link-card__k {
+  color: var(--coach-gold) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-link-card__t {
+  color: var(--coach-ink) !important;
+  letter-spacing: 0 !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-link-card__b {
+  color: var(--coach-muted) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-link-card__go {
+  color: var(--coach-teal) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-note,
+html[data-page-slug$="coach-javier-montano"] .ieb-footer-note {
+  color: var(--coach-muted) !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #contacto :is(.coach-contact, .ta-bundle) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.2rem 1.5rem;
+  align-items: center;
+  padding: clamp(1.35rem, 3vw, 2rem) !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 8px !important;
+  background: linear-gradient(135deg, #071126, #102846) !important;
+  box-shadow: var(--coach-shadow);
+}
+
+html[data-page-slug$="coach-javier-montano"] #contacto :is(.h2, .ta-pcard__name) {
+  color: #ffffff !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #contacto :is(.lead, .ta-pcard__inc) {
+  color: #dbe6f3 !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #contacto .eyebrow {
+  color: #f4c542 !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] #contacto :is(.coach-contact__actions, .ta-bundle__r) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .7rem;
+  min-width: min(100%, 22rem);
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-whatsapp {
+  background: #0f766e !important;
+  border-color: #0f766e !important;
+  color: #ffffff !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .coach-whatsapp:hover,
+html[data-page-slug$="coach-javier-montano"] .coach-whatsapp:focus-visible {
+  background: #0b5f59 !important;
+  border-color: #0b5f59 !important;
+  color: #ffffff !important;
+}
+
+html[data-page-slug$="coach-javier-montano"] .site-footer {
+  margin-top: 0;
+}
+
+html[data-page-slug$="coach-javier-montano"] .site-footer__link[href^="mailto:contacto"] {
+  color: var(--brand-gold-text);
+}
+
+@media (max-width: 920px) {
+  html[data-page-slug$="coach-javier-montano"] #hero {
+    min-height: auto;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #hero .container {
+    grid-template-columns: 1fr;
+    text-align: center !important;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #hero .coach-photo {
+    grid-column: 1;
+    grid-row: auto;
+    width: min(14rem, 58vw) !important;
+    justify-self: center;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #hero .h1,
+  html[data-page-slug$="coach-javier-montano"] #hero .lead,
+  html[data-page-slug$="coach-javier-montano"] #hero .eyebrow {
+    margin-inline: auto !important;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #hero .home-hero__ctas,
+  html[data-page-slug$="coach-javier-montano"] #hero .coach-pillrow,
+  html[data-page-slug$="coach-javier-montano"] #hero .ta-tagrow {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 720px) {
+  html[data-page-slug$="coach-javier-montano"] .main .section {
+    padding-block: 2.8rem;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #hero {
+    padding-block: 3rem 3.4rem;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #hero .h1 {
+    font-size: clamp(2.75rem, 16vw, 4rem) !important;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] .coach-proof {
+    grid-template-columns: 1fr !important;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #contacto :is(.coach-contact, .ta-bundle) {
+    grid-template-columns: 1fr;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #contacto :is(.coach-contact__actions, .ta-bundle__r) {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  html[data-page-slug$="coach-javier-montano"] #contacto .home-cta {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-page-slug$="coach-javier-montano"] .coach-link-card,
+  html[data-page-slug$="coach-javier-montano"] .home-cta {
+    transition: none !important;
+  }
+}
