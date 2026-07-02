@@ -1,12 +1,14 @@
 # Trabajar Amplificado · Intro gratuita y bootcamp
 
-Programa de **MetodologIA** para trabajar amplificado con método, IA y criterio humano visible. Experiencia **progresiva**: clase introductoria **gratis**, workbook, dos talleres de 2 h ($160.000 COP / $40 USD ref. c/u) y el bootcamp completo ($960.000 COP / $240 USD ref.). Todo el **material pedagógico es abierto** y en 3 idiomas (ES · EN · PT).
+Programa de **MetodologIA** para trabajar amplificado con método, IA y criterio humano visible. Experiencia **progresiva**: clase introductoria **gratis**, workbook, dos talleres de 2 h ($160.000 COP c/u) y el bootcamp completo ($960.000 COP). Todo el **material pedagógico es abierto** y en 3 idiomas (ES · EN · PT).
 
 > **Método + IA = Soberanía.** La IA no reemplaza tu criterio: lo libera para lo que sí importa.
 
 ## 🌐 Sitio
 
-**[Abrir el sitio →](https://javimontano.github.io/trabajar-amplificado/)**
+**[Abrir el sitio Colombia →](https://javimontano.github.io/trabajar-amplificado/)**
+
+**[Abrir versión internacional →](https://javimontano.github.io/trabajar-amplificado/internacional.html)**
 
 Usa el botón de idioma (arriba a la derecha) para cambiar ES · EN · PT.
 
@@ -15,10 +17,10 @@ Usa el botón de idioma (arriba a la derecha) para cambiar ES · EN · PT.
 | Paso | Qué | Precio |
 |---|---|---|
 | 1 · Intro | Introducción al Trabajo Amplificado · clase demo + workbook | **Gratis** (por formulario) |
-| 2 · Talleres | *Prompting de Alto Rendimiento* · *Sistematización y Automatización con Claude* (2 h c/u) | **$160.000 COP / $40 USD ref. c/u** · los 2 = **$280.000 COP / $70 USD ref.** (ahorras $40.000 COP / $10 USD ref.) |
-| 3 · Bootcamp | Trabajar Amplificado · 9 módulos + proyecto | **$960.000 COP / $240 USD ref.** |
+| 2 · Talleres | *Prompting de Alto Rendimiento* · *Sistematización y Automatización con Claude* (2 h c/u) | **$160.000 COP c/u** · los 2 = **$280.000 COP** (ahorras $40.000 COP) |
+| 3 · Bootcamp | Trabajar Amplificado · 9 módulos + proyecto | **$960.000 COP** |
 
-**Requisito** (talleres y bootcamp): cuenta de **Claude de pago** (desde $20/mes). La clase introductoria no la requiere.
+**Requisito** (talleres y bootcamp): cuenta de **Claude de pago**. Es un costo externo no incluido. La clase introductoria no la requiere.
 
 ## 🎤 Presentaciones por tema (landing + deck)
 
@@ -27,16 +29,17 @@ Cada oferta tiene su página landing y su deck de diapositivas (trilingüe):
 | Tema | Landing | Deck |
 |---|---|---|
 | Introducción al Trabajo Amplificado (gratis) | [`taller-intro.html`](taller-intro.html) | [`taller-intro-deck.html`](taller-intro-deck.html) |
-| Prompting de Alto Rendimiento ($160.000 COP / $40 USD ref.) | [`taller-prompting.html`](taller-prompting.html) | [`taller-prompting-deck.html`](taller-prompting-deck.html) |
-| Sistematización y Automatización ($160.000 COP / $40 USD ref.) | [`taller-automatizacion.html`](taller-automatizacion.html) | [`taller-automatizacion-deck.html`](taller-automatizacion-deck.html) |
-| Bootcamp ($960.000 COP / $240 USD ref.) | [`bootcamp.html`](bootcamp.html) | [`bootcamp-deck.html`](bootcamp-deck.html) |
+| Prompting de Alto Rendimiento ($160.000 COP) | [`taller-prompting.html`](taller-prompting.html) | [`taller-prompting-deck.html`](taller-prompting-deck.html) |
+| Sistematización y Automatización ($160.000 COP) | [`taller-automatizacion.html`](taller-automatizacion.html) | [`taller-automatizacion-deck.html`](taller-automatizacion-deck.html) |
+| Bootcamp ($960.000 COP) | [`bootcamp.html`](bootcamp.html) | [`bootcamp-deck.html`](bootcamp-deck.html) |
 | Dossier (programa completo) | [`dossier.html`](dossier.html) | [`dossier-deck.html`](dossier-deck.html) |
 
 ## 📚 Material abierto
 
 | Pieza | Qué es |
 |---|---|
-| [`index.html`](index.html) | Home · landing del programa + hub |
+| [`index.html`](index.html) | Home · landing del programa + hub · precios Colombia en COP |
+| [`internacional.html`](internacional.html) | Versión internacional · precios en dólares estadounidenses |
 | [`masterclass.html`](masterclass.html) | Masterclass — Introducción al Trabajo Amplificado |
 | [`workbook.html`](workbook.html) | Workbook — fricción, ruta primaria, herramienta candidata y evidencia |
 | [`playbook.html`](playbook.html) | Playbook — el qué/por qué (referencia profunda) |
