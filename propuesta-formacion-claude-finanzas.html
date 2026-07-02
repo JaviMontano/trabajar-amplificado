@@ -30,21 +30,54 @@
   <link rel="stylesheet" href="estilos/site-unified-v1.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
+    html[data-page-slug="propuesta-claude-finanzas"][data-theme="light"]{
+      --brand-bg:#f3f6fb;
+      --brand-surface:#ffffff;
+      --brand-surface-soft:#f8fafc;
+      --brand-text:#071126;
+      --brand-text-soft:#26364f;
+      --brand-muted:#52627a;
+      --brand-border:rgba(7,17,38,.16);
+      --brand-border-hover:rgba(142,108,0,.55);
+      --brand-gold:#d6a700;
+      --brand-gold-text:#6d5200;
+      --finance-accent-bg:#fbf0c7;
+      --finance-accent-bg-soft:#fdf7df;
+    }
+    html[data-page-slug="propuesta-claude-finanzas"][data-theme="dark"]{
+      --brand-bg:#071126;
+      --brand-surface:#101b33;
+      --brand-surface-soft:#17243d;
+      --brand-text:#f8fafc;
+      --brand-text-soft:#e5edf8;
+      --brand-muted:#b8c4d6;
+      --brand-border:rgba(255,255,255,.16);
+      --brand-border-hover:rgba(255,215,0,.48);
+      --brand-gold:#ffd700;
+      --brand-gold-text:#ffe875;
+      --finance-accent-bg:#303521;
+      --finance-accent-bg-soft:#242c24;
+    }
+    body{background:var(--brand-bg);color:var(--brand-text)}
     .main{padding-left:0!important}
+    .main .section{background:transparent}
+    .main .lead{color:var(--brand-text-soft)}
+    .main .h1,.main .h2{color:var(--brand-text)}
+    .main .gradient-text{background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;-webkit-text-fill-color:currentColor!important;color:var(--brand-gold-text)!important;text-shadow:none!important}
     .finance-grid{display:grid;gap:1rem}
     @media(min-width:760px){.finance-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}.finance-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}.finance-grid--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-    .finance-card{padding:1.35rem 1.25rem}
+    .finance-card{padding:1.35rem 1.25rem;background:var(--brand-surface);border:1px solid var(--brand-border)}
     .finance-card h3{font-size:1.05rem;margin:0 0 .45rem;color:var(--brand-text)}
     .finance-card p,.finance-card li{font-size:.92rem;line-height:1.58;color:var(--brand-text-soft)}
     .finance-card ul{display:grid;gap:.45rem;margin-top:.7rem;padding-left:1.1rem}
-    .finance-pill{display:inline-flex;align-items:center;gap:.45rem;margin:.25rem .35rem .55rem 0;padding:.42rem .72rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:rgba(255,215,0,.08);color:var(--brand-gold-text);font-size:.75rem;font-weight:700}
-    .finance-price{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.25rem;min-height:100%}
-    .finance-price--featured{outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:rgba(255,215,0,.06)}
+    .finance-pill{display:inline-flex;align-items:center;gap:.45rem;margin:.25rem .35rem .55rem 0;padding:.42rem .72rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:var(--finance-accent-bg);color:var(--brand-gold-text);font-size:.75rem;font-weight:800}
+    .finance-price{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.25rem;min-height:100%;background:var(--brand-surface);border:1px solid var(--brand-border)}
+    .finance-price--featured{outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:var(--finance-accent-bg-soft)}
     .finance-price__name{font-family:'Poppins',sans-serif;font-size:1.08rem;font-weight:800;line-height:1.18;color:var(--brand-text)}
     .finance-price__amount{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4.3vw,3.1rem);font-weight:900;line-height:1;color:var(--brand-gold-text)}
     .finance-price__meta{font-family:'Trebuchet MS',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-gold-text);border-top:1px solid var(--brand-border);padding-top:.6rem;margin-top:.2rem}
     .finance-price__body{font-size:.9rem;line-height:1.55;color:var(--brand-text-soft)}
-    .finance-note{display:inline-block;margin-top:.85rem;padding:.55rem .85rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:rgba(255,215,0,.08);color:var(--brand-gold-text);font-size:.78rem;font-weight:700}
+    .finance-note{display:inline-block;margin-top:.85rem;padding:.55rem .85rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:var(--finance-accent-bg);color:var(--brand-gold-text);font-size:.78rem;font-weight:800}
     .finance-step{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.8rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--brand-border)}
     .finance-step:last-child{border-bottom:0}
     .finance-step b{display:inline-flex;align-items:center;justify-content:center;width:2.1rem;height:2.1rem;border-radius:8px;border:1px solid var(--brand-border-hover);color:var(--brand-gold-text);font-family:'Poppins',sans-serif}
@@ -54,11 +87,11 @@
     @media(min-width:860px){.finance-program{grid-template-columns:repeat(3,minmax(0,1fr))}}
     .finance-class{position:relative;min-height:13.75rem;padding:1.25rem;border:1px solid var(--brand-border);border-radius:12px;background:var(--brand-surface);cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
     .finance-class:hover,.finance-class:focus-visible{transform:translateY(-2px);border-color:var(--brand-gold-text);box-shadow:0 16px 34px rgba(0,0,0,.12);outline:none}
-    .finance-class__num{display:inline-flex;align-items:center;justify-content:center;width:2.05rem;height:2.05rem;margin-bottom:.8rem;border-radius:8px;background:rgba(255,215,0,.12);border:1px solid var(--brand-border-hover);color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-weight:900}
+    .finance-class__num{display:inline-flex;align-items:center;justify-content:center;width:2.05rem;height:2.05rem;margin-bottom:.8rem;border-radius:8px;background:var(--finance-accent-bg);border:1px solid var(--brand-border-hover);color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-weight:900}
     .finance-class h3{margin:0 0 .45rem;font-size:1.02rem;color:var(--brand-text)}
     .finance-class p{margin:0;font-size:.88rem;line-height:1.52;color:var(--brand-text-soft)}
     .finance-class strong{color:var(--brand-text)}
-    .finance-class--intro{background:linear-gradient(135deg,rgba(255,215,0,.13),rgba(255,255,255,.02));border-color:var(--brand-border-hover)}
+    .finance-class--intro{background:var(--finance-accent-bg-soft);border-color:var(--brand-border-hover)}
     .finance-class--final{border-left:3px solid var(--brand-gold)}
     .finance-modal{border:none;border-radius:16px;max-width:660px;width:92vw;padding:0;background:var(--brand-surface);color:var(--brand-text);box-shadow:0 24px 60px rgba(0,0,0,.5)}
     .finance-modal::backdrop{background:rgba(7,11,26,.58);backdrop-filter:blur(4px)}
@@ -71,6 +104,18 @@
     .finance-modal li{font-size:.9rem;line-height:1.5;margin:.25rem 0}
     .finance-sub{font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-gold-text);margin-bottom:.8rem}
     .finance-boundary{border-left:3px solid var(--brand-gold);padding-left:1rem}
+    .finance-materials{margin-top:2rem}
+    .finance-link-card{display:flex;min-height:100%;flex-direction:column;gap:.65rem;padding:1.25rem;border:1px solid var(--brand-border);border-radius:12px;background:var(--brand-surface);color:var(--brand-text);text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+    .finance-link-card:hover,.finance-link-card:focus-visible{transform:translateY(-2px);border-color:var(--brand-gold-text);box-shadow:0 16px 34px rgba(0,0,0,.14);outline:none}
+    .finance-link-card span{font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-gold-text)}
+    .finance-link-card h3{margin:0;font-size:1.05rem;color:var(--brand-text)}
+    .finance-link-card p{margin:0;font-size:.9rem;line-height:1.55;color:var(--brand-text-soft)}
+    .finance-link-card strong{margin-top:auto;color:var(--brand-gold-text);font-size:.88rem}
+    .home-cta--primary{background:var(--brand-gold)!important;border-color:var(--brand-gold)!important;color:#071126!important}
+    .home-cta--secondary{background:var(--brand-surface)!important;border-color:var(--brand-gold-text)!important;color:var(--brand-gold-text)!important}
+    .stats{background:var(--brand-surface)!important;border-color:var(--brand-border)!important}
+    .stats__cell{background:var(--brand-surface)!important}
+    .stats__label{color:var(--brand-muted)!important}
     .x-card::after{content:none!important;display:none!important}
     @media(max-width:720px){
       .finance-pill{border-radius:10px;width:100%;justify-content:flex-start}
@@ -98,6 +143,7 @@
     </span>
   </a>
   <nav class="site-header__nav" aria-label="Navegación principal">
+    <a class="site-header__nav-link" href="#materiales">Materiales</a>
     <a class="site-header__nav-link" href="#programa">Programa</a>
     <a class="site-header__nav-link" href="#casos">Casos</a>
     <a class="site-header__nav-link" href="#inversion">Inversión</a>
@@ -117,12 +163,41 @@
       <div class="home-hero__ctas" style="justify-content:center;">
         <a href="#programa" class="home-cta home-cta--primary">Ver esquema de clases -></a>
         <a href="propuesta-formacion-claude-finanzas-deck.html" class="home-cta home-cta--secondary">Abrir presentación</a>
+        <a href="propuesta-cao-directivos-ia.html" class="home-cta home-cta--secondary">Abrir anexo CAO</a>
       </div>
       <div class="stats" style="margin-top:2rem;" aria-label="Resumen comercial">
         <div class="stats__cell"><span class="stats__num">0</span><span class="stats__label">intro sin costo</span></div>
         <div class="stats__cell"><span class="stats__num">9</span><span class="stats__label">clases progresivas</span></div>
         <div class="stats__cell"><span class="stats__num">5 a 15</span><span class="stats__label">personas por cohorte</span></div>
         <div class="stats__cell"><span class="stats__num">USD 4,000</span><span class="stats__label">bootcamp B2B</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="materiales">
+    <div class="container">
+      <span class="eyebrow">Materiales navegables · 00</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Todo se puede abrir desde esta propuesta principal</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">Este enlace funciona como punto de entrada para el equipo: documento comercial, presentación para reunión y anexo ejecutivo CAO.</p>
+      <div class="finance-grid finance-grid--3 finance-materials">
+        <a class="finance-link-card" href="propuesta-formacion-claude-finanzas.html" aria-current="page">
+          <span>Documento</span>
+          <h3>Propuesta principal</h3>
+          <p>El alcance completo: contexto, programa, casos financieros, inversión, límites y siguiente paso.</p>
+          <strong>Estás aquí</strong>
+        </a>
+        <a class="finance-link-card" href="propuesta-formacion-claude-finanzas-deck.html">
+          <span>Presentación</span>
+          <h3>Deck comercial</h3>
+          <p>Versión para presentar en reunión: una idea fuerte por slide, precios y ruta de decisión.</p>
+          <strong>Abrir deck -></strong>
+        </a>
+        <a class="finance-link-card" href="propuesta-cao-directivos-ia.html">
+          <span>Anexo</span>
+          <h3>CAO para directivos</h3>
+          <p>Capa opcional para liderazgo: delegación con IA, gobierno, NotebookLM/MCP y capacidad instalada.</p>
+          <strong>Abrir anexo -></strong>
+        </a>
       </div>
     </div>
   </section>
@@ -197,7 +272,7 @@
         </article>
         <article class="finance-class" data-modal="class-8" role="button" tabindex="0" aria-haspopup="dialog">
           <span class="finance-class__num">8</span>
-          <h3>Adopcion de IA</h3>
+          <h3>Adopción de IA</h3>
           <p>Diseñamos rituales, gobierno de uso y quick wins para que el equipo adopte sin fricción.</p>
         </article>
         <article class="finance-class finance-class--final" data-modal="class-9" role="button" tabindex="0" aria-haspopup="dialog">
@@ -339,6 +414,7 @@
       </div>
       <nav>
         <div class="site-footer__col-head">Propuesta</div>
+        <a class="site-footer__link" href="#materiales">Materiales</a>
         <a class="site-footer__link" href="#programa">Programa</a>
         <a class="site-footer__link" href="#casos">Casos de uso</a>
         <a class="site-footer__link" href="#inversion">Inversión</a>
