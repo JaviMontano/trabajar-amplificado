@@ -112,7 +112,7 @@ function footer(kind) {
   return `<footer class="footer">
   <div class="footer-in">
     <strong>MetodologIA · Introducción al Trabajo Amplificado</strong><br>
-    ${kind} · v1.2 · actualizado ${updated}. Método primero, (Gen)IA después. Clase introductoria gratuita: herramienta candidata, evidencia proporcional y decisión humana visible.
+    ${kind} · v1.3 · actualizado ${updated}. Método primero, (Gen)IA después. Clase introductoria gratuita: soberanía operativa, herramienta candidata, evidencia proporcional y decisión humana visible.
   </div>
 </footer>`;
 }
@@ -129,7 +129,7 @@ function masterclass() {
       <div>
         <span class="kicker">${localized("Clase demo gratuita · 90-120 min", "Free demo class · 90-120 min", "Aula demo gratuita · 90-120 min")}</span>
         <h1>${localized("Introducción al Trabajo Amplificado", "Introduction to Amplified Work", "Introdução ao Trabalho Amplificado")}</h1>
-        <p class="lead">${localized("Una masterclass para dejar de pedir respuestas bonitas y empezar a trabajar con IA como socio de pensamiento: una fricción real, una ruta primaria, una herramienta candidata y una forma honesta de verificarla.", "A masterclass to stop asking for polished answers and start using AI as a thinking partner: one real friction, one primary route, one candidate tool and an honest way to verify it.", "Uma masterclass para parar de pedir respostas bonitas e começar a trabalhar com IA como parceiro de pensamento: uma fricção real, uma rota primária, uma ferramenta candidata e uma forma honesta de verificá-la.")}</p>
+        <p class="lead">${localized("Una masterclass para dejar de pedir respuestas bonitas y empezar a trabajar con IA (inteligencia artificial: software que genera o transforma información) como socio de pensamiento: una fricción real, una ruta primaria, una herramienta candidata (primer borrador útil, todavía no validado) y una forma honesta de verificarla.", "A masterclass to stop asking for polished answers and start using AI as a thinking partner: one real friction, one primary route, one candidate tool and an honest way to verify it.", "Uma masterclass para parar de pedir respostas bonitas e começar a trabalhar com IA como parceiro de pensamento: uma fricção real, uma rota primária, uma ferramenta candidata e uma forma honesta de verificá-la.")}</p>
       </div>
       <aside class="panel">
         <h3>${localized("La promesa correcta", "The right promise", "A promessa certa")}</h3>
@@ -147,11 +147,11 @@ function masterclass() {
     <div class="section-head">
       <span class="kicker">${localized("Tesis", "Thesis", "Tese")}</span>
       <h2>${localized("La tesis no es hacer más rápido. Es pensar mejor, con evidencia, sin rendición cognitiva.", "The thesis is not moving faster. It is thinking better, with evidence, without cognitive surrender.", "A tese não é fazer mais rápido. É pensar melhor, com evidência, sem rendição cognitiva.")}</h2>
-      <p class="lead">${localized("El trabajo amplificado conserva objetivo, juicio, autoría y responsabilidad en la persona. La IA reduce fricción, estructura pensamiento y acelera práctica, pero no reemplaza deliberación ni decisión.", "Amplified work keeps goal, judgment, authorship and accountability with the person. AI reduces friction, structures thinking and accelerates practice, but it does not replace deliberation or decision.", "O trabalho amplificado mantém objetivo, julgamento, autoria e responsabilidade na pessoa. A IA reduz fricção, estrutura pensamento e acelera prática, mas não substitui deliberação nem decisão.")}</p>
+      <p class="lead">${localized("El trabajo amplificado conserva objetivo, juicio, autoría y responsabilidad en la persona. La IA (inteligencia artificial) reduce fricción, estructura pensamiento y acelera práctica, pero no reemplaza deliberación ni decisión.", "Amplified work keeps goal, judgment, authorship and accountability with the person. AI reduces friction, structures thinking and accelerates practice, but it does not replace deliberation or decision.", "O trabalho amplificado mantém objetivo, julgamento, autoria e responsabilidade na pessoa. A IA reduz fricção, estrutura pensamento e acelera prática, mas não substitui deliberação nem decisão.")}</p>
     </div>
     <div class="grid g3">
       <article class="card"><h3>${localized("Agencia primero", "Agency first", "Agência primeiro")}</h3><p>${localized("La IA debe devolverte una decisión más clara, no una obediencia más rápida.", "AI should return a clearer decision, not faster obedience.", "A IA deve devolver uma decisão mais clara, não uma obediência mais rápida.")}</p></article>
-      <article class="card"><h3>${localized("Método antes que output", "Method before output", "Método antes do output")}</h3><p>${localized("El resultado no es solo un texto: es un ritual, checklist, SOP, rúbrica, bitácora o plantilla reutilizable.", "The result is not just text: it is a reusable ritual, checklist, SOP, rubric, logbook or template.", "O resultado não é só texto: é um ritual, checklist, SOP, rubrica, diário ou modelo reutilizável.")}</p></article>
+      <article class="card"><h3>${localized("Método antes que output", "Method before output", "Método antes do output")}</h3><p>${localized("El resultado no es solo un texto: es un ritual, checklist, SOP (procedimiento operativo breve), rúbrica, bitácora o plantilla reutilizable.", "The result is not just text: it is a reusable ritual, checklist, SOP, rubric, logbook or template.", "O resultado não é só texto: é um ritual, checklist, SOP, rubrica, diário ou modelo reutilizável.")}</p></article>
       <article class="card"><h3>${localized("Evidencia proporcional", "Proportional evidence", "Evidência proporcional")}</h3><p>${localized("Una herramienta bonita no está validada. Declara cómo se probó, qué falta y qué riesgo tiene usarla.", "A polished tool is not validated. State how it was tested, what is missing and what risk it carries.", "Uma ferramenta bonita não está validada. Declare como foi testada, o que falta e qual risco traz.")}</p></article>
     </div>
   </section>
@@ -180,7 +180,7 @@ function masterclass() {
       <div class="prompt"><div class="prompt-head"><span>${localized("Antipatrón", "Anti-pattern", "Antipadrão")}</span><button class="copy" data-copy>Copy</button></div><pre>Decide por mí si debo aceptar esta propuesta de trabajo.</pre></div>
       <div class="prompt"><div class="prompt-head"><span>${localized("Forma amplificada", "Amplified form", "Forma amplificada")}</span><button class="copy" data-copy>Copy</button></div><pre>Ayúdame a preparar una decisión no vinculante. Primero identifica la decisión real, separa criterios duros, criterios deseables, restricciones y riesgos. Luego compara opciones, declara supuestos, propone abort criteria y cierra con una recomendación no vinculante. No decidas por mí: devuelve la decisión final a mi responsabilidad.</pre></div>
     </div>
-    <div class="note" style="margin-top:1rem"><strong>${localized("Regla de cierre:", "Closing rule:", "Regra de fechamento:")}</strong> ${localized("si solo hay una buena explicación, el estado es candidate, no validated.", "if there is only a good explanation, the status is candidate, not validated.", "se há apenas uma boa explicação, o estado é candidate, não validated.")}</div>
+    <div class="note" style="margin-top:1rem"><strong>${localized("Regla de cierre:", "Closing rule:", "Regra de fechamento:")}</strong> ${localized("si solo hay una buena explicación, el estado es candidate (candidato, no validado), no validated.", "if there is only a good explanation, the status is candidate, not validated.", "se há apenas uma boa explicação, o estado é candidate, não validated.")}</div>
   </section>
 
   <section class="wrap" id="rutas">
@@ -189,7 +189,7 @@ function masterclass() {
       <article class="card"><h3>Decidir</h3><p>${localized("Criterios, opciones, tradeoffs, riesgos y recomendación no vinculante.", "Criteria, options, tradeoffs, risks and non-binding recommendation.", "Critérios, opções, tradeoffs, riscos e recomendação não vinculante.")}</p></article>
       <article class="card"><h3>Aprender</h3><p>${localized("Intento mínimo, pista, reformulación propia y transferencia.", "Minimum attempt, hint, own reformulation and transfer.", "Tentativa mínima, pista, reformulação própria e transferência.")}</p></article>
       <article class="card"><h3>Practicar</h3><p>${localized("Repetición breve, feedback y métrica P/A/T/J/E.", "Short repetition, feedback and P/A/T/J/E metric.", "Repetição curta, feedback e métrica P/A/T/J/E.")}</p></article>
-      <article class="card"><h3>Construir</h3><p>${localized("Checklist, SOP, plantilla o ritual en versión mínima útil.", "Checklist, SOP, template or ritual as a minimum useful version.", "Checklist, SOP, modelo ou ritual em versão mínima útil.")}</p></article>
+      <article class="card"><h3>Construir</h3><p>${localized("Checklist, SOP (procedimiento operativo breve), plantilla o ritual en versión mínima útil.", "Checklist, SOP, template or ritual as a minimum useful version.", "Checklist, SOP, modelo ou ritual em versão mínima útil.")}</p></article>
       <article class="card"><h3>Evaluar</h3><p>${localized("Rúbrica, hallazgos, evidencia, límites y correcciones priorizadas.", "Rubric, findings, evidence, limits and prioritized corrections.", "Rubrica, achados, evidência, limites e correções priorizadas.")}</p></article>
       <article class="card"><h3>Reparar</h3><p>${localized("Síntoma, causa probable, parche y prueba antes/después.", "Symptom, probable cause, patch and before/after test.", "Sintoma, causa provável, correção e teste antes/depois.")}</p></article>
     </div>
@@ -226,9 +226,9 @@ function workbook() {
   <section class="hero" id="inicio">
     <div class="hero-in">
       <div>
-        <span class="kicker">${localized("Workbook gratuito · uso en vivo", "Free workbook · live use", "Workbook gratuito · uso ao vivo")}</span>
+        <span class="kicker">${localized("Workbook (cuaderno de trabajo) gratuito · uso en vivo", "Free workbook · live use", "Workbook gratuito · uso ao vivo")}</span>
         <h1>${localized("Workbook · Introducción al Trabajo Amplificado", "Workbook · Introduction to Amplified Work", "Workbook · Introdução ao Trabalho Amplificado")}</h1>
-        <p class="lead">${localized("Un cuaderno ameno para convertir una fricción laboral en una herramienta candidata. Escribe poco, decide mejor y sal con una prueba mínima, no con una promesa inflada.", "A friendly workbook to turn work friction into a candidate tool. Write less, decide better and leave with a minimum test, not an inflated promise.", "Um caderno amigável para transformar uma fricção laboral em uma ferramenta candidata. Escreva pouco, decida melhor e saia com um teste mínimo, não com uma promessa inflada.")}</p>
+        <p class="lead">${localized("Un cuaderno ameno para convertir una fricción laboral en una herramienta candidata (primer borrador útil, todavía no validado). Escribe poco, decide mejor y sal con una prueba mínima, no con una promesa inflada.", "A friendly workbook to turn work friction into a candidate tool. Write less, decide better and leave with a minimum test, not an inflated promise.", "Um caderno amigável para transformar uma fricção laboral em uma ferramenta candidata. Escreva pouco, decida melhor e saia com um teste mínimo, não com uma promessa inflada.")}</p>
       </div>
       <aside class="panel">
         <h3>${localized("Qué guardas al final", "What you keep at the end", "O que fica no final")}</h3>
@@ -243,7 +243,7 @@ function workbook() {
   </section>
 
   <section class="wrap" id="contrato">
-    <div class="section-head"><span class="kicker">${localized("0 · Contrato", "0 · Contract", "0 · Contrato")}</span><h2>${localized("Antes de usar IA, declara qué no vas a delegar", "Before using AI, state what you will not delegate", "Antes de usar IA, declare o que você não vai delegar")}</h2></div>
+    <div class="section-head"><span class="kicker">${localized("0 · Contrato", "0 · Contract", "0 · Contrato")}</span><h2>${localized("Antes de usar IA (inteligencia artificial), declara qué no vas a delegar", "Before using AI, state what you will not delegate", "Antes de usar IA, declare o que você não vai delegar")}</h2></div>
     <div class="grid g2">
       <div class="field"><label>${localized("Mi decisión humana pendiente", "My pending human decision", "Minha decisão humana pendente")}</label><textarea data-save="decision" placeholder="Ej. Priorizar dos iniciativas, preparar una conversación, ordenar una propuesta, aprender un concepto."></textarea></div>
       <div class="field"><label>${localized("Límites de la IA", "AI limits", "Limites da IA")}</label><textarea data-save="limits" placeholder="Ej. No decidir por mí, no inventar evidencia, no enviar nada, no asumir datos personales."></textarea></div>
@@ -264,7 +264,7 @@ function workbook() {
     <div class="grid g3">
       <label class="card"><input type="radio" name="route" value="Decidir" data-route> <strong>Decidir</strong><p>${localized("Criterios, opciones y recomendación no vinculante.", "Criteria, options and non-binding recommendation.", "Critérios, opções e recomendação não vinculante.")}</p></label>
       <label class="card"><input type="radio" name="route" value="Aprender" data-route> <strong>Aprender</strong><p>${localized("Intento mínimo, pista y transferencia.", "Minimum attempt, hint and transfer.", "Tentativa mínima, pista e transferência.")}</p></label>
-      <label class="card"><input type="radio" name="route" value="Construir" data-route> <strong>Construir</strong><p>${localized("Checklist, SOP, plantilla o ritual.", "Checklist, SOP, template or ritual.", "Checklist, SOP, modelo ou ritual.")}</p></label>
+      <label class="card"><input type="radio" name="route" value="Construir" data-route> <strong>Construir</strong><p>${localized("Checklist, SOP (procedimiento operativo breve), plantilla o ritual.", "Checklist, SOP, template or ritual.", "Checklist, SOP, modelo ou ritual.")}</p></label>
       <label class="card"><input type="radio" name="route" value="Practicar" data-route> <strong>Practicar</strong><p>${localized("Ejercicio, feedback y repetición.", "Exercise, feedback and repetition.", "Exercício, feedback e repetição.")}</p></label>
       <label class="card"><input type="radio" name="route" value="Evaluar" data-route> <strong>Evaluar</strong><p>${localized("Rúbrica y correcciones priorizadas.", "Rubric and prioritized corrections.", "Rubrica e correções priorizadas.")}</p></label>
       <label class="card"><input type="radio" name="route" value="Reparar" data-route> <strong>Reparar</strong><p>${localized("Causa probable, parche y prueba.", "Probable cause, patch and test.", "Causa provável, correção e teste.")}</p></label>
@@ -274,10 +274,10 @@ function workbook() {
   <section class="wrap" id="herramienta">
     <div class="section-head"><span class="kicker">${localized("3 · Herramienta candidata", "3 · Candidate tool", "3 · Ferramenta candidata")}</span><h2>${localized("Construye algo pequeño, reutilizable y honesto", "Build something small, reusable and honest", "Construa algo pequeno, reutilizável e honesto")}</h2></div>
     <div class="grid g2">
-      <div class="field"><label>${localized("Tipo de herramienta", "Tool type", "Tipo de ferramenta")}</label><select data-save="toolType"><option>Checklist</option><option>SOP breve</option><option>Plantilla</option><option>Rúbrica</option><option>Bitácora</option><option>Prompt reusable</option></select></div>
-      <div class="field"><label>${localized("Criterio de done", "Done criterion", "Critério de done")}</label><textarea data-save="done" placeholder="Cómo sabrás que esta herramienta candidate sirve para una prueba mínima."></textarea></div>
+      <div class="field"><label>${localized("Tipo de herramienta", "Tool type", "Tipo de ferramenta")}</label><select data-save="toolType"><option>Checklist</option><option>SOP breve</option><option>Plantilla</option><option>Rúbrica</option><option>Bitácora</option><option>Prompt reusable (instrucción escrita reutilizable)</option></select></div>
+      <div class="field"><label>${localized("Criterio de listo", "Done criterion", "Critério de done")}</label><textarea data-save="done" placeholder="Cómo sabrás que esta herramienta candidata sirve para una prueba mínima."></textarea></div>
     </div>
-    <div class="prompt" style="margin-top:1rem"><div class="prompt-head"><span>Prompt · herramienta candidata</span><button class="copy" data-copy>Copy</button></div><pre>Actúa como facilitador de Trabajo Amplificado. No resuelvas mi problema de golpe. Usa mi diagnóstico y mi ruta primaria para ayudarme a crear una herramienta candidata: checklist, SOP, plantilla, rúbrica, bitácora o prompt reusable. Declara objetivo, límite, supuestos, criterio de done, prueba mínima y brecha de evidencia. Cierra devolviéndome la decisión final.</pre></div>
+    <div class="prompt" style="margin-top:1rem"><div class="prompt-head"><span>Prompt (instrucción escrita) · herramienta candidata</span><button class="copy" data-copy>Copy</button></div><pre>Actúa como facilitador de Trabajo Amplificado. No resuelvas mi problema de golpe. Usa mi diagnóstico y mi ruta primaria para ayudarme a crear una herramienta candidata: checklist, SOP breve, plantilla, rúbrica, bitácora o prompt reusable. Declara objetivo, límite, supuestos, criterio de listo, prueba mínima y brecha de evidencia. Cierra devolviéndome la decisión final.</pre></div>
   </section>
 
   <section class="wrap" id="evaluacion">
@@ -287,8 +287,8 @@ function workbook() {
       <div class="field"><label>Agencia</label><textarea data-save="a" placeholder="Qué decides tú, qué hace la IA y qué no se delega."></textarea></div>
       <div class="field"><label>Transferencia</label><textarea data-save="t" placeholder="Cómo usarías el método en otro caso."></textarea></div>
       <div class="field"><label>Juicio</label><textarea data-save="j" placeholder="Criterios, riesgos, tradeoffs y abort criteria."></textarea></div>
-      <div class="field"><label>Evidencia</label><textarea data-save="e" placeholder="Qué se probó, qué falta, qué queda como coverage_gap."></textarea></div>
-      <div class="note"><strong>${localized("Estado honesto:", "Honest status:", "Estado honesto:")}</strong><p>${localized("Si hiciste una prueba mínima, puedes decir candidate. Sin práctica real ni evidencia posterior, no digas validated.", "If you ran a minimum test, you can say candidate. Without real practice and later evidence, do not say validated.", "Se fez um teste mínimo, pode dizer candidate. Sem prática real nem evidência posterior, não diga validated.")}</p></div>
+      <div class="field"><label>Evidencia</label><textarea data-save="e" placeholder="Qué se probó, qué falta, qué queda como coverage_gap (brecha de evidencia pendiente)."></textarea></div>
+      <div class="note"><strong>${localized("Estado honesto:", "Honest status:", "Estado honesto:")}</strong><p>${localized("Si hiciste una prueba mínima, puedes decir candidate (candidato, no validado). Sin práctica real ni evidencia posterior, no digas validated.", "If you ran a minimum test, you can say candidate. Without real practice and later evidence, do not say validated.", "Se fez um teste mínimo, pode dizer candidate. Sem prática real nem evidência posterior, não diga validated.")}</p></div>
     </div>
     <div class="toolbar">
       <button class="btn" type="button" id="exportMd">${localized("Exportar Markdown", "Export Markdown", "Exportar Markdown")}</button>
@@ -319,7 +319,7 @@ ${footer("Workbook")}`;
   document.getElementById('exportMd').addEventListener('click',function(){
     save();
     var data=JSON.parse(localStorage.getItem(KEY)||'{}');
-    var md=['# Introducción al Trabajo Amplificado - Workbook','','## Contrato','- Decisión humana pendiente: '+(data.decision||''),'- Límites IA: '+(data.limits||''),'','## Fricción','- Situación: '+(data.situation||''),'- Hipótesis: '+(data.friction||''),'- Prueba mínima: '+(data.test||''),'','## Ruta primaria','- Ruta: '+(data.route||''),'','## Herramienta candidata','- Tipo: '+(data.toolType||''),'- Criterio de done: '+(data.done||''),'','## P/A/T/J/E','- Propósito: '+(data.p||''),'- Agencia: '+(data.a||''),'- Transferencia: '+(data.t||''),'- Juicio: '+(data.j||''),'- Evidencia: '+(data.e||''),'','Estado recomendado: candidate, salvo que exista evidencia posterior proporcional al riesgo.'].join('\\n');
+    var md=['# Introducción al Trabajo Amplificado - Workbook','','## Contrato','- Decisión humana pendiente: '+(data.decision||''),'- Límites IA: '+(data.limits||''),'','## Fricción','- Situación: '+(data.situation||''),'- Hipótesis: '+(data.friction||''),'- Prueba mínima: '+(data.test||''),'','## Ruta primaria','- Ruta: '+(data.route||''),'','## Herramienta candidata','- Tipo: '+(data.toolType||''),'- Criterio de listo: '+(data.done||''),'','## P/A/T/J/E','- Propósito: '+(data.p||''),'- Agencia: '+(data.a||''),'- Transferencia: '+(data.t||''),'- Juicio: '+(data.j||''),'- Evidencia: '+(data.e||''),'','Estado recomendado: candidate, salvo que exista evidencia posterior proporcional al riesgo.'].join('\\n');
     navigator.clipboard.writeText(md).then(function(){alert('Markdown copiado al portapapeles.');});
   });
   document.getElementById('clearForm').addEventListener('click',function(){
@@ -339,11 +339,11 @@ function introWorkshop() {
       <div>
         <span class="kicker">${localized("Taller gratuito · 90-120 min", "Free workshop · 90-120 min", "Workshop gratuito · 90-120 min")}</span>
         <h1>${localized("Introducción al Trabajo Amplificado", "Introduction to Amplified Work", "Introdução ao Trabalho Amplificado")}</h1>
-        <p class="lead">${localized("Una clase demo para vivir el método sin costo: diagnosticas una fricción real, eliges una ruta primaria, construyes una herramienta candidata y sales con una prueba mínima.", "A demo class to experience the method at no cost: diagnose a real friction, choose a primary route, build a candidate tool and leave with a minimum test.", "Uma aula demo para viver o método sem custo: diagnostica uma fricção real, escolhe uma rota primária, constrói uma ferramenta candidata e sai com um teste mínimo.")}</p>
+        <p class="lead">${localized("Una clase demo para vivir el método sin costo: diagnosticas una fricción real, eliges una ruta primaria, construyes una herramienta candidata (primer borrador útil, todavía no validado) y sales con una prueba mínima.", "A demo class to experience the method at no cost: diagnose a real friction, choose a primary route, build a candidate tool and leave with a minimum test.", "Uma aula demo para viver o método sem custo: diagnostica uma fricção real, escolhe uma rota primária, constrói uma ferramenta candidata e sai com um teste mínimo.")}</p>
         <div class="toolbar">
           <a class="btn" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener">${localized("Inscríbete sin costo", "Enroll at no cost", "Inscreva-se sem custo")}</a>
           <a class="btn secondary" href="workbook-introduccion.html">${localized("Abrir workbook", "Open workbook", "Abrir workbook")}</a>
-          <a class="btn secondary" href="diapositivas-introduccion.html">${localized("Ver deck", "See deck", "Ver deck")}</a>
+          <a class="btn secondary" href="diapositivas-introduccion.html">${localized("Ver deck (diapositivas)", "See deck", "Ver deck (diapositivas)")}</a>
         </div>
       </div>
       <aside class="panel">
@@ -363,7 +363,7 @@ function introWorkshop() {
     <div class="section-head">
       <span class="kicker">${localized("Qué cambia", "What changes", "O que muda")}</span>
       <h2>${localized("Pasas de pedir outputs a diseñar una forma de trabajar", "You move from asking for outputs to designing a way of working", "Você passa de pedir outputs a desenhar uma forma de trabalhar")}</h2>
-      <p class="lead">${localized("La intro toma la tesis de Empoderamiento en IA: la IA amplifica cuando aumenta agencia, no cuando oculta el juicio humano detrás de respuestas rápidas.", "The intro takes the Empowerment in AI thesis: AI amplifies when it increases agency, not when it hides human judgment behind fast answers.", "A introdução toma a tese de Empoderamento em IA: a IA amplifica quando aumenta agência, não quando esconde o julgamento humano atrás de respostas rápidas.")}</p>
+      <p class="lead">${localized("La intro toma la tesis de Empoderamiento en IA: la IA (inteligencia artificial) amplifica cuando aumenta agencia, no cuando oculta el juicio humano detrás de respuestas rápidas.", "The intro takes the Empowerment in AI thesis: AI amplifies when it increases agency, not when it hides human judgment behind fast answers.", "A introdução toma a tese de Empoderamento em IA: a IA amplifica quando aumenta agência, não quando esconde o julgamento humano atrás de respostas rápidas.")}</p>
     </div>
     <div class="grid g3">
       <article class="card"><h3>${localized("Método primero", "Method first", "Método primeiro")}</h3><p>${localized("Definimos objetivo, límite, criterio y evidencia antes de producir.", "We define goal, limit, criteria and evidence before producing.", "Definimos objetivo, limite, critério e evidência antes de produzir.")}</p></article>
@@ -387,7 +387,7 @@ function introWorkshop() {
   </section>
 
   <section class="wrap" id="materiales">
-    <div class="section-head"><span class="kicker">${localized("Materiales", "Materials", "Materiais")}</span><h2>${localized("Masterclass, workbook y deck trabajan como una sola clase", "Masterclass, workbook and deck work as one class", "Masterclass, workbook e deck funcionam como uma só aula")}</h2></div>
+    <div class="section-head"><span class="kicker">${localized("Materiales", "Materials", "Materiais")}</span><h2>${localized("Masterclass (clase guía), workbook (cuaderno de trabajo) y deck (diapositivas) trabajan como una sola clase", "Masterclass, workbook and deck work as one class", "Masterclass, workbook e deck funcionam como uma só aula")}</h2></div>
     <div class="grid g3">
       <article class="card"><h3>Masterclass</h3><p>${localized("Marco narrativo y explicación de la tesis.", "Narrative frame and thesis explanation.", "Marco narrativo e explicação da tese.")}</p><p><a href="clase-introductoria.html">clase-introductoria.html</a></p></article>
       <article class="card"><h3>Workbook</h3><p>${localized("Cuaderno vivo para escribir la fricción, ruta, herramienta y evidencia.", "Live workbook to write friction, route, tool and evidence.", "Caderno vivo para escrever fricção, rota, ferramenta e evidência.")}</p><p><a href="workbook-introduccion.html">workbook-introduccion.html</a></p></article>
@@ -398,10 +398,10 @@ function introWorkshop() {
   <section class="wrap" id="faq">
     <div class="section-head"><span class="kicker">FAQ</span><h2>${localized("Preguntas antes de entrar", "Questions before joining", "Perguntas antes de entrar")}</h2></div>
     <div class="grid g2">
-      <article class="card"><h3>${localized("¿Cuánto cuesta?", "How much does it cost?", "Quanto custa?")}</h3><p>${localized("La clase introductoria es gratuita y sin costo. Los talleres especializados y el bootcamp siguen siendo rutas posteriores.", "The introductory class is free and at no cost. Specialized workshops and the bootcamp remain later paths.", "A aula introdutória é gratuita e sem custo. Workshops especializados e bootcamp seguem como rotas posteriores.")}</p></article>
+      <article class="card"><h3>${localized("¿Cuánto cuesta?", "How much does it cost?", "Quanto custa?")}</h3><p>${localized("La clase introductoria es gratuita y sin costo. Los talleres especializados y el bootcamp (programa intensivo y guiado) siguen siendo rutas posteriores.", "The introductory class is free and at no cost. Specialized workshops and the bootcamp remain later paths.", "A aula introdutória é gratuita e sem custo. Workshops especializados e bootcamp seguem como rotas posteriores.")}</p></article>
       <article class="card"><h3>${localized("¿Necesito herramienta paga?", "Do I need a paid tool?", "Preciso de ferramenta paga?")}</h3><p>${localized("No para la intro. Puedes seguir la clase con el workbook y observar la demo.", "Not for the intro. You can follow the class with the workbook and observe the demo.", "Não para a intro. Você pode acompanhar a aula com o workbook e observar a demo.")}</p></article>
-      <article class="card"><h3>${localized("¿Salgo con un sistema completo?", "Do I leave with a full system?", "Saio com um sistema completo?")}</h3><p>${localized("No. Sales con una herramienta candidata y una prueba mínima. El sistema completo pertenece al bootcamp.", "No. You leave with a candidate tool and a minimum test. The full system belongs to the bootcamp.", "Não. Sai com uma ferramenta candidata e um teste mínimo. O sistema completo pertence ao bootcamp.")}</p></article>
-      <article class="card"><h3>${localized("¿Cuál es el puente después?", "What is the bridge after?", "Qual é a ponte depois?")}</h3><p>${localized("Si la intro te sirve, puedes profundizar en prompting, automatización o bootcamp según la fricción que hayas diagnosticado.", "If the intro helps, you can deepen into prompting, automation or bootcamp depending on the friction you diagnosed.", "Se a intro ajudar, você pode aprofundar em prompting, automação ou bootcamp segundo a fricção diagnosticada.")}</p></article>
+      <article class="card"><h3>${localized("¿Salgo con un sistema completo?", "Do I leave with a full system?", "Saio com um sistema completo?")}</h3><p>${localized("No. Sales con una herramienta candidata y una prueba mínima. El sistema completo pertenece al bootcamp (programa intensivo y guiado).", "No. You leave with a candidate tool and a minimum test. The full system belongs to the bootcamp.", "Não. Sai com uma ferramenta candidata e um teste mínimo. O sistema completo pertence ao bootcamp.")}</p></article>
+      <article class="card"><h3>${localized("¿Cuál es el puente después?", "What is the bridge after?", "Qual é a ponte depois?")}</h3><p>${localized("Si la intro te sirve, puedes profundizar en prompting (diseño de instrucciones para IA), automatización o bootcamp según la fricción que hayas diagnosticado.", "If the intro helps, you can deepen into prompting, automation or bootcamp depending on the friction you diagnosed.", "Se a intro ajudar, você pode aprofundar em prompting, automação ou bootcamp segundo a fricção diagnosticada.")}</p></article>
     </div>
   </section>
 </main>
@@ -467,7 +467,7 @@ function deck() {
     {
       k: "Workbook",
       t: localized("De output a herramienta candidata", "From output to candidate tool", "De output a ferramenta candidata"),
-      l: localized("El resultado de clase debe ser pequeño y reusable: checklist, SOP, plantilla, rúbrica, bitácora o prompt. No una respuesta final.", "Class output should be small and reusable: checklist, SOP, template, rubric, logbook or prompt. Not a final answer.", "O resultado da aula deve ser pequeno e reutilizável: checklist, SOP, modelo, rubrica, diário ou prompt. Não uma resposta final."),
+      l: localized("El resultado de clase debe ser pequeño y reusable: checklist, SOP (procedimiento operativo breve), plantilla, rúbrica, bitácora o prompt (instrucción escrita). No una respuesta final.", "Class output should be small and reusable: checklist, SOP, template, rubric, logbook or prompt. Not a final answer.", "O resultado da aula deve ser pequeno e reutilizável: checklist, SOP, modelo, rubrica, diário ou prompt. Não uma resposta final."),
       n: localized("Método antes que output", "Method before output", "Método antes do output"),
     },
     {
@@ -479,7 +479,7 @@ function deck() {
     {
       k: localized("Prueba mínima", "Minimum test", "Teste mínimo"),
       t: localized("Candidate no es validated", "Candidate is not validated", "Candidate não é validated"),
-      l: localized("Si solo tienes una buena explicación, no hay validación. Una versión candidate declara cómo se probó, qué falta y qué sigue incierto.", "If you only have a good explanation, there is no validation. A candidate version states how it was tested, what is missing and what remains uncertain.", "Se você só tem uma boa explicação, não há validação. Uma versão candidate declara como foi testada, o que falta e o que segue incerto."),
+      l: localized("Si solo tienes una buena explicación, no hay validación. Una versión candidate (candidato, no validado) declara cómo se probó, qué falta y qué sigue incierto.", "If you only have a good explanation, there is no validation. A candidate version states how it was tested, what is missing and what remains uncertain.", "Se você só tem uma boa explicação, não há validação. Uma versão candidate declara como foi testada, o que falta e o que segue incerto."),
       n: localized("Evidencia proporcional", "Proportional evidence", "Evidência proporcional"),
     },
     {
