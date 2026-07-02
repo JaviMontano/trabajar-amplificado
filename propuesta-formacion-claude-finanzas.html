@@ -7,11 +7,11 @@
   <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
   <title>Trabajo Amplificado para Equipos Financieros | MetodologIA</title>
-  <meta name="description" content="Propuesta B2B de formación en Claude para equipos financieros: Soberanía Digital, clase de intro de riesgo cero, bootcamp de 9 clases, presentaciones, Excels formulados, proveedores y NotebookLM vía MCP.">
+  <meta name="description" content="Propuesta B2B de formación en Claude para equipos financieros: Soberanía Digital, dos workshops introductorios de USD 500, bootcamp de 9 clases, presentaciones, Excels formulados, proveedores y NotebookLM vía MCP.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MetodologIA">
   <meta property="og:title" content="Trabajo Amplificado para Equipos Financieros">
-  <meta property="og:description" content="Formación práctica en Claude para equipos financieros, con skills para presentaciones y Excels formulados, agentes para proveedores y gestión de conocimiento con NotebookLM/MCP.">
+  <meta property="og:description" content="Formación práctica en Claude para equipos financieros, con workshops introductorios, skills para presentaciones y Excels formulados, agentes para proveedores y gestión de conocimiento con NotebookLM/MCP.">
   <script>
     (function () {
       var theme = localStorage.getItem('mdg_theme');
@@ -70,6 +70,9 @@
     .finance-card h3{font-size:1.05rem;margin:0 0 .45rem;color:var(--brand-text)}
     .finance-card p,.finance-card li{font-size:.92rem;line-height:1.58;color:var(--brand-text-soft)}
     .finance-card ul{display:grid;gap:.45rem;margin-top:.7rem;padding-left:1.1rem}
+    .finance-workshop{cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+    .finance-workshop:hover,.finance-workshop:focus-visible{transform:translateY(-2px);border-color:var(--brand-gold-text);box-shadow:0 16px 34px rgba(0,0,0,.14);outline:none}
+    .finance-workshop strong{display:block;margin-top:.85rem;color:var(--brand-gold-text);font-size:.88rem}
     .finance-pill{display:inline-flex;align-items:center;gap:.45rem;margin:.25rem .35rem .55rem 0;padding:.42rem .72rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:var(--finance-accent-bg);color:var(--brand-gold-text);font-size:.75rem;font-weight:800}
     .finance-price{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.25rem;min-height:100%;background:var(--brand-surface);border:1px solid var(--brand-border)}
     .finance-price--featured{outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:var(--finance-accent-bg-soft)}
@@ -146,6 +149,7 @@
     <a class="site-header__nav-link" href="#materiales">Materiales</a>
     <a class="site-header__nav-link" href="#programa">Programa</a>
     <a class="site-header__nav-link" href="#casos">Casos</a>
+    <a class="site-header__nav-link" href="#workshops">Workshops</a>
     <a class="site-header__nav-link" href="#inversion">Inversión</a>
     <a class="site-header__nav-link" href="propuesta-formacion-claude-finanzas-deck.html">Bootcamp</a>
     <a class="site-header__nav-link" href="propuesta-cao-directivos-ia.html">Anexo CAO</a>
@@ -167,7 +171,7 @@
       </div>
       <div class="stats" style="margin-top:2rem;" aria-label="Resumen comercial">
         <div class="stats__cell"><span class="stats__num">0 riesgo</span><span class="stats__label">clase de intro</span></div>
-        <div class="stats__cell"><span class="stats__num">9</span><span class="stats__label">clases progresivas</span></div>
+        <div class="stats__cell"><span class="stats__num">USD 500</span><span class="stats__label">cada workshop</span></div>
         <div class="stats__cell"><span class="stats__num">5 a 15</span><span class="stats__label">personas por cohorte</span></div>
         <div class="stats__cell"><span class="stats__num">USD 4,000</span><span class="stats__label">bootcamp B2B</span></div>
       </div>
@@ -315,17 +319,40 @@
     </div>
   </section>
 
+  <section class="section" id="workshops">
+    <div class="container">
+      <span class="eyebrow">Workshops introductorios · 04</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Dos entradas concretas antes del bootcamp</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">Cada workshop cuesta USD 500 y está pensado para grupos de 5 a 15 personas. Sirven para instalar una capacidad puntual, confirmar fit y decidir si conviene avanzar al bootcamp completo.</p>
+      <div class="finance-grid finance-grid--2">
+        <article class="x-card finance-card finance-workshop" data-modal="workshop-contexto" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-pill">USD 500 · workshop introductorio</span>
+          <h3>Gestión de Contexto para Trabajo Agéntico</h3>
+          <p>Para aprender a preparar contexto útil antes de pedirle trabajo a una IA: objetivo, fuentes, restricciones, memoria de decisiones y criterios de revisión.</p>
+          <strong>Ver ampliación -></strong>
+        </article>
+        <article class="x-card finance-card finance-workshop" data-modal="workshop-cowork" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-pill">USD 500 · workshop introductorio</span>
+          <h3>De Ocupado a Productivo con Claude Cowork</h3>
+          <p>Para pasar de usar Claude en chats sueltos a trabajar con una cadencia diaria: priorizar, delegar borradores, revisar entregables y cerrar ciclos.</p>
+          <strong>Ver ampliación -></strong>
+        </article>
+      </div>
+      <p><span class="finance-note">Ambos workshops pueden tomarse por separado o como antesala del bootcamp de Trabajo Amplificado.</span></p>
+    </div>
+  </section>
+
   <section class="section" id="inversion">
     <div class="container">
-      <span class="eyebrow">Inversión · 04</span>
+      <span class="eyebrow">Inversión · 05</span>
       <h2 class="h2" style="margin:1rem 0 .5rem;">Pricing B2B por formato</h2>
-      <p class="lead" style="margin-bottom:1.5rem;">Valores en dólares estadounidenses: talleres individuales a USD 500 y bootcamp completo a USD 4,000. La cohorte base está pensada para 5 a 15 personas para asegurar cercanía, trabajo práctico y guía permanente.</p>
+      <p class="lead" style="margin-bottom:1.5rem;">Valores en dólares estadounidenses: cada workshop introductorio cuesta USD 500 y el bootcamp completo cuesta USD 4,000. La cohorte base está pensada para 5 a 15 personas para asegurar cercanía, trabajo práctico y guía permanente.</p>
       <div class="finance-grid finance-grid--2">
         <article class="x-card finance-price">
-          <span class="finance-price__name">Taller individual B2B</span>
+          <span class="finance-price__name">Workshops introductorios B2B</span>
           <span class="finance-price__amount">USD 500</span>
-          <span class="finance-price__meta">Por taller · 5 a 15 personas</span>
-          <p class="finance-price__body">Sesión práctica para instalar lenguaje común, prompting aplicado y una primera plantilla, asistente o skill financiero reutilizable.</p>
+          <span class="finance-price__meta">Cada workshop · 5 a 15 personas</span>
+          <p class="finance-price__body">Opciones: Gestión de Contexto para Trabajo Agéntico o De Ocupado a Productivo con Claude Cowork.</p>
         </article>
         <article class="x-card finance-price finance-price--featured">
           <span class="finance-price__name">Bootcamp B2B</span>
@@ -334,13 +361,13 @@
           <p class="finance-price__body">Ruta completa de 9 clases para instalar asistentes, skills, agentes, arneses, mini apps y proyecto aplicado.</p>
         </article>
       </div>
-      <p><span class="finance-note">Los talleres individuales pueden contratarse por separado para validar un caso o preparar una línea de trabajo. El bootcamp mantiene el precio completo de USD 4,000.</span></p>
+      <p><span class="finance-note">Los workshops introductorios pueden contratarse por separado para validar una línea de trabajo. El bootcamp mantiene el precio completo de USD 4,000.</span></p>
     </div>
   </section>
 
   <section class="section" id="alcance">
     <div class="container">
-      <span class="eyebrow">Alcance y condiciones · 05</span>
+      <span class="eyebrow">Alcance y condiciones · 06</span>
       <h2 class="h2" style="margin:1rem 0 .5rem;">Qué queda incluido, qué queda fuera</h2>
       <div class="finance-grid finance-grid--3">
         <article class="x-card finance-card finance-boundary">
@@ -376,11 +403,11 @@
 
   <section class="section" id="siguiente">
     <div class="container" style="text-align:center;">
-      <span class="eyebrow">Siguiente paso · 06</span>
+      <span class="eyebrow">Siguiente paso · 07</span>
       <h2 class="h2" style="margin:1rem auto .5rem;max-width:44rem;">Agendar la clase de intro de riesgo cero</h2>
       <p class="lead" style="max-width:42rem;margin:0 auto 1.5rem;">La conversación inicial define roles, tamaño de cohorte, sensibilidad de datos, casos de uso prioritarios y modalidad de facilitación. Si el fit no aparece, no se fuerza el programa.</p>
       <div class="home-hero__ctas" style="justify-content:center;">
-        <a href="mailto:contacto@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros&body=Hola%20MetodologIA,%0A%0AQueremos%20conversar%20sobre%20Trabajo%20Amplificado%20para%20Equipos%20Financieros.%0A%0AEquipo:%0ATamano%20estimado%20del%20grupo:%0AFormato%20de%20interes:%20Intro%20/%20Taller%20individual%20USD%20500%20/%20Bootcamp%20USD%204,000%0ACasos%20prioritarios:%0A%0AGracias." class="home-cta home-cta--primary">Escribir a contacto@metodologia.info -></a>
+        <a href="mailto:contacto@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros&body=Hola%20MetodologIA,%0A%0AQueremos%20conversar%20sobre%20Trabajo%20Amplificado%20para%20Equipos%20Financieros.%0A%0AEquipo:%0ATamano%20estimado%20del%20grupo:%0AFormato%20de%20interes:%20Intro%20/%20Workshop%20Gestion%20de%20Contexto%20USD%20500%20/%20Workshop%20Claude%20Cowork%20USD%20500%20/%20Bootcamp%20USD%204,000%0ACasos%20prioritarios:%0A%0AGracias." class="home-cta home-cta--primary">Escribir a contacto@metodologia.info -></a>
         <a href="https://forms.gle/uCwUZkeoyStaLegf7" class="home-cta home-cta--secondary" target="_blank" rel="noopener">Formulario de interes</a>
       </div>
     </div>
@@ -423,6 +450,44 @@
     </div>
   </div>
 </footer>
+
+<dialog class="finance-modal" id="workshop-contexto">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Workshop · Gestión de Contexto para Trabajo Agéntico</h3>
+    <div class="finance-sub">USD 500 · 5 a 15 personas · introductorio</div>
+    <h4>Qué resuelve</h4>
+    <p>En trabajo agéntico, una IA no solo responde: ejecuta pasos dentro de un flujo. Para que eso funcione, el equipo debe aprender a entregar buen contexto: objetivo, fuentes, restricciones, decisiones previas, formato esperado y criterio de revisión.</p>
+    <h4>Qué se practica</h4>
+    <ul>
+      <li>Armar un paquete de contexto para analizar un P&L, preparar una presentación o revisar proveedores.</li>
+      <li>Separar fuentes autorizadas, supuestos, dudas y datos que no deben entrar en la IA.</li>
+      <li>Convertir pedidos vagos en encargos claros, con salida esperada y criterios de calidad.</li>
+      <li>Definir cuándo la IA puede avanzar, cuándo debe preguntar y cuándo debe detenerse.</li>
+    </ul>
+    <h4>Activo que queda</h4>
+    <p>Queda un Context Pack: una plantilla simple para preparar contexto antes de usar asistentes, skills o agentes. El límite: más contexto no siempre es mejor; el valor está en curar lo relevante y proteger lo sensible.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="workshop-cowork">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Workshop · De Ocupado a Productivo con Claude Cowork</h3>
+    <div class="finance-sub">USD 500 · 5 a 15 personas · introductorio</div>
+    <h4>Qué resuelve</h4>
+    <p>Muchas personas ya usan Claude, pero lo usan como chat ocasional. Este workshop enseña una forma de cowork: trabajar con Claude como compañero de borrador, revisión y síntesis, sin entregar el criterio ni la responsabilidad de la decisión.</p>
+    <h4>Qué se practica</h4>
+    <ul>
+      <li>Convertir una lista de pendientes en un tablero de prioridades, responsables y próximos pasos.</li>
+      <li>Delegar borradores de correos, minutas, análisis preliminares y presentaciones breves.</li>
+      <li>Revisar entregables con checklist, evidencia y preguntas de control.</li>
+      <li>Cerrar ciclos: decidir qué se guarda como prompt, asistente, skill o mejora de workflow.</li>
+    </ul>
+    <h4>Activo que queda</h4>
+    <p>Queda una rutina personal y de equipo para trabajar con Claude durante la semana: preparar, delegar, revisar y cerrar. El límite: Claude ayuda a producir y pensar; no reemplaza prioridades, responsabilidad ni juicio profesional.</p>
+  </div>
+</dialog>
 
 <dialog class="finance-modal" id="class-0">
   <div class="finance-modal__in">
