@@ -16,6 +16,6 @@ Subespacio cliente para una propuesta inicial de curso de Soberania Digital orie
 ## Notas de uso
 
 - Documento en estado draft cliente.
-- No contiene precio.
+- Contiene tarifas B2B en dolares por cohorte: Workshop (taller) USD 1,000 y Bootcamp (programa intensivo) USD 4,000 para grupos de 5 a 20 personas.
 - No afirma dolores internos ni beneficios prometidos.
 - Los casos deben validarse con Casabaca antes de presentarse como propuesta cerrada.
