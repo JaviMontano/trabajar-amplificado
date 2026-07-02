@@ -10,6 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
 <style>
 :root{
   --brand-dark:#0a122a; --brand-darker:#070b1a; --brand-surface:#1e293b; --brand-surface-alt:#172033;
@@ -111,6 +114,8 @@ body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,bod
 body.theme-light .chip-hero{border-color:#b8860b}
 body.theme-light .pcta .out{color:#26324a!important}
 </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
 </head>
 <body class="lang-es">
 <a href="index.html" id="ta-home" style="position:fixed;top:12px;right:12px;z-index:99999;display:inline-flex;gap:.45rem;align-items:center;padding:.42rem .8rem;border-radius:999px;background:#0a122a;color:#ffd700;border:1.5px solid #ffd700;font:700 12px/1 'Poppins',system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45)">&#8617; Inicio<span style="opacity:.6;font-weight:600"> · Home</span></a>
@@ -282,5 +287,6 @@ body.theme-light .pcta .out{color:#26324a!important}
 })();
 </script>
 <script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
+<script src="scripts/site-unified-v1.js" defer></script>
 </body>
 </html>

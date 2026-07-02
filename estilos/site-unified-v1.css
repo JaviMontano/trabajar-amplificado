@@ -1,0 +1,363 @@
+/*
+ * site-unified-v1.css
+ * MetodologIA unified shell for all Trabajar Amplificado pages.
+ * Loaded after page-local CSS so the index visual system wins the shell.
+ */
+
+html[lang="es"] .l-en,
+html[lang="es"] .l-pt,
+body.lang-es .l-en,
+body.lang-es .l-pt,
+html[lang="es"] .en,
+html[lang="es"] .pt,
+body.lang-es .en,
+body.lang-es .pt {
+  display: none !important;
+}
+
+html[lang="en"] .l-es,
+html[lang="en"] .l-pt,
+body.lang-en .l-es,
+body.lang-en .l-pt,
+html[lang="en"] .es,
+html[lang="en"] .pt,
+body.lang-en .es,
+body.lang-en .pt {
+  display: none !important;
+}
+
+html[lang="pt"] .l-es,
+html[lang="pt"] .l-en,
+body.lang-pt .l-es,
+body.lang-pt .l-en,
+html[lang="pt"] .es,
+html[lang="pt"] .en,
+body.lang-pt .es,
+body.lang-pt .en {
+  display: none !important;
+}
+
+html[lang="es"] .l-es,
+html[lang="en"] .l-en,
+html[lang="pt"] .l-pt,
+body.lang-es .l-es,
+body.lang-en .l-en,
+body.lang-pt .l-pt {
+  display: inline !important;
+}
+
+body.mdg-unified {
+  --mdg-shell-bg: rgba(10, 18, 42, .92);
+  --mdg-shell-border: rgba(255, 215, 0, .18);
+  --mdg-shell-text: #f8fafc;
+  --mdg-shell-muted: #94a3b8;
+  --mdg-shell-gold: #ffd700;
+  --mdg-shell-surface: rgba(30, 41, 59, .82);
+}
+
+html[data-theme="light"] body.mdg-unified,
+body.mdg-unified.theme-light {
+  --mdg-shell-bg: rgba(255, 255, 255, .94);
+  --mdg-shell-border: rgba(184, 134, 11, .22);
+  --mdg-shell-text: #0a122a;
+  --mdg-shell-muted: #526176;
+  --mdg-shell-gold: #b88700;
+  --mdg-shell-surface: rgba(249, 250, 251, .94);
+}
+
+body.mdg-unified .top {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: var(--mdg-shell-bg) !important;
+  border-bottom: 1px solid var(--mdg-shell-border) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+body.mdg-unified .top-in {
+  max-width: 1180px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: .7rem clamp(1rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+body.mdg-unified .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  min-width: 0;
+  color: var(--mdg-shell-text) !important;
+  text-decoration: none !important;
+}
+
+body.mdg-unified .brand .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0a122a, #1e293b) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14);
+  flex: 0 0 auto;
+}
+
+body.mdg-unified .brand b {
+  color: var(--mdg-shell-text) !important;
+  font-family: 'Poppins', 'Poppins Fallback', system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+body.mdg-unified .brand b span,
+body.mdg-unified .brand .g {
+  color: var(--mdg-shell-gold) !important;
+}
+
+body.mdg-unified .nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+body.mdg-unified .nav a,
+body.mdg-unified .mini-btn {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .45rem .85rem;
+  border: 1px solid var(--mdg-shell-border) !important;
+  border-radius: 10px !important;
+  background: var(--mdg-shell-surface) !important;
+  color: var(--mdg-shell-text) !important;
+  font-family: 'Poppins', 'Poppins Fallback', system-ui, sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-decoration: none !important;
+}
+
+body.mdg-unified .nav a:hover,
+body.mdg-unified .nav a:focus-visible,
+body.mdg-unified .mini-btn:hover,
+body.mdg-unified .mini-btn:focus-visible {
+  border-color: var(--mdg-shell-gold) !important;
+  color: #0a122a !important;
+  background: var(--mdg-shell-gold) !important;
+  outline: none;
+}
+
+body.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .hero {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255, 215, 0, .13), transparent 34%),
+    radial-gradient(circle at 88% 16%, rgba(19, 125, 197, .10), transparent 38%),
+    linear-gradient(135deg, var(--brand-dark, #0a122a), var(--brand-darker, #070b1a)) !important;
+  color: var(--brand-text, #f8fafc);
+  border-bottom: 1px solid var(--brand-border, rgba(255, 255, 255, .08)) !important;
+}
+
+html[data-theme="light"] body.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .hero,
+body.mdg-unified.theme-light:not(.mdg-page-deck):not(.mdg-page-doc) .hero {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 215, 0, .18), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, #f5f7fb 58%, #fff8d6 100%) !important;
+  color: #0a122a;
+}
+
+body.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--brand-gold-text, #ffd700) !important;
+  font-family: 'Trebuchet MS', system-ui, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+
+body.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .btn {
+  border-radius: 10px !important;
+  font-family: 'Poppins', 'Poppins Fallback', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+body.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .btn:not(.secondary) {
+  background: var(--brand-gold, #ffd700) !important;
+  color: #0a122a !important;
+  border: 2px solid var(--brand-gold, #ffd700) !important;
+}
+
+body.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .btn.secondary {
+  background: transparent !important;
+  color: var(--brand-gold-text, #ffd700) !important;
+  border: 2px solid var(--brand-gold-text, #ffd700) !important;
+}
+
+body.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) :is(.card, .panel, .field, .time-row, .stat) {
+  border-color: var(--brand-border, rgba(255, 255, 255, .08)) !important;
+  border-radius: var(--brand-radius, 16px) !important;
+}
+
+body.mdg-unified #ta-home {
+  display: none !important;
+}
+
+.mdg-brand-ribbon {
+  position: fixed;
+  top: .85rem;
+  right: .85rem;
+  z-index: 99990;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  max-width: calc(100vw - 1.7rem);
+  padding: .45rem .55rem;
+  border: 1px solid var(--mdg-shell-border);
+  border-radius: 14px;
+  background: var(--mdg-shell-bg);
+  color: var(--mdg-shell-text);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  font-family: 'Poppins', 'Poppins Fallback', system-ui, sans-serif;
+}
+
+.mdg-brand-ribbon__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-width: 0;
+  color: var(--mdg-shell-text) !important;
+  text-decoration: none !important;
+  border: 0 !important;
+}
+
+.mdg-brand-ribbon__logo {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+}
+
+.mdg-brand-ribbon__brand strong {
+  display: block;
+  color: var(--mdg-shell-text) !important;
+  font-size: .82rem;
+  line-height: 1.1;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.mdg-brand-ribbon__brand strong span {
+  color: var(--mdg-shell-gold);
+}
+
+.mdg-brand-ribbon__brand small {
+  display: block;
+  color: var(--mdg-shell-muted);
+  font-size: .62rem;
+  line-height: 1.1;
+  font-family: 'Trebuchet MS', system-ui, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mdg-brand-ribbon__links {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.mdg-brand-ribbon__links a,
+.mdg-brand-ribbon__btn {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .35rem .6rem;
+  border: 1px solid var(--mdg-shell-border) !important;
+  border-radius: 9px;
+  background: var(--mdg-shell-surface);
+  color: var(--mdg-shell-text) !important;
+  font-size: .72rem;
+  font-weight: 800;
+  text-decoration: none !important;
+  line-height: 1;
+}
+
+.mdg-brand-ribbon__links a:hover,
+.mdg-brand-ribbon__links a:focus-visible,
+.mdg-brand-ribbon__btn:hover,
+.mdg-brand-ribbon__btn:focus-visible {
+  background: var(--mdg-shell-gold);
+  color: #0a122a !important;
+  border-color: var(--mdg-shell-gold) !important;
+  outline: none;
+}
+
+body.mdg-page-deck .mdg-brand-ribbon {
+  left: .85rem;
+  right: auto;
+}
+
+body.mdg-page-doc .mdg-brand-ribbon {
+  top: .65rem;
+  right: .65rem;
+}
+
+body.mdg-page-doc :is(.docset-bar, .sidebar-nav) {
+  border-color: var(--mdg-shell-border) !important;
+}
+
+@media (max-width: 720px) {
+  body.mdg-unified .top-in {
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  body.mdg-unified .nav {
+    gap: .4rem;
+  }
+
+  body.mdg-unified .nav a,
+  body.mdg-unified .mini-btn {
+    min-height: 34px;
+    padding: .38rem .62rem;
+    font-size: .72rem;
+  }
+
+  .mdg-brand-ribbon {
+    left: .55rem;
+    right: .55rem;
+    top: .55rem;
+    justify-content: space-between;
+    gap: .35rem;
+    padding: .4rem;
+  }
+
+  .mdg-brand-ribbon__brand small {
+    display: none;
+  }
+
+  .mdg-brand-ribbon__links a:not([href="index.html"]) {
+    display: none;
+  }
+
+  .mdg-brand-ribbon__links {
+    margin-left: auto;
+  }
+}
+
+@media print {
+  .mdg-brand-ribbon,
+  triple-toggle {
+    display: none !important;
+  }
+}
