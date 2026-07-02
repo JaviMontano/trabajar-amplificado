@@ -13,6 +13,7 @@
   <meta property="og:site_name" content="MetodologIA">
   <meta property="og:title" content="Javier Montaño · Coach de Trabajo Amplificado">
   <meta property="og:description" content="Perfil del coach para el paquete IEB de Trabajo Amplificado. Método primero, IA después.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/ejemplo-deo-repo/mao-brand-assets/main/team_javier-montano.webp">
   <script>
     (function () {
       var theme = localStorage.getItem('mdg_theme');
@@ -32,26 +33,17 @@
   <link rel="stylesheet" href="ieb-client.css">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <style>
-    .coach-mark {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: min(9.5rem, 46vw);
+    .coach-photo {
+      display: block;
+      width: min(11.5rem, 48vw);
       aspect-ratio: 1;
       margin: 0 auto 1.4rem;
       border-radius: 28px;
-      background: linear-gradient(135deg, var(--brand-dark), var(--brand-surface));
+      object-fit: cover;
+      object-position: center;
+      background: #fff;
       border: 1px solid var(--brand-border-hover);
       box-shadow: 0 24px 60px rgba(7, 11, 26, .18);
-      color: var(--brand-text);
-      font-family: 'Poppins', 'Poppins Fallback', sans-serif;
-      font-size: clamp(2.35rem, 8vw, 3.7rem);
-      font-weight: 900;
-      letter-spacing: 0;
-      line-height: 1;
-    }
-    .coach-mark span {
-      color: var(--brand-gold-text);
     }
     .coach-profile {
       display: grid;
@@ -121,16 +113,11 @@
       font-size: .88rem;
       line-height: 1.5;
     }
-    html[data-theme="light"] .coach-mark {
-      background: linear-gradient(135deg, #0a122a, #172033);
-      color: #f8fafc;
-    }
     @media (max-width: 520px) {
-      .coach-mark {
-        width: min(7rem, 38vw);
+      .coach-photo {
+        width: min(8rem, 42vw);
         border-radius: 22px;
         margin-bottom: 1rem;
-        font-size: clamp(2rem, 9vw, 2.55rem);
       }
       #hero .h1 {
         font-size: clamp(2rem, 10vw, 2.55rem);
@@ -172,7 +159,7 @@
 <main id="main" class="main">
   <section class="section" id="hero">
     <div class="container" style="text-align:center;">
-      <div class="coach-mark" aria-hidden="true">M<span>IA</span></div>
+      <img class="coach-photo" src="https://raw.githubusercontent.com/ejemplo-deo-repo/mao-brand-assets/main/team_javier-montano.webp" alt="Foto oficial de Javier Montaño" width="184" height="184" loading="eager" decoding="async">
       <span class="eyebrow">MetodologIA · Perfil del coach</span>
       <h1 class="h1" style="margin:1rem auto;max-width:52rem;">Javier Montaño</h1>
       <p class="lead" style="max-width:46rem;margin:0 auto 1rem;">Contador público, especialista en Project Management (gestión de proyectos) y Control Organizacional, aspirante a Máster en IA Aplicada, coach y facilitador de Trabajo Amplificado: método, inteligencia artificial (IA) y criterio humano para que los equipos diseñen capacidad propia, no dependencia de una herramienta de moda.</p>
