@@ -27,6 +27,49 @@
 .masterclass-page .hero{display:block;grid-template-columns:none;gap:0}
 .mc-next .mc-materials{grid-template-columns:1fr}
 @media(max-width:920px){.mc-next .mc-materials{grid-template-columns:1fr}}
+html[data-theme="light"] body.masterclass-page .hero,
+html[data-theme="light"] body.masterclass-page.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .hero,
+body.masterclass-page.theme-light .hero,
+body.masterclass-page.theme-light.mdg-unified:not(.mdg-page-deck):not(.mdg-page-doc) .hero{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(18,37,98,.08),transparent 34%),
+    linear-gradient(135deg,#ffffff 0%,#f6f8fc 58%,#fffdf3 100%)!important;
+}
+html[data-theme="light"] body.masterclass-page .mc-progress a,
+body.masterclass-page.theme-light .mc-progress a{
+  background:rgba(18,37,98,.06);
+  border-color:rgba(18,37,98,.22);
+  color:#122562;
+  box-shadow:0 10px 24px rgba(18,37,98,.06);
+}
+html[data-theme="light"] body.masterclass-page .mc-progress a:hover,
+html[data-theme="light"] body.masterclass-page .mc-progress a:focus-visible,
+body.masterclass-page.theme-light .mc-progress a:hover,
+body.masterclass-page.theme-light .mc-progress a:focus-visible{
+  background:#122562;
+  border-color:#122562;
+  color:#fffdf3;
+}
+html[data-theme="light"] body.masterclass-page .mc-chapter__num,
+body.masterclass-page.theme-light .mc-chapter__num{
+  background:rgba(18,37,98,.07);
+  border-color:rgba(18,37,98,.18);
+  color:#122562;
+}
+html[data-theme="light"] body.masterclass-page .mc-bridge,
+body.masterclass-page.theme-light .mc-bridge{color:#122562}
+html[data-theme="light"] body.masterclass-page .mc-bridge span,
+body.masterclass-page.theme-light .mc-bridge span{
+  background:rgba(18,37,98,.06);
+  border-color:rgba(18,37,98,.18);
+  color:#122562;
+}
+html[data-theme="light"] body.masterclass-page .mc-materials a,
+body.masterclass-page.theme-light .mc-materials a{
+  color:#122562;
+  text-decoration:underline;
+  text-underline-offset:.18em;
+}
 @media(max-width:560px){
   .masterclass-page .hero-in{padding-top:3.4rem;padding-bottom:3.2rem}
   .mc-progress{grid-template-columns:repeat(2,minmax(0,1fr))}
