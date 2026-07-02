@@ -97,6 +97,19 @@
     .ta-modal--c h3{font-size:1.08rem}
     .ta-modal--c h4{margin:.7rem 0 .15rem}
     .ta-modal--c p{font-size:.86rem}
+    .ta-contact-trigger{appearance:none}
+    .ta-contact-modal{max-width:min(500px,92vw)}
+    .ta-contact-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.72rem;padding:2rem 1.75rem 1.9rem}
+    .ta-contact-avatar{width:108px;height:108px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 14px 30px -16px rgba(10,18,42,.72);background:#ffd700;display:grid;place-items:center}
+    .ta-contact-photo{display:block;width:108px;height:108px;object-fit:cover}
+    .ta-contact-initials{font-family:'Poppins',sans-serif;font-weight:900;font-size:2rem;color:#0a122a}
+    .ta-contact-name{box-sizing:border-box;margin:.1rem 0 0!important;padding:0 2rem;width:100%;color:var(--brand-text)!important}
+    .ta-contact-role{font-size:.82rem!important;color:var(--brand-muted)!important}
+    .ta-contact-actions{display:grid;gap:.65rem;width:min(100%,360px);margin-top:.25rem}
+    .ta-contact-actions .home-cta{justify-content:center;width:100%}
+    .ta-contact-mail{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:.5rem .85rem;border:1px solid var(--brand-border);border-radius:999px;color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:800;text-decoration:none}
+    .ta-contact-mail:hover{border-color:var(--brand-gold-text);background:rgba(255,215,0,.08)}
+    .ta-contact-note{max-width:40ch;font-size:.8rem!important;line-height:1.45!important;color:var(--brand-muted)!important}
   </style>
   <link rel="stylesheet" href="estilos/site-unified-v1.css">
 </head>
@@ -288,8 +301,8 @@
       <h2 class="h2" style="margin:1rem auto .5rem;max-width:40rem;"><span class="l-es">Empieza por la clase introductoria · <span class="gradient-text">sin costo</span></span><span class="l-en">Start with the introductory class · <span class="gradient-text">no cost</span></span><span class="l-pt">Comece pela aula introdutória · <span class="gradient-text">sem custo</span></span></h2>
       <p class="lead" style="max-width:36rem;margin:0 auto 1.5rem;"><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão.</span></p>
       <div class="home-hero__ctas" style="justify-content:center;">
-        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete (sin costo) →</span><span class="l-en">Enroll (no cost) →</span><span class="l-pt">Inscreva-se (sem custo) →</span></a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@metodologia.info&su=Trabajar%20Amplificado&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20programa%20Trabajar%20Amplificado.%0A%0ANombre%3A%0ARol%20%28manager%20/%20l%C3%ADder%20/%20fundador%20/%20freelancer%29%3A%0AIdioma%20%28ES%20/%20EN%29%3A%0AInter%C3%A9s%20%28taller%20de%20intro%20/%20talleres%20/%20bootcamp%20/%20bundle%20/%20empresa%29%3A%0AGrupo%20o%20empresa%20%28opcional%29%3A%0A%0AGracias." class="home-cta home-cta--secondary" target="_blank" rel="noopener">contacto@metodologia.info</a>
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Confirmar cupo sin costo →</span><span class="l-en">Confirm free seat →</span><span class="l-pt">Confirmar vaga sem custo →</span></a>
+        <button class="home-cta home-cta--secondary ta-contact-trigger" type="button" data-modal="contact-javier" aria-haspopup="dialog"><span class="l-es">Contactar a Javier</span><span class="l-en">Contact Javier</span><span class="l-pt">Falar com Javier</span></button>
       </div>
     </div>
   </section>
@@ -553,6 +566,22 @@
     <p><span class="l-es">El espacio comunitario y todo el kit.</span><span class="l-en">The community space and the full kit.</span><span class="l-pt">O espaço comunitário e todo o kit.</span></p>
     <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
     <p><span class="l-es">Sales con tu sistema funcionando, validado con pares.</span><span class="l-en">You leave with your system working, validated with peers.</span><span class="l-pt">Você sai com seu sistema funcionando, validado com pares.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-contact-modal" id="contact-javier">
+  <div class="ta-modal__in ta-contact-card">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <div class="ta-contact-avatar" aria-hidden="true">
+      <img class="ta-contact-photo" src="https://raw.githubusercontent.com/ejemplo-deo-repo/mao-brand-assets/main/team_javier-montano.webp" alt="" width="108" height="108" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=&quot;ta-contact-initials&quot;>JM</span>'">
+    </div>
+    <h3 class="ta-contact-name">Javier Montaño</h3>
+    <p class="ta-contact-role">MetodologIA · Trabajo Amplificado</p>
+    <p class="ta-contact-note"><span class="l-es">Puedes confirmar cupo de una vez o escribirme si quieres entender mejor si la clase, los talleres o el bootcamp encajan con tu momento.</span><span class="l-en">You can confirm your seat now or write to me if you want to understand whether the class, workshops or bootcamp fit your current moment.</span><span class="l-pt">Você pode confirmar a vaga agora ou me escrever se quiser entender se a aula, os workshops ou o bootcamp fazem sentido para seu momento.</span></p>
+    <div class="ta-contact-actions">
+      <a class="home-cta home-cta--primary" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Confirmar cupo gratuito</span><span class="l-en">Confirm free seat</span><span class="l-pt">Confirmar vaga gratuita</span></a>
+      <a class="home-cta home-cta--secondary" href="mailto:javier@metodologia.info?subject=Trabajar%20Amplificado%20%C2%B7%20Quiero%20entender%20mejor&body=Hola%20Javier%2C%0A%0AQuiero%20entender%20mejor%20la%20experiencia%20Trabajar%20Amplificado%20antes%20de%20confirmar%20mi%20cupo.%0A%0ANombre%3A%0ARol%20o%20actividad%3A%0ALo%20que%20quiero%20mejorar%20en%20mi%20trabajo%3A%0AMe%20interesa%3A%20clase%20introductoria%20/%20talleres%20/%20bootcamp%20/%20empresa%0APregunta%20principal%3A%0A%0AGracias."><span class="l-es">Escribir para entender mejor</span><span class="l-en">Write to understand better</span><span class="l-pt">Escrever para entender melhor</span></a>
+    </div>
+    <a class="ta-contact-mail" href="mailto:javier@metodologia.info?subject=Trabajar%20Amplificado">javier@metodologia.info</a>
   </div>
 </dialog>
 <script>(function(){
