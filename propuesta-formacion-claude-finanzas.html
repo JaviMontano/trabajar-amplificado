@@ -124,12 +124,13 @@
     .finance-contact-avatar{position:relative;width:104px;height:104px}
     .finance-contact-photo{display:block;width:104px;height:104px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 14px 30px -16px rgba(10,18,42,.72)}
     .finance-contact-badge{position:absolute;right:-4px;bottom:2px;display:inline-grid;place-items:center;width:32px;height:32px;border-radius:999px;border:2px solid #fff;background:#25d366;color:#fff;font-family:'Poppins',system-ui,sans-serif;font-size:.62rem;font-weight:900;letter-spacing:0}
+    .finance-contact-badge--coach{background:var(--brand-gold);color:#071126}
     .finance-contact-name{box-sizing:border-box;margin:.1rem 0 0!important;padding:0 2rem;width:100%;color:var(--brand-text)!important}
     .finance-contact-role{font-size:.82rem!important;color:var(--brand-muted)!important}
     .finance-contact-wa-primary{background:#25d366!important;border-color:#25d366!important;color:#fff!important;margin-top:.25rem;box-shadow:0 14px 30px -18px rgba(37,211,102,.72)}
     .finance-contact-wa-primary:hover{background:#1ebe5b!important;border-color:#1ebe5b!important}
-    .finance-contact-mail,.finance-contact-phone{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:.5rem .85rem;border:1px solid var(--brand-border);border-radius:999px;color:var(--brand-gold-text);font-family:'Poppins',system-ui,sans-serif;font-size:.82rem;font-weight:800;text-decoration:none}
-    .finance-contact-mail:hover,.finance-contact-phone:hover{border-color:var(--brand-gold-text);background:rgba(255,215,0,.08)}
+    .finance-contact-mail,.finance-contact-phone,.finance-contact-link{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:.5rem .85rem;border:1px solid var(--brand-border);border-radius:999px;color:var(--brand-gold-text);font-family:'Poppins',system-ui,sans-serif;font-size:.82rem;font-weight:800;text-decoration:none}
+    .finance-contact-mail:hover,.finance-contact-phone:hover,.finance-contact-link:hover{border-color:var(--brand-gold-text);background:rgba(255,215,0,.08)}
     .finance-contact-note{max-width:34ch;font-size:.78rem!important;line-height:1.45!important;color:var(--brand-muted)!important}
     .home-cta--primary{background:var(--brand-gold)!important;border-color:var(--brand-gold)!important;color:#071126!important}
     .home-cta--secondary{background:var(--brand-surface)!important;border-color:var(--brand-gold-text)!important;color:var(--brand-gold-text)!important}
@@ -181,7 +182,7 @@
         <a href="#programa" class="home-cta home-cta--primary">Ver ruta de clases -></a>
         <a href="propuesta-formacion-claude-finanzas-deck.html" class="home-cta home-cta--secondary">Abrir presentación</a>
         <button class="home-cta home-cta--secondary finance-contact-trigger" type="button" data-modal="contact-daniel" aria-haspopup="dialog">Hablar con Daniel</button>
-        <a href="clientes/ieb/coach-javier-montano.html?publish=0733169" class="home-cta home-cta--secondary">Conocer al coach</a>
+        <button class="home-cta home-cta--secondary finance-contact-trigger" type="button" data-modal="contact-javier" aria-haspopup="dialog">Conocer al coach</button>
         <a href="propuesta-cao-directivos-ia.html" class="home-cta home-cta--secondary">Ver anexo directivo</a>
       </div>
       <div class="stats" style="margin-top:2rem;" aria-label="Resumen comercial">
@@ -230,6 +231,13 @@
           <p>Para validar fit, agenda y alcance, el contacto comercial directo es Daniel Zuluaga. Comparte sponsor, tamaño de cohorte, formato de interés y casos prioritarios.</p>
         </div>
         <button class="home-cta home-cta--primary finance-contact-trigger" type="button" data-modal="contact-daniel" aria-haspopup="dialog">Contactar a Daniel -></button>
+      </div>
+      <div class="finance-commercial">
+        <div>
+          <h3>Conocer al coach</h3>
+          <p>Para dudas técnicas o del contenido temático, Javier Montaño puede aclarar profundidad, ejemplos financieros, dinámica de clase, uso de NotebookLM/MCP, agentes, skills y arneses.</p>
+        </div>
+        <button class="home-cta home-cta--secondary finance-contact-trigger" type="button" data-modal="contact-javier" aria-haspopup="dialog">Dudas con el coach -></button>
       </div>
     </div>
   </section>
@@ -439,6 +447,7 @@
       <div class="home-hero__ctas" style="justify-content:center;">
         <button class="home-cta home-cta--primary finance-contact-trigger" type="button" data-modal="contact-daniel" aria-haspopup="dialog">Agendar con Daniel -></button>
         <a href="https://forms.gle/uCwUZkeoyStaLegf7" class="home-cta home-cta--secondary" target="_blank" rel="noopener">Abrir formulario</a>
+        <button class="home-cta home-cta--secondary finance-contact-trigger" type="button" data-modal="contact-javier" aria-haspopup="dialog">Dudas del temario</button>
         <a href="mailto:daniel@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros&body=Hola%20Daniel,%0A%0AQueremos%20conversar%20sobre%20Trabajo%20Amplificado%20para%20Equipos%20Financieros.%0A%0AEquipo:%0ATamano%20estimado%20del%20grupo:%0AFormato%20de%20interes:%20Intro%20/%20Taller%20Claude%20USD%20500%20/%20Taller%20Contexto%20USD%20500%20/%20Bootcamp%20USD%204,000%0ACasos%20prioritarios:%0A%0AGracias." class="home-cta home-cta--secondary">Enviar correo</a>
       </div>
     </div>
@@ -474,6 +483,7 @@
         <div class="site-footer__col-head">Conectar</div>
         <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
         <a class="site-footer__link" href="mailto:daniel@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros">Daniel Zuluaga</a>
+        <a class="site-footer__link" href="mailto:javier@metodologia.info?subject=Trabajo%20Amplificado%20%C2%B7%20Dudas%20t%C3%A9cnicas%20o%20del%20temario">Javier Montaño</a>
         <a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros">contacto@metodologia.info</a>
       </nav>
     </div>
@@ -497,6 +507,22 @@
     <a class="finance-contact-phone" href="https://wa.me/573002030979?text=Hola%20Daniel%2C%20queremos%20agendar%20una%20validaci%C3%B3n%20para%20Trabajo%20Amplificado%20para%20Equipos%20Financieros." target="_blank" rel="noopener">+57 300 203 0979</a>
     <a class="finance-contact-mail" href="mailto:daniel@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros">daniel@metodologia.info</a>
     <p class="finance-contact-note">Comparte sponsor, tamaño de cohorte, formato de interés, licencias disponibles y casos financieros prioritarios.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal finance-contact-modal" id="contact-javier">
+  <div class="finance-modal__in finance-contact-card">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <div class="finance-contact-avatar">
+      <img class="finance-contact-photo" src="https://raw.githubusercontent.com/ejemplo-deo-repo/mao-brand-assets/main/team_javier-montano.webp" alt="Javier Montaño" width="104" height="104" loading="eager" decoding="async">
+      <span class="finance-contact-badge finance-contact-badge--coach" aria-hidden="true">IA</span>
+    </div>
+    <h3 class="finance-contact-name">Javier Montaño</h3>
+    <p class="finance-contact-role">Coach · Trabajo Amplificado</p>
+    <a class="home-cta home-cta--primary" href="clientes/ieb/coach-javier-montano.html?publish=0733169">Conocer al coach</a>
+    <a class="finance-contact-mail" href="mailto:javier@metodologia.info?subject=Trabajo%20Amplificado%20%C2%B7%20Dudas%20t%C3%A9cnicas%20o%20del%20temario&body=Hola%20Javier,%0A%0AQuiero%20resolver%20dudas%20t%C3%A9cnicas%20o%20del%20contenido%20tem%C3%A1tico%20del%20bootcamp%20Trabajo%20Amplificado%20para%20Equipos%20Financieros.%0A%0AEquipo%20/%20empresa:%0ADuda%20principal:%0AClase%20o%20tema%20de%20inter%C3%A9s:%0ACasos%20financieros%20que%20queremos%20validar:%0A%0AGracias.">javier@metodologia.info</a>
+    <a class="finance-contact-link" href="clientes/ieb/coach-javier-montano.html?publish=0733169">Ver perfil completo</a>
+    <p class="finance-contact-note">Usa este canal para preguntas sobre temario, profundidad técnica, ejemplos, herramientas, práctica financiera o criterios pedagógicos.</p>
   </div>
 </dialog>
 
