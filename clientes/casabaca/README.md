@@ -5,6 +5,8 @@ Subespacio cliente para una propuesta inicial de curso de Soberania Digital orie
 ## Rutas
 
 - `index.html`: pagina principal del curso cliente.
+- `finanzas.html`: landing financiera cliente que separa Grupo Casabaca de la propuesta base general.
+- `coach-javier-montano.html`: perfil del coach duplicado dentro del paquete Casabaca para mantener el journey autocontenido.
 - `casabaca-client.css`: capa visual especifica del cliente.
 - `casabaca-client.js`: modales y toggle de tema.
 
