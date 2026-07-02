@@ -78,6 +78,10 @@
     .ta-clickable{position:relative;cursor:pointer}
     .ta-clickable:hover{border-color:var(--brand-gold-text)}
     .ta-pcard__more{margin-top:.4rem;font-family:'Poppins',sans-serif;font-weight:700;font-size:.8rem;color:var(--brand-gold-text)}
+    .stats--hero-value{grid-template-columns:1fr}
+    @media(min-width:640px){.stats--hero-value{grid-template-columns:repeat(3,1fr)}}
+    .stats--hero-value .stats__num{font-size:clamp(1.15rem,2.15vw,1.55rem);line-height:1.12}
+    .stats--hero-value .stats__label{max-width:18rem;margin:.55rem auto 0;font-size:.78rem;line-height:1.4;letter-spacing:0;text-transform:none}
     .ta-modal{border:none;border-radius:16px;max-width:580px;width:92vw;padding:0;background:var(--brand-surface);color:var(--brand-text);box-shadow:0 24px 60px rgba(0,0,0,.5)}
     .ta-modal::backdrop{background:rgba(7,11,26,.55);backdrop-filter:blur(4px)}
     .ta-modal__in{padding:1.7rem 1.6rem 1.9rem;position:relative}
@@ -132,16 +136,15 @@
       <span class="eyebrow"><span class="l-es">Clase introductoria gratuita · Trabajo Amplificado</span><span class="l-en">Free introductory class · Amplified Work</span><span class="l-pt">Aula introdutória gratuita · Trabalho Amplificado</span></span>
       <h1 class="h1" style="margin:1rem auto;max-width:46rem;">Trabajar <span class="gradient-text">Amplificado</span></h1>
       <p class="lead" style="max-width:40rem;margin:0 auto 1rem;"><span class="l-es">Una experiencia <strong>progresiva</strong> para managers: empiezas con la clase demo <strong>gratuita</strong>, sales con una herramienta candidata y avanzas solo si quieres profundizar en talleres o bootcamp.</span><span class="l-en">A <strong>progressive</strong> experience for managers: start with the <strong>free</strong> demo class, leave with a candidate tool and move forward only if you want workshops or the bootcamp.</span><span class="l-pt">Uma experiência <strong>progressiva</strong> para managers: comece com a aula demo <strong>gratuita</strong>, saia com uma ferramenta candidata e avance só se quiser workshops ou bootcamp.</span></p>
-      <p class="eyebrow" style="margin-bottom:1.6rem;">Método + IA = Soberanía</p>
+      <p class="eyebrow" style="margin-bottom:1.6rem;"><span class="l-es">Menos fricción · Más impacto · Calidad asegurada</span><span class="l-en">Less friction · More impact · Assured quality</span><span class="l-pt">Menos fricção · Mais impacto · Qualidade assegurada</span></p>
       <div class="home-hero__ctas" style="justify-content:center;">
         <a href="#inscripcion" class="home-cta home-cta--primary"><span class="l-es">Inscríbete sin costo →</span><span class="l-en">Enroll at no cost →</span><span class="l-pt">Inscreva-se sem custo →</span></a>
         <a href="#programa" class="home-cta home-cta--secondary"><span class="l-es">Ver el programa</span><span class="l-en">See the program</span><span class="l-pt">Ver o programa</span></a>
       </div>
-      <div class="stats" style="margin-top:2rem;" aria-label="Lo que te llevas">
-        <div class="stats__cell"><span class="stats__num"><span class="l-es">Menos fricción</span><span class="l-en">Less friction</span><span class="l-pt">Menos fricção</span></span><span class="stats__label"><span class="l-es">identifica el cuello de botella</span><span class="l-en">identify the bottleneck</span><span class="l-pt">identifique o gargalo</span></span></div>
-        <div class="stats__cell"><span class="stats__num"><span class="l-es">Plan claro</span><span class="l-en">Clear plan</span><span class="l-pt">Plano claro</span></span><span class="stats__label"><span class="l-es">prioriza el siguiente paso</span><span class="l-en">prioritize the next step</span><span class="l-pt">priorize o próximo passo</span></span></div>
-        <div class="stats__cell"><span class="stats__num"><span class="l-es">Activo reusable</span><span class="l-en">Reusable asset</span><span class="l-pt">Ativo reutilizável</span></span><span class="stats__label"><span class="l-es">plantilla o checklist listo</span><span class="l-en">ready template or checklist</span><span class="l-pt">modelo ou checklist pronto</span></span></div>
-        <div class="stats__cell"><span class="stats__num"><span class="l-es">Prueba de valor</span><span class="l-en">Value proof</span><span class="l-pt">Prova de valor</span></span><span class="stats__label"><span class="l-es">criterio para medir avance</span><span class="l-en">criteria to measure progress</span><span class="l-pt">critério para medir avanço</span></span></div>
+      <div class="stats stats--hero-value" style="margin-top:2rem;" aria-label="Promesa de valor">
+        <div class="stats__cell"><span class="stats__num"><span class="l-es">Menos fricción</span><span class="l-en">Less friction</span><span class="l-pt">Menos fricção</span></span><span class="stats__label"><span class="l-es">Ubicas el bloqueo real, reduces retrabajo y eliges una ruta concreta.</span><span class="l-en">Find the real blockage, reduce rework and choose one concrete route.</span><span class="l-pt">Localize o bloqueio real, reduza retrabalho e escolha uma rota concreta.</span></span></div>
+        <div class="stats__cell"><span class="stats__num"><span class="l-es">Más impacto</span><span class="l-en">More impact</span><span class="l-pt">Mais impacto</span></span><span class="stats__label"><span class="l-es">Conectas IA con decisiones, entregables y resultados visibles.</span><span class="l-en">Connect AI with decisions, deliverables and visible results.</span><span class="l-pt">Conecte IA com decisões, entregas e resultados visíveis.</span></span></div>
+        <div class="stats__cell"><span class="stats__num"><span class="l-es">Calidad asegurada</span><span class="l-en">Assured quality</span><span class="l-pt">Qualidade assegurada</span></span><span class="stats__label"><span class="l-es">Cierras con criterios, evidencia y revisión humana antes de escalar.</span><span class="l-en">Close with criteria, evidence and human review before scaling.</span><span class="l-pt">Feche com critérios, evidência e revisão humana antes de escalar.</span></span></div>
       </div>
     </div>
   </section>
