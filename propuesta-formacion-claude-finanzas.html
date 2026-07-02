@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-page-slug="propuesta-claude-finanzas">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Trabajo Amplificado para Equipos Financieros | MetodologIA</title>
+  <meta name="description" content="Propuesta B2B de formación en Claude para equipos financieros: Soberanía Digital, intro sin costo, bootcamp de 9 clases, P&L, KYC, proveedores y NotebookLM vía MCP.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MetodologIA">
+  <meta property="og:title" content="Trabajo Amplificado para Equipos Financieros">
+  <meta property="og:description" content="Formación práctica en Claude para equipos financieros, con intro sin costo, 9 clases progresivas y grupos de 5 a 15 personas.">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('mdg_theme');
+      document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
+      document.documentElement.lang = 'es';
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    .main{padding-left:0!important}
+    .finance-grid{display:grid;gap:1rem}
+    @media(min-width:760px){.finance-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}.finance-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}.finance-grid--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    .finance-card{padding:1.35rem 1.25rem}
+    .finance-card h3{font-size:1.05rem;margin:0 0 .45rem;color:var(--brand-text)}
+    .finance-card p,.finance-card li{font-size:.92rem;line-height:1.58;color:var(--brand-text-soft)}
+    .finance-card ul{display:grid;gap:.45rem;margin-top:.7rem;padding-left:1.1rem}
+    .finance-pill{display:inline-flex;align-items:center;gap:.45rem;margin:.25rem .35rem .55rem 0;padding:.42rem .72rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:rgba(255,215,0,.08);color:var(--brand-gold-text);font-size:.75rem;font-weight:700}
+    .finance-price{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.25rem;min-height:100%}
+    .finance-price--featured{outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:rgba(255,215,0,.06)}
+    .finance-price__name{font-family:'Poppins',sans-serif;font-size:1.08rem;font-weight:800;line-height:1.18;color:var(--brand-text)}
+    .finance-price__amount{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4.3vw,3.1rem);font-weight:900;line-height:1;color:var(--brand-gold-text)}
+    .finance-price__meta{font-family:'Trebuchet MS',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-gold-text);border-top:1px solid var(--brand-border);padding-top:.6rem;margin-top:.2rem}
+    .finance-price__body{font-size:.9rem;line-height:1.55;color:var(--brand-text-soft)}
+    .finance-note{display:inline-block;margin-top:.85rem;padding:.55rem .85rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:rgba(255,215,0,.08);color:var(--brand-gold-text);font-size:.78rem;font-weight:700}
+    .finance-step{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.8rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--brand-border)}
+    .finance-step:last-child{border-bottom:0}
+    .finance-step b{display:inline-flex;align-items:center;justify-content:center;width:2.1rem;height:2.1rem;border-radius:8px;border:1px solid var(--brand-border-hover);color:var(--brand-gold-text);font-family:'Poppins',sans-serif}
+    .finance-step h3{margin:.05rem 0 .2rem;font-size:1rem}
+    .finance-step p{margin:0;color:var(--brand-text-soft);font-size:.9rem;line-height:1.55}
+    .finance-program{display:grid;gap:.85rem}
+    @media(min-width:860px){.finance-program{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .finance-class{position:relative;min-height:13.75rem;padding:1.25rem;border:1px solid var(--brand-border);border-radius:12px;background:var(--brand-surface);cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+    .finance-class:hover,.finance-class:focus-visible{transform:translateY(-2px);border-color:var(--brand-gold-text);box-shadow:0 16px 34px rgba(0,0,0,.12);outline:none}
+    .finance-class__num{display:inline-flex;align-items:center;justify-content:center;width:2.05rem;height:2.05rem;margin-bottom:.8rem;border-radius:8px;background:rgba(255,215,0,.12);border:1px solid var(--brand-border-hover);color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-weight:900}
+    .finance-class h3{margin:0 0 .45rem;font-size:1.02rem;color:var(--brand-text)}
+    .finance-class p{margin:0;font-size:.88rem;line-height:1.52;color:var(--brand-text-soft)}
+    .finance-class strong{color:var(--brand-text)}
+    .finance-class--intro{background:linear-gradient(135deg,rgba(255,215,0,.13),rgba(255,255,255,.02));border-color:var(--brand-border-hover)}
+    .finance-class--final{border-left:3px solid var(--brand-gold)}
+    .finance-modal{border:none;border-radius:16px;max-width:660px;width:92vw;padding:0;background:var(--brand-surface);color:var(--brand-text);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .finance-modal::backdrop{background:rgba(7,11,26,.58);backdrop-filter:blur(4px)}
+    .finance-modal__in{padding:1.7rem 1.55rem 1.85rem;position:relative;max-height:min(86vh,720px);overflow:auto}
+    .finance-modal__close{position:absolute;top:.7rem;right:.9rem;background:none;border:none;color:var(--brand-muted);font-size:1.5rem;cursor:pointer;line-height:1}
+    .finance-modal h3{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:800;margin:0 2rem .25rem 0}
+    .finance-modal h4{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.64rem;font-weight:700;color:var(--brand-gold-text);margin:1rem 0 .25rem}
+    .finance-modal p{font-size:.9rem;line-height:1.58;color:var(--brand-text-soft);margin:0}
+    .finance-modal ul{margin:.35rem 0 0;padding-left:1.1rem;color:var(--brand-text-soft)}
+    .finance-modal li{font-size:.9rem;line-height:1.5;margin:.25rem 0}
+    .finance-sub{font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-gold-text);margin-bottom:.8rem}
+    .finance-boundary{border-left:3px solid var(--brand-gold);padding-left:1rem}
+    .x-card::after{content:none!important;display:none!important}
+    @media(max-width:720px){
+      .finance-pill{border-radius:10px;width:100%;justify-content:flex-start}
+      .finance-price__amount{font-size:2.05rem}
+      .finance-card,.finance-price,.finance-class{padding:1.1rem}
+      .finance-class{min-height:auto}
+      triple-toggle{top:.85rem;right:.85rem;bottom:auto;min-width:auto;border-radius:999px;z-index:65}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-header__brand" aria-label="MetodologIA - Inicio">
+    <span class="site-header__logo-wrap" aria-hidden="true">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
+        <defs><linearGradient id="hdrGradFinance" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
+        <rect width="36" height="36" rx="10" fill="url(#hdrGradFinance)"/>
+        <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+        <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+      </svg>
+    </span>
+    <span class="site-header__text">
+      <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
+      <span class="site-header__role">Equipos Financieros</span>
+    </span>
+  </a>
+  <nav class="site-header__nav" aria-label="Navegación principal">
+    <a class="site-header__nav-link" href="#programa">Programa</a>
+    <a class="site-header__nav-link" href="#casos">Casos</a>
+    <a class="site-header__nav-link" href="#inversion">Inversión</a>
+    <a class="site-header__nav-link" href="propuesta-formacion-claude-finanzas-deck.html">Deck</a>
+    <a class="site-header__nav-link" href="propuesta-cao-directivos-ia.html">Anexo CAO</a>
+  </nav>
+  <a class="site-header__cta" href="#siguiente">Conversemos -></a>
+</header>
+
+<main id="main" class="main">
+  <section class="section" id="hero">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Propuesta B2B · Claude para finanzas</span>
+      <h1 class="h1" style="margin:1rem auto;max-width:56rem;">Trabajo Amplificado para <span class="gradient-text">Equipos Financieros</span></h1>
+      <p class="lead" style="max-width:50rem;margin:0 auto 1rem;">Formación práctica para convertir la IA, inteligencia artificial, en capacidad propia de trabajo. Primero una intro sin costo ni riesgo para validar fit; luego 9 clases progresivas para diseñar prompts, asistentes, skills, agentes, mini apps y memoria consultable con NotebookLM vía MCP.</p>
+      <p class="eyebrow" style="margin-bottom:1.5rem;">Soberanía Digital: método primero, IA después</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="#programa" class="home-cta home-cta--primary">Ver esquema de clases -></a>
+        <a href="propuesta-formacion-claude-finanzas-deck.html" class="home-cta home-cta--secondary">Abrir presentación</a>
+      </div>
+      <div class="stats" style="margin-top:2rem;" aria-label="Resumen comercial">
+        <div class="stats__cell"><span class="stats__num">0</span><span class="stats__label">intro sin costo</span></div>
+        <div class="stats__cell"><span class="stats__num">9</span><span class="stats__label">clases progresivas</span></div>
+        <div class="stats__cell"><span class="stats__num">5 a 15</span><span class="stats__label">personas por cohorte</span></div>
+        <div class="stats__cell"><span class="stats__num">USD 4,000</span><span class="stats__label">bootcamp B2B</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contexto">
+    <div class="container">
+      <span class="eyebrow">Contexto financiero · 01</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">La brecha no es usar IA. Es usarla con <span class="gradient-text">criterio financiero</span>.</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">Soberanía Digital no significa hacerlo todo solo. Significa que el equipo entiende qué pide, con qué datos trabaja, cómo revisa la respuesta y cuándo debe detenerse. La herramienta acelera; el método dirige.</p>
+      <div class="finance-grid finance-grid--3">
+        <article class="x-card finance-card">
+          <h3>Cifras que necesitan juicio</h3>
+          <p>Variaciones, resúmenes, comparativos y explicaciones para comité se repiten cada mes. Claude puede apoyar, pero el equipo conserva el criterio de materialidad y decisión.</p>
+        </article>
+        <article class="x-card finance-card">
+          <h3>Herramientas sin método cansan</h3>
+          <p>Un prompt es una instrucción escrita que guía a la IA. Si la instrucción no tiene contexto, formato y revisión, la respuesta puede sonar bien y aun así no servir.</p>
+        </article>
+        <article class="x-card finance-card">
+          <h3>Conocimiento disperso</h3>
+          <p>Políticas, reportes, actas y documentos de proveedores viven en distintos lugares. NotebookLM puede funcionar como memoria consultable cuando las fuentes están bien curadas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="programa">
+    <div class="container">
+      <span class="eyebrow">Ruta pedagógica · 02</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">1 clase de fit + 9 clases del curso original, aterrizadas a finanzas</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">La clase 0 crea lenguaje común y fundamentos de prompting de alto rendimiento: instrucciones claras, contexto suficiente y salida verificable. Las 9 clases conservan el bootcamp original y cambian el campo de práctica: cada modal abre un ejemplo financiero concreto.</p>
+      <div class="finance-program">
+        <article class="finance-class finance-class--intro" data-modal="class-0" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">0</span>
+          <h3>Intro: lenguaje común y fit</h3>
+          <p><strong>Sin costo ni riesgo.</strong> Validamos fit, casos prioritarios, datos permitidos y lenguaje base para trabajar con IA.</p>
+        </article>
+        <article class="finance-class" data-modal="class-1" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">1</span>
+          <h3>Crear asistentes</h3>
+          <p>Construimos un asistente para analizar y comparar estados financieros, con foco en P&L.</p>
+        </article>
+        <article class="finance-class" data-modal="class-2" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">2</span>
+          <h3>Crear skills</h3>
+          <p>Empaquetamos una rutina de cierre mensual, variaciones y explicación de desviaciones.</p>
+        </article>
+        <article class="finance-class" data-modal="class-3" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">3</span>
+          <h3>Crear agentes</h3>
+          <p>Diseñamos un agente para investigación KYC o proveedores con evidencias y brechas.</p>
+        </article>
+        <article class="finance-class" data-modal="class-4" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">4</span>
+          <h3>Multimedia con IA</h3>
+          <p>Convertimos cifras y hallazgos en narrativa ejecutiva para comité o junta.</p>
+        </article>
+        <article class="finance-class" data-modal="class-5" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">5</span>
+          <h3>Ecosistemas agénticos</h3>
+          <p>Orquestamos asistentes para P&L, KYC, proveedores, reportes y memoria de equipo.</p>
+        </article>
+        <article class="finance-class" data-modal="class-6" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">6</span>
+          <h3>Arneses para IA</h3>
+          <p>Definimos contexto, fuentes, salida estructurada y checklist de revisión financiera.</p>
+        </article>
+        <article class="finance-class" data-modal="class-7" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">7</span>
+          <h3>Prototipado y mini apps</h3>
+          <p>Prototipamos una mini app para comparación P&L, scoring de proveedores o tablero de variaciones.</p>
+        </article>
+        <article class="finance-class" data-modal="class-8" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">8</span>
+          <h3>Adopcion de IA</h3>
+          <p>Diseñamos rituales, gobierno de uso y quick wins para que el equipo adopte sin fricción.</p>
+        </article>
+        <article class="finance-class finance-class--final" data-modal="class-9" role="button" tabindex="0" aria-haspopup="dialog">
+          <span class="finance-class__num">9</span>
+          <h3>Proyecto final</h3>
+          <p>Integramos un flujo financiero completo como activo reutilizable del equipo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="casos">
+    <div class="container">
+      <span class="eyebrow">Casos de uso · 03</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Ejemplos financieros que recorren todo el programa</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">Cada caso aterriza input, prompt, salida esperada, revisión y límite de uso. P&L significa Profit and Loss, o estado de pérdidas y ganancias. KYC significa Know Your Customer, revisión de identidad y riesgo de una contraparte. MCP significa Model Context Protocol, un estándar para conectar herramientas y fuentes. NotebookLM es un cuaderno de conocimiento que responde desde documentos cargados.</p>
+      <div class="finance-grid finance-grid--4">
+        <article class="x-card finance-card">
+          <span class="finance-pill">P&L</span>
+          <h3>Lectura de cifras</h3>
+          <p>Análisis de variaciones, comparación de periodos, preguntas al negocio y narrativa para comité.</p>
+        </article>
+        <article class="x-card finance-card">
+          <span class="finance-pill">KYC</span>
+          <h3>Deep research</h3>
+          <p>Investigación profunda de contrapartes con fuentes, inferencias separadas, dudas abiertas y brechas visibles.</p>
+        </article>
+        <article class="x-card finance-card">
+          <span class="finance-pill">Proveedores</span>
+          <h3>Comparación y decisión</h3>
+          <p>Lectura de propuestas, criterios de evaluación, riesgos abiertos y preguntas de negociación.</p>
+        </article>
+        <article class="x-card finance-card">
+          <span class="finance-pill">MCP + NotebookLM</span>
+          <h3>Memoria consultable</h3>
+          <p>Claude consulta una base NotebookLM con políticas, reportes y documentación interna con fuente visible.</p>
+        </article>
+      </div>
+      <p><span class="finance-note">Cada caso incluye criterio de uso, datos necesarios y revisión humana antes de decisiones sensibles.</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="inversion">
+    <div class="container">
+      <span class="eyebrow">Inversión · 04</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Pricing B2B por cohorte</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">Valores en dólares estadounidenses. La cohorte base está pensada para 5 a 15 personas para asegurar cercanía, trabajo práctico y guía permanente.</p>
+      <div class="finance-grid finance-grid--2">
+        <article class="x-card finance-price">
+          <span class="finance-price__name">Workshop B2B</span>
+          <span class="finance-price__amount">USD 1,000</span>
+          <span class="finance-price__meta">Por cohorte · 5 a 15 personas</span>
+          <p class="finance-price__body">Sesión práctica para instalar lenguaje común, prompting aplicado y una primera plantilla o asistente financiero reutilizable.</p>
+        </article>
+        <article class="x-card finance-price finance-price--featured">
+          <span class="finance-price__name">Bootcamp B2B</span>
+          <span class="finance-price__amount">USD 4,000</span>
+          <span class="finance-price__meta">Por cohorte · 5 a 15 personas</span>
+          <p class="finance-price__body">Ruta completa de 9 clases para instalar asistentes, skills, agentes, arneses, mini apps y proyecto aplicado.</p>
+        </article>
+      </div>
+      <div class="finance-grid finance-grid--2" style="margin-top:1rem;">
+        <article class="x-card finance-price">
+          <span class="finance-price__name">VIP grupo pequeño · Workshop</span>
+          <span class="finance-price__amount">USD 800</span>
+          <span class="finance-price__meta">Menos de 5 personas · 20% aplicado</span>
+          <p class="finance-price__body">Concesión comercial para clientes con interés estratégico en trabajar con MetodologIA en un grupo más reducido.</p>
+        </article>
+        <article class="x-card finance-price">
+          <span class="finance-price__name">VIP grupo pequeño · Bootcamp</span>
+          <span class="finance-price__amount">USD 3,200</span>
+          <span class="finance-price__meta">Menos de 5 personas · 20% aplicado</span>
+          <p class="finance-price__body">Mantiene la experiencia cercana, con menor tamaño de grupo y el mismo foco en trabajo práctico guiado.</p>
+        </article>
+      </div>
+      <p><span class="finance-note">La opción VIP no es descuento por volumen: es una concesión para grupos chicos con intención clara de avanzar.</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="alcance">
+    <div class="container">
+      <span class="eyebrow">Alcance y condiciones · 05</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Qué queda incluido, qué queda fuera</h2>
+      <div class="finance-grid finance-grid--3">
+        <article class="x-card finance-card finance-boundary">
+          <h3>Incluye</h3>
+          <ul>
+            <li>Diseño y facilitación de la intro y sesiones contratadas.</li>
+            <li>Ejercicios guiados con contexto financiero.</li>
+            <li>Plantillas de prompts, asistentes base y modales de práctica.</li>
+            <li>Discusión de límites, revisión y evidencia.</li>
+          </ul>
+        </article>
+        <article class="x-card finance-card finance-boundary">
+          <h3>Requiere del cliente</h3>
+          <ul>
+            <li>Participantes disponibles y sponsor de negocio.</li>
+            <li>Casos anonimizados o datos de práctica.</li>
+            <li>Acceso a Claude según política interna.</li>
+            <li>Revisión interna de datos sensibles.</li>
+          </ul>
+        </article>
+        <article class="x-card finance-card finance-boundary">
+          <h3>No incluye</h3>
+          <ul>
+            <li>Implementación técnica de sistemas internos.</li>
+            <li>Licencias de herramientas externas.</li>
+            <li>Integraciones productivas sin alcance adicional.</li>
+            <li>Decisiones regulatorias o legales por cuenta del facilitador.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="siguiente">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Siguiente paso · 06</span>
+      <h2 class="h2" style="margin:1rem auto .5rem;max-width:44rem;">Agendar la intro sin costo para validar fit</h2>
+      <p class="lead" style="max-width:42rem;margin:0 auto 1.5rem;">La conversación inicial define roles, tamaño de cohorte, sensibilidad de datos, casos de uso prioritarios y modalidad de facilitación. Si el fit no aparece, no se fuerza el programa.</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="mailto:contacto@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros&body=Hola%20MetodologIA,%0A%0AQueremos%20conversar%20sobre%20Trabajo%20Amplificado%20para%20Equipos%20Financieros.%0A%0AEquipo:%0ATamano%20estimado%20del%20grupo:%0AFormato%20de%20interes:%20Intro%20/%20Workshop%20/%20Bootcamp%20/%20VIP%0ACasos%20prioritarios:%0A%0AGracias." class="home-cta home-cta--primary">Escribir a contacto@metodologia.info -></a>
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" class="home-cta home-cta--secondary" target="_blank" rel="noopener">Formulario de interes</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<triple-toggle aria-label="Preferencias de tema">
+  <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
+</triple-toggle>
+
+<footer class="site-footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div>
+        <p class="site-footer__brand-tagline">"La excelencia no se compra, se diseña. Se cocrea y se comparte."</p>
+      </div>
+      <nav>
+        <div class="site-footer__col-head">Propuesta</div>
+        <a class="site-footer__link" href="#programa">Programa</a>
+        <a class="site-footer__link" href="#casos">Casos de uso</a>
+        <a class="site-footer__link" href="#inversion">Inversión</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head">Material</div>
+        <a class="site-footer__link" href="propuesta-formacion-claude-finanzas-deck.html">Deck comercial</a>
+        <a class="site-footer__link" href="propuesta-cao-directivos-ia.html">Anexo CAO</a>
+        <a class="site-footer__link" href="index.html">Trabajar Amplificado</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head">Conectar</div>
+        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+        <a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros">contacto@metodologia.info</a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 MetodologIA. Licencia abierta. · Success as a Service</span>
+      <span>Método primero, (Gen)IA después.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="finance-modal" id="class-0">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 0 · Intro, lenguaje común y fit</h3>
+    <div class="finance-sub">Sin costo ni riesgo · validación de fit</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Alinear lenguaje común sobre IA, límites, datos permitidos y oportunidades reales del equipo financiero. Incluye prompting de alto rendimiento: rol, contexto, instrucción, contrato de salida y criterio de revisión.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Tomamos una variación simple de P&L y la convertimos en un prompt robusto: qué pedir, qué datos entregar, qué formato esperar y cómo revisar la salida.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda un mapa de casos candidatos y un primer prompt financiero reutilizable. El límite es claro: si faltan datos o sponsor, se declara antes de vender una ruta más grande.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-1">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 1 · Crear asistentes</h3>
+    <div class="finance-sub">Del uso genérico a un asistente financiero</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Aprender a configurar un asistente propio: instrucciones, contexto, criterios de revisión y formato de salida. Un asistente es una IA con rol, memoria de instrucciones y forma esperada de responder.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Construimos un asistente para analizar y comparar estados financieros, especialmente P&L: variaciones por línea, explicaciones preliminares, preguntas para negocio y resumen ejecutivo.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda un asistente base de análisis P&L. El límite: la IA propone lectura y preguntas; el responsable financiero valida cifras, materialidad y causa raíz.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-2">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 2 · Crear skills</h3>
+    <div class="finance-sub">Método financiero reutilizable</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Empaquetar un proceso repetido como una skill. Una skill es una receta reutilizable: pasos, entradas, criterios, formato de salida y errores a evitar.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Diseñamos una skill para cierre mensual: leer variaciones, clasificar impactos, pedir aclaraciones, producir narrativa para comité y marcar puntos sin evidencia.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda una skill documentada de revisión mensual. El límite: la skill ordena el análisis, pero no reemplaza conciliaciones, controles ni revisión contable.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-3">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 3 · Crear agentes</h3>
+    <div class="finance-sub">Investigación con límites y trazabilidad</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Definir agentes que ejecutan pasos, delegan tareas y reportan hallazgos con límites explícitos. Un agente es una IA orientada a una misión, con pasos y reporte de evidencia.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Agente de investigación KYC o proveedores: recopila fuentes, separa evidencia de inferencia, arma matriz de hallazgos, lista preguntas abiertas y señala brechas.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda un blueprint de agente de investigación. El límite: cuando no hay fuente suficiente, el agente no completa la historia; deja la brecha visible.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-4">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 4 · Multimedia con IA</h3>
+    <div class="finance-sub">De cifras a comunicación ejecutiva</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Convertir datos, hallazgos y marcos de análisis en piezas visuales y narrativas ejecutivas: memo, one-pager, presentación breve o guion de comité.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Transformamos una tabla de variaciones de P&L en una historia ejecutiva: qué cambió, por qué importa, qué revisar y qué decisión se necesita.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda una plantilla de reporte ejecutivo financiero. El límite: una historia clara no debe esconder incertidumbre, supuestos o datos incompletos.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-5">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 5 · Ecosistemas agénticos de trabajo</h3>
+    <div class="finance-sub">Sistema, no herramientas sueltas</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Orquestar asistentes, agentes, skills y cadencias como un sistema de trabajo financiero. La meta es reducir fricción recurrente, no acumular herramientas.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Mapa de ecosistema para finanzas: asistente P&L, agente KYC, comparador de proveedores, biblioteca de prompts, NotebookLM de políticas y ritual de revisión semanal.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda un mapa de sistema financiero amplificado. El límite: el ecosistema solo sirve si tiene dueños, fuentes, cadencia y puntos de control.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-6">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 6 · Diseño de arneses para IA</h3>
+    <div class="finance-sub">Contexto, herramientas, salida y evaluación</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Diseñar el arnés que hace que una IA trabaje con contexto, fuentes, formato de salida y evaluación. Un arnés es el conjunto de reglas, datos, herramientas y checklist que contiene el trabajo de la IA.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Arnés para análisis P&L: datos mínimos, fuentes permitidas, esquema de variaciones, formato de tabla, criterios de materialidad y checklist de revisión.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda un arnés de referencia para análisis financiero. El límite: sin datos confiables, el arnés exige detener, preguntar o etiquetar la salida como preliminar.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-7">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 7 · Prototipado y mini apps</h3>
+    <div class="finance-sub">De idea a prueba navegable</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Prototipar una mini app. Una mini app es una aplicación pequeña, suficiente para probar un flujo, una pantalla o una decisión antes de construir software formal.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Mini app para comparación P&L, scoring de proveedores o tablero de variaciones: carga de datos de prueba, visualización simple, hallazgos y preguntas para revisión.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda un prototipo o blueprint navegable. El límite: el prototipo valida comprensión y experiencia; no se presenta como sistema productivo.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-8">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 8 · Adopción de IA</h3>
+    <div class="finance-sub">Del entusiasmo individual al equipo</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Planear adopción con rituales, responsables, quick wins, criterios de datos y acompañamiento. La IA se instala como forma de trabajo, no como novedad aislada.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Ritual semanal de equipo financiero: revisar un caso P&L, un caso KYC o proveedor, actualizar prompts, registrar aprendizajes y decidir qué se escala.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda un plan de adopción por 30 días. El límite: se priorizan hábitos sostenibles sobre entusiasmo inicial o automatizaciones sin dueño.</p>
+  </div>
+</dialog>
+
+<dialog class="finance-modal" id="class-9">
+  <div class="finance-modal__in">
+    <button class="finance-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3>Clase 9 · Proyecto final</h3>
+    <div class="finance-sub">Activo reutilizable del equipo</div>
+    <h4>Qué aprende la persona</h4>
+    <p>Integrar lo aprendido en un flujo financiero completo y presentarlo como activo reutilizable: problema, usuarios, entradas, IA, revisión, salida y decisión.</p>
+    <h4>Ejemplo financiero</h4>
+    <p>Flujo completo de cierre mensual amplificado: asistente P&L, skill de variaciones, agente de evidencia, reporte ejecutivo y posible mini app de consulta.</p>
+    <h4>Activo y límite</h4>
+    <p>Queda una demo ejecutiva del flujo, documentación base y backlog de iteración. El límite: el proyecto final es capacidad instalada, no promesa de sustitución del juicio experto.</p>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-modal]').forEach(function(el){
+    function open(){var d=document.getElementById(el.getAttribute('data-modal'));if(d&&d.showModal)d.showModal();}
+    el.addEventListener('click',open);
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  });
+  document.querySelectorAll('dialog.finance-modal').forEach(function(d){
+    d.addEventListener('click',function(e){if(e.target===d)d.close();});
+    d.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){d.close();});});
+  });
+})();
+</script>
+<script src="scripts/site-unified-v1.js" defer></script>
+</body>
+</html>

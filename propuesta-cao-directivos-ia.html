@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-page-slug="propuesta-cao-directivos-ia">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>CAO para Directivos | MetodologIA</title>
+  <meta name="description" content="Anexo comercial para empoderar directivos con IA: Soberanía Digital, criterio ejecutivo, delegación, gobierno, NotebookLM vía MCP y capacidad instalada.">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('mdg_theme');
+      document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
+      document.documentElement.lang = 'es';
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    .main{padding-left:0!important}
+    .cao-grid{display:grid;gap:1rem}
+    @media(min-width:760px){.cao-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}.cao-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}.cao-grid--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    .cao-card{padding:1.35rem 1.25rem}
+    .cao-card h3{font-size:1.05rem;margin:0 0 .45rem;color:var(--brand-text)}
+    .cao-card p,.cao-card li{font-size:.92rem;line-height:1.58;color:var(--brand-text-soft)}
+    .cao-card ul{display:grid;gap:.45rem;margin-top:.7rem;padding-left:1.1rem}
+    .cao-pill{display:inline-flex;align-items:center;gap:.45rem;margin:.25rem .35rem .55rem 0;padding:.42rem .72rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:rgba(255,215,0,.08);color:var(--brand-gold-text);font-size:.75rem;font-weight:700}
+    .cao-step{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.85rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--brand-border)}
+    .cao-step:last-child{border-bottom:0}
+    .cao-step b{display:inline-flex;align-items:center;justify-content:center;width:2.1rem;height:2.1rem;border-radius:8px;border:1px solid var(--brand-border-hover);color:var(--brand-gold-text);font-family:'Poppins',sans-serif}
+    .cao-step h3{margin:.05rem 0 .2rem;font-size:1rem}
+    .cao-step p{margin:0;color:var(--brand-text-soft);font-size:.9rem;line-height:1.55}
+    .cao-note{display:inline-block;margin-top:.85rem;padding:.55rem .85rem;border:1px solid var(--brand-border-hover);border-radius:999px;background:rgba(255,215,0,.08);color:var(--brand-gold-text);font-size:.78rem;font-weight:700}
+    .x-card::after{content:none!important;display:none!important}
+    @media(max-width:720px){.cao-pill{border-radius:10px;width:100%;justify-content:flex-start}.cao-card{padding:1.1rem}triple-toggle{top:.85rem;right:.85rem;bottom:auto;min-width:auto;border-radius:999px;z-index:65}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-header__brand" aria-label="MetodologIA - Inicio">
+    <span class="site-header__logo-wrap" aria-hidden="true">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
+        <defs><linearGradient id="hdrGradCao" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
+        <rect width="36" height="36" rx="10" fill="url(#hdrGradCao)"/>
+        <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+        <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+      </svg>
+    </span>
+    <span class="site-header__text">
+      <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
+      <span class="site-header__role">CAO para Directivos</span>
+    </span>
+  </a>
+  <nav class="site-header__nav" aria-label="Navegación principal">
+    <a class="site-header__nav-link" href="#programa">Programa</a>
+    <a class="site-header__nav-link" href="#casos">Casos</a>
+    <a class="site-header__nav-link" href="#salida">Salida</a>
+    <a class="site-header__nav-link" href="propuesta-formacion-claude-finanzas.html">Finanzas</a>
+    <a class="site-header__nav-link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+  </nav>
+  <a class="site-header__cta" href="#siguiente">Conversemos -></a>
+</header>
+
+<main id="main" class="main">
+  <section class="section" id="hero">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Anexo comercial · Directivos y champions</span>
+      <h1 class="h1" style="margin:1rem auto;max-width:58rem;">CAO: dirección ejecutiva para <span class="gradient-text">Soberanía Digital</span></h1>
+      <p class="lead" style="max-width:50rem;margin:0 auto 1rem;">CAO significa Chief Agentic Officer: no es un cargo obligatorio, sino una forma de dirigir trabajo con IA. El foco es que los directivos sepan decidir qué delegar, qué evidencia pedir, qué revisar y qué capacidad debe quedar instalada.</p>
+      <p class="eyebrow" style="margin-bottom:1.5rem;">Criterio antes que herramienta · método antes que velocidad</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="#programa" class="home-cta home-cta--primary">Ver enfoque -></a>
+        <a href="propuesta-formacion-claude-finanzas.html" class="home-cta home-cta--secondary">Volver a finanzas</a>
+      </div>
+      <div class="stats" style="margin-top:2rem;" aria-label="Resumen CAO">
+        <div class="stats__cell"><span class="stats__num">4</span><span class="stats__label">frentes ejecutivos</span></div>
+        <div class="stats__cell"><span class="stats__num">IA</span><span class="stats__label">delegación y criterio</span></div>
+        <div class="stats__cell"><span class="stats__num">MCP</span><span class="stats__label">NotebookLM y memoria</span></div>
+        <div class="stats__cell"><span class="stats__num">CAO</span><span class="stats__label">capacidad instalada</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="programa">
+    <div class="container">
+      <span class="eyebrow">Programa ejecutivo · 01</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">El directivo no necesita operar todo. Necesita saber qué delegar, qué exigir y qué revisar.</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">El anexo CAO instala lenguaje de dirección. Una IA puede acelerar análisis, lectura y síntesis, pero no reemplaza el juicio. La Soberanía Digital aparece cuando el equipo entiende el método y puede mejorar sus propios activos cognitivos: prompts, asistentes, playbooks, agentes y memorias.</p>
+      <div class="cao-grid cao-grid--2">
+        <article class="x-card cao-card">
+          <span class="cao-pill">1 · Criterio ejecutivo</span>
+          <h3>Decision antes que herramienta</h3>
+          <p>Elegir casos por impacto, riesgo, disponibilidad de datos y claridad de decisión. La IA entra donde mejora el trabajo, no donde distrae.</p>
+        </article>
+        <article class="x-card cao-card">
+          <span class="cao-pill">2 · Delegación con IA</span>
+          <h3>Briefs, roles y contratos de salida</h3>
+          <p>Convertir instrucciones ambiguas en encargos claros: contexto, objetivo, formato, criterio, evidencia y límites de autonomía. Ese encargo claro es un prompt de trabajo, no una frase improvisada.</p>
+        </article>
+        <article class="x-card cao-card">
+          <span class="cao-pill">3 · Gobierno y revisión</span>
+          <h3>Datos, fuentes y escalamiento</h3>
+          <p>Definir qué puede tocar la IA, qué debe revisarse, qué no se delega y cómo se registra aprendizaje sin exponer información sensible.</p>
+        </article>
+        <article class="x-card cao-card">
+          <span class="cao-pill">4 · Capacidad instalada</span>
+          <h3>Memoria, champions y cadencias</h3>
+          <p>Pasar de demostraciones aisladas a activos reutilizables: asistentes, prompts, NotebookLM, playbooks y rituales de mejora.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="casos">
+    <div class="container">
+      <span class="eyebrow">Casos ejecutivos · 02</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Casos de decisión para directivos</h2>
+      <div class="cao-grid cao-grid--3">
+        <article class="x-card cao-card">
+          <h3>Comité financiero</h3>
+          <p>Preparar preguntas, riesgos, narrativa y puntos de decisión a partir de P&L, el estado de pérdidas y ganancias, forecast o desviaciones.</p>
+        </article>
+        <article class="x-card cao-card">
+          <h3>KYC y terceros</h3>
+          <p>Revisar un brief de contraparte distinguiendo evidencia, inferencia, brechas y preguntas que requieren validación interna. KYC significa Know Your Customer: entender con quién se trabaja y qué riesgos aparecen.</p>
+        </article>
+        <article class="x-card cao-card">
+          <h3>Proveedores estratégicos</h3>
+          <p>Comparar alternativas, explicitar criterios, ver tradeoffs y preparar una conversación de negociación o escalamiento.</p>
+        </article>
+        <article class="x-card cao-card">
+          <h3>NotebookLM vía MCP</h3>
+          <p>Usar una memoria de políticas, reportes, minutas y playbooks. NotebookLM responde desde documentos; MCP, Model Context Protocol, conecta herramientas y fuentes de manera estructurada.</p>
+        </article>
+        <article class="x-card cao-card">
+          <h3>Agenda directiva</h3>
+          <p>Convertir reuniones, minutas y decisiones pendientes en seguimiento, propietarios, próximos pasos y cadencia.</p>
+        </article>
+        <article class="x-card cao-card">
+          <h3>Portafolio de casos</h3>
+          <p>Priorizar dónde invertir tiempo: quick wins, pilotos, riesgos y casos que requieren tecnología o gobierno adicional.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="salida">
+    <div class="container">
+      <span class="eyebrow">Salida esperada · 03</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">CAO deja un sistema mínimo de dirección con IA</h2>
+      <div class="x-card cao-card">
+        <div class="cao-step"><b>1</b><div><h3>Mapa de decisiones y casos</h3><p>Lista priorizada de casos donde IA puede apoyar a directivos y equipos sin romper criterios de datos o gobierno.</p></div></div>
+        <div class="cao-step"><b>2</b><div><h3>Kit ejecutivo de delegación</h3><p>Prompts, briefs, contratos de salida y checklist de revisión para dirigir trabajo con asistentes o agentes.</p></div></div>
+        <div class="cao-step"><b>3</b><div><h3>Memoria NotebookLM</h3><p>Blueprint de cuaderno para políticas, minutas, reportes y documentos de decisión, consultable vía MCP cuando el stack lo permita.</p></div></div>
+        <div class="cao-step"><b>4</b><div><h3>Modelo de champions</h3><p>Roles, rituales y cadencia para sostener aprendizaje y convertir prácticas en capacidad instalada.</p></div></div>
+      </div>
+      <p><span class="cao-note">Este anexo no reemplaza el bootcamp financiero; lo complementa desde la capa directiva.</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="siguiente">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Siguiente paso · 04</span>
+      <h2 class="h2" style="margin:1rem auto .5rem;max-width:44rem;">Validar si CAO debe entrar como capa ejecutiva</h2>
+      <p class="lead" style="max-width:42rem;margin:0 auto 1.5rem;">La conversación define quiénes serían los directivos/champions, qué decisiones quieren amplificar y qué fuentes pueden usarse.</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="mailto:contacto@metodologia.info?subject=Anexo%20CAO%20Directivos%20con%20IA&body=Hola%20MetodologIA,%0A%0AQueremos%20conversar%20sobre%20el%20anexo%20CAO%20para%20directivos.%0A%0AEquipo:%0ARoles%20directivos:%0ACasos%20de%20decision:%0AInteres%20en%20NotebookLM%20/%20MCP:%0A%0AGracias." class="home-cta home-cta--primary">Escribir a contacto@metodologia.info -></a>
+        <a href="propuesta-formacion-claude-finanzas-deck.html" class="home-cta home-cta--secondary">Ver deck financiero</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<triple-toggle aria-label="Preferencias de tema">
+  <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
+</triple-toggle>
+
+<footer class="site-footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div>
+        <p class="site-footer__brand-tagline">"La excelencia no se compra, se diseña. Se cocrea y se comparte."</p>
+      </div>
+      <nav>
+        <div class="site-footer__col-head">Anexo</div>
+        <a class="site-footer__link" href="#programa">Programa</a>
+        <a class="site-footer__link" href="#casos">Casos</a>
+        <a class="site-footer__link" href="#salida">Salida</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head">Material</div>
+        <a class="site-footer__link" href="propuesta-formacion-claude-finanzas.html">Propuesta financiera</a>
+        <a class="site-footer__link" href="propuesta-formacion-claude-finanzas-deck.html">Deck financiero</a>
+        <a class="site-footer__link" href="index.html">Trabajar Amplificado</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head">Conectar</div>
+        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+        <a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Anexo%20CAO%20Directivos%20con%20IA">contacto@metodologia.info</a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 MetodologIA. Licencia abierta. · Success as a Service</span>
+      <span>Método primero, (Gen)IA después.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/site-unified-v1.js" defer></script>
+</body>
+</html>

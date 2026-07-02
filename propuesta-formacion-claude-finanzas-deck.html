@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Deck comercial de Trabajo Amplificado para Equipos Financieros: Soberanía Digital, intro sin costo, 9 clases progresivas, P&L, KYC, proveedores y NotebookLM vía MCP.">
+  <meta name="author" content="Javier Montaño · MetodologIA">
+  <title>Deck · Trabajo Amplificado para Equipos Financieros · MetodologIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root{
+      --deck-dark:#0a122a;--deck-darker:#070b1a;--deck-surface:rgba(30,41,59,.72);--deck-gold:#ffd700;--deck-gold-soft:#ffe875;--deck-text:#f8fafc;--deck-soft:#e2e8f0;--deck-muted:#94a3b8;--deck-border:rgba(255,255,255,.1);--deck-border-gold:rgba(255,215,0,.4);--fh:'Poppins',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--fm:'Trebuchet MS',system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--deck-dark);color:var(--deck-text);font-family:var(--fb);overflow:hidden}
+    body{background:radial-gradient(ellipse 60% 45% at 12% 12%,rgba(255,215,0,.09),transparent 55%),radial-gradient(ellipse 54% 48% at 88% 90%,rgba(255,215,0,.06),transparent 56%),linear-gradient(135deg,var(--deck-dark),var(--deck-darker))}
+    h1,h2,h3,p{margin:0}
+    h1,h2,h3{font-family:var(--fh);line-height:1.05;letter-spacing:0;color:#fff}
+    h1{font-size:clamp(2.55rem,7vw,5.7rem);font-weight:900}
+    h2{font-size:clamp(1.8rem,4.4vw,3.55rem);font-weight:900}
+    h3{font-size:1.05rem;font-weight:800}
+    strong{color:#fff}
+    .gtext{background:linear-gradient(135deg,#fff 0%,var(--deck-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+    .deck{position:fixed;inset:0;overflow:hidden}
+    .slide{position:absolute;inset:0;display:flex;align-items:center;padding:clamp(2rem,6vw,5.5rem) clamp(1.35rem,7vw,8rem) clamp(5rem,9vh,6.5rem);opacity:0;transform:scale(.985);pointer-events:none;transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.16,1,.3,1);overflow:auto}
+    .slide.on{opacity:1;transform:none;pointer-events:auto}
+    .slide.prev{transform:scale(.985)}
+    .wrap{width:100%;max-width:1180px;margin:auto 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.3rem;font-family:var(--fm);font-size:.66rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--deck-gold)}
+    .eyebrow::before{content:'';width:24px;height:2px;border-radius:2px;background:var(--deck-gold)}
+    .lead{max-width:66ch;margin-top:1.35rem;font-size:clamp(1.02rem,1.62vw,1.38rem);line-height:1.62;color:var(--deck-soft)}
+    .kicker{display:inline-flex;margin-bottom:1.2rem;padding:.5rem .95rem;border-radius:999px;border:1.5px solid var(--deck-gold);background:rgba(255,215,0,.12);color:var(--deck-gold);font-family:var(--fm);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;max-width:940px;margin-top:2rem;border:1px solid var(--deck-border);border-radius:18px;overflow:hidden;background:var(--deck-border)}
+    .cell{background:rgba(23,32,51,.8);padding:1.2rem .8rem;text-align:center}
+    .num{font-family:var(--fh);font-size:clamp(1.35rem,2.4vw,2rem);font-weight:900;line-height:1;color:var(--deck-gold)}
+    .lab{margin-top:.5rem;font-family:var(--fm);font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--deck-muted)}
+    .grid{display:grid;gap:1rem;margin-top:2rem}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{min-height:100%;padding:1.25rem 1.25rem;border:1px solid var(--deck-border);border-radius:16px;background:var(--deck-surface);box-shadow:0 18px 40px rgba(0,0,0,.24)}
+    .card.hot{border-color:var(--deck-border-gold);background:radial-gradient(circle at 18% 18%,rgba(255,215,0,.16),transparent 56%),rgba(30,41,59,.78)}
+    .card h3{margin-bottom:.55rem;color:#fff}.card p,.card li{font-size:.92rem;line-height:1.52;color:var(--deck-soft)}.card ul{display:grid;gap:.42rem;margin:.75rem 0 0;padding:0;list-style:none}
+    .classlist{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.75rem;margin-top:2rem}
+    .classbox{padding:.95rem;border:1px solid var(--deck-border);border-radius:14px;background:rgba(255,255,255,.045);min-height:8.8rem}
+    .classbox b{display:inline-flex;align-items:center;justify-content:center;min-width:1.8rem;height:1.8rem;padding:0 .35rem;margin-bottom:.55rem;border-radius:7px;background:rgba(255,215,0,.14);color:var(--deck-gold);font-family:var(--fh)}
+    .classbox h3{font-size:.95rem;margin-bottom:.35rem}.classbox p{font-size:.78rem;line-height:1.42;color:var(--deck-muted)}
+    .price{display:block;margin-top:.7rem;font-family:var(--fh);font-size:1.55rem;font-weight:900;color:var(--deck-gold)}
+    .meta{display:block;margin-top:.4rem;font-family:var(--fm);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--deck-gold)}
+    .flow{display:flex;align-items:stretch;gap:1rem;margin-top:2rem}
+    .node{flex:1;min-width:0;padding:1.2rem;border:1px solid var(--deck-border);border-radius:16px;background:rgba(255,255,255,.045);text-align:center}.node b{display:block;font-family:var(--fh);font-size:1.05rem;color:#fff}.node span{display:block;margin-top:.4rem;font-size:.86rem;line-height:1.4;color:var(--deck-muted)}.arrow{align-self:center;color:var(--deck-gold);font-size:1.7rem}
+    .table{margin-top:2rem;max-width:920px;border:1px solid var(--deck-border);border-radius:18px;overflow:hidden}table{width:100%;border-collapse:collapse}th,td{padding:1rem 1.15rem;text-align:left;border-bottom:1px solid var(--deck-border)}th{font-family:var(--fm);font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--deck-gold);background:rgba(255,215,0,.07)}tr:last-child td{border-bottom:0}td{font-size:.98rem;color:var(--deck-soft)}td:first-child{font-family:var(--fh);font-weight:800;color:#fff}td:last-child{text-align:right;font-family:var(--fh);font-weight:900;color:var(--deck-gold)}
+    .callout{max-width:72ch;margin-top:1.8rem;padding:1.1rem 1.35rem;border-left:4px solid var(--deck-gold);border-radius:0 14px 14px 0;background:rgba(255,215,0,.09);color:#fff;line-height:1.55}
+    .cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.9rem 1.35rem;border-radius:10px;font-family:var(--fh);font-weight:800;text-decoration:none}.btn-gold{background:var(--deck-gold);border:2px solid var(--deck-gold);color:var(--deck-dark)}.btn-ghost{border:2px solid var(--deck-gold);color:var(--deck-gold)}
+    .brandbar{position:absolute;left:clamp(1.2rem,6vw,8rem);bottom:1.35rem;display:flex;align-items:center;gap:.65rem;font-size:.74rem;color:var(--deck-muted);font-family:var(--fh);font-weight:700}.brandbar svg{width:24px;height:24px;flex:0 0 auto}.brandbar b{color:#fff}.brandbar .g{color:var(--deck-gold)}
+    .hud{position:fixed;right:clamp(1rem,4vw,2.4rem);bottom:1.15rem;display:flex;align-items:center;gap:.5rem;z-index:30}.navbtn,.themebtn{width:44px;height:44px;border-radius:12px;border:1px solid var(--deck-border);background:rgba(30,41,59,.72);color:var(--deck-gold);cursor:pointer;font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center}.counter{font-family:var(--fm);font-size:.85rem;color:var(--deck-muted);min-width:56px;text-align:center}.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--deck-gold),var(--deck-gold-soft));width:0;z-index:40;transition:width .35s cubic-bezier(.16,1,.3,1)}
+    .home-link{position:fixed;top:12px;right:12px;z-index:50;display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .75rem;border:1.5px solid var(--deck-gold);border-radius:999px;background:rgba(10,18,42,.86);color:var(--deck-gold);font-family:var(--fh);font-size:.75rem;font-weight:800;text-decoration:none}
+    body.theme-light{--deck-dark:#f6f8fc;--deck-darker:#e8eef7;--deck-surface:#fff;--deck-text:#0a122a;--deck-soft:#26324a;--deck-muted:#566073;--deck-border:rgba(10,18,42,.12);--deck-border-gold:rgba(184,134,11,.48);background:linear-gradient(135deg,#fff,#eef3fb)}body.theme-light h1,body.theme-light h2,body.theme-light h3,body.theme-light .card h3,body.theme-light .node b,body.theme-light td:first-child,body.theme-light .brandbar b{color:#0a122a}body.theme-light .cell,body.theme-light .card,body.theme-light .node,body.theme-light .classbox{background:#fff}body.theme-light .home-link{background:#fff;color:#8a6a00}
+    @media(max-width:920px){.classlist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:780px){.slide{padding:4.5rem 1.2rem 7rem}.g2,.g3,.g4,.stats,.classlist{grid-template-columns:1fr}.flow{flex-direction:column}.arrow{transform:rotate(90deg)}h1{font-size:2.45rem}h2{font-size:1.82rem}.brandbar{display:none}.hud{left:.75rem;right:.75rem;bottom:.65rem;justify-content:center;padding:.45rem;border:1px solid var(--deck-border);border-radius:16px;background:rgba(7,11,26,.94);backdrop-filter:blur(10px)}body.theme-light .hud{background:rgba(255,255,255,.94)}.table{overflow-x:auto}}
+  </style>
+</head>
+<body>
+<a class="home-link" href="propuesta-formacion-claude-finanzas.html">Documento</a>
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+  <section class="slide on">
+    <div class="wrap">
+      <span class="kicker">Propuesta B2B · MetodologIA</span>
+      <h1>Soberanía Digital para <span class="gtext">Equipos Financieros</span></h1>
+      <p class="lead">Trabajo Amplificado convierte la IA en capacidad propia: método primero, herramienta después. Empieza con una intro sin costo ni riesgo para validar fit, seguida de 9 clases progresivas aplicadas a P&L, KYC, proveedores, reporting, mini apps y NotebookLM vía MCP.</p>
+      <div class="stats">
+        <div class="cell"><div class="num">0</div><div class="lab">intro fit</div></div>
+        <div class="cell"><div class="num">9</div><div class="lab">clases</div></div>
+        <div class="cell"><div class="num">5 a 15</div><div class="lab">personas</div></div>
+        <div class="cell"><div class="num">USD 4,000</div><div class="lab">bootcamp</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">Problema</span>
+      <h2>La IA ya responde. El reto es que el equipo conserve <span class="gtext">criterio financiero</span>.</h2>
+      <div class="grid g3">
+        <article class="card"><h3>Cifras sin narrativa</h3><p>El equipo convierte tablas, variaciones y reportes en explicaciones para decisión.</p></article>
+        <article class="card"><h3>Investigación dispersa</h3><p>KYC, proveedores y documentación interna exigen lectura, contraste y trazabilidad.</p></article>
+        <article class="card"><h3>Riesgo de aceptar lo plausible</h3><p>La formación instala prompts, revisión y límites para usar Claude sin ceder juicio profesional.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">Clase 0</span>
+      <h2>Intro, lenguaje común y fit: <span class="gtext">sin costo ni riesgo</span>.</h2>
+      <p class="lead">La intro valida roles, casos, datos permitidos y herramienta autorizada. También instala prompting de alto rendimiento: un prompt es una instrucción escrita para la IA, con rol, contexto, tarea, formato y criterio de revisión.</p>
+      <div class="callout">Salida: mapa de casos candidatos, primer prompt financiero reutilizable y decisión informada sobre workshop, bootcamp o VIP.</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">9 clases</span>
+      <h2>El curso original, con cada clase aterrizada a un ejemplo financiero</h2>
+      <div class="classlist">
+        <div class="classbox"><b>1</b><h3>Asistentes</h3><p>Asistente para analizar y comparar estados financieros, con foco en P&L.</p></div>
+        <div class="classbox"><b>2</b><h3>Skills</h3><p>Receta reusable de cierre mensual y explicación de desviaciones.</p></div>
+        <div class="classbox"><b>3</b><h3>Agentes</h3><p>Agente de investigación KYC o proveedores con evidencias y brechas.</p></div>
+        <div class="classbox"><b>4</b><h3>Multimedia</h3><p>Reporte o narrativa ejecutiva para comité a partir de cifras.</p></div>
+        <div class="classbox"><b>5</b><h3>Ecosistema</h3><p>Mapa de asistentes para P&L, KYC, proveedores, reporting y memoria.</p></div>
+        <div class="classbox"><b>6</b><h3>Arneses</h3><p>Fuentes, salida estructurada y checklist de revisión financiera.</p></div>
+        <div class="classbox"><b>7</b><h3>Mini apps</h3><p>Mini app para comparación P&L, scoring de proveedores o variaciones.</p></div>
+        <div class="classbox"><b>8</b><h3>Adopción</h3><p>Rituales, gobierno y quick wins para el equipo financiero.</p></div>
+        <div class="classbox"><b>9</b><h3>Proyecto</h3><p>Flujo financiero completo como activo reutilizable.</p></div>
+        <div class="classbox"><b>MCP</b><h3>NotebookLM</h3><p>Memoria consultable con políticas, reportes y fuentes visibles.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">Casos de uso</span>
+      <h2>Cuatro contextos para practicar con trabajo realista</h2>
+      <div class="grid g4">
+        <article class="card hot"><h3>P&L</h3><p>P&L es el estado de pérdidas y ganancias: variaciones, narrativa ejecutiva y preguntas para revisión.</p></article>
+        <article class="card"><h3>KYC research</h3><p>KYC, Know Your Customer, ordena la investigación de terceros con fuentes y brechas visibles.</p></article>
+        <article class="card"><h3>Proveedores</h3><p>Comparación de propuestas, riesgos abiertos, criterios y preguntas de negociación.</p></article>
+        <article class="card"><h3>NotebookLM vía MCP</h3><p>NotebookLM responde desde documentos; MCP conecta herramientas y fuentes de forma estructurada.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">Ruta</span>
+      <h2>Grupos pequeños para práctica cercana y guía permanente</h2>
+      <p class="lead">El tamaño recomendado de 5 a 15 personas permite diversidad de casos sin perder acompañamiento, preguntas y corrección en vivo.</p>
+      <div class="grid g2">
+        <article class="card hot"><h3>Workshop B2B</h3><p>Sesión práctica para instalar lenguaje común, prompting aplicado y una primera plantilla o asistente financiero reutilizable.</p><span class="price">USD 1,000</span><span class="meta">Por cohorte · 5 a 15 personas</span></article>
+        <article class="card"><h3>Bootcamp B2B</h3><p>Ruta completa de 9 clases para instalar asistentes, skills, agentes, arneses, mini apps y proyecto aplicado.</p><span class="price">USD 4,000</span><span class="meta">Por cohorte · 5 a 15 personas</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">VIP</span>
+      <h2>Opcion VIP para grupos menores de 5 personas</h2>
+      <p class="lead">Cuando el cliente quiere avanzar con un grupo chico, puede extenderse una concesión comercial de 20% sobre el rate base.</p>
+      <div class="table">
+        <table>
+          <thead><tr><th>Formato</th><th>Condición</th><th>Inversión</th></tr></thead>
+          <tbody>
+            <tr><td>Workshop VIP</td><td>Menos de 5 personas</td><td>USD 800</td></tr>
+            <tr><td>Bootcamp VIP</td><td>Menos de 5 personas</td><td>USD 3,200</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">El VIP no se presenta como descuento por volumen. Es una señal de intención mutua para trabajar con profundidad desde un grupo reducido.</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">NotebookLM + MCP</span>
+      <h2>Un caso especial: convertir documentos financieros en una base consultable</h2>
+      <div class="grid g3">
+        <article class="card"><h3>Fuentes curadas</h3><p>Políticas, manuales, reportes, minutas y documentación de proveedores.</p></article>
+        <article class="card hot"><h3>Consulta con contexto</h3><p>Claude puede operar sobre NotebookLM vía MCP para recuperar respuestas con fuente visible.</p></article>
+        <article class="card"><h3>Brechas explícitas</h3><p>Cuando falta evidencia, el equipo aprende a declararlo en vez de completar con suposiciones.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">Alcance</span>
+      <h2>Incluye formación, práctica y aceleradores. No sustituye gobierno interno.</h2>
+      <div class="grid g3">
+        <article class="card hot"><h3>Incluye</h3><ul><li>Facilitación.</li><li>Ejercicios financieros.</li><li>Prompts y asistentes base.</li><li>Discusión de límites.</li></ul></article>
+        <article class="card"><h3>Cliente aporta</h3><ul><li>Participantes.</li><li>Casos anonimizados.</li><li>Acceso a Claude.</li><li>Sponsor de negocio.</li></ul></article>
+        <article class="card"><h3>No incluye</h3><ul><li>Licencias.</li><li>Integraciones productivas.</li><li>Decisiones regulatorias.</li><li>Implementación técnica interna.</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">Anexo CAO</span>
+      <h2>Para directivos: capacidad de direccionar trabajo con IA</h2>
+      <p class="lead">El anexo CAO es una propuesta separada para directivos y champions: criterio ejecutivo, delegación con IA, gobierno, decisiones, NotebookLM/MCP y capacidad instalada.</p>
+      <div class="cta">
+        <a class="btn btn-gold" href="propuesta-cao-directivos-ia.html">Abrir anexo CAO</a>
+        <a class="btn btn-ghost" href="propuesta-formacion-claude-finanzas.html">Ver documento completo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap">
+      <span class="eyebrow">Siguiente paso</span>
+      <h1>Agendar la intro y <span class="gtext">validar fit</span></h1>
+      <p class="lead">La primera conversación define roles, tamaño de cohorte, sensibilidad de datos, casos prioritarios y modalidad de facilitación.</p>
+      <div class="cta">
+        <a class="btn btn-gold" href="mailto:contacto@metodologia.info?subject=Trabajo%20Amplificado%20para%20Equipos%20Financieros">contacto@metodologia.info</a>
+        <a class="btn btn-ghost" href="propuesta-formacion-claude-finanzas.html">Ver documento completo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="brandbar">
+  <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#122562"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg>
+  <b>Metodolog<span class="g">IA</span></b> · Trabajo Amplificado para Equipos Financieros
+</div>
+<div class="hud">
+  <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button>
+  <button class="navbtn" id="prev" aria-label="Anterior">‹</button>
+  <span class="counter" id="counter">1 / 11</span>
+  <button class="navbtn" id="next" aria-label="Siguiente">›</button>
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0,n=slides.length;
+  var counter=document.getElementById('counter');
+  var progress=document.getElementById('progress');
+  function show(k){
+    k=Math.max(0,Math.min(n-1,k));
+    slides.forEach(function(slide,idx){slide.classList.remove('on','prev');if(idx<k)slide.classList.add('prev');});
+    slides[k].classList.add('on');
+    slides[k].scrollTop=0;
+    i=k;
+    counter.textContent=(k+1)+' / '+n;
+    progress.style.width=((k+1)/n*100)+'%';
+  }
+  function next(){show(i+1);}
+  function prev(){show(i-1);}
+  document.getElementById('next').addEventListener('click',next);
+  document.getElementById('prev').addEventListener('click',prev);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}
+    else if(e.key==='Home'){show(0);}
+    else if(e.key==='End'){show(n-1);}
+  });
+  var x0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;},{passive:true});
+  show(0);
+})();
+</script>
+<script>
+(function(){
+  var body=document.body;
+  var html=document.documentElement;
+  var button=document.getElementById('themebtn');
+  function apply(theme){
+    var next=theme==='light'?'light':'dark';
+    html.dataset.theme=next;
+    body.classList.toggle('theme-light',next==='light');
+    body.classList.toggle('theme-dark',next==='dark');
+    if(button)button.textContent=next==='dark'?'☀':'☾';
+    try{localStorage.setItem('mdg_theme',next);}catch(e){}
+  }
+  var stored='dark';
+  try{stored=localStorage.getItem('mdg_theme')||'dark';}catch(e){}
+  apply(stored);
+  if(button)button.addEventListener('click',function(){apply(html.dataset.theme==='dark'?'light':'dark');});
+})();
+</script>
+</body>
+</html>
