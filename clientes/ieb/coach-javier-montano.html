@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
   <title>Javier Montaño · Coach de Trabajo Amplificado | MetodologIA</title>
-  <meta name="description" content="Perfil de Javier Montaño, contador público, especialista en Project Management y Control Organizacional, aspirante a Máster en IA Aplicada y coach de Trabajo Amplificado para IEB.">
+  <meta name="description" content="Perfil de Javier Montaño, contador público, especialista en Project Management y Control Organizacional, aspirante a Máster en IA Aplicada y coach de Trabajo Amplificado para IEB, con enlaces a Pristino, recursos MetodologIA y activos de formación.">
   <meta name="robots" content="noindex, nofollow">
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="MetodologIA">
@@ -113,6 +113,65 @@
       font-size: .88rem;
       line-height: 1.5;
     }
+    .coach-link-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    @media (min-width: 760px) {
+      .coach-link-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .coach-link-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      gap: .55rem;
+      padding: 1.25rem;
+      color: inherit;
+      text-decoration: none;
+    }
+    .coach-link-card:hover,
+    .coach-link-card:focus-visible {
+      border-color: var(--brand-gold-text);
+      transform: translateY(-1px);
+    }
+    .coach-link-card__k {
+      font-family: 'Trebuchet MS', system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--brand-gold-text);
+      font-size: .62rem;
+      font-weight: 700;
+    }
+    .coach-link-card__t {
+      color: var(--brand-text);
+      font-family: 'Poppins', 'Poppins Fallback', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.18;
+    }
+    .coach-link-card__b {
+      color: var(--brand-text-soft);
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+    .coach-link-card__go {
+      margin-top: auto;
+      color: var(--brand-gold-text);
+      font-family: 'Poppins', 'Poppins Fallback', sans-serif;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    .coach-note {
+      max-width: 42rem;
+      margin: 1rem auto 0;
+      color: var(--brand-muted);
+      font-size: .78rem;
+      line-height: 1.55;
+    }
     @media (max-width: 520px) {
       .coach-photo {
         width: min(8rem, 42vw);
@@ -150,6 +209,7 @@
     <a class="site-header__nav-link" href="index.html">Paquete IEB</a>
     <a class="site-header__nav-link" href="#perfil">Perfil</a>
     <a class="site-header__nav-link" href="#metodo">Método</a>
+    <a class="site-header__nav-link" href="#activos">Activos</a>
     <a class="site-header__nav-link" href="#ieb">Para IEB</a>
     <a class="site-header__nav-link" href="#contacto">Contacto</a>
   </nav>
@@ -162,7 +222,7 @@
       <img class="coach-photo" src="https://raw.githubusercontent.com/ejemplo-deo-repo/mao-brand-assets/main/team_javier-montano.webp" alt="Foto oficial de Javier Montaño" width="184" height="184" loading="eager" decoding="async">
       <span class="eyebrow">MetodologIA · Perfil del coach</span>
       <h1 class="h1" style="margin:1rem auto;max-width:52rem;">Javier Montaño</h1>
-      <p class="lead" style="max-width:46rem;margin:0 auto 1rem;">Contador público, especialista en Project Management (gestión de proyectos) y Control Organizacional, aspirante a Máster en IA Aplicada, coach y facilitador de Trabajo Amplificado: método, inteligencia artificial (IA) y criterio humano para que los equipos diseñen capacidad propia, no dependencia de una herramienta de moda.</p>
+      <p class="lead" style="max-width:48rem;margin:0 auto 1rem;">Contador público, especialista en Project Management (gestión de proyectos) y Control Organizacional, aspirante a Máster en IA Aplicada, coach y facilitador de Trabajo Amplificado. Su trabajo conecta método, inteligencia artificial (IA) y criterio humano para que los equipos diseñen capacidad propia, no dependencia de una herramienta de moda.</p>
       <p class="eyebrow" style="margin-bottom:1.4rem;">Método primero · IA después · Soberanía Digital</p>
       <div class="home-hero__ctas" style="justify-content:center;">
         <a href="index.html" class="home-cta home-cta--primary">Volver al paquete IEB →</a>
@@ -172,6 +232,7 @@
         <span class="ta-tag">Trabajo Amplificado</span>
         <span class="ta-tag">Soberanía Digital</span>
         <span class="ta-tag">IA aplicada</span>
+        <span class="ta-tag">Pristino</span>
         <span class="ta-tag">facilitación práctica</span>
       </div>
     </div>
@@ -186,7 +247,7 @@
         <div class="coach-proof" aria-label="Señales del perfil">
           <div class="coach-proof__item">
             <div class="coach-proof__k">Rol</div>
-            <div class="coach-proof__v">Facilitador de programas de IA aplicada, productividad y trabajo agéntico.</div>
+            <div class="coach-proof__v">Facilitador de programas de IA aplicada, productividad, trabajo agéntico y adopción práctica para equipos.</div>
           </div>
           <div class="coach-proof__item">
             <div class="coach-proof__k">Formación</div>
@@ -195,6 +256,14 @@
           <div class="coach-proof__item">
             <div class="coach-proof__k">Marca</div>
             <div class="coach-proof__v">Fundador de MetodologIA, una metodología abierta para aprender y trabajar con IA.</div>
+          </div>
+          <div class="coach-proof__item">
+            <div class="coach-proof__k">Trayectoria</div>
+            <div class="coach-proof__v">Más de 13 años en gestión, delivery, transformación digital, formación y consultoría de negocio con tecnología.</div>
+          </div>
+          <div class="coach-proof__item">
+            <div class="coach-proof__k">Contexto actual</div>
+            <div class="coach-proof__v">Senior Consultant / Offer Manager en Amaris Consulting; marca visible del programa: MetodologIA.</div>
           </div>
           <div class="coach-proof__item">
             <div class="coach-proof__k">Práctica</div>
@@ -211,6 +280,7 @@
           <li><strong>Enseña con lenguaje común.</strong>Primero define términos, límites y ejemplos. Luego usa la herramienta.</li>
           <li><strong>Trabaja con evidencia.</strong>Prefiere casos, documentos, datos sintéticos o materiales autorizados antes que demostraciones abstractas.</li>
           <li><strong>Diseña para autonomía.</strong>El objetivo es que IEB pueda repetir, ajustar y gobernar lo aprendido.</li>
+          <li><strong>Trae oficio de transformación.</strong>Su experiencia previa incluye gestión de proyectos, PMO (oficina de gestión de proyectos), agilidad, delivery y adopción de GenAI (inteligencia artificial generativa).</li>
         </ul>
       </aside>
     </div>
@@ -243,6 +313,41 @@
           <p class="axis__body">El aprendizaje queda en materiales que se pueden corregir, replicar y gobernar dentro de IEB.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="activos">
+    <div class="container">
+      <span class="eyebrow">Activos navegables · asistentes y método</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">No solo habla de IA: construye piezas que se pueden revisar</h2>
+      <p class="lead" style="margin-bottom:1rem;">Estos enlaces dan contexto sobre la forma de trabajar. Un asistente es una configuración reutilizable que ayuda a ejecutar una tarea con instrucciones y límites; un agente es un flujo que puede dividir pasos, usar herramientas y pedir revisión humana cuando el criterio importa.</p>
+      <div class="coach-link-grid">
+        <a class="x-card coach-link-card" href="https://github.com/JaviMontano/jm-adk-alfa" target="_blank" rel="noopener">
+          <span class="coach-link-card__k">Pristino · open source</span>
+          <span class="coach-link-card__t">JM-ADK Alfa</span>
+          <span class="coach-link-card__b">Kit agéntico para organizar intención, contexto, reglas, calidad y ejecución. Sirve como evidencia de cómo Javier piensa sistemas de trabajo con IA.</span>
+          <span class="coach-link-card__go">Abrir GitHub →</span>
+        </a>
+        <a class="x-card coach-link-card" href="https://metodologia.info/recursos/index" target="_blank" rel="noopener">
+          <span class="coach-link-card__k">Biblioteca MetodologIA</span>
+          <span class="coach-link-card__t">Recursos, asistentes y playbooks</span>
+          <span class="coach-link-card__b">Repositorio público de materiales para aprender, diseñar prompts (instrucciones para IA), probar asistentes y convertir prácticas en activos reutilizables.</span>
+          <span class="coach-link-card__go">Abrir recursos →</span>
+        </a>
+        <a class="x-card coach-link-card" href="../../index.html">
+          <span class="coach-link-card__k">Programa origen</span>
+          <span class="coach-link-card__t">Trabajo Amplificado</span>
+          <span class="coach-link-card__b">Ruta base de formación: lenguaje común, asistentes, skills (recetas reutilizables), agentes, arneses, adopción y mini apps.</span>
+          <span class="coach-link-card__go">Ver programa →</span>
+        </a>
+        <a class="x-card coach-link-card" href="../../playbook-jarvis-os.html">
+          <span class="coach-link-card__k">Guía operativa</span>
+          <span class="coach-link-card__t">Playbook Jarvis OS</span>
+          <span class="coach-link-card__b">Material de referencia para pensar memoria, contexto, automatización y trabajo asistido sin perder revisión humana.</span>
+          <span class="coach-link-card__go">Ver guía →</span>
+        </a>
+      </div>
+      <p class="coach-note">Los enlaces externos publicados aquí fueron seleccionados porque no requieren documentos privados de IEB. Cualquier asistente con información sensible debe operar con permisos, datos autorizados y revisión humana explícita.</p>
     </div>
   </section>
 
