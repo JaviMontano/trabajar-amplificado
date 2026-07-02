@@ -340,12 +340,15 @@ strong {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 
-.site-header__logo-wrap > svg {
+.site-header__logo-wrap > svg,
+.site-header__logo-wrap > img {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .site-header__text {
