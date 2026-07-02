@@ -113,6 +113,29 @@ body.theme-light .pcta .out{color:#26324a!important}
 </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="estilos/site-unified-v1.css">
+<style>
+/* Deck-specific contrast guard loaded after the global site shell. */
+body.mdg-page-deck{transition:none!important}
+body.mdg-page-deck .navbtn,body.mdg-page-deck .langbtn,body.mdg-page-deck .themebtn{transition:transform .2s var(--ease-spring),box-shadow .2s!important}
+html[data-theme="dark"] body.mdg-page-deck,body.mdg-page-deck.theme-dark{--brand-dark:#0a122a;--brand-darker:#070b1a;--brand-surface:#1e293b;--brand-surface-alt:#172033;--brand-gold:#ffd700;--brand-gold-soft:#ffe875;--brand-text:#f8fafc;--brand-text-soft:#e2e8f0;--brand-muted:#cbd5e1;--brand-border:rgba(255,255,255,.08);background:#0a122a!important;color:#f8fafc!important;color-scheme:dark}
+html[data-theme="light"] body.mdg-page-deck,body.mdg-page-deck.theme-light{--brand-dark:#e3e9f4;--brand-darker:#eef2f8;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#334155;background:#e3e9f4!important;color:#0a122a!important;color-scheme:light}
+body.theme-light h1,body.theme-light h2,body.theme-light h3,body.theme-light strong,body.theme-light .bigq,body.theme-light .modlist .x,body.theme-light .callout,body.theme-light .agenda h3{color:#0a122a!important}
+body.theme-light .lead,body.theme-light .card p,body.theme-light .card li,body.theme-light .node span,body.theme-light .counter,body.theme-light .stats .lab,body.theme-light .brandbar{color:#334155!important}
+body.theme-light em,body.theme-light code,body.theme-light .bigq em,body.theme-light .node b,body.theme-light .arrow,body.theme-light .agenda .t,body.theme-light .eyebrow,body.theme-light .chip-hero{color:#6f5400!important}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a!important}
+body.theme-light .btn-ghost{color:#26324a!important}
+body.theme-light .btn-gold,body.theme-light .modlist .n{color:#0a122a!important}
+body.theme-light .callout{background:linear-gradient(135deg,rgba(255,215,0,.18),rgba(255,255,255,.92))!important;border-left-color:#8a6a00!important;box-shadow:0 10px 30px rgba(10,18,42,.12)}
+body.theme-light .modlist .m,body.theme-light .node{background:#ffffff!important;border-color:rgba(10,18,42,.14)!important}
+body.theme-light .modlist .m.final,body.theme-light .card.hot{background:linear-gradient(135deg,#fff8d6 0%,#ffffff 72%)!important;border-color:rgba(184,134,11,.52)!important}
+body.theme-light .dot{background:rgba(184,134,11,.12)!important;color:#8a6a00!important;border-color:rgba(184,134,11,.32)!important}
+body.theme-light .navbtn,body.theme-light .langbtn,body.theme-light .themebtn{background:rgba(255,255,255,.88)!important;color:#8a6a00!important;border-color:rgba(138,106,0,.45)!important}
+body.theme-light .navbtn:hover,body.theme-light .langbtn:hover,body.theme-light .themebtn:hover{background:#ffd700!important;color:#0a122a!important}
+body.theme-light #ta-home{background:#0a122a!important;color:#ffd700!important}
+body.theme-dark .stats .lab,body.theme-dark .brandbar{color:#cbd5e1!important}
+body.theme-dark .navbtn,body.theme-dark .langbtn,body.theme-dark .themebtn{background:rgba(10,18,42,.78)!important;color:#ffd700!important;border-color:rgba(255,215,0,.45)!important}
+body.theme-dark #ta-home{background:#0a122a!important;color:#ffd700!important}
+</style>
 </head>
 <body class="lang-es">
 <a href="index.html" id="ta-home" style="position:fixed;top:12px;right:12px;z-index:99999;display:inline-flex;gap:.45rem;align-items:center;padding:.42rem .8rem;border-radius:999px;background:#0a122a;color:#ffd700;border:1.5px solid #ffd700;font:700 12px/1 'Poppins',system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45)">&#8617; Inicio<span style="opacity:.6;font-weight:600"> · Home</span></a>
@@ -272,7 +295,7 @@ body.theme-light .pcta .out{color:#26324a!important}
   show(0); setLang(0);
 })();
 </script>
-<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
+<script>(function(){var k='ta-theme',b=document.body,h=document.documentElement,t=document.getElementById('themebtn');function apply(theme){theme=theme==='light'?'light':'dark';h.dataset.theme=theme;b.classList.toggle('theme-light',theme==='light');b.classList.toggle('theme-dark',theme==='dark');b.classList.toggle('dark',theme==='dark');if(t)t.textContent=theme==='light'?'\u2600':'\u263e';try{localStorage.setItem(k,theme);localStorage.setItem('mdg_theme',theme);}catch(e){}}try{apply(localStorage.getItem('mdg_theme')||localStorage.getItem(k)||'dark');}catch(e){apply('dark');}if(t)t.onclick=function(e){if(e){e.preventDefault();e.stopPropagation();}apply(b.classList.contains('theme-light')?'dark':'light');};})();</script>
 <script src="scripts/site-unified-v1.js" defer></script>
 </body>
 </html>
