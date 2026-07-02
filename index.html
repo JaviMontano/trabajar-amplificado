@@ -24,9 +24,7 @@
     (function () {
       var theme = localStorage.getItem('mdg_theme');
       document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
-      var lang = localStorage.getItem('mdg_locale') || localStorage.getItem('lang') || 'es';
-      if (lang !== 'es' && lang !== 'en' && lang !== 'pt') lang = 'es';
-      document.documentElement.lang = lang;
+      document.documentElement.lang = 'es';
     })();
   </script>
 
