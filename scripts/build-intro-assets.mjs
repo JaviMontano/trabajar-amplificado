@@ -98,7 +98,7 @@ function topNav(active) {
     <nav class="nav" aria-label="Navegación">
       <a href="clase-introductoria.html"${active === "masterclass" ? ' aria-current="page"' : ""}>Masterclass</a>
       <a href="workbook-introduccion.html"${active === "workbook" ? ' aria-current="page"' : ""}>Workbook</a>
-      <a href="introduccion-trabajo-amplificado.html"${active === "workshop" ? ' aria-current="page"' : ""}>Taller gratis</a>
+      <a href="introduccion-trabajo-amplificado.html"${active === "workshop" ? ' aria-current="page"' : ""}>Taller sin costo</a>
       <a href="diapositivas-introduccion.html"${active === "deck" ? ' aria-current="page"' : ""}>Deck</a>
       <a href="index.html">Hub</a>
       <button class="mini-btn" type="button" data-lang-toggle><span data-lang-current>ES</span></button>
@@ -112,7 +112,7 @@ function footer(kind) {
   return `<footer class="footer">
   <div class="footer-in">
     <strong>MetodologIA · Introducción al Trabajo Amplificado</strong><br>
-    ${kind} · v1.3 · actualizado ${updated}. Método primero, (Gen)IA después. Clase introductoria gratuita: soberanía operativa, herramienta candidata, evidencia proporcional y decisión humana visible.
+    ${kind} · v1.3 · actualizado ${updated}. Método primero, (Gen)IA después. Clase introductoria sin costo: soberanía operativa, herramienta candidata, evidencia proporcional y decisión humana visible.
   </div>
 </footer>`;
 }
@@ -127,7 +127,7 @@ function masterclass() {
   <section class="hero" id="inicio">
     <div class="hero-in">
       <div>
-        <span class="kicker">${localized("Clase demo gratuita · 90-120 min", "Free demo class · 90-120 min", "Aula demo gratuita · 90-120 min")}</span>
+        <span class="kicker">${localized("Clase demo sin costo · 90-120 min", "Demo class at no cost · 90-120 min", "Aula demo sem custo · 90-120 min")}</span>
         <h1>${localized("Introducción al Trabajo Amplificado", "Introduction to Amplified Work", "Introdução ao Trabalho Amplificado")}</h1>
         <p class="lead">${localized("Una masterclass para dejar de pedir respuestas bonitas y empezar a trabajar con IA (inteligencia artificial) como socio de pensamiento: una fricción real, una ruta primaria, una herramienta candidata y una forma honesta de verificarla.", "A masterclass to stop asking for polished answers and start using AI as a thinking partner: one real friction, one primary route, one candidate tool and an honest way to verify it.", "Uma masterclass para parar de pedir respostas bonitas e começar a trabalhar com IA como parceiro de pensamento: uma fricção real, uma rota primária, uma ferramenta candidata e uma forma honesta de verificá-la.")}</p>
       </div>
@@ -214,7 +214,7 @@ function masterclass() {
 ${footer("Masterclass")}`;
   return pageShell({
     title: "Introducción al Trabajo Amplificado · Masterclass",
-    description: "Masterclass gratuita de MetodologIA para entender Trabajo Amplificado: agencia, criterio, fricción, rutas y evidencia proporcional.",
+    description: "Masterclass sin costo de MetodologIA para entender Trabajo Amplificado: agencia, criterio, fricción, rutas y evidencia proporcional.",
     slug: "clase-introductoria.html",
     body,
   });
@@ -226,7 +226,7 @@ function workbook() {
   <section class="hero" id="inicio">
     <div class="hero-in">
       <div>
-        <span class="kicker">${localized("Workbook (cuaderno de trabajo) gratuito · uso en vivo", "Free workbook · live use", "Workbook gratuito · uso ao vivo")}</span>
+        <span class="kicker">${localized("Workbook (cuaderno de trabajo) sin costo · uso en vivo", "Workbook at no cost · live use", "Workbook sem custo · uso ao vivo")}</span>
         <h1>${localized("Workbook · Introducción al Trabajo Amplificado", "Workbook · Introduction to Amplified Work", "Workbook · Introdução ao Trabalho Amplificado")}</h1>
         <p class="lead">${localized("Un cuaderno ameno para convertir una fricción laboral en una herramienta candidata. Escribe poco, decide mejor y sal con una prueba mínima, no con una promesa inflada.", "A friendly workbook to turn work friction into a candidate tool. Write less, decide better and leave with a minimum test, not an inflated promise.", "Um caderno amigável para transformar uma fricção laboral em uma ferramenta candidata. Escreva pouco, decida melhor e saia com um teste mínimo, não com uma promessa inflada.")}</p>
       </div>
@@ -299,7 +299,7 @@ function workbook() {
 ${footer("Workbook")}`;
   return pageShell({
     title: "Introducción al Trabajo Amplificado · Workbook",
-    description: "Workbook gratuito de MetodologIA para diagnosticar fricción, elegir ruta primaria y crear una herramienta candidata con IA.",
+    description: "Workbook sin costo de MetodologIA para diagnosticar fricción, elegir ruta primaria y crear una herramienta candidata con IA.",
     slug: "workbook-introduccion.html",
     body,
     scripts: `<script>
@@ -337,11 +337,11 @@ function introWorkshop() {
   <section class="hero" id="inicio">
     <div class="hero-in">
       <div>
-        <span class="kicker">${localized("Taller gratuito · 90-120 min", "Free workshop · 90-120 min", "Workshop gratuito · 90-120 min")}</span>
+        <span class="kicker">${localized("Taller sin costo · 90-120 min", "Workshop at no cost · 90-120 min", "Workshop sem custo · 90-120 min")}</span>
         <h1>${localized("Introducción al Trabajo Amplificado", "Introduction to Amplified Work", "Introdução ao Trabalho Amplificado")}</h1>
         <p class="lead">${localized("Una clase demo para vivir el método sin costo: diagnosticas una fricción real, eliges una ruta primaria, construyes una herramienta candidata y sales con una prueba mínima.", "A demo class to experience the method at no cost: diagnose a real friction, choose a primary route, build a candidate tool and leave with a minimum test.", "Uma aula demo para viver o método sem custo: diagnostica uma fricção real, escolhe uma rota primária, constrói uma ferramenta candidata e sai com um teste mínimo.")}</p>
         <div class="toolbar">
-          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener">${localized("Inscríbete sin costo", "Enroll at no cost", "Inscreva-se sem custo")}</a>
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener">${localized("Reservar cupo al taller de intro", "Reserve a seat for the intro workshop", "Reservar vaga no workshop de intro")}</a>
           <a class="btn secondary" href="workbook-introduccion.html">${localized("Abrir workbook", "Open workbook", "Abrir workbook")}</a>
           <a class="btn secondary" href="diapositivas-introduccion.html">${localized("Ver deck (diapositivas)", "See deck", "Ver deck (diapositivas)")}</a>
         </div>
@@ -391,24 +391,24 @@ function introWorkshop() {
     <div class="grid g3">
       <article class="card"><h3>Masterclass</h3><p>${localized("Marco narrativo y explicación de la tesis.", "Narrative frame and thesis explanation.", "Marco narrativo e explicação da tese.")}</p><p><a href="clase-introductoria.html">clase-introductoria.html</a></p></article>
       <article class="card"><h3>Workbook</h3><p>${localized("Cuaderno vivo para escribir la fricción, ruta, herramienta y evidencia.", "Live workbook to write friction, route, tool and evidence.", "Caderno vivo para escrever fricção, rota, ferramenta e evidência.")}</p><p><a href="workbook-introduccion.html">workbook-introduccion.html</a></p></article>
-      <article class="card"><h3>Deck</h3><p>${localized("Diapositivas para facilitar la clase introductoria gratuita.", "Slides to facilitate the free introductory class.", "Slides para facilitar a aula introdutória gratuita.")}</p><p><a href="diapositivas-introduccion.html">diapositivas-introduccion.html</a></p></article>
+      <article class="card"><h3>Deck</h3><p>${localized("Diapositivas para facilitar la clase introductoria sin costo.", "Slides to facilitate the introductory class at no cost.", "Slides para facilitar a aula introdutória sem custo.")}</p><p><a href="diapositivas-introduccion.html">diapositivas-introduccion.html</a></p></article>
     </div>
   </section>
 
   <section class="wrap" id="faq">
     <div class="section-head"><span class="kicker">FAQ</span><h2>${localized("Preguntas antes de entrar", "Questions before joining", "Perguntas antes de entrar")}</h2></div>
     <div class="grid g2">
-      <article class="card"><h3>${localized("¿Cuánto cuesta?", "How much does it cost?", "Quanto custa?")}</h3><p>${localized("La clase introductoria es gratuita y sin costo. Los talleres especializados y el bootcamp (programa intensivo) siguen siendo rutas posteriores.", "The introductory class is free and at no cost. Specialized workshops and the bootcamp remain later paths.", "A aula introdutória é gratuita e sem custo. Workshops especializados e bootcamp seguem como rotas posteriores.")}</p></article>
+      <article class="card"><h3>${localized("¿Cuánto cuesta?", "How much does it cost?", "Quanto custa?")}</h3><p>${localized("La clase introductoria es sin costo. Los talleres especializados y el bootcamp (programa intensivo) siguen siendo rutas posteriores.", "The introductory class is offered at no cost. Specialized workshops and the bootcamp remain later paths.", "A aula introdutória é sem custo. Workshops especializados e bootcamp seguem como rotas posteriores.")}</p></article>
       <article class="card"><h3>${localized("¿Necesito herramienta paga?", "Do I need a paid tool?", "Preciso de ferramenta paga?")}</h3><p>${localized("No para la intro. Puedes seguir la clase con el workbook y observar la demo.", "Not for the intro. You can follow the class with the workbook and observe the demo.", "Não para a intro. Você pode acompanhar a aula com o workbook e observar a demo.")}</p></article>
       <article class="card"><h3>${localized("¿Salgo con un sistema completo?", "Do I leave with a full system?", "Saio com um sistema completo?")}</h3><p>${localized("No. Sales con una herramienta candidata y una prueba mínima. El sistema completo pertenece al bootcamp (programa intensivo).", "No. You leave with a candidate tool and a minimum test. The full system belongs to the bootcamp.", "Não. Sai com uma ferramenta candidata e um teste mínimo. O sistema completo pertence ao bootcamp.")}</p></article>
       <article class="card"><h3>${localized("¿Cuál es el puente después?", "What is the bridge after?", "Qual é a ponte depois?")}</h3><p>${localized("Si la intro te sirve, puedes profundizar en prompting (diseño de instrucciones para IA), automatización o bootcamp según la fricción que hayas diagnosticado.", "If the intro helps, you can deepen into prompting, automation or bootcamp depending on the friction you diagnosed.", "Se a intro ajudar, você pode aprofundar em prompting, automação ou bootcamp segundo a fricção diagnosticada.")}</p></article>
     </div>
   </section>
 </main>
-${footer("Taller gratuito")}`;
+${footer("Taller sin costo")}`;
   return pageShell({
-    title: "Introducción al Trabajo Amplificado · Taller gratuito",
-    description: "Taller introductorio gratuito de MetodologIA para diagnosticar fricción, elegir una ruta primaria y crear una herramienta candidata con IA.",
+    title: "Introducción al Trabajo Amplificado · Taller sin costo",
+    description: "Taller introductorio sin costo de MetodologIA para diagnosticar fricción, elegir una ruta primaria y crear una herramienta candidata con IA.",
     slug: "introduccion-trabajo-amplificado.html",
     body,
   });
@@ -417,7 +417,7 @@ ${footer("Taller gratuito")}`;
 function deck() {
   const slides = [
     {
-      k: localized("Taller gratuito · clase demo", "Free workshop · demo class", "Workshop gratuito · aula demo"),
+      k: localized("Taller sin costo · clase demo", "Workshop at no cost · demo class", "Workshop sem custo · aula demo"),
       t: localized("Introducción al Trabajo Amplificado", "Introduction to Amplified Work", "Introdução ao Trabalho Amplificado"),
       l: localized("En esta demo no montas un Jarvis completo. Aprendes a convertir una fricción laboral real en una herramienta candidata verificable.", "In this demo you do not build a full Jarvis. You learn to turn real work friction into a verifiable candidate tool.", "Nesta demo você não monta um Jarvis completo. Aprende a transformar uma fricção laboral real em uma ferramenta candidata verificável."),
       n: localized("1 fricción · 1 ruta · 1 herramienta · 1 prueba mínima", "1 friction · 1 route · 1 tool · 1 minimum test", "1 fricção · 1 rota · 1 ferramenta · 1 teste mínimo"),
@@ -523,7 +523,7 @@ ${slides.map((s, i) => `<section class="slide${i === 0 ? " on" : ""}" aria-hidde
 </div>`;
   return pageShell({
     title: "Introducción al Trabajo Amplificado · Deck",
-    description: "Deck de clase demo gratuita Introducción al Trabajo Amplificado de MetodologIA.",
+    description: "Deck de clase demo sin costo Introducción al Trabajo Amplificado de MetodologIA.",
     slug: "diapositivas-introduccion.html",
     bodyClass: "deck-page",
     styles: `.deck-page{overflow:hidden;background:#071426;color:#eaf1ff}.deck-page .top{display:none}.home-link{position:fixed;top:14px;right:14px;z-index:80;text-decoration:none;border:1px solid rgba(255,215,0,.45);background:#0a122a;color:#ffd700;border-radius:999px;padding:.5rem .85rem;font-family:var(--fh);font-size:.8rem}.deck{position:fixed;inset:0;overflow:hidden}.slide{position:absolute;inset:0;display:flex;align-items:center;padding:clamp(2rem,6vw,5rem) clamp(1.4rem,8vw,8rem) 6rem;opacity:0;visibility:hidden;transform:translateX(40px);transition:opacity .45s ease,transform .45s ease;pointer-events:none;background:radial-gradient(circle at 14% 18%,rgba(255,215,0,.14),transparent 32%),linear-gradient(135deg,#071426,#0a122a 55%,#13294a)}.slide.on{opacity:1;visibility:visible;transform:none;pointer-events:auto}.slide.prev{transform:translateX(-40px)}.slide-wrap{max-width:1060px}.slide-kicker{display:inline-flex;margin-bottom:1.1rem;color:#ffd700;font-weight:900;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem}.slide h1{font-size:clamp(2.4rem,7vw,5.8rem);color:#fff8d6}.slide-lead{font-size:clamp(1.1rem,2vw,1.55rem);max-width:760px;color:#d7e0ef;line-height:1.6;margin-top:1.3rem}.slide-note{margin-top:2rem;display:inline-flex;border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.12);color:#ffd700;border-radius:999px;padding:.7rem 1rem;font-weight:900}.brandbar{position:fixed;left:clamp(1rem,4vw,3rem);bottom:1.1rem;z-index:70;display:flex;gap:.55rem;align-items:center;color:#d7e0ef;font-weight:800}.brandbar .logo{width:26px;height:26px}.brandbar b span{color:#ffd700}.hud{position:fixed;right:clamp(1rem,4vw,3rem);bottom:1rem;z-index:70;display:flex;align-items:center;gap:.5rem}.navbtn{width:46px;height:46px;border:1px solid rgba(255,215,0,.32);border-radius:12px;background:#13294a;color:#ffd700;font-size:1.4rem;cursor:pointer}.navbtn:hover{background:#ffd700;color:#071426}.counter{font-family:var(--fm);color:#d7e0ef;min-width:72px;text-align:center}.deck-progress{position:fixed;top:0;left:0;height:4px;background:#ffd700;width:0;z-index:90;transition:width .3s}.deck-page.theme-light .slide{background:radial-gradient(circle at 14% 18%,rgba(255,215,0,.2),transparent 32%),linear-gradient(135deg,#fff,#f3f6fb 60%,#fff8d6)}.deck-page.theme-light .slide h1{color:#122562}.deck-page.theme-light .slide-lead{color:#26324a}.deck-page.theme-light .brandbar,.deck-page.theme-light .counter{color:#122562}@media(max-width:760px){.slide{padding:4rem 1.25rem 6.2rem}.brandbar span:last-child{display:none}}`,

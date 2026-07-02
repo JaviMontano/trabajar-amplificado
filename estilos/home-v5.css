@@ -193,7 +193,7 @@ html[data-theme="light"] .home-cta--tertiary {
 /* ── Stats: 100✓ cell ──
    MDG-025 fix: hover/focus en CSS (antes era JS event listener que no respetaba
    prefers-reduced-motion ni teclado). Ahora :hover y :focus-visible comparten estilo;
-   reducción de movimiento gratis con la regla global @media reduced-motion. */
+   reducción de movimiento incluida con la regla global @media reduced-motion. */
 .stats__cell--interactive {
   cursor: pointer;
   transition: transform .2s var(--ease);
