@@ -1,16 +1,36 @@
 import { writeFileSync } from "node:fs";
 
 const updated = "2026-07-01";
+const siteBase = "https://javimontano.github.io/trabajar-amplificado/";
 
-function pageShell({ title, description, bodyClass = "", styles = "", body = "", scripts = "" }) {
+function attr(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+}
+
+function pageShell({ title, description, slug = "", bodyClass = "", styles = "", body = "", scripts = "" }) {
+  const canonicalUrl = slug ? `${siteBase}${slug}` : "";
+  const metadata = slug ? `
+<link rel="canonical" href="${canonicalUrl}">
+<link rel="alternate" hreflang="es" href="${canonicalUrl}">
+<link rel="alternate" hreflang="en" href="${canonicalUrl}">
+<link rel="alternate" hreflang="pt" href="${canonicalUrl}">
+<link rel="alternate" hreflang="x-default" href="${canonicalUrl}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${canonicalUrl}">
+<meta property="og:site_name" content="MetodologIA">
+<meta property="og:title" content="${attr(title)}">
+<meta property="og:description" content="${attr(description)}">` : "";
   return `<!DOCTYPE html>
 <html lang="es" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="${description}">
+<meta name="description" content="${attr(description)}">
 <meta name="author" content="Javier Montaño · MetodologIA">
-<title>${title}</title>
+<title>${attr(title)}</title>${metadata}
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='10' fill='%23122562'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,10 +96,10 @@ function topNav(active) {
   <div class="top-in">
     <a class="brand" href="index.html" aria-label="Volver al hub"><span class="logo" aria-hidden="true"></span><b>Metodolog<span>IA</span></b></a>
     <nav class="nav" aria-label="Navegación">
-      <a href="masterclass.html"${active === "masterclass" ? ' aria-current="page"' : ""}>Masterclass</a>
-      <a href="workbook.html"${active === "workbook" ? ' aria-current="page"' : ""}>Workbook</a>
-      <a href="taller-intro.html"${active === "workshop" ? ' aria-current="page"' : ""}>Taller gratis</a>
-      <a href="trabajar-amplificado.html"${active === "deck" ? ' aria-current="page"' : ""}>Deck</a>
+      <a href="clase-introductoria.html"${active === "masterclass" ? ' aria-current="page"' : ""}>Masterclass</a>
+      <a href="workbook-introduccion.html"${active === "workbook" ? ' aria-current="page"' : ""}>Workbook</a>
+      <a href="introduccion-trabajo-amplificado.html"${active === "workshop" ? ' aria-current="page"' : ""}>Taller gratis</a>
+      <a href="diapositivas-introduccion.html"${active === "deck" ? ' aria-current="page"' : ""}>Deck</a>
       <a href="index.html">Hub</a>
       <button class="mini-btn" type="button" data-lang-toggle><span data-lang-current>ES</span></button>
       <button class="mini-btn" type="button" data-theme-toggle><span data-theme-current>☾</span></button>
@@ -195,6 +215,7 @@ ${footer("Masterclass")}`;
   return pageShell({
     title: "Introducción al Trabajo Amplificado · Masterclass",
     description: "Masterclass gratuita de MetodologIA para entender Trabajo Amplificado: agencia, criterio, fricción, rutas y evidencia proporcional.",
+    slug: "clase-introductoria.html",
     body,
   });
 }
@@ -279,6 +300,7 @@ ${footer("Workbook")}`;
   return pageShell({
     title: "Introducción al Trabajo Amplificado · Workbook",
     description: "Workbook gratuito de MetodologIA para diagnosticar fricción, elegir ruta primaria y crear una herramienta candidata con IA.",
+    slug: "workbook-introduccion.html",
     body,
     scripts: `<script>
 (function(){
@@ -320,8 +342,8 @@ function introWorkshop() {
         <p class="lead">${localized("Una clase demo para vivir el método sin costo: diagnosticas una fricción real, eliges una ruta primaria, construyes una herramienta candidata y sales con una prueba mínima.", "A demo class to experience the method at no cost: diagnose a real friction, choose a primary route, build a candidate tool and leave with a minimum test.", "Uma aula demo para viver o método sem custo: diagnostica uma fricção real, escolhe uma rota primária, constrói uma ferramenta candidata e sai com um teste mínimo.")}</p>
         <div class="toolbar">
           <a class="btn" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener">${localized("Inscríbete sin costo", "Enroll at no cost", "Inscreva-se sem custo")}</a>
-          <a class="btn secondary" href="workbook.html">${localized("Abrir workbook", "Open workbook", "Abrir workbook")}</a>
-          <a class="btn secondary" href="trabajar-amplificado.html">${localized("Ver deck", "See deck", "Ver deck")}</a>
+          <a class="btn secondary" href="workbook-introduccion.html">${localized("Abrir workbook", "Open workbook", "Abrir workbook")}</a>
+          <a class="btn secondary" href="diapositivas-introduccion.html">${localized("Ver deck", "See deck", "Ver deck")}</a>
         </div>
       </div>
       <aside class="panel">
@@ -367,9 +389,9 @@ function introWorkshop() {
   <section class="wrap" id="materiales">
     <div class="section-head"><span class="kicker">${localized("Materiales", "Materials", "Materiais")}</span><h2>${localized("Masterclass, workbook y deck trabajan como una sola clase", "Masterclass, workbook and deck work as one class", "Masterclass, workbook e deck funcionam como uma só aula")}</h2></div>
     <div class="grid g3">
-      <article class="card"><h3>Masterclass</h3><p>${localized("Marco narrativo y explicación de la tesis.", "Narrative frame and thesis explanation.", "Marco narrativo e explicação da tese.")}</p><p><a href="masterclass.html">masterclass.html</a></p></article>
-      <article class="card"><h3>Workbook</h3><p>${localized("Cuaderno vivo para escribir la fricción, ruta, herramienta y evidencia.", "Live workbook to write friction, route, tool and evidence.", "Caderno vivo para escrever fricção, rota, ferramenta e evidência.")}</p><p><a href="workbook.html">workbook.html</a></p></article>
-      <article class="card"><h3>Deck</h3><p>${localized("Diapositivas para facilitar la clase introductoria gratuita.", "Slides to facilitate the free introductory class.", "Slides para facilitar a aula introdutória gratuita.")}</p><p><a href="trabajar-amplificado.html">trabajar-amplificado.html</a></p></article>
+      <article class="card"><h3>Masterclass</h3><p>${localized("Marco narrativo y explicación de la tesis.", "Narrative frame and thesis explanation.", "Marco narrativo e explicação da tese.")}</p><p><a href="clase-introductoria.html">clase-introductoria.html</a></p></article>
+      <article class="card"><h3>Workbook</h3><p>${localized("Cuaderno vivo para escribir la fricción, ruta, herramienta y evidencia.", "Live workbook to write friction, route, tool and evidence.", "Caderno vivo para escrever fricção, rota, ferramenta e evidência.")}</p><p><a href="workbook-introduccion.html">workbook-introduccion.html</a></p></article>
+      <article class="card"><h3>Deck</h3><p>${localized("Diapositivas para facilitar la clase introductoria gratuita.", "Slides to facilitate the free introductory class.", "Slides para facilitar a aula introdutória gratuita.")}</p><p><a href="diapositivas-introduccion.html">diapositivas-introduccion.html</a></p></article>
     </div>
   </section>
 
@@ -387,6 +409,7 @@ ${footer("Taller gratuito")}`;
   return pageShell({
     title: "Introducción al Trabajo Amplificado · Taller gratuito",
     description: "Taller introductorio gratuito de MetodologIA para diagnosticar fricción, elegir una ruta primaria y crear una herramienta candidata con IA.",
+    slug: "introduccion-trabajo-amplificado.html",
     body,
   });
 }
@@ -501,6 +524,7 @@ ${slides.map((s, i) => `<section class="slide${i === 0 ? " on" : ""}" aria-hidde
   return pageShell({
     title: "Introducción al Trabajo Amplificado · Deck",
     description: "Deck de clase demo gratuita Introducción al Trabajo Amplificado de MetodologIA.",
+    slug: "diapositivas-introduccion.html",
     bodyClass: "deck-page",
     styles: `.deck-page{overflow:hidden;background:#071426;color:#eaf1ff}.deck-page .top{display:none}.home-link{position:fixed;top:14px;right:14px;z-index:80;text-decoration:none;border:1px solid rgba(255,215,0,.45);background:#0a122a;color:#ffd700;border-radius:999px;padding:.5rem .85rem;font-family:var(--fh);font-size:.8rem}.deck{position:fixed;inset:0;overflow:hidden}.slide{position:absolute;inset:0;display:flex;align-items:center;padding:clamp(2rem,6vw,5rem) clamp(1.4rem,8vw,8rem) 6rem;opacity:0;visibility:hidden;transform:translateX(40px);transition:opacity .45s ease,transform .45s ease;pointer-events:none;background:radial-gradient(circle at 14% 18%,rgba(255,215,0,.14),transparent 32%),linear-gradient(135deg,#071426,#0a122a 55%,#13294a)}.slide.on{opacity:1;visibility:visible;transform:none;pointer-events:auto}.slide.prev{transform:translateX(-40px)}.slide-wrap{max-width:1060px}.slide-kicker{display:inline-flex;margin-bottom:1.1rem;color:#ffd700;font-weight:900;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem}.slide h1{font-size:clamp(2.4rem,7vw,5.8rem);color:#fff8d6}.slide-lead{font-size:clamp(1.1rem,2vw,1.55rem);max-width:760px;color:#d7e0ef;line-height:1.6;margin-top:1.3rem}.slide-note{margin-top:2rem;display:inline-flex;border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.12);color:#ffd700;border-radius:999px;padding:.7rem 1rem;font-weight:900}.brandbar{position:fixed;left:clamp(1rem,4vw,3rem);bottom:1.1rem;z-index:70;display:flex;gap:.55rem;align-items:center;color:#d7e0ef;font-weight:800}.brandbar .logo{width:26px;height:26px}.brandbar b span{color:#ffd700}.hud{position:fixed;right:clamp(1rem,4vw,3rem);bottom:1rem;z-index:70;display:flex;align-items:center;gap:.5rem}.navbtn{width:46px;height:46px;border:1px solid rgba(255,215,0,.32);border-radius:12px;background:#13294a;color:#ffd700;font-size:1.4rem;cursor:pointer}.navbtn:hover{background:#ffd700;color:#071426}.counter{font-family:var(--fm);color:#d7e0ef;min-width:72px;text-align:center}.deck-progress{position:fixed;top:0;left:0;height:4px;background:#ffd700;width:0;z-index:90;transition:width .3s}.deck-page.theme-light .slide{background:radial-gradient(circle at 14% 18%,rgba(255,215,0,.2),transparent 32%),linear-gradient(135deg,#fff,#f3f6fb 60%,#fff8d6)}.deck-page.theme-light .slide h1{color:#122562}.deck-page.theme-light .slide-lead{color:#26324a}.deck-page.theme-light .brandbar,.deck-page.theme-light .counter{color:#122562}@media(max-width:760px){.slide{padding:4rem 1.25rem 6.2rem}.brandbar span:last-child{display:none}}`,
     body,
@@ -519,9 +543,8 @@ ${slides.map((s, i) => `<section class="slide${i === 0 ? " on" : ""}" aria-hidde
   });
 }
 
-writeFileSync("masterclass.html", masterclass());
-writeFileSync("workbook.html", workbook());
-writeFileSync("taller-intro.html", introWorkshop());
-writeFileSync("trabajar-amplificado.html", deck());
-writeFileSync("taller-intro-deck.html", deck());
-console.log("Generated intro assets: masterclass.html, workbook.html, taller-intro.html, trabajar-amplificado.html, taller-intro-deck.html");
+writeFileSync("clase-introductoria.html", masterclass());
+writeFileSync("workbook-introduccion.html", workbook());
+writeFileSync("introduccion-trabajo-amplificado.html", introWorkshop());
+writeFileSync("diapositivas-introduccion.html", deck());
+console.log("Generated intro assets: clase-introductoria.html, workbook-introduccion.html, introduccion-trabajo-amplificado.html, diapositivas-introduccion.html");

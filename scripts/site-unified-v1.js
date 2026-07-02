@@ -100,8 +100,8 @@
       '</a>' +
       '<span class="mdg-brand-ribbon__links">' +
         '<a href="index.html">Hub</a>' +
-        '<a href="dossier.html">Dossier</a>' +
-        '<a href="playbook.html">Playbook</a>' +
+        '<a href="programa.html">Programa</a>' +
+        '<a href="playbook-jarvis-os.html">Playbook</a>' +
       '</span>' +
       '<button class="mdg-brand-ribbon__btn" type="button" data-mdg-lang-toggle aria-label="Cambiar idioma"><span data-mdg-lang-current>ES</span></button>' +
       '<button class="mdg-brand-ribbon__btn" type="button" data-mdg-theme-toggle aria-label="Cambiar tema"><span data-mdg-theme-current>\u2600</span></button>';

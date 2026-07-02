@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Deck del taller Prompting de Alto Rendimiento · MetodologIA: estructura de un prompt, contexto efectivo, meta-prompting y prompting agéntico (output/outcome), evitar alucinaciones y plantillas reutilizables.">
+<meta name="author" content="Javier Montaño · MetodologIA">
+<title>Deck · Prompting de Alto Rendimiento · MetodologIA</title>
+<link rel="canonical" href="https://javimontano.github.io/trabajar-amplificado/diapositivas-prompting.html">
+<link rel="alternate" hreflang="x-default" href="https://javimontano.github.io/trabajar-amplificado/diapositivas-prompting.html">
+<meta property="og:url" content="https://javimontano.github.io/trabajar-amplificado/diapositivas-prompting.html">
+<link rel="alternate" hreflang="pt" href="https://javimontano.github.io/trabajar-amplificado/diapositivas-prompting.html">
+<link rel="alternate" hreflang="en" href="https://javimontano.github.io/trabajar-amplificado/diapositivas-prompting.html">
+<link rel="alternate" hreflang="es" href="https://javimontano.github.io/trabajar-amplificado/diapositivas-prompting.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23122562'/%3E%3Cstop offset='100%25' stop-color='%231F2833'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='10' fill='url(%23g)'/%3E%3Cpath d='M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z' fill='%23fff'/%3E%3Ccircle cx='18' cy='8' r='2' fill='%23FFD700'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+<style>
+:root{
+  --brand-dark:#0a122a; --brand-darker:#070b1a; --brand-surface:#1e293b; --brand-surface-alt:#172033;
+  --brand-gold:#ffd700; --brand-gold-soft:#ffe875; --brand-gold-deep:#b8860b;
+  --brand-text:#f8fafc; --brand-text-soft:#e2e8f0; --brand-muted:#94a3b8;
+  --brand-border:rgba(255,255,255,.08); --brand-border-hover:rgba(255,215,0,.35);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-spring:cubic-bezier(.34,1.56,.64,1); --ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --fh:'Poppins',system-ui,sans-serif; --fb:'Montserrat',system-ui,sans-serif; --fm:'JetBrains Mono',ui-monospace,monospace;
+  --fmeta:'Trebuchet MS','Lucida Grande',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--brand-dark);color:var(--brand-text);font-family:var(--fb);overflow:hidden}
+body{background-image:radial-gradient(ellipse 60% 45% at 16% 10%,rgba(255,215,0,.07),transparent 55%),radial-gradient(ellipse 55% 50% at 85% 88%,rgba(255,215,0,.05),transparent 55%),radial-gradient(ellipse 50% 60% at 92% 8%,rgba(19,125,197,.08),transparent 50%)}
+h1,h2,h3{font-family:var(--fh);margin:0;line-height:1.06;color:#fff}
+strong{color:#fff}em{color:var(--brand-gold-soft);font-style:normal}
+code{font-family:var(--fm);background:rgba(255,215,0,.1);color:var(--brand-gold-soft);padding:.08em .35em;border-radius:5px;font-size:.92em;border:1px solid rgba(255,215,0,.16)}
+.gtext{background:linear-gradient(135deg,#f8fafc 0%,var(--brand-gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.l-en,.l-pt{display:none}
+body.lang-en .l-es{display:none}body.lang-en .l-en{display:inline}body.lang-en .l-pt{display:none}
+body.lang-pt .l-es{display:none}body.lang-pt .l-en{display:none}body.lang-pt .l-pt{display:inline}
+.deck{position:fixed;inset:0;overflow:hidden}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,5.5rem) clamp(1.5rem,7vw,8rem) clamp(5rem,9vh,6.5rem);opacity:0;transform:translateX(48px) scale(.985);pointer-events:none;transition:opacity .55s var(--ease),transform .55s var(--ease-out-expo);overflow:auto}
+.slide.on{opacity:1;transform:none;pointer-events:auto}
+.slide.prev{transform:translateX(-48px) scale(.985)}
+.wrap{max-width:1180px;width:100%;margin:auto 0}
+.eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--fmeta);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.28em;color:var(--brand-gold);margin-bottom:1.4rem}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--brand-gold);border-radius:2px}
+.chip-hero{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .95rem;border-radius:999px;background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,215,0,.07));border:1.5px solid var(--brand-gold);color:var(--brand-gold);font-family:var(--fmeta);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 16px rgba(255,215,0,.22);margin-bottom:1.4rem}
+.chip-hero::before{content:'\2605'}
+h1{font-size:clamp(2.5rem,7vw,5.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.0}
+h2{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:900;letter-spacing:-.02em}
+.lead{font-size:clamp(1.05rem,1.6vw,1.45rem);color:var(--brand-text-soft);max-width:62ch;line-height:1.65;margin-top:1.5rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brand-border);border:1px solid var(--brand-border);border-radius:18px;overflow:hidden;margin-top:2.2rem;max-width:880px}
+.stats .cell{background:rgba(23,32,51,.72);padding:1.35rem .8rem;text-align:center}
+.stats .num{font-family:var(--fh);font-weight:900;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--brand-gold);line-height:1}
+.stats .lab{margin-top:.45rem;font-family:var(--fmeta);font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted)}
+.grid{display:grid;gap:1.1rem;margin-top:2rem}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{position:relative;background:rgba(255,255,255,.045);border:1px solid var(--brand-border);border-radius:18px;padding:1.5rem 1.6rem;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s,transform .5s var(--ease-spring),box-shadow .5s var(--ease-out-expo)}
+.card:hover{border-color:var(--brand-border-hover);transform:translateY(-4px) scale(1.015);box-shadow:0 15px 35px rgba(0,0,0,.45),0 0 0 1px rgba(255,215,0,.18),0 0 28px rgba(255,215,0,.1)}
+.card.hot{background:radial-gradient(circle at 18% 18%,rgba(255,215,0,.16),transparent 60%),linear-gradient(135deg,rgba(30,41,59,.8),rgba(10,18,42,.8));border-color:rgba(255,215,0,.5)}
+.card h3{font-size:1.2rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.55rem}
+.card p,.card li{color:var(--brand-text-soft);font-size:1rem;line-height:1.55}
+.dot{width:34px;height:34px;border-radius:9px;background:rgba(255,215,0,.12);color:var(--brand-gold);display:inline-flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;flex:0 0 auto;border:1px solid rgba(255,215,0,.3)}
+.bigq{font-family:var(--fh);font-weight:800;font-size:clamp(1.5rem,3.2vw,2.6rem);line-height:1.18;color:#fff}
+.bigq em{color:var(--brand-gold)}
+.anatomy{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+.node{flex:1 1 180px;min-width:168px;background:rgba(255,255,255,.05);border:1px solid var(--brand-border);border-radius:16px;padding:1.3rem;text-align:center;transition:transform .4s var(--ease-spring),border-color .25s}
+.node:hover{transform:translateY(-3px);border-color:var(--brand-border-hover)}
+.node .ico{font-size:1.9rem}.node b{display:block;font-family:var(--fm);margin-top:.4rem;color:var(--brand-gold-soft)}.node span{display:block;font-size:.85rem;color:var(--brand-muted);margin-top:.25rem}
+.arrow{color:var(--brand-gold);font-size:1.7rem;flex:0 0 auto}
+.agenda{display:grid;gap:.5rem;margin-top:1.8rem}
+.agenda .row{display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:baseline;padding:.75rem 0;border-bottom:1px solid var(--brand-border)}
+.agenda .t{font-family:var(--fm);color:var(--brand-gold);font-weight:700}
+.agenda h3{font-size:1.12rem}
+.prompt{background:#060c1f;border:1px solid var(--brand-border);border-radius:16px;overflow:hidden;margin-top:1.7rem;max-width:920px;box-shadow:0 18px 44px rgba(0,0,0,.4)}
+.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,215,0,.05));padding:.65rem .95rem;border-bottom:1px solid var(--brand-border)}
+.prompt-head span{font-family:var(--fm);font-size:.78rem;color:var(--brand-gold)}
+.copy{border:1px solid rgba(255,215,0,.4);background:transparent;color:var(--brand-gold);border-radius:8px;padding:.34rem .75rem;cursor:pointer;font-weight:700;font-size:.78rem;transition:background .2s,color .2s,transform .2s}
+.copy:hover,.copy.ok{background:var(--brand-gold);color:var(--brand-dark);transform:translateY(-1px)}
+.prompt pre{margin:0;padding:1.15rem;white-space:pre-wrap;font-family:var(--fm);font-size:.92rem;line-height:1.6;color:#dbe6ff}
+.callout{background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,215,0,.04));border-left:4px solid var(--brand-gold);border-radius:0 14px 14px 0;padding:1.2rem 1.5rem;margin-top:1.9rem;color:#fff;max-width:64ch;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.6rem;border-radius:11px;font-family:var(--fh);font-weight:700;text-decoration:none;font-size:1rem;transition:transform .4s var(--ease-spring),box-shadow .4s var(--ease-out-expo)}
+.btn-gold{background:var(--brand-gold);color:var(--brand-dark);box-shadow:0 8px 24px rgba(255,215,0,.3)}
+.btn-gold:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 34px rgba(255,215,0,.4)}
+.btn-ghost{background:transparent;color:var(--brand-gold);border:2px solid rgba(255,215,0,.5)}
+.btn-ghost:hover{background:var(--brand-gold);color:var(--brand-dark)}
+.brandbar{position:absolute;left:clamp(1.5rem,7vw,8rem);bottom:1.45rem;display:flex;align-items:center;gap:.65rem;font-size:.74rem;color:var(--brand-muted);font-family:var(--fh);font-weight:600}
+.brandbar .logo{width:24px;height:24px}.brandbar b{color:#fff}.brandbar .g{color:var(--brand-gold)}
+.brandbar .tag{font-family:var(--fmeta);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-gold-deep);padding-left:.55rem;margin-left:.15rem;border-left:1px solid var(--brand-border)}
+.hud{position:fixed;right:clamp(1rem,4vw,2.4rem);bottom:1.25rem;display:flex;align-items:center;gap:.5rem;z-index:30}
+.navbtn{width:44px;height:44px;border-radius:12px;border:1px solid var(--brand-border);background:rgba(30,41,59,.7);color:var(--brand-gold);cursor:pointer;font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);transition:background .2s,transform .25s var(--ease-spring),box-shadow .2s}
+.navbtn:hover{background:var(--brand-gold);color:var(--brand-dark);transform:translateY(-2px);box-shadow:0 0 18px rgba(255,215,0,.4)}
+.counter{font-family:var(--fm);font-size:.85rem;color:var(--brand-muted);min-width:54px;text-align:center}
+.langbtn{min-width:48px;height:44px;border-radius:12px;border:1px solid rgba(255,215,0,.4);background:rgba(255,215,0,.1);color:var(--brand-gold);cursor:pointer;font-family:var(--fh);font-weight:800;font-size:.82rem;letter-spacing:.05em;padding:0 .7rem;backdrop-filter:blur(10px);transition:background .2s,color .2s}
+.langbtn:hover{background:var(--brand-gold);color:var(--brand-dark)}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand-gold),var(--brand-gold-soft));width:0;z-index:40;transition:width .45s var(--ease-out-expo);box-shadow:0 0 12px rgba(255,215,0,.5)}
+:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px;border-radius:4px}
+@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.anatomy{flex-direction:column}.arrow{transform:rotate(90deg)}.slide{padding:4.5rem 1.3rem 5.5rem}.brandbar .tag{display:none}}
+
+.themebtn{font-family:var(--fmeta);font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;color:var(--brand-gold);background:rgba(255,215,0,.08);border:1.5px solid var(--brand-gold);border-radius:999px;padding:.34rem .58rem;margin-right:.5rem;transition:background .2s,transform .2s}
+.themebtn:hover{background:rgba(255,215,0,.18);transform:translateY(-1px)}
+body.theme-light{--brand-darker:#eef2f8;--brand-dark:#e3e9f4;--brand-surface:#ffffff;--brand-surface-alt:#f3f6fb;--brand-text:#0a122a;--brand-text-soft:#26324a;--brand-muted:#566073;--brand-border:rgba(10,18,42,.12);--brand-border-hover:rgba(184,134,11,.55);--brand-gold-deep:#8a6a00}
+body.theme-light::before{background:radial-gradient(circle at 12% 18%,rgba(255,215,0,.12),transparent 42%),radial-gradient(circle at 88% 12%,rgba(30,58,138,.08),transparent 46%),linear-gradient(160deg,#f6f8fc 0%,#e9eef7 60%,#e1e9f6 100%)}
+body.theme-light .gtext{background:linear-gradient(135deg,#0a122a 0%,#9a7400 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.theme-light .topbar{background:rgba(255,255,255,.85)!important}
+body.theme-light .card,body.theme-light .rung,body.theme-light .price,body.theme-light .signup,body.theme-light .step,body.theme-light .mod,body.theme-light .pill,body.theme-light .faq details{background:#ffffff!important}
+body.theme-light .stats{background:rgba(10,18,42,.12)!important}
+body.theme-light .stats .cell{background:#ffffff!important}
+body.theme-light .slide{color:var(--brand-text)}
+body.theme-light .brandbar b,body.theme-light .brand span{color:#0a122a}
+body.theme-light .btn-ghost{color:#26324a}
+
+body.theme-light .eyebrow,body.theme-light .stats .num,body.theme-light .num,body.theme-light .price .amt,body.theme-light .pricepill,body.theme-light .card .go,body.theme-light .go,body.theme-light .rmore,body.theme-light .detail:hover,body.theme-light .save,body.theme-light .tag,body.theme-light .chip-hero,body.theme-light .langbtn,body.theme-light .themebtn,body.theme-light .when,body.theme-light .mn,body.theme-light .step .t,body.theme-light .fmeta a,body.theme-light .alt a,body.theme-light .brand .g,body.theme-light .fbrand .g,body.theme-light .brandbar .g,body.theme-light .triad,body.theme-light .ptag{color:#8a6a00!important}
+body.theme-light .chip-hero{border-color:#b8860b}
+body.theme-light .pcta .out{color:#26324a!important}
+</style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+</head>
+<body class="lang-es">
+<a href="index.html" id="ta-home" style="position:fixed;top:12px;right:12px;z-index:99999;display:inline-flex;gap:.45rem;align-items:center;padding:.42rem .8rem;border-radius:999px;background:#0a122a;color:#ffd700;border:1.5px solid #ffd700;font:700 12px/1 'Poppins',system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45)">&#8617; Inicio<span style="opacity:.6;font-weight:600"> · Home</span></a>
+<div class="progress" id="progress"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide on"><div class="wrap">
+    <span class="chip-hero"><span class="l-es">Taller · 2 horas · en vivo · $160.000 COP</span><span class="l-en">Workshop · 2 hours · live · $160.000 COP</span><span class="l-pt">Workshop · 2 horas · ao vivo · $160.000 COP</span></span>
+    <h1><span class="l-es">Prompting de <span class="gtext">Alto Rendimiento</span></span><span class="l-en">High-Performance <span class="gtext">Prompting</span></span><span class="l-pt">Prompting de <span class="gtext">Alto Desempenho</span></span></h1>
+    <p class="lead"><span class="l-es">Deja de improvisar. Aprende a estructurar prompts que entregan lo que pides la primera vez y sal con tu propia batería de plantillas reutilizables. Método + IA = resultados consistentes.</span><span class="l-en">Stop improvising. Learn to structure prompts that deliver what you ask for on the first try and leave with your own battery of reusable templates. Method + AI = consistent results.</span><span class="l-pt">Pare de improvisar. Aprenda a estruturar prompts que entregam o que você pede na primeira tentativa e saia com sua própria bateria de modelos reutilizáveis. Método + IA = resultados consistentes.</span></p>
+    <div class="stats">
+      <div class="cell"><div class="num">4</div><div class="lab"><span class="l-es">piezas del prompt</span><span class="l-en">prompt pieces</span><span class="l-pt">peças do prompt</span></div></div>
+      <div class="cell"><div class="num">3</div><div class="lab"><span class="l-es">técnicas clave</span><span class="l-en">key techniques</span><span class="l-pt">técnicas chave</span></div></div>
+      <div class="cell"><div class="num">2h</div><div class="lab"><span class="l-es">en vivo</span><span class="l-en">live</span><span class="l-pt">ao vivo</span></div></div>
+      <div class="cell"><div class="num">0</div><div class="lab"><span class="l-es">prompts al azar</span><span class="l-en">random prompts</span><span class="l-pt">prompts ao acaso</span></div></div>
+    </div>
+  </div></section>
+
+  <!-- 2 EL DOLOR -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">El dolor real</span><span class="l-en">The real pain</span><span class="l-pt">A dor real</span></span>
+    <div class="grid g3">
+      <div class="card"><p class="bigq"><span class="l-es">Le pides algo a Claude y vuelve <em>casi</em>, pero no exactamente lo que querías.</span><span class="l-en">You ask Claude for something and it comes back <em>almost</em>, but not exactly what you wanted.</span><span class="l-pt">Você pede algo ao Claude e volta <em>quase</em>, mas não exatamente o que você queria.</span></p></div>
+      <div class="card"><p class="bigq"><span class="l-es">Reescribes el mismo prompt <em>cinco veces</em> hasta que sale.</span><span class="l-en">You rewrite the same prompt <em>five times</em> until it works.</span><span class="l-pt">Você reescreve o mesmo prompt <em>cinco vezes</em> até funcionar.</span></p></div>
+      <div class="card"><p class="bigq"><span class="l-es">A veces <em>inventa</em> un dato o una cita y no te das cuenta.</span><span class="l-en">Sometimes it <em>invents</em> a fact or a citation and you don't notice.</span><span class="l-pt">Às vezes <em>inventa</em> um dado ou uma citação e você não percebe.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 3 DIAGNÓSTICO -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Diagnóstico</span><span class="l-en">Diagnosis</span><span class="l-pt">Diagnóstico</span></span>
+    <h2><span class="l-es">El problema no es Claude. Es el <span class="gtext">prompt al azar</span>.</span><span class="l-en">The problem isn't Claude. It's the <span class="gtext">random prompt</span>.</span><span class="l-pt">O problema não é o Claude. É o <span class="gtext">prompt ao acaso</span>.</span></h2>
+    <p class="lead"><span class="l-es">Un prompt improvisado deja a Claude adivinando tu rol, tu contexto y el formato que esperas. Un prompt estructurado le da las cuatro piezas que necesita para acertar a la primera. La diferencia no es talento: es método.</span><span class="l-en">An improvised prompt leaves Claude guessing your role, your context and the format you expect. A structured prompt gives it the four pieces it needs to hit the mark on the first try. The difference isn't talent: it's method.</span><span class="l-pt">Um prompt improvisado deixa o Claude adivinhando seu papel, seu contexto e o formato que você espera. Um prompt estruturado lhe dá as quatro peças que precisa para acertar de primeira. A diferença não é talento: é método.</span></p>
+  </div></section>
+
+  <!-- 4 ANATOMÍA DEL PROMPT -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">La estructura · 1/3</span><span class="l-en">The structure · 1/3</span><span class="l-pt">A estrutura · 1/3</span></span>
+    <h2><span class="l-es">Las cuatro piezas de un prompt</span><span class="l-en">The four pieces of a prompt</span><span class="l-pt">As quatro peças de um prompt</span></h2>
+    <div class="anatomy">
+      <div class="node"><div class="ico">🎭</div><b>Rol</b><span class="l-es">quién es Claude aquí</span><span class="l-en">who Claude is here</span><span class="l-pt">quem é o Claude aqui</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="ico">🗂️</div><b>Contexto</b><span class="l-es">qué necesita saber</span><span class="l-en">what it needs to know</span><span class="l-pt">o que precisa saber</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="ico">🎯</div><b>Instrucción</b><span class="l-es">qué hacer exactamente</span><span class="l-en">what to do exactly</span><span class="l-pt">o que fazer exatamente</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="ico">📐</div><b>Formato</b><span class="l-es">cómo entregar</span><span class="l-en">how to deliver</span><span class="l-pt">como entregar</span></div>
+    </div>
+    <p class="lead"><span class="l-es">Cuatro piezas, no magia. Cuando las das de forma explícita, Claude deja de adivinar y empieza a acertar.</span><span class="l-en">Four pieces, not magic. When you give them explicitly, Claude stops guessing and starts hitting the mark.</span><span class="l-pt">Quatro peças, não mágica. Quando você as dá de forma explícita, o Claude para de adivinhar e começa a acertar.</span></p>
+  </div></section>
+
+  <!-- 5 CONTEXTO EFECTIVO -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">La estructura · 2/3</span><span class="l-en">The structure · 2/3</span><span class="l-pt">A estrutura · 2/3</span></span>
+    <h2><span class="l-es">Dar contexto efectivo</span><span class="l-en">Give effective context</span><span class="l-pt">Dar contexto efetivo</span></h2>
+    <div class="grid g3">
+      <div class="card"><h3><span class="dot">1</span><span class="l-es">Quién eres</span><span class="l-en">Who you are</span><span class="l-pt">Quem você é</span></h3><p><span class="l-es">Tu rol, tu audiencia y para qué sirve el resultado. Sin esto, todo es genérico.</span><span class="l-en">Your role, your audience and what the output is for. Without this, everything is generic.</span><span class="l-pt">Seu papel, sua audiência e para que serve o resultado. Sem isso, tudo é genérico.</span></p></div>
+      <div class="card"><h3><span class="dot">2</span><span class="l-es">Qué tienes</span><span class="l-en">What you have</span><span class="l-pt">O que você tem</span></h3><p><span class="l-es">Datos, ejemplos y restricciones reales. Adjunta lo que importa, omite el ruido.</span><span class="l-en">Real data, examples and constraints. Attach what matters, drop the noise.</span><span class="l-pt">Dados, exemplos e restrições reais. Anexe o que importa, omita o ruído.</span></p></div>
+      <div class="card"><h3><span class="dot">3</span><span class="l-es">Qué quieres</span><span class="l-en">What you want</span><span class="l-pt">O que você quer</span></h3><p><span class="l-es">El criterio de éxito: cómo se ve una buena respuesta y qué evitar.</span><span class="l-en">The success criteria: what a good answer looks like and what to avoid.</span><span class="l-pt">O critério de sucesso: como é uma boa resposta e o que evitar.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 6 ITERACIÓN -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">La estructura · 3/3</span><span class="l-en">The structure · 3/3</span><span class="l-pt">A estrutura · 3/3</span></span>
+    <h2><span class="l-es">Iterar es <span class="gtext">parte del método</span>, no un fracaso</span><span class="l-en">Iterating is <span class="gtext">part of the method</span>, not a failure</span><span class="l-pt">Iterar faz <span class="gtext">parte do método</span>, não é fracasso</span></h2>
+    <p class="lead"><span class="l-es">El primer prompt rara vez es el último. La clave es refinar con foco: di qué estuvo bien, qué falló y ajusta una variable a la vez, en lugar de borrar y empezar de cero. Cada iteración acerca la respuesta y construye tu próxima plantilla.</span><span class="l-en">The first prompt is rarely the last. The key is to refine with focus: say what worked, what failed and adjust one variable at a time, instead of deleting and starting over. Each iteration brings the answer closer and builds your next template.</span><span class="l-pt">O primeiro prompt raramente é o último. A chave é refinar com foco: diga o que funcionou, o que falhou e ajuste uma variável por vez, em vez de apagar e começar do zero. Cada iteração aproxima a resposta e constrói seu próximo modelo.</span></p>
+  </div></section>
+
+  <!-- 7 TÉCNICAS -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Técnicas que multiplican</span><span class="l-en">Techniques that multiply</span><span class="l-pt">Técnicas que multiplicam</span></span>
+    <h2><span class="l-es">Tres técnicas, sin jerga</span><span class="l-en">Three techniques, no jargon</span><span class="l-pt">Três técnicas, sem jargão</span></h2>
+    <div class="grid g3">
+      <div class="card hot"><h3>Chain-of-thought</h3><p><span class="l-es">Pídele que razone paso a paso antes de responder. Mejora la precisión en tareas complejas.</span><span class="l-en">Ask it to reason step by step before answering. Improves accuracy on complex tasks.</span><span class="l-pt">Peça que raciocine passo a passo antes de responder. Melhora a precisão em tarefas complexas.</span></p></div>
+      <div class="card"><h3>Few-shot</h3><p><span class="l-es">Dale uno o dos ejemplos del resultado que quieres. Aprende tu estilo al instante.</span><span class="l-en">Give it one or two examples of the result you want. It learns your style instantly.</span><span class="l-pt">Dê um ou dois exemplos do resultado que você quer. Aprende seu estilo na hora.</span></p></div>
+      <div class="card"><h3>Meta-prompting</h3><p><span class="l-es">Usa a Claude para mejorar tu propio prompt antes de ejecutarlo. La IA afina la IA.</span><span class="l-en">Use Claude to improve your own prompt before running it. AI sharpens AI.</span><span class="l-pt">Use o Claude para melhorar seu próprio prompt antes de executá-lo. A IA afina a IA.</span></p></div>
+    </div>
+  </div></section>
+
+  <!-- 8 EVITAR ALUCINACIONES -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Confianza</span><span class="l-en">Trust</span><span class="l-pt">Confiança</span></span>
+    <h2><span class="l-es">Que <span class="gtext">no invente</span> datos, URLs ni citas</span><span class="l-en">Make it <span class="gtext">not invent</span> data, URLs or citations</span><span class="l-pt">Que <span class="gtext">não invente</span> dados, URLs nem citações</span></h2>
+    <div class="callout"><strong><span class="l-es">Instrucción explícita + verificación.</span><span class="l-en">Explicit instruction + verification.</span><span class="l-pt">Instrução explícita + verificação.</span></strong> <span class="l-es">Dile que solo use lo que le diste, que marque lo que no sabe en lugar de inventarlo, y que no fabrique enlaces ni fuentes. Después, verifica lo que cita. La IA es brillante, pero tu criterio firma el resultado.</span><span class="l-en">Tell it to use only what you gave it, to flag what it doesn't know instead of inventing it, and not to fabricate links or sources. Then verify what it cites. The AI is brilliant, but your judgment signs off on the result.</span><span class="l-pt">Diga que use apenas o que você deu, que marque o que não sabe em vez de inventar, e que não fabrique links nem fontes. Depois, verifique o que ele cita. A IA é brilhante, mas seu critério assina o resultado.</span></div>
+  </div></section>
+
+  <!-- 9 PLANTILLAS -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Lo que te llevas</span><span class="l-en">What you take home</span><span class="l-pt">O que você leva</span></span>
+    <h2><span class="l-es">Tu propia batería de <span class="gtext">plantillas reutilizables</span></span><span class="l-en">Your own battery of <span class="gtext">reusable templates</span></span><span class="l-pt">Sua própria bateria de <span class="gtext">modelos reutilizáveis</span></span></h2>
+    <div class="prompt">
+      <div class="prompt-head"><span><span class="l-es">Plantilla base · estructura de un prompt</span><span class="l-en">Base template · prompt structure</span><span class="l-pt">Modelo base · estrutura de um prompt</span></span><button class="copy" data-copy>Copy</button></div>
+      <pre><span class="l-es">ROL: Actúa como [rol experto que necesitas].
+CONTEXTO: Trabajo en [área]; mi audiencia es [quién]; tengo estos datos: [adjunta]. Restricciones: [tono, longitud, qué evitar].
+INSTRUCCIÓN: Tu tarea es [acción concreta]. Razona paso a paso antes de responder.
+FORMATO: Entrega en [formato: lista, tabla, borrador]. No inventes datos, URLs ni citas; si algo no lo sé, márcalo en lugar de fabricarlo.</span><span class="l-en">ROLE: Act as [expert role you need].
+CONTEXT: I work in [area]; my audience is [who]; I have this data: [attach]. Constraints: [tone, length, what to avoid].
+INSTRUCTION: Your task is [concrete action]. Reason step by step before answering.
+FORMAT: Deliver in [format: list, table, draft]. Do not invent data, URLs or citations; if something isn't given, flag it instead of fabricating it.</span><span class="l-pt">PAPEL: Atue como [papel especialista que você precisa].
+CONTEXTO: Trabalho em [área]; minha audiência é [quem]; tenho estes dados: [anexar]. Restrições: [tom, tamanho, o que evitar].
+INSTRUÇÃO: Sua tarefa é [ação concreta]. Raciocine passo a passo antes de responder.
+FORMATO: Entregue em [formato: lista, tabela, rascunho]. Não invente dados, URLs nem citações; se algo não foi dado, marque em vez de fabricar.</span></pre>
+    </div>
+  </div></section>
+
+  <!-- 10 CIERRE -->
+  <section class="slide"><div class="wrap">
+    <span class="eyebrow"><span class="l-es">Cierre</span><span class="l-en">Close</span><span class="l-pt">Encerramento</span></span>
+    <h1><span class="l-es">Sal con tu <span class="gtext">batería lista</span></span><span class="l-en">Leave with your <span class="gtext">battery ready</span></span><span class="l-pt">Saia com sua <span class="gtext">bateria pronta</span></span></h1>
+    <p class="lead"><span class="l-es">2 horas en vivo, $160.000 COP. Necesitas una cuenta de Claude de pago (precio externo, no incluido). ¿Quieres los dos talleres? Son $280.000 COP juntos: ahorras $40.000 COP. Sales con prompts y plantillas propias listas para tu trabajo real.</span><span class="l-en">2 live hours, $160.000 COP. You need a paid Claude account (external price, not included). Want both workshops? They're $280.000 COP together: save $40.000 COP. You leave with your own prompts and templates ready for your real work.</span><span class="l-pt">2 horas ao vivo, $160.000 COP. Você precisa de uma conta paga do Claude (preço externo, não incluído). Quer os dois workshops? São $280.000 COP juntos: economiza $40.000 COP. Você sai com prompts e modelos próprios prontos para seu trabalho real.</span></p>
+    <div class="cta">
+      <a class="btn btn-gold" href="prompting-alto-rendimiento.html"><span class="l-es">Ir al taller →</span><span class="l-en">Go to the workshop →</span><span class="l-pt">Ir ao workshop →</span></a>
+      <a class="btn btn-ghost" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+    </div>
+  </div></section>
+
+</div>
+
+<div class="brandbar"><svg class="logo" viewBox="0 0 36 36"><rect width="36" height="36" rx="9" fill="#122562"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="#fff"/><circle cx="18" cy="8" r="2" fill="#FFD700"/></svg><b>Metodolog<span class="g">IA</span></b> · Prompting · <span class="l-es">Deck</span><span class="l-en">Deck</span><span class="l-pt">Deck</span><span class="tag">Método + IA = Soberanía</span></div>
+<div class="hud">
+  <button class="themebtn" id="themebtn" aria-label="Tema claro u oscuro" title="Claro / Oscuro">☾</button><button class="langbtn" id="langbtn" title="ES / EN / PT">ES</button>
+  <button class="navbtn" id="prev" aria-label="Anterior">‹</button>
+  <span class="counter" id="counter">1 / 10</span>
+  <button class="navbtn" id="next" aria-label="Siguiente">›</button>
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0, n=slides.length;
+  var counter=document.getElementById('counter'), prog=document.getElementById('progress');
+  function show(k){k=Math.max(0,Math.min(n-1,k));slides.forEach(function(s,idx){s.classList.remove('on','prev');if(idx<k)s.classList.add('prev');});slides[k].classList.add('on');i=k;counter.textContent=(k+1)+' / '+n;prog.style.width=((k+1)/n*100)+'%';slides[k].scrollTop=0;}
+  function next(){show(i+1);} function prev(){show(i-1);}
+  document.getElementById('next').onclick=next; document.getElementById('prev').onclick=prev;
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
+  var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;},{passive:true});
+  var langs=['es','en','pt'], li=0, btn=document.getElementById('langbtn');
+  function setLang(k){li=(k+langs.length)%langs.length;var l=langs[li];document.body.classList.remove('lang-es','lang-en','lang-pt');document.body.classList.add('lang-'+l);document.documentElement.lang=l;btn.textContent=l.toUpperCase();}
+  btn.onclick=function(){setLang(li+1);};
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){var pre=b.closest('.prompt').querySelector('pre');var act=pre.querySelector('.l-'+langs[li]);var txt=act?act.textContent:pre.textContent;navigator.clipboard.writeText(txt.trim()).then(function(){var o=b.textContent;b.textContent='✓';b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok');},1300);});};});
+  show(0); setLang(0);
+})();
+</script>
+<script>(function(){var k='ta-theme',b=document.body,t=document.getElementById('themebtn');function ico(){if(t)t.textContent=b.classList.contains('theme-light')?'\u2600':'\u263e';}try{if(localStorage.getItem(k)==='light')b.classList.add('theme-light');}catch(e){}ico();if(t)t.onclick=function(){b.classList.toggle('theme-light');try{localStorage.setItem(k,b.classList.contains('theme-light')?'light':'dark');}catch(e){}ico();};})();</script>
+<script src="scripts/site-unified-v1.js" defer></script>
+</body>
+</html>

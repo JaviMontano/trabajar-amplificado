@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-page-slug="automatizacion-con-ia">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Sistematización y Automatización con Claude — Taller | MetodologIA</title>
+  <meta name="description" content="Taller en vivo de 2 horas · APA (Agentic Process Automation): agentes que ejecutan tus procesos de principio a fin. Crea asistentes y skills, encadena un workflow agéntico y automatiza tus cadencias. Sin riesgo, sin fricción.">
+  <link rel="canonical" href="https://javimontano.github.io/trabajar-amplificado/automatizacion-con-ia.html">
+  <link rel="alternate" hreflang="es" href="https://javimontano.github.io/trabajar-amplificado/automatizacion-con-ia.html">
+  <link rel="alternate" hreflang="en" href="https://javimontano.github.io/trabajar-amplificado/automatizacion-con-ia.html">
+  <link rel="alternate" hreflang="pt" href="https://javimontano.github.io/trabajar-amplificado/automatizacion-con-ia.html">
+  <link rel="alternate" hreflang="x-default" href="https://javimontano.github.io/trabajar-amplificado/automatizacion-con-ia.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javimontano.github.io/trabajar-amplificado/automatizacion-con-ia.html">
+  <meta property="og:site_name" content="MetodologIA">
+  <meta property="og:title" content="Sistematización y Automatización con Claude — Taller">
+  <meta property="og:description" content="Método + IA = Soberanía. 2 horas en vivo para que Claude ejecute lo que repites.">
+
+  <script>
+    (function () {
+      var theme = localStorage.getItem('mdg_theme');
+      document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
+      var lang = localStorage.getItem('mdg_locale') || localStorage.getItem('lang') || 'es';
+      if (lang !== 'es' && lang !== 'en' && lang !== 'pt') lang = 'es';
+      document.documentElement.lang = lang;
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    /* Trilingual span visibility (standalone i18n, tied to html[lang]) */
+    .l-en,.l-pt{display:none}
+    html[lang="en"] .l-es{display:none}html[lang="en"] .l-en{display:inline}html[lang="en"] .l-pt{display:none}
+    html[lang="pt"] .l-es{display:none}html[lang="pt"] .l-en{display:none}html[lang="pt"] .l-pt{display:inline}
+    /* Local helpers on top of neoswiss-v5 */
+    .ta-prices{width:100%;border-collapse:collapse;font-size:.92rem}
+    .ta-prices th,.ta-prices td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--brand-border)}
+    .ta-prices thead th{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif);font-weight:700}
+    .ta-prices td .usd{color:var(--brand-muted);font-size:.82em}
+    /* Per-course pricing cards (obvious cost per course) */
+    .ta-pcards{display:grid;gap:1rem;grid-template-columns:1fr}
+    @media(min-width:680px){.ta-pcards{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.ta-pcards--4{grid-template-columns:repeat(4,1fr)}}
+    .ta-pcard{display:flex;flex-direction:column;gap:.45rem;padding:1.4rem 1.3rem}
+    .ta-pcard__name{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.02rem;line-height:1.2}
+    .ta-pcard__price{font-family:'Poppins',sans-serif;font-weight:900;font-size:1.85rem;color:var(--brand-gold-text);line-height:1.05;margin-top:.1rem}
+    .ta-pcard__price .free{font-size:.78em}
+    .ta-pcard__usd{display:block;font-family:'Trebuchet MS',sans-serif;font-size:.72rem;font-weight:700;color:var(--brand-muted)}
+    .ta-pcard__per{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.6rem;font-weight:700;color:var(--brand-gold-text);border-top:1px solid var(--brand-border);padding-top:.55rem;margin-top:.2rem}
+    .ta-pcard__inc{font-size:.84rem;color:var(--brand-text-soft);line-height:1.5;margin-top:.15rem}
+    .ta-pcard--feat{outline:2px solid var(--brand-gold-text);outline-offset:-2px}
+    .ta-bundle{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:rgba(255,215,0,.06)}
+    .ta-bundle__r{text-align:right;min-width:200px}
+    @media(max-width:600px){.ta-bundle__r{text-align:left}}
+    .ta-grid{display:grid;gap:1rem}
+    @media(min-width:680px){.ta-grid--2{grid-template-columns:1fr 1fr}.ta-grid--4{grid-template-columns:repeat(4,1fr)}}
+    .ta-note{display:inline-block;margin-top:.6rem;padding:.4rem .8rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:600}
+    .ta-mod{display:flex;gap:.7rem;align-items:flex-start;padding:.85rem 1rem}
+    .ta-mod b{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif)}
+    .tl-item__link{display:inline-block;margin-left:.4rem;color:var(--brand-gold-text);font-weight:700;text-decoration:none;white-space:nowrap}
+    .tl-item__link:hover{text-decoration:underline}
+    .ta-modal{border:none;border-radius:16px;max-width:560px;width:92vw;padding:0;background:var(--brand-surface);color:var(--brand-text);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .ta-modal::backdrop{background:rgba(7,11,26,.55);backdrop-filter:blur(4px)}
+    .ta-modal__in{padding:1.7rem 1.6rem 1.9rem;position:relative}
+    .ta-modal__close{position:absolute;top:.7rem;right:.9rem;background:none;border:none;color:var(--brand-muted);font-size:1.5rem;cursor:pointer;line-height:1}
+    .ta-modal h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.2rem;margin:0 0 .15rem}
+    .ta-modal__sub{color:var(--brand-muted);font-size:.82rem;margin-bottom:.9rem}
+    .ta-modal h4{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.64rem;font-weight:700;color:var(--brand-gold-text);margin:1rem 0 .25rem}
+    .ta-modal p{font-size:.9rem;color:var(--brand-text-soft);line-height:1.55;margin:0}
+    .ta-asst{display:inline-block;margin:.1rem 0 .3rem;padding:.28rem .7rem;border-radius:99px;background:rgba(255,215,0,.12);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-weight:700;font-size:.82rem}
+    .x-card::after{content:none!important;display:none!important}
+  </style>
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+</head>
+<body>
+
+<!-- ===== HEADER (site real, estático) ===== -->
+<header class="site-header">
+  <a href="index.html" class="site-header__brand" aria-label="MetodologIA — Inicio">
+    <span class="site-header__logo-wrap" aria-hidden="true">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
+        <defs><linearGradient id="hdrGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
+        <rect width="36" height="36" rx="10" fill="url(#hdrGrad)"/>
+        <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+        <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+      </svg>
+    </span>
+    <span class="site-header__text">
+      <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
+      <span class="site-header__role">Trabajar Amplificado</span>
+    </span>
+  </a>
+  <nav class="site-header__nav" aria-label="Navegación principal">
+    <a class="site-header__nav-link" href="#aprendes"><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que você aprende</span></a>
+    <a class="site-header__nav-link" href="#agenda"><span class="l-es">Agenda</span><span class="l-en">Agenda</span><span class="l-pt">Agenda</span></a>
+    <a class="site-header__nav-link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a>
+    <a class="site-header__nav-link" href="diapositivas-automatizacion.html"><span class="l-es">Diapositivas</span><span class="l-en">Slides</span><span class="l-pt">Slides</span></a>
+    <a class="site-header__nav-link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+  </nav>
+  <a class="site-header__cta" href="#inscripcion"><span class="l-es">Inscríbete</span><span class="l-en">Enroll</span><span class="l-pt">Inscreva-se</span> →</a>
+</header>
+
+<main id="main" class="main">
+
+  <!-- HERO -->
+  <section class="section" id="hero">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow"><span class="l-es">Taller · 2 h · $160.000 COP</span><span class="l-en">Workshop · 2 h · $160.000 COP</span><span class="l-pt">Workshop · 2 h · $160.000 COP</span></span>
+      <h1 class="h1" style="margin:1rem auto;max-width:48rem;"><span class="l-es">Sistematización y <span class="gradient-text">Automatización con Claude</span></span><span class="l-en">Systematization &amp; <span class="gradient-text">Automation with Claude</span></span><span class="l-pt">Sistematização e <span class="gradient-text">Automação com Claude</span></span></h1>
+      <p class="lead" style="max-width:40rem;margin:0 auto 1rem;"><span class="l-es">Deja de hacer a mano lo que repites cada semana. En este taller práctico aprendes a que <strong>Claude ejecute</strong> tus flujos por ti. Sin riesgo, sin fricción.</span><span class="l-en">Stop doing by hand what you repeat every week. In this hands-on workshop you learn to make <strong>Claude execute</strong> your flows for you. No risk, no friction.</span><span class="l-pt">Pare de fazer à mão o que você repete toda semana. Neste workshop prático você aprende a fazer o <strong>Claude executar</strong> seus fluxos por você. Sem risco, sem fricção.</span></p>
+      <p class="eyebrow" style="margin-bottom:1.6rem;">Método + IA = Soberanía</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+        <a href="diapositivas-automatizacion.html" class="home-cta home-cta--secondary"><span class="l-es">Ver diapositivas</span><span class="l-en">See slides</span><span class="l-pt">Ver slides</span></a>
+        <button class="home-cta home-cta--secondary" data-modal="clase" type="button"><span class="l-es">Qué incluye esta clase</span><span class="l-en">What this class includes</span><span class="l-pt">O que esta aula inclui</span></button>
+      </div>
+      <div class="stats" style="margin-top:2rem;" aria-label="Resumen del taller">
+        <div class="stats__cell"><span class="stats__num">4–12 h</span><span class="stats__label"><span class="l-es">recuperas / semana automatizando lo repetitivo</span><span class="l-en">reclaimed / week automating the repetitive</span><span class="l-pt">recupera / semana automatizando o repetitivo</span></span></div>
+        <div class="stats__cell"><span class="stats__num">2 h</span><span class="stats__label"><span class="l-es">En vivo · práctico</span><span class="l-en">Live · hands-on</span><span class="l-pt">Ao vivo · prático</span></span></div>
+        <div class="stats__cell"><span class="stats__num">1 <span class="l-es">workflow</span><span class="l-en">workflow</span><span class="l-pt">workflow</span></span><span class="stats__label"><span class="l-es">tuyo, automatizado y funcionando</span><span class="l-en">yours, automated and running</span><span class="l-pt">seu, automatizado e funcionando</span></span></div>
+        <div class="stats__cell"><span class="stats__num">ES/EN/PT</span><span class="stats__label"><span class="l-es">Idiomas</span><span class="l-en">Languages</span><span class="l-pt">Idiomas</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ APRENDES -->
+  <section class="section" id="aprendes">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Qué aprendes · 01</span><span class="l-en">What you learn · 01</span><span class="l-pt">O que você aprende · 01</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">De repetir a la mano a que <span class="gradient-text">Claude lo ejecute</span></span><span class="l-en">From doing it by hand to letting <span class="gradient-text">Claude execute it</span></span><span class="l-pt">De repetir à mão a deixar o <span class="gradient-text">Claude executar</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Tres capacidades para convertir tu trabajo repetido en sistemas que corren solos.</span><span class="l-en">Three capabilities to turn your repeated work into systems that run on their own.</span><span class="l-pt">Três capacidades para transformar seu trabalho repetido em sistemas que rodam sozinhos.</span></p>
+      <div class="axes">
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Capacidad 1</span><span class="l-en">Capability 1</span><span class="l-pt">Capacidade 1</span></span>
+          <h3 class="axis__title"><span class="l-es">Asistentes y skills</span><span class="l-en">Assistants &amp; skills</span><span class="l-pt">Assistentes e skills</span></h3>
+          <p class="axis__body"><span class="l-es">Crear asistentes y skills reutilizables: empaquetas un proceso una vez y lo invocas siempre.</span><span class="l-en">Build reusable assistants and skills: package a process once and invoke it forever.</span><span class="l-pt">Criar assistentes e skills reutilizáveis: empacote um processo uma vez e invoque sempre.</span></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Capacidad 2</span><span class="l-en">Capability 2</span><span class="l-pt">Capacidade 2</span></span>
+          <h3 class="axis__title"><span class="l-es">Inteligencia agéntica</span><span class="l-en">Agentic intelligence</span><span class="l-pt">Inteligência agêntica</span></h3>
+          <p class="axis__body"><span class="l-es">Agentes que ejecutan flujos completos por ti, no solo responden: deciden y actúan paso a paso.</span><span class="l-en">Agents that execute complete flows for you, not just answer: they decide and act step by step.</span><span class="l-pt">Agentes que executam fluxos completos por você, não só respondem: decidem e agem passo a passo.</span></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Capacidad 3</span><span class="l-en">Capability 3</span><span class="l-pt">Capacidade 3</span></span>
+          <h3 class="axis__title"><span class="l-es">Automatización de workflows</span><span class="l-en">Workflow automation</span><span class="l-pt">Automação de workflows</span></h3>
+          <p class="axis__body"><span class="l-es">Automatización de workflows con cadencias y tareas programadas que corren sin que estés encima.</span><span class="l-en">Workflow automation with cadences and scheduled tasks that run without you watching.</span><span class="l-pt">Automação de workflows com cadências e tarefas agendadas que rodam sem você por perto.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUÁNDO AUTOMATIZAR Y CUÁNDO NO -->
+  <section class="section" id="cuando">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Criterio · 02</span><span class="l-en">Criterion · 02</span><span class="l-pt">Critério · 02</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Cuándo automatizar y <span class="gradient-text">cuándo no</span></span><span class="l-en">When to automate and <span class="gradient-text">when not to</span></span><span class="l-pt">Quando automatizar e <span class="gradient-text">quando não</span></span></h2>
+      <p class="lead"><span class="l-es">Evita el desorden de adoptar mucho para usar poco. No se trata de automatizar todo, sino de automatizar el <strong>gesto repetido</strong>: lo que ya haces cada semana, igual, una y otra vez.</span><span class="l-en">Avoid the mess of adopting a lot to use little. It's not about automating everything, but about automating the <strong>repeated gesture</strong>: what you already do every week, the same way, over and over.</span><span class="l-pt">Evite a bagunça de adotar muito para usar pouco. Não se trata de automatizar tudo, mas de automatizar o <strong>gesto repetido</strong>: o que você já faz toda semana, igual, vez após vez.</span></p>
+    </div>
+  </section>
+
+  <!-- QUÉ TE LLEVAS -->
+  <section class="section" id="llevas">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Qué te llevas · 03</span><span class="l-en">What you take · 03</span><span class="l-pt">O que você leva · 03</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Sales con un <span class="gradient-text">workflow funcionando</span></span><span class="l-en">You leave with a <span class="gradient-text">workflow running</span></span><span class="l-pt">Você sai com um <span class="gradient-text">workflow funcionando</span></span></h2>
+      <p class="lead"><span class="l-es">Un workflow propio automatizado, funcionando. No una demo ni una lista de ideas: tu primer proceso real corriendo con Claude al cerrar las 2 horas.</span><span class="l-en">Your own automated workflow, running. Not a demo or a list of ideas: your first real process running with Claude by the end of the 2 hours.</span><span class="l-pt">Um workflow próprio automatizado, funcionando. Não uma demo nem uma lista de ideias: seu primeiro processo real rodando com o Claude ao final das 2 horas.</span></p>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="section" id="agenda">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Agenda · 2 h · 04</span><span class="l-en">Agenda · 2 h · 04</span><span class="l-pt">Agenda · 2 h · 04</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Las <span class="gradient-text">2 horas</span>, minuto a minuto</span><span class="l-en">The <span class="gradient-text">2 hours</span>, minute by minute</span><span class="l-pt">As <span class="gradient-text">2 horas</span>, minuto a minuto</span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">En vivo, contigo construyendo. Cada bloque deja algo listo.</span><span class="l-en">Live, with you building. Each block leaves something ready.</span><span class="l-pt">Ao vivo, com você construindo. Cada bloco deixa algo pronto.</span></p>
+      <div class="timeline">
+        <article class="tl-item x-card">
+          <span class="tl-item__meta"><span class="l-es">0–20 min</span><span class="l-en">0–20 min</span><span class="l-pt">0–20 min</span></span>
+          <h3 class="tl-item__role"><span class="l-es">Qué vale la pena sistematizar</span><span class="l-en">What's worth systematizing</span><span class="l-pt">O que vale a pena sistematizar</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Identificamos tus gestos repetidos y elegimos el primero que automatizar.</span><span class="l-en">We identify your repeated gestures and pick the first one to automate.</span><span class="l-pt">Identificamos seus gestos repetidos e escolhemos o primeiro a automatizar.</span></p>
+        </article>
+        <article class="tl-item x-card">
+          <span class="tl-item__meta"><span class="l-es">20–70 min</span><span class="l-en">20–70 min</span><span class="l-pt">20–70 min</span></span>
+          <h3 class="tl-item__role"><span class="l-es">Construir un asistente o skill en vivo</span><span class="l-en">Build an assistant or skill live</span><span class="l-pt">Construir um assistente ou skill ao vivo</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Empaquetas tu proceso en un asistente o skill reutilizable, paso a paso.</span><span class="l-en">You package your process into a reusable assistant or skill, step by step.</span><span class="l-pt">Você empacota seu processo em um assistente ou skill reutilizável, passo a passo.</span></p>
+        </article>
+        <article class="tl-item x-card">
+          <span class="tl-item__meta"><span class="l-es">70–100 min</span><span class="l-en">70–100 min</span><span class="l-pt">70–100 min</span></span>
+          <h3 class="tl-item__role"><span class="l-es">Encadenar un workflow</span><span class="l-en">Chain a workflow</span><span class="l-pt">Encadear um workflow</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Conectas los pasos en un flujo agéntico y le sumas una cadencia o tarea programada.</span><span class="l-en">You connect the steps into an agentic flow and add a cadence or scheduled task.</span><span class="l-pt">Você conecta os passos em um fluxo agêntico e soma uma cadência ou tarefa agendada.</span></p>
+        </article>
+        <article class="tl-item x-card" style="border-left-color:var(--brand-gold);">
+          <span class="tl-item__meta"><span class="l-es">100–120 min</span><span class="l-en">100–120 min</span><span class="l-pt">100–120 min</span></span>
+          <h3 class="tl-item__role"><span class="l-es">Tu plan + Q&amp;A</span><span class="l-en">Your plan + Q&amp;A</span><span class="l-pt">Seu plano + Q&amp;A</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Defines qué automatizar después y resolvemos tus dudas en vivo.</span><span class="l-en">You define what to automate next and we answer your questions live.</span><span class="l-pt">Você define o que automatizar depois e resolvemos suas dúvidas ao vivo.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVERSIÓN -->
+  <section class="section" id="inversion">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Inversión · 05</span><span class="l-en">Investment · 05</span><span class="l-pt">Investimento · 05</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Inversión <span class="gradient-text">clara</span></span><span class="l-en">Clear <span class="gradient-text">investment</span></span><span class="l-pt">Investimento <span class="gradient-text">claro</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es"><strong>Costo por curso</strong>, por persona. Valores en pesos colombianos (COP).</span><span class="l-en"><strong>Cost per course</strong>, per person. Prices in Colombian pesos (COP).</span><span class="l-pt"><strong>Custo por curso</strong>, por pessoa. Valores em pesos colombianos (COP).</span></p>
+      <p style="margin-top:.8rem;"><span class="ta-note"><a href="precios-internacionales.html" class="tl-item__link"><span class="l-es">Versión internacional →</span><span class="l-en">International version →</span><span class="l-pt">Versão internacional →</span></a></span></p>
+      <div class="ta-pcards">
+        <div class="x-card ta-pcard">
+          <span class="ta-pcard__name"><span class="l-es">Sistematización y Automatización con Claude</span><span class="l-en">Systematization &amp; Automation with Claude</span><span class="l-pt">Sistematização e Automação com Claude</span></span>
+          <div class="ta-pcard__price">$160.000<span class="ta-pcard__usd">COP</span></div>
+          <span class="ta-pcard__per"><span class="l-es">Por curso · 2 h en vivo</span><span class="l-en">Per course · 2 h live</span><span class="l-pt">Por curso · 2 h ao vivo</span></span>
+          <p class="ta-pcard__inc"><span class="l-es">Asistentes, agentes y un workflow tuyo.</span><span class="l-en">Assistants, agents and a workflow of yours.</span><span class="l-pt">Assistentes, agentes e um workflow seu.</span></p>
+        </div>
+      </div>
+      <p style="margin-top:1rem;"><span class="ta-note"><span class="l-es">Combo con el otro taller = $280.000 COP, ahorras $40.000.</span><span class="l-en">Combo with the other workshop = $280.000 COP, save $40.000.</span><span class="l-pt">Combo com o outro workshop = $280.000 COP, economize $40.000.</span></span></p>
+      <p><span class="ta-note"><span class="l-es">Requiere cuenta de Claude de pago (precio externo, no incluido).</span><span class="l-en">Requires a paid Claude account (external price, not included).</span><span class="l-pt">Requer conta Claude paga (preço externo, não incluído).</span></span></p>
+      <p><span class="ta-note"><span class="l-es">Bundle completo (2 talleres + bootcamp) = $1.088.000 COP, ahorras 15% — <a href="programa.html" class="tl-item__link">ver el programa</a>.</span><span class="l-en">Full bundle (2 workshops + bootcamp) = $1.088.000 COP, save 15% — <a href="programa.html" class="tl-item__link">see the program</a>.</span><span class="l-pt">Bundle completo (2 workshops + bootcamp) = $1.088.000 COP, economize 15% — <a href="programa.html" class="tl-item__link">ver o programa</a>.</span></span></p>
+      <p><span class="ta-note"><span class="l-es">Idiomas: español o inglés (portugués a demanda). Descuentos por grupo y precios para empresas — <a href="programa.html#inversion" class="tl-item__link">ver condiciones</a>.</span><span class="l-en">Languages: Spanish or English (Portuguese on demand). Group discounts and corporate pricing — <a href="programa.html#inversion" class="tl-item__link">see terms</a>.</span><span class="l-pt">Idiomas: espanhol ou inglês (português sob demanda). Descontos por grupo e preços para empresas — <a href="programa.html#inversion" class="tl-item__link">ver condições</a>.</span></span></p>
+    </div>
+  </section>
+
+  <!-- INSCRIPCIÓN -->
+  <!-- VALOR AGREGADO -->
+  <section class="section" id="valor">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Valor en cada sesión</span><span class="l-en">Value in every session</span><span class="l-pt">Valor em cada sessão</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Te llevas <span class="gradient-text">herramientas</span>, no solo teoría</span><span class="l-en">You leave with <span class="gradient-text">tools</span>, not just theory</span><span class="l-pt">Você sai com <span class="gradient-text">ferramentas</span>, não só teoria</span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Cada sesión está orientada a valor práctico: sales con algo aplicable, no con apuntes.</span><span class="l-en">Every session is geared to practical value: you leave with something usable, not just notes.</span><span class="l-pt">Cada sessão é orientada a valor prático: você sai com algo aplicável, não só anotações.</span></p>
+      <div class="axes">
+        <div class="axis x-card">
+          <span class="axis__label">JM-SDK</span>
+          <h3 class="axis__title"><span class="l-es">JM-SDK · Pristino Alfa</span><span class="l-en">JM-SDK · Pristino Alfa</span><span class="l-pt">Development Kit agêntico · Pristino Alfa</span></h3>
+          <p class="axis__body"><span class="l-es">Recibes un JM-SDK (Vibe Coding) listo para usar.</span><span class="l-en">You receive an JM-SDK (Vibe Coding), ready to use.</span><span class="l-pt">Você recebe um JM-SDK (Vibe Coding), pronto para usar.</span></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Asistentes a medida</span><span class="l-en">Custom assistants</span><span class="l-pt">Assistentes sob medida</span></span>
+          <h3 class="axis__title"><span class="l-es">En cada sesión</span><span class="l-en">In every session</span><span class="l-pt">Em cada sessão</span></h3>
+          <p class="axis__body"><span class="l-es">Asistentes configurados a tu caso, listos para trabajar contigo.</span><span class="l-en">Assistants configured to your case, ready to work with you.</span><span class="l-pt">Assistentes configurados ao seu caso, prontos para trabalhar com você.</span></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></span>
+          <h3 class="axis__title"><span class="l-es">Esquema orientado a valor</span><span class="l-en">Value-oriented by design</span><span class="l-pt">Esquema orientado a valor</span></h3>
+          <p class="axis__body"><span class="l-es">Plantillas, prompts y aceleradores para aplicar lo aprendido de inmediato.</span><span class="l-en">Templates, prompts and accelerators to apply what you learn right away.</span><span class="l-pt">Modelos, prompts e aceleradores para aplicar o aprendido na hora.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inscripcion">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow"><span class="l-es">Inscripción · 06</span><span class="l-en">Enrollment · 06</span><span class="l-pt">Inscrição · 06</span></span>
+      <h2 class="h2" style="margin:1rem auto .5rem;max-width:40rem;"><span class="l-es">Reserva tu cupo en el <span class="gradient-text">taller</span></span><span class="l-en">Reserve your seat in the <span class="gradient-text">workshop</span></span><span class="l-pt">Reserve sua vaga no <span class="gradient-text">workshop</span></span></h2>
+      <p class="lead" style="max-width:36rem;margin:0 auto 1.5rem;"><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão.</span></p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@metodologia.info&su=Taller%20Sistematizaci%C3%B3n%20y%20Automatizaci%C3%B3n%20con%20Claude&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20programa%20Trabajar%20Amplificado.%0A%0ANombre%3A%0ARol%20%28manager%20/%20l%C3%ADder%20/%20fundador%20/%20freelancer%29%3A%0AIdioma%20%28ES%20/%20EN%29%3A%0AInter%C3%A9s%20%28taller%20de%20intro%20/%20talleres%20/%20bootcamp%20/%20bundle%20/%20empresa%29%3A%0AGrupo%20o%20empresa%20%28opcional%29%3A%0A%0AGracias." class="home-cta home-cta--secondary" target="_blank" rel="noopener">contacto@metodologia.info</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== TRIPLE TOGGLE (tema + idioma) ===== -->
+<triple-toggle aria-label="Preferencias de tema e idioma">
+  <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
+  <button class="toggle-btn" id="langbtn" type="button" aria-label="Cambiar idioma ES EN PT" title="ES / EN / PT">ES</button>
+</triple-toggle>
+
+<!-- ===== FOOTER (site real, estático) ===== -->
+<footer class="site-footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div>
+        <p class="site-footer__brand-tagline"><span class="l-es">"La excelencia no se compra, se diseña. Se cocrea y se comparte."</span><span class="l-en">"Excellence is not bought, it is designed. Co-created and shared."</span><span class="l-pt">"A excelência não se compra, se desenha. Se cocria e se compartilha."</span></p>
+      </div>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></div>
+        <a class="site-footer__link" href="introduccion-trabajo-amplificado.html"><span class="l-es">Taller de intro</span><span class="l-en">Intro workshop</span><span class="l-pt">Workshop de intro</span></a>
+        <a class="site-footer__link" href="prompting-alto-rendimiento.html">Prompting</a>
+        <a class="site-footer__link" href="automatizacion-con-ia.html"><span class="l-es">Automatización</span><span class="l-en">Automation</span><span class="l-pt">Automação</span></a>
+        <a class="site-footer__link" href="bootcamp.html">Bootcamp</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Material</span><span class="l-en">Material</span><span class="l-pt">Material</span></div>
+        <a class="site-footer__link" href="clase-introductoria.html">Masterclass</a>
+        <a class="site-footer__link" href="workbook-introduccion.html">Workbook</a>
+        <a class="site-footer__link" href="playbook-jarvis-os.html">Playbook</a>
+        <a class="site-footer__link" href="runbook-jarvis-os.html">Runbook</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Conectar</span><span class="l-en">Connect</span><span class="l-pt">Conectar</span></div>
+        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+        <a class="site-footer__link" href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@metodologia.info&su=Trabajar%20Amplificado%20%C2%B7%20Inscripci%C3%B3n&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20programa%20Trabajar%20Amplificado.%0A%0ANombre%3A%0ARol%20%28manager%20/%20l%C3%ADder%20/%20fundador%20/%20freelancer%29%3A%0AIdioma%20%28ES%20/%20EN%29%3A%0AInter%C3%A9s%20%28taller%20de%20intro%20/%20talleres%20/%20bootcamp%20/%20bundle%20/%20empresa%29%3A%0AGrupo%20o%20empresa%20%28opcional%29%3A%0A%0AGracias." target="_blank" rel="noopener">contacto@metodologia.info</a>
+        <a class="site-footer__link" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscripción</span><span class="l-en">Enroll</span><span class="l-pt">Inscrição</span></a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 MetodologIA. Copyleft. · Success as a Service</span>
+      <span>Método primero, (Gen)IA después.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var tb=document.getElementById('themebtn');
+  function ti(){ if(tb) tb.textContent = html.dataset.theme==='dark' ? '☀' : '☾'; }
+  ti();
+  if(tb) tb.addEventListener('click', function(){
+    html.dataset.theme = (html.dataset.theme==='dark') ? 'light' : 'dark';
+    try{ localStorage.setItem('mdg_theme', html.dataset.theme); }catch(e){}
+    ti();
+  });
+  var langs=['es','en','pt'], lb=document.getElementById('langbtn');
+  function setLang(l){ if(langs.indexOf(l)<0) l='es'; html.lang=l; try{ localStorage.setItem('mdg_locale', l); }catch(e){} if(lb) lb.textContent=l.toUpperCase(); }
+  setLang(html.lang||'es');
+  if(lb) lb.addEventListener('click', function(){ var i=langs.indexOf(html.lang); setLang(langs[(i+1)%langs.length]); });
+})();
+</script>
+
+<!-- ===== MODAL · Qué incluye esta clase ===== -->
+<dialog class="ta-modal" id="clase">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Sistematización y Automatización con Claude</span><span class="l-en">Systematization &amp; Automation with Claude</span><span class="l-pt">Sistematização e Automação com Claude</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Taller · 2 h</span><span class="l-en">Workshop · 2 h</span><span class="l-pt">Workshop · 2 h</span></p>
+
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll cover</span><span class="l-pt">O que será visto</span></h4>
+    <p><span class="l-es"><strong>APA — Agentic Process Automation</strong>: agentes que entienden el contexto y ejecutan tus procesos de principio a fin (no bots por reglas). Creas asistentes y skills reutilizables, encadenas un workflow agéntico y dejas cadencias que corren solas; además, cuándo automatizar y cuándo no.</span><span class="l-en"><strong>APA — Agentic Process Automation</strong>: agents that understand context and run your processes end to end (not rule-based bots). You build reusable assistants and skills, chain an agentic workflow and leave cadences that run on their own; plus, when to automate and when not to.</span><span class="l-pt"><strong>APA — Agentic Process Automation</strong>: agentes que entendem o contexto e executam seus processos de ponta a ponta (não bots por regras). Você cria assistentes e skills reutilizáveis, encadeia um workflow agêntico e deixa cadências que rodam sozinhas; além disso, quando automatizar e quando não.</span></p>
+
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Asistente <strong>WorkflowGenerator</strong> + las reviews <strong>WBR/DBR</strong> + las skills del JM-SDK.</span><span class="l-en"><strong>WorkflowGenerator</strong> assistant + the <strong>WBR/DBR</strong> reviews + the JM-SDK skills.</span><span class="l-pt">Assistente <strong>WorkflowGenerator</strong> + as reviews <strong>WBR/DBR</strong> + as skills do JM-SDK.</span></p>
+
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">AI Automation Workflow Generator</span>
+    <p><span class="l-es">AI Automation Workflow Generator: un Generator que produce tus automatizaciones y workflows.</span><span class="l-en">AI Automation Workflow Generator: a Generator that outputs your automations and workflows.</span><span class="l-pt">AI Automation Workflow Generator: um Generator que produz suas automações e workflows.</span></p>
+
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o gestor</span></h4>
+    <p><span class="l-es">Automatizar tu <strong>status semanal (WBR)</strong>: un workflow recoge tus avances, los encuadra en tus prioridades y entrega un reporte de 5 líneas, listo para tu jefe. El manager de la era de la IA reporta sin volver a redactarlo a mano.</span><span class="l-en">Automate your <strong>weekly status (WBR)</strong>: a workflow gathers your progress, frames it against your priorities and delivers a 5-line report, ready for your boss. The manager of the AI era reports without writing it by hand again.</span><span class="l-pt">Automatizar seu <strong>status semanal (WBR)</strong>: um workflow reúne seus avanços, os enquadra nas suas prioridades e entrega um relatório de 5 linhas, pronto para seu chefe. O gestor da era da IA reporta sem redigir de novo à mão.</span></p>
+  </div>
+</dialog>
+
+<script>(function(){
+  document.querySelectorAll('[data-modal]').forEach(function(el){
+    function open(){var d=document.getElementById(el.getAttribute('data-modal'));if(d&&d.showModal)d.showModal();}
+    el.addEventListener('click',open);
+  });
+  document.querySelectorAll('dialog.ta-modal').forEach(function(d){
+    d.addEventListener('click',function(e){if(e.target===d)d.close();});
+    d.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){d.close();});});
+  });
+})();</script>
+<script src="scripts/site-unified-v1.js" defer></script>
+</body>
+</html>

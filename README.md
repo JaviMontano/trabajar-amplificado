@@ -8,7 +8,7 @@ Programa de **MetodologIA** para trabajar amplificado con método, IA y criterio
 
 **[Abrir el sitio Colombia →](https://javimontano.github.io/trabajar-amplificado/)**
 
-**[Abrir versión internacional →](https://javimontano.github.io/trabajar-amplificado/internacional.html)**
+**[Abrir versión internacional →](https://javimontano.github.io/trabajar-amplificado/precios-internacionales.html)**
 
 Usa el botón de idioma (arriba a la derecha) para cambiar ES · EN · PT.
 
@@ -28,31 +28,31 @@ Cada oferta tiene su página landing y su deck de diapositivas (trilingüe):
 
 | Tema | Landing | Deck |
 |---|---|---|
-| Introducción al Trabajo Amplificado (gratis) | [`taller-intro.html`](taller-intro.html) | [`taller-intro-deck.html`](taller-intro-deck.html) |
-| Prompting de Alto Rendimiento ($160.000 COP) | [`taller-prompting.html`](taller-prompting.html) | [`taller-prompting-deck.html`](taller-prompting-deck.html) |
-| Sistematización y Automatización ($160.000 COP) | [`taller-automatizacion.html`](taller-automatizacion.html) | [`taller-automatizacion-deck.html`](taller-automatizacion-deck.html) |
-| Bootcamp ($960.000 COP) | [`bootcamp.html`](bootcamp.html) | [`bootcamp-deck.html`](bootcamp-deck.html) |
-| Dossier (programa completo) | [`dossier.html`](dossier.html) | [`dossier-deck.html`](dossier-deck.html) |
+| Introducción al Trabajo Amplificado (gratis) | [`introduccion-trabajo-amplificado.html`](introduccion-trabajo-amplificado.html) | [`diapositivas-introduccion.html`](diapositivas-introduccion.html) |
+| Prompting de Alto Rendimiento ($160.000 COP) | [`prompting-alto-rendimiento.html`](prompting-alto-rendimiento.html) | [`diapositivas-prompting.html`](diapositivas-prompting.html) |
+| Sistematización y Automatización ($160.000 COP) | [`automatizacion-con-ia.html`](automatizacion-con-ia.html) | [`diapositivas-automatizacion.html`](diapositivas-automatizacion.html) |
+| Bootcamp ($960.000 COP) | [`bootcamp.html`](bootcamp.html) | [`diapositivas-bootcamp.html`](diapositivas-bootcamp.html) |
+| Programa completo | [`programa.html`](programa.html) | [`diapositivas-programa.html`](diapositivas-programa.html) |
 
 ## 📚 Material abierto
 
 | Pieza | Qué es |
 |---|---|
 | [`index.html`](index.html) | Home · landing del programa + hub · precios Colombia en COP |
-| [`internacional.html`](internacional.html) | Versión internacional · precios en dólares estadounidenses |
-| [`masterclass.html`](masterclass.html) | Masterclass — Introducción al Trabajo Amplificado |
-| [`workbook.html`](workbook.html) | Workbook — fricción, ruta primaria, herramienta candidata y evidencia |
-| [`playbook.html`](playbook.html) | Playbook — el qué/por qué (referencia profunda) |
-| [`runbook.html`](runbook.html) | Runbook — el cómo, paso a paso, con prompts |
-| [`clase.html`](clase.html) | Deck de apertura (intro) |
-| [`trabajar-amplificado.html`](trabajar-amplificado.html) | Deck demo · Introducción al Trabajo Amplificado |
-| [`key-points.html`](key-points.html) | Puntos clave del dominio (referencia/cierre) |
+| [`precios-internacionales.html`](precios-internacionales.html) | Versión internacional · precios en dólares estadounidenses |
+| [`clase-introductoria.html`](clase-introductoria.html) | Masterclass — Introducción al Trabajo Amplificado |
+| [`workbook-introduccion.html`](workbook-introduccion.html) | Workbook — fricción, ruta primaria, herramienta candidata y evidencia |
+| [`playbook-jarvis-os.html`](playbook-jarvis-os.html) | Playbook — el qué/por qué (referencia profunda) |
+| [`runbook-jarvis-os.html`](runbook-jarvis-os.html) | Runbook — el cómo, paso a paso, con prompts |
+| [`diapositivas-jarvis-os.html`](diapositivas-jarvis-os.html) | Deck de apertura (intro) |
+| [`diapositivas-introduccion.html`](diapositivas-introduccion.html) | Deck demo · Introducción al Trabajo Amplificado |
+| [`dominio-claude-cowork.html`](dominio-claude-cowork.html) | Puntos clave del dominio (referencia/cierre) |
 
 Cada pieza enlaza de vuelta al inicio con el botón **← Inicio** (arriba a la derecha).
 
 ## Generación
 
-Las piezas intro (`masterclass.html`, `workbook.html`, `taller-intro.html`, `trabajar-amplificado.html`, `taller-intro-deck.html`) se regeneran con:
+Las piezas intro (`clase-introductoria.html`, `workbook-introduccion.html`, `introduccion-trabajo-amplificado.html`, `diapositivas-introduccion.html`) se regeneran con:
 
 ```bash
 node scripts/build-intro-assets.mjs

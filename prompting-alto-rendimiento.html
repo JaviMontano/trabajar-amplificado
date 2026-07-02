@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-page-slug="prompting-alto-rendimiento">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Prompting de Alto Rendimiento — Taller | MetodologIA</title>
+  <meta name="description" content="Taller en vivo de Prompting de Alto Rendimiento con Claude: resultados consistentes, sin prompts al azar. 2 horas · $160.000 COP. Método + IA = Soberanía. Sin riesgo, sin fricción.">
+  <link rel="canonical" href="https://javimontano.github.io/trabajar-amplificado/prompting-alto-rendimiento.html">
+  <link rel="alternate" hreflang="es" href="https://javimontano.github.io/trabajar-amplificado/prompting-alto-rendimiento.html">
+  <link rel="alternate" hreflang="en" href="https://javimontano.github.io/trabajar-amplificado/prompting-alto-rendimiento.html">
+  <link rel="alternate" hreflang="pt" href="https://javimontano.github.io/trabajar-amplificado/prompting-alto-rendimiento.html">
+  <link rel="alternate" hreflang="x-default" href="https://javimontano.github.io/trabajar-amplificado/prompting-alto-rendimiento.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javimontano.github.io/trabajar-amplificado/prompting-alto-rendimiento.html">
+  <meta property="og:site_name" content="MetodologIA">
+  <meta property="og:title" content="Prompting de Alto Rendimiento — Taller con Claude">
+  <meta property="og:description" content="Método + IA = Soberanía. Taller en vivo de 2 h: resultados consistentes con Claude, sin prompts al azar.">
+
+  <script>
+    (function () {
+      var theme = localStorage.getItem('mdg_theme');
+      document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
+      var lang = localStorage.getItem('mdg_locale') || localStorage.getItem('lang') || 'es';
+      if (lang !== 'es' && lang !== 'en' && lang !== 'pt') lang = 'es';
+      document.documentElement.lang = lang;
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    /* Trilingual span visibility (standalone i18n, tied to html[lang]) */
+    .l-en,.l-pt{display:none}
+    html[lang="en"] .l-es{display:none}html[lang="en"] .l-en{display:inline}html[lang="en"] .l-pt{display:none}
+    html[lang="pt"] .l-es{display:none}html[lang="pt"] .l-en{display:none}html[lang="pt"] .l-pt{display:inline}
+    /* Local helpers on top of neoswiss-v5 */
+    .ta-prices{width:100%;border-collapse:collapse;font-size:.92rem}
+    .ta-prices th,.ta-prices td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--brand-border)}
+    .ta-prices thead th{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif);font-weight:700}
+    .ta-prices td .usd{color:var(--brand-muted);font-size:.82em}
+    /* Per-course pricing cards (obvious cost per course) */
+    .ta-pcards{display:grid;gap:1rem;grid-template-columns:1fr}
+    @media(min-width:680px){.ta-pcards{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.ta-pcards--4{grid-template-columns:repeat(4,1fr)}}
+    .ta-pcard{display:flex;flex-direction:column;gap:.45rem;padding:1.4rem 1.3rem}
+    .ta-pcard__name{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.02rem;line-height:1.2}
+    .ta-pcard__price{font-family:'Poppins',sans-serif;font-weight:900;font-size:1.85rem;color:var(--brand-gold-text);line-height:1.05;margin-top:.1rem}
+    .ta-pcard__price .free{font-size:.78em}
+    .ta-pcard__usd{display:block;font-family:'Trebuchet MS',sans-serif;font-size:.72rem;font-weight:700;color:var(--brand-muted)}
+    .ta-pcard__per{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.6rem;font-weight:700;color:var(--brand-gold-text);border-top:1px solid var(--brand-border);padding-top:.55rem;margin-top:.2rem}
+    .ta-pcard__inc{font-size:.84rem;color:var(--brand-text-soft);line-height:1.5;margin-top:.15rem}
+    .ta-pcard--feat{outline:2px solid var(--brand-gold-text);outline-offset:-2px}
+    .ta-bundle{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:rgba(255,215,0,.06)}
+    .ta-bundle__r{text-align:right;min-width:200px}
+    @media(max-width:600px){.ta-bundle__r{text-align:left}}
+    .ta-grid{display:grid;gap:1rem}
+    @media(min-width:680px){.ta-grid--2{grid-template-columns:1fr 1fr}.ta-grid--4{grid-template-columns:repeat(4,1fr)}}
+    .ta-note{display:inline-block;margin-top:.6rem;padding:.4rem .8rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:600}
+    .ta-mod{display:flex;gap:.7rem;align-items:flex-start;padding:.85rem 1rem}
+    .ta-mod b{color:var(--brand-gold-text);font-family:var(--font-head,'Poppins',sans-serif)}
+    .tl-item__link{display:inline-block;margin-left:.4rem;color:var(--brand-gold-text);font-weight:700;text-decoration:none;white-space:nowrap}
+    .tl-item__link:hover{text-decoration:underline}
+    .ta-modal{border:none;border-radius:16px;max-width:560px;width:92vw;padding:0;background:var(--brand-surface);color:var(--brand-text);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .ta-modal::backdrop{background:rgba(7,11,26,.55);backdrop-filter:blur(4px)}
+    .ta-modal__in{padding:1.7rem 1.6rem 1.9rem;position:relative}
+    .ta-modal__close{position:absolute;top:.7rem;right:.9rem;background:none;border:none;color:var(--brand-muted);font-size:1.5rem;cursor:pointer;line-height:1}
+    .ta-modal h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.2rem;margin:0 0 .15rem}
+    .ta-modal__sub{color:var(--brand-muted);font-size:.82rem;margin-bottom:.9rem}
+    .ta-modal h4{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.64rem;font-weight:700;color:var(--brand-gold-text);margin:1rem 0 .25rem}
+    .ta-modal p{font-size:.9rem;color:var(--brand-text-soft);line-height:1.55;margin:0}
+    .ta-asst{display:inline-block;margin:.1rem 0 .3rem;padding:.28rem .7rem;border-radius:99px;background:rgba(255,215,0,.12);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-weight:700;font-size:.82rem}
+    .x-card::after{content:none!important;display:none!important}
+  </style>
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+</head>
+<body>
+
+<!-- ===== HEADER (site real, estático) ===== -->
+<header class="site-header">
+  <a href="index.html" class="site-header__brand" aria-label="MetodologIA — Inicio">
+    <span class="site-header__logo-wrap" aria-hidden="true">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
+        <defs><linearGradient id="hdrGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
+        <rect width="36" height="36" rx="10" fill="url(#hdrGrad)"/>
+        <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+        <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+      </svg>
+    </span>
+    <span class="site-header__text">
+      <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
+      <span class="site-header__role">Prompting de Alto Rendimiento</span>
+    </span>
+  </a>
+  <nav class="site-header__nav" aria-label="Navegación principal">
+    <a class="site-header__nav-link" href="#aprendes"><span class="l-es">Qué aprendes</span><span class="l-en">What you learn</span><span class="l-pt">O que aprende</span></a>
+    <a class="site-header__nav-link" href="#agenda"><span class="l-es">Agenda</span><span class="l-en">Agenda</span><span class="l-pt">Agenda</span></a>
+    <a class="site-header__nav-link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a>
+    <a class="site-header__nav-link" href="diapositivas-prompting.html"><span class="l-es">Diapositivas</span><span class="l-en">Slides</span><span class="l-pt">Slides</span></a>
+    <a class="site-header__nav-link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+  </nav>
+  <a class="site-header__cta" href="#inscripcion"><span class="l-es">Inscríbete</span><span class="l-en">Enroll</span><span class="l-pt">Inscreva-se</span> →</a>
+</header>
+
+<main id="main" class="main">
+
+  <!-- HERO -->
+  <section class="section" id="hero">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow"><span class="l-es">Taller · 2 h · $160.000 COP</span><span class="l-en">Workshop · 2 h · $160.000 COP</span><span class="l-pt">Workshop · 2 h · $160.000 COP</span></span>
+      <h1 class="h1" style="margin:1rem auto;max-width:48rem;"><span class="l-es">Prompting de <span class="gradient-text">Alto Rendimiento</span></span><span class="l-en"><span class="gradient-text">High-Performance</span> Prompting</span><span class="l-pt">Prompting de <span class="gradient-text">Alto Desempenho</span></span></h1>
+      <p class="lead" style="max-width:40rem;margin:0 auto 1rem;"><span class="l-es">Deja de improvisar. Aprende a escribir prompts que te dan <strong>resultados consistentes</strong> con Claude, no respuestas al azar. Sin riesgo, sin fricción.</span><span class="l-en">Stop improvising. Learn to write prompts that give you <strong>consistent results</strong> with Claude, not random answers. No risk, no friction.</span><span class="l-pt">Pare de improvisar. Aprenda a escrever prompts que dão <strong>resultados consistentes</strong> com Claude, não respostas aleatórias. Sem risco, sem fricção.</span></p>
+      <p class="eyebrow" style="margin-bottom:1.6rem;">Método + IA = Soberanía</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+        <a href="diapositivas-prompting.html" class="home-cta home-cta--secondary"><span class="l-es">Ver diapositivas</span><span class="l-en">See slides</span><span class="l-pt">Ver slides</span></a>
+        <button class="home-cta home-cta--secondary" data-modal="clase" type="button"><span class="l-es">Qué incluye esta clase</span><span class="l-en">What this class includes</span><span class="l-pt">O que esta aula inclui</span></button>
+      </div>
+      <div class="stats" style="margin-top:2rem;" aria-label="Resumen del taller">
+        <div class="stats__cell"><span class="stats__num">+<span class="l-es">Calidad</span><span class="l-en">Quality</span><span class="l-pt">Qualidade</span></span><span class="stats__label"><span class="l-es">prompts que sí funcionan</span><span class="l-en">prompts that actually work</span><span class="l-pt">prompts que funcionam</span></span></div>
+        <div class="stats__cell"><span class="stats__num">2 h</span><span class="stats__label"><span class="l-es">En vivo · práctico</span><span class="l-en">Live · hands-on</span><span class="l-pt">Ao vivo · prático</span></span></div>
+        <div class="stats__cell"><span class="stats__num"><span class="l-es">Plantillas</span><span class="l-en">Templates</span><span class="l-pt">Modelos</span></span><span class="stats__label"><span class="l-es">propias, listas para reusar</span><span class="l-en">your own, ready to reuse</span><span class="l-pt">próprios, prontos para reusar</span></span></div>
+        <div class="stats__cell"><span class="stats__num">ES/EN/PT</span><span class="stats__label"><span class="l-es">Idiomas</span><span class="l-en">Languages</span><span class="l-pt">Idiomas</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ APRENDES -->
+  <section class="section" id="aprendes">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Qué aprendes · 01</span><span class="l-en">What you learn · 01</span><span class="l-pt">O que aprende · 01</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">El <span class="gradient-text">prompt</span>, como herramienta</span><span class="l-en">The <span class="gradient-text">prompt</span>, as a tool</span><span class="l-pt">O <span class="gradient-text">prompt</span>, como ferramenta</span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Tres pilares para pasar de pedir cosas a dirigir a Claude con intención.</span><span class="l-en">Three pillars to move from asking things to directing Claude with intent.</span><span class="l-pt">Três pilares para passar de pedir coisas a dirigir o Claude com intenção.</span></p>
+      <div class="axes">
+        <div class="axis x-card"><span class="axis__label"><span class="l-es">Estructura</span><span class="l-en">Structure</span><span class="l-pt">Estrutura</span></span><h3 class="axis__title"><span class="l-es">Anatomía del prompt</span><span class="l-en">Prompt anatomy</span><span class="l-pt">Anatomia do prompt</span></h3><p class="axis__body"><span class="l-es">Rol, contexto, instrucción y formato: las cuatro partes que hacen predecible la respuesta.</span><span class="l-en">Role, context, instruction and format: the four parts that make the answer predictable.</span><span class="l-pt">Papel, contexto, instrução e formato: as quatro partes que tornam a resposta previsível.</span></p></div>
+        <div class="axis x-card"><span class="axis__label"><span class="l-es">Contexto</span><span class="l-en">Context</span><span class="l-pt">Contexto</span></span><h3 class="axis__title"><span class="l-es">Dar contexto efectivo</span><span class="l-en">Give effective context</span><span class="l-pt">Dar contexto efetivo</span></h3><p class="axis__body"><span class="l-es">Qué información incluir y qué omitir para que Claude trabaje con tus datos, no con suposiciones.</span><span class="l-en">What to include and what to leave out so Claude works with your data, not assumptions.</span><span class="l-pt">O que incluir e o que omitir para que o Claude trabalhe com seus dados, não com suposições.</span></p></div>
+        <div class="axis x-card"><span class="axis__label"><span class="l-es">Iteración</span><span class="l-en">Iteration</span><span class="l-pt">Iteração</span></span><h3 class="axis__title"><span class="l-es">Iteración y refinamiento</span><span class="l-en">Iteration & refinement</span><span class="l-pt">Iteração e refinamento</span></h3><p class="axis__body"><span class="l-es">Cómo leer una respuesta imperfecta y corregir el prompt hasta llegar al resultado exacto.</span><span class="l-en">How to read an imperfect answer and adjust the prompt until you hit the exact result.</span><span class="l-pt">Como ler uma resposta imperfeita e ajustar o prompt até chegar ao resultado exato.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉCNICAS -->
+  <section class="section" id="tecnicas">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Técnicas · 02</span><span class="l-en">Techniques · 02</span><span class="l-pt">Técnicas · 02</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Técnicas que <span class="gradient-text">cambian el resultado</span></span><span class="l-en">Techniques that <span class="gradient-text">change the result</span></span><span class="l-pt">Técnicas que <span class="gradient-text">mudam o resultado</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Tres patrones probados que llevan a Claude de una buena respuesta a la respuesta que necesitas.</span><span class="l-en">Three proven patterns that take Claude from a good answer to the answer you need.</span><span class="l-pt">Três padrões comprovados que levam o Claude de uma boa resposta à resposta que você precisa.</span></p>
+      <div class="axes">
+        <div class="axis x-card"><span class="axis__label">Chain-of-thought</span><h3 class="axis__title"><span class="l-es">Razonar paso a paso</span><span class="l-en">Reason step by step</span><span class="l-pt">Raciocinar passo a passo</span></h3><p class="axis__body"><span class="l-es">Pedir el razonamiento antes de la conclusión para problemas con varias etapas.</span><span class="l-en">Ask for the reasoning before the conclusion on multi-step problems.</span><span class="l-pt">Pedir o raciocínio antes da conclusão em problemas com várias etapas.</span></p></div>
+        <div class="axis x-card"><span class="axis__label">Few-shot</span><h3 class="axis__title"><span class="l-es">Enseñar con ejemplos</span><span class="l-en">Teach with examples</span><span class="l-pt">Ensinar com exemplos</span></h3><p class="axis__body"><span class="l-es">Mostrar dos o tres ejemplos del formato deseado para fijar el patrón de salida.</span><span class="l-en">Show two or three examples of the desired format to lock the output pattern.</span><span class="l-pt">Mostrar dois ou três exemplos do formato desejado para fixar o padrão de saída.</span></p></div>
+        <div class="axis x-card"><span class="axis__label">Meta-prompting</span><h3 class="axis__title"><span class="l-es">Que Claude mejore tu prompt</span><span class="l-en">Let Claude improve your prompt</span><span class="l-pt">Que o Claude melhore seu prompt</span></h3><p class="axis__body"><span class="l-es">Usar a Claude para reescribir y afinar tus propios prompts antes de ejecutarlos.</span><span class="l-en">Use Claude to rewrite and tune your own prompts before running them.</span><span class="l-pt">Usar o Claude para reescrever e afinar seus próprios prompts antes de executá-los.</span></p></div>
+      </div>
+      <p><span class="ta-note"><span class="l-es">⚠️ Evita alucinaciones: cómo escribir prompts para que Claude no invente datos, URLs ni citas.</span><span class="l-en">⚠️ Avoid hallucinations: how to write prompts so Claude doesn't invent data, URLs or citations.</span><span class="l-pt">⚠️ Evite alucinações: como escrever prompts para que o Claude não invente dados, URLs nem citações.</span></span></p>
+    </div>
+  </section>
+
+  <!-- QUÉ TE LLEVAS -->
+  <section class="section" id="resultado">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Qué te llevas · 03</span><span class="l-en">What you take home · 03</span><span class="l-pt">O que você leva · 03</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Tu propia <span class="gradient-text">batería de prompts</span></span><span class="l-en">Your own <span class="gradient-text">prompt library</span></span><span class="l-pt">Sua própria <span class="gradient-text">bateria de prompts</span></span></h2>
+      <p class="lead" style="max-width:42rem;"><span class="l-es">No sales con teoría: sales con una batería de prompts y plantillas <strong>propias</strong>, listas para usar en tu trabajo desde el día siguiente.</span><span class="l-en">You don't leave with theory: you leave with a library of <strong>your own</strong> prompts and templates, ready to use in your work the next day.</span><span class="l-pt">Você não sai com teoria: sai com uma bateria de prompts e modelos <strong>próprios</strong>, prontos para usar no seu trabalho desde o dia seguinte.</span></p>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="section" id="agenda">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Agenda · 2 h · 04</span><span class="l-en">Agenda · 2 h · 04</span><span class="l-pt">Agenda · 2 h · 04</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Dos horas, <span class="gradient-text">en vivo</span></span><span class="l-en">Two hours, <span class="gradient-text">live</span></span><span class="l-pt">Duas horas, <span class="gradient-text">ao vivo</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Práctico de principio a fin. Construyes tus prompts durante la sesión.</span><span class="l-en">Hands-on from start to finish. You build your prompts during the session.</span><span class="l-pt">Prático do começo ao fim. Você constrói seus prompts durante a sessão.</span></p>
+      <div class="timeline">
+        <article class="tl-item x-card">
+          <span class="tl-item__meta"><span class="l-es">Min 0–20</span><span class="l-en">Min 0–20</span><span class="l-pt">Min 0–20</span></span>
+          <h3 class="tl-item__role"><span class="l-es">Qué hace bueno a un prompt</span><span class="l-en">What makes a prompt good</span><span class="l-pt">O que torna um prompt bom</span></h3>
+          <p class="tl-item__impact"><span class="l-es">La anatomía del prompt y los errores que hacen que Claude responda mal.</span><span class="l-en">Prompt anatomy and the mistakes that make Claude respond poorly.</span><span class="l-pt">A anatomia do prompt e os erros que fazem o Claude responder mal.</span></p>
+        </article>
+        <article class="tl-item x-card">
+          <span class="tl-item__meta"><span class="l-es">Min 20–70</span><span class="l-en">Min 20–70</span><span class="l-pt">Min 20–70</span></span>
+          <h3 class="tl-item__role"><span class="l-es">Construir prompts de alto rendimiento</span><span class="l-en">Build high-performance prompts</span><span class="l-pt">Construir prompts de alto desempenho</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Contexto efectivo, meta-prompting (prompts que generan y evalúan prompts) y prompting agéntico orientado a output y a outcome, aplicados a casos reales.</span><span class="l-en">Effective context, meta-prompting (prompts that generate and evaluate prompts) and agentic prompting driven by output and outcome, applied to real cases.</span><span class="l-pt">Contexto efetivo, meta-prompting (prompts que geram e avaliam prompts) e prompting agêntico orientado a output e a outcome, aplicados a casos reais.</span></p>
+        </article>
+        <article class="tl-item x-card">
+          <span class="tl-item__meta"><span class="l-es">Min 70–100</span><span class="l-en">Min 70–100</span><span class="l-pt">Min 70–100</span></span>
+          <h3 class="tl-item__role"><span class="l-es">Iterar y crear tus plantillas</span><span class="l-en">Iterate and create your templates</span><span class="l-pt">Iterar e criar seus modelos</span></h3>
+          <p class="tl-item__impact"><span class="l-es">Refinas, corriges y guardas tu batería de prompts reutilizables.</span><span class="l-en">You refine, fix and save your library of reusable prompts.</span><span class="l-pt">Você refina, corrige e salva sua bateria de prompts reutilizáveis.</span></p>
+        </article>
+        <article class="tl-item x-card" style="border-left-color:var(--brand-gold);">
+          <span class="tl-item__meta"><span class="l-es">Min 100–120</span><span class="l-en">Min 100–120</span><span class="l-pt">Min 100–120</span></span>
+          <h3 class="tl-item__role">Q&amp;A</h3>
+          <p class="tl-item__impact"><span class="l-es">Preguntas, casos tuyos y cierre con tus próximos pasos.</span><span class="l-en">Questions, your own cases and a close with your next steps.</span><span class="l-pt">Perguntas, seus casos e encerramento com seus próximos passos.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVERSIÓN -->
+  <section class="section" id="inversion">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Inversión · 05</span><span class="l-en">Investment · 05</span><span class="l-pt">Investimento · 05</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Inversión <span class="gradient-text">clara</span></span><span class="l-en">Clear <span class="gradient-text">investment</span></span><span class="l-pt">Investimento <span class="gradient-text">claro</span></span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es"><strong>Costo por curso</strong>, por persona. Valores en pesos colombianos (COP).</span><span class="l-en"><strong>Cost per course</strong>, per person. Prices in Colombian pesos (COP).</span><span class="l-pt"><strong>Custo por curso</strong>, por pessoa. Valores em pesos colombianos (COP).</span></p>
+      <p style="margin-top:.8rem;"><span class="ta-note"><a href="precios-internacionales.html" class="tl-item__link"><span class="l-es">Versión internacional →</span><span class="l-en">International version →</span><span class="l-pt">Versão internacional →</span></a></span></p>
+      <div class="ta-pcards">
+        <div class="x-card ta-pcard">
+          <span class="ta-pcard__name">Prompting de Alto Rendimiento</span>
+          <div class="ta-pcard__price">$160.000<span class="ta-pcard__usd">COP</span></div>
+          <span class="ta-pcard__per"><span class="l-es">Por curso · 2 h en vivo</span><span class="l-en">Per course · 2 h live</span><span class="l-pt">Por curso · 2 h ao vivo</span></span>
+          <p class="ta-pcard__inc"><span class="l-es">Estructura, técnicas y tus plantillas.</span><span class="l-en">Structure, techniques and your templates.</span><span class="l-pt">Estrutura, técnicas e seus modelos.</span></p>
+        </div>
+      </div>
+      <p style="margin-top:1rem;"><span class="ta-note"><span class="l-es">Combo con el otro taller = $280.000 COP, ahorras $40.000.</span><span class="l-en">Combo with the other workshop = $280.000 COP, save $40.000.</span><span class="l-pt">Combo com o outro workshop = $280.000 COP, economize $40.000.</span></span></p>
+      <p><span class="ta-note"><span class="l-es">Requiere cuenta de Claude de pago (precio externo, no incluido).</span><span class="l-en">Requires a paid Claude account (external price, not included).</span><span class="l-pt">Requer conta Claude paga (preço externo, não incluído).</span></span></p>
+      <p><span class="ta-note"><span class="l-es">Bundle completo (2 talleres + bootcamp) = $1.088.000 COP, ahorras 15% — <a href="programa.html" class="tl-item__link">ver el programa</a>.</span><span class="l-en">Full bundle (2 workshops + bootcamp) = $1.088.000 COP, save 15% — <a href="programa.html" class="tl-item__link">see the program</a>.</span><span class="l-pt">Bundle completo (2 workshops + bootcamp) = $1.088.000 COP, economize 15% — <a href="programa.html" class="tl-item__link">ver o programa</a>.</span></span></p>
+      <p><span class="ta-note"><span class="l-es">Idiomas: español o inglés (portugués a demanda). Descuentos por grupo y precios para empresas — <a href="programa.html#inversion" class="tl-item__link">ver condiciones</a>.</span><span class="l-en">Languages: Spanish or English (Portuguese on demand). Group discounts and corporate pricing — <a href="programa.html#inversion" class="tl-item__link">see terms</a>.</span><span class="l-pt">Idiomas: espanhol ou inglês (português sob demanda). Descontos por grupo e preços para empresas — <a href="programa.html#inversion" class="tl-item__link">ver condições</a>.</span></span></p>
+    </div>
+  </section>
+
+  <!-- INSCRIPCIÓN -->
+  <!-- VALOR AGREGADO -->
+  <section class="section" id="valor">
+    <div class="container">
+      <span class="eyebrow"><span class="l-es">Valor en cada sesión</span><span class="l-en">Value in every session</span><span class="l-pt">Valor em cada sessão</span></span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;"><span class="l-es">Te llevas <span class="gradient-text">herramientas</span>, no solo teoría</span><span class="l-en">You leave with <span class="gradient-text">tools</span>, not just theory</span><span class="l-pt">Você sai com <span class="gradient-text">ferramentas</span>, não só teoria</span></h2>
+      <p class="lead" style="margin-bottom:1.5rem;"><span class="l-es">Cada sesión está orientada a valor práctico: sales con algo aplicable, no con apuntes.</span><span class="l-en">Every session is geared to practical value: you leave with something usable, not just notes.</span><span class="l-pt">Cada sessão é orientada a valor prático: você sai com algo aplicável, não só anotações.</span></p>
+      <div class="axes">
+        <div class="axis x-card">
+          <span class="axis__label">JM-SDK</span>
+          <h3 class="axis__title"><span class="l-es">JM-SDK · Pristino Alfa</span><span class="l-en">JM-SDK · Pristino Alfa</span><span class="l-pt">Development Kit agêntico · Pristino Alfa</span></h3>
+          <p class="axis__body"><span class="l-es">Recibes un JM-SDK (Vibe Coding) listo para usar.</span><span class="l-en">You receive an JM-SDK (Vibe Coding), ready to use.</span><span class="l-pt">Você recebe um JM-SDK (Vibe Coding), pronto para usar.</span></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Asistentes a medida</span><span class="l-en">Custom assistants</span><span class="l-pt">Assistentes sob medida</span></span>
+          <h3 class="axis__title"><span class="l-es">En cada sesión</span><span class="l-en">In every session</span><span class="l-pt">Em cada sessão</span></h3>
+          <p class="axis__body"><span class="l-es">Asistentes configurados a tu caso, listos para trabajar contigo.</span><span class="l-en">Assistants configured to your case, ready to work with you.</span><span class="l-pt">Assistentes configurados ao seu caso, prontos para trabalhar com você.</span></p>
+        </div>
+        <div class="axis x-card">
+          <span class="axis__label"><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></span>
+          <h3 class="axis__title"><span class="l-es">Esquema orientado a valor</span><span class="l-en">Value-oriented by design</span><span class="l-pt">Esquema orientado a valor</span></h3>
+          <p class="axis__body"><span class="l-es">Plantillas, prompts y aceleradores para aplicar lo aprendido de inmediato.</span><span class="l-en">Templates, prompts and accelerators to apply what you learn right away.</span><span class="l-pt">Modelos, prompts e aceleradores para aplicar o aprendido na hora.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inscripcion">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow"><span class="l-es">Inscripción · 06</span><span class="l-en">Enrollment · 06</span><span class="l-pt">Inscrição · 06</span></span>
+      <h2 class="h2" style="margin:1rem auto .5rem;max-width:40rem;"><span class="l-es">Reserva tu lugar en el <span class="gradient-text">taller</span></span><span class="l-en">Reserve your seat in the <span class="gradient-text">workshop</span></span><span class="l-pt">Reserve seu lugar no <span class="gradient-text">workshop</span></span></h2>
+      <p class="lead" style="max-width:36rem;margin:0 auto 1.5rem;"><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão.</span></p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@metodologia.info&su=Taller%20Prompting%20de%20Alto%20Rendimiento&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20programa%20Trabajar%20Amplificado.%0A%0ANombre%3A%0ARol%20%28manager%20/%20l%C3%ADder%20/%20fundador%20/%20freelancer%29%3A%0AIdioma%20%28ES%20/%20EN%29%3A%0AInter%C3%A9s%20%28taller%20de%20intro%20/%20talleres%20/%20bootcamp%20/%20bundle%20/%20empresa%29%3A%0AGrupo%20o%20empresa%20%28opcional%29%3A%0A%0AGracias." class="home-cta home-cta--secondary" target="_blank" rel="noopener">contacto@metodologia.info</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== TRIPLE TOGGLE (tema + idioma) ===== -->
+<triple-toggle aria-label="Preferencias de tema e idioma">
+  <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
+  <button class="toggle-btn" id="langbtn" type="button" aria-label="Cambiar idioma ES EN PT" title="ES / EN / PT">ES</button>
+</triple-toggle>
+
+<!-- ===== FOOTER (site real, estático) ===== -->
+<footer class="site-footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div>
+        <p class="site-footer__brand-tagline"><span class="l-es">"La excelencia no se compra, se diseña. Se cocrea y se comparte."</span><span class="l-en">"Excellence is not bought, it is designed. Co-created and shared."</span><span class="l-pt">"A excelência não se compra, se desenha. Se cocria e se compartilha."</span></p>
+      </div>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Programa</span><span class="l-en">Program</span><span class="l-pt">Programa</span></div>
+        <a class="site-footer__link" href="introduccion-trabajo-amplificado.html"><span class="l-es">Taller de intro</span><span class="l-en">Intro workshop</span><span class="l-pt">Workshop de intro</span></a>
+        <a class="site-footer__link" href="prompting-alto-rendimiento.html">Prompting</a>
+        <a class="site-footer__link" href="automatizacion-con-ia.html"><span class="l-es">Automatización</span><span class="l-en">Automation</span><span class="l-pt">Automação</span></a>
+        <a class="site-footer__link" href="bootcamp.html">Bootcamp</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Material</span><span class="l-en">Material</span><span class="l-pt">Material</span></div>
+        <a class="site-footer__link" href="clase-introductoria.html">Masterclass</a>
+        <a class="site-footer__link" href="workbook-introduccion.html">Workbook</a>
+        <a class="site-footer__link" href="playbook-jarvis-os.html">Playbook</a>
+        <a class="site-footer__link" href="runbook-jarvis-os.html">Runbook</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head"><span class="l-es">Conectar</span><span class="l-en">Connect</span><span class="l-pt">Conectar</span></div>
+        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+        <a class="site-footer__link" href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@metodologia.info&su=Trabajar%20Amplificado%20%C2%B7%20Inscripci%C3%B3n&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20programa%20Trabajar%20Amplificado.%0A%0ANombre%3A%0ARol%20%28manager%20/%20l%C3%ADder%20/%20fundador%20/%20freelancer%29%3A%0AIdioma%20%28ES%20/%20EN%29%3A%0AInter%C3%A9s%20%28taller%20de%20intro%20/%20talleres%20/%20bootcamp%20/%20bundle%20/%20empresa%29%3A%0AGrupo%20o%20empresa%20%28opcional%29%3A%0A%0AGracias." target="_blank" rel="noopener">contacto@metodologia.info</a>
+        <a class="site-footer__link" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscripción</span><span class="l-en">Enroll</span><span class="l-pt">Inscrição</span></a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 MetodologIA. Copyleft. · Success as a Service</span>
+      <span>Método primero, (Gen)IA después.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var tb=document.getElementById('themebtn');
+  function ti(){ if(tb) tb.textContent = html.dataset.theme==='dark' ? '☀' : '☾'; }
+  ti();
+  if(tb) tb.addEventListener('click', function(){
+    html.dataset.theme = (html.dataset.theme==='dark') ? 'light' : 'dark';
+    try{ localStorage.setItem('mdg_theme', html.dataset.theme); }catch(e){}
+    ti();
+  });
+  var langs=['es','en','pt'], lb=document.getElementById('langbtn');
+  function setLang(l){ if(langs.indexOf(l)<0) l='es'; html.lang=l; try{ localStorage.setItem('mdg_locale', l); }catch(e){} if(lb) lb.textContent=l.toUpperCase(); }
+  setLang(html.lang||'es');
+  if(lb) lb.addEventListener('click', function(){ var i=langs.indexOf(html.lang); setLang(langs[(i+1)%langs.length]); });
+})();
+</script>
+
+<!-- ===== MODAL · Qué incluye esta clase ===== -->
+<dialog class="ta-modal" id="clase">
+  <div class="ta-modal__in">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <h3><span class="l-es">Prompting de Alto Rendimiento</span><span class="l-en">High-Performance Prompting</span><span class="l-pt">Prompting de Alto Desempenho</span></h3>
+    <p class="ta-modal__sub"><span class="l-es">Taller · 2 h</span><span class="l-en">Workshop · 2 h</span><span class="l-pt">Workshop · 2 h</span></p>
+
+    <h4><span class="l-es">Qué se verá</span><span class="l-en">What you'll cover</span><span class="l-pt">O que será visto</span></h4>
+    <p><span class="l-es">La estructura de prompts de alto rendimiento (rol, contexto, instrucción, contrato de salida), meta-prompting y prompting agéntico orientado a output (la pieza que produce) y a outcome (el resultado que valida una rúbrica), y cómo estandarizar tu ejecución con precisión.</span><span class="l-en">The structure of high-performance prompts (role, context, instruction, output contract), meta-prompting and agentic prompting driven by output (the piece it produces) and outcome (the result a rubric validates), and how to standardize your execution precisely.</span><span class="l-pt">A estrutura de prompts de alto desempenho (papel, contexto, instrução, contrato de saída), meta-prompting e prompting agêntico orientado a output (a peça que produz) e a outcome (o resultado que uma rubrica valida), e como padronizar sua execução com precisão.</span></p>
+
+    <h4><span class="l-es">Aceleradores</span><span class="l-en">Accelerators</span><span class="l-pt">Aceleradores</span></h4>
+    <p><span class="l-es">Asistente <strong>PromptAnalyst</strong> + la biblioteca de prompts del JM-SDK (Vibe Coding).</span><span class="l-en"><strong>PromptAnalyst</strong> assistant + the JM-SDK prompt library (Vibe Coding).</span><span class="l-pt">Assistente <strong>PromptAnalyst</strong> + a biblioteca de prompts do JM-SDK (Vibe Coding).</span></p>
+
+    <h4><span class="l-es">Asistente</span><span class="l-en">Assistant</span><span class="l-pt">Assistente</span></h4>
+    <span class="ta-asst">Prompting Pro</span>
+    <p><span class="l-es">Prompting Pro: un Generator que produce prompts de alto rendimiento, estandarizados.</span><span class="l-en">Prompting Pro: a Generator that outputs standardized, high-performance prompts.</span><span class="l-pt">Prompting Pro: um Generator que produz prompts de alto desempenho, padronizados.</span></p>
+
+    <h4><span class="l-es">Caso de uso · amplificar al manager</span><span class="l-en">Use case · amplify the manager</span><span class="l-pt">Caso de uso · amplificar o gestor</span></h4>
+    <p><span class="l-es">Generar un <strong>informe ejecutivo</strong> y una <strong>presentación ejecutiva</strong> con prompts de alto rendimiento, estandarizando la ejecución con precisión — el mismo prompt produce el mismo nivel cada vez. Así el manager de la era de la IA entrega con consistencia, no a pulso.</span><span class="l-en">Produce an <strong>executive report</strong> and an <strong>executive presentation</strong> with high-performance prompts, standardizing execution precisely — the same prompt yields the same level every time. The manager of the AI era delivers with consistency, not by sheer effort.</span><span class="l-pt">Gerar um <strong>relatório executivo</strong> e uma <strong>apresentação executiva</strong> com prompts de alto desempenho, padronizando a execução com precisão — o mesmo prompt produz o mesmo nível sempre. Assim o gestor da era da IA entrega com consistência, não no esforço.</span></p>
+  </div>
+</dialog>
+
+<script>(function(){
+  document.querySelectorAll('[data-modal]').forEach(function(el){
+    function open(){var d=document.getElementById(el.getAttribute('data-modal'));if(d&&d.showModal)d.showModal();}
+    el.addEventListener('click',open);
+  });
+  document.querySelectorAll('dialog.ta-modal').forEach(function(d){
+    d.addEventListener('click',function(e){if(e.target===d)d.close();});
+    d.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){d.close();});});
+  });
+})();</script>
+<script src="scripts/site-unified-v1.js" defer></script>
+</body>
+</html>
