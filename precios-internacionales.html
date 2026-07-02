@@ -97,6 +97,19 @@
     .ta-modal--c h3{font-size:1.08rem}
     .ta-modal--c h4{margin:.7rem 0 .15rem}
     .ta-modal--c p{font-size:.86rem}
+    .ta-contact-trigger{appearance:none}
+    .ta-contact-modal{max-width:min(500px,92vw)}
+    .ta-contact-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.72rem;padding:2rem 1.75rem 1.9rem}
+    .ta-contact-avatar{width:108px;height:108px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 14px 30px -16px rgba(10,18,42,.72);background:#ffd700;display:grid;place-items:center}
+    .ta-contact-photo{display:block;width:108px;height:108px;object-fit:cover}
+    .ta-contact-initials{font-family:'Poppins',sans-serif;font-weight:900;font-size:2rem;color:#0a122a}
+    .ta-contact-name{box-sizing:border-box;margin:.1rem 0 0!important;padding:0 2rem;width:100%;color:var(--brand-text)!important}
+    .ta-contact-role{font-size:.82rem!important;color:var(--brand-muted)!important}
+    .ta-contact-actions{display:grid;gap:.65rem;width:min(100%,360px);margin-top:.25rem}
+    .ta-contact-actions .home-cta{justify-content:center;width:100%}
+    .ta-contact-mail{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:.5rem .85rem;border:1px solid var(--brand-border);border-radius:999px;color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:800;text-decoration:none}
+    .ta-contact-mail:hover{border-color:var(--brand-gold-text);background:rgba(255,215,0,.08)}
+    .ta-contact-note{max-width:40ch;font-size:.8rem!important;line-height:1.45!important;color:var(--brand-muted)!important}
   </style>
   <link rel="stylesheet" href="estilos/site-unified-v1.css">
 </head>
@@ -106,12 +119,7 @@
 <header class="site-header">
   <a href="#hero" class="site-header__brand" aria-label="MetodologIA — Inicio internacional">
     <span class="site-header__logo-wrap" aria-hidden="true">
-      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
-        <defs><linearGradient id="hdrGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
-        <rect width="36" height="36" rx="10" fill="url(#hdrGrad)"/>
-        <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
-        <circle cx="18" cy="8" r="2" fill="#FFD700"/>
-      </svg>
+      <img class="site-header__logo" src="assets/metodologia_logo_primary.png" alt="" width="44" height="44" decoding="async">
     </span>
     <span class="site-header__text">
       <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
@@ -288,8 +296,8 @@
       <h2 class="h2" style="margin:1rem auto .5rem;max-width:40rem;"><span class="l-es">Empieza por la clase introductoria · <span class="gradient-text">sin costo</span></span><span class="l-en">Start with the introductory class · <span class="gradient-text">no cost</span></span><span class="l-pt">Comece pela aula introdutória · <span class="gradient-text">sem custo</span></span></h2>
       <p class="lead" style="max-width:36rem;margin:0 auto 1.5rem;"><span class="l-es">Déjanos tus datos y te avisamos la próxima fecha. Cupos limitados por sesión.</span><span class="l-en">Leave your details and we'll tell you the next date. Limited seats per session.</span><span class="l-pt">Deixe seus dados e avisamos a próxima data. Vagas limitadas por sessão.</span></p>
       <div class="home-hero__ctas" style="justify-content:center;">
-        <a href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Inscríbete (sin costo) →</span><span class="l-en">Enroll (no cost) →</span><span class="l-pt">Inscreva-se (sem custo) →</span></a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@metodologia.info&su=Trabajar%20Amplificado&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20programa%20Trabajar%20Amplificado.%0A%0ANombre%3A%0ARol%20%28manager%20/%20l%C3%ADder%20/%20fundador%20/%20freelancer%29%3A%0AIdioma%20%28ES%20/%20EN%29%3A%0AInter%C3%A9s%20%28taller%20de%20intro%20/%20talleres%20/%20bootcamp%20/%20bundle%20/%20empresa%29%3A%0AGrupo%20o%20empresa%20%28opcional%29%3A%0A%0AGracias." class="home-cta home-cta--secondary" target="_blank" rel="noopener">contacto@metodologia.info</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener" class="home-cta home-cta--primary"><span class="l-es">Confirmar cupo sin costo →</span><span class="l-en">Confirm free seat →</span><span class="l-pt">Confirmar vaga sem custo →</span></a>
+        <button class="home-cta home-cta--secondary ta-contact-trigger" type="button" data-modal="contact-javier" aria-haspopup="dialog"><span class="l-es">Contactar a Javier</span><span class="l-en">Contact Javier</span><span class="l-pt">Falar com Javier</span></button>
       </div>
     </div>
   </section>
@@ -346,7 +354,7 @@
         <div class="site-footer__col-head"><span class="l-es">Conectar</span><span class="l-en">Connect</span><span class="l-pt">Conectar</span></div>
         <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
         <a class="site-footer__link" href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@metodologia.info&su=Trabajar%20Amplificado%20%C2%B7%20Inscripci%C3%B3n&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20programa%20Trabajar%20Amplificado.%0A%0ANombre%3A%0ARol%20%28manager%20/%20l%C3%ADder%20/%20fundador%20/%20freelancer%29%3A%0AIdioma%20%28ES%20/%20EN%29%3A%0AInter%C3%A9s%20%28taller%20de%20intro%20/%20talleres%20/%20bootcamp%20/%20bundle%20/%20empresa%29%3A%0AGrupo%20o%20empresa%20%28opcional%29%3A%0A%0AGracias." target="_blank" rel="noopener">contacto@metodologia.info</a>
-        <a class="site-footer__link" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscripción</span><span class="l-en">Enroll</span><span class="l-pt">Inscrição</span></a>
+        <a class="site-footer__link" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener"><span class="l-es">Inscripción</span><span class="l-en">Enroll</span><span class="l-pt">Inscrição</span></a>
       </nav>
     </div>
     <div class="site-footer__bottom">
@@ -370,7 +378,7 @@
     <p><span class="l-es">Masterclass (clase guía), workbook (cuaderno de trabajo) y deck (diapositivas) de Introducción al Trabajo Amplificado. Sin riesgo.</span><span class="l-en">Masterclass, workbook and deck for Introduction to Amplified Work. No risk.</span><span class="l-pt">Masterclass, workbook e deck de Introdução ao Trabalho Amplificado. Sem risco.</span></p>
     <h4><span class="l-es">Transformación</span><span class="l-en">Transformation</span><span class="l-pt">Transformação</span></h4>
     <p><span class="l-es">Pasas de pedir respuestas a diseñar criterio, transferencia y evidencia con IA.</span><span class="l-en">You move from asking for answers to designing criteria, transfer and evidence with AI.</span><span class="l-pt">Você passa de pedir respostas a desenhar critério, transferência e evidência com IA.</span></p>
-    <a class="home-cta home-cta--primary ta-modal__cta" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+    <a class="home-cta home-cta--primary ta-modal__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
   </div>
 </dialog>
 <dialog class="ta-modal" id="pm-prompting">
@@ -386,7 +394,7 @@
     <p><span class="l-es">Tu propia batería de prompts y plantillas listas para reusar, más el Generator Prompting Pro.</span><span class="l-en">Your own battery of prompts and templates ready to reuse, plus the Generator Prompting Pro.</span><span class="l-pt">Sua própria bateria de prompts e modelos prontos para reutilizar, mais o Generator Prompting Pro.</span></p>
     <h4><span class="l-es">Transformación</span><span class="l-en">Transformation</span><span class="l-pt">Transformação</span></h4>
     <p><span class="l-es">De pedirle cosas a la IA a operar con precisión: produces un informe ejecutivo y una presentación ejecutiva estandarizados en minutos.</span><span class="l-en">From asking the AI for things to operating with precision: you produce a standardized executive report and executive presentation in minutes.</span><span class="l-pt">De pedir coisas à IA a operar com precisão: você produz um relatório executivo e uma apresentação executiva padronizados em minutos.</span></p>
-    <a class="home-cta home-cta--primary ta-modal__cta" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+    <a class="home-cta home-cta--primary ta-modal__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
   </div>
 </dialog>
 <dialog class="ta-modal" id="pm-automatizacion">
@@ -402,7 +410,7 @@
     <p><span class="l-es">Un workflow tuyo, automatizado y funcionando, más el AI Automation Workflow Generator.</span><span class="l-en">A workflow of yours, automated and running, plus the AI Automation Workflow Generator.</span><span class="l-pt">Um workflow seu, automatizado e funcionando, mais o AI Automation Workflow Generator.</span></p>
     <h4><span class="l-es">Transformación</span><span class="l-en">Transformation</span><span class="l-pt">Transformação</span></h4>
     <p><span class="l-es">De ejecutar tareas repetidas a dirigir un sistema que las ejecuta por ti.</span><span class="l-en">From executing repetitive tasks to directing a system that executes them for you.</span><span class="l-pt">De executar tarefas repetidas a dirigir um sistema que as executa por você.</span></p>
-    <a class="home-cta home-cta--primary ta-modal__cta" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+    <a class="home-cta home-cta--primary ta-modal__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
   </div>
 </dialog>
 <dialog class="ta-modal" id="pm-bootcamp">
@@ -418,7 +426,7 @@
     <p><span class="l-es">Tu Jarvis OS montado, batería de prompts, playbooks, asistentes y el JM-SDK. Acceso al espacio comunitario.</span><span class="l-en">Your Jarvis OS set up, prompt battery, playbooks, assistants and the JM-SDK. Access to the community space.</span><span class="l-pt">Seu Jarvis OS montado, bateria de prompts, playbooks, assistentes e o JM-SDK. Acesso ao espaço comunitário.</span></p>
     <h4><span class="l-es">Transformación</span><span class="l-en">Transformation</span><span class="l-pt">Transformação</span></h4>
     <p><span class="l-es">De manager que trabaja más horas a operador soberano de la era de la IA: tú diriges, la IA ejecuta.</span><span class="l-en">From a manager working more hours to a sovereign operator of the AI era: you direct, the AI executes.</span><span class="l-pt">De manager que trabalha mais horas a operador soberano da era da IA: você dirige, a IA executa.</span></p>
-    <a class="home-cta home-cta--primary ta-modal__cta" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+    <a class="home-cta home-cta--primary ta-modal__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
   </div>
 </dialog>
 <dialog class="ta-modal" id="pm-bundle">
@@ -434,7 +442,7 @@
     <p><span class="l-es">Todos los entregables del programa, el ahorro del 15% y prioridad de cupo.</span><span class="l-en">All the program deliverables, the 15% saving and seat priority.</span><span class="l-pt">Todos os entregáveis do programa, a economia de 15% e prioridade de vaga.</span></p>
     <h4><span class="l-es">Transformación</span><span class="l-en">Transformation</span><span class="l-pt">Transformação</span></h4>
     <p><span class="l-es">La transformación completa: de usuario de IA a manager amplificado con un sistema propio operando.</span><span class="l-en">The full transformation: from AI user to amplified manager with a system of your own operating.</span><span class="l-pt">A transformação completa: de usuário de IA a manager amplificado com um sistema próprio operando.</span></p>
-    <a class="home-cta home-cta--primary ta-modal__cta" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
+    <a class="home-cta home-cta--primary ta-modal__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener"><span class="l-es">Inscríbete →</span><span class="l-en">Enroll →</span><span class="l-pt">Inscreva-se →</span></a>
   </div>
 </dialog>
 <dialog class="ta-modal ta-modal--c" id="cm1">
@@ -552,6 +560,24 @@
     <p><span class="l-es">El espacio comunitario y todo el kit.</span><span class="l-en">The community space and the full kit.</span><span class="l-pt">O espaço comunitário e todo o kit.</span></p>
     <h4><span class="l-es">Beneficio</span><span class="l-en">Benefit</span><span class="l-pt">Benefício</span></h4>
     <p><span class="l-es">Sales con tu sistema funcionando, validado con pares.</span><span class="l-en">You leave with your system working, validated with peers.</span><span class="l-pt">Você sai com seu sistema funcionando, validado com pares.</span></p>
+  </div>
+</dialog>
+<dialog class="ta-modal ta-contact-modal" id="contact-javier">
+  <div class="ta-modal__in ta-contact-card">
+    <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
+    <div class="ta-contact-avatar" aria-hidden="true">
+      <img class="ta-contact-photo" src="https://raw.githubusercontent.com/ejemplo-deo-repo/mao-brand-assets/main/team_javier-montano.webp" alt="" width="108" height="108" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=&quot;ta-contact-initials&quot;>JM</span>'">
+    </div>
+    <h3 class="ta-contact-name">Javier Montaño</h3>
+    <p class="ta-contact-role">MetodologIA · Trabajo Amplificado</p>
+    <p class="ta-contact-note"><span class="l-es">Puedes confirmar cupo de una vez o escribirme si quieres entender mejor si la clase, los talleres o el bootcamp encajan con tu momento.</span><span class="l-en">You can confirm your seat now or write to me if you want to understand whether the class, workshops or bootcamp fit your current moment.</span><span class="l-pt">Você pode confirmar a vaga agora ou me escrever se quiser entender se a aula, os workshops ou o bootcamp fazem sentido para seu momento.</span></p>
+    <div class="ta-contact-actions">
+      <a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener"><span class="l-es">Confirmar cupo gratuito</span><span class="l-en">Confirm free seat</span><span class="l-pt">Confirmar vaga gratuita</span></a>
+      <a class="home-cta home-cta--primary" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20quiero%20entender%20mejor%20la%20experiencia%20Trabajar%20Amplificado%20antes%20de%20confirmar%20mi%20cupo." target="_blank" rel="noopener"><span class="l-es">WhatsApp a Javier</span><span class="l-en">WhatsApp Javier</span><span class="l-pt">WhatsApp para Javier</span></a>
+      <a class="home-cta home-cta--secondary" href="mailto:javier@metodologia.info?subject=Trabajar%20Amplificado%20%C2%B7%20Quiero%20entender%20mejor&body=Hola%20Javier%2C%0A%0AQuiero%20entender%20mejor%20la%20experiencia%20Trabajar%20Amplificado%20antes%20de%20confirmar%20mi%20cupo.%0A%0ANombre%3A%0ARol%20o%20actividad%3A%0ALo%20que%20quiero%20mejorar%20en%20mi%20trabajo%3A%0AMe%20interesa%3A%20clase%20introductoria%20/%20talleres%20/%20bootcamp%20/%20empresa%0APregunta%20principal%3A%0A%0AGracias."><span class="l-es">Escribir para entender mejor</span><span class="l-en">Write to understand better</span><span class="l-pt">Escrever para entender melhor</span></a>
+    </div>
+    <a class="ta-contact-mail" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20quiero%20conversar%20sobre%20Trabajar%20Amplificado." target="_blank" rel="noopener">+57 300 535 3628</a>
+    <a class="ta-contact-mail" href="mailto:javier@metodologia.info?subject=Trabajar%20Amplificado">javier@metodologia.info</a>
   </div>
 </dialog>
 <script>(function(){

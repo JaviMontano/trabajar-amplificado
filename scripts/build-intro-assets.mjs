@@ -341,7 +341,7 @@ function introWorkshop() {
         <h1>${localized("Introducción al Trabajo Amplificado", "Introduction to Amplified Work", "Introdução ao Trabalho Amplificado")}</h1>
         <p class="lead">${localized("Una clase demo para vivir el método sin costo: diagnosticas una fricción real, eliges una ruta primaria, construyes una herramienta candidata y sales con una prueba mínima.", "A demo class to experience the method at no cost: diagnose a real friction, choose a primary route, build a candidate tool and leave with a minimum test.", "Uma aula demo para viver o método sem custo: diagnostica uma fricção real, escolhe uma rota primária, constrói uma ferramenta candidata e sai com um teste mínimo.")}</p>
         <div class="toolbar">
-          <a class="btn" href="https://forms.gle/uCwUZkeoyStaLegf7" target="_blank" rel="noopener">${localized("Inscríbete sin costo", "Enroll at no cost", "Inscreva-se sem custo")}</a>
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdyeq6J84azzsvbJ7scukGRIXEwA06-A5I2zGoWkEorvjhiyA/viewform" target="_blank" rel="noopener">${localized("Inscríbete sin costo", "Enroll at no cost", "Inscreva-se sem custo")}</a>
           <a class="btn secondary" href="workbook-introduccion.html">${localized("Abrir workbook", "Open workbook", "Abrir workbook")}</a>
           <a class="btn secondary" href="diapositivas-introduccion.html">${localized("Ver deck (diapositivas)", "See deck", "Ver deck (diapositivas)")}</a>
         </div>
