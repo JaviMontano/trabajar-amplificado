@@ -3,8 +3,15 @@
 html[lang="en"] .l-es{display:none}html[lang="en"] .l-en{display:inline}html[lang="en"] .l-pt{display:none}
 html[lang="pt"] .l-es{display:none}html[lang="pt"] .l-en{display:none}html[lang="pt"] .l-pt{display:inline}
 
+.site-header__cobrand{display:inline-flex;align-items:center;gap:.42rem;flex:0 0 auto}
+.site-header__logo-wrap--metodologia{background:#0a122a}
+.site-header__metodologia-logo{display:block;width:100%;height:100%;object-fit:contain}
+.site-header__brand-separator{display:block;width:1px;height:28px;background:var(--brand-border);opacity:.75}
 .site-header__logo-wrap--ieb{background:#fff}
-.site-header__ieb-logo{display:block;width:100%;height:100%;object-fit:cover}
+.site-header__ieb-logo{display:block;width:100%;height:100%;box-sizing:border-box;padding:4px;object-fit:contain}
+.site-header__name--proposal{font-size:clamp(.98rem,1.35vw,1.08rem)}
+.site-header__presenter{color:var(--brand-text-soft);letter-spacing:.13em}
+.site-header__presenter strong{color:var(--brand-text);font-weight:800}
 
 .ta-grid{display:grid;gap:1rem}
 @media(min-width:680px){.ta-grid--2{grid-template-columns:repeat(2,1fr)}.ta-grid--3{grid-template-columns:repeat(3,1fr)}.ta-grid--4{grid-template-columns:repeat(2,1fr)}}
@@ -55,4 +62,5 @@ html[lang="pt"] .l-es{display:none}html[lang="pt"] .l-en{display:none}html[lang=
 .x-card::after{content:none!important;display:none!important}
 .ieb-footer-note{font-size:.75rem;color:var(--brand-muted);line-height:1.5;margin-top:1rem}
 @media(max-width:720px){.ta-table{font-size:.82rem}.ta-table th,.ta-table td{padding:.72rem .55rem}.ta-tagrow{justify-content:flex-start}.ta-pcard__price{font-size:1.55rem}}
+@media(max-width:640px){.site-header__cobrand{gap:.32rem}.site-header__brand-separator{height:22px}.site-header__ieb-logo{padding:3px}.site-header__name--proposal{font-size:.92rem;white-space:nowrap;word-spacing:normal;overflow:hidden;text-overflow:ellipsis}.site-header__presenter{display:block;font-size:9px;letter-spacing:.09em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 @media(max-width:520px){#hero .stats{display:none}}
