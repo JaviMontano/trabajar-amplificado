@@ -32,7 +32,7 @@ CANONICAL_DEFINITIONS = {
     "vr": ["(realidad virtual)"],
     "licencias": ["(licencias)"],
     "automatizaciones": ["(automatizaciones)"],
-    "barandas": ["(barandas de control)", "(barandas para que la IA opere con reglas)"],
+    "sistema_guiado": ["(estructura práctica que reúne contexto, fuentes, pasos, controles, evidencia y cierre)"],
     "prueba_controlada": ["(prueba controlada)"],
     "backlog": ["(lista priorizada de pendientes)"],
     "checklist": ["(lista de verificación)"],
@@ -70,6 +70,18 @@ def main() -> int:
         fail("logo IEB ausente")
 
     text = visible_body_text(html)
+    forbidden = [
+        "arnés es un conjunto de barandas",
+        "arnes es un conjunto de barandas",
+        "Arneses (barandas de control)",
+        "barandas de control",
+        "barandas para que la IA opere con reglas",
+    ]
+    for phrase in forbidden:
+        if phrase.lower() in text.lower() or phrase in html:
+            fail(f"lenguaje de arnes/barandas prohibido: {phrase}")
+    if re.search(r"\barn[eé]s(?:es)?\b", text, flags=re.I):
+        fail("la propuesta IEB no debe usar arnes como metafora visible")
     failures: list[str] = []
     for concept, variants in CANONICAL_DEFINITIONS.items():
         count = sum(text.count(variant) for variant in variants)
