@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "clientes" / "ieb" / "index.html"
+PACKAGE_HTML = sorted((ROOT / "clientes" / "ieb").glob("*.html"))
 
 CANONICAL_DEFINITIONS = {
     "pesos colombianos": ["(pesos colombianos)"],
@@ -68,6 +69,15 @@ def main() -> int:
         fail("logo MetodologIA ausente")
     if "github.com/ejemplo-deo-repo/mao-brand-assets/blob/main/IEB-1.webp?raw=true" not in html:
         fail("logo IEB ausente")
+    if 'href="#clases">10 clases</a>' not in html:
+        fail("nav debe anunciar 10 clases")
+    if "10 clases / 20 horas" not in html:
+        fail("paquete debe declarar 10 clases / 20 horas")
+    if "Clase 10 de 10" not in html or 'data-modal="c10"' not in html:
+        fail("Clase 10 / proyecto final ausente")
+    for old in ["9 clases", "Clase 1 de 9", "Clase 9 de 9"]:
+        if old in html:
+            fail(f"texto obsoleto en index: {old}")
 
     text = visible_body_text(html)
     forbidden = [
@@ -82,6 +92,16 @@ def main() -> int:
             fail(f"lenguaje de arnes/barandas prohibido: {phrase}")
     if re.search(r"\barn[eé]s(?:es)?\b", text, flags=re.I):
         fail("la propuesta IEB no debe usar arnes como metafora visible")
+    for path in PACKAGE_HTML:
+        page = path.read_text(encoding="utf-8", errors="replace")
+        visible = visible_body_text(page)
+        if "9 clases" in page or re.search(r"Clase [1-9] de 9", page):
+            fail(f"texto obsoleto de 9 clases en {path.relative_to(ROOT)}")
+        if re.search(r"\barn[eé]s(?:es)?\b", visible, flags=re.I):
+            fail(f"arnes visible no literal en {path.relative_to(ROOT)}")
+        for phrase in forbidden:
+            if phrase.lower() in visible.lower() or phrase in page:
+                fail(f"lenguaje de arnes/barandas prohibido en {path.relative_to(ROOT)}: {phrase}")
     failures: list[str] = []
     for concept, variants in CANONICAL_DEFINITIONS.items():
         count = sum(text.count(variant) for variant in variants)
