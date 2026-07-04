@@ -34,13 +34,19 @@
 </head>
 <body>
 <header class="site-header">
-  <a href="index.html" class="site-header__brand" aria-label="MetodologIA · Paquete IEB">
-    <span class="site-header__logo-wrap site-header__logo-wrap--ieb" aria-hidden="true">
-      <img class="site-header__ieb-logo" src="https://github.com/ejemplo-deo-repo/mao-brand-assets/blob/main/IEB-1.webp?raw=true" alt="" width="44" height="44" decoding="async">
+  <a href="index.html" class="site-header__brand" aria-label="IEB · Copilot Studio · presentado por MetodologIA">
+    <span class="site-header__cobrand" aria-hidden="true">
+      <span class="site-header__logo-wrap site-header__logo-wrap--metodologia">
+        <img class="site-header__metodologia-logo" src="../../assets/metodologia_logo_primary.png" alt="" width="44" height="44" decoding="async">
+      </span>
+      <span class="site-header__brand-separator"></span>
+      <span class="site-header__logo-wrap site-header__logo-wrap--ieb">
+        <img class="site-header__ieb-logo" src="https://github.com/ejemplo-deo-repo/mao-brand-assets/blob/main/IEB-1.webp?raw=true" alt="" width="44" height="44" decoding="async">
+      </span>
     </span>
     <span class="site-header__text">
-      <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
-      <span class="site-header__role">IEB · Copilot Studio</span>
+      <span class="site-header__name site-header__name--proposal">IEB · Copilot Studio</span>
+      <span class="site-header__role site-header__presenter">Presentado por <strong>MetodologIA</strong></span>
     </span>
   </a>
   <nav class="site-header__nav" aria-label="Navegación principal">
@@ -107,7 +113,7 @@
       <p class="lead" style="margin-bottom:1.5rem;">Estas clases pueden tomarse como profundización posterior o integrarse en una ruta de 20 horas. El foco es concreto: un sistema guiado útil para apoyar roles o áreas y un workflow (flujo de trabajo) controlado que no pierda trazabilidad.</p>
       <div class="ta-grid ta-grid--2">
         <div class="x-card ta-mod ta-clickable" data-modal="c1" role="button" tabindex="0" aria-haspopup="dialog"><b>1</b><span><strong>Sistema guiado para roles o áreas</strong>Diseñar instrucciones, fuentes, límites, formularios y salidas para apoyar trabajo repetible.</span></div>
-        <div class="x-card ta-mod ta-clickable" data-modal="c2" role="button" tabindex="0" aria-haspopup="dialog"><b>2</b><span><strong>Flujo controlado con conectores (enlaces con sistemas o datos)</strong>Diseñar un proceso con conectores, datos autorizados, validaciones y paso a humano.</span></div>
+        <div class="x-card ta-mod ta-clickable" data-modal="c2" role="button" tabindex="0" aria-haspopup="dialog"><b>2</b><span><strong>Flujo controlado con conectores</strong>Diseñar un proceso con conectores, datos autorizados, validaciones y paso a humano.</span></div>
       </div>
     </div>
   </section>
@@ -145,7 +151,7 @@
       <h2 class="h2" style="margin:1rem auto .5rem;max-width:42rem;">Confirmar fit (encaje) del frente Studio</h2>
       <p class="lead" style="max-width:39rem;margin:0 auto 1.5rem;">La conversación debe confirmar si estas 2 clases a medida son las correctas, si entran como profundización puntual o como parte de un curso de 20 horas, y qué combinaciones tienen sentido para IEB.</p>
       <div class="home-hero__ctas" style="justify-content:center;">
-        <a href="mailto:contacto@metodologia.info?subject=IEB%20%C2%B7%20Profundización%20por%20frente&body=Hola%20MetodologIA%2C%0A%0AQuiero%20revisar%20las%202%20clases%20de%20profundizaci%C3%B3n%20para%20IEB.%0A%0AFrente%20de%20inter%C3%A9s%3A%0ATema%201%20propuesto%3A%0ATema%202%20propuesto%3A%0AAudiencia%20candidata%3A%0ALicencias%20disponibles%3A%0ADatos%20o%20casos%20autorizados%3A%0ARestricciones%20a%20validar%3A%0A%0AGracias." class="home-cta home-cta--primary">Solicitar conversación →</a>
+        <a href="https://metodologia.info/" target="_blank" rel="noopener" class="home-cta home-cta--primary">Coordinar conversación →</a>
         <a href="github-copilot-avanzados.html" class="home-cta home-cta--secondary">Ver perfiles avanzados</a>
       </div>
     </div>
@@ -185,14 +191,14 @@
 <dialog class="ta-modal" id="c2">
   <div class="ta-modal__in">
     <button class="ta-modal__close" data-close aria-label="Cerrar">×</button>
-    <h3>Flujo controlado con conectores (enlaces con sistemas o datos)</h3>
+    <h3>Flujo controlado con conectores</h3>
     <div class="ta-modal__sub">Profundización 2 de 2 · después del curso base</div>
     <h4>Qué se enseña</h4>
-    <p>Diseñar un flujo controlado con conectores (enlaces con sistemas o datos): entrada, validación, consulta, salida estructurada, registro y paso a humano cuando falta información.</p>
+    <p>Diseñar un flujo controlado con conectores: entrada, validación, consulta, salida estructurada, registro y paso a humano cuando falta información.</p>
     <h4>Ejemplo de flujo</h4>
     <p>Flujo para recibir una solicitud de un área, validar datos mínimos, pedir información faltante, consultar fuentes autorizadas y preparar una salida para revisión humana.</p>
     <h4>Entregable</h4>
-    <p>Mapa de flujo con conectores candidatos, reglas de seguridad, puntos de control y backlog (lista priorizada de pendientes) de piloto.</p>
+    <p>Mapa de flujo con conectores candidatos, reglas de seguridad, puntos de control y backlog de piloto.</p>
     <h4>Límite</h4>
     <p>Si el conector (enlace con un sistema o dato), licencia o política no está confirmado, se documenta como condición a validar con IEB.</p>
   </div>
@@ -217,21 +223,20 @@
         <a class="site-footer__link" href="claude-managers-admin.html">Claude Cowork</a>
       </nav>
       <nav>
-        <div class="site-footer__col-head">Material base</div>
-        <a class="site-footer__link" href="../../index.html">Programa origen</a>
-        <a class="site-footer__link" href="../../bootcamp.html">Bootcamp origen</a>
-        <a class="site-footer__link" href="../../workbook-introduccion.html">Workbook</a>
-        <a class="site-footer__link" href="../../playbook-jarvis-os.html">Guía operativa</a>
+        <div class="site-footer__col-head">Recorrido</div>
+        <a class="site-footer__link" href="index.html#intro">Intro</a>
+        <a class="site-footer__link" href="index.html#taller">Taller</a>
+        <a class="site-footer__link" href="index.html#clases">10 clases</a>
+        <a class="site-footer__link" href="index.html#validacion">Validación</a>
       </nav>
       <nav>
         <div class="site-footer__col-head">Conectar</div>
-        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
-        <a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=IEB%20%C2%B7%20Trabajar%20Amplificado">contacto@metodologia.info</a>
+        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">MetodologIA</a>
       </nav>
     </div>
     <div class="site-footer__bottom">
       <span>© 2026 MetodologIA. Copyleft.</span>
-      <span>IEB · COP 12M (pesos colombianos) por grupo · 2 clases a medida · curso 20h posible.</span>
+      <span>IEB · COP 12M por grupo · 2 clases a medida · curso 20h posible.</span>
     </div>
   </div>
 </footer>

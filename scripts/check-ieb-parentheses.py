@@ -71,10 +71,24 @@ def main() -> int:
         fail("logo IEB ausente")
     if 'href="#clases">10 clases</a>' not in html:
         fail("nav debe anunciar 10 clases")
+    if 'href="#taller">Taller</a>' not in html:
+        fail("nav debe anunciar taller")
     if "10 clases / 20 horas" not in html:
         fail("paquete debe declarar 10 clases / 20 horas")
     if "Clase 10 de 10" not in html or 'data-modal="c10"' not in html:
         fail("Clase 10 / proyecto final ausente")
+    if "contacto@" in html or "mailto:" in html:
+        fail("index no debe contener correo visible ni mailto")
+    if "Ejemplo financiero" in html or "P&amp;L" in visible_body_text(html):
+        fail("index debe usar dashboard simple como caso base, no ejemplo financiero")
+    if "dashboard simple" not in visible_body_text(html):
+        fail("index debe declarar dashboard simple como práctica base")
+    workshop_steps = re.findall(r'data-workshop-step="([1-8])"', html)
+    if sorted(workshop_steps) != [str(i) for i in range(1, 9)]:
+        fail("taller debe tener exactamente 8 pasos numerados")
+    for variant in ["Prompt normal", "Prompt normal con parámetros", "Prompt spec", "Dupla de biblioteca"]:
+        if variant not in html:
+            fail(f"variante de prompt ausente: {variant}")
     for old in ["9 clases", "Clase 1 de 9", "Clase 9 de 9"]:
         if old in html:
             fail(f"texto obsoleto en index: {old}")
@@ -95,6 +109,8 @@ def main() -> int:
     for path in PACKAGE_HTML:
         page = path.read_text(encoding="utf-8", errors="replace")
         visible = visible_body_text(page)
+        if "contacto@" in page or "mailto:" in page:
+            fail(f"correo o mailto improcedente en {path.relative_to(ROOT)}")
         if "9 clases" in page or re.search(r"Clase [1-9] de 9", page):
             fail(f"texto obsoleto de 9 clases en {path.relative_to(ROOT)}")
         if re.search(r"\barn[eé]s(?:es)?\b", visible, flags=re.I):
@@ -102,6 +118,13 @@ def main() -> int:
         for phrase in forbidden:
             if phrase.lower() in visible.lower() or phrase in page:
                 fail(f"lenguaje de arnes/barandas prohibido en {path.relative_to(ROOT)}: {phrase}")
+        repeated = []
+        for concept, variants in CANONICAL_DEFINITIONS.items():
+            count = sum(visible.count(variant) for variant in variants)
+            if count > 1:
+                repeated.append(f"{concept}: {count}")
+        if repeated:
+            fail(f"definiciones parenteticas repetidas en {path.relative_to(ROOT)}: " + ", ".join(repeated))
     failures: list[str] = []
     for concept, variants in CANONICAL_DEFINITIONS.items():
         count = sum(text.count(variant) for variant in variants)
