@@ -73,10 +73,15 @@ def main() -> int:
         fail("nav debe anunciar 10 clases")
     if 'href="#taller">Taller</a>' not in html:
         fail("nav debe anunciar taller")
+    if 'href="#cierre">Cierre</a>' not in html:
+        fail("nav debe anunciar cierre")
     if "10 clases / 20 horas" not in html:
         fail("paquete debe declarar 10 clases / 20 horas")
     if "Clase 10 de 10" not in html or 'data-modal="c10"' not in html:
         fail("Clase 10 / proyecto final ausente")
+    for token in ["Decisión ejecutiva", "grupo piloto", "Validar grupo piloto", "Criterio de aceptación"]:
+        if token not in html:
+            fail(f"cierre comercial ausente: {token}")
     if "contacto@" in html or "mailto:" in html:
         fail("index no debe contener correo visible ni mailto")
     if "Ejemplo financiero" in html or "P&amp;L" in visible_body_text(html):
