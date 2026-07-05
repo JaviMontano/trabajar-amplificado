@@ -65,9 +65,31 @@
     .pe-module-grid{display:grid;gap:.8rem;margin-top:1.5rem}
     @media(min-width:760px){.pe-module-grid{grid-template-columns:repeat(2,1fr)}}
     @media(min-width:1120px){.pe-module-grid{grid-template-columns:repeat(4,1fr)}}
+    .pe-module,.pe-resource{background:var(--brand-surface,rgba(255,255,255,.86));border:1px solid var(--brand-border,rgba(15,23,42,.12));border-radius:18px}
     .pe-module{padding:.95rem 1rem}
     .pe-module b{display:block;color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-size:.92rem;margin-bottom:.2rem}
     .pe-module span{display:block;color:var(--brand-text-soft);font-size:.82rem;line-height:1.45}
+    .pe-open{width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;appearance:none}
+    .pe-open:hover,.pe-open:focus-visible{transform:translateY(-2px);border-color:var(--brand-border-hover,rgba(224,180,0,.45));outline:0}
+    .pe-open:focus-visible{box-shadow:0 0 0 3px rgba(255,215,0,.28)}
+    .pe-resource-grid{display:grid;gap:1rem;margin-top:1.5rem}
+    @media(min-width:760px){.pe-resource-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1120px){.pe-resource-grid{grid-template-columns:repeat(4,1fr)}}
+    .pe-resource{padding:1.15rem 1.15rem 1.2rem}
+    .pe-resource__status{display:inline-block;margin-top:.8rem;font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.58rem;font-weight:900;color:var(--brand-gold-text)}
+    .pe-modal{width:min(92vw,680px);border:1px solid var(--brand-border,rgba(15,23,42,.14));border-radius:18px;padding:0;background:var(--brand-surface,#fff);color:var(--brand-text,#0A122A);box-shadow:0 28px 80px rgba(0,0,0,.28)}
+    .pe-modal::backdrop{background:rgba(10,18,42,.58);backdrop-filter:blur(4px)}
+    .pe-modal__inner{padding:1.25rem}
+    @media(min-width:720px){.pe-modal__inner{padding:1.55rem}}
+    .pe-modal__head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+    .pe-modal__head h3{margin:0;font-family:'Poppins',sans-serif;font-size:1.35rem;line-height:1.18}
+    .pe-modal__close{display:grid;place-items:center;flex:0 0 auto;width:38px;height:38px;border:1px solid var(--brand-border,rgba(15,23,42,.14));border-radius:12px;background:transparent;color:var(--brand-text);font-size:1.2rem;cursor:pointer}
+    .pe-modal__close:hover,.pe-modal__close:focus-visible{border-color:var(--brand-gold-text);outline:0}
+    .pe-modal__grid{display:grid;gap:.9rem}
+    @media(min-width:640px){.pe-modal__grid{grid-template-columns:repeat(2,1fr)}}
+    .pe-modal__item{padding:.9rem;border:1px solid var(--brand-border,rgba(15,23,42,.12));border-radius:14px;background:rgba(255,215,0,.05)}
+    .pe-modal__item b{display:block;margin-bottom:.35rem;font-family:'Poppins',sans-serif;color:var(--brand-gold-text)}
+    .pe-modal__item p{margin:0;color:var(--brand-text-soft);font-size:.9rem;line-height:1.55}
     .pe-cta-band{padding:2rem 1.5rem;text-align:center}
     .pe-cta-band .home-hero__ctas{justify-content:center}
     .pe-list{margin:.4rem 0 0;padding-left:1.15rem;color:var(--brand-text-soft);line-height:1.65}
@@ -97,6 +119,7 @@
   <nav class="site-header__nav" aria-label="Navegación principal">
     <a class="site-header__nav-link" href="#ruta">Ruta</a>
     <a class="site-header__nav-link" href="#entregables">Entregables</a>
+    <a class="site-header__nav-link" href="#recursos">Recursos</a>
     <a class="site-header__nav-link" href="#inversion">Inversión</a>
     <a class="site-header__nav-link" href="#convocatoria">Convocatoria</a>
     <a class="site-header__nav-link" href="programa.html">Trabajo Amplificado</a>
@@ -223,29 +246,47 @@
       <h2 class="h2" style="margin:1rem 0 .5rem;">Los módulos del <span class="gradient-text">recorrido</span></h2>
       <p class="lead">El orden puede ajustarse por cohorte, pero el recorrido mantiene una lógica: base, práctica, trabajo agéntico, liderazgo y cierre con evidencia.</p>
       <div class="pe-module-grid">
-        <div class="x-card pe-module"><b>M1 · De Ocupado a Productivo</b><span>Onboarding y entorno digital.</span></div>
-        <div class="x-card pe-module"><b>M2 · Recibimiento y Recepción</b><span>Inputs, fuentes, contexto y restricciones.</span></div>
-        <div class="x-card pe-module"><b>M3 · Del Automatismo y la Presencia</b><span>Salir del piloto automático y trabajar con atención.</span></div>
-        <div class="x-card pe-module"><b>M4 · Del Cumplimiento a la Excelencia</b><span>Entregables con criterio, revisión y calidad.</span></div>
-        <div class="x-card pe-module"><b>M5 · De Trabajar Duro a Trabajar Sin Fricción</b><span>Convertir desgaste operativo en sistema de trabajo.</span></div>
-        <div class="x-card pe-module"><b>M6 · Jornadas Estratégicas</b><span>Bloques de trabajo con IA y decisión humana.</span></div>
-        <div class="x-card pe-module"><b>M7 · Alto Desempeño y Alto Rendimiento</b><span>Foco, mejora y rendimiento sostenible.</span></div>
-        <div class="x-card pe-module"><b>M8 · De Bocetos a Prototipos con IA</b><span>De idea a prototipo útil y revisable.</span></div>
-        <div class="x-card pe-module"><b>M9 · Multimedia con IA</b><span>Activos visuales y narrativos con intención.</span></div>
-        <div class="x-card pe-module"><b>M10 · (Mini) Apps con IA</b><span>Herramientas ligeras para casos concretos.</span></div>
-        <div class="x-card pe-module"><b>M11 · Creación de Asistentes y Skills a Medida</b><span>Asistentes con contexto, rol y criterios.</span></div>
-        <div class="x-card pe-module"><b>M12 · Automatización de Flujos con IA</b><span>Automatizar sin perder control humano.</span></div>
-        <div class="x-card pe-module"><b>M13 · Agentes a Medida</b><span>Agentes con objetivos, límites y revisión.</span></div>
-        <div class="x-card pe-module"><b>M14 · Orquestación (Multi) Agéntica</b><span>Roles, herramientas y cierres trazables.</span></div>
-        <div class="x-card pe-module"><b>M15 · Entendiendo el Empoderamiento del Programa</b><span>Integrar capacidades, criterio y autonomía.</span></div>
-        <div class="x-card pe-module"><b>M16 · Embajador del Método</b><span>Aprendizajes, resultados y siguiente ciclo.</span></div>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m1"><b>M1 · De Ocupado a Productivo</b><span>Onboarding y entorno digital.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m2"><b>M2 · Recibimiento y Recepción</b><span>Inputs, fuentes, contexto y restricciones.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m3"><b>M3 · Del Automatismo y la Presencia</b><span>Salir del piloto automático y trabajar con atención.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m4"><b>M4 · Del Cumplimiento a la Excelencia</b><span>Entregables con criterio, revisión y calidad.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m5"><b>M5 · De Trabajar Duro a Trabajar Sin Fricción</b><span>Convertir desgaste operativo en sistema de trabajo.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m6"><b>M6 · Jornadas Estratégicas</b><span>Bloques de trabajo con IA y decisión humana.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m7"><b>M7 · Alto Desempeño y Alto Rendimiento</b><span>Foco, mejora y rendimiento sostenible.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m8"><b>M8 · De Bocetos a Prototipos con IA</b><span>De idea a prototipo útil y revisable.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m9"><b>M9 · Multimedia con IA</b><span>Activos visuales y narrativos con intención.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m10"><b>M10 · (Mini) Apps con IA</b><span>Herramientas ligeras para casos concretos.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m11"><b>M11 · Creación de Asistentes y Skills a Medida</b><span>Asistentes con contexto, rol y criterios.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m12"><b>M12 · Automatización de Flujos con IA</b><span>Automatizar sin perder control humano.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m13"><b>M13 · Agentes a Medida</b><span>Agentes con objetivos, límites y revisión.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m14"><b>M14 · Orquestación (Multi) Agéntica</b><span>Roles, herramientas y cierres trazables.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m15"><b>M15 · Entendiendo el Empoderamiento del Programa</b><span>Integrar capacidades, criterio y autonomía.</span></button>
+        <button class="x-card pe-module pe-open" type="button" data-modal="modal-m16"><b>M16 · Embajador del Método</b><span>Aprendizajes, resultados y siguiente ciclo.</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="recursos">
+    <div class="container">
+      <span class="eyebrow">Recursos · 06</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Recursos y <span class="gradient-text">aceleradores</span></h2>
+      <p class="lead">La página y el formulario son públicos. Los recursos de trabajo se habilitan como parte del proceso para participantes registrados, evitando publicar enlaces sensibles o desactualizados.</p>
+      <div class="pe-resource-grid">
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">GPT</span><h3 class="pe-card__title">Prompting Pro GPT</h3><p class="pe-card__body">Asistente para estructurar instrucciones, criterio de salida y ciclos de mejora.</p><span class="pe-resource__status">Acceso para registrados</span></article>
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">Notebook</span><h3 class="pe-card__title">Empoderamiento e IA</h3><p class="pe-card__body">Base viva de conocimiento para estudiar, contrastar fuentes y sostener trazabilidad.</p><span class="pe-resource__status">Acceso para registrados</span></article>
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">Video</span><h3 class="pe-card__title">Contexto del programa</h3><p class="pe-card__body">Material audiovisual para entender el sentido de la ruta antes de entrar a práctica.</p><span class="pe-resource__status">Acceso para registrados</span></article>
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">Carta</span><h3 class="pe-card__title">Carta de bienvenida</h3><p class="pe-card__body">Marco de intención, compromisos de aprendizaje y criterios para aprovechar el proceso.</p><span class="pe-resource__status">Acceso para registrados</span></article>
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">Diagnóstico</span><h3 class="pe-card__title">Brújula de entrada</h3><p class="pe-card__body">Preguntas para ubicar foco, fit, disponibilidad y punto de partida operativo.</p><span class="pe-resource__status">En talleres intro</span></article>
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">Aceleradores</span><h3 class="pe-card__title">Plantillas y flujos</h3><p class="pe-card__body">Prompts, checklists, asistentes y workflows para producir con menos fricción.</p><span class="pe-resource__status">Durante el programa</span></article>
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">Repositorio</span><h3 class="pe-card__title">Repositorio virtual</h3><p class="pe-card__body">Materiales, grabaciones, entregables y referencias curadas por cohorte.</p><span class="pe-resource__status">Acceso para registrados</span></article>
+        <article class="x-card pe-resource"><span class="pe-card__eyebrow">Formulario</span><h3 class="pe-card__title">Agendar talleres intro</h3><p class="pe-card__body">Puente operativo para elegir taller, dejar contexto e iniciar la conversación.</p><a class="pe-note" href="https://forms.gle/KBFwqYVFjn1E7Ph58" target="_blank" rel="noopener">Abrir formulario</a></article>
       </div>
     </div>
   </section>
 
   <section class="section" id="inversion">
     <div class="container">
-      <span class="eyebrow">Inversión · 06</span>
+      <span class="eyebrow">Inversión · 07</span>
       <h2 class="h2" style="margin:1rem 0 .5rem;">Inversión <span class="gradient-text">referencial 2026</span></h2>
       <p class="lead">Los talleres intro se viven sin riesgo ni fricción. La inscripción al programa completo se confirma con cupo, modalidad de pago y cierre formal.</p>
       <div class="pe-pricing">
@@ -275,7 +316,7 @@
   <section class="section" id="convocatoria">
     <div class="container">
       <div class="x-card pe-cta-band">
-        <span class="eyebrow">Convocatoria abierta · 07</span>
+        <span class="eyebrow">Convocatoria abierta · 08</span>
         <h2 class="h2" style="margin:1rem auto .5rem;max-width:42rem;">Empieza por el Módulo 1, <span class="gradient-text">sin riesgo ni fricción</span></h2>
         <p class="lead" style="max-width:42rem;margin:0 auto 1.4rem;">Puedes agendar los talleres intro sin riesgo ni fricción mediante el formulario de talleres/onboarding. El 30 de julio de 2026 es el límite de inscripción al programa completo.</p>
         <div class="home-hero__ctas">
@@ -288,7 +329,7 @@
 
   <section class="section" id="limites">
     <div class="container">
-      <span class="eyebrow">Claridad · 08</span>
+      <span class="eyebrow">Claridad · 09</span>
       <h2 class="h2" style="margin:1rem 0 .5rem;">Lo que cuidamos <span class="gradient-text">desde el inicio</span></h2>
       <div class="pe-grid pe-grid--3" style="margin-top:1.5rem;">
         <article class="x-card pe-card"><span class="pe-card__eyebrow">Sin promesas infladas</span><h3 class="pe-card__title">No hay ROI garantizado</h3><p class="pe-card__body">El valor depende de tu rol, práctica, disponibilidad y calidad de implementación.</p></article>
@@ -298,6 +339,198 @@
     </div>
   </section>
 </main>
+
+<dialog class="pe-modal" id="modal-m1" aria-labelledby="modal-m1-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m1-title">M1 · De Ocupado a Productivo</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Ordenar entorno, foco y expectativas para empezar desde método, no desde urgencia.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Mapa de ocupación, fricciones y prioridades de trabajo.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Brújula de entrada, checklist de entorno y plantilla de foco semanal.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Queda claro qué quieres simplificar y qué taller o ruta te conviene activar.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m2" aria-labelledby="modal-m2-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m2-title">M2 · Recibimiento y Recepción</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Convertir información dispersa en contexto usable para IA y trabajo humano.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Inventario de fuentes, restricciones, decisiones y próximos pasos.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Plantilla de intake, matriz de fuentes y prompt de síntesis inicial.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Tu caso queda documentado con insumos suficientes para trabajar sin repetir explicaciones.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m3" aria-labelledby="modal-m3-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m3-title">M3 · Del Automatismo y la Presencia</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Reconocer hábitos automáticos y diseñar pausas de decisión antes de producir.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Rediseño de una rutina de trabajo con puntos de atención, revisión y cierre.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Diario de presencia, prompts de reflexión y checklist de calidad antes de enviar.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Una rutina ajustada que reduce ruido y mejora la calidad de tus decisiones.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m4" aria-labelledby="modal-m4-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m4-title">M4 · Del Cumplimiento a la Excelencia</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Pasar de entregar por cumplir a producir con criterios explícitos de calidad.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Mejora de un entregable real con rúbrica, revisión y versión final.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Rúbrica 10/10, prompt de crítica y matriz de aceptación.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>El entregable queda evaluado con criterios medibles y decisiones justificadas.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m5" aria-labelledby="modal-m5-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m5-title">M5 · De Trabajar Duro a Trabajar Sin Fricción</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Detectar desgaste repetitivo y convertirlo en sistema, guía o flujo reutilizable.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Mapa de fricciones y rediseño de un proceso cotidiano.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Canvas de fricción, checklist de delegabilidad y prompt de simplificación.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Un proceso queda más claro, liviano y preparado para asistencia o automatización.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m6" aria-labelledby="modal-m6-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m6-title">M6 · Jornadas Estratégicas</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Diseñar bloques de trabajo profundo con IA, fuentes y decisiones humanas.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Planeación y ejecución de una jornada estratégica sobre un reto real.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Agenda de jornada, prompts de investigación y formato de decisión.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Sales con una decisión, un entregable o una hipótesis lista para validar.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m7" aria-labelledby="modal-m7-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m7-title">M7 · Alto Desempeño y Alto Rendimiento</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Equilibrar intensidad, foco y recuperación para sostener rendimiento sin quemarte.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Diseño de una cadencia semanal con métricas simples de energía y avance.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Tablero de hábitos, checklist de carga y prompt de revisión semanal.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Tu sistema personal distingue urgencia, prioridad, energía y valor.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m8" aria-labelledby="modal-m8-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m8-title">M8 · De Bocetos a Prototipos con IA</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Convertir una idea borrosa en un prototipo útil, visible y revisable.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Prototipo de flujo, herramienta, pieza o experiencia para un caso propio.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Brief de prototipo, prompts de wireframe y matriz de feedback.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>El prototipo puede ser probado por otra persona con instrucciones claras.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m9" aria-labelledby="modal-m9-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m9-title">M9 · Multimedia con IA</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Crear piezas visuales y narrativas con intención, coherencia y control de calidad.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Producción de una pieza multimedia alineada a un objetivo de comunicación.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Guion breve, prompt visual, checklist de marca y matriz de revisión.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>La pieza comunica un mensaje claro y puede sostener una conversación real.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m10" aria-labelledby="modal-m10-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m10-title">M10 · (Mini) Apps con IA</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Diseñar herramientas ligeras que resuelven una necesidad específica sin sobreconstruir.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Mini app, calculadora, formulario guiado o interfaz simple para tu caso.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Brief funcional, criterios de UX y prompts de generación/revisión.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>La mini app tiene usuario, propósito, entrada, salida y criterio de aceptación.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m11" aria-labelledby="modal-m11-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m11-title">M11 · Creación de Asistentes y Skills a Medida</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Configurar asistentes con rol, contexto, límites, herramientas y criterios de salida.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Asistente o skill documentado para una tarea repetible de tu trabajo.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Ficha de asistente, contrato de comportamiento y pruebas de respuesta.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>El asistente puede operar con instrucciones claras y revisión humana explícita.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m12" aria-labelledby="modal-m12-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m12-title">M12 · Automatización de Flujos con IA</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Automatizar pasos repetitivos sin perder trazabilidad, control ni criterio humano.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Workflow diseñado con disparador, pasos, revisión y salida esperada.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Mapa de proceso, criterios de automatización y checklist de riesgos.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>El flujo indica qué se automatiza, qué se revisa y cuándo escalar a humano.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m13" aria-labelledby="modal-m13-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m13-title">M13 · Agentes a Medida</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Pasar de asistentes reactivos a agentes con objetivo, memoria de tarea y límites.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Diseño de un agente para investigar, preparar, revisar o acompañar una tarea.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Contrato de agente, matriz de herramientas y protocolo de verificación.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>El agente tiene misión acotada, inputs, límites y señal de done.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m14" aria-labelledby="modal-m14-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m14-title">M14 · Orquestación (Multi) Agéntica</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Coordinar roles, herramientas, verificadores y handoffs para resolver tareas complejas.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Diseño de una mini orquestación con productor, soporte y verificador.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Mapa de agentes, protocolo de handoff y matriz de riesgos.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>La orquestación separa ejecución y verificación con evidencia de salida.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m15" aria-labelledby="modal-m15-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m15-title">M15 · Entendiendo el Empoderamiento del Programa</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Integrar método, IA, autonomía y responsabilidad en una forma propia de trabajar.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Reflexión aplicada sobre capacidades instaladas, límites y siguiente etapa.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Mapa de capacidades, bitácora de aprendizaje y brújula de continuidad.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Puedes explicar qué cambió en tu trabajo y qué sostendrás después del programa.</p></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="pe-modal" id="modal-m16" aria-labelledby="modal-m16-title">
+  <div class="pe-modal__inner">
+    <div class="pe-modal__head"><h3 id="modal-m16-title">M16 · Embajador del Método</h3><button class="pe-modal__close" type="button" data-close aria-label="Cerrar">×</button></div>
+    <div class="pe-modal__grid">
+      <div class="pe-modal__item"><b>Qué aprendes</b><p>Convertir tu experiencia en una narrativa clara para compartir, enseñar o acompañar.</p></div>
+      <div class="pe-modal__item"><b>Práctica</b><p>Cierre de portafolio, presentación de aprendizajes y ruta de contribución a la red.</p></div>
+      <div class="pe-modal__item"><b>Aceleradores</b><p>Plantilla de caso, guion de presentación y checklist de cierre.</p></div>
+      <div class="pe-modal__item"><b>Cierre</b><p>Queda una versión comunicable de tu método, tus activos y tu siguiente ciclo.</p></div>
+    </div>
+  </div>
+</dialog>
 
 <triple-toggle class="pe-toggle" aria-label="Preferencias de tema">
   <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
@@ -314,6 +547,7 @@
         <div class="site-footer__col-head">Programa</div>
         <a class="site-footer__link" href="#ruta">Ruta</a>
         <a class="site-footer__link" href="#entregables">Entregables</a>
+        <a class="site-footer__link" href="#recursos">Recursos</a>
         <a class="site-footer__link" href="#inversion">Inversión</a>
         <a class="site-footer__link" href="#convocatoria">Convocatoria</a>
       </nav>
@@ -338,6 +572,24 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  document.querySelectorAll('[data-modal]').forEach(function(trigger){
+    trigger.addEventListener('click', function(){
+      var modal=document.getElementById(trigger.getAttribute('data-modal'));
+      if(modal && typeof modal.showModal === 'function') modal.showModal();
+    });
+  });
+  document.querySelectorAll('.pe-modal').forEach(function(modal){
+    modal.addEventListener('click', function(event){
+      if(event.target === modal) modal.close();
+    });
+    modal.querySelectorAll('[data-close]').forEach(function(closeBtn){
+      closeBtn.addEventListener('click', function(){ modal.close(); });
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var html=document.documentElement;
