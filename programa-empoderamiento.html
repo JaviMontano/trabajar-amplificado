@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-page-slug="programa-empoderamiento">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Programa de Empoderamiento | MetodologIA</title>
+  <meta name="description" content="Programa de Empoderamiento de MetodologIA: 16 semanas para construir soberanía digital con método, IA, asistentes, automatizaciones y evidencia verificable.">
+  <link rel="canonical" href="https://javimontano.github.io/trabajar-amplificado/programa-empoderamiento.html">
+  <link rel="alternate" hreflang="es" href="https://javimontano.github.io/trabajar-amplificado/programa-empoderamiento.html">
+  <link rel="alternate" hreflang="x-default" href="https://javimontano.github.io/trabajar-amplificado/programa-empoderamiento.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javimontano.github.io/trabajar-amplificado/programa-empoderamiento.html">
+  <meta property="og:site_name" content="MetodologIA">
+  <meta property="og:title" content="Programa de Empoderamiento | MetodologIA">
+  <meta property="og:description" content="Método primero, IA después. Una ruta de 16 semanas para pasar de usar herramientas a gobernar sistemas de trabajo.">
+
+  <script>
+    (function () {
+      var theme = localStorage.getItem('mdg_theme');
+      document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
+      document.documentElement.lang = 'es';
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    .pe-kpis{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:1.6rem}
+    @media(min-width:720px){.pe-kpis{grid-template-columns:repeat(4,1fr)}}
+    .pe-kpi{padding:1.05rem 1.1rem;text-align:left}
+    .pe-kpi__num{font-family:'Poppins',sans-serif;font-size:2rem;line-height:1;font-weight:900;color:var(--brand-gold-text)}
+    .pe-kpi__label{margin-top:.45rem;font-family:'Trebuchet MS',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.13em;color:var(--brand-muted);font-weight:700}
+    .pe-grid{display:grid;gap:1rem}
+    @media(min-width:760px){.pe-grid--2{grid-template-columns:repeat(2,1fr)}.pe-grid--3{grid-template-columns:repeat(3,1fr)}.pe-grid--4{grid-template-columns:repeat(4,1fr)}}
+    .pe-card{padding:1.25rem 1.25rem 1.3rem}
+    .pe-card__eyebrow{display:block;margin-bottom:.5rem;font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.62rem;font-weight:800;color:var(--brand-gold-text)}
+    .pe-card__title{margin:0 0 .45rem;font-family:'Poppins',sans-serif;font-size:1.04rem;line-height:1.25;font-weight:800;color:var(--brand-text)}
+    .pe-card__body{margin:0;color:var(--brand-text-soft);font-size:.92rem;line-height:1.58}
+    .pe-note{display:inline-block;margin-top:.8rem;padding:.44rem .78rem;border-radius:99px;background:rgba(255,215,0,.1);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));color:var(--brand-gold-text);font-size:.78rem;font-weight:700}
+    .pe-route{display:grid;gap:1rem;margin-top:1.5rem}
+    .pe-route__item{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:flex-start;padding:1.15rem 1.2rem}
+    .pe-route__num{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(255,215,0,.16);border:1px solid var(--brand-border-hover,rgba(224,180,0,.45));font-family:'Poppins',sans-serif;font-weight:900;color:var(--brand-gold-text)}
+    .pe-route__item h3{margin:.05rem 0 .3rem;font-size:1.02rem}
+    .pe-route__item p{margin:0;color:var(--brand-text-soft);font-size:.92rem;line-height:1.58}
+    .pe-pricing{display:grid;gap:1rem;margin-top:1.5rem}
+    @media(min-width:860px){.pe-pricing{grid-template-columns:1.1fr .9fr .9fr}}
+    .pe-price{padding:1.35rem 1.25rem}
+    .pe-price--feat{outline:2px solid var(--brand-gold-text);outline-offset:-2px;background:rgba(255,215,0,.06)}
+    .pe-price__name{font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;line-height:1.2}
+    .pe-price__amount{margin:.5rem 0 .25rem;font-family:'Poppins',sans-serif;font-size:2rem;line-height:1;font-weight:900;color:var(--brand-gold-text)}
+    .pe-price__per{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.62rem;font-weight:800;color:var(--brand-muted)}
+    .pe-price p{margin:.7rem 0 0;color:var(--brand-text-soft);font-size:.9rem;line-height:1.55}
+    .pe-module-grid{display:grid;gap:.8rem;margin-top:1.5rem}
+    @media(min-width:760px){.pe-module-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1120px){.pe-module-grid{grid-template-columns:repeat(4,1fr)}}
+    .pe-module{padding:.95rem 1rem}
+    .pe-module b{display:block;color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-size:.92rem;margin-bottom:.2rem}
+    .pe-module span{display:block;color:var(--brand-text-soft);font-size:.82rem;line-height:1.45}
+    .pe-cta-band{padding:2rem 1.5rem;text-align:center}
+    .pe-cta-band .home-hero__ctas{justify-content:center}
+    .pe-list{margin:.4rem 0 0;padding-left:1.15rem;color:var(--brand-text-soft);line-height:1.65}
+    .pe-list li{margin:.35rem 0}
+    triple-toggle.pe-toggle{grid-template-columns:44px!important;width:auto!important;min-width:53px!important}
+    .x-card::after{content:none!important;display:none!important}
+  </style>
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-header__brand" aria-label="MetodologIA — Inicio">
+    <span class="site-header__logo-wrap" aria-hidden="true">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
+        <defs><linearGradient id="hdrGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
+        <rect width="36" height="36" rx="10" fill="url(#hdrGrad)"/>
+        <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+        <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+      </svg>
+    </span>
+    <span class="site-header__text">
+      <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
+      <span class="site-header__role">Programa de Empoderamiento</span>
+    </span>
+  </a>
+  <nav class="site-header__nav" aria-label="Navegación principal">
+    <a class="site-header__nav-link" href="#ruta">Ruta</a>
+    <a class="site-header__nav-link" href="#entregables">Entregables</a>
+    <a class="site-header__nav-link" href="#inversion">Inversión</a>
+    <a class="site-header__nav-link" href="#convocatoria">Convocatoria</a>
+    <a class="site-header__nav-link" href="programa.html">Trabajo Amplificado</a>
+  </nav>
+  <a class="site-header__cta" href="#convocatoria">Reservar cupo →</a>
+</header>
+
+<main id="main" class="main">
+  <section class="section" id="hero">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Programa insignia · MetodologIA</span>
+      <h1 class="h1" style="margin:1rem auto;max-width:50rem;">Programa de <span class="gradient-text">Empoderamiento</span></h1>
+      <p class="lead" style="max-width:46rem;margin:0 auto 1rem;">16 semanas para construir una forma de trabajo autónoma: método, criterio, asistentes, automatizaciones, mini apps y evidencia verificable. Método primero, IA después.</p>
+      <p class="eyebrow" style="margin-bottom:1.6rem;">Soberanía digital · Trabajo aplicado · Comunidad</p>
+      <div class="home-hero__ctas" style="justify-content:center;">
+        <a href="https://forms.gle/KBFwqYVFjn1E7Ph58" target="_blank" rel="noopener" class="home-cta home-cta--primary">Reservar taller intro sin inversión económica →</a>
+        <a href="#ruta" class="home-cta home-cta--secondary">Ver ruta del programa</a>
+      </div>
+      <div class="pe-kpis">
+        <div class="x-card pe-kpi"><div class="pe-kpi__num">16</div><div class="pe-kpi__label">semanas</div></div>
+        <div class="x-card pe-kpi"><div class="pe-kpi__num">6 h</div><div class="pe-kpi__label">por semana</div></div>
+        <div class="x-card pe-kpi"><div class="pe-kpi__num">14</div><div class="pe-kpi__label">módulos</div></div>
+        <div class="x-card pe-kpi"><div class="pe-kpi__num">M0</div><div class="pe-kpi__label">abierto y gratuito</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="filosofia">
+    <div class="container">
+      <span class="eyebrow">Filosofía · 01</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Soberanía <span class="gradient-text">Digital</span></h2>
+      <p class="lead">La meta no es aprender trucos de IA. La meta es desarrollar criterio para gobernar herramientas, diseñar sistemas propios y convertir trabajo repetitivo en activos reutilizables.</p>
+      <div class="pe-grid pe-grid--3" style="margin-top:1.5rem;">
+        <article class="x-card pe-card">
+          <span class="pe-card__eyebrow">Criterio</span>
+          <h3 class="pe-card__title">La IA no reemplaza tu juicio</h3>
+          <p class="pe-card__body">Lo amplifica cuando sabes darle contexto, fuentes, límites y criterios de revisión.</p>
+        </article>
+        <article class="x-card pe-card">
+          <span class="pe-card__eyebrow">Sistema</span>
+          <h3 class="pe-card__title">De prompts sueltos a método</h3>
+          <p class="pe-card__body">Pasas de improvisar conversaciones a diseñar flujos, asistentes, plantillas y entregables repetibles.</p>
+        </article>
+        <article class="x-card pe-card">
+          <span class="pe-card__eyebrow">Evidencia</span>
+          <h3 class="pe-card__title">Cierre verificable</h3>
+          <p class="pe-card__body">Cada avance debe dejar rastro: fuente, decisión, salida revisable y siguiente acción.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ruta">
+    <div class="container">
+      <span class="eyebrow">Ruta · 02</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Una ruta de 16 semanas, <span class="gradient-text">paso a paso</span></h2>
+      <p class="lead">El programa combina 3 horas grupales y 3 horas de práctica personal por semana. No necesitas experiencia previa con IA; sí necesitas disposición para practicar, documentar y cerrar entregables.</p>
+      <div class="pe-route">
+        <article class="x-card pe-route__item">
+          <div class="pe-route__num">0</div>
+          <div>
+            <h3>Módulo 0 · Taller intro</h3>
+            <p>Entrada abierta y gratuita para entender el método, validar fit y elegir el siguiente paso. Es sin inversión económica y funciona como punto de orientación antes de comprometerte con el programa completo.</p>
+          </div>
+        </article>
+        <article class="x-card pe-route__item">
+          <div class="pe-route__num">1</div>
+          <div>
+            <h3>Instalar método y entorno</h3>
+            <p>Ordenas tu contexto, defines objetivos, habilitas tu entorno de trabajo y aprendes a usar IA con estructura, no con ruido.</p>
+          </div>
+        </article>
+        <article class="x-card pe-route__item">
+          <div class="pe-route__num">2</div>
+          <div>
+            <h3>Construir capacidades aplicadas</h3>
+            <p>Diseñas prompts, asistentes, workflows, automatizaciones, análisis, piezas visuales y sistemas guiados para tu trabajo real.</p>
+          </div>
+        </article>
+        <article class="x-card pe-route__item">
+          <div class="pe-route__num">3</div>
+          <div>
+            <h3>Cerrar con portafolio y evidencia</h3>
+            <p>Conviertes lo aprendido en activos verificables: entregables, criterios de revisión, casos aplicados y una ruta de mejora posterior.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="para-quien">
+    <div class="container">
+      <span class="eyebrow">Audiencia · 03</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Para quién es <span class="gradient-text">este programa</span></h2>
+      <p class="lead">Para personas que quieren recuperar agencia sobre su trabajo: profesionales, líderes, emprendedores, consultores, creadores, facilitadores y equipos que necesitan convertir intención en sistemas.</p>
+      <div class="pe-grid pe-grid--4" style="margin-top:1.5rem;">
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Profesionales</span><h3 class="pe-card__title">Trabajo con más criterio</h3><p class="pe-card__body">Para quien quiere dejar de reaccionar y empezar a diseñar su forma de operar.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Líderes</span><h3 class="pe-card__title">Equipos potenciados</h3><p class="pe-card__body">Para quien necesita mejorar coordinación, calidad, documentación y velocidad sin perder humanidad.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Emprendedores</span><h3 class="pe-card__title">Capacidad instalada</h3><p class="pe-card__body">Para quien quiere construir activos, no depender siempre de terceros para avanzar.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Facilitadores</span><h3 class="pe-card__title">Método transferible</h3><p class="pe-card__body">Para quien quiere enseñar, acompañar o replicar prácticas con una base más sólida.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="entregables">
+    <div class="container">
+      <span class="eyebrow">Entregables · 04</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Sales con <span class="gradient-text">activos de trabajo</span></h2>
+      <p class="lead">El programa no está diseñado para acumular apuntes. Cada bloque apunta a dejar algo que puedas usar, revisar y mejorar.</p>
+      <div class="pe-grid pe-grid--3" style="margin-top:1.5rem;">
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Prompts</span><h3 class="pe-card__title">Batería reutilizable</h3><p class="pe-card__body">Instrucciones, plantillas y estructuras para producir con consistencia.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Asistentes</span><h3 class="pe-card__title">IA configurada a tu caso</h3><p class="pe-card__body">Asistentes con rol, contexto, límites y criterios de salida.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Workflows</span><h3 class="pe-card__title">Procesos que se repiten</h3><p class="pe-card__body">Flujos guiados para investigar, escribir, analizar, sintetizar y operar.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Automatización</span><h3 class="pe-card__title">Menos fricción operativa</h3><p class="pe-card__body">Automatizaciones y cadencias para reducir trabajo manual repetitivo.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Mini apps</span><h3 class="pe-card__title">Herramientas ligeras</h3><p class="pe-card__body">Prototipos y artefactos interactivos para resolver necesidades concretas.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Portafolio</span><h3 class="pe-card__title">Evidencia verificable</h3><p class="pe-card__body">Un cierre con entregables, decisiones y aprendizaje documentado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="modulos">
+    <div class="container">
+      <span class="eyebrow">Mapa académico · 05</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Los módulos del <span class="gradient-text">recorrido</span></h2>
+      <p class="lead">El orden puede ajustarse por cohorte, pero el recorrido mantiene una lógica: base, práctica, trabajo agéntico, liderazgo y cierre con evidencia.</p>
+      <div class="pe-module-grid">
+        <div class="x-card pe-module"><b>M1 · De Ocupado a Productivo</b><span>Onboarding y entorno digital.</span></div>
+        <div class="x-card pe-module"><b>M2 · Propósito y retorno</b><span>Objetivos, hitos y valor tangible sin prometer resultados automáticos.</span></div>
+        <div class="x-card pe-module"><b>M3 · Pensamiento Estructurado</b><span>Orden mental, problemas y prompts con forma.</span></div>
+        <div class="x-card pe-module"><b>M4 · Deep Research</b><span>Investigación con fuentes, síntesis y trazabilidad.</span></div>
+        <div class="x-card pe-module"><b>M5 · Copywriting Sistémico</b><span>Voz profesional, claridad y comunicación accionable.</span></div>
+        <div class="x-card pe-module"><b>M6 · Data Intelligence</b><span>Análisis y lectura de datos sin depender de programación avanzada.</span></div>
+        <div class="x-card pe-module"><b>M7 · Visual Engine</b><span>Imagen, video y piezas visuales con intención.</span></div>
+        <div class="x-card pe-module"><b>M8 · Autonomous Agents</b><span>De usuario de IA a diseñador de agentes y asistentes.</span></div>
+        <div class="x-card pe-module"><b>M9 · Automatización</b><span>Workflows que reducen fricción y repiten calidad.</span></div>
+        <div class="x-card pe-module"><b>M10 · Equipos y Liderazgo IA</b><span>Adopción, coordinación y criterio en equipo.</span></div>
+        <div class="x-card pe-module"><b>M11 · Marca Personal</b><span>Autoridad, narrativa y activos de posicionamiento.</span></div>
+        <div class="x-card pe-module"><b>M12 · Innovación Estratégica</b><span>De idea a propuesta con estructura y evidencia.</span></div>
+        <div class="x-card pe-module"><b>M13 · Ética y Soberanía</b><span>Decisiones responsables con tecnología.</span></div>
+        <div class="x-card pe-module"><b>M14 · Portafolio y cierre</b><span>Entrega final, evidencia y siguiente ciclo.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inversion">
+    <div class="container">
+      <span class="eyebrow">Inversión · 06</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Inversión <span class="gradient-text">referencial 2026</span></h2>
+      <p class="lead">Los talleres intro son sin inversión económica. La inscripción al programa completo se confirma con cupo, modalidad de pago y cierre formal.</p>
+      <div class="pe-pricing">
+        <article class="x-card pe-price pe-price--feat">
+          <div class="pe-price__name">Programa completo</div>
+          <div class="pe-price__amount">$2.400.000</div>
+          <div class="pe-price__per">COP · valor base 2026</div>
+          <p>Incluye clases, materiales, memorias, clínicas, comunidad y trabajo aplicado durante 16 semanas.</p>
+        </article>
+        <article class="x-card pe-price">
+          <div class="pe-price__name">Pronto pago</div>
+          <div class="pe-price__amount">$2.160.000</div>
+          <div class="pe-price__per">COP · 10% de descuento</div>
+          <p>Aplica pagando de contado antes del día previo al inicio de clases de la cohorte.</p>
+        </article>
+        <article class="x-card pe-price">
+          <div class="pe-price__name">Pago mensual</div>
+          <div class="pe-price__amount">3 x $800.000</div>
+          <div class="pe-price__per">COP · cuotas mensuales</div>
+          <p>Modalidad de pago en tres cuotas para facilitar el ingreso al programa.</p>
+        </article>
+      </div>
+      <p><span class="pe-note">Los cupos guiados, descuentos de embajador o familiares aplican por convocatoria específica; no son una bolsa pública permanente.</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="convocatoria">
+    <div class="container">
+      <div class="x-card pe-cta-band">
+        <span class="eyebrow">Convocatoria abierta · 07</span>
+        <h2 class="h2" style="margin:1rem auto .5rem;max-width:42rem;">Empieza por el taller intro, <span class="gradient-text">sin inversión económica</span></h2>
+        <p class="lead" style="max-width:42rem;margin:0 auto 1.4rem;">El 30 de julio de 2026 es el límite de inscripción al programa. Las convocatorias gratuitas se activan antes mediante el formulario de talleres/onboarding.</p>
+        <div class="home-hero__ctas">
+          <a href="https://forms.gle/KBFwqYVFjn1E7Ph58" target="_blank" rel="noopener" class="home-cta home-cta--primary">Abrir formulario de talleres →</a>
+          <a href="mailto:contacto@metodologia.info?subject=Programa%20de%20Empoderamiento%20%C2%B7%20Quiero%20entender%20mejor&body=Hola%20MetodologIA%2C%0A%0AMe%20interesa%20el%20Programa%20de%20Empoderamiento.%0A%0ANombre%3A%0ARol%20o%20actividad%3A%0ALo%20que%20quiero%20mejorar%20en%20mi%20trabajo%3A%0AMe%20interesa%3A%20taller%20intro%20/%20programa%20completo%20/%20cupo%20guiado%0APregunta%20principal%3A%0A%0AGracias." class="home-cta home-cta--secondary">Escribir para entender mejor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="limites">
+    <div class="container">
+      <span class="eyebrow">Claridad · 08</span>
+      <h2 class="h2" style="margin:1rem 0 .5rem;">Lo que cuidamos <span class="gradient-text">desde el inicio</span></h2>
+      <div class="pe-grid pe-grid--3" style="margin-top:1.5rem;">
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Sin promesas infladas</span><h3 class="pe-card__title">No hay ROI garantizado</h3><p class="pe-card__body">El valor depende de tu rol, práctica, disponibilidad y calidad de implementación.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Revisión humana</span><h3 class="pe-card__title">IA con criterio</h3><p class="pe-card__body">Ninguna salida se trata como final sin revisión, fuentes y decisión humana.</p></article>
+        <article class="x-card pe-card"><span class="pe-card__eyebrow">Cierre responsable</span><h3 class="pe-card__title">Evidencia antes que promesa</h3><p class="pe-card__body">El programa busca portafolio y trazabilidad; no vende certificaciones formales automáticas.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<triple-toggle class="pe-toggle" aria-label="Preferencias de tema">
+  <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
+</triple-toggle>
+
+<footer class="site-footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div>
+        <p class="site-footer__brand-tagline">"La excelencia no se compra, se diseña. Se cocrea y se comparte."</p>
+      </div>
+      <nav>
+        <div class="site-footer__col-head">Programa</div>
+        <a class="site-footer__link" href="#ruta">Ruta</a>
+        <a class="site-footer__link" href="#entregables">Entregables</a>
+        <a class="site-footer__link" href="#inversion">Inversión</a>
+        <a class="site-footer__link" href="#convocatoria">Convocatoria</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head">Material relacionado</div>
+        <a class="site-footer__link" href="programa.html">Trabajar Amplificado</a>
+        <a class="site-footer__link" href="diapositivas-programa.html">Diapositivas del programa</a>
+        <a class="site-footer__link" href="runbook-jarvis-os.html">Runbook Jarvis OS</a>
+        <a class="site-footer__link" href="playbook-jarvis-os.html">Playbook Jarvis OS</a>
+      </nav>
+      <nav>
+        <div class="site-footer__col-head">Conectar</div>
+        <a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+        <a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Programa%20de%20Empoderamiento">contacto@metodologia.info</a>
+        <a class="site-footer__link" href="https://forms.gle/KBFwqYVFjn1E7Ph58" target="_blank" rel="noopener">Formulario de talleres</a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 MetodologIA. Copyleft. · Success as a Service</span>
+      <span>Método primero, (Gen)IA después.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var tb=document.getElementById('themebtn');
+  function ti(){ if(tb) tb.textContent = html.dataset.theme==='dark' ? '☀' : '☾'; }
+  ti();
+  if(tb) tb.addEventListener('click', function(){
+    html.dataset.theme = (html.dataset.theme==='dark') ? 'light' : 'dark';
+    try{ localStorage.setItem('mdg_theme', html.dataset.theme); }catch(e){}
+    ti();
+  });
+})();
+</script>
+<script src="scripts/site-unified-v1.js" defer></script>
+</body>
+</html>
