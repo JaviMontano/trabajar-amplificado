@@ -10,6 +10,8 @@ Programa de **MetodologIA** para trabajar amplificado con método, IA y criterio
 
 **[Abrir versión internacional →](https://javimontano.github.io/trabajar-amplificado/precios-internacionales.html)**
 
+**[Abrir Programa de Empoderamiento →](https://javimontano.github.io/trabajar-amplificado/programa-empoderamiento.html)**
+
 Usa el botón de idioma (arriba a la derecha) para cambiar ES · EN · PT.
 
 ## 🎟️ Programa
@@ -33,6 +35,7 @@ Cada oferta tiene su página landing y su deck de diapositivas (trilingüe):
 | Sistematización y Automatización ($160.000 COP) | [`automatizacion-con-ia.html`](automatizacion-con-ia.html) | [`diapositivas-automatizacion.html`](diapositivas-automatizacion.html) |
 | Bootcamp ($960.000 COP) | [`bootcamp.html`](bootcamp.html) | [`diapositivas-bootcamp.html`](diapositivas-bootcamp.html) |
 | Programa completo | [`programa.html`](programa.html) | [`diapositivas-programa.html`](diapositivas-programa.html) |
+| Programa de Empoderamiento | [`programa-empoderamiento.html`](programa-empoderamiento.html) | — |
 
 ## 📚 Material abierto
 
