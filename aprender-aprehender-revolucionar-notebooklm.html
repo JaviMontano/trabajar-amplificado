@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aprender · Aprehender · (R)Evolucionar con NotebookLM | MetodologIA</title>
+  <meta name="description" content="Una ruta guiada de diez prompts para investigar, auditar, fortalecer y activar una base de conocimiento en NotebookLM.">
+  <meta name="theme-color" content="#122562">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aprender · Aprehender · (R)Evolucionar con NotebookLM">
+  <meta property="og:description" content="Investiga, audita, fortalece y activa tu Notebook en el orden correcto.">
+  <meta property="og:url" content="https://javimontano.github.io/trabajar-amplificado/aprender-aprehender-revolucionar-notebooklm.html">
+  <link rel="canonical" href="https://javimontano.github.io/trabajar-amplificado/aprender-aprehender-revolucionar-notebooklm.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #122562;
+      --gold: #FFD700;
+      --blue: #137DC5;
+      --ink: #1F2833;
+      --lilac: #BBA0CC;
+      --gray: #808080;
+      --white: #FFFFFF;
+      --surface: rgba(187, 160, 204, .10);
+      --border: rgba(18, 37, 98, .14);
+      --shadow: 0 16px 42px rgba(18, 37, 98, .10);
+      --radius: 22px;
+      --content: 1180px;
+      --nav-height: 72px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    button, summary { font: inherit; }
+    button { cursor: pointer; }
+    h1, h2, h3, h4 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+    h1 { font-size: clamp(2.6rem, 7vw, 5.8rem); letter-spacing: -.055em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.035em; }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.7rem); letter-spacing: -.02em; }
+    p { margin: 0; }
+    strong { font-weight: 700; }
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      padding: .75rem 1rem;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 10px;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      min-height: var(--nav-height);
+      color: var(--white);
+      background: rgba(18, 37, 98, .97);
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: min(calc(100% - 32px), var(--content));
+      min-height: var(--nav-height);
+      margin: 0 auto;
+    }
+    .wordmark {
+      flex: 0 0 auto;
+      color: var(--white);
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+    .wordmark span { color: var(--gold); }
+    .stage-nav {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .stage-nav a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: .55rem .8rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, .76);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .stage-nav a:hover,
+    .stage-nav a[aria-current="true"] {
+      color: var(--navy);
+      background: var(--gold);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 82% 25%, rgba(187, 160, 204, .32), transparent 24rem),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy) 70%, var(--ink) 100%);
+    }
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      content: "";
+      pointer-events: none;
+    }
+    .hero::before {
+      top: 8%;
+      right: 8%;
+      width: clamp(170px, 24vw, 340px);
+      aspect-ratio: 1;
+      border: 2px solid rgba(255, 215, 0, .48);
+      border-radius: 50%;
+    }
+    .hero::after {
+      right: 21%;
+      bottom: -90px;
+      width: 210px;
+      height: 210px;
+      background: var(--blue);
+      border-radius: 40px;
+      opacity: .32;
+      transform: rotate(24deg);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: end;
+      width: min(calc(100% - 40px), var(--content));
+      min-height: min(760px, calc(100vh - var(--nav-height)));
+      margin: 0 auto;
+      padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
+    }
+    .eyebrow,
+    .phase-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      width: fit-content;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow {
+      margin-bottom: 1.5rem;
+      padding: .5rem .85rem;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 999px;
+    }
+    .hero h1 { color: var(--white); }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-lead {
+      max-width: 700px;
+      margin-top: 1.6rem;
+      color: rgba(255, 255, 255, .86);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: .8rem 1.15rem;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button-primary { color: var(--navy); background: var(--gold); }
+    .button-secondary { color: var(--white); border-color: rgba(255, 255, 255, .44); }
+    .button:hover { transform: translateY(-2px); }
+    .hero-card {
+      position: relative;
+      padding: 1.4rem;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .22);
+      backdrop-filter: blur(12px);
+    }
+    .hero-card::before {
+      display: block;
+      width: 54px;
+      height: 8px;
+      margin-bottom: 1.25rem;
+      background: var(--gold);
+      border-radius: 999px;
+      content: "";
+    }
+    .hero-card h2 { color: var(--white); font-size: 1.35rem; }
+    .hero-card ol {
+      display: grid;
+      gap: .75rem;
+      margin: 1.2rem 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: route;
+    }
+    .hero-card li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: .75rem;
+      align-items: center;
+      color: rgba(255, 255, 255, .84);
+      font-size: .94rem;
+      counter-increment: route;
+    }
+    .hero-card li::before {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      color: var(--navy);
+      background: var(--white);
+      border-radius: 50%;
+      font-weight: 800;
+      content: counter(route);
+    }
+
+    main { overflow: clip; }
+    section { scroll-margin-top: calc(var(--nav-height) + 24px); }
+    .section {
+      padding: clamp(4.5rem, 9vw, 8rem) 0;
+    }
+    .section-alt { background: var(--surface); }
+    .container { width: min(calc(100% - 40px), var(--content)); margin: 0 auto; }
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+      gap: clamp(1.5rem, 6vw, 5rem);
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+    .phase-kicker { margin-bottom: .8rem; color: var(--navy); }
+    .phase-kicker::before {
+      width: 28px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 999px;
+      content: "";
+    }
+    .section-intro { max-width: 700px; color: rgba(31, 40, 51, .76); font-size: 1.05rem; }
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .route-card {
+      position: relative;
+      min-height: 220px;
+      padding: 1.5rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .route-card::after {
+      position: absolute;
+      right: -34px;
+      bottom: -46px;
+      width: 120px;
+      height: 120px;
+      background: var(--lilac);
+      border-radius: 50%;
+      opacity: .16;
+      content: "";
+    }
+    .route-number {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 1rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 12px;
+      font-family: "Poppins", Arial, sans-serif;
+      font-weight: 800;
+    }
+    .route-card h3 { margin-bottom: .65rem; }
+    .route-card p { color: rgba(31, 40, 51, .76); font-size: .93rem; }
+
+    .prompt-stack { display: grid; gap: 1rem; }
+    .prompt-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(18, 37, 98, .06);
+    }
+    .prompt-card[open] { border-color: rgba(19, 125, 197, .42); box-shadow: var(--shadow); }
+    .prompt-card summary {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      min-height: 88px;
+      padding: 1rem 1.2rem;
+      list-style: none;
+      cursor: pointer;
+    }
+    .prompt-card summary::-webkit-details-marker { display: none; }
+    .prompt-index {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 14px;
+      font-family: "Poppins", Arial, sans-serif;
+      font-weight: 800;
+    }
+    .prompt-title small {
+      display: block;
+      margin-bottom: .2rem;
+      color: var(--navy);
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .prompt-title strong {
+      display: block;
+      color: var(--navy);
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 1.08rem;
+    }
+    .chevron {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      color: var(--navy);
+      background: var(--surface);
+      border-radius: 50%;
+      transition: transform .2s ease;
+    }
+    .prompt-card[open] .chevron { transform: rotate(45deg); }
+    .prompt-body { padding: 0 1.2rem 1.25rem 5.6rem; }
+    .prompt-usage {
+      margin-bottom: 1rem;
+      color: rgba(31, 40, 51, .76);
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: .91rem;
+    }
+    .prompt-shell {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--ink);
+      border-radius: 16px;
+    }
+    .prompt-toolbar {
+      display: flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .65rem .8rem .65rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+    }
+    .prompt-label {
+      color: var(--gold);
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .copy-button {
+      min-width: 96px;
+      min-height: 44px;
+      padding: .6rem .9rem;
+      color: var(--navy);
+      background: var(--gold);
+      border: 0;
+      border-radius: 10px;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+    .copy-button:hover { background: var(--white); }
+    pre {
+      margin: 0;
+      padding: 1.25rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: normal;
+      font: 500 .91rem/1.65 "Montserrat", Arial, sans-serif;
+    }
+
+    .loop-panel {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .75rem;
+      margin: 2rem 0;
+      padding: 1.1rem;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 18px;
+    }
+    .loop-step {
+      position: relative;
+      min-height: 110px;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .06);
+    }
+    .loop-step:not(:last-child)::after {
+      position: absolute;
+      top: 50%;
+      right: -.62rem;
+      z-index: 2;
+      color: var(--gold);
+      font-size: 1.2rem;
+      content: "→";
+      transform: translateY(-50%);
+    }
+    .loop-step strong { display: block; margin-bottom: .35rem; color: var(--gold); }
+    .loop-step span { color: rgba(255, 255, 255, .78); font-size: .82rem; }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .role-card {
+      padding: 1.45rem;
+      border: 1px solid var(--border);
+      border-top: 7px solid var(--blue);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .role-card:nth-child(2) { border-top-color: var(--gold); }
+    .role-card:nth-child(3) { border-top-color: var(--lilac); }
+    .role-card h3 { margin-bottom: .7rem; }
+    .role-card p { color: rgba(31, 40, 51, .76); font-size: .93rem; }
+    .role-card dl { display: grid; gap: .65rem; margin: 1rem 0 0; }
+    .role-card dt { color: var(--navy); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
+    .role-card dd { margin: -.45rem 0 0; color: rgba(31, 40, 51, .76); font-size: .88rem; }
+
+    .activation-banner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 2rem;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--white);
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .activation-banner h3 { margin-bottom: .6rem; color: var(--white); }
+    .activation-banner p { max-width: 700px; color: rgba(255, 255, 255, .82); }
+
+    .source-note {
+      margin-top: 2rem;
+      color: var(--ink);
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: .84rem;
+    }
+    .source-note a { color: var(--navy); font-weight: 700; }
+
+    footer {
+      padding: 2rem 0;
+      color: rgba(255, 255, 255, .78);
+      background: var(--ink);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
+      font-size: .82rem;
+    }
+    .footer-inner strong { color: var(--white); }
+    .status {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      max-width: min(360px, calc(100vw - 36px));
+      padding: .85rem 1rem;
+      color: var(--white);
+      background: var(--navy);
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .status.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 880px) {
+      :root { --nav-height: 112px; }
+      .nav-inner { display: grid; padding: .7rem 0; }
+      .stage-nav { width: 100%; overflow-x: auto; scrollbar-width: none; }
+      .stage-nav::-webkit-scrollbar { display: none; }
+      .hero-inner,
+      .section-header { grid-template-columns: 1fr; }
+      .hero-inner { min-height: auto; }
+      .hero-card { max-width: 520px; }
+      .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .role-grid { grid-template-columns: 1fr; }
+      .loop-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .loop-step:nth-child(2)::after { display: none; }
+      .activation-banner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      body { font-size: 16px; }
+      .container,
+      .hero-inner,
+      .footer-inner { width: min(calc(100% - 28px), var(--content)); }
+      .route-grid,
+      .loop-panel { grid-template-columns: 1fr; }
+      .loop-step:not(:last-child)::after { display: none; }
+      .prompt-card summary { grid-template-columns: 44px minmax(0, 1fr) 38px; gap: .7rem; padding: .9rem; }
+      .prompt-index { width: 42px; height: 42px; }
+      .prompt-body { padding: 0 .9rem .9rem; }
+      .prompt-toolbar { align-items: flex-start; }
+      .prompt-label { max-width: 55%; }
+      pre { padding: 1rem; font-size: .86rem; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <nav class="site-nav" aria-label="Etapas del taller">
+    <div class="nav-inner">
+      <a class="wordmark" href="#inicio" aria-label="MetodologIA, inicio">Metodolog<span>IA</span></a>
+      <ul class="stage-nav">
+        <li><a href="#investiga" data-section="investiga">Investiga</a></li>
+        <li><a href="#audita" data-section="audita">Audita</a></li>
+        <li><a href="#fortalece" data-section="fortalece">Fortalece</a></li>
+        <li><a href="#activa" data-section="activa">Activa</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Taller · Ruta NotebookLM</span>
+        <h1>Aprender.<br>Aprehender.<br><em>(R)Evolucionar.</em></h1>
+        <p class="hero-lead">Diez prompts en el orden en que el trabajo realmente ocurre: primero construyes la base, después la cuestionas, luego la fortaleces y solo al final decides qué debe hacer tu Notebook.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#investiga">Empezar por el Prompt 1</a>
+          <a class="button button-secondary" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">Abrir NotebookLM ↗</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Resumen del recorrido">
+        <h2>Una secuencia, no una colección</h2>
+        <ol>
+          <li>Investiga para construir una primera base.</li>
+          <li>Audita tensiones, ambigüedades y vacíos.</li>
+          <li>Fortalece la base en un ciclo controlado.</li>
+          <li>Activa una finalidad y diez prompts propios.</li>
+        </ol>
+      </aside>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="section section-alt" id="ruta" aria-labelledby="ruta-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="phase-kicker">El mapa</span>
+            <h2 id="ruta-title">El orden importa</h2>
+          </div>
+          <p class="section-intro">Configurar un profesor o un coach antes de revisar las fuentes es poner personalidad sobre una base que todavía no conoces. Esta ruta posterga la configuración hasta que la evidencia sea suficiente para tu propósito.</p>
+        </div>
+        <div class="route-grid">
+          <article class="route-card">
+            <span class="route-number">1</span>
+            <h3>Investiga</h3>
+            <p>Define el resultado y ejecuta un Deep Research (investigación profunda y multi‑fuente).</p>
+          </article>
+          <article class="route-card">
+            <span class="route-number">2</span>
+            <h3>Audita</h3>
+            <p>Comprueba cobertura, tensiones, ambigüedades, calidad, vigencia y sesgos.</p>
+          </article>
+          <article class="route-card">
+            <span class="route-number">3</span>
+            <h3>Fortalece</h3>
+            <p>Convierte cada vacío material en una investigación a medida e importa solo lo que aporta.</p>
+          </article>
+          <article class="route-card">
+            <span class="route-number">4</span>
+            <h3>Activa</h3>
+            <p>Elige una finalidad, configura el comportamiento y recibe diez prompts personalizados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="investiga" aria-labelledby="investiga-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="phase-kicker">Etapa 1</span>
+            <h2 id="investiga-title">Investiga</h2>
+          </div>
+          <p class="section-intro">En el panel Fuentes de NotebookLM, escribe la pregunta, activa Web y Deep Research, revisa el informe y decide qué resultados importar. No conviertas todos los resultados en fuentes por defecto.</p>
+        </div>
+
+        <div class="prompt-stack" data-accordion-group>
+          <details class="prompt-card" open>
+            <summary>
+              <span class="prompt-index">1</span>
+              <span class="prompt-title"><small>Deep Research inicial</small><strong>Construye una primera base con propósito</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Pégalo en el cuadro de búsqueda del panel Fuentes. Sustituye los campos entre corchetes.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 1 · Investigación inicial</span>
+                  <button class="copy-button" type="button" data-copy="prompt-1" aria-label="Copiar prompt 1: investigación inicial">Copiar</button>
+                </div>
+                <pre id="prompt-1">Quiero construir una base de conocimiento útil y verificable sobre [TEMA].
+
+La necesito para [DECISIÓN, PROYECTO O RESULTADO]. Mi contexto es [CONTEXTO]. La audiencia o usuario final es [AUDIENCIA].
+
+Investiga con estos criterios:
+1. Delimita el alcance y define las preguntas que sí debe responder la investigación.
+2. Explica el estado actual, los conceptos esenciales y los cambios recientes.
+3. Prioriza fuentes primarias: estudios originales, datos oficiales, normas, documentación del autor o reportes institucionales.
+4. Incluye perspectivas distintas, tensiones, desacuerdos y límites de la evidencia.
+5. Separa hechos respaldados, interpretaciones y asuntos todavía inciertos.
+6. Propón fuentes concretas para importar al Notebook, con título, autor, fecha, enlace y razón para incluirlas.
+
+Entrega un informe citado y una lista final de fuentes recomendadas. No presentes como certeza lo que las fuentes no permiten afirmar.</pre>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="audita" aria-labelledby="audita-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="phase-kicker">Etapa 2</span>
+            <h2 id="audita-title">Audita</h2>
+          </div>
+          <p class="section-intro">Después de importar las fuentes, cambia al chat. Selecciona las fuentes que quieres revisar y pide un diagnóstico de la base actual. Aquí todavía no se busca una respuesta final.</p>
+        </div>
+
+        <div class="prompt-stack" data-accordion-group>
+          <details class="prompt-card" open>
+            <summary>
+              <span class="prompt-index">2</span>
+              <span class="prompt-title"><small>Diagnóstico de fuentes</small><strong>Detecta tensiones, ambigüedades y vacíos</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Úsalo en el chat con las fuentes relevantes seleccionadas. Pide citas para poder revisar cada hallazgo.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 2 · Auditoría de la base</span>
+                  <button class="copy-button" type="button" data-copy="prompt-2" aria-label="Copiar prompt 2: auditoría de la base">Copiar</button>
+                </div>
+                <pre id="prompt-2">Audita la base de conocimiento de este Notebook. Usa únicamente las fuentes seleccionadas y cita la evidencia detrás de cada hallazgo. No llenes vacíos con conocimiento externo.
+
+Revisa seis dimensiones:
+1. COBERTURA: ¿qué preguntas importantes sí responde la base y cuáles no?
+2. TENSIONES: ¿qué fuentes sostienen posiciones diferentes o incompatibles?
+3. AMBIGÜEDADES: ¿qué términos, cifras o conclusiones admiten más de una interpretación?
+4. CALIDAD: ¿qué afirmaciones dependen de fuentes secundarias, débiles o sin método claro?
+5. VIGENCIA: ¿qué información puede estar desactualizada para la decisión que quiero tomar?
+6. SESGOS Y REDUNDANCIAS: ¿qué perspectivas faltan y qué fuentes repiten lo mismo sin añadir valor?
+
+Entrega:
+A. Un resumen ejecutivo de máximo 8 líneas.
+B. Una tabla: Hallazgo | Tipo | Evidencia citada | Impacto | Acción recomendada.
+C. Una lista priorizada de vacíos por investigar: crítico, importante o deseable.
+D. Una conclusión honesta: qué puedo afirmar hoy y qué todavía no.</pre>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fortalece" aria-labelledby="fortalece-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="phase-kicker">Etapa 3</span>
+            <h2 id="fortalece-title">Fortalece</h2>
+          </div>
+          <p class="section-intro">El diagnóstico del Prompt 2 se convierte en contexto para el Prompt 3. Así investigas lo que realmente falta, importas las fuentes útiles y vuelves a medir la calidad de la base.</p>
+        </div>
+
+        <div class="loop-panel" role="group" aria-label="Ciclo de fortalecimiento">
+          <div class="loop-step"><strong>Audita</strong><span>Identifica el vacío que cambia la decisión.</span></div>
+          <div class="loop-step"><strong>Formula</strong><span>Crea una investigación hecha para ese vacío.</span></div>
+          <div class="loop-step"><strong>Importa</strong><span>Agrega solo las fuentes que superan el criterio.</span></div>
+          <div class="loop-step"><strong>Decide</strong><span>Avanza o repite con el siguiente vacío.</span></div>
+        </div>
+
+        <div class="prompt-stack" data-accordion-group>
+          <details class="prompt-card" open>
+            <summary>
+              <span class="prompt-index">3</span>
+              <span class="prompt-title"><small>Investigación a medida</small><strong>Convierte el diagnóstico en el siguiente Deep Research</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Pégalo inmediatamente después del Prompt 2, en el mismo chat. Copia la salida resultante en Deep Research.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 3 · Investigación a medida</span>
+                  <button class="copy-button" type="button" data-copy="prompt-3" aria-label="Copiar prompt 3: investigación a medida">Copiar</button>
+                </div>
+                <pre id="prompt-3">Usa el diagnóstico que acabas de producir. No repitas la auditoría.
+
+Elige el vacío de mayor impacto para [DECISIÓN, PROYECTO O RESULTADO] y conviértelo en un prompt listo para pegar en Deep Research de NotebookLM.
+
+El prompt debe incluir:
+1. Objetivo preciso de la investigación.
+2. Preguntas que debe responder y preguntas que quedan fuera.
+3. Tensiones o afirmaciones que debe contrastar.
+4. Tipos de fuentes prioritarias y fuentes que conviene evitar.
+5. Rango temporal, región, industria o población relevantes.
+6. Evidencia mínima para considerar respondida cada pregunta.
+7. Formato del informe y datos que deben acompañarse de citas.
+8. Criterios para recomendar nuevas fuentes al Notebook.
+
+Devuelve únicamente:
+A. PROMPT PARA DEEP RESEARCH, listo para copiar.
+B. CRITERIOS DE ACEPTACIÓN, en una lista breve.
+
+No inventes el contexto que falte: si una ausencia cambia sustancialmente la investigación, hazme primero un máximo de 3 preguntas.</pre>
+              </div>
+            </div>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="prompt-index">4</span>
+              <span class="prompt-title"><small>Cierre del ciclo</small><strong>Compara la mejora y decide si debes repetir</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Ejecuta la investigación anterior, revisa e importa las nuevas fuentes y después vuelve al chat con este prompt.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 4 · Cerrar o repetir</span>
+                  <button class="copy-button" type="button" data-copy="prompt-4" aria-label="Copiar prompt 4: cerrar o repetir el ciclo">Copiar</button>
+                </div>
+                <pre id="prompt-4">Ya importé las nuevas fuentes. Compara la base actual con la auditoría anterior y responde con citas.
+
+1. ¿Qué vacío se cerró total o parcialmente?
+2. ¿Qué afirmaciones quedaron confirmadas, matizadas o refutadas?
+3. ¿Qué tensiones o ambigüedades nuevas aparecieron?
+4. ¿Qué fuente nueva aporta evidencia decisiva y cuál aporta poco valor?
+5. ¿Qué riesgo tendría tomar una decisión con la base actual?
+
+Emite uno de dos veredictos:
+- [BASE SUFICIENTE]: explica por qué la evidencia ya permite avanzar y qué límites deben conservarse.
+- [REPETIR INVESTIGACIÓN]: identifica el siguiente vacío prioritario y genera, con el formato del Prompt 3, el nuevo prompt de Deep Research listo para copiar.
+
+No busques una base “perfecta”. Detén el ciclo cuando la evidencia sea suficiente para el propósito declarado y los riesgos residuales estén explícitos.</pre>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="activa" aria-labelledby="activa-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="phase-kicker">Etapa 4</span>
+            <h2 id="activa-title">Activa</h2>
+          </div>
+          <p class="section-intro">Con una base suficiente, decide qué comportamiento necesitas. En Configurar chat puedes elegir Guía de aprendizaje o Personalizado (Custom). Profesor, asesor y coach no son tres nombres para lo mismo.</p>
+        </div>
+
+        <div class="role-grid" role="group" aria-label="Diferencias entre profesor, asesor y coach">
+          <article class="role-card">
+            <h3>Profesor</h3>
+            <p>Organiza el conocimiento, explica y comprueba comprensión antes de avanzar.</p>
+            <dl><dt>Pregunta central</dt><dd>¿Qué necesitas entender?</dd><dt>Salida típica</dt><dd>Explicación, ejemplo y comprobación.</dd></dl>
+          </article>
+          <article class="role-card">
+            <h3>Asesor</h3>
+            <p>Analiza el contexto, compara opciones y recomienda una ruta con criterios.</p>
+            <dl><dt>Pregunta central</dt><dd>¿Qué decisión necesitas tomar?</dd><dt>Salida típica</dt><dd>Opciones, tensiones, riesgo y recomendación.</dd></dl>
+          </article>
+          <article class="role-card">
+            <h3>Coach</h3>
+            <p>Pregunta antes de proponer, refleja patrones y ayuda a convertir intención en compromiso.</p>
+            <dl><dt>Pregunta central</dt><dd>¿Qué quieres lograr y qué te bloquea?</dd><dt>Salida típica</dt><dd>Preguntas, reflexión y siguiente compromiso.</dd></dl>
+          </article>
+        </div>
+
+        <div class="prompt-stack" data-accordion-group>
+          <details class="prompt-card" open>
+            <summary>
+              <span class="prompt-index">5</span>
+              <span class="prompt-title"><small>Rol conversacional</small><strong>Conviértelo en profesor, asesor o coach</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Pégalo en Configurar chat → Personalizado. Sustituye [ROL] por una sola opción.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 5 · Elegir un rol</span>
+                  <button class="copy-button" type="button" data-copy="prompt-5" aria-label="Copiar prompt 5: elegir un rol">Copiar</button>
+                </div>
+                <pre id="prompt-5">Actúa como [PROFESOR | ASESOR | COACH] especializado en el contenido de este Notebook.
+
+Comportamiento según el rol elegido:
+- PROFESOR: organiza el aprendizaje, explica de forma progresiva, usa ejemplos y comprueba qué entendí antes de avanzar.
+- ASESOR: entiende mi situación, compara opciones, expone beneficios, costos, riesgos y tensiones, y recomienda una ruta con criterios claros.
+- COACH: pregunta antes de proponer, me ayuda a aclarar objetivos, supuestos y bloqueos, refleja patrones y convierte la conversación en compromisos concretos. No decide por mí.
+
+Reglas comunes:
+1. Basa las respuestas en las fuentes seleccionadas y cítalas.
+2. Distingue evidencia, inferencia y dato faltante.
+3. Si la pregunta excede la base, dilo con claridad y sugiere qué investigar.
+4. Adapta la profundidad a mi experiencia y evita jerga innecesaria.
+5. Cierra cada respuesta con el siguiente paso propio del rol elegido.
+
+En tu primera respuesta, confirma el rol en una frase y pregúntame qué resultado quiero lograr.</pre>
+              </div>
+            </div>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="prompt-index">6</span>
+              <span class="prompt-title"><small>Finalidad · contenido</small><strong>Transforma las fuentes en una pieza útil</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Úsalo cuando el propósito del Notebook sea crear contenido sin separarse de las fuentes.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 6 · Generar contenido</span>
+                  <button class="copy-button" type="button" data-copy="prompt-6" aria-label="Copiar prompt 6: generar contenido">Copiar</button>
+                </div>
+                <pre id="prompt-6">Crea [TIPO DE CONTENIDO] para [AUDIENCIA] con el objetivo de [RESULTADO].
+
+Antes de escribir:
+1. Identifica en las fuentes la tesis central, la evidencia más fuerte, una tensión relevante y el límite que no debe ocultarse.
+2. Propón una estructura breve y espera mi aprobación si existen dos rutas narrativas materialmente distintas.
+
+Al escribir:
+- Usa lenguaje claro y ejemplos adecuados para la audiencia.
+- Cita la fuente de toda cifra o afirmación verificable.
+- No añadas hechos que no estén en el Notebook.
+- Marca como inferencia cualquier conexión construida a partir de varias fuentes.
+- Incluye una conclusión o llamada a la acción proporcional a la evidencia.
+
+Entrega: pieza final + lista de fuentes utilizadas + tres decisiones editoriales que tomaste.</pre>
+              </div>
+            </div>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="prompt-index">7</span>
+              <span class="prompt-title"><small>Finalidad · aplicación</small><strong>Diseña casos de uso y un primer experimento</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Úsalo para convertir el conocimiento en aplicaciones concretas para un rol, equipo u organización.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 7 · Diseñar casos de uso</span>
+                  <button class="copy-button" type="button" data-copy="prompt-7" aria-label="Copiar prompt 7: diseñar casos de uso">Copiar</button>
+                </div>
+                <pre id="prompt-7">A partir de las fuentes de este Notebook, diseña 10 casos de uso para [ROL, EQUIPO U ORGANIZACIÓN].
+
+Para cada caso indica:
+1. Problema o tarea que resuelve.
+2. Usuario y momento de uso.
+3. Conocimiento del Notebook que lo respalda, con citas.
+4. Entrada necesaria y resultado esperado.
+5. Qué hace la persona y qué puede delegarse a la IA.
+6. Riesgo principal, dato sensible y control humano necesario.
+7. Complejidad [BAJA | MEDIA | ALTA] e impacto esperado [BAJO | MEDIO | ALTO], sin inventar retorno económico.
+8. Un experimento de máximo 7 días para probarlo.
+
+Ordena los casos por valor frente a esfuerzo. Recomienda uno para empezar y explica por qué.</pre>
+              </div>
+            </div>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="prompt-index">8</span>
+              <span class="prompt-title"><small>Finalidad · evaluación</small><strong>Practica hasta demostrar comprensión</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Úsalo para aprender o preparar una evaluación sin convertir la conversación en un cuestionario interminable.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 8 · Evaluador</span>
+                  <button class="copy-button" type="button" data-copy="prompt-8" aria-label="Copiar prompt 8: practicar y evaluar">Copiar</button>
+                </div>
+                <pre id="prompt-8">Actúa como evaluador riguroso sobre [TEMA O COMPETENCIA], basado únicamente en las fuentes de este Notebook.
+
+Reglas:
+1. Haz una pregunta a la vez y espera mi respuesta.
+2. Avanza por cuatro niveles: fundamentos, intermedio, avanzado y aplicación.
+3. Combina explicación, comparación, caso práctico y detección de errores.
+4. Después de cada respuesta, evalúa [CORRECTA | PARCIAL | INCORRECTA], explica por qué y cita la fuente.
+5. Si la base no permite evaluar algo, indícalo en vez de inventar una respuesta.
+6. Sube de nivel solo cuando demuestre comprensión, no por número de preguntas.
+
+Al terminar, entrega: fortalezas, lagunas, fuentes que debo revisar y una práctica concreta para mejorar.</pre>
+              </div>
+            </div>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="prompt-index">9</span>
+              <span class="prompt-title"><small>Finalidad · ensayo</small><strong>Prepara una conversación exigente</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Úsalo para una entrevista, sustentación, QBR (revisión trimestral) o defensa de proyecto.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 9 · Simulador</span>
+                  <button class="copy-button" type="button" data-copy="prompt-9" aria-label="Copiar prompt 9: simular una conversación">Copiar</button>
+                </div>
+                <pre id="prompt-9">Simula una [ENTREVISTA | SUSTENTACIÓN | QBR | DEFENSA DE PROYECTO] sobre [TEMA], usando las fuentes de este Notebook.
+
+1. Pregúntame primero por la audiencia, el resultado buscado y el tiempo disponible.
+2. Propón la estructura de la conversación y luego inicia el ensayo.
+3. Haz una pregunta a la vez. Incluye preguntas de evidencia, alternativas, riesgos, límites y siguiente paso.
+4. Después de cada respuesta, evalúa [SÓLIDA | MEJORABLE | DÉBIL], explica el criterio y sugiere una versión mejor sin cambiar mi intención.
+5. Señala cualquier afirmación que necesite una cita o exceda lo que respaldan las fuentes.
+6. Al final, entrega un balance de fortalezas, vacíos y tres mejoras prioritarias.
+
+Mantén el tono exigente y respetuoso. No simules certeza cuando la base no la ofrece.</pre>
+              </div>
+            </div>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="prompt-index">10</span>
+              <span class="prompt-title"><small>Meta-prompt final</small><strong>Genera el sistema y tus diez prompts de inicio</strong></span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="prompt-body">
+              <p class="prompt-usage">Ejecuta este meta-prompt en el chat del Notebook. Después pega la sección A en Configurar chat → Personalizado y usa los diez prompts de la sección B para iniciar las conversaciones.</p>
+              <div class="prompt-shell">
+                <div class="prompt-toolbar">
+                  <span class="prompt-label">Prompt 10 · Finalidad y activación</span>
+                  <button class="copy-button" type="button" data-copy="prompt-10" aria-label="Copiar prompt 10: finalidad y activación">Copiar</button>
+                </div>
+                <pre id="prompt-10">Diseña la configuración final de este Notebook a partir de sus fuentes, la auditoría realizada y mi propósito.
+
+Mi propósito principal es [APRENDER | RECIBIR ASESORÍA | HACER COACHING | GENERAR CONTENIDO | DISEÑAR CASOS DE USO | EVALUAR | ENSAYAR CONVERSACIONES | OTRO].
+Usuario principal: [QUIÉN LO USARÁ].
+Resultado frecuente: [QUÉ QUIERE OBTENER].
+Restricciones: [PRIVACIDAD, TONO, FORMATOS, LÍMITES].
+
+Si falta información que cambie materialmente el diseño, hazme primero un máximo de 5 preguntas breves. Después entrega:
+
+A. CONFIGURACIÓN PERSONALIZADA
+Un prompt de sistema (instrucción persistente) de máximo 8.000 caracteres, listo para pegar en Configurar chat → Personalizado. Debe definir rol, finalidad, tareas, límites, uso de citas, formato de respuesta, criterios de calidad y qué hacer cuando la base no alcance.
+
+B. 10 PROMPTS DE INICIO
+Genera exactamente 10 prompts que el usuario pueda copiar para aprovechar esa configuración. Deben cubrir: comprender, comparar, detectar tensiones, aplicar, decidir, crear, verificar y mejorar. Cada uno debe indicar cuándo usarlo y qué resultado esperar. Personalízalos al contenido real del Notebook; evita preguntas genéricas.
+
+C. GUÍA BREVE
+Explica en 5 líneas cómo probar la configuración y qué señal indicaría que debe ajustarse.
+
+Separa siempre hechos citados, inferencias y datos faltantes. No inventes capacidades, fuentes ni resultados.</pre>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="activation-banner">
+          <div>
+            <h3>Tu Notebook ya tiene una base, un propósito y una forma de trabajar</h3>
+            <p>Empieza con el Prompt 1. No abras el Prompt 10 hasta que puedas explicar qué fuentes sostienen la base y qué vacío decidiste aceptar.</p>
+          </div>
+          <a class="button button-primary" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">Abrir NotebookLM ↗</a>
+        </div>
+
+        <p class="source-note">Terminología y orden de interfaz verificados en la documentación oficial de Google: <a href="https://support.google.com/notebooklm/answer/16215270" target="_blank" rel="noopener noreferrer">añadir o descubrir fuentes</a> y <a href="https://support.google.com/notebooklm/answer/16179559" target="_blank" rel="noopener noreferrer">usar y configurar el chat</a>. Consulta: 3 de agosto de 2026.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <strong>MetodologIA · Trabajo Amplificado</strong>
+      <span>Aprender no es acumular respuestas. Es construir criterio.</span>
+    </div>
+  </footer>
+
+  <div class="status" id="copy-status" role="status" aria-live="polite"></div>
+
+  <script>
+    const statusBox = document.getElementById('copy-status');
+    let statusTimer;
+
+    function announce(message) {
+      window.clearTimeout(statusTimer);
+      statusBox.textContent = '';
+      statusBox.classList.remove('visible');
+      window.requestAnimationFrame(() => {
+        statusBox.textContent = message;
+        statusBox.classList.add('visible');
+        statusTimer = window.setTimeout(() => statusBox.classList.remove('visible'), 2200);
+      });
+    }
+
+    function fallbackCopy(text, returnFocus) {
+      const field = document.createElement('textarea');
+      field.value = text;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      const copied = document.execCommand('copy');
+      field.remove();
+      if (returnFocus) returnFocus.focus();
+      if (!copied) throw new Error('No se pudo copiar');
+    }
+
+    async function copyPrompt(button) {
+      const target = document.getElementById(button.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          fallbackCopy(text, button);
+        }
+        const original = button.textContent;
+        button.textContent = 'Copiado';
+        announce(`${button.getAttribute('aria-label').replace('Copiar', 'Copiado')}.`);
+        window.setTimeout(() => { button.textContent = original; }, 1600);
+      } catch (error) {
+        announce('No fue posible copiar automáticamente. Selecciona el texto del prompt.');
+      }
+    }
+
+    document.querySelectorAll('[data-copy]').forEach((button) => {
+      button.addEventListener('click', () => copyPrompt(button));
+    });
+
+    document.querySelectorAll('[data-accordion-group]').forEach((group) => {
+      group.querySelectorAll('details').forEach((detail) => {
+        detail.addEventListener('toggle', () => {
+          if (!detail.open) return;
+          group.querySelectorAll('details').forEach((other) => {
+            if (other !== detail) other.open = false;
+          });
+        });
+      });
+    });
+
+    const navLinks = Array.from(document.querySelectorAll('[data-section]'));
+    const sections = navLinks
+      .map((link) => document.getElementById(link.dataset.section))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => {
+        const active = link.dataset.section === visible.target.id;
+        if (active) {
+          link.setAttribute('aria-current', 'true');
+          if (link.parentElement?.parentElement?.scrollWidth > link.parentElement?.parentElement?.clientWidth) {
+            link.scrollIntoView({
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+              block: 'nearest',
+              inline: 'center'
+            });
+          }
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, .2, .5] });
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</body>
+</html>
