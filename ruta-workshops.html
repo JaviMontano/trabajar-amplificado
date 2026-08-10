@@ -76,6 +76,9 @@
     .rw-video-label{position:absolute;z-index:2;left:1.2rem;right:1.2rem;bottom:1rem;color:#fff}
     .rw-video-label span{display:block;font-family:'Trebuchet MS',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ffd700}
     .rw-video-label strong{display:block;margin-top:.2rem;font-family:'Poppins',sans-serif;font-size:clamp(1rem,2.4vw,1.4rem);line-height:1.2;color:#fff}
+    .rw-sound{position:absolute;z-index:3;top:1rem;right:1rem;display:inline-flex;align-items:center;gap:.45rem;padding:.62rem .8rem;border:1px solid rgba(255,255,255,.42);border-radius:var(--rw-radius-pill);background:rgba(7,11,26,.78);color:#fff;font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:800;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .rw-sound:hover,.rw-sound:focus-visible{border-color:var(--rw-color-accent);box-shadow:var(--rw-focus);outline:none}
+    .rw-sound__icon{font-size:1rem;line-height:1}
     .rw-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin-top:2rem}
     @media(min-width:640px){.rw-stats{grid-template-columns:repeat(4,1fr)}}
     .rw-stat{padding:1rem;text-align:center}
@@ -151,6 +154,22 @@
     .rw-requirement__num{display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:var(--rw-radius-control);background:rgba(255,215,0,.12);color:var(--rw-color-accent-text);font-family:'Poppins',sans-serif;font-weight:900}
     .rw-requirement h3{margin:.75rem 0 .35rem;font-size:1rem}
     .rw-requirement p{color:var(--rw-color-muted);font-size:.82rem;line-height:1.55}
+    .rw-assistants{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:1.6rem}
+    @media(min-width:720px){.rw-assistants{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .rw-assistant{display:flex;flex-direction:column;padding:var(--rw-space-card);border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--rw-color-panel-alt)}
+    .rw-assistant__role{color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .rw-assistant h3{margin:.65rem 0 .35rem;font-size:clamp(1.1rem,2.4vw,1.45rem)}
+    .rw-assistant p{margin-bottom:1rem;color:var(--rw-color-ink-soft);font-size:.86rem;line-height:1.55}
+    .rw-assistant a{display:inline-flex;align-items:center;gap:.4rem;margin-top:auto;color:var(--rw-color-accent-text);font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:800}
+    .rw-harness{display:grid;grid-template-columns:minmax(0,1fr);gap:1.25rem;margin-top:1rem;padding:clamp(1.4rem,4vw,2.25rem);border:2px solid var(--rw-color-accent-text);border-radius:var(--rw-radius-card);background:radial-gradient(circle at 90% 0%,rgba(255,215,0,.14),transparent 40%),var(--rw-color-panel)}
+    @media(min-width:820px){.rw-harness{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:start}}
+    .rw-harness h3{margin:.65rem 0 .45rem;font-size:clamp(1.3rem,3vw,1.9rem)}
+    .rw-harness p{color:var(--rw-color-ink-soft);font-size:.88rem;line-height:1.6}
+    .rw-harness__flow{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+    .rw-harness__flow span{padding:.45rem .65rem;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-pill);background:var(--rw-color-panel-alt);color:var(--rw-color-ink-soft);font-size:.72rem;font-weight:700}
+    .rw-harness__lists{display:grid;gap:1rem}
+    .rw-harness__lists h4{margin-bottom:.4rem;color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase}
+    .rw-harness__lists p{font-size:.82rem}
     .rw-modal{width:min(680px,calc(100vw - 2rem));max-height:min(86vh,760px);padding:0;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--rw-color-panel);color:var(--rw-color-ink);box-shadow:var(--rw-shadow-modal);overflow:auto}
     .rw-modal::backdrop{background:var(--rw-overlay);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
     .rw-modal__inner{position:relative;padding:clamp(1.35rem,4vw,2.25rem)}
@@ -181,7 +200,7 @@
       .rw-stat{min-width:0;padding:.85rem .55rem}
       .rw-stat b{overflow-wrap:anywhere}
     }
-    @media(prefers-reduced-motion:reduce){.rw-gallery img{transition:none}.rw-video{display:none}.rw-video-shell{background:url('assets/ruta-workshops/de-la-idea-a-una-app-real.png') center/cover no-repeat}}
+    @media(prefers-reduced-motion:reduce){.rw-gallery img{transition:none}.rw-video,.rw-sound{display:none}.rw-video-shell{background:url('assets/ruta-workshops/de-la-idea-a-una-app-real.png') center/cover no-repeat}}
   </style>
 
   <script type="application/ld+json">
@@ -221,9 +240,9 @@
       <a class="site-header__nav-link" href="#ruta"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></a>
       <a class="site-header__nav-link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a>
       <a class="site-header__nav-link" href="#requisitos"><span class="l-es">Requisitos</span><span class="l-en">Requirements</span><span class="l-pt">Requisitos</span></a>
+      <a class="site-header__nav-link" href="#asistentes"><span class="l-es">Asistentes</span><span class="l-en">Assistants</span><span class="l-pt">Assistentes</span></a>
       <a class="site-header__nav-link" href="#metodo"><span class="l-es">Método</span><span class="l-en">Method</span><span class="l-pt">Método</span></a>
       <a class="site-header__nav-link" href="#experiencia"><span class="l-es">Experiencia</span><span class="l-en">Experience</span><span class="l-pt">Experiência</span></a>
-      <a class="site-header__nav-link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
     </nav>
     <a class="site-header__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme</span><span class="l-en">Register</span><span class="l-pt">Inscrever-me</span> →</a>
   </header>
@@ -243,9 +262,10 @@
             </div>
           </div>
           <div class="rw-video-shell" aria-label="Vista previa de la ruta de creación de producto">
-            <video class="rw-video" autoplay muted loop playsinline preload="metadata" poster="assets/ruta-workshops/de-la-idea-a-una-app-real.png">
+            <video class="rw-video" id="rw-route-video" autoplay muted loop playsinline preload="metadata" poster="assets/ruta-workshops/de-la-idea-a-una-app-real.png">
               <source src="assets/ruta-workshops/de-la-idea-a-una-app.mp4" type="video/mp4">
             </video>
+            <button class="rw-sound" id="rw-sound" type="button" aria-controls="rw-route-video" aria-pressed="false"><span class="rw-sound__icon" aria-hidden="true">🔇</span><span class="rw-sound__label"><span class="l-es">Activar sonido</span><span class="l-en">Turn sound on</span><span class="l-pt">Ativar som</span></span></button>
             <div class="rw-video-label"><span>MetodologIA</span><strong><span class="l-es">Crear haciendo. Aprender creando.</span><span class="l-en">Build by doing. Learn by creating.</span><span class="l-pt">Criar fazendo. Aprender criando.</span></strong></div>
           </div>
         </div>
@@ -375,9 +395,59 @@
       </div>
     </section>
 
+    <section class="section" id="asistentes">
+      <div class="container">
+        <span class="eyebrow"><span class="l-es">Ecosistema de apoyo · 04</span><span class="l-en">Support ecosystem · 04</span><span class="l-pt">Ecossistema de apoio · 04</span></span>
+        <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">Asistentes para pensar mejor. Un arnés para <span class="gradient-text">trabajar con método.</span></span><span class="l-en">Assistants to think better. A harness to <span class="gradient-text">work methodically.</span></span><span class="l-pt">Assistentes para pensar melhor. Um arnês para <span class="gradient-text">trabalhar com método.</span></span></h2>
+        <p class="lead" style="max-width:52rem;"><span class="l-es">Puedes conocer desde ahora los asistentes que apoyan el proceso. En la nivelación definimos cuáles usar, cómo configurarlos y qué skills o agentes aportan valor a tu caso; no necesitas dominarlos antes del taller.</span><span class="l-en">You can meet the assistants that support the process now. During leveling we decide which ones to use, how to configure them and which skills or agents add value to your case; you do not need to master them before the workshop.</span><span class="l-pt">Você já pode conhecer os assistentes que apoiam o processo. No nivelamento definimos quais usar, como configurá-los e quais skills ou agentes agregam valor ao seu caso; você não precisa dominá-los antes do workshop.</span></p>
+
+        <div class="rw-assistants">
+          <article class="rw-assistant">
+            <span class="rw-assistant__role"><span class="l-es">Descubrimiento · Asistente principal</span><span class="l-en">Discovery · Core assistant</span><span class="l-pt">Descoberta · Assistente principal</span></span>
+            <h3>Discovery Assistant</h3>
+            <p><span class="l-es">Ayuda a conceptualizar y diseñar soluciones tecnológicas: aclara el problema, las personas usuarias, el valor y el alcance antes de construir.</span><span class="l-en">Helps conceptualize and design technology solutions by clarifying the problem, users, value and scope before building.</span><span class="l-pt">Ajuda a conceituar e desenhar soluções tecnológicas, esclarecendo problema, usuários, valor e escopo antes de construir.</span></p>
+            <a href="https://chatgpt.com/g/g-6a049929a4e48191a18152f842d6fec9-discovery-assistant" target="_blank" rel="noopener"><span class="l-es">Abrir asistente →</span><span class="l-en">Open assistant →</span><span class="l-pt">Abrir assistente →</span></a>
+          </article>
+          <article class="rw-assistant">
+            <span class="rw-assistant__role"><span class="l-es">Arquitectura · Asistente principal</span><span class="l-en">Architecture · Core assistant</span><span class="l-pt">Arquitetura · Assistente principal</span></span>
+            <h3>System Designer</h3>
+            <p><span class="l-es">Apoya la conceptualización y el diseño de arquitecturas de software: componentes, límites, integraciones y decisiones que permiten evolucionar el producto.</span><span class="l-en">Supports software architecture design: components, boundaries, integrations and decisions that allow the product to evolve.</span><span class="l-pt">Apoia a conceituação e o desenho de arquiteturas de software: componentes, limites, integrações e decisões para evoluir o produto.</span></p>
+            <a href="https://chatgpt.com/g/g-6967ce4ef9f081918ad3eb29a53482af-system-designer" target="_blank" rel="noopener"><span class="l-es">Abrir asistente →</span><span class="l-en">Open assistant →</span><span class="l-pt">Abrir assistente →</span></a>
+          </article>
+          <article class="rw-assistant">
+            <span class="rw-assistant__role"><span class="l-es">Procesos · Asistente complementario</span><span class="l-en">Processes · Supporting assistant</span><span class="l-pt">Processos · Assistente complementar</span></span>
+            <h3>Especialista en Procesos · PIVOTE</h3>
+            <p><span class="l-es">Ayuda a modelar o mejorar procesos desde la visión MetodologIA, haciendo visible cómo debería funcionar el trabajo que el producto apoyará.</span><span class="l-en">Helps model or improve processes through the MetodologIA lens, making visible how the work supported by the product should operate.</span><span class="l-pt">Ajuda a modelar ou melhorar processos pela visão MetodologIA, tornando visível como deve funcionar o trabalho apoiado pelo produto.</span></p>
+            <a href="https://chatgpt.com/g/g-6a780893658c81918a87b9fbbfe46970-especialista-en-procesos-enfoque-pivote" target="_blank" rel="noopener"><span class="l-es">Abrir asistente →</span><span class="l-en">Open assistant →</span><span class="l-pt">Abrir assistente →</span></a>
+          </article>
+          <article class="rw-assistant">
+            <span class="rw-assistant__role"><span class="l-es">Interacción · Asistente complementario</span><span class="l-en">Interaction · Supporting assistant</span><span class="l-pt">Interação · Assistente complementar</span></span>
+            <h3>Prompting Pro</h3>
+            <p><span class="l-es">Apoya la creación y mejora de prompts de alta potencia para expresar intención, contexto, restricciones, criterios y formato de salida.</span><span class="l-en">Supports the creation and improvement of high-impact prompts that express intent, context, constraints, criteria and output format.</span><span class="l-pt">Apoia a criação e melhoria de prompts de alta potência para expressar intenção, contexto, restrições, critérios e formato de saída.</span></p>
+            <a href="https://chatgpt.com/g/g-6a0e402c9b688191ae857eb4ac0631e2-prompting-pro" target="_blank" rel="noopener"><span class="l-es">Abrir asistente →</span><span class="l-en">Open assistant →</span><span class="l-pt">Abrir assistente →</span></a>
+          </article>
+        </div>
+
+        <article class="rw-harness">
+          <div>
+            <span class="rw-assistant__role"><span class="l-es">Arnés abierto · JM ADK Beta</span><span class="l-en">Open harness · JM ADK Beta</span><span class="l-pt">Arnês aberto · JM ADK Beta</span></span>
+            <h3><span class="l-es">Del asistente aislado al sistema de trabajo</span><span class="l-en">From an isolated assistant to a working system</span><span class="l-pt">Do assistente isolado ao sistema de trabalho</span></h3>
+            <p><span class="l-es">El arnés organiza contexto, skills, agentes y validaciones para trabajar por etapas en Claude Code, Codex o Antigravity. Su catálogo público declara 73 skills, 13 agentes oficiales principales y especialistas adicionales.</span><span class="l-en">The harness organizes context, skills, agents and validation to work in stages across Claude Code, Codex or Antigravity. Its public catalog declares 73 skills, 13 core officer agents and additional specialists.</span><span class="l-pt">O arnês organiza contexto, skills, agentes e validações para trabalhar por etapas no Claude Code, Codex ou Antigravity. Seu catálogo público declara 73 skills, 13 agentes oficiais principais e especialistas adicionais.</span></p>
+            <div class="rw-harness__flow" aria-label="Flujo del arnés"><span><span class="l-es">Pensar</span><span class="l-en">Think</span><span class="l-pt">Pensar</span></span><span><span class="l-es">Planear</span><span class="l-en">Plan</span><span class="l-pt">Planejar</span></span><span><span class="l-es">Construir</span><span class="l-en">Build</span><span class="l-pt">Construir</span></span><span><span class="l-es">Revisar</span><span class="l-en">Review</span><span class="l-pt">Revisar</span></span><span><span class="l-es">Validar</span><span class="l-en">Validate</span><span class="l-pt">Validar</span></span><span><span class="l-es">Entregar</span><span class="l-en">Ship</span><span class="l-pt">Entregar</span></span></div>
+            <a class="home-cta home-cta--secondary" style="margin-top:1.2rem" href="https://github.com/JaviMontano/jm-adk-beta" target="_blank" rel="noopener"><span class="l-es">Explorar el arnés en GitHub →</span><span class="l-en">Explore the harness on GitHub →</span><span class="l-pt">Explorar o arnês no GitHub →</span></a>
+          </div>
+          <div class="rw-harness__lists">
+            <div><h4><span class="l-es">Skills asociadas</span><span class="l-en">Associated skills</span><span class="l-pt">Skills associadas</span></h4><p><span class="l-es">Discovery y producto: business analysis, UX research y arquitectura. Construcción: web frontend, AI architecture y tool use. Calidad y salida: testing, seguridad, DevOps, observabilidad, marca y accesibilidad.</span><span class="l-en">Discovery and product: business analysis, UX research and architecture. Building: web frontend, AI architecture and tool use. Quality and delivery: testing, security, DevOps, observability, brand and accessibility.</span><span class="l-pt">Descoberta e produto: business analysis, UX research e arquitetura. Construção: web frontend, AI architecture e tool use. Qualidade e entrega: testes, segurança, DevOps, observabilidade, marca e acessibilidade.</span></p></div>
+            <div><h4><span class="l-es">Agentes asociados</span><span class="l-en">Associated agents</span><span class="l-pt">Agentes associados</span></h4><p><span class="l-es">Input Analyst y Planner estructuran el reto; Transformation Architect, Dev Coordinator y Builder construyen; Reviewer, Governance Guardian y Researcher verifican; Brand Design Lead y Memory Steward ayudan a entregar y sostener.</span><span class="l-en">Input Analyst and Planner structure the challenge; Transformation Architect, Dev Coordinator and Builder build; Reviewer, Governance Guardian and Researcher verify; Brand Design Lead and Memory Steward help ship and sustain.</span><span class="l-pt">Input Analyst e Planner estruturam o desafio; Transformation Architect, Dev Coordinator e Builder constroem; Reviewer, Governance Guardian e Researcher verificam; Brand Design Lead e Memory Steward ajudam a entregar e sustentar.</span></p></div>
+            <div><h4><span class="l-es">Cómo se usa en la ruta</span><span class="l-en">How it is used in the route</span><span class="l-pt">Como é usado na rota</span></h4><p><span class="l-es">No se activa todo el catálogo. El diagnóstico selecciona el conjunto mínimo de asistentes, skills y agentes que beneficia tu caso y nivel.</span><span class="l-en">The entire catalog is not activated. The diagnosis selects the minimum set of assistants, skills and agents that benefits your case and level.</span><span class="l-pt">O catálogo inteiro não é ativado. O diagnóstico seleciona o conjunto mínimo de assistentes, skills e agentes que beneficia seu caso e nível.</span></p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="metodo">
       <div class="container">
-        <span class="eyebrow"><span class="l-es">La forma de aprender · 04</span><span class="l-en">How you learn · 04</span><span class="l-pt">Como você aprende · 04</span></span>
+        <span class="eyebrow"><span class="l-es">La forma de aprender · 05</span><span class="l-en">How you learn · 05</span><span class="l-pt">Como você aprende · 05</span></span>
         <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">No vienes a mirar. <span class="gradient-text">Vienes a construir.</span></span><span class="l-en">You do not come to watch. <span class="gradient-text">You come to build.</span></span><span class="l-pt">Você não vem assistir. <span class="gradient-text">Vem construir.</span></span></h2>
         <p class="lead" style="max-width:48rem;"><span class="l-es">La IA acelera; el método evita que aceleres en la dirección equivocada. Cada sesión combina una decisión de negocio, una construcción visible y un cierre con evidencia.</span><span class="l-en">AI accelerates; method keeps you from accelerating in the wrong direction. Each session combines a business decision, visible construction and an evidence-based close.</span><span class="l-pt">A IA acelera; o método evita que você acelere na direção errada. Cada sessão combina uma decisão de negócio, uma construção visível e um fechamento com evidência.</span></p>
         <div class="rw-principles">
@@ -390,7 +460,7 @@
 
     <section class="section" id="experiencia">
       <div class="container">
-        <span class="eyebrow"><span class="l-es">La experiencia · 05</span><span class="l-en">The experience · 05</span><span class="l-pt">A experiência · 05</span></span>
+        <span class="eyebrow"><span class="l-es">La experiencia · 06</span><span class="l-en">The experience · 06</span><span class="l-pt">A experiência · 06</span></span>
         <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">Una ruta para pasar de consumidor a <span class="gradient-text">creador</span></span><span class="l-en">A route from consumer to <span class="gradient-text">creator</span></span><span class="l-pt">Uma rota para passar de consumidor a <span class="gradient-text">criador</span></span></h2>
         <p class="lead" style="max-width:48rem;"><span class="l-es">Puedes empezar sin ser experto técnico. Lo importante es llegar con una idea, disposición para construir y voluntad de revisar con honestidad.</span><span class="l-en">You can start without being a technical expert. What matters is bringing an idea, a willingness to build and honesty in review.</span><span class="l-pt">Você pode começar sem ser especialista técnico. O importante é chegar com uma ideia, disposição para construir e vontade de revisar com honestidade.</span></p>
         <div class="rw-gallery">
@@ -516,7 +586,7 @@
     <div class="container">
       <div class="site-footer__grid">
         <div><div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div><p class="site-footer__brand-tagline"><span class="l-es">“La excelencia no se compra, se diseña. Se cocrea y se comparte.”</span><span class="l-en">“Excellence is not bought, it is designed. Co-created and shared.”</span><span class="l-pt">“A excelência não se compra, se desenha. Se cocria e se compartilha.”</span></p></div>
-        <nav><div class="site-footer__col-head"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></div><a class="site-footer__link" href="#ruta"><span class="l-es">4 workshops</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></a><a class="site-footer__link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a><a class="site-footer__link" href="#requisitos"><span class="l-es">Nivelación y requisitos</span><span class="l-en">Leveling and requirements</span><span class="l-pt">Nivelamento e requisitos</span></a><a class="site-footer__link" href="#experiencia"><span class="l-es">Resultados</span><span class="l-en">Outcomes</span><span class="l-pt">Resultados</span></a></nav>
+        <nav><div class="site-footer__col-head"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></div><a class="site-footer__link" href="#ruta"><span class="l-es">4 workshops</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></a><a class="site-footer__link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a><a class="site-footer__link" href="#requisitos"><span class="l-es">Nivelación y requisitos</span><span class="l-en">Leveling and requirements</span><span class="l-pt">Nivelamento e requisitos</span></a><a class="site-footer__link" href="#asistentes"><span class="l-es">Asistentes y arnés</span><span class="l-en">Assistants and harness</span><span class="l-pt">Assistentes e arnês</span></a><a class="site-footer__link" href="#experiencia"><span class="l-es">Resultados</span><span class="l-en">Outcomes</span><span class="l-pt">Resultados</span></a></nav>
         <nav><div class="site-footer__col-head"><span class="l-es">Ecosistema</span><span class="l-en">Ecosystem</span><span class="l-pt">Ecossistema</span></div><a class="site-footer__link" href="index.html">Trabajar Amplificado</a><a class="site-footer__link" href="programa-empoderamiento.html"><span class="l-es">Empoderamiento IA</span><span class="l-en">AI Empowerment</span><span class="l-pt">Empoderamento IA</span></a><a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a></nav>
         <nav><div class="site-footer__col-head"><span class="l-es">Inscripciones</span><span class="l-en">Registration</span><span class="l-pt">Inscrições</span></div><a class="site-footer__link" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Formulario de inscripción</span><span class="l-en">Registration form</span><span class="l-pt">Formulário de inscrição</span></a><a class="site-footer__link" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20tengo%20una%20pregunta%20sobre%20la%20Ruta%20de%20Workshops%20de%20agosto." target="_blank" rel="noopener">WhatsApp</a><a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Ruta%20de%20Workshops%20%C2%B7%20Pregunta">contacto@metodologia.info</a></nav>
       </div>
@@ -535,6 +605,27 @@
       function setLang(lang){if(langs.indexOf(lang)<0)lang='es';html.lang=lang;try{localStorage.setItem('mdg_locale',lang)}catch(e){}if(lb)lb.textContent=lang.toUpperCase()}
       setLang(localStorage.getItem('mdg_locale')||html.lang||'es');
       if(lb)lb.addEventListener('click',function(){var index=langs.indexOf(html.lang);setLang(langs[(index+1)%langs.length])});
+
+      var routeVideo=document.getElementById('rw-route-video');
+      var soundButton=document.getElementById('rw-sound');
+      function updateSoundButton(){
+        if(!routeVideo||!soundButton)return;
+        var muted=routeVideo.muted;
+        soundButton.setAttribute('aria-pressed',String(!muted));
+        var icon=soundButton.querySelector('.rw-sound__icon');
+        if(icon)icon.textContent=muted?'🔇':'🔊';
+        var labels=muted?{es:'Activar sonido',en:'Turn sound on',pt:'Ativar som'}:{es:'Silenciar',en:'Mute',pt:'Silenciar'};
+        Object.keys(labels).forEach(function(lang){var node=soundButton.querySelector('.l-'+lang);if(node)node.textContent=labels[lang]});
+      }
+      if(routeVideo&&soundButton){
+        updateSoundButton();
+        soundButton.addEventListener('click',function(){
+          routeVideo.muted=!routeVideo.muted;
+          if(routeVideo.paused)routeVideo.play().catch(function(){});
+          updateSoundButton();
+        });
+        routeVideo.addEventListener('volumechange',updateSoundButton);
+      }
 
       var lastModalTrigger=null;
       document.querySelectorAll('[data-rw-modal]').forEach(function(trigger){
