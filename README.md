@@ -12,6 +12,8 @@ Programa de **MetodologIA** para trabajar amplificado con método, IA y criterio
 
 **[Abrir Programa de Empoderamiento →](https://javimontano.github.io/trabajar-amplificado/programa-empoderamiento.html)**
 
+**[Abrir Ruta de Workshops — De la idea a una app real →](https://javimontano.github.io/trabajar-amplificado/ruta-workshops.html)**
+
 Usa el botón de idioma (arriba a la derecha) para cambiar ES · EN · PT.
 
 ## 🎟️ Programa
@@ -36,6 +38,7 @@ Cada oferta tiene su página landing y su deck de diapositivas (trilingüe):
 | Bootcamp ($960.000 COP) | [`bootcamp.html`](bootcamp.html) | [`diapositivas-bootcamp.html`](diapositivas-bootcamp.html) |
 | Programa completo | [`programa.html`](programa.html) | [`diapositivas-programa.html`](diapositivas-programa.html) |
 | Programa de Empoderamiento | [`programa-empoderamiento.html`](programa-empoderamiento.html) | — |
+| Ruta de Workshops · De la idea a una app real | [`ruta-workshops.html`](ruta-workshops.html) | — |
 
 ## 📚 Material abierto
 

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-page-slug="ruta-workshops">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A122A" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Ruta de Workshops — De la idea a una app real | MetodologIA</title>
+  <meta name="description" content="Una ruta práctica de cuatro workshops para convertir una idea en una app real y operar con IA, skills, agentes y arneses. MetodologIA.">
+  <link rel="canonical" href="https://javimontano.github.io/trabajar-amplificado/ruta-workshops.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javimontano.github.io/trabajar-amplificado/ruta-workshops.html">
+  <meta property="og:site_name" content="MetodologIA">
+  <meta property="og:title" content="Ruta de Workshops — De la idea a una app real">
+  <meta property="og:description" content="Más que prompts: aprende a crear negocios, prototipar, construir y operar productos digitales con IA.">
+  <meta property="og:image" content="https://javimontano.github.io/trabajar-amplificado/assets/ruta-workshops/de-la-idea-a-una-app-real.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    (function () {
+      var theme = localStorage.getItem('mdg_theme');
+      document.documentElement.dataset.theme = (theme === 'dark') ? 'dark' : 'light';
+      document.documentElement.lang = 'es';
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="estilos/neoswiss-v5.css">
+  <link rel="stylesheet" href="estilos/home-v5.css">
+  <link rel="stylesheet" href="estilos/toggle-v5.css">
+  <link rel="stylesheet" href="estilos/site-unified-v1.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <style>
+    .l-en,.l-pt{display:none}
+    html[lang="en"] .l-es{display:none}html[lang="en"] .l-en{display:inline}html[lang="en"] .l-pt{display:none}
+    html[lang="pt"] .l-es{display:none}html[lang="pt"] .l-en{display:none}html[lang="pt"] .l-pt{display:inline}
+    .rw-hero{padding-top:clamp(2.4rem,7vw,5.5rem)}
+    .rw-hero-grid{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+    @media(min-width:900px){.rw-hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr)}}
+    .rw-hero-copy{text-align:left}
+    .rw-hero-copy .h1{max-width:13ch;margin:.95rem 0 1.15rem;font-size:clamp(2.6rem,7vw,5rem)}
+    .rw-hero-copy .lead{max-width:40rem}
+    .rw-hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+    .rw-video-shell{position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--brand-border);border-radius:var(--brand-radius-lg);background:#070b1a;box-shadow:0 32px 80px -38px rgba(0,0,0,.72);aspect-ratio:16/10}
+    .rw-video-shell::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 45%,rgba(7,11,26,.76) 100%)}
+    .rw-video{width:100%;height:100%;object-fit:cover}
+    .rw-video-label{position:absolute;z-index:2;left:1.2rem;right:1.2rem;bottom:1rem;color:#fff}
+    .rw-video-label span{display:block;font-family:'Trebuchet MS',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ffd700}
+    .rw-video-label strong{display:block;margin-top:.2rem;font-family:'Poppins',sans-serif;font-size:clamp(1rem,2.4vw,1.4rem);line-height:1.2;color:#fff}
+    .rw-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin-top:2rem}
+    @media(min-width:640px){.rw-stats{grid-template-columns:repeat(4,1fr)}}
+    .rw-stat{padding:1rem;text-align:center}
+    .rw-stat b{display:block;font-family:'Poppins',sans-serif;font-size:clamp(1.15rem,2.5vw,1.65rem);font-weight:900;color:var(--brand-gold-text)}
+    .rw-stat span{display:block;margin-top:.25rem;font-size:.72rem;line-height:1.35;color:var(--brand-muted)}
+    .rw-intro{display:grid;gap:1.4rem;align-items:center}
+    @media(min-width:820px){.rw-intro{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
+    .rw-intro-media{overflow:hidden;border-radius:var(--brand-radius-lg);background:var(--brand-surface);border:1px solid var(--brand-border)}
+    .rw-intro-media img{width:100%;aspect-ratio:16/12;object-fit:cover;object-position:center 46%}
+    .rw-route{display:grid;gap:1rem;margin-top:2rem}
+    @media(min-width:760px){.rw-route{grid-template-columns:repeat(2,1fr)}}
+    .rw-workshop{position:relative;display:flex;flex-direction:column;min-height:100%;padding:clamp(1.25rem,3vw,1.8rem);overflow:hidden}
+    .rw-workshop::before{content:attr(data-step);position:absolute;right:1rem;top:.3rem;font-family:'Poppins',sans-serif;font-size:4.5rem;font-weight:900;line-height:1;color:rgba(255,215,0,.08)}
+    .rw-workshop__meta{font-family:'Trebuchet MS',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--brand-gold-text)}
+    .rw-workshop h3{max-width:18ch;margin:.8rem 0 .55rem;font-size:clamp(1.25rem,2.6vw,1.7rem)}
+    .rw-workshop p{color:var(--brand-text-soft);font-size:.92rem;line-height:1.6}
+    .rw-workshop__deliverable{margin-top:auto;padding-top:1rem;color:var(--brand-muted);font-size:.8rem!important}
+    .rw-workshop__deliverable strong{color:var(--brand-gold-text)}
+    .rw-flow{display:grid;gap:.75rem;margin-top:1.5rem}
+    @media(min-width:760px){.rw-flow{grid-template-columns:repeat(4,1fr)}}
+    .rw-flow-item{position:relative;padding:1rem;text-align:center}
+    .rw-flow-item b{display:block;color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-size:.98rem}
+    .rw-flow-item span{display:block;margin-top:.3rem;color:var(--brand-muted);font-size:.76rem;line-height:1.4}
+    @media(min-width:760px){.rw-flow-item:not(:last-child)::after{content:"→";position:absolute;right:-.62rem;top:50%;z-index:2;transform:translateY(-50%);color:var(--brand-gold-text);font-weight:900}}
+    .rw-principles{display:grid;gap:1rem;margin-top:1.6rem}
+    @media(min-width:760px){.rw-principles{grid-template-columns:repeat(3,1fr)}}
+    .rw-principle{padding:1.35rem}
+    .rw-principle__icon{display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:.8rem;background:rgba(255,215,0,.12);color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-weight:900}
+    .rw-principle h3{margin:.8rem 0 .4rem;font-size:1rem}
+    .rw-principle p{color:var(--brand-muted);font-size:.83rem;line-height:1.55}
+    .rw-gallery{display:grid;gap:1rem;margin-top:1.7rem}
+    @media(min-width:700px){.rw-gallery{grid-template-columns:repeat(3,1fr)}}
+    .rw-gallery figure{position:relative;overflow:hidden;margin:0;border-radius:var(--brand-radius-lg);border:1px solid var(--brand-border);background:var(--brand-surface)}
+    .rw-gallery img{width:100%;aspect-ratio:9/14;object-fit:cover;transition:transform .5s var(--ease)}
+    .rw-gallery figure:hover img{transform:scale(1.025)}
+    .rw-gallery figcaption{position:absolute;inset:auto 0 0;padding:3rem 1rem 1rem;background:linear-gradient(transparent,rgba(7,11,26,.9));color:#fff;font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700}
+    .rw-proof{display:grid;gap:1rem;align-items:stretch;margin-top:1.6rem}
+    @media(min-width:800px){.rw-proof{grid-template-columns:1.2fr .8fr}}
+    .rw-proof-card{padding:clamp(1.3rem,3vw,2rem)}
+    .rw-proof-list{display:grid;gap:.8rem;margin-top:1.2rem}
+    .rw-proof-list li{display:grid;grid-template-columns:1.7rem 1fr;gap:.65rem;align-items:start;color:var(--brand-text-soft);font-size:.9rem}
+    .rw-proof-list li::before{content:"✓";display:grid;place-items:center;width:1.55rem;height:1.55rem;border-radius:50%;background:var(--brand-gold);color:#0a122a;font-weight:900}
+    .rw-portrait{overflow:hidden;min-height:330px}
+    .rw-portrait img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .rw-cta{position:relative;overflow:hidden;text-align:center;border:1px solid var(--brand-border);border-radius:var(--brand-radius-lg);padding:clamp(2rem,7vw,4.5rem) clamp(1.2rem,4vw,3rem);background:radial-gradient(circle at 50% 0%,rgba(255,215,0,.16),transparent 43%),var(--brand-surface-alt)}
+    .rw-cta .h2{max-width:21ch;margin:1rem auto .7rem}
+    .rw-cta .lead{max-width:45rem;margin:0 auto 1.5rem}
+    .rw-cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
+    html[data-theme="light"] .rw-video-shell{box-shadow:0 30px 70px -38px rgba(10,18,42,.58)}
+    @media(prefers-reduced-motion:reduce){.rw-gallery img{transition:none}.rw-video{display:none}.rw-video-shell{background:url('assets/ruta-workshops/ruta-workshops-portada.png') center/cover no-repeat}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Ruta de Workshops — De la idea a una app real",
+    "description": "Ruta práctica de cuatro workshops para convertir una idea en una app real y operar con IA, skills, agentes y arneses.",
+    "provider": {"@type": "Organization", "name": "MetodologIA", "sameAs": "https://metodologia.info/"},
+    "url": "https://javimontano.github.io/trabajar-amplificado/ruta-workshops.html",
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only"><span class="l-es">Saltar al contenido</span><span class="l-en">Skip to content</span><span class="l-pt">Pular para o conteúdo</span></a>
+
+  <header class="site-header">
+    <a href="index.html" class="site-header__brand" aria-label="MetodologIA — Inicio">
+      <span class="site-header__logo-wrap" aria-hidden="true"><img class="site-header__logo" src="assets/metodologia_logo_primary.png" alt="" width="44" height="44" decoding="async"></span>
+      <span class="site-header__text">
+        <span class="site-header__name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></span>
+        <span class="site-header__role"><span class="l-es">Ruta de Workshops</span><span class="l-en">Workshop Route</span><span class="l-pt">Rota de Workshops</span></span>
+      </span>
+    </a>
+    <nav class="site-header__nav" aria-label="Navegación principal">
+      <a class="site-header__nav-link" href="#ruta"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></a>
+      <a class="site-header__nav-link" href="#metodo"><span class="l-es">Método</span><span class="l-en">Method</span><span class="l-pt">Método</span></a>
+      <a class="site-header__nav-link" href="#experiencia"><span class="l-es">Experiencia</span><span class="l-en">Experience</span><span class="l-pt">Experiência</span></a>
+      <a class="site-header__nav-link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
+    </nav>
+    <a class="site-header__cta" href="#unirme"><span class="l-es">Unirme a la ruta</span><span class="l-en">Join the route</span><span class="l-pt">Entrar na rota</span> →</a>
+  </header>
+
+  <main id="main" class="main">
+    <section class="section rw-hero" id="hero">
+      <div class="container">
+        <div class="rw-hero-grid">
+          <div class="rw-hero-copy">
+            <span class="eyebrow"><span class="l-es">Ruta práctica · 4 workshops · Un producto real</span><span class="l-en">Hands-on route · 4 workshops · One real product</span><span class="l-pt">Rota prática · 4 workshops · Um produto real</span></span>
+            <h1 class="h1"><span class="l-es">De la idea a una <span class="gradient-text">app real</span></span><span class="l-en">From idea to a <span class="gradient-text">real app</span></span><span class="l-pt">Da ideia a um <span class="gradient-text">app real</span></span></h1>
+            <p class="lead"><span class="l-es"><strong>Más que prompts: aprender a crear negocios.</strong> Define una oportunidad, prototipa, construye y despliega un producto digital con IA, criterio y acompañamiento.</span><span class="l-en"><strong>More than prompts: learn to build businesses.</strong> Define an opportunity, prototype, build and deploy a digital product with AI, judgment and guidance.</span><span class="l-pt"><strong>Mais que prompts: aprenda a criar negócios.</strong> Defina uma oportunidade, prototipe, construa e publique um produto digital com IA, critério e acompanhamento.</span></p>
+            <div class="rw-hero-actions">
+              <a href="#unirme" class="home-cta home-cta--primary"><span class="l-es">Quiero crear mi app →</span><span class="l-en">I want to build my app →</span><span class="l-pt">Quero criar meu app →</span></a>
+              <a href="#ruta" class="home-cta home-cta--secondary"><span class="l-es">Ver los 4 workshops</span><span class="l-en">See all 4 workshops</span><span class="l-pt">Ver os 4 workshops</span></a>
+            </div>
+          </div>
+          <div class="rw-video-shell" aria-label="Vista previa de la ruta de creación de producto">
+            <video class="rw-video" autoplay muted loop playsinline preload="metadata" poster="assets/ruta-workshops/de-la-idea-a-una-app-real.png">
+              <source src="assets/ruta-workshops/de-la-idea-a-una-app.mp4" type="video/mp4">
+            </video>
+            <div class="rw-video-label"><span>MetodologIA</span><strong><span class="l-es">Crear haciendo. Aprender creando.</span><span class="l-en">Build by doing. Learn by creating.</span><span class="l-pt">Criar fazendo. Aprender criando.</span></strong></div>
+          </div>
+        </div>
+        <div class="rw-stats" aria-label="Resumen de la ruta">
+          <div class="x-card rw-stat"><b>4</b><span><span class="l-es">workshops conectados</span><span class="l-en">connected workshops</span><span class="l-pt">workshops conectados</span></span></div>
+          <div class="x-card rw-stat"><b>1</b><span><span class="l-es">producto propio</span><span class="l-en">product of your own</span><span class="l-pt">produto próprio</span></span></div>
+          <div class="x-card rw-stat"><b>100%</b><span><span class="l-es">práctico y guiado</span><span class="l-en">hands-on and guided</span><span class="l-pt">prático e guiado</span></span></div>
+          <div class="x-card rw-stat"><b>IA + método</b><span><span class="l-es">con criterio humano</span><span class="l-en">with human judgment</span><span class="l-pt">com critério humano</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ruta">
+      <div class="container">
+        <div class="rw-intro">
+          <div class="rw-intro-media"><img src="assets/ruta-workshops/metodologia-cuatro-etapas.png" alt="Dos personas rodeadas de interfaces digitales, representación de una metodología de cuatro etapas" width="1080" height="1920" loading="lazy" decoding="async"></div>
+          <div>
+            <span class="eyebrow"><span class="l-es">La ruta · 01</span><span class="l-en">The route · 01</span><span class="l-pt">A rota · 01</span></span>
+            <h2 class="h2" style="margin:1rem 0 .7rem;"><span class="l-es">Cuatro etapas. <span class="gradient-text">Una evolución continua.</span></span><span class="l-en">Four stages. <span class="gradient-text">One continuous evolution.</span></span><span class="l-pt">Quatro etapas. <span class="gradient-text">Uma evolução contínua.</span></span></h2>
+            <p class="lead"><span class="l-es">Cada workshop deja un entregable que alimenta el siguiente. No partes de ejercicios genéricos: trabajas sobre una idea propia y la conviertes, paso a paso, en un producto funcional.</span><span class="l-en">Each workshop leaves a deliverable that feeds the next one. You do not start from generic exercises: you work on your own idea and turn it, step by step, into a functional product.</span><span class="l-pt">Cada workshop deixa uma entrega que alimenta o seguinte. Você não parte de exercícios genéricos: trabalha em sua própria ideia e a transforma, passo a passo, em um produto funcional.</span></p>
+            <div class="rw-flow" aria-label="Secuencia de la metodología">
+              <div class="x-card rw-flow-item"><b><span class="l-es">Define</span><span class="l-en">Define</span><span class="l-pt">Defina</span></b><span><span class="l-es">problema y valor</span><span class="l-en">problem and value</span><span class="l-pt">problema e valor</span></span></div>
+              <div class="x-card rw-flow-item"><b><span class="l-es">Prototipa</span><span class="l-en">Prototype</span><span class="l-pt">Prototipe</span></b><span><span class="l-es">experiencia y flujo</span><span class="l-en">experience and flow</span><span class="l-pt">experiência e fluxo</span></span></div>
+              <div class="x-card rw-flow-item"><b><span class="l-es">Construye</span><span class="l-en">Build</span><span class="l-pt">Construa</span></b><span><span class="l-es">producto funcional</span><span class="l-en">functional product</span><span class="l-pt">produto funcional</span></span></div>
+              <div class="x-card rw-flow-item"><b><span class="l-es">Orquesta</span><span class="l-en">Orchestrate</span><span class="l-pt">Orquestre</span></b><span><span class="l-es">operación agéntica</span><span class="l-en">agentic operation</span><span class="l-pt">operação agêntica</span></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rw-route">
+          <article class="x-card rw-workshop" data-step="01">
+            <span class="rw-workshop__meta"><span class="l-es">Workshop 01 · De la intuición a la oportunidad</span><span class="l-en">Workshop 01 · From intuition to opportunity</span><span class="l-pt">Workshop 01 · Da intuição à oportunidade</span></span>
+            <h3><span class="l-es">Idea que merece convertirse en producto</span><span class="l-en">An idea worth turning into a product</span><span class="l-pt">Uma ideia que merece virar produto</span></h3>
+            <p><span class="l-es">Aterriza el problema, la persona usuaria, la promesa de valor y el alcance mínimo. Usa IA para investigar y tensionar la idea, sin delegarle tu criterio.</span><span class="l-en">Clarify the problem, user, value promise and minimum scope. Use AI to research and challenge the idea without delegating your judgment.</span><span class="l-pt">Defina o problema, a pessoa usuária, a promessa de valor e o escopo mínimo. Use IA para pesquisar e tensionar a ideia sem delegar seu critério.</span></p>
+            <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">brief de producto, hipótesis y criterios de éxito.</span><span class="l-en">a product brief, hypotheses and success criteria.</span><span class="l-pt">brief de produto, hipóteses e critérios de sucesso.</span></p>
+          </article>
+          <article class="x-card rw-workshop" data-step="02">
+            <span class="rw-workshop__meta"><span class="l-es">Workshop 02 · De la idea a la experiencia</span><span class="l-en">Workshop 02 · From idea to experience</span><span class="l-pt">Workshop 02 · Da ideia à experiência</span></span>
+            <h3><span class="l-es">Prototipo que puedes mostrar y probar</span><span class="l-en">A prototype you can show and test</span><span class="l-pt">Um protótipo que você pode mostrar e testar</span></h3>
+            <p><span class="l-es">Convierte el brief en arquitectura, pantallas y flujo. Diseña una primera experiencia navegable y aprende a pedir, revisar y corregir trabajo asistido por IA.</span><span class="l-en">Turn the brief into architecture, screens and flow. Design a first navigable experience and learn to request, review and correct AI-assisted work.</span><span class="l-pt">Transforme o brief em arquitetura, telas e fluxo. Desenhe uma primeira experiência navegável e aprenda a solicitar, revisar e corrigir trabalho assistido por IA.</span></p>
+            <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">prototipo HTML navegable y plan de validación.</span><span class="l-en">a navigable HTML prototype and validation plan.</span><span class="l-pt">protótipo HTML navegável e plano de validação.</span></p>
+          </article>
+          <article class="x-card rw-workshop" data-step="03">
+            <span class="rw-workshop__meta"><span class="l-es">Workshop 03 · Del prototipo al producto</span><span class="l-en">Workshop 03 · From prototype to product</span><span class="l-pt">Workshop 03 · Do protótipo ao produto</span></span>
+            <h3><span class="l-es">App funcional, desplegada y lista para evolucionar</span><span class="l-en">A functional, deployed app ready to evolve</span><span class="l-pt">App funcional, publicado e pronto para evoluir</span></h3>
+            <p><span class="l-es">Domina el desarrollo asistido por IA para convertir el prototipo en software utilizable. Integra funciones, datos, pruebas y despliegue con decisiones técnicas explicables.</span><span class="l-en">Master AI-assisted development to turn the prototype into usable software. Integrate features, data, tests and deployment with explainable technical decisions.</span><span class="l-pt">Domine o desenvolvimento assistido por IA para transformar o protótipo em software utilizável. Integre funções, dados, testes e publicação com decisões técnicas explicáveis.</span></p>
+            <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">app funcional, URL pública y backlog priorizado.</span><span class="l-en">a functional app, public URL and prioritized backlog.</span><span class="l-pt">app funcional, URL pública e backlog priorizado.</span></p>
+          </article>
+          <article class="x-card rw-workshop" data-step="04">
+            <span class="rw-workshop__meta"><span class="l-es">Workshop 04 · Del producto al sistema</span><span class="l-en">Workshop 04 · From product to system</span><span class="l-pt">Workshop 04 · Do produto ao sistema</span></span>
+            <h3><span class="l-es">Poder agéntico para operar y escalar</span><span class="l-en">Agentic power to operate and scale</span><span class="l-pt">Poder agêntico para operar e escalar</span></h3>
+            <p><span class="l-es">Crea flujos con skills, agentes y arneses para simplificar lo repetible, mantener controles y acelerar la evolución del producto sin perder trazabilidad.</span><span class="l-en">Create flows with skills, agents and harnesses to simplify repeatable work, preserve controls and accelerate product evolution without losing traceability.</span><span class="l-pt">Crie fluxos com skills, agentes e arneses para simplificar o repetível, manter controles e acelerar a evolução do produto sem perder rastreabilidade.</span></p>
+            <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">workflow agéntico, roles, validadores y próximo ciclo.</span><span class="l-en">an agentic workflow, roles, validators and next cycle.</span><span class="l-pt">workflow agêntico, papéis, validadores e próximo ciclo.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodo">
+      <div class="container">
+        <span class="eyebrow"><span class="l-es">La forma de aprender · 02</span><span class="l-en">How you learn · 02</span><span class="l-pt">Como você aprende · 02</span></span>
+        <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">No vienes a mirar. <span class="gradient-text">Vienes a construir.</span></span><span class="l-en">You do not come to watch. <span class="gradient-text">You come to build.</span></span><span class="l-pt">Você não vem assistir. <span class="gradient-text">Vem construir.</span></span></h2>
+        <p class="lead" style="max-width:48rem;"><span class="l-es">La IA acelera; el método evita que aceleres en la dirección equivocada. Cada sesión combina una decisión de negocio, una construcción visible y un cierre con evidencia.</span><span class="l-en">AI accelerates; method keeps you from accelerating in the wrong direction. Each session combines a business decision, visible construction and an evidence-based close.</span><span class="l-pt">A IA acelera; o método evita que você acelere na direção errada. Cada sessão combina uma decisão de negócio, uma construção visível e um fechamento com evidência.</span></p>
+        <div class="rw-principles">
+          <article class="x-card rw-principle"><span class="rw-principle__icon">01</span><h3><span class="l-es">Tu caso, no una demo</span><span class="l-en">Your case, not a demo</span><span class="l-pt">Seu caso, não uma demo</span></h3><p><span class="l-es">Trabajas sobre un problema que importa y un producto que quieres llevar al mundo.</span><span class="l-en">You work on a problem that matters and a product you want to bring to the world.</span><span class="l-pt">Você trabalha em um problema importante e em um produto que quer levar ao mundo.</span></p></article>
+          <article class="x-card rw-principle"><span class="rw-principle__icon">02</span><h3><span class="l-es">Construcción acompañada</span><span class="l-en">Guided building</span><span class="l-pt">Construção acompanhada</span></h3><p><span class="l-es">Avanzas con plantillas, ejemplos, prompts, revisión y momentos concretos de desbloqueo.</span><span class="l-en">Move forward with templates, examples, prompts, review and concrete unblocking moments.</span><span class="l-pt">Avance com modelos, exemplos, prompts, revisão e momentos concretos de desbloqueio.</span></p></article>
+          <article class="x-card rw-principle"><span class="rw-principle__icon">03</span><h3><span class="l-es">Evidencia antes de escalar</span><span class="l-en">Evidence before scale</span><span class="l-pt">Evidência antes de escalar</span></h3><p><span class="l-es">Pruebas lo creado, haces visibles los límites y decides el siguiente paso con criterio.</span><span class="l-en">Test what you built, make limits visible and decide the next step with judgment.</span><span class="l-pt">Teste o que criou, torne os limites visíveis e decida o próximo passo com critério.</span></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container">
+        <span class="eyebrow"><span class="l-es">La experiencia · 03</span><span class="l-en">The experience · 03</span><span class="l-pt">A experiência · 03</span></span>
+        <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">Una ruta para pasar de consumidor a <span class="gradient-text">creador</span></span><span class="l-en">A route from consumer to <span class="gradient-text">creator</span></span><span class="l-pt">Uma rota para passar de consumidor a <span class="gradient-text">criador</span></span></h2>
+        <p class="lead" style="max-width:48rem;"><span class="l-es">Puedes empezar sin ser experto técnico. Lo importante es llegar con una idea, disposición para construir y voluntad de revisar con honestidad.</span><span class="l-en">You can start without being a technical expert. What matters is bringing an idea, a willingness to build and honesty in review.</span><span class="l-pt">Você pode começar sem ser especialista técnico. O importante é chegar com uma ideia, disposição para construir e vontade de revisar com honestidade.</span></p>
+        <div class="rw-gallery">
+          <figure><img src="assets/ruta-workshops/de-la-idea-a-una-app-real.png" alt="De la idea a una app real con desarrollo asistido por inteligencia artificial" width="1080" height="1920" loading="lazy" decoding="async"><figcaption><span class="l-es">De la idea a una app real</span><span class="l-en">From idea to a real app</span><span class="l-pt">Da ideia a um app real</span></figcaption></figure>
+          <figure><img src="assets/ruta-workshops/metodologia-cuatro-etapas.png" alt="Metodología de cuatro etapas para crear software" width="1080" height="1920" loading="lazy" decoding="async"><figcaption><span class="l-es">Método para convertir intención en producto</span><span class="l-en">Method to turn intent into product</span><span class="l-pt">Método para transformar intenção em produto</span></figcaption></figure>
+          <figure><img src="assets/ruta-workshops/poder-agentico.png" alt="Poder agéntico con skills, agentes y arneses" width="1080" height="1920" loading="lazy" decoding="async"><figcaption><span class="l-es">Poder agéntico para operar lo creado</span><span class="l-en">Agentic power to operate what you built</span><span class="l-pt">Poder agêntico para operar o que você criou</span></figcaption></figure>
+        </div>
+
+        <div class="rw-proof">
+          <article class="x-card rw-proof-card">
+            <span class="eyebrow"><span class="l-es">Tu resultado</span><span class="l-en">Your outcome</span><span class="l-pt">Seu resultado</span></span>
+            <h3 class="h3" style="margin:.8rem 0 .45rem;"><span class="l-es">No terminas con apuntes. Terminas con activos.</span><span class="l-en">You do not finish with notes. You finish with assets.</span><span class="l-pt">Você não termina com anotações. Termina com ativos.</span></h3>
+            <ul class="rw-proof-list">
+              <li><span class="l-es">Un brief que explica qué construir, para quién y por qué.</span><span class="l-en">A brief explaining what to build, for whom and why.</span><span class="l-pt">Um brief que explica o que construir, para quem e por quê.</span></li>
+              <li><span class="l-es">Un prototipo navegable para conversar con personas reales.</span><span class="l-en">A navigable prototype for conversations with real people.</span><span class="l-pt">Um protótipo navegável para conversar com pessoas reais.</span></li>
+              <li><span class="l-es">Una app funcional publicada y lista para un siguiente ciclo.</span><span class="l-en">A published functional app ready for its next cycle.</span><span class="l-pt">Um app funcional publicado e pronto para o próximo ciclo.</span></li>
+              <li><span class="l-es">Un sistema agéntico básico para sostener y evolucionar el producto.</span><span class="l-en">A basic agentic system to sustain and evolve the product.</span><span class="l-pt">Um sistema agêntico básico para sustentar e evoluir o produto.</span></li>
+            </ul>
+          </article>
+          <div class="x-card rw-portrait"><img src="assets/ruta-workshops/crear-negocios-con-ia.png" alt="Más que prompts, aprender a crear negocios con inteligencia artificial" width="768" height="1365" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="unirme">
+      <div class="container">
+        <div class="rw-cta">
+          <span class="eyebrow"><span class="l-es">Próxima cohorte · Cupos limitados</span><span class="l-en">Next cohort · Limited seats</span><span class="l-pt">Próxima turma · Vagas limitadas</span></span>
+          <h2 class="h2"><span class="l-es">Tu idea puede quedarse en una nota. O puede convertirse en <span class="gradient-text">algo real.</span></span><span class="l-en">Your idea can stay in a note. Or it can become <span class="gradient-text">something real.</span></span><span class="l-pt">Sua ideia pode ficar em uma nota. Ou pode se tornar <span class="gradient-text">algo real.</span></span></h2>
+          <p class="lead"><span class="l-es">Cuéntanos qué quieres crear. Te compartimos fechas, modalidad e inversión de la próxima ruta antes de que tomes una decisión.</span><span class="l-en">Tell us what you want to create. We will share dates, format and investment for the next route before you decide.</span><span class="l-pt">Conte o que você quer criar. Compartilharemos datas, formato e investimento da próxima rota antes de sua decisão.</span></p>
+          <div class="rw-cta-actions">
+            <a class="home-cta home-cta--primary" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20quiero%20conocer%20la%20pr%C3%B3xima%20Ruta%20de%20Workshops%20para%20convertir%20mi%20idea%20en%20una%20app%20real." target="_blank" rel="noopener"><span class="l-es">Hablar por WhatsApp →</span><span class="l-en">Talk on WhatsApp →</span><span class="l-pt">Conversar pelo WhatsApp →</span></a>
+            <a class="home-cta home-cta--secondary" href="mailto:contacto@metodologia.info?subject=Ruta%20de%20Workshops%20%C2%B7%20De%20la%20idea%20a%20una%20app%20real&amp;body=Hola%20MetodologIA%2C%0A%0AQuiero%20conocer%20la%20pr%C3%B3xima%20Ruta%20de%20Workshops.%0A%0AMi%20nombre%3A%0ALa%20idea%20que%20quiero%20convertir%20en%20producto%3A%0AMi%20experiencia%20t%C3%A9cnica%3A%0AMi%20pregunta%20principal%3A%0A%0AGracias."><span class="l-es">Escribir por correo</span><span class="l-en">Write by email</span><span class="l-pt">Escrever por e-mail</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <triple-toggle aria-label="Preferencias de tema e idioma">
+    <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
+    <button class="toggle-btn" id="langbtn" type="button" aria-label="Cambiar idioma ES EN PT" title="ES / EN / PT">ES</button>
+  </triple-toggle>
+
+  <footer class="site-footer" aria-label="Pie de página">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div><div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div><p class="site-footer__brand-tagline"><span class="l-es">“La excelencia no se compra, se diseña. Se cocrea y se comparte.”</span><span class="l-en">“Excellence is not bought, it is designed. Co-created and shared.”</span><span class="l-pt">“A excelência não se compra, se desenha. Se cocria e se compartilha.”</span></p></div>
+        <nav><div class="site-footer__col-head"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></div><a class="site-footer__link" href="#ruta"><span class="l-es">4 workshops</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></a><a class="site-footer__link" href="#metodo"><span class="l-es">Metodología</span><span class="l-en">Methodology</span><span class="l-pt">Metodologia</span></a><a class="site-footer__link" href="#experiencia"><span class="l-es">Resultados</span><span class="l-en">Outcomes</span><span class="l-pt">Resultados</span></a></nav>
+        <nav><div class="site-footer__col-head"><span class="l-es">Ecosistema</span><span class="l-en">Ecosystem</span><span class="l-pt">Ecossistema</span></div><a class="site-footer__link" href="index.html">Trabajar Amplificado</a><a class="site-footer__link" href="programa-empoderamiento.html"><span class="l-es">Empoderamiento IA</span><span class="l-en">AI Empowerment</span><span class="l-pt">Empoderamento IA</span></a><a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a></nav>
+        <nav><div class="site-footer__col-head"><span class="l-es">Conectar</span><span class="l-en">Connect</span><span class="l-pt">Conectar</span></div><a class="site-footer__link" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20quiero%20conocer%20la%20Ruta%20de%20Workshops." target="_blank" rel="noopener">WhatsApp</a><a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Ruta%20de%20Workshops">contacto@metodologia.info</a><a class="site-footer__link" href="#unirme"><span class="l-es">Unirme a la ruta</span><span class="l-en">Join the route</span><span class="l-pt">Entrar na rota</span></a></nav>
+      </div>
+      <div class="site-footer__bottom"><span>© 2026 MetodologIA. Copyleft. · Success as a Service</span><span>Método primero, (Gen)IA después.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var html=document.documentElement;
+      var tb=document.getElementById('themebtn');
+      function themeIcon(){if(tb)tb.textContent=html.dataset.theme==='dark'?'☀':'☾'}
+      themeIcon();
+      if(tb)tb.addEventListener('click',function(){html.dataset.theme=html.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('mdg_theme',html.dataset.theme)}catch(e){}themeIcon()});
+      var langs=['es','en','pt'],lb=document.getElementById('langbtn');
+      function setLang(lang){if(langs.indexOf(lang)<0)lang='es';html.lang=lang;try{localStorage.setItem('mdg_locale',lang)}catch(e){}if(lb)lb.textContent=lang.toUpperCase()}
+      setLang(localStorage.getItem('mdg_locale')||html.lang||'es');
+      if(lb)lb.addEventListener('click',function(){var index=langs.indexOf(html.lang);setLang(langs[(index+1)%langs.length])});
+    })();
+  </script>
+  <script src="scripts/site-unified-v1.js" defer></script>
+</body>
+</html>
