@@ -38,6 +38,25 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <style>
+    :root{
+      --rw-color-accent:var(--brand-gold);
+      --rw-color-accent-text:var(--brand-gold-text);
+      --rw-color-ink:var(--brand-text);
+      --rw-color-ink-soft:var(--brand-text-soft);
+      --rw-color-muted:var(--brand-muted);
+      --rw-color-panel:var(--brand-surface);
+      --rw-color-panel-alt:var(--brand-surface-alt);
+      --rw-color-border:var(--brand-border);
+      --rw-color-success:#22c55e;
+      --rw-radius-card:var(--brand-radius-lg);
+      --rw-radius-control:10px;
+      --rw-radius-pill:999px;
+      --rw-shadow-elevated:0 32px 80px -38px rgba(0,0,0,.72);
+      --rw-shadow-modal:0 28px 80px rgba(0,0,0,.52);
+      --rw-overlay:rgba(7,11,26,.72);
+      --rw-focus:0 0 0 3px rgba(255,215,0,.3);
+      --rw-space-card:clamp(1.25rem,3vw,1.8rem);
+    }
     .l-en,.l-pt{display:none}
     html[lang="en"] .l-es{display:none}html[lang="en"] .l-en{display:inline}html[lang="en"] .l-pt{display:none}
     html[lang="pt"] .l-es{display:none}html[lang="pt"] .l-en{display:none}html[lang="pt"] .l-pt{display:inline}
@@ -48,10 +67,10 @@
     .rw-hero-copy{text-align:left}
     .rw-hero-copy .h1{max-width:13ch;margin:.95rem 0 1.15rem;font-size:clamp(2.6rem,7vw,5rem)}
     .rw-hero-copy .lead{max-width:40rem}
-    .rw-open{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1rem;padding:.55rem .85rem;border:1px solid rgba(255,215,0,.42);border-radius:999px;background:rgba(255,215,0,.1);color:var(--brand-gold-text);font-family:'Poppins',sans-serif;font-size:.76rem;font-weight:800;letter-spacing:.04em}
-    .rw-open::before{content:"";width:.58rem;height:.58rem;border-radius:50%;background:#22c55e;box-shadow:0 0 0 .24rem rgba(34,197,94,.14)}
+    .rw-open{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1rem;padding:.55rem .85rem;border:1px solid rgba(255,215,0,.42);border-radius:var(--rw-radius-pill);background:rgba(255,215,0,.1);color:var(--rw-color-accent-text);font-family:'Poppins',sans-serif;font-size:.76rem;font-weight:800;letter-spacing:.04em}
+    .rw-open::before{content:"";width:.58rem;height:.58rem;border-radius:50%;background:var(--rw-color-success);box-shadow:0 0 0 .24rem rgba(34,197,94,.14)}
     .rw-hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
-    .rw-video-shell{position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--brand-border);border-radius:var(--brand-radius-lg);background:#070b1a;box-shadow:0 32px 80px -38px rgba(0,0,0,.72);aspect-ratio:16/10}
+    .rw-video-shell{position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--brand-darker);box-shadow:var(--rw-shadow-elevated);aspect-ratio:16/10}
     .rw-video-shell::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 45%,rgba(7,11,26,.76) 100%)}
     .rw-video{width:100%;max-width:100%;height:100%;object-fit:cover}
     .rw-video-label{position:absolute;z-index:2;left:1.2rem;right:1.2rem;bottom:1rem;color:#fff}
@@ -68,7 +87,7 @@
     .rw-intro-media img{width:100%;aspect-ratio:16/12;object-fit:cover;object-position:center 46%}
     .rw-route{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:2rem}
     @media(min-width:760px){.rw-route{grid-template-columns:repeat(2,1fr)}}
-    .rw-workshop{position:relative;display:flex;flex-direction:column;min-height:100%;padding:clamp(1.25rem,3vw,1.8rem);overflow:hidden}
+    .rw-workshop{position:relative;display:flex;flex-direction:column;min-height:100%;padding:var(--rw-space-card);overflow:hidden;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--rw-color-panel-alt);cursor:pointer}
     .rw-workshop::before{content:attr(data-step);position:absolute;right:1rem;top:.3rem;font-family:'Poppins',sans-serif;font-size:4.5rem;font-weight:900;line-height:1;color:rgba(255,215,0,.08)}
     .rw-workshop__meta{font-family:'Trebuchet MS',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--brand-gold-text)}
     .rw-workshop h3{max-width:18ch;margin:.8rem 0 .55rem;font-size:clamp(1.25rem,2.6vw,1.7rem)}
@@ -77,6 +96,8 @@
     .rw-workshop__deliverable strong{color:var(--brand-gold-text)}
     .rw-workshop__schedule{display:flex;flex-wrap:wrap;gap:.35rem .65rem;margin:.15rem 0 .75rem!important;color:var(--brand-gold-text)!important;font-family:'Poppins',sans-serif;font-size:.78rem!important;font-weight:800}
     .rw-workshop__schedule span+span::before{content:"·";margin-right:.65rem;color:var(--brand-muted)}
+    .rw-workshop__more{display:inline-flex;align-items:center;gap:.35rem;margin-top:.85rem;color:var(--rw-color-accent-text);font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:800}
+    .rw-workshop:focus-visible{box-shadow:var(--rw-focus);outline:none}
     .rw-flow{display:grid;gap:.75rem;margin-top:1.5rem}
     @media(min-width:760px){.rw-flow{grid-template-columns:repeat(4,1fr)}}
     .rw-flow-item{position:relative;padding:1rem;text-align:center}
@@ -116,6 +137,35 @@
     .rw-price-card .home-cta{margin-top:auto}
     .rw-license{margin-top:1rem;padding:1rem 1.15rem;border:1px solid var(--brand-border);border-radius:var(--brand-radius);color:var(--brand-muted);font-size:.82rem;line-height:1.55}
     .rw-license strong{color:var(--brand-text)}
+    .rw-leveling{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:1.5rem;padding:clamp(1.35rem,3vw,2rem);border:2px solid var(--rw-color-accent-text);border-radius:var(--rw-radius-card);background:radial-gradient(circle at 90% 0%,rgba(255,215,0,.14),transparent 38%),var(--rw-color-panel-alt)}
+    @media(min-width:760px){.rw-leveling{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);align-items:center}}
+    .rw-leveling__label{color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .rw-leveling h3{margin:.55rem 0 .35rem;font-size:clamp(1.25rem,2.5vw,1.75rem)}
+    .rw-leveling p{color:var(--rw-color-ink-soft);font-size:.9rem;line-height:1.6}
+    .rw-included{display:grid;gap:.65rem}
+    .rw-included li{display:grid;grid-template-columns:1.5rem 1fr;gap:.5rem;color:var(--rw-color-ink-soft);font-size:.86rem;line-height:1.45}
+    .rw-included li::before{content:"✓";display:grid;place-items:center;width:1.35rem;height:1.35rem;border-radius:50%;background:var(--rw-color-accent);color:var(--brand-dark);font-weight:900}
+    .rw-requirements{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:1.4rem}
+    @media(min-width:760px){.rw-requirements{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .rw-requirement{padding:1.3rem;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--rw-color-panel-alt)}
+    .rw-requirement__num{display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:var(--rw-radius-control);background:rgba(255,215,0,.12);color:var(--rw-color-accent-text);font-family:'Poppins',sans-serif;font-weight:900}
+    .rw-requirement h3{margin:.75rem 0 .35rem;font-size:1rem}
+    .rw-requirement p{color:var(--rw-color-muted);font-size:.82rem;line-height:1.55}
+    .rw-modal{width:min(680px,calc(100vw - 2rem));max-height:min(86vh,760px);padding:0;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--rw-color-panel);color:var(--rw-color-ink);box-shadow:var(--rw-shadow-modal);overflow:auto}
+    .rw-modal::backdrop{background:var(--rw-overlay);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+    .rw-modal__inner{position:relative;padding:clamp(1.35rem,4vw,2.25rem)}
+    .rw-modal__close{position:sticky;float:right;top:.75rem;z-index:2;display:grid;place-items:center;width:2.4rem;height:2.4rem;margin:-.4rem -.4rem 0 .7rem;border:1px solid var(--rw-color-border);border-radius:50%;background:var(--rw-color-panel-alt);color:var(--rw-color-ink);font-size:1.35rem;line-height:1}
+    .rw-modal__close:hover,.rw-modal__close:focus-visible{border-color:var(--rw-color-accent-text);box-shadow:var(--rw-focus);outline:none}
+    .rw-modal__meta{color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+    .rw-modal h2{margin:.55rem 0 .35rem;font-size:clamp(1.4rem,4vw,2rem)}
+    .rw-modal__summary{color:var(--rw-color-ink-soft);font-size:.9rem;line-height:1.6}
+    .rw-modal h3{margin:1.25rem 0 .55rem;color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase}
+    .rw-modal__list{display:grid;gap:.55rem}
+    .rw-modal__list li{display:grid;grid-template-columns:1.35rem 1fr;gap:.45rem;color:var(--rw-color-ink-soft);font-size:.86rem;line-height:1.5}
+    .rw-modal__list li::before{content:"→";color:var(--rw-color-accent-text);font-weight:900}
+    .rw-modal__kit{margin-top:1rem;padding:1rem;border:1px solid rgba(255,215,0,.3);border-radius:var(--rw-radius-control);background:rgba(255,215,0,.08);color:var(--rw-color-ink-soft);font-size:.85rem;line-height:1.55}
+    .rw-modal__kit strong{color:var(--rw-color-accent-text)}
+    .rw-modal__actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.25rem}
     .rw-portrait{overflow:hidden;min-height:330px}
     .rw-portrait img{width:100%;height:100%;object-fit:cover;object-position:center}
     .rw-cta{position:relative;overflow:hidden;text-align:center;border:1px solid var(--brand-border);border-radius:var(--brand-radius-lg);padding:clamp(2rem,7vw,4.5rem) clamp(1.2rem,4vw,3rem);background:radial-gradient(circle at 50% 0%,rgba(255,215,0,.16),transparent 43%),var(--brand-surface-alt)}
@@ -170,6 +220,7 @@
     <nav class="site-header__nav" aria-label="Navegación principal">
       <a class="site-header__nav-link" href="#ruta"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></a>
       <a class="site-header__nav-link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a>
+      <a class="site-header__nav-link" href="#requisitos"><span class="l-es">Requisitos</span><span class="l-en">Requirements</span><span class="l-pt">Requisitos</span></a>
       <a class="site-header__nav-link" href="#metodo"><span class="l-es">Método</span><span class="l-en">Method</span><span class="l-pt">Método</span></a>
       <a class="site-header__nav-link" href="#experiencia"><span class="l-es">Experiencia</span><span class="l-en">Experience</span><span class="l-pt">Experiência</span></a>
       <a class="site-header__nav-link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a>
@@ -225,33 +276,37 @@
         </div>
 
         <div class="rw-route">
-          <article class="x-card rw-workshop" data-step="01">
+          <article class="x-card rw-workshop" data-step="01" data-rw-modal="rw-class-01" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="rw-class-01">
             <span class="rw-workshop__meta"><span class="l-es">Workshop 01 · Martes 18 de agosto</span><span class="l-en">Workshop 01 · Tuesday, August 18</span><span class="l-pt">Workshop 01 · Terça-feira, 18 de agosto</span></span>
             <h3><span class="l-es">De la Idea al Prototipo</span><span class="l-en">From Idea to Prototype</span><span class="l-pt">Da Ideia ao Protótipo</span></h3>
             <p class="rw-workshop__schedule"><span>7:30–9:30 p. m.</span><span>$100.000 COP</span></p>
             <p><span class="l-es">Aterriza el problema, la persona usuaria, la promesa de valor y el alcance mínimo. Usa IA para investigar y tensionar la idea, sin delegarle tu criterio.</span><span class="l-en">Clarify the problem, user, value promise and minimum scope. Use AI to research and challenge the idea without delegating your judgment.</span><span class="l-pt">Defina o problema, a pessoa usuária, a promessa de valor e o escopo mínimo. Use IA para pesquisar e tensionar a ideia sem delegar seu critério.</span></p>
             <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">brief de producto y primer prototipo navegable.</span><span class="l-en">a product brief and first navigable prototype.</span><span class="l-pt">brief de produto e primeiro protótipo navegável.</span></p>
+            <span class="rw-workshop__more"><span class="l-es">Ver qué aprenderás →</span><span class="l-en">See what you will learn →</span><span class="l-pt">Ver o que você aprenderá →</span></span>
           </article>
-          <article class="x-card rw-workshop" data-step="02">
+          <article class="x-card rw-workshop" data-step="02" data-rw-modal="rw-class-02" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="rw-class-02">
             <span class="rw-workshop__meta"><span class="l-es">Workshop 02 · Miércoles 19 de agosto</span><span class="l-en">Workshop 02 · Wednesday, August 19</span><span class="l-pt">Workshop 02 · Quarta-feira, 19 de agosto</span></span>
             <h3><span class="l-es">Del Prototipo al Primer Despliegue</span><span class="l-en">From Prototype to First Deployment</span><span class="l-pt">Do Protótipo à Primeira Publicação</span></h3>
             <p class="rw-workshop__schedule"><span>7:30–9:30 p. m.</span><span>$100.000 COP</span></p>
             <p><span class="l-es">Convierte el prototipo en una primera aplicación funcional. Integra pantallas, flujo y funciones con desarrollo asistido por IA, y publícala para poder probarla.</span><span class="l-en">Turn the prototype into a first functional application. Integrate screens, flow and features with AI-assisted development, then publish it for testing.</span><span class="l-pt">Transforme o protótipo em uma primeira aplicação funcional. Integre telas, fluxo e funções com desenvolvimento assistido por IA e publique para testar.</span></p>
             <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">primera versión funcional y URL de despliegue.</span><span class="l-en">a first functional version and deployment URL.</span><span class="l-pt">primeira versão funcional e URL de publicação.</span></p>
+            <span class="rw-workshop__more"><span class="l-es">Ver qué aprenderás →</span><span class="l-en">See what you will learn →</span><span class="l-pt">Ver o que você aprenderá →</span></span>
           </article>
-          <article class="x-card rw-workshop" data-step="03">
+          <article class="x-card rw-workshop" data-step="03" data-rw-modal="rw-class-03" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="rw-class-03">
             <span class="rw-workshop__meta"><span class="l-es">Workshop 03 · Jueves 20 de agosto</span><span class="l-en">Workshop 03 · Thursday, August 20</span><span class="l-pt">Workshop 03 · Quinta-feira, 20 de agosto</span></span>
             <h3><span class="l-es">Salir a Producción</span><span class="l-en">Go to Production</span><span class="l-pt">Entrar em Produção</span></h3>
             <p class="rw-workshop__schedule"><span>7:30–9:30 p. m.</span><span>$100.000 COP</span></p>
             <p><span class="l-es">Domina el desarrollo asistido por IA para convertir el prototipo en software utilizable. Integra funciones, datos, pruebas y despliegue con decisiones técnicas explicables.</span><span class="l-en">Master AI-assisted development to turn the prototype into usable software. Integrate features, data, tests and deployment with explainable technical decisions.</span><span class="l-pt">Domine o desenvolvimento assistido por IA para transformar o protótipo em software utilizável. Integre funções, dados, testes e publicação com decisões técnicas explicáveis.</span></p>
             <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">app funcional, URL pública y backlog priorizado.</span><span class="l-en">a functional app, public URL and prioritized backlog.</span><span class="l-pt">app funcional, URL pública e backlog priorizado.</span></p>
+            <span class="rw-workshop__more"><span class="l-es">Ver qué aprenderás →</span><span class="l-en">See what you will learn →</span><span class="l-pt">Ver o que você aprenderá →</span></span>
           </article>
-          <article class="x-card rw-workshop" data-step="04">
+          <article class="x-card rw-workshop" data-step="04" data-rw-modal="rw-class-04" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="rw-class-04">
             <span class="rw-workshop__meta"><span class="l-es">Workshop 04 · Sábado 22 de agosto</span><span class="l-en">Workshop 04 · Saturday, August 22</span><span class="l-pt">Workshop 04 · Sábado, 22 de agosto</span></span>
             <h3><span class="l-es">Consolidar un Producto Útil</span><span class="l-en">Consolidate a Useful Product</span><span class="l-pt">Consolidar um Produto Útil</span></h3>
             <p class="rw-workshop__schedule"><span>10:00 a. m.–12:00 m.</span><span>$100.000 COP</span></p>
             <p><span class="l-es">Revisa lo construido como producto: utilidad, límites, experiencia y siguiente ciclo. Crea flujos con skills, agentes y arneses para sostener su evolución con trazabilidad.</span><span class="l-en">Review what you built as a product: usefulness, limits, experience and next cycle. Create flows with skills, agents and harnesses to sustain its evolution with traceability.</span><span class="l-pt">Revise o que construiu como produto: utilidade, limites, experiência e próximo ciclo. Crie fluxos com skills, agentes e arneses para sustentar sua evolução com rastreabilidade.</span></p>
             <p class="rw-workshop__deliverable"><strong><span class="l-es">Sales con:</span><span class="l-en">You leave with:</span><span class="l-pt">Você sai com:</span></strong> <span class="l-es">producto consolidado, validadores y próximo ciclo.</span><span class="l-en">a consolidated product, validators and next cycle.</span><span class="l-pt">produto consolidado, validadores e próximo ciclo.</span></p>
+            <span class="rw-workshop__more"><span class="l-es">Ver qué aprenderás →</span><span class="l-en">See what you will learn →</span><span class="l-pt">Ver o que você aprenderá →</span></span>
           </article>
         </div>
       </div>
@@ -269,6 +324,7 @@
             <p class="rw-price-old"><span class="l-es">Una sesión práctica de 2 horas</span><span class="l-en">One 2-hour hands-on session</span><span class="l-pt">Uma sessão prática de 2 horas</span></p>
             <ul class="rw-price-list">
               <li><span class="l-es">Acceso al workshop elegido.</span><span class="l-en">Access to your selected workshop.</span><span class="l-pt">Acesso ao workshop escolhido.</span></li>
+              <li><span class="l-es">Nivelación diagnóstica y set a medida incluidos.</span><span class="l-en">Diagnostic leveling and tailored set included.</span><span class="l-pt">Nivelamento diagnóstico e set sob medida incluídos.</span></li>
               <li><span class="l-es">Aceleradores de IA aplicables.</span><span class="l-en">Applicable AI accelerators.</span><span class="l-pt">Aceleradores de IA aplicáveis.</span></li>
               <li><span class="l-es">Construcción práctica y acompañada.</span><span class="l-en">Hands-on, guided building.</span><span class="l-pt">Construção prática e acompanhada.</span></li>
             </ul>
@@ -281,6 +337,7 @@
             <span class="rw-saving"><span class="l-es">Ahorras $100.000 COP · 25%</span><span class="l-en">Save $100,000 COP · 25%</span><span class="l-pt">Economize $100.000 COP · 25%</span></span>
             <ul class="rw-price-list">
               <li><span class="l-es">Los 4 workshops · 8 horas en total.</span><span class="l-en">All 4 workshops · 8 total hours.</span><span class="l-pt">Os 4 workshops · 8 horas no total.</span></li>
+              <li><span class="l-es">Nivelación diagnóstica y set a medida incluidos.</span><span class="l-en">Diagnostic leveling and tailored set included.</span><span class="l-pt">Nivelamento diagnóstico e set sob medida incluídos.</span></li>
               <li><span class="l-es">Aceleradores: asistentes, prompts, agentes, skills y arneses.</span><span class="l-en">Accelerators: assistants, prompts, agents, skills and harnesses.</span><span class="l-pt">Aceleradores: assistentes, prompts, agentes, skills e arneses.</span></li>
               <li><span class="l-es">Playbook “Creando Aplicaciones Profesionales”.</span><span class="l-en">“Building Professional Applications” playbook.</span><span class="l-pt">Playbook “Criando Aplicações Profissionais”.</span></li>
               <li><span class="l-es">Continuidad desde la idea hasta un producto útil.</span><span class="l-en">Continuity from idea to a useful product.</span><span class="l-pt">Continuidade da ideia até um produto útil.</span></li>
@@ -292,9 +349,35 @@
       </div>
     </section>
 
+    <section class="section" id="requisitos">
+      <div class="container">
+        <span class="eyebrow"><span class="l-es">Antes de empezar · 03</span><span class="l-en">Before you begin · 03</span><span class="l-pt">Antes de começar · 03</span></span>
+        <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">Nivelamos el punto de partida y diseñamos <span class="gradient-text">tu set a medida</span></span><span class="l-en">We align the starting point and design <span class="gradient-text">your tailored set</span></span><span class="l-pt">Alinhamos o ponto de partida e desenhamos <span class="gradient-text">seu set sob medida</span></span></h2>
+        <p class="lead" style="max-width:48rem;"><span class="l-es">Matricularte en cualquier taller incluye una clase de nivelación previa. Allí diagnosticamos tu experiencia, objetivo y caso para definir los aceleradores que más te benefician.</span><span class="l-en">Enrollment in any workshop includes a prior leveling class. We diagnose your experience, goal and case to define the accelerators that will benefit you most.</span><span class="l-pt">A matrícula em qualquer workshop inclui uma aula prévia de nivelamento. Diagnosticamos sua experiência, objetivo e caso para definir os aceleradores que mais beneficiam você.</span></p>
+        <div class="rw-leveling">
+          <div>
+            <span class="rw-leveling__label"><span class="l-es">Incluido con cualquier matrícula</span><span class="l-en">Included with any enrollment</span><span class="l-pt">Incluído em qualquer matrícula</span></span>
+            <h3><span class="l-es">Clase de nivelación + diagnóstico</span><span class="l-en">Leveling class + diagnosis</span><span class="l-pt">Aula de nivelamento + diagnóstico</span></h3>
+            <p><span class="l-es">No recibes un paquete genérico. El diagnóstico orienta qué configuración, ejemplos y herramientas se preparan para tu contexto.</span><span class="l-en">You do not receive a generic package. The diagnosis guides which configuration, examples and tools are prepared for your context.</span><span class="l-pt">Você não recebe um pacote genérico. O diagnóstico orienta quais configurações, exemplos e ferramentas são preparados para seu contexto.</span></p>
+          </div>
+          <ul class="rw-included">
+            <li><span class="l-es">Asistentes y prompts alineados con tu caso.</span><span class="l-en">Assistants and prompts aligned with your case.</span><span class="l-pt">Assistentes e prompts alinhados ao seu caso.</span></li>
+            <li><span class="l-es">Herramientas avanzadas seleccionadas: skills, plugins, agentes o arneses, según el diagnóstico.</span><span class="l-en">Selected advanced tools: skills, plugins, agents or harnesses, based on the diagnosis.</span><span class="l-pt">Ferramentas avançadas selecionadas: skills, plugins, agentes ou arneses, conforme o diagnóstico.</span></li>
+            <li><span class="l-es">Aceleradores, Playbook y materiales necesarios para aprovechar la clase.</span><span class="l-en">Accelerators, playbook and materials needed to make the most of the class.</span><span class="l-pt">Aceleradores, playbook e materiais necessários para aproveitar a aula.</span></li>
+            <li><span class="l-es">Tu pago cubre la nivelación, el taller elegido y este set personalizado.</span><span class="l-en">Your payment covers the leveling class, selected workshop and this tailored set.</span><span class="l-pt">Seu pagamento cobre o nivelamento, o workshop escolhido e esse set personalizado.</span></li>
+          </ul>
+        </div>
+        <div class="rw-requirements">
+          <article class="rw-requirement"><span class="rw-requirement__num">01</span><h3><span class="l-es">Licencia activa</span><span class="l-en">Active subscription</span><span class="l-pt">Assinatura ativa</span></h3><p><span class="l-es">ChatGPT o Claude de aproximadamente USD 20. Recomendamos ChatGPT. Es un costo externo no incluido.</span><span class="l-en">ChatGPT or Claude, approximately USD 20. We recommend ChatGPT. This external cost is not included.</span><span class="l-pt">ChatGPT ou Claude, aproximadamente USD 20. Recomendamos ChatGPT. Esse custo externo não está incluído.</span></p></article>
+          <article class="rw-requirement"><span class="rw-requirement__num">02</span><h3><span class="l-es">Uso básico en dos dispositivos</span><span class="l-en">Basic use on two devices</span><span class="l-pt">Uso básico em dois dispositivos</span></h3><p><span class="l-es">Estar familiarizado con el uso de ChatGPT en computador y celular. No necesitas saber programar.</span><span class="l-en">Be familiar with using ChatGPT on a computer and mobile phone. You do not need to know how to code.</span><span class="l-pt">Estar familiarizado com o uso do ChatGPT no computador e no celular. Você não precisa saber programar.</span></p></article>
+          <article class="rw-requirement"><span class="rw-requirement__num">03</span><h3><span class="l-es">Disposición para cambiar</span><span class="l-en">Willingness to change</span><span class="l-pt">Disposição para mudar</span></h3><p><span class="l-es">Venir dispuesto a aprender, experimentar y adoptar una nueva forma de trabajar con IA y criterio humano.</span><span class="l-en">Come ready to learn, experiment and adopt a new way of working with AI and human judgment.</span><span class="l-pt">Vir disposto a aprender, experimentar e adotar uma nova forma de trabalhar com IA e critério humano.</span></p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="metodo">
       <div class="container">
-        <span class="eyebrow"><span class="l-es">La forma de aprender · 03</span><span class="l-en">How you learn · 03</span><span class="l-pt">Como você aprende · 03</span></span>
+        <span class="eyebrow"><span class="l-es">La forma de aprender · 04</span><span class="l-en">How you learn · 04</span><span class="l-pt">Como você aprende · 04</span></span>
         <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">No vienes a mirar. <span class="gradient-text">Vienes a construir.</span></span><span class="l-en">You do not come to watch. <span class="gradient-text">You come to build.</span></span><span class="l-pt">Você não vem assistir. <span class="gradient-text">Vem construir.</span></span></h2>
         <p class="lead" style="max-width:48rem;"><span class="l-es">La IA acelera; el método evita que aceleres en la dirección equivocada. Cada sesión combina una decisión de negocio, una construcción visible y un cierre con evidencia.</span><span class="l-en">AI accelerates; method keeps you from accelerating in the wrong direction. Each session combines a business decision, visible construction and an evidence-based close.</span><span class="l-pt">A IA acelera; o método evita que você acelere na direção errada. Cada sessão combina uma decisão de negócio, uma construção visível e um fechamento com evidência.</span></p>
         <div class="rw-principles">
@@ -307,7 +390,7 @@
 
     <section class="section" id="experiencia">
       <div class="container">
-        <span class="eyebrow"><span class="l-es">La experiencia · 04</span><span class="l-en">The experience · 04</span><span class="l-pt">A experiência · 04</span></span>
+        <span class="eyebrow"><span class="l-es">La experiencia · 05</span><span class="l-en">The experience · 05</span><span class="l-pt">A experiência · 05</span></span>
         <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">Una ruta para pasar de consumidor a <span class="gradient-text">creador</span></span><span class="l-en">A route from consumer to <span class="gradient-text">creator</span></span><span class="l-pt">Uma rota para passar de consumidor a <span class="gradient-text">criador</span></span></h2>
         <p class="lead" style="max-width:48rem;"><span class="l-es">Puedes empezar sin ser experto técnico. Lo importante es llegar con una idea, disposición para construir y voluntad de revisar con honestidad.</span><span class="l-en">You can start without being a technical expert. What matters is bringing an idea, a willingness to build and honesty in review.</span><span class="l-pt">Você pode começar sem ser especialista técnico. O importante é chegar com uma ideia, disposição para construir e vontade de revisar com honestidade.</span></p>
         <div class="rw-gallery">
@@ -348,6 +431,82 @@
     </section>
   </main>
 
+  <dialog class="rw-modal" id="rw-class-01" aria-labelledby="rw-class-01-title">
+    <div class="rw-modal__inner">
+      <button class="rw-modal__close" type="button" data-rw-close aria-label="Cerrar">×</button>
+      <span class="rw-modal__meta"><span class="l-es">Workshop 01 · Martes 18 · 7:30–9:30 p. m.</span><span class="l-en">Workshop 01 · Tuesday 18 · 7:30–9:30 p.m.</span><span class="l-pt">Workshop 01 · Terça 18 · 19:30–21:30</span></span>
+      <h2 id="rw-class-01-title"><span class="l-es">De la Idea al Prototipo</span><span class="l-en">From Idea to Prototype</span><span class="l-pt">Da Ideia ao Protótipo</span></h2>
+      <p class="rw-modal__summary"><span class="l-es">Transforma una intuición en una propuesta concreta que puedas mostrar, conversar y mejorar.</span><span class="l-en">Turn an intuition into a concrete proposal you can show, discuss and improve.</span><span class="l-pt">Transforme uma intuição em uma proposta concreta que você possa mostrar, discutir e melhorar.</span></p>
+      <h3><span class="l-es">Qué aprenderemos</span><span class="l-en">What we will learn</span><span class="l-pt">O que aprenderemos</span></h3>
+      <ul class="rw-modal__list">
+        <li><span class="l-es">Definir problema, usuario, promesa de valor y alcance mínimo.</span><span class="l-en">Define the problem, user, value promise and minimum scope.</span><span class="l-pt">Definir problema, usuário, promessa de valor e escopo mínimo.</span></li>
+        <li><span class="l-es">Convertir el brief en flujo, pantallas y primer prototipo navegable.</span><span class="l-en">Turn the brief into a flow, screens and a first navigable prototype.</span><span class="l-pt">Transformar o brief em fluxo, telas e primeiro protótipo navegável.</span></li>
+        <li><span class="l-es">Usar IA para investigar y tensionar la idea sin delegar tu criterio.</span><span class="l-en">Use AI to research and challenge the idea without delegating your judgment.</span><span class="l-pt">Usar IA para pesquisar e tensionar a ideia sem delegar seu critério.</span></li>
+      </ul>
+      <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">después del diagnóstico podremos configurar asistentes de descubrimiento, prompts de producto, skills o plugins de prototipado y un arnés de validación de hipótesis.</span><span class="l-en">after the diagnosis we can configure discovery assistants, product prompts, prototyping skills or plugins, and a hypothesis-validation harness.</span><span class="l-pt">após o diagnóstico podemos configurar assistentes de descoberta, prompts de produto, skills ou plugins de prototipagem e um arnês de validação de hipóteses.</span></div>
+      <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
+    </div>
+  </dialog>
+
+  <dialog class="rw-modal" id="rw-class-02" aria-labelledby="rw-class-02-title">
+    <div class="rw-modal__inner">
+      <button class="rw-modal__close" type="button" data-rw-close aria-label="Cerrar">×</button>
+      <span class="rw-modal__meta"><span class="l-es">Workshop 02 · Miércoles 19 · 7:30–9:30 p. m.</span><span class="l-en">Workshop 02 · Wednesday 19 · 7:30–9:30 p.m.</span><span class="l-pt">Workshop 02 · Quarta 19 · 19:30–21:30</span></span>
+      <h2 id="rw-class-02-title"><span class="l-es">Del Prototipo al Primer Despliegue</span><span class="l-en">From Prototype to First Deployment</span><span class="l-pt">Do Protótipo à Primeira Publicação</span></h2>
+      <p class="rw-modal__summary"><span class="l-es">Convierte el prototipo en una aplicación funcional y compártela mediante una URL verificable.</span><span class="l-en">Turn the prototype into a functional application and share it through a verifiable URL.</span><span class="l-pt">Transforme o protótipo em uma aplicação funcional e compartilhe por meio de uma URL verificável.</span></p>
+      <h3><span class="l-es">Qué aprenderemos</span><span class="l-en">What we will learn</span><span class="l-pt">O que aprenderemos</span></h3>
+      <ul class="rw-modal__list">
+        <li><span class="l-es">Traducir pantallas y flujos en una arquitectura mínima de aplicación.</span><span class="l-en">Translate screens and flows into a minimum application architecture.</span><span class="l-pt">Traduzir telas e fluxos em uma arquitetura mínima de aplicação.</span></li>
+        <li><span class="l-es">Construir funciones con desarrollo asistido por IA y corregir errores con método.</span><span class="l-en">Build features with AI-assisted development and correct errors methodically.</span><span class="l-pt">Construir funções com desenvolvimento assistido por IA e corrigir erros com método.</span></li>
+        <li><span class="l-es">Realizar el primer despliegue y verificar que otra persona pueda usarlo.</span><span class="l-en">Complete the first deployment and verify that another person can use it.</span><span class="l-pt">Realizar a primeira publicação e verificar que outra pessoa possa usar.</span></li>
+      </ul>
+      <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">podrá incluir un asistente de construcción, prompts de implementación y depuración, skills o plugins de integración y un agente o arnés para construir, probar y desplegar.</span><span class="l-en">may include a building assistant, implementation and debugging prompts, integration skills or plugins, and an agent or harness to build, test and deploy.</span><span class="l-pt">poderá incluir um assistente de construção, prompts de implementação e depuração, skills ou plugins de integração e um agente ou arnês para construir, testar e publicar.</span></div>
+      <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
+    </div>
+  </dialog>
+
+  <dialog class="rw-modal" id="rw-class-03" aria-labelledby="rw-class-03-title">
+    <div class="rw-modal__inner">
+      <button class="rw-modal__close" type="button" data-rw-close aria-label="Cerrar">×</button>
+      <span class="rw-modal__meta"><span class="l-es">Workshop 03 · Jueves 20 · 7:30–9:30 p. m.</span><span class="l-en">Workshop 03 · Thursday 20 · 7:30–9:30 p.m.</span><span class="l-pt">Workshop 03 · Quinta 20 · 19:30–21:30</span></span>
+      <h2 id="rw-class-03-title"><span class="l-es">Salir a Producción</span><span class="l-en">Go to Production</span><span class="l-pt">Entrar em Produção</span></h2>
+      <p class="rw-modal__summary"><span class="l-es">Pasa de “funciona en mi equipo” a una aplicación utilizable, verificable y preparada para evolucionar.</span><span class="l-en">Move from “it works on my machine” to a usable, verifiable application ready to evolve.</span><span class="l-pt">Passe de “funciona no meu computador” para uma aplicação utilizável, verificável e pronta para evoluir.</span></p>
+      <h3><span class="l-es">Qué aprenderemos</span><span class="l-en">What we will learn</span><span class="l-pt">O que aprenderemos</span></h3>
+      <ul class="rw-modal__list">
+        <li><span class="l-es">Completar funciones, datos y configuración necesarios para producción.</span><span class="l-en">Complete the features, data and configuration needed for production.</span><span class="l-pt">Completar funções, dados e configuração necessários para produção.</span></li>
+        <li><span class="l-es">Aplicar pruebas, manejo de errores y controles básicos de calidad y seguridad.</span><span class="l-en">Apply tests, error handling and basic quality and security controls.</span><span class="l-pt">Aplicar testes, tratamento de erros e controles básicos de qualidade e segurança.</span></li>
+        <li><span class="l-es">Publicar, verificar y priorizar el backlog posterior al lanzamiento.</span><span class="l-en">Publish, verify and prioritize the post-launch backlog.</span><span class="l-pt">Publicar, verificar e priorizar o backlog após o lançamento.</span></li>
+      </ul>
+      <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">podrá combinar asistentes de revisión, prompts de QA y seguridad, skills o plugins de pruebas y despliegue, y agentes o arneses de release.</span><span class="l-en">may combine review assistants, QA and security prompts, testing and deployment skills or plugins, and release agents or harnesses.</span><span class="l-pt">poderá combinar assistentes de revisão, prompts de QA e segurança, skills ou plugins de testes e publicação e agentes ou arneses de release.</span></div>
+      <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
+    </div>
+  </dialog>
+
+  <dialog class="rw-modal" id="rw-class-04" aria-labelledby="rw-class-04-title">
+    <div class="rw-modal__inner">
+      <button class="rw-modal__close" type="button" data-rw-close aria-label="Cerrar">×</button>
+      <span class="rw-modal__meta"><span class="l-es">Workshop 04 · Sábado 22 · 10:00 a. m.–12:00 m.</span><span class="l-en">Workshop 04 · Saturday 22 · 10:00 a.m.–12:00 p.m.</span><span class="l-pt">Workshop 04 · Sábado 22 · 10:00–12:00</span></span>
+      <h2 id="rw-class-04-title"><span class="l-es">Consolidar un Producto Útil</span><span class="l-en">Consolidate a Useful Product</span><span class="l-pt">Consolidar um Produto Útil</span></h2>
+      <p class="rw-modal__summary"><span class="l-es">Evalúa el producto como sistema: utilidad, experiencia, evidencia y capacidad de evolucionar.</span><span class="l-en">Evaluate the product as a system: usefulness, experience, evidence and ability to evolve.</span><span class="l-pt">Avalie o produto como sistema: utilidade, experiência, evidência e capacidade de evoluir.</span></p>
+      <h3><span class="l-es">Qué aprenderemos</span><span class="l-en">What we will learn</span><span class="l-pt">O que aprenderemos</span></h3>
+      <ul class="rw-modal__list">
+        <li><span class="l-es">Revisar utilidad, límites y experiencia con evidencia observable.</span><span class="l-en">Review usefulness, limits and experience with observable evidence.</span><span class="l-pt">Revisar utilidade, limites e experiência com evidência observável.</span></li>
+        <li><span class="l-es">Convertir hallazgos en decisiones y un siguiente ciclo priorizado.</span><span class="l-en">Turn findings into decisions and a prioritized next cycle.</span><span class="l-pt">Transformar descobertas em decisões e um próximo ciclo priorizado.</span></li>
+        <li><span class="l-es">Diseñar una operación agéntica básica para sostener y mejorar el producto.</span><span class="l-en">Design a basic agentic operation to sustain and improve the product.</span><span class="l-pt">Desenhar uma operação agêntica básica para sustentar e melhorar o produto.</span></li>
+      </ul>
+      <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">podrá integrar asistentes de producto, prompts de análisis y backlog, skills o plugins de operación, agentes especializados y un arnés de mantenimiento y evolución.</span><span class="l-en">may integrate product assistants, analysis and backlog prompts, operational skills or plugins, specialized agents and a maintenance and evolution harness.</span><span class="l-pt">poderá integrar assistentes de produto, prompts de análise e backlog, skills ou plugins de operação, agentes especializados e um arnês de manutenção e evolução.</span></div>
+      <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
+    </div>
+  </dialog>
+
   <triple-toggle aria-label="Preferencias de tema e idioma">
     <button class="toggle-btn" id="themebtn" type="button" aria-label="Cambiar tema claro u oscuro" title="Claro / Oscuro">☾</button>
     <button class="toggle-btn" id="langbtn" type="button" aria-label="Cambiar idioma ES EN PT" title="ES / EN / PT">ES</button>
@@ -357,7 +516,7 @@
     <div class="container">
       <div class="site-footer__grid">
         <div><div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div><p class="site-footer__brand-tagline"><span class="l-es">“La excelencia no se compra, se diseña. Se cocrea y se comparte.”</span><span class="l-en">“Excellence is not bought, it is designed. Co-created and shared.”</span><span class="l-pt">“A excelência não se compra, se desenha. Se cocria e se compartilha.”</span></p></div>
-        <nav><div class="site-footer__col-head"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></div><a class="site-footer__link" href="#ruta"><span class="l-es">4 workshops</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></a><a class="site-footer__link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a><a class="site-footer__link" href="#experiencia"><span class="l-es">Resultados</span><span class="l-en">Outcomes</span><span class="l-pt">Resultados</span></a></nav>
+        <nav><div class="site-footer__col-head"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></div><a class="site-footer__link" href="#ruta"><span class="l-es">4 workshops</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></a><a class="site-footer__link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a><a class="site-footer__link" href="#requisitos"><span class="l-es">Nivelación y requisitos</span><span class="l-en">Leveling and requirements</span><span class="l-pt">Nivelamento e requisitos</span></a><a class="site-footer__link" href="#experiencia"><span class="l-es">Resultados</span><span class="l-en">Outcomes</span><span class="l-pt">Resultados</span></a></nav>
         <nav><div class="site-footer__col-head"><span class="l-es">Ecosistema</span><span class="l-en">Ecosystem</span><span class="l-pt">Ecossistema</span></div><a class="site-footer__link" href="index.html">Trabajar Amplificado</a><a class="site-footer__link" href="programa-empoderamiento.html"><span class="l-es">Empoderamiento IA</span><span class="l-en">AI Empowerment</span><span class="l-pt">Empoderamento IA</span></a><a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a></nav>
         <nav><div class="site-footer__col-head"><span class="l-es">Inscripciones</span><span class="l-en">Registration</span><span class="l-pt">Inscrições</span></div><a class="site-footer__link" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Formulario de inscripción</span><span class="l-en">Registration form</span><span class="l-pt">Formulário de inscrição</span></a><a class="site-footer__link" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20tengo%20una%20pregunta%20sobre%20la%20Ruta%20de%20Workshops%20de%20agosto." target="_blank" rel="noopener">WhatsApp</a><a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Ruta%20de%20Workshops%20%C2%B7%20Pregunta">contacto@metodologia.info</a></nav>
       </div>
@@ -376,6 +535,30 @@
       function setLang(lang){if(langs.indexOf(lang)<0)lang='es';html.lang=lang;try{localStorage.setItem('mdg_locale',lang)}catch(e){}if(lb)lb.textContent=lang.toUpperCase()}
       setLang(localStorage.getItem('mdg_locale')||html.lang||'es');
       if(lb)lb.addEventListener('click',function(){var index=langs.indexOf(html.lang);setLang(langs[(index+1)%langs.length])});
+
+      var lastModalTrigger=null;
+      document.querySelectorAll('[data-rw-modal]').forEach(function(trigger){
+        function openModal(){
+          var dialog=document.getElementById(trigger.getAttribute('data-rw-modal'));
+          if(dialog&&typeof dialog.showModal==='function'){
+            lastModalTrigger=trigger;
+            dialog.showModal();
+          }
+        }
+        trigger.addEventListener('click',openModal);
+        trigger.addEventListener('keydown',function(event){
+          if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal()}
+        });
+      });
+      document.querySelectorAll('dialog.rw-modal').forEach(function(dialog){
+        dialog.querySelectorAll('[data-rw-close]').forEach(function(button){
+          button.addEventListener('click',function(){dialog.close()});
+        });
+        dialog.addEventListener('click',function(event){if(event.target===dialog)dialog.close()});
+        dialog.addEventListener('close',function(){
+          if(lastModalTrigger&&document.contains(lastModalTrigger))lastModalTrigger.focus();
+        });
+      });
     })();
   </script>
   <script src="scripts/site-unified-v1.js" defer></script>
