@@ -170,6 +170,7 @@
     .rw-requirement p{color:var(--rw-color-muted);font-size:.82rem;line-height:1.55}
     .rw-assistants{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:1.6rem}
     @media(min-width:720px){.rw-assistants{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:1080px){.rw-assistants{grid-template-columns:repeat(3,minmax(0,1fr))}}
     .rw-assistant{display:flex;flex-direction:column;padding:var(--rw-space-card);border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--rw-color-panel-alt)}
     .rw-assistant__role{color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
     .rw-assistant h3{margin:.65rem 0 .35rem;font-size:clamp(1.1rem,2.4vw,1.45rem)}
@@ -184,6 +185,21 @@
     .rw-harness__lists{display:grid;gap:1rem}
     .rw-harness__lists h4{margin-bottom:.4rem;color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase}
     .rw-harness__lists p{font-size:.82rem}
+    .rw-certifications{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:1.6rem}
+    @media(min-width:800px){.rw-certifications{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}}
+    .rw-certificate{position:relative;overflow:hidden;padding:clamp(1.4rem,4vw,2.2rem);border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:linear-gradient(145deg,var(--rw-color-panel),var(--rw-color-panel-alt))}
+    .rw-certificate--route{border:2px solid var(--rw-color-accent-text);background:radial-gradient(circle at 92% 5%,rgba(255,215,0,.16),transparent 34%),linear-gradient(145deg,var(--rw-color-panel),var(--rw-color-panel-alt))}
+    .rw-certificate__seal{position:absolute;top:1rem;right:1rem;display:grid;place-items:center;width:3.6rem;height:3.6rem;border:1px solid rgba(255,215,0,.5);border-radius:50%;color:var(--rw-color-accent-text);font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:900;text-align:center}
+    .rw-certificate__type{display:block;max-width:calc(100% - 4.5rem);color:var(--rw-color-accent-text);font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .rw-certificate h3{max-width:18ch;margin:.7rem 0 .45rem;font-size:clamp(1.35rem,3vw,2rem)}
+    .rw-certificate p{color:var(--rw-color-ink-soft);font-size:.86rem;line-height:1.6}
+    .rw-certificate__facts{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+    .rw-certificate__facts span{padding:.45rem .65rem;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-pill);color:var(--rw-color-ink-soft);font-size:.73rem;font-weight:700}
+    .rw-competencies{display:grid;grid-template-columns:minmax(0,1fr);gap:.5rem;margin-top:1rem}
+    @media(min-width:560px){.rw-competencies{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .rw-competencies li{display:grid;grid-template-columns:1.35rem 1fr;gap:.45rem;color:var(--rw-color-ink-soft);font-size:.78rem;line-height:1.4}
+    .rw-competencies li::before{content:"✓";color:var(--rw-color-accent-text);font-weight:900}
+    .rw-certificate-note{margin-top:1rem;padding:.85rem 1rem;border-left:3px solid var(--rw-color-accent-text);background:rgba(255,215,0,.07);color:var(--rw-color-muted);font-size:.78rem;line-height:1.5}
     .rw-modal{width:min(680px,calc(100vw - 2rem));max-height:min(86vh,760px);padding:0;border:1px solid var(--rw-color-border);border-radius:var(--rw-radius-card);background:var(--rw-color-panel);color:var(--rw-color-ink);box-shadow:var(--rw-shadow-modal);overflow:auto}
     .rw-modal::backdrop{background:var(--rw-overlay);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
     .rw-modal__inner{position:relative;padding:clamp(1.35rem,4vw,2.25rem)}
@@ -226,6 +242,7 @@
     "provider": {"@type": "Organization", "name": "MetodologIA", "sameAs": "https://metodologia.info/"},
     "url": "https://javimontano.github.io/trabajar-amplificado/ruta-workshops.html",
     "inLanguage": ["es", "en", "pt"],
+    "educationalCredentialAwarded": "Certificado de asistencia por taller o certificado de finalización de la ruta completa (8 horas), sujeto a asistencia verificada",
     "offers": [
       {"@type": "Offer", "name": "Taller individual", "price": "100000", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "url": "https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform"},
       {"@type": "Offer", "name": "Ruta completa", "price": "300000", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "url": "https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform"}
@@ -257,6 +274,7 @@
       <a class="site-header__nav-link" href="#asistentes"><span class="l-es">Asistentes</span><span class="l-en">Assistants</span><span class="l-pt">Assistentes</span></a>
       <a class="site-header__nav-link" href="#metodo"><span class="l-es">Método</span><span class="l-en">Method</span><span class="l-pt">Método</span></a>
       <a class="site-header__nav-link" href="#experiencia"><span class="l-es">Experiencia</span><span class="l-en">Experience</span><span class="l-pt">Experiência</span></a>
+      <a class="site-header__nav-link" href="#certificados"><span class="l-es">Certificados</span><span class="l-en">Certificates</span><span class="l-pt">Certificados</span></a>
     </nav>
     <a class="site-header__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme</span><span class="l-en">Register</span><span class="l-pt">Inscrever-me</span> →</a>
   </header>
@@ -361,6 +379,7 @@
               <li><span class="l-es">Nivelación diagnóstica y set a medida incluidos.</span><span class="l-en">Diagnostic leveling and tailored set included.</span><span class="l-pt">Nivelamento diagnóstico e set sob medida incluídos.</span></li>
               <li><span class="l-es">Aceleradores de IA aplicables.</span><span class="l-en">Applicable AI accelerators.</span><span class="l-pt">Aceleradores de IA aplicáveis.</span></li>
               <li><span class="l-es">Construcción práctica y acompañada.</span><span class="l-en">Hands-on, guided building.</span><span class="l-pt">Construção prática e acompanhada.</span></li>
+              <li><span class="l-es">Certificado de asistencia por 2 horas.</span><span class="l-en">2-hour certificate of attendance.</span><span class="l-pt">Certificado de participação de 2 horas.</span></li>
             </ul>
             <a class="home-cta home-cta--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Elegir mi taller →</span><span class="l-en">Choose my workshop →</span><span class="l-pt">Escolher meu workshop →</span></a>
           </article>
@@ -375,6 +394,7 @@
               <li><span class="l-es">Aceleradores: asistentes, prompts, agentes, skills y arneses.</span><span class="l-en">Accelerators: assistants, prompts, agents, skills and harnesses.</span><span class="l-pt">Aceleradores: assistentes, prompts, agentes, skills e arneses.</span></li>
               <li><span class="l-es">Playbook “Creando Aplicaciones Profesionales”.</span><span class="l-en">“Building Professional Applications” playbook.</span><span class="l-pt">Playbook “Criando Aplicações Profissionais”.</span></li>
               <li><span class="l-es">Continuidad desde la idea hasta un producto útil.</span><span class="l-en">Continuity from idea to a useful product.</span><span class="l-pt">Continuidade da ideia até um produto útil.</span></li>
+              <li><span class="l-es">Certificado integral de 8 horas y competencias.</span><span class="l-en">Comprehensive 8-hour competency certificate.</span><span class="l-pt">Certificado integral de 8 horas e competências.</span></li>
             </ul>
             <a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Tomar la ruta completa →</span><span class="l-en">Take the full route →</span><span class="l-pt">Fazer a rota completa →</span></a>
           </article>
@@ -439,6 +459,18 @@
             <h3>Prompting Pro</h3>
             <p><span class="l-es">Apoya la creación y mejora de prompts de alta potencia para expresar intención, contexto, restricciones, criterios y formato de salida.</span><span class="l-en">Supports the creation and improvement of high-impact prompts that express intent, context, constraints, criteria and output format.</span><span class="l-pt">Apoia a criação e melhoria de prompts de alta potência para expressar intenção, contexto, restrições, critérios e formato de saída.</span></p>
             <a href="https://chatgpt.com/g/g-6a0e402c9b688191ae857eb4ac0631e2-prompting-pro" target="_blank" rel="noopener"><span class="l-es">Abrir asistente →</span><span class="l-en">Open assistant →</span><span class="l-pt">Abrir assistente →</span></a>
+          </article>
+          <article class="rw-assistant">
+            <span class="rw-assistant__role"><span class="l-es">Investigación profunda · Asistente especializado</span><span class="l-en">Deep research · Specialist assistant</span><span class="l-pt">Pesquisa profunda · Assistente especializado</span></span>
+            <h3>Research Blueprint</h3>
+            <p><span class="l-es">Apoya la estructuración de investigaciones profundas: pregunta, alcance, plan de búsqueda, fuentes, hallazgos y síntesis trazable para fundamentar decisiones de producto.</span><span class="l-en">Supports structured deep research: question, scope, search plan, sources, findings and traceable synthesis for product decisions.</span><span class="l-pt">Apoia pesquisas profundas estruturadas: pergunta, escopo, plano de busca, fontes, achados e síntese rastreável para decisões de produto.</span></p>
+            <a href="https://chatgpt.com/g/g-69d59bec507c819197750fbbc1e74aae-research-blueprint" target="_blank" rel="noopener"><span class="l-es">Abrir asistente →</span><span class="l-en">Open assistant →</span><span class="l-pt">Abrir assistente →</span></a>
+          </article>
+          <article class="rw-assistant">
+            <span class="rw-assistant__role"><span class="l-es">Arquitectura de IA · Asistente especializado</span><span class="l-en">AI architecture · Specialist assistant</span><span class="l-pt">Arquitetura de IA · Assistente especializado</span></span>
+            <h3>Arquitecto de Soluciones con IA</h3>
+            <p><span class="l-es">Ayuda a identificar y remover fricción del trabajo con IA, conectando el problema con componentes, herramientas, integraciones, controles y una ruta viable de implementación.</span><span class="l-en">Helps identify and remove work friction with AI by connecting the problem to components, tools, integrations, controls and a viable implementation route.</span><span class="l-pt">Ajuda a identificar e remover fricções do trabalho com IA, conectando o problema a componentes, ferramentas, integrações, controles e uma rota viável de implementação.</span></p>
+            <a href="https://chatgpt.com/g/g-6a60bb664b808191a3a96c1622a4d2d0-arquitecto-de-soluciones-con-ia" target="_blank" rel="noopener"><span class="l-es">Abrir asistente →</span><span class="l-en">Open assistant →</span><span class="l-pt">Abrir assistente →</span></a>
           </article>
         </div>
 
@@ -519,12 +551,48 @@
       </div>
     </section>
 
+    <section class="section" id="certificados">
+      <div class="container">
+        <span class="eyebrow"><span class="l-es">Reconocimiento verificable · 07</span><span class="l-en">Verifiable recognition · 07</span><span class="l-pt">Reconhecimento verificável · 07</span></span>
+        <h2 class="h2" style="margin:1rem 0 .6rem;"><span class="l-es">Cada avance deja evidencia. La ruta completa, <span class="gradient-text">una credencial mayor.</span></span><span class="l-en">Every step leaves evidence. The full route, <span class="gradient-text">a stronger credential.</span></span><span class="l-pt">Cada avanço deixa evidência. A rota completa, <span class="gradient-text">uma credencial maior.</span></span></h2>
+        <p class="lead" style="max-width:52rem;"><span class="l-es">Tomamos como referencia la arquitectura de reconocimiento MetodologIA —intensidad, recorrido y competencias— y la ajustamos proporcionalmente a esta experiencia práctica de ocho horas.</span><span class="l-en">We use the MetodologIA recognition architecture—duration, learning path and competencies—and scale it proportionally to this eight-hour practical experience.</span><span class="l-pt">Usamos como referência a arquitetura de reconhecimento MetodologIA —carga horária, percurso e competências— e a ajustamos proporcionalmente a esta experiência prática de oito horas.</span></p>
+
+        <div class="rw-certifications">
+          <article class="rw-certificate">
+            <span class="rw-certificate__seal">2 H</span>
+            <span class="rw-certificate__type"><span class="l-es">Por cada taller</span><span class="l-en">For each workshop</span><span class="l-pt">Por workshop</span></span>
+            <h3><span class="l-es">Certificado de asistencia</span><span class="l-en">Certificate of attendance</span><span class="l-pt">Certificado de participação</span></h3>
+            <p><span class="l-es">Reconoce tu participación en el taller elegido e identifica el tema, la fecha, la intensidad y los aprendizajes trabajados durante la sesión.</span><span class="l-en">Recognizes your participation in the selected workshop and identifies its topic, date, duration and learning outcomes.</span><span class="l-pt">Reconhece sua participação no workshop escolhido e identifica tema, data, carga horária e aprendizagens trabalhadas.</span></p>
+            <div class="rw-certificate__facts"><span><span class="l-es">1 taller</span><span class="l-en">1 workshop</span><span class="l-pt">1 workshop</span></span><span><span class="l-es">2 horas</span><span class="l-en">2 hours</span><span class="l-pt">2 horas</span></span><span><span class="l-es">Asistencia registrada</span><span class="l-en">Recorded attendance</span><span class="l-pt">Participação registrada</span></span></div>
+            <p class="rw-certificate-note"><span class="l-es">Se emite cuando la asistencia al taller queda verificada.</span><span class="l-en">Issued when workshop attendance has been verified.</span><span class="l-pt">Emitido quando a participação no workshop for verificada.</span></p>
+          </article>
+
+          <article class="rw-certificate rw-certificate--route">
+            <span class="rw-certificate__seal">8 H</span>
+            <span class="rw-certificate__type"><span class="l-es">Al completar la ruta</span><span class="l-en">Upon completing the route</span><span class="l-pt">Ao concluir a rota</span></span>
+            <h3><span class="l-es">Certificado integral de finalización</span><span class="l-en">Comprehensive completion certificate</span><span class="l-pt">Certificado integral de conclusão</span></h3>
+            <p><span class="l-es">Documenta la finalización de los cuatro talleres, la intensidad total y seis competencias aplicadas a la creación y evolución de un producto digital.</span><span class="l-en">Documents completion of all four workshops, total duration and six competencies applied to creating and evolving a digital product.</span><span class="l-pt">Documenta a conclusão dos quatro workshops, a carga horária total e seis competências aplicadas à criação e evolução de um produto digital.</span></p>
+            <div class="rw-certificate__facts"><span><span class="l-es">4 talleres</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></span><span><span class="l-es">8 horas</span><span class="l-en">8 hours</span><span class="l-pt">8 horas</span></span><span><span class="l-es">6 competencias</span><span class="l-en">6 competencies</span><span class="l-pt">6 competências</span></span></div>
+            <ul class="rw-competencies">
+              <li><span class="l-es">Descubrimiento y encuadre de problemas.</span><span class="l-en">Discovery and problem framing.</span><span class="l-pt">Descoberta e enquadramento de problemas.</span></li>
+              <li><span class="l-es">Prototipado y validación iterativa.</span><span class="l-en">Prototyping and iterative validation.</span><span class="l-pt">Prototipagem e validação iterativa.</span></li>
+              <li><span class="l-es">Desarrollo asistido por IA.</span><span class="l-en">AI-assisted development.</span><span class="l-pt">Desenvolvimento assistido por IA.</span></li>
+              <li><span class="l-es">Pruebas, despliegue y trazabilidad.</span><span class="l-en">Testing, deployment and traceability.</span><span class="l-pt">Testes, publicação e rastreabilidade.</span></li>
+              <li><span class="l-es">Pensamiento sistémico y arquitectura.</span><span class="l-en">Systems thinking and architecture.</span><span class="l-pt">Pensamento sistêmico e arquitetura.</span></li>
+              <li><span class="l-es">Flujos agénticos con control humano.</span><span class="l-en">Agentic workflows with human oversight.</span><span class="l-pt">Fluxos agênticos com controle humano.</span></li>
+            </ul>
+            <p class="rw-certificate-note"><span class="l-es">La credencial integral se emite únicamente al completar y registrar asistencia en los cuatro talleres.</span><span class="l-en">The comprehensive credential is issued only after completing and recording attendance in all four workshops.</span><span class="l-pt">A credencial integral é emitida somente após concluir e registrar participação nos quatro workshops.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="unirme">
       <div class="container">
         <div class="rw-cta">
           <span class="eyebrow"><span class="l-es">Inscripciones abiertas · Máximo 25 participantes</span><span class="l-en">Registration open · Maximum 25 participants</span><span class="l-pt">Inscrições abertas · Máximo de 25 participantes</span></span>
           <h2 class="h2"><span class="l-es">Tu idea puede quedarse en una nota. O puede convertirse en <span class="gradient-text">algo real.</span></span><span class="l-en">Your idea can stay in a note. Or it can become <span class="gradient-text">something real.</span></span><span class="l-pt">Sua ideia pode ficar em uma nota. Ou pode se tornar <span class="gradient-text">algo real.</span></span></h2>
-          <p class="lead"><span class="l-es">Reserva tu plaza para la cohorte del 18 al 22 de agosto de 2026. Elige un taller o toma la ruta completa con 25% de ahorro.</span><span class="l-en">Reserve your seat for the August 18–22, 2026 cohort. Choose one workshop or take the full route with 25% savings.</span><span class="l-pt">Reserve sua vaga para a turma de 18 a 22 de agosto de 2026. Escolha um workshop ou faça a rota completa com 25% de economia.</span></p>
+          <p class="lead"><span class="l-es">Reserva tu plaza para la cohorte del 18 al 22 de agosto de 2026. Elige un taller con certificado de asistencia o toma la ruta completa con 25% de ahorro y certificado integral de 8 horas.</span><span class="l-en">Reserve your seat for the August 18–22, 2026 cohort. Choose one workshop with a certificate of attendance or take the full route with 25% savings and a comprehensive 8-hour certificate.</span><span class="l-pt">Reserve sua vaga para a turma de 18 a 22 de agosto de 2026. Escolha um workshop com certificado de participação ou faça a rota completa com 25% de economia e certificado integral de 8 horas.</span></p>
           <div class="rw-cta-actions">
             <a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme ahora →</span><span class="l-en">Register now →</span><span class="l-pt">Inscrever-me agora →</span></a>
             <a class="home-cta home-cta--secondary" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20tengo%20una%20pregunta%20sobre%20la%20Ruta%20de%20Workshops%20de%20agosto." target="_blank" rel="noopener"><span class="l-es">Tengo una pregunta</span><span class="l-en">I have a question</span><span class="l-pt">Tenho uma pergunta</span></a>
@@ -549,7 +617,7 @@
       </ul>
       <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">después del diagnóstico podremos configurar asistentes de descubrimiento, prompts de producto, skills o plugins de prototipado y un arnés de validación de hipótesis.</span><span class="l-en">after the diagnosis we can configure discovery assistants, product prompts, prototyping skills or plugins, and a hypothesis-validation harness.</span><span class="l-pt">após o diagnóstico podemos configurar assistentes de descoberta, prompts de produto, skills ou plugins de prototipagem e um arnês de validação de hipóteses.</span></div>
       <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
-      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores, Playbook y certificado de asistencia de 2 horas. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators, playbook and a 2-hour certificate of attendance. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores, playbook e certificado de participação de 2 horas. A seleção final é definida pelo seu diagnóstico.</span></p>
       <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
     </div>
   </dialog>
@@ -568,7 +636,7 @@
       </ul>
       <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">podrá incluir un asistente de construcción, prompts de implementación y depuración, skills o plugins de integración y un agente o arnés para construir, probar y desplegar.</span><span class="l-en">may include a building assistant, implementation and debugging prompts, integration skills or plugins, and an agent or harness to build, test and deploy.</span><span class="l-pt">poderá incluir um assistente de construção, prompts de implementação e depuração, skills ou plugins de integração e um agente ou arnês para construir, testar e publicar.</span></div>
       <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
-      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores, Playbook y certificado de asistencia de 2 horas. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators, playbook and a 2-hour certificate of attendance. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores, playbook e certificado de participação de 2 horas. A seleção final é definida pelo seu diagnóstico.</span></p>
       <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
     </div>
   </dialog>
@@ -587,7 +655,7 @@
       </ul>
       <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">podrá combinar asistentes de revisión, prompts de QA y seguridad, skills o plugins de pruebas y despliegue, y agentes o arneses de release.</span><span class="l-en">may combine review assistants, QA and security prompts, testing and deployment skills or plugins, and release agents or harnesses.</span><span class="l-pt">poderá combinar assistentes de revisão, prompts de QA e segurança, skills ou plugins de testes e publicação e agentes ou arneses de release.</span></div>
       <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
-      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores, Playbook y certificado de asistencia de 2 horas. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators, playbook and a 2-hour certificate of attendance. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores, playbook e certificado de participação de 2 horas. A seleção final é definida pelo seu diagnóstico.</span></p>
       <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
     </div>
   </dialog>
@@ -606,7 +674,7 @@
       </ul>
       <div class="rw-modal__kit"><strong><span class="l-es">Tu set a medida:</span><span class="l-en">Your tailored set:</span><span class="l-pt">Seu set sob medida:</span></strong> <span class="l-es">podrá integrar asistentes de producto, prompts de análisis y backlog, skills o plugins de operación, agentes especializados y un arnés de mantenimiento y evolución.</span><span class="l-en">may integrate product assistants, analysis and backlog prompts, operational skills or plugins, specialized agents and a maintenance and evolution harness.</span><span class="l-pt">poderá integrar assistentes de produto, prompts de análise e backlog, skills ou plugins de operação, agentes especializados e um arnês de manutenção e evolução.</span></div>
       <h3><span class="l-es">Incluido con tu pago</span><span class="l-en">Included with your payment</span><span class="l-pt">Incluído no seu pagamento</span></h3>
-      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores y Playbook. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators and playbook. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores e playbook. A seleção final é definida pelo seu diagnóstico.</span></p>
+      <p class="rw-modal__summary"><span class="l-es">Clase de nivelación, workshop, set personalizado, aceleradores, Playbook y certificado de asistencia de 2 horas. La selección final se define con tu diagnóstico.</span><span class="l-en">Leveling class, workshop, tailored set, accelerators, playbook and a 2-hour certificate of attendance. Final selection is defined through your diagnosis.</span><span class="l-pt">Aula de nivelamento, workshop, set personalizado, aceleradores, playbook e certificado de participação de 2 horas. A seleção final é definida pelo seu diagnóstico.</span></p>
       <div class="rw-modal__actions"><a class="home-cta home-cta--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Inscribirme →</span><span class="l-en">Register →</span><span class="l-pt">Inscrever-me →</span></a></div>
     </div>
   </dialog>
@@ -620,7 +688,7 @@
     <div class="container">
       <div class="site-footer__grid">
         <div><div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold-text)">IA</span></div><p class="site-footer__brand-tagline"><span class="l-es">“La excelencia no se compra, se diseña. Se cocrea y se comparte.”</span><span class="l-en">“Excellence is not bought, it is designed. Co-created and shared.”</span><span class="l-pt">“A excelência não se compra, se desenha. Se cocria e se compartilha.”</span></p></div>
-        <nav><div class="site-footer__col-head"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></div><a class="site-footer__link" href="#ruta"><span class="l-es">4 workshops</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></a><a class="site-footer__link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a><a class="site-footer__link" href="#requisitos"><span class="l-es">Nivelación y requisitos</span><span class="l-en">Leveling and requirements</span><span class="l-pt">Nivelamento e requisitos</span></a><a class="site-footer__link" href="#asistentes"><span class="l-es">Asistentes y arnés</span><span class="l-en">Assistants and harness</span><span class="l-pt">Assistentes e arnês</span></a><a class="site-footer__link" href="#experiencia"><span class="l-es">Resultados</span><span class="l-en">Outcomes</span><span class="l-pt">Resultados</span></a></nav>
+        <nav><div class="site-footer__col-head"><span class="l-es">La ruta</span><span class="l-en">The route</span><span class="l-pt">A rota</span></div><a class="site-footer__link" href="#ruta"><span class="l-es">4 workshops</span><span class="l-en">4 workshops</span><span class="l-pt">4 workshops</span></a><a class="site-footer__link" href="#inversion"><span class="l-es">Inversión</span><span class="l-en">Investment</span><span class="l-pt">Investimento</span></a><a class="site-footer__link" href="#requisitos"><span class="l-es">Nivelación y requisitos</span><span class="l-en">Leveling and requirements</span><span class="l-pt">Nivelamento e requisitos</span></a><a class="site-footer__link" href="#asistentes"><span class="l-es">Asistentes y arnés</span><span class="l-en">Assistants and harness</span><span class="l-pt">Assistentes e arnês</span></a><a class="site-footer__link" href="#experiencia"><span class="l-es">Resultados</span><span class="l-en">Outcomes</span><span class="l-pt">Resultados</span></a><a class="site-footer__link" href="#certificados"><span class="l-es">Certificados</span><span class="l-en">Certificates</span><span class="l-pt">Certificados</span></a></nav>
         <nav><div class="site-footer__col-head"><span class="l-es">Ecosistema</span><span class="l-en">Ecosystem</span><span class="l-pt">Ecossistema</span></div><a class="site-footer__link" href="index.html">Trabajar Amplificado</a><a class="site-footer__link" href="programa-empoderamiento.html"><span class="l-es">Empoderamiento IA</span><span class="l-en">AI Empowerment</span><span class="l-pt">Empoderamento IA</span></a><a class="site-footer__link" href="https://metodologia.info/" target="_blank" rel="noopener">metodologia.info</a></nav>
         <nav><div class="site-footer__col-head"><span class="l-es">Inscripciones</span><span class="l-en">Registration</span><span class="l-pt">Inscrições</span></div><a class="site-footer__link" href="https://docs.google.com/forms/d/e/1FAIpQLSc8ved5HunS-OoU8WYUgl6RSvA0JbmvYMPGGNQgqVKJN-N06w/viewform" target="_blank" rel="noopener"><span class="l-es">Formulario de inscripción</span><span class="l-en">Registration form</span><span class="l-pt">Formulário de inscrição</span></a><a class="site-footer__link" href="https://wa.me/573005353628?text=Hola%20Javier%2C%20tengo%20una%20pregunta%20sobre%20la%20Ruta%20de%20Workshops%20de%20agosto." target="_blank" rel="noopener">WhatsApp</a><a class="site-footer__link" href="mailto:contacto@metodologia.info?subject=Ruta%20de%20Workshops%20%C2%B7%20Pregunta">contacto@metodologia.info</a></nav>
       </div>
